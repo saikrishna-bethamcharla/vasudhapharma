@@ -5665,6 +5665,18 @@
       pointer-events: none; /* card handles navigation */
     }
 
+  
+    /* Survey force on top */
+    .survey-overlay {
+      z-index: 300000 !important;
+      pointer-events: none;
+    }
+    .survey-overlay.visible {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+    }
+
   </style>
 <style>
 
@@ -6838,7 +6850,7 @@
       const thanksStep = overlay.querySelector('[data-step="thanks"]');
       const questions = Array.prototype.slice.call(overlay.querySelectorAll('.survey-question'));
 
-      const STORAGE_KEY = 'vasudhaSurveyDismissed';
+      const STORAGE_KEY = 'vasudhaSurveyDismissed_v2';
       let currentQ = 1;
       const totalQ = questions.length;
 
@@ -6857,14 +6869,22 @@
       }
 
       function openSurvey() {
-        if (alreadyDismissed()) return;
         try {
-          var p = new URLSearchParams(window.location.search);
-          var o = (p.get('open') || '').toLowerCase().replace(/_/g, '-');
-          if (o === 'annual-returns' || o === 'annual-return' || window.__vpAnnualDeepLink) return;
-        } catch (e) {}
-        overlay.classList.add('visible');
-        overlay.setAttribute('aria-hidden', 'false');
+          var force = false;
+          try {
+            var p = new URLSearchParams(window.location.search);
+            force = p.get('survey') === '1' || p.get('survey') === 'true';
+            var o = (p.get('open') || '').toLowerCase().replace(/_/g, '-');
+            if (!force && (o === 'annual-returns' || o === 'annual-return' || window.__vpAnnualDeepLink)) return;
+          } catch (e) {}
+          if (!force && alreadyDismissed()) return;
+          overlay.classList.add('visible');
+          overlay.setAttribute('aria-hidden', 'false');
+          overlay.style.opacity = '1';
+          overlay.style.visibility = 'visible';
+          overlay.style.pointerEvents = 'auto';
+          overlay.style.zIndex = '300000';
+        } catch (err) { console && console.error(err); }
       }
 
       function closeSurvey() {
@@ -6943,7 +6963,7 @@
       }
 
       // Show automatically as soon as the page opens, once per session
-      setTimeout(openSurvey, 600);
+      setTimeout(openSurvey, 1200);
     })();
   </script>
 
@@ -8062,6 +8082,63 @@
       }
     });
   });
+})();
+</script>
+
+
+<script>
+/* Survey boot — last script, independent of other code */
+(function () {
+  function show() {
+    var o = document.getElementById('surveyOverlay');
+    if (!o) return;
+    try {
+      var p = new URLSearchParams(window.location.search || '');
+      var open = (p.get('open') || '').toLowerCase();
+      if (open.indexOf('annual-return') >= 0) return;
+      if (p.get('survey') !== '1' && p.get('survey') !== 'true') {
+        if (sessionStorage.getItem('vasudhaSurveyDismissed_v3') === '1') return;
+      }
+    } catch (e) {}
+    o.classList.add('visible');
+    o.setAttribute('aria-hidden', 'false');
+    o.style.setProperty('opacity', '1', 'important');
+    o.style.setProperty('visibility', 'visible', 'important');
+    o.style.setProperty('display', 'flex', 'important');
+    o.style.setProperty('pointer-events', 'auto', 'important');
+    o.style.setProperty('z-index', '999999', 'important');
+    o.style.setProperty('position', 'fixed', 'important');
+    o.style.setProperty('inset', '0', 'important');
+  }
+  function hide() {
+    var o = document.getElementById('surveyOverlay');
+    if (!o) return;
+    o.classList.remove('visible');
+    o.setAttribute('aria-hidden', 'true');
+    o.style.removeProperty('opacity');
+    o.style.removeProperty('visibility');
+    o.style.removeProperty('display');
+    o.style.removeProperty('pointer-events');
+    try { sessionStorage.setItem('vasudhaSurveyDismissed_v3', '1'); } catch (e) {}
+  }
+  window.__vpForceShowSurvey = show;
+  window.__vpForceHideSurvey = hide;
+  // Bind close buttons if present
+  function bind() {
+    ['surveyClose', 'surveyNo', 'surveyEmbedClose'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el && !el.__vpSurveyBound) {
+        el.__vpSurveyBound = true;
+        el.addEventListener('click', hide);
+      }
+    });
+  }
+  function start() {
+    bind();
+    setTimeout(show, 900);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
+  else start();
 })();
 </script>
 
