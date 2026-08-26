@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Products | Vasudha Pharma Chem Limited</title>
@@ -5504,6 +5509,162 @@
       font-size: 11.5px !important;
     }
 
+  
+    /* SurveyMonkey embed inside modal */
+    .survey-embed-note {
+      font-size: 14px;
+      color: #555;
+      margin: 0 0 12px;
+      text-align: center;
+    }
+    .survey-embed-wrap {
+      width: 100%;
+      height: min(58vh, 520px);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: #f7f7f7;
+    }
+    .survey-embed-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      background: #fff;
+    }
+    .survey-embed-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .survey-modal {
+      max-width: min(640px, 94vw) !important;
+    }
+
+  
+    /* ===== Product enquiry modal (theme) ===== */
+    .enq-overlay {
+      position: fixed; inset: 0; z-index: 12000;
+      background: rgba(15, 15, 20, 0.55);
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px; opacity: 0; visibility: hidden;
+      transition: opacity 0.2s, visibility 0.2s;
+    }
+    .enq-overlay.is-open { opacity: 1; visibility: visible; }
+    .enq-modal {
+      width: min(640px, 100%);
+      max-height: min(92vh, 900px);
+      overflow: auto;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+      font-family: inherit;
+    }
+    .enq-header {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, #C8102E 0%, #a00d25 100%);
+      color: #fff;
+      border-radius: 14px 14px 0 0;
+    }
+    .enq-header h3 {
+      margin: 0; font-size: 17px; font-weight: 700; line-height: 1.3;
+    }
+    .enq-close {
+      border: 0; background: rgba(255,255,255,0.15);
+      color: #fff; width: 36px; height: 36px; border-radius: 8px;
+      font-size: 20px; cursor: pointer; line-height: 1;
+    }
+    .enq-close:hover { background: rgba(255,255,255,0.28); }
+    .enq-body { padding: 20px 22px 8px; }
+    .enq-product {
+      background: #fff5f6;
+      border: 1px solid rgba(200,16,46,0.15);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+    }
+    .enq-product-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 6px 12px;
+      font-size: 13px;
+      padding: 4px 0;
+    }
+    .enq-product-row .ek {
+      color: #C8102E; font-weight: 700;
+    }
+    .enq-product-row .ev { color: #222; }
+    .enq-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 16px;
+    }
+    .enq-form-grid .full { grid-column: 1 / -1; }
+    .enq-field label {
+      display: block; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: #C8102E; margin-bottom: 6px;
+    }
+    .enq-field label .req { color: #C8102E; }
+    .enq-field input,
+    .enq-field textarea,
+    .enq-field select {
+      width: 100%; box-sizing: border-box;
+      border: 1px solid #e5e5e5; border-radius: 10px;
+      padding: 11px 12px; font-size: 14px; font-family: inherit;
+      background: #fafafa;
+    }
+    .enq-field input:focus,
+    .enq-field textarea:focus,
+    .enq-field select:focus {
+      outline: none; border-color: #C8102E;
+      box-shadow: 0 0 0 3px rgba(200,16,46,0.12);
+      background: #fff;
+    }
+    .enq-phone-row {
+      display: flex; gap: 8px; align-items: stretch;
+    }
+    .enq-phone-row select {
+      width: 118px; flex-shrink: 0; padding: 10px 8px;
+    }
+    .enq-phone-row input { flex: 1; }
+    .enq-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      padding: 14px 22px 18px;
+      border-top: 1px solid #eee;
+    }
+    .enq-footer .hint { font-size: 12px; color: #888; }
+    .enq-actions { display: flex; gap: 10px; }
+    .enq-btn {
+      border-radius: 10px; padding: 11px 18px; font-size: 14px;
+      font-weight: 700; cursor: pointer; font-family: inherit; border: 1px solid transparent;
+    }
+    .enq-btn-cancel { background: #fff; border-color: #ddd; color: #444; }
+    .enq-btn-cancel:hover { background: #f5f5f5; }
+    .enq-btn-submit {
+      background: #C8102E; color: #fff; border-color: #C8102E;
+    }
+    .enq-btn-submit:hover { background: #a00d25; }
+    @media (max-width: 560px) {
+      .enq-form-grid { grid-template-columns: 1fr; }
+      .enq-product-row { grid-template-columns: 1fr; }
+    }
+
+  
+    /* Whole product category card is clickable */
+    .prod-card {
+      cursor: pointer;
+      position: relative;
+    }
+    .prod-card .prod-more {
+      pointer-events: none; /* card handles navigation */
+    }
+
   </style>
 <style>
 
@@ -6502,6 +6663,31 @@
         </div>
       </div>
 
+      
+      <!-- Step: SurveyMonkey embed (Option B) -->
+      <div class="survey-step" data-step="embed" hidden>
+        <div class="survey-brand">
+          <img src="assets/vasudha-logo.jpg" alt="Vasudha Pharma" class="survey-main-logo">
+          <span>Vasudha Pharma Chem Limited</span>
+        </div>
+        <p class="survey-embed-note">Please complete the short feedback form below.</p>
+        <div class="survey-embed-wrap">
+          <iframe
+            id="surveyMonkeyFrame"
+            title="Website feedback survey"
+            src="about:blank"
+            data-sm-src="https://www.surveymonkey.com/r/737XX3Y"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div class="survey-embed-actions">
+          <button type="button" class="survey-btn survey-btn-outline" id="surveyEmbedClose">Close</button>
+          <a class="survey-btn survey-btn-primary" id="surveyOpenExternal" href="https://www.surveymonkey.com/r/737XX3Y" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+        </div>
+      </div>
+
+
       <!-- Step: Form -->
       <div class="survey-step" data-step="form" hidden>
         <div class="survey-brand">
@@ -6701,19 +6887,31 @@
 
       if (closeBtn) closeBtn.addEventListener('click', closeSurvey);
       if (noBtn) noBtn.addEventListener('click', closeSurvey);
+      }
+      var embedCloseBtn = document.getElementById('surveyEmbedClose');
+      if (embedCloseBtn) {
+        embedCloseBtn.addEventListener('click', closeSurvey);
       overlay.addEventListener('click', function (e) {
         if (e.target === overlay) closeSurvey();
       });
 
       if (yesBtn) {
         yesBtn.addEventListener('click', function () {
-          /* Open SurveyMonkey collector — answers store in your SurveyMonkey account */
-          try {
-            window.open('https://www.surveymonkey.com/r/737XX3Y', '_blank', 'noopener,noreferrer');
-          } catch (e) {
-            window.location.href = 'https://www.surveymonkey.com/r/737XX3Y';
+          var embedStep = overlay.querySelector('[data-step="embed"]');
+          var frame = document.getElementById('surveyMonkeyFrame');
+          inviteStep.hidden = true;
+          if (formStep) formStep.hidden = true;
+          if (thanksStep) thanksStep.hidden = true;
+          if (embedStep) {
+            embedStep.hidden = false;
+            if (frame) {
+              var src = frame.getAttribute('data-sm-src') || 'https://www.surveymonkey.com/r/737XX3Y';
+              if (frame.getAttribute('src') !== src) frame.setAttribute('src', src);
+            }
+          } else {
+            try { window.open('https://www.surveymonkey.com/r/737XX3Y', '_blank', 'noopener,noreferrer'); } catch (e) { window.location.href = 'https://www.surveymonkey.com/r/737XX3Y'; }
+            closeSurvey();
           }
-          closeSurvey();
         });
       }
 
@@ -7759,6 +7957,111 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
   else run();
+})();
+</script>
+
+
+  <!-- Product enquiry modal -->
+  <div class="enq-overlay" id="enqOverlay" aria-hidden="true">
+    <div class="enq-modal" role="dialog" aria-modal="true" aria-labelledby="enqTitle">
+      <div class="enq-header">
+        <h3 id="enqTitle">Enquiry</h3>
+        <button type="button" class="enq-close" id="enqClose" aria-label="Close">&times;</button>
+      </div>
+      <div class="enq-body">
+        <div class="enq-product" id="enqProductBox">
+          <div class="enq-product-row"><span class="ek">Product Name</span><span class="ev" id="enqPName">—</span></div>
+          <div class="enq-product-row"><span class="ek">Specifications</span><span class="ev" id="enqPSpec">—</span></div>
+          <div class="enq-product-row"><span class="ek">Regulatory Status</span><span class="ev" id="enqPReg">—</span></div>
+          <div class="enq-product-row"><span class="ek">Therapeutic Use</span><span class="ev" id="enqPTher">—</span></div>
+          <div class="enq-product-row"><span class="ek">CAS #</span><span class="ev" id="enqPCas">—</span></div>
+        </div>
+        <form id="enqForm" class="enq-form-grid" onsubmit="return handleEnquirySubmit(event)">
+          <div class="enq-field">
+            <label for="enqName">Your Name <span class="req">*</span></label>
+            <input id="enqName" name="name" type="text" required placeholder="Full name" autocomplete="name">
+          </div>
+          <div class="enq-field">
+            <label for="enqDesignation">Designation</label>
+            <input id="enqDesignation" name="designation" type="text" placeholder="Job title" autocomplete="organization-title">
+          </div>
+          <div class="enq-field">
+            <label for="enqCompany">Company Name</label>
+            <input id="enqCompany" name="company" type="text" placeholder="Company / Organisation" autocomplete="organization">
+          </div>
+          <div class="enq-field">
+            <label for="enqEmail">Email Address <span class="req">*</span></label>
+            <input id="enqEmail" name="email" type="email" required placeholder="email@example.com" autocomplete="email">
+          </div>
+          <div class="enq-field full">
+            <label for="enqPhone">Phone Number</label>
+            <div class="enq-phone-row">
+              <select id="enqDial" name="dial" aria-label="Country code">
+                <option value="+91" selected>🇮🇳 +91</option>
+                <option value="+1">🇺🇸 +1</option>
+                <option value="+44">🇬🇧 +44</option>
+                <option value="+971">🇦🇪 +971</option>
+                <option value="+65">🇸🇬 +65</option>
+                <option value="+61">🇦🇺 +61</option>
+                <option value="+49">🇩🇪 +49</option>
+                <option value="+33">🇫🇷 +33</option>
+                <option value="+81">🇯🇵 +81</option>
+                <option value="+86">🇨🇳 +86</option>
+                <option value="+82">🇰🇷 +82</option>
+                <option value="+55">🇧🇷 +55</option>
+                <option value="+27">🇿🇦 +27</option>
+                <option value="+234">🇳🇬 +234</option>
+                <option value="+966">🇸🇦 +966</option>
+              </select>
+              <input id="enqPhone" name="phone" type="tel" placeholder="XXXXX XXXXX" autocomplete="tel-national">
+            </div>
+          </div>
+          <div class="enq-field full">
+            <label for="enqQty">Quantity Required</label>
+            <input id="enqQty" name="quantity" type="text" placeholder="e.g. 100 kg per month">
+          </div>
+          <div class="enq-field full">
+            <label for="enqMsg">Additional Message</label>
+            <textarea id="enqMsg" name="message" rows="3" placeholder="Any specific requirements, questions, or comments…"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="enq-footer">
+        <span class="hint">* Required fields</span>
+        <div class="enq-actions">
+          <button type="button" class="enq-btn enq-btn-cancel" id="enqCancel">Cancel</button>
+          <button type="submit" form="enqForm" class="enq-btn enq-btn-submit">Submit Enquiry</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script>
+(function () {
+  document.querySelectorAll('article.prod-card').forEach(function (card) {
+    var link = card.querySelector('a.prod-more');
+    if (!link || !link.getAttribute('href')) return;
+    var href = link.getAttribute('href');
+    card.setAttribute('role', 'link');
+    card.setAttribute('tabindex', '0');
+    if (!card.getAttribute('aria-label')) {
+      var h = card.querySelector('h3');
+      card.setAttribute('aria-label', (h ? h.textContent.trim() : 'Category') + ' — open page');
+    }
+    function go(e) {
+      // allow real links inside if any other anchors appear later
+      if (e.target.closest && e.target.closest('a') && e.target.closest('a') !== link) return;
+      window.location.href = href;
+    }
+    card.addEventListener('click', go);
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        window.location.href = href;
+      }
+    });
+  });
 })();
 </script>
 

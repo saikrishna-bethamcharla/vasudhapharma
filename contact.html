@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Vasudha Pharma Chem Limited</title>
@@ -5941,6 +5946,182 @@
       font-size: 11.5px !important;
     }
 
+  
+    /* SurveyMonkey embed inside modal */
+    .survey-embed-note {
+      font-size: 14px;
+      color: #555;
+      margin: 0 0 12px;
+      text-align: center;
+    }
+    .survey-embed-wrap {
+      width: 100%;
+      height: min(58vh, 520px);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: #f7f7f7;
+    }
+    .survey-embed-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      background: #fff;
+    }
+    .survey-embed-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .survey-modal {
+      max-width: min(640px, 94vw) !important;
+    }
+
+  
+    
+    /* Department product fields — match contact form controls */
+    .contact-form-card .dept-extra-fields select,
+    .contact-form-card select#cDepartment,
+    .contact-form-card select#cProductCategory {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 14px;
+      border: 1.5px solid #e0e4ec;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--dark, #222);
+      background: #fafbfc;
+      margin-bottom: 16px;
+      outline: none;
+      appearance: auto;
+    }
+    .contact-form-card .dept-extra-fields select:focus,
+    .contact-form-card select#cDepartment:focus,
+    .contact-form-card select#cProductCategory:focus {
+      border-color: var(--primary-red, #C8102E);
+      background: #fff;
+    }
+    .product-dd {
+      position: relative;
+      margin-bottom: 16px;
+    }
+    .product-dd-trigger {
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      text-align: left;
+      padding: 12px 14px;
+      border: 1.5px solid #e0e4ec;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--dark, #222);
+      background: #fafbfc;
+      cursor: pointer;
+      outline: none;
+    }
+    .product-dd-trigger:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      color: #8a8f98;
+      background: #f3f4f6;
+    }
+    .product-dd-trigger:not(:disabled):hover {
+      border-color: #c5cad3;
+      background: #fff;
+    }
+    .product-dd-trigger[aria-expanded="true"] {
+      border-color: var(--primary-red, #C8102E);
+      background: #fff;
+    }
+    .product-dd-chevron {
+      color: #8a8f98;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    .product-dd-panel {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(100% + 6px);
+      z-index: 50;
+      background: #fff;
+      border: 1.5px solid #e0e4ec;
+      border-radius: 8px;
+      box-shadow: 0 10px 28px rgba(20, 24, 40, 0.12);
+      max-height: 280px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .product-dd-search-wrap {
+      padding: 10px;
+      border-bottom: 1px solid #eef0f4;
+      background: #fafbfc;
+    }
+    .product-dd-search {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px 12px;
+      border: 1.5px solid #e0e4ec;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      background: #fff;
+      color: var(--dark, #222);
+      margin-bottom: 0 !important;
+    }
+    .product-dd-search:focus {
+      outline: none;
+      border-color: var(--primary-red, #C8102E);
+    }
+    .product-dd-list {
+      list-style: none;
+      margin: 0;
+      padding: 4px 0;
+      overflow-y: auto;
+      max-height: 210px;
+    }
+    .product-dd-list li {
+      padding: 10px 14px;
+      font-size: 14px;
+      cursor: pointer;
+      color: var(--dark, #222);
+    }
+    .product-dd-list li:hover {
+      background: #fff5f6;
+      color: var(--primary-red, #C8102E);
+    }
+    .product-dd-list li.is-empty {
+      color: #8a8f98;
+      cursor: default;
+    }
+    .product-dd-list li.is-empty:hover {
+      background: transparent;
+      color: #8a8f98;
+    }
+
+  
+    /* Product panel must stay closed until category + open */
+    .product-dd-panel[hidden],
+    .product-dd-panel.is-closed {
+      display: none !important;
+    }
+    .product-dd-panel:not([hidden]) {
+      display: flex !important;
+    }
+    .product-dd-trigger:disabled + .product-dd-panel,
+    .product-dd-trigger[disabled] ~ .product-dd-panel {
+      display: none !important;
+    }
+
   </style>
 <style>
 
@@ -6812,6 +6993,46 @@
               <input id="cPhone" name="phone" type="tel" required placeholder="Mobile / phone number" autocomplete="tel-national" class="phone-number-input">
             </div>
 
+            <label for="cDepartment">Department <span class="req">*</span></label>
+            <select id="cDepartment" name="department" required>
+              <option value="" disabled selected>Select a department</option>
+              <option value="Products">Products</option>
+              <option value="Manufacturing">Manufacturing</option>
+              <option value="R&amp;D">R&amp;D</option>
+              <option value="EHS">EHS</option>
+              <option value="Corporate Governance">Corporate Governance</option>
+              <option value="Foundation">Foundation</option>
+              <option value="Careers">Careers</option>
+            </select>
+
+
+            <div id="deptProductsFields" class="dept-extra-fields" hidden>
+              <label for="cProductCategory">Product category <span class="req">*</span></label>
+              <select id="cProductCategory" name="product_category">
+                <option value="" disabled selected>Select category</option>
+                <option value="APIs">APIs</option>
+                <option value="Intermediates">Intermediates</option>
+                <option value="Pellets &amp; MUPS">Pellets &amp; MUPS</option>
+                <option value="Piperidone Derivatives">Piperidone Derivatives</option>
+                <option value="Under Development">Under Development</option>
+              </select>
+
+              <label for="cProductTrigger">Product <span class="req">*</span></label>
+              <div class="product-dd" id="productDropdown">
+                <input type="hidden" id="cProduct" name="product" value="">
+                <button type="button" class="product-dd-trigger" id="cProductTrigger" aria-haspopup="listbox" aria-expanded="false" disabled>
+                  <span id="cProductDisplay">Select a category first</span>
+                  <span class="product-dd-chevron" aria-hidden="true">▾</span>
+                </button>
+                <div class="product-dd-panel" id="cProductPanel" hidden>
+                  <div class="product-dd-search-wrap">
+                    <input type="text" id="cProductSearch" class="product-dd-search" placeholder="Search product…" autocomplete="off" aria-label="Search product">
+                  </div>
+                  <ul class="product-dd-list" id="cProductList" role="listbox"></ul>
+                </div>
+              </div>
+            </div>
+
             <label for="cMessage">Message</label>
             <textarea id="cMessage" name="message" placeholder="How can we help?"></textarea>
 
@@ -7083,6 +7304,31 @@
         </div>
       </div>
 
+      
+      <!-- Step: SurveyMonkey embed (Option B) -->
+      <div class="survey-step" data-step="embed" hidden>
+        <div class="survey-brand">
+          <img src="assets/vasudha-logo.jpg" alt="Vasudha Pharma" class="survey-main-logo">
+          <span>Vasudha Pharma Chem Limited</span>
+        </div>
+        <p class="survey-embed-note">Please complete the short feedback form below.</p>
+        <div class="survey-embed-wrap">
+          <iframe
+            id="surveyMonkeyFrame"
+            title="Website feedback survey"
+            src="about:blank"
+            data-sm-src="https://www.surveymonkey.com/r/737XX3Y"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div class="survey-embed-actions">
+          <button type="button" class="survey-btn survey-btn-outline" id="surveyEmbedClose">Close</button>
+          <a class="survey-btn survey-btn-primary" id="surveyOpenExternal" href="https://www.surveymonkey.com/r/737XX3Y" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+        </div>
+      </div>
+
+
       <!-- Step: Form -->
       <div class="survey-step" data-step="form" hidden>
         <div class="survey-brand">
@@ -7282,19 +7528,31 @@
 
       if (closeBtn) closeBtn.addEventListener('click', closeSurvey);
       if (noBtn) noBtn.addEventListener('click', closeSurvey);
+      }
+      var embedCloseBtn = document.getElementById('surveyEmbedClose');
+      if (embedCloseBtn) {
+        embedCloseBtn.addEventListener('click', closeSurvey);
       overlay.addEventListener('click', function (e) {
         if (e.target === overlay) closeSurvey();
       });
 
       if (yesBtn) {
         yesBtn.addEventListener('click', function () {
-          /* Open SurveyMonkey collector — answers store in your SurveyMonkey account */
-          try {
-            window.open('https://www.surveymonkey.com/r/737XX3Y', '_blank', 'noopener,noreferrer');
-          } catch (e) {
-            window.location.href = 'https://www.surveymonkey.com/r/737XX3Y';
+          var embedStep = overlay.querySelector('[data-step="embed"]');
+          var frame = document.getElementById('surveyMonkeyFrame');
+          inviteStep.hidden = true;
+          if (formStep) formStep.hidden = true;
+          if (thanksStep) thanksStep.hidden = true;
+          if (embedStep) {
+            embedStep.hidden = false;
+            if (frame) {
+              var src = frame.getAttribute('data-sm-src') || 'https://www.surveymonkey.com/r/737XX3Y';
+              if (frame.getAttribute('src') !== src) frame.setAttribute('src', src);
+            }
+          } else {
+            try { window.open('https://www.surveymonkey.com/r/737XX3Y', '_blank', 'noopener,noreferrer'); } catch (e) { window.location.href = 'https://www.surveymonkey.com/r/737XX3Y'; }
+            closeSurvey();
           }
-          closeSurvey();
         });
       }
 
@@ -8465,6 +8723,137 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
   else run();
+})();
+</script>
+
+
+<script>
+(function () {
+  var CATALOG = {"APIs": ["Amitriptyline HCl", "Aripiprazole", "Bepotastine Besilate", "Cisapride Monohydrate", "Cinnarizine", "Clopidogrel Bisulphate", "Cyclobenzaprine HCl", "Cyproheptadine HCl", "Dabigatran Etexilate Mesylate", "Desloratadine", "Dexlansoprazole Sesquihydrate", "Diatrizoic Acid", "Diatrizoic Acid Dihydrate", "Diatrizoic Sodium", "Diatrizoic Meglumine", "Dimethyl Fumarate", "Diltiazem HCl", "Domperidone", "Domperidone Maleate", "Donepezil HCl", "Donepezil HCl Monohydrate", "Ebastine", "Esomeprazole Magnesium Trihydrate", "Esflurbiprofen/(S)-Flurbiprofen", "Febuxostat", "Fexofenadine HCl", "Flurbiprofen", "Flunarizine Di HCl", "Itopride HCl", "Itraconazole", "Ketorolac Tromethamine", "Lacosamide", "Loperamide HCl", "Loratadine", "Losartan Potassium", "Mebeverine HCl", "Methoxyphenamine HCl", "Mirabegron", "Nortriptyline HCl", "Oxatomide Anhydrous", "Oxcarbazepine", "Olmesartan Medoxomil", "Pantoprazole Sodium Sesquihydrate", "Pimozide", "Pimobendan", "Pregabalin", "Quetiapine Fumarate", "Rivaroxaban", "Rupatadine Fumarate", "Sacubitril Sodium", "Tamsulosin HCl", "Telmisartan", "Trazodone HCl", "Valsartan", "Vonoprazan Fumarate", "Bempedoic acid", "Bilastine", "Calcium Folinate (Leucovorin calcium)", "Dapagliflozin Propanediol", "Dexlansoprazole Anhydrous", "Edoxaban Tosylate", "Eflornithine hydrochloride monohydrate", "Empagliflozin", "Fosfomycin Tromethamol", "Isoxsuprine HCl", "Lactulose Crystals", "L-methyl Folate Calcium", "Maropitant", "Maropitant Citrate", "Ormeloxifene HCl", "Pentosan Polysulfate Sodium", "Propyphenazone", "Rimegepant Sulfate Hydrate", "Ropivacaine Hydrochloride monohydrate", "Trofinetide", "Tyloxapol", "Ursodiol", "Voglibose", "Vitamin K2-7 (Menaquinone-7)"], "Intermediates": [], "Pellets & MUPS": ["Duloxetine HCl", "Esomeprazole", "Esomeprazole (Micro/MUPS)", "Lansoprazole", "Lansoprazole (Micro Pellets)", "Omeprazole", "Omeprazole (Micro Pellets)", "Pantoprazole", "Pancreatin", "Rabeprazole", "Diclofenac Sodium", "Domperidone", "Venlafaxine", "Aprepitant", "Dabigatran", "Itraconazole", "Orlistat", "Clarithromycin Taste Masked Micro Pellets, Granules", "Itopride HCl", "Levosulpiride", "Mebeverine HCl", "Memantine", "Mesalamine", "Mesalamine (Premix/Granules)", "Nicardipine", "Tamsulosin HCl", "Vincamine", "Dexlansoprazole", "Barnidipine hydrochloride", "Chlorpheneramine Maleate", "Cinitapride", "Clarithromycin", "Everolimus", "Flurbiprofen", "Ketoprofen", "Levomilnacipran", "Linaclotide", "Metoprolol Succinate MUPS", "Peppermint oil", "Sirolimus", "Tacrolimus", "Tolterodine Tartrate", "Trospium chloride", "Viloxazine", "Xanomeline Tartrate", "Carbonyl Iron", "Zinc Sulphate", "Folic Acid"], "Piperidone Derivatives": ["N-Methyl-4-piperidone", "N-Methyl-4-hydroxypiperidine", "N-Methyl-4-chloropiperidine", "N-Methyl-4-chloropiperidine HCl", "N-Methyl-4-aminopiperidine", "N-Carbethoxy-4-piperidone", "N-Carbethoxy-4-hydroxypiperidine", "N-Carbethoxy-4-aminopiperidine", "N-Benzyl-4-piperidone", "N-Benzyl-4-hydroxypiperidine", "4-Benzyl-4-hydroxypiperidine", "N-Benzyl-4-chloropiperidine", "N-Benzyl-4-aminopiperidine", "4-(2-Keto-benzimidazolinyl) piperidine", "4-Piperidone ethylene ketal", "4-Hydroxypiperidine", "4-Aminopiperidine", "4-Piperidinopiperidine", "1,4&#x27;-Bipiperidine dihydrochloride", "N-Piperidin-4-ylbenzamide", "N-Isobutyl-4-piperidone", "1-(4-Chlorobenzhydryl)-piperazine", "N-Ethyl-4-piperidone", "1,3-Dimethyl-4-piperidone", "(R)-(-)-3-Aminopiperidine dihydrochloride", "N-Propyl-4-piperidone", "3-Chloromethyl-5-Methylpyridine Hydrochloride", "4-(4-Chlorophenyl)-4-hydroxypiperidine", "4-(4-Bromophenyl)-4-hydroxypiperidine", "4-Phenyl-4-hydroxypiperidine", "4-Phenylpiperidine"], "Under Development": ["Bempedoic acid", "Bilastine", "Calcium Folinate (Leucovorin calcium)", "Dapagliflozin Propanediol", "Dexlansoprazole Sesquihydrate", "Dexlansoprazole Anhydrous", "Edoxaban Tosylate", "Eflornithine hydrochloride monohydrate", "Empagliflozin", "Fosfomycin Tromethamol", "Isoxsuprine HCl", "Lactulose Crystals", "L-methyl Folate Calcium", "Maropitant", "Maropitant Citrate", "Ormeloxifene HCl", "Pentosan Polysulfate Sodium", "Propyphenazone", "Rimegepant Sulfate Hydrate", "Ropivacaine Hydrochloride monohydrate", "Trofinetide", "Tyloxapol", "Ursodiol", "Voglibose", "Vitamin K2-7 (Menaquinone-7)"]};
+
+  var dept = document.getElementById('cDepartment');
+  var extra = document.getElementById('deptProductsFields');
+  var cat = document.getElementById('cProductCategory');
+  var productHidden = document.getElementById('cProduct');
+  var trigger = document.getElementById('cProductTrigger');
+  var display = document.getElementById('cProductDisplay');
+  var panel = document.getElementById('cProductPanel');
+  var search = document.getElementById('cProductSearch');
+  var list = document.getElementById('cProductList');
+  if (!dept || !extra) return;
+
+  function setProductRequired(on) {
+    if (cat) cat.required = !!on;
+    if (productHidden) {
+      if (on) productHidden.setAttribute('required', 'required');
+      else productHidden.removeAttribute('required');
+    }
+  }
+
+  function closePanel() {
+    if (panel) {
+      panel.hidden = true;
+      panel.setAttribute('hidden', '');
+      panel.classList.add('is-closed');
+    }
+    if (trigger) trigger.setAttribute('aria-expanded', 'false');
+  }
+
+  function openPanel() {
+    if (!trigger || trigger.disabled) return;
+    if (!cat || !cat.value) {
+      closePanel();
+      return;
+    }
+    if (panel) {
+      panel.hidden = false;
+      panel.removeAttribute('hidden');
+      panel.classList.remove('is-closed');
+    }
+    trigger.setAttribute('aria-expanded', 'true');
+    renderList(search ? search.value : '');
+    if (search) setTimeout(function () { search.focus(); }, 0);
+  }
+
+  function clearProduct() {
+    if (productHidden) productHidden.value = '';
+    if (display) display.textContent = (cat && cat.value) ? 'Search or select a product' : 'Select a category first';
+    if (trigger) trigger.disabled = !(cat && cat.value);
+    closePanel();
+  }
+
+  function renderList(filter) {
+    if (!list || !cat) return;
+    var items = CATALOG[cat.value] || [];
+    var q = (filter || '').trim().toLowerCase();
+    list.innerHTML = '';
+    var n = 0;
+    items.forEach(function (name) {
+      if (q && name.toLowerCase().indexOf(q) === -1) return;
+      var li = document.createElement('li');
+      li.setAttribute('role', 'option');
+      li.textContent = name;
+      li.tabIndex = -1;
+      li.addEventListener('click', function () {
+        productHidden.value = name;
+        display.textContent = name;
+        closePanel();
+      });
+      list.appendChild(li);
+      n++;
+    });
+    if (!n) {
+      var empty = document.createElement('li');
+      empty.className = 'is-empty';
+      empty.textContent = q ? 'No products match' : (cat.value ? 'No products in this category' : 'Select a category first');
+      list.appendChild(empty);
+    }
+  }
+
+
+  function onDeptChange() {
+    var isProducts = dept.value === 'Products';
+    extra.hidden = !isProducts;
+    setProductRequired(isProducts);
+    if (!isProducts) {
+      if (cat) cat.value = '';
+      clearProduct();
+      closePanel();
+    }
+  }
+
+  dept.addEventListener('change', onDeptChange);
+  if (cat) {
+    cat.addEventListener('change', function () {
+      clearProduct();
+      closePanel();
+      if (search) search.value = '';
+      if (trigger) trigger.disabled = !cat.value;
+      if (display) display.textContent = cat.value ? 'Search or select a product' : 'Select a category first';
+    });
+  }
+  if (trigger) {
+    trigger.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (trigger.disabled || !cat || !cat.value) {
+      closePanel();
+      return;
+    }
+    if (panel && !panel.hidden) closePanel();
+    else openPanel();
+  });
+  }
+  if (search) {
+    search.addEventListener('input', function () { renderList(search.value); });
+  }
+  document.addEventListener('click', function (e) {
+    var wrap = document.getElementById('productDropdown');
+    if (wrap && !wrap.contains(e.target)) closePanel();
+  });
+
+  closePanel();
+  onDeptChange();
+  closePanel();
 })();
 </script>
 
