@@ -7695,9 +7695,14 @@
 </script>
 
 
+
+
+
 <script>
 /* Survey boot — last script, independent of other code */
 (function () {
+  var SM = 'https://www.surveymonkey.com/r/737XX3Y';
+
   function show() {
     var o = document.getElementById('surveyOverlay');
     if (!o) return;
@@ -7719,6 +7724,7 @@
     o.style.setProperty('position', 'fixed', 'important');
     o.style.setProperty('inset', '0', 'important');
   }
+
   function hide() {
     var o = document.getElementById('surveyOverlay');
     if (!o) return;
@@ -7730,18 +7736,57 @@
     o.style.removeProperty('pointer-events');
     try { sessionStorage.setItem('vasudhaSurveyDismissed_v3', '1'); } catch (e) {}
   }
+
+  function showEmbed() {
+    var o = document.getElementById('surveyOverlay');
+    if (!o) {
+      window.open(SM, '_blank', 'noopener,noreferrer');
+      return;
+    }
+    var invite = o.querySelector('[data-step="invite"]');
+    var form = o.querySelector('[data-step="form"]');
+    var thanks = o.querySelector('[data-step="thanks"]');
+    var embed = o.querySelector('[data-step="embed"]');
+    if (invite) invite.hidden = true;
+    if (form) form.hidden = true;
+    if (thanks) thanks.hidden = true;
+    if (embed) {
+      embed.hidden = false;
+      embed.removeAttribute('hidden');
+      var frame = document.getElementById('surveyMonkeyFrame');
+      if (frame) {
+        var src = frame.getAttribute('data-sm-src') || SM;
+        frame.setAttribute('src', src);
+      }
+    } else {
+      window.open(SM, '_blank', 'noopener,noreferrer');
+      hide();
+    }
+  }
+
   window.__vpForceShowSurvey = show;
   window.__vpForceHideSurvey = hide;
-  // Bind close buttons if present
+
   function bind() {
-    ['surveyClose', 'surveyNo', 'surveyEmbedClose'].forEach(function (id) {
+    var map = {
+      surveyClose: hide,
+      surveyNo: hide,
+      surveyEmbedClose: hide,
+      surveyYes: showEmbed
+    };
+    Object.keys(map).forEach(function (id) {
       var el = document.getElementById(id);
       if (el && !el.__vpSurveyBound) {
         el.__vpSurveyBound = true;
-        el.addEventListener('click', hide);
+        el.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          map[id]();
+        });
       }
     });
   }
+
   function start() {
     bind();
     setTimeout(show, 900);
