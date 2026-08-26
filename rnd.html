@@ -6380,10 +6380,13 @@
 
       if (yesBtn) {
         yesBtn.addEventListener('click', function () {
-          inviteStep.hidden = true;
-          formStep.hidden = false;
-          currentQ = 1;
-          showQuestion(currentQ);
+          /* Open SurveyMonkey collector — answers store in your SurveyMonkey account */
+          try {
+            window.open('https://www.surveymonkey.com/r/737XX3Y', '_blank', 'noopener,noreferrer');
+          } catch (e) {
+            window.location.href = 'https://www.surveymonkey.com/r/737XX3Y';
+          }
+          closeSurvey();
         });
       }
 
