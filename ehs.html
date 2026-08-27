@@ -5269,7 +5269,7 @@
       margin-top: 14px;
     }
     .survey-modal {
-      max-width: min(640px, 94vw) !important;
+      max-width: 460px !important;
     }
 
   
@@ -5282,6 +5282,29 @@
       opacity: 1 !important;
       visibility: visible !important;
       pointer-events: auto !important;
+    }
+
+  
+    /* Header logo bag — 1st line (company name) +5–6px */
+    header .logo .logo-text strong {
+      font-size: 20px !important;
+      line-height: 1.25 !important;
+    }
+
+  
+    /* Logo liquid must paint above mark and respond to JS height */
+    .logo-flask-liquid,
+    #logoLiquid {
+      z-index: 5 !important;
+      pointer-events: none !important;
+      transition: height 0.2s ease-out !important;
+    }
+
+  
+    /* Keep survey modal original width */
+    .survey-modal {
+      max-width: 460px !important;
+      width: 100% !important;
     }
 
   </style>
@@ -6246,7 +6269,7 @@
 
   <!-- Feedback Survey Modal -->
   <div class="survey-overlay" id="surveyOverlay" aria-hidden="true">
-    <div class="survey-modal" role="dialog" aria-modal="true" aria-label="Website feedback survey">
+    <div class="survey-modal" role="dialog" aria-modal="true" aria-label="Website feedback survey" style="max-width:460px;width:100%;box-sizing:border-box;">
       <button class="survey-close" id="surveyClose" aria-label="Close survey">&times;</button>
 
       <!-- Step: Invite -->
@@ -6257,7 +6280,7 @@
         </div>
         <p class="survey-invite-text">Please take a few minutes to share your feedback on our website.</p>
         <div class="survey-invite-actions">
-          <button type="button" class="survey-btn survey-btn-primary" id="surveyYes">Yes, I'll participate</button>
+          <button type="button" class="survey-btn survey-btn-primary" id="surveyYes" onclick="if(window.__vpSurveyStart)window.__vpSurveyStart(); return false;">Yes, I'll participate</button>
           <button type="button" class="survey-btn survey-btn-outline" id="surveyNo">No, Thanks</button>
         </div>
       </div>
@@ -6344,9 +6367,9 @@
         </div>
 
         <div class="survey-nav">
-          <button type="button" class="survey-btn survey-btn-outline" id="surveyPrev">&lsaquo; Previous</button>
-          <button type="button" class="survey-btn survey-btn-primary" id="surveyNext">Next &rsaquo;</button>
-          <button type="button" class="survey-btn survey-btn-primary" id="surveySubmit" hidden>Submit</button>
+          <button type="button" class="survey-btn survey-btn-outline" id="surveyPrev" onclick="if(window.__vpSurveyPrev)window.__vpSurveyPrev(); return false;">&lsaquo; Previous</button>
+          <button type="button" class="survey-btn survey-btn-primary" id="surveyNext" onclick="if(window.__vpSurveyNext)window.__vpSurveyNext(); return false;">Next &rsaquo;</button>
+          <button type="button" class="survey-btn survey-btn-primary" id="surveySubmit" onclick="if(window.__vpSurveySubmit)window.__vpSurveySubmit(); return false;">Submit</button>
         </div>
       </div>
 
@@ -7570,13 +7593,127 @@
 
 
 
-<script>
-/* Survey boot — last script, independent of other code */
-(function () {
-  var SM = 'https://www.surveymonkey.com/r/737XX3Y';
 
-  function show() {
-    var o = document.getElementById('surveyOverlay');
+
+
+<script>
+/* Logo liquid fill on scroll — robust */
+(function () {
+  function liquids() {
+    return document.querySelectorAll('.logo-flask-liquid, #logoLiquid');
+  }
+  function update() {
+    var scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var progress = docHeight > 0 ? Math.min(Math.max(scrollTop / docHeight, 0), 1) : 0;
+    // smoothstep
+    var eased = progress * progress * (3 - 2 * progress);
+    // 15% at top → ~92% near bottom
+    var fill = 15 + eased * 77;
+    liquids().forEach(function (el) {
+      el.style.setProperty('height', fill + '%', 'important');
+      if (fill > 85) el.classList.add('logo-liquid-full');
+      else el.classList.remove('logo-liquid-full');
+    });
+    // capsule powder if present
+    var powder = document.getElementById('flaskLiquid');
+    if (powder) {
+      var w = 32 + progress * 63;
+      powder.style.setProperty('width', w + '%', 'important');
+    }
+  }
+  var ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      update();
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', update);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', update);
+  } else {
+    update();
+  }
+  // re-run after load (images change height)
+  window.addEventListener('load', update);
+})();
+</script>
+
+
+
+
+
+<script>
+/* Survey boot — native Qs + Zoho; Next/Prev included */
+(function () {
+  var currentQ = 1;
+
+  function overlay() { return document.getElementById('surveyOverlay'); }
+
+  function questions() {
+    var o = overlay();
+    return o ? Array.prototype.slice.call(o.querySelectorAll('.survey-question')) : [];
+  }
+
+  function totalQ() {
+    var n = questions().length;
+    return n || 5;
+  }
+
+  function setStep(name) {
+    var o = overlay();
+    if (!o) return;
+    o.querySelectorAll('.survey-step').forEach(function (s) {
+      var on = s.getAttribute('data-step') === name;
+      s.hidden = !on;
+      if (on) {
+        s.removeAttribute('hidden');
+        s.style.display = '';
+      } else {
+        s.style.display = 'none';
+      }
+    });
+  }
+
+  function showQuestion(n) {
+    currentQ = n;
+    var qs = questions();
+    var tot = qs.length || 5;
+    if (currentQ < 1) currentQ = 1;
+    if (currentQ > tot) currentQ = tot;
+    qs.forEach(function (q) {
+      var qn = parseInt(q.getAttribute('data-q'), 10);
+      var on = qn === currentQ;
+      q.hidden = !on;
+      q.style.display = on ? '' : 'none';
+    });
+    var pct = Math.round((currentQ / tot) * 100);
+    var fill = document.getElementById('surveyProgressFill');
+    var lab = document.getElementById('surveyProgressLabel');
+    if (fill) fill.style.width = pct + '%';
+    if (lab) lab.textContent = pct + '% Survey Completion';
+    var prev = document.getElementById('surveyPrev');
+    var next = document.getElementById('surveyNext');
+    var sub = document.getElementById('surveySubmit');
+    if (prev) prev.disabled = currentQ <= 1;
+    if (next) {
+      next.hidden = currentQ >= tot;
+      next.style.display = currentQ >= tot ? 'none' : '';
+    }
+    if (sub) {
+      sub.hidden = currentQ < tot;
+      sub.style.display = currentQ >= tot ? '' : 'none';
+    }
+  }
+
+  window.__vpSurveyShowQuestion = showQuestion;
+
+  function showInvite() {
+    var o = overlay();
     if (!o) return;
     try {
       var p = new URLSearchParams(window.location.search || '');
@@ -7586,6 +7723,7 @@
         if (sessionStorage.getItem('vasudhaSurveyDismissed_v3') === '1') return;
       }
     } catch (e) {}
+    setStep('invite');
     o.classList.add('visible');
     o.setAttribute('aria-hidden', 'false');
     o.style.setProperty('opacity', '1', 'important');
@@ -7598,7 +7736,7 @@
   }
 
   function hide() {
-    var o = document.getElementById('surveyOverlay');
+    var o = overlay();
     if (!o) return;
     o.classList.remove('visible');
     o.setAttribute('aria-hidden', 'true');
@@ -7609,59 +7747,136 @@
     try { sessionStorage.setItem('vasudhaSurveyDismissed_v3', '1'); } catch (e) {}
   }
 
-  function showEmbed() {
-    var o = document.getElementById('surveyOverlay');
-    if (!o) {
-      window.open(SM, '_blank', 'noopener,noreferrer');
-      return;
-    }
-    var invite = o.querySelector('[data-step="invite"]');
-    var form = o.querySelector('[data-step="form"]');
-    var thanks = o.querySelector('[data-step="thanks"]');
-    var embed = o.querySelector('[data-step="embed"]');
-    if (invite) invite.hidden = true;
-    if (form) form.hidden = true;
-    if (thanks) thanks.hidden = true;
-    if (embed) {
-      embed.hidden = false;
-      embed.removeAttribute('hidden');
-      var frame = document.getElementById('surveyMonkeyFrame');
-      if (frame) {
-        var src = frame.getAttribute('data-sm-src') || SM;
-        frame.setAttribute('src', src);
-      }
-    } else {
-      window.open(SM, '_blank', 'noopener,noreferrer');
-      hide();
-    }
+  function startForm() {
+    setStep('form');
+    showQuestion(1);
   }
 
-  window.__vpForceShowSurvey = show;
+  function selectedRadio(name) {
+    var el = document.querySelector('#surveyOverlay input[name="' + name + '"]:checked');
+    if (!el) return '';
+    var span = el.parentNode && el.parentNode.querySelector('span');
+    return (span ? span.textContent : el.value || '').trim();
+  }
+
+  function selectedChecks(name) {
+    var out = [];
+    document.querySelectorAll('#surveyOverlay input[name="' + name + '"]:checked').forEach(function (el) {
+      var span = el.parentNode && el.parentNode.querySelector('span');
+      out.push((span ? span.textContent : el.value || '').trim());
+    });
+    return out.join('; ');
+  }
+
+  function postZoho(payload) {
+    var iframe = document.getElementById('zohoSurveyFrame');
+    if (!iframe) {
+      iframe = document.createElement('iframe');
+      iframe.name = 'zohoSurveyFrame';
+      iframe.id = 'zohoSurveyFrame';
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+    }
+    var form = document.createElement('form');
+    form.method = 'POST';
+    form.action = 'https://crm.zoho.in/crm/WebToLeadForm';
+    form.target = 'zohoSurveyFrame';
+    form.style.display = 'none';
+    function add(n, v) {
+      var i = document.createElement('input');
+      i.type = 'hidden';
+      i.name = n;
+      i.value = v == null ? '' : String(v);
+      form.appendChild(i);
+    }
+    add('xnQsjsdp', '25f178ab23f91fb401bb31125e7ce47cd9c4c8cea375c82c881d8e154b72295d');
+    add('zc_gad', '');
+    add('xmIwtLD', 'e84e4221a0dcb321dd7cda09a52754909da0a2a205c3b55c069a6e13fdf8e0415d25e2cd617676233fc91ecdf848c16a');
+    add('actionType', 'TGVhZHM=');
+    add('returnURL', 'https://saikrishna-bethamcharla.github.io/vasudhapharma/home.html');
+    add('Last Name', payload.lastName || 'Website Survey');
+    add('Company', 'Website Survey');
+    add('Description', payload.description || '');
+    add('Lead Source', 'Web Research');
+    add('LEADCF11', payload.enquiryType || 'Website Survey');
+    add('LEADCF12', payload.q1 || '');
+    add('LEADCF9', payload.q2 || '');
+    add('LEADCF10', payload.q3 || '');
+    add('LEADCF13', payload.q4 || '');
+    add('LEADCF8', payload.q5 || '');
+    document.body.appendChild(form);
+    form.submit();
+    setTimeout(function () { try { form.remove(); } catch (e) {} }, 1200);
+  }
+
+  function radioVal(name) {
+    var el = document.querySelector('#surveyOverlay input[name="' + name + '"]:checked');
+    return el ? (el.value || '') : '';
+  }
+  function submitSurvey() {
+    var q1v = radioVal('q1');
+    var q2v = radioVal('q2');
+    var q3v = radioVal('q3');
+    var q4v = radioVal('q4');
+    var q1Map = {search:'search engine',direct:'direct link',referral:'Referral',social:'social media / linkedin',other:'Others'};
+    var q2Map = {products:'Looking for API / product information',manufacturing:'Researching manufacturing capabilities',careers:'Exploring career opportunities',ehs:'Regulatory / compliance information (EHS)',other:'Others'};
+    var q3Map = {nav:'Used the main navigation/menu','search-site':'Used site search',browsed:'Scrolled or browsed pages','engine-link':'Direct link from Google or another search engine',other:'Other'};
+    var q4Map = {yes:'Yes, completely',partially:'Partially',no:'No'};
+    var q1 = q1Map[q1v] || selectedRadio('q1');
+    var q2 = q2Map[q2v] || selectedRadio('q2');
+    var q3 = q3Map[q3v] || selectedRadio('q3');
+    var q4 = q4Map[q4v] || selectedRadio('q4');
+    var q5 = selectedChecks('q5');
+    var description = [
+      '=== WEBSITE SURVEY ===',
+      'Lead type: Website Survey',
+      '',
+      'Q1 How did you find us today?: ' + (q1 || '—'),
+      'Q2 What brought you to our website today?: ' + (q2 || '—'),
+      'Q3 How did you find the information?: ' + (q3 || '—'),
+      'Q4 Were you able to find what you were looking for?: ' + (q4 || '—'),
+      'Q5 How could we improve the site experience?: ' + (q5 || '—')
+    ].join('\n');
+    try { postZoho({ lastName: 'Website Survey', description: description, enquiryType: 'Website Survey', q1: q1, q2: q2, q3: q3, q4: q4, q5: q5 }); } catch (e) {}
+    setStep('thanks');
+    try { sessionStorage.setItem('vasudhaSurveyDismissed_v3', '1'); } catch (e) {}
+    setTimeout(hide, 2800);
+  }
+
+  window.__vpSurveyNext = function () { if (currentQ < totalQ()) showQuestion(currentQ + 1); };
+  window.__vpSurveyPrev = function () { if (currentQ > 1) showQuestion(currentQ - 1); };
+  window.__vpSurveySubmit = submitSurvey;
+  window.__vpSurveyStart = startForm;
+  window.__vpForceShowSurvey = showInvite;
   window.__vpForceHideSurvey = hide;
 
   function bind() {
-    var map = {
-      surveyClose: hide,
-      surveyNo: hide,
-      surveyEmbedClose: hide,
-      surveyYes: showEmbed
-    };
-    Object.keys(map).forEach(function (id) {
+    function once(id, fn) {
       var el = document.getElementById(id);
-      if (el && !el.__vpSurveyBound) {
-        el.__vpSurveyBound = true;
-        el.addEventListener('click', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          map[id]();
-        });
-      }
+      if (!el || el.__vpZohoBound) return;
+      el.__vpZohoBound = true;
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        fn(e);
+      }, true);
+    }
+    once('surveyYes', startForm);
+    once('surveyNo', hide);
+    once('surveyClose', hide);
+    once('surveyEmbedClose', hide);
+    once('surveyPrev', function () {
+      if (currentQ > 1) showQuestion(currentQ - 1);
     });
+    once('surveyNext', function () {
+      if (currentQ < totalQ()) showQuestion(currentQ + 1);
+    });
+    once('surveySubmit', submitSurvey);
   }
 
   function start() {
     bind();
-    setTimeout(show, 900);
+    setTimeout(showInvite, 900);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
   else start();
