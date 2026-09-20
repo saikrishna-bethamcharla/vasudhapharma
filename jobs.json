@@ -1,0 +1,101 @@
+{
+  "updated": "2026-09-08",
+  "note": "HR edits this file (or the staff portal). status=open shows on Careers. status=closed hides it.",
+  "jobs": [
+    {
+      "id": "VP-QC-001",
+      "title": "Quality Control Officer",
+      "department": "Quality",
+      "location": "Hyderabad, Telangana, IN",
+      "posted": "04 Sep 2026",
+      "status": "open",
+      "skills": [
+        "QC",
+        "GMP",
+        "HPLC",
+        "analysis",
+        "QA",
+        "B.Pharm",
+        "M.Sc"
+      ],
+      "role": "Support routine QC testing of active pharmaceutical ingredients (APIs) and chemical intermediates in line with approved cGMP testing methods and pharmacopeial standards.",
+      "duties": "Perform chromatographic (HPLC/GC) and wet chemical testing, maintain audit-ready laboratory records, report deviations, and collaborate with QA on out-of-specification investigations.",
+      "profile": "M.Sc. Chemistry / B.Pharm with 2-4 years of analytical testing experience in a regulatory-approved API facility."
+    },
+    {
+      "id": "VP-PRD-002",
+      "title": "Production Chemist",
+      "department": "Manufacturing",
+      "location": "Visakhapatnam, Andhra Pradesh, IN",
+      "posted": "02 Sep 2026",
+      "status": "open",
+      "skills": [
+        "production",
+        "BMR",
+        "BPR",
+        "reactors",
+        "chemistry",
+        "shift"
+      ],
+      "role": "Manage shift operations in bulk API synthesis and reaction suites under the plant operations manager.",
+      "duties": "Execute batch manufacturing records (BMR), monitor critical process parameters (temperature, pressure, agitation), ensure PPE compliance, and execute seamless shift handovers.",
+      "profile": "B.Sc. / M.Sc. Chemistry or Diploma in Chemical Engineering with plant-floor synthesis experience."
+    },
+    {
+      "id": "VP-EHS-003",
+      "title": "EHS Executive",
+      "department": "EHS",
+      "location": "Hyderabad, Telangana, IN",
+      "posted": "28 Aug 2026",
+      "status": "open",
+      "skills": [
+        "EHS",
+        "safety",
+        "environment",
+        "permits",
+        "ISO 14001",
+        "compliance"
+      ],
+      "role": "Champion environmental compliance, occupational health, and process safety standards across operational units.",
+      "duties": "Conduct safety audits, lead hazard identification (HAZOP) reviews, track effluent treatment plant (ETP) metrics, manage work permits, and coordinate regulatory filings.",
+      "profile": "Degree / Diploma in Industrial Safety or Environmental Engineering with 3+ years in chemical / pharma manufacturing."
+    },
+    {
+      "id": "VP-RND-004",
+      "title": "Senior Research Chemist — Process R&D",
+      "department": "R&D",
+      "location": "Hyderabad, Telangana, IN",
+      "posted": "05 Sep 2026",
+      "status": "open",
+      "skills": [
+        "R&D",
+        "process chemistry",
+        "scale-up",
+        "synthesis",
+        "reaction engineering"
+      ],
+      "role": "Lead synthetic route scouting, reaction optimization, and technology transfer for generic APIs and pipeline molecules.",
+      "duties": "Design non-infringing synthetic pathways, optimize reaction stoichiometry to improve yields and minimize solvent waste, and prepare tech-transfer packages for commercial manufacturing.",
+      "profile": "Ph.D. or M.Sc. in Organic Chemistry with 4-7 years in API process development and route optimization."
+    },
+    {
+      "id": "VP-RA-005",
+      "title": "Regulatory Affairs Specialist",
+      "department": "Corporate Governance",
+      "location": "Hyderabad, Telangana, IN",
+      "posted": "01 Sep 2026",
+      "status": "closed",
+      "skills": [
+        "DMF",
+        "CTD",
+        "eCTD",
+        "USFDA",
+        "regulatory",
+        "dossier"
+      ],
+      "role": "Prepare, compile, and maintain Drug Master Files (DMF / CEP) for international regulatory agencies.",
+      "duties": "Author Module 3 quality sections, respond to regulatory deficiency letters, track post-approval changes, and support customer audits.",
+      "profile": "M.Pharm / M.Sc. with 5+ years of experience in USFDA / EDQM filings."
+    }
+  ]
+}

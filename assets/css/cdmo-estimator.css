@@ -1,0 +1,217 @@
+/* Vasudha Pharma — CDMO Feasibility Estimator Styles (Vasudha Theme Blue) */
+.vp-cdmo-section {
+  padding: 64px 0;
+  background: #FFFFFF;
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+}
+.vp-cdmo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.vp-cdmo-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+.vp-cdmo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  background: #EFF6FF;
+  color: #254696;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1px solid #DBEAFE;
+  margin-bottom: 12px;
+}
+.vp-cdmo-title {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+}
+.vp-cdmo-desc {
+  font-size: 15px;
+  color: #64748B;
+  max-width: 760px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.vp-cdmo-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 960px) {
+  .vp-cdmo-grid { grid-template-columns: 1fr; }
+}
+.vp-cdmo-steps-card {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.05);
+}
+.vp-cdmo-step-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0F172A;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 22px 0 12px;
+}
+.vp-cdmo-step-title:first-child { margin-top: 0; }
+.vp-cdmo-step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #254696;
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11.5px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.vp-cdmo-options {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.vp-cdmo-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13.5px;
+  color: #334155;
+  font-weight: 500;
+}
+.vp-cdmo-radio-label:hover {
+  border-color: #254696;
+  background: #F0F4FF;
+  color: #254696;
+}
+.vp-cdmo-radio-label:has(input[type="radio"]:checked) {
+  border-color: #254696;
+  background: #EFF6FF;
+  color: #1E3A8A;
+  font-weight: 600;
+  box-shadow: 0 0 0 1px #254696;
+}
+.vp-cdmo-radio-label input[type="radio"] {
+  accent-color: #254696;
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  cursor: pointer;
+}
+.vp-cdmo-dossier-card {
+  background: #FFFFFF;
+  border: 2px solid #254696;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 20px 45px -12px rgba(37, 70, 150, 0.15);
+  position: sticky;
+  top: 100px;
+}
+.vp-dossier-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #E2E8F0;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+.vp-dossier-tag {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: #DCFCE7;
+  color: #15803D;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #BBF7D0;
+  letter-spacing: 0.04em;
+}
+.vp-dossier-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.vp-dossier-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.vp-dossier-lbl {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748B;
+  letter-spacing: 0.05em;
+}
+.vp-dossier-val {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0F172A;
+  line-height: 1.4;
+}
+.vp-dossier-form {
+  border-top: 1px solid #E2E8F0;
+  padding-top: 20px;
+}
+.vp-dossier-form input, .vp-dossier-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: inherit;
+  margin-bottom: 10px;
+  transition: border-color 0.2s;
+}
+.vp-dossier-form input:focus, .vp-dossier-form textarea:focus {
+  outline: none;
+  border-color: #254696;
+  box-shadow: 0 0 0 3px rgba(37, 70, 150, 0.12);
+}
+.vp-dossier-submit-btn {
+  width: 100%;
+  background: #254696;
+  color: #FFFFFF;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.vp-dossier-submit-btn:hover {
+  background: #1B3577;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 70, 150, 0.25);
+}

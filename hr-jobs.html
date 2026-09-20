@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Careers &amp; HR Workspace | Vasudha Pharma Chem Limited</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sp-primary: #3D5CAD;
+      --sp-primary-dark: #2E4A8A;
+      --sp-primary-hover: #254696;
+      --sp-primary-light: #EEF2FB;
+      --sp-accent: #5B7AD4;
+      --sp-bg: #F4F7FC;
+      --sp-card-bg: #FFFFFF;
+      --sp-border: #E2E8F0;
+      --sp-text-main: #0F172A;
+      --sp-text-muted: #556987;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--sp-bg);
+      color: var(--sp-text-main);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+    .staff-shimmer-bar {
+      height: 3px;
+      background: linear-gradient(90deg, #3D5CAD 0%, #5B7AD4 50%, #7C9AE8 100%);
+      width: 100%;
+    }
+    header {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--sp-border);
+      padding: 14px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .logo-hex {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(61,92,173,0.16);
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+    }
+    .logo-hex img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .brand-text strong {
+      display: block;
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #C8102E;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+    .brand-text span {
+      display: block;
+      font-size: 11px;
+      font-style: italic;
+      color: #0088AA;
+      line-height: 1.2;
+      margin-top: 1px;
+    }
+    .header-links {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 24px 60px;
+    }
+    .card {
+      background: var(--sp-card-bg);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 22px;
+      border: 1px solid var(--sp-border);
+      box-shadow: 0 4px 20px -4px rgba(46, 74, 138, 0.06);
+    }
+    h1, h2 { color: var(--sp-text-main); font-weight: 700; letter-spacing: -0.02em; }
+    label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #334155;
+      margin: 14px 0 6px;
+    }
+    input, textarea, select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px 13px;
+      border: 1px solid var(--sp-border);
+      border-radius: 8px;
+      font: inherit;
+      font-size: 13.5px;
+      background: #FAFAFA;
+      color: #0F172A;
+      transition: all 0.15s ease;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--sp-primary);
+      background: #FFFFFF;
+      box-shadow: 0 0 0 3px rgba(61, 92, 173, 0.15);
+    }
+    textarea { min-height: 80px; resize: vertical; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 768px) { .row { grid-template-columns: 1fr; } }
+    .btn {
+      cursor: pointer;
+      border: 0;
+      border-radius: 8px;
+      padding: 9px 18px;
+      font-weight: 600;
+      font-size: 13px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--sp-primary) 0%, var(--sp-primary-dark) 100%);
+      color: #FFFFFF;
+      box-shadow: 0 2px 6px rgba(46, 74, 138, 0.25);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--sp-primary-hover) 0%, #172554 100%);
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      background: #EEF2FB;
+      color: var(--sp-primary-dark);
+      border: 1px solid #D5E0F7;
+    }
+    .btn-ghost:hover {
+      background: #DCE5F9;
+      border-color: var(--sp-primary);
+    }
+    .btn-danger {
+      background: #FEF2F2;
+      color: #DC2626;
+      border: 1px solid #FECACA;
+    }
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 13.5px;
+    }
+    th {
+      text-align: left;
+      padding: 11px 14px;
+      background: #F8FAFC;
+      color: #475569;
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid var(--sp-border);
+    }
+    td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--sp-border);
+      vertical-align: middle;
+      color: #1E293B;
+    }
+    .open { color: #059669; font-weight: 700; }
+    .closed { color: #94A3B8; }
+    .hint {
+      font-size: 13px;
+      color: var(--sp-text-muted);
+      line-height: 1.6;
+      background: #EEF2FB;
+      border-left: 3px solid var(--sp-primary);
+      padding: 12px 16px;
+      border-radius: 4px;
+    }
+  </style>
+
+  <!-- OpenGraph & Social Cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Vasudha Pharma Chem Limited">
+  <meta property="og:url" content="https://vasudhapharma.com/hr-jobs.html">
+  <meta property="og:title" content="Careers &amp; HR Workspace | Vasudha Pharma Chem Limited">
+  <meta property="og:description" content="Vasudha Pharma Chem Limited is a leading manufacturer of Active Pharmaceutical Ingredients (APIs) and Pharma Intermediates.">
+  <meta property="og:image" content="https://vasudhapharma.com/assets/company-aerial.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Careers &amp; HR Workspace | Vasudha Pharma Chem Limited">
+  <meta name="twitter:description" content="Vasudha Pharma Chem Limited is a leading manufacturer of Active Pharmaceutical Ingredients (APIs) and Pharma Intermediates.">
+  <meta name="twitter:image" content="https://vasudhapharma.com/assets/company-aerial.jpg">
+  <link rel="canonical" href="https://vasudhapharma.com/hr-jobs.html">
+</head>
+<body>
+  <div class="staff-shimmer-bar"></div>
+  <header>
+    <div class="brand-wrap">
+      <div class="logo-hex">
+        <img src="assets/vasudha-logo.jpg" alt="Vasudha Pharma">
+      </div>
+      <div class="brand-text">
+        <strong>VASUDHA PHARMA CHEM LIMITED</strong>
+        <span>HR Operations &bull; Job Listings Management &bull; <em>Since 1994</em></span>
+      </div>
+    </div>
+    <div class="header-links">
+      <a href="staff/" class="btn btn-primary">Open Full Staff Portal &rarr;</a>
+      <a href="careers.html#openings" target="_blank" rel="noopener" class="btn btn-ghost">Preview Careers Page</a>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="card hint">
+      <strong>HR Operations Console:</strong> This screen manages <code>jobs.json</code>. Changes published as <em>open</em> appear automatically on the public <a href="careers.html#openings" target="_blank" rel="noopener" style="color:var(--sp-primary);font-weight:700;text-decoration:underline;">Careers Portal</a>. For full department controls and user administration, use the <a href="staff/" style="color:var(--sp-primary);font-weight:700;text-decoration:underline;">Vasudha Operations Portal</a>.
+    </div>
+
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:10px;">
+        <h2 style="margin:0;font-size:18px;">Active &amp; Archived Requisitions</h2>
+        <div style="display:flex;gap:8px;">
+          <button class="btn btn-ghost" type="button" id="newBtn">+ New Job</button>
+          <button class="btn btn-primary" type="button" id="dlBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download jobs.json
+          </button>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Title</th><th>Department</th><th>Location</th><th>Status</th><th style="text-align:right">Action</th></tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+
+    <div class="card" id="editor">
+      <h2 id="edTitle" style="margin-top:0;font-size:18px;">Create / Edit Requisition</h2>
+      <div class="row">
+        <div><label>Job ID *</label><input id="id" placeholder="VP-QC-004"></div>
+        <div><label>Status</label><select id="status"><option value="open">open (visible on Careers)</option><option value="closed">closed (hidden from public)</option></select></div>
+      </div>
+      <label>Title *</label><input id="title" placeholder="Quality Control Officer">
+      <div class="row">
+        <div><label>Department</label><input id="department" placeholder="Quality"></div>
+        <div><label>Location</label><input id="location" placeholder="Hyderabad, Telangana, IN"></div>
+      </div>
+      <label>Posted Label</label><input id="posted" placeholder="08 Sep 2026">
+      <label>Skills (comma separated — used for search and candidate keyword matching)</label>
+      <input id="skills" placeholder="QC, GMP, HPLC, B.Pharm">
+      <label>Role Overview</label><textarea id="role"></textarea>
+      <label>What You Will Do</label><textarea id="duties"></textarea>
+      <label>Profile Requirements</label><textarea id="profile"></textarea>
+      <p style="margin-top:20px;display:flex;gap:10px;">
+        <button class="btn btn-primary" type="button" id="saveBtn">Save to List</button>
+        <button class="btn btn-danger" type="button" id="delBtn">Remove from List</button>
+      </p>
+    </div>
+  </div>
+
+  <script>
+  let data = { jobs: [] };
+  let editing = null;
+  function load(){
+    fetch("jobs.json").then(r=>r.json()).then(j=>{ data = j; if(!data.jobs) data.jobs=[]; render(); }).catch(()=>{ data={jobs:[]}; render(); });
+  }
+  function render(){
+    document.getElementById("rows").innerHTML = data.jobs.map((j,i)=>
+      `<tr>
+        <td><strong style="color:var(--sp-primary)">${j.id}</strong></td>
+        <td><strong>${j.title}</strong></td>
+        <td>${j.department||""}</td>
+        <td>${j.location||""}</td>
+        <td class="${j.status==="closed"?"closed":"open"}">${j.status==="closed"?"○ closed":"● open"}</td>
+        <td style="text-align:right"><button class="btn btn-ghost" style="padding:4px 10px;font-size:12px;" type="button" onclick="edit(${i})">Edit</button></td>
+      </tr>`
+    ).join("") || "<tr><td colspan='6' style='text-align:center;padding:24px;color:#94A3B8;'>No jobs listed yet.</td></tr>";
+  }
+  function formObj(){
+    return {
+      id: id.value.trim(),
+      title: title.value.trim(),
+      department: department.value.trim(),
+      location: location.value.trim(),
+      posted: posted.value.trim() || new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
+      status: status.value,
+      skills: skills.value.split(",").map(s=>s.trim()).filter(Boolean),
+      role: role.value.trim(),
+      duties: duties.value.trim(),
+      profile: profile.value.trim()
+    };
+  }
+  function fill(j){
+    editing = j ? data.jobs.indexOf(j) : null;
+    edTitle.textContent = j ? "Edit " + j.id : "New Job Requisition";
+    id.value = j?.id||""; title.value=j?.title||""; department.value=j?.department||"";
+    location.value=j?.location||"Hyderabad, Telangana, IN"; posted.value=j?.posted||new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }); status.value=j?.status||"open";
+    skills.value=(j?.skills||[]).join(", "); role.value=j?.role||""; duties.value=j?.duties||""; profile.value=j?.profile||"";
+  }
+  window.edit = function(i){ fill(data.jobs[i]); };
+  newBtn.onclick = ()=>fill(null);
+  saveBtn.onclick = ()=>{
+    const o = formObj();
+    if(!o.id || !o.title){ alert("ID and Title are required"); return; }
+    const i = data.jobs.findIndex(j=>j.id===o.id);
+    if(i>=0) data.jobs[i]=o; else data.jobs.push(o);
+    render();
+    fill(null);
+  };
+  delBtn.onclick = ()=>{
+    const o = formObj();
+    if(!o.id) return;
+    if(!confirm("Remove requisition " + o.id + "?")) return;
+    data.jobs = data.jobs.filter(j=>j.id!==o.id);
+    fill(null); render();
+  };
+  dlBtn.onclick = ()=>{
+    data.updated = new Date().toISOString().slice(0,10);
+    const blob = new Blob([JSON.stringify(data,null,2)], {type:"application/json"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "jobs.json";
+    a.click();
+  };
+  load();
+  </script>
+</body>
+</html>

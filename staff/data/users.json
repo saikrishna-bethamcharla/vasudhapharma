@@ -1,0 +1,16 @@
+[
+  {
+    "email": "admin@vasudha.local",
+    "name": "Administrator",
+    "role": "admin",
+    "dept": "admin",
+    "hash": "$2y$10$lsLpbGo.XURaxcUVmHbcIOthQDMAExeSZ7IsMtPQiKXIfSl6ErPnu"
+  },
+  {
+    "email": "hr@vasudha.local",
+    "name": "HR",
+    "role": "hr",
+    "dept": "careers",
+    "hash": "$2y$10$lsLpbGo.XURaxcUVmHbcIOthQDMAExeSZ7IsMtPQiKXIfSl6ErPnu"
+  }
+]

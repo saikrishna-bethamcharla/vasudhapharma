@@ -1,0 +1,45 @@
+{
+  "vasudha": [
+    "assets/foundation/vf-01.png",
+    "assets/foundation/vf-02.png",
+    "assets/foundation/vf-03.png",
+    "assets/foundation/vf-04.png",
+    "assets/foundation/vf-05.png",
+    "assets/foundation/vf-06.png",
+    "assets/foundation/vf-07.png",
+    "assets/foundation/vf-08.png",
+    "assets/foundation/vf-09.png",
+    "assets/foundation/vf-10.png",
+    "assets/foundation/vf-11.png",
+    "assets/foundation/vf-12.png",
+    "assets/foundation/vf-13.png",
+    "assets/foundation/vf-14.png",
+    "assets/foundation/vf-15.png"
+  ],
+  "vrrv": [
+    "assets/foundation/vrrv-01.png",
+    "assets/foundation/vrrv-02.png",
+    "assets/foundation/vrrv-03.png",
+    "assets/foundation/vrrv-04.png",
+    "assets/foundation/vrrv-05.png",
+    "assets/foundation/vrrv-06.png",
+    "assets/foundation/vrrv-07.png",
+    "assets/foundation/vrrv-08.png",
+    "assets/foundation/vrrv-09.png",
+    "assets/foundation/vrrv-10.png",
+    "assets/foundation/vrrv-11.png",
+    "assets/foundation/vrrv-12.png",
+    "assets/foundation/vrrv-13.png",
+    "assets/foundation/vrrv-14.png",
+    "assets/foundation/vrrv-15.png",
+    "assets/foundation/vrrv-16.png",
+    "assets/foundation/vrrv-17.png",
+    "assets/foundation/vrrv-18.png"
+  ],
+  "moments": [
+    "assets/founder-gallery/slide-1.jpg",
+    "assets/founder-gallery/slide-2.jpg",
+    "assets/founder-gallery/slide-3.jpg",
+    "assets/founder-gallery/slide-4.jpg"
+  ]
+}

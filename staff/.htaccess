@@ -1,0 +1,6 @@
+# Disallow directory browsing and prevent search engine bots from indexing internal intranet files
+Options -Indexes
+
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet"
+</IfModule>

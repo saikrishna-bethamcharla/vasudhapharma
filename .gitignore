@@ -1,0 +1,14 @@
+# Dependencies & Build artifacts
+node_modules/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Scratch and test files
+scratch/
+*.tmp
+*.log
+
+# Editor directories
+.vscode/
+.idea/

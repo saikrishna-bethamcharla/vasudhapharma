@@ -1,0 +1,96 @@
+{
+  "events": [
+    {
+      "id": "EV-IPHEX-2026",
+      "status": "live",
+      "title": "iPHEX 2026",
+      "place": "Bharat Mandapam, New Delhi",
+      "dates": "7 – 9 September, 2026",
+      "booth": "Booth: 2C-28",
+      "image": "assets/events/new-delhi.png",
+      "tag": "Meet us at"
+    },
+    {
+      "id": "EV-CPHI-MILAN-2026",
+      "status": "live",
+      "title": "CPHI Milan 2026",
+      "place": "Fiera Milano, Italy",
+      "dates": "6 – 8 October, 2026",
+      "booth": "Booth: 3F103",
+      "image": "assets/events/milan.png",
+      "tag": "Meet us at"
+    },
+    {
+      "id": "EV-CPHI-INDIA-2026",
+      "status": "live",
+      "title": "CPHI India 2026",
+      "place": "Yashobhoomi, Dwarka Sector, New Delhi",
+      "dates": "23 – 25 November, 2026",
+      "booth": "Booth: 2L38",
+      "image": "assets/events/new-delhi-redfort.png",
+      "tag": "Meet us at"
+    }
+  ],
+  "news": [
+    {
+      "id": "NW-GPACTS-2026",
+      "status": "live",
+      "kicker": "Digital Transformation",
+      "date": "September 2026",
+      "title": "AI Governance & Data Integrity at GPACTS 2026",
+      "summary": "Vasudha Pharma highlighted modern AI governance architectures, cGMP compliance, and data integrity at the Global Pharma AI Summit in Hyderabad.",
+      "image": "assets/gpacts-2026.jpg",
+      "link": "https://www.linkedin.com/posts/vasudha-pharma-chem-ltd-_gpacts2026-pharma-ai-activity-7501605237519192064-3Q1q"
+    },
+    {
+      "id": "NW-AP-AWARD",
+      "status": "live",
+      "kicker": "State Recognition",
+      "date": "May 2026",
+      "title": "Best Management Award by Govt. of Andhra Pradesh",
+      "summary": "VPCL Unit-2 (Visakhapatnam / JN Pharma City) received the prestigious Best Management Award from the Government of Andhra Pradesh for excellence in industrial relations, worker safety, and statutory compliance.",
+      "image": "assets/plant-aerial-3.jpg",
+      "link": ""
+    },
+    {
+      "id": "NW-TS-AWARD",
+      "status": "live",
+      "kicker": "Industry Excellence",
+      "date": "2026",
+      "title": "Best API Manufacturing Factory Award",
+      "summary": "Vasudha Pharma Chem Limited was recognized by the Government of Telangana with the Best API Manufacturing Factory Award for cGMP manufacturing excellence and quality leadership.",
+      "image": "assets/company-aerial.jpg",
+      "link": ""
+    },
+    {
+      "id": "NW-CREDIT",
+      "status": "live",
+      "kicker": "Company Update",
+      "date": "Recent",
+      "title": "Strong Credit Rating Affirmed",
+      "summary": "India Ratings & Research affirmed “IND A+/Stable/IND A1+” rating on Vasudha Pharma Chem Limited’s bank loan facilities.",
+      "image": "assets/plant-aerial-1.jpg",
+      "link": ""
+    },
+    {
+      "id": "NW-ECOVADIS",
+      "status": "live",
+      "kicker": "Sustainability",
+      "date": "EHS Focus",
+      "title": "EcoVadis Gold Level Recognition",
+      "summary": "Continued commitment to Environment, Health & Safety with strong sustainability ratings and low-risk certifications from global partners.",
+      "image": "assets/ehs-banner.jpg",
+      "link": ""
+    },
+    {
+      "id": "NW-FOUNDATION",
+      "status": "live",
+      "kicker": "Community",
+      "date": "Social Impact",
+      "title": "Vasudha Foundation Initiatives",
+      "summary": "Our social service organization continues to extend physical and financial support to communities across all classes and age groups.",
+      "image": "assets/technician-at-work-2.jpg",
+      "link": ""
+    }
+  ]
+}

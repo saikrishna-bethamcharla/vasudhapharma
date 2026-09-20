@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>वासुधा फार्मा केम लिमिटेड — हिन्दी</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #3D5CAD;
+      --blue-dark: #2E4A8A;
+      --blue-bright: #5B7AD4;
+      --ice: #E6EDFA;
+      --red: #C8102E;
+      --text: #222;
+      --muted: #555;
+      --line: #e6e6e6;
+      --white: #fff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Noto Sans Devanagari", Inter, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { color: var(--blue-dark); }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 22px; }
+
+    .top {
+      background: var(--blue);
+      color: #fff;
+      font-size: 13px;
+      padding: 8px 0;
+    }
+    .top .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .top a { color: #fff; }
+    .top a:hover { opacity: .85; }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+    header .wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 14px 22px; flex-wrap: wrap;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; color: var(--red); }
+    .brand img { width: 56px; height: 56px; object-fit: contain; }
+    .brand strong { display: block; font-size: 15px; letter-spacing: .3px; }
+    .brand span { display: block; font-size: 12px; color: #0088AA; font-style: italic; font-weight: 500; }
+    .nav { display: flex; gap: 8px; flex-wrap: wrap; }
+    .nav a {
+      display: inline-block; padding: 8px 12px; border-radius: 6px;
+      color: var(--text); font-weight: 600; font-size: 14px;
+    }
+    .nav a:hover { background: var(--ice); color: var(--blue-dark); }
+
+    .hero {
+      position: relative; min-height: 320px;
+      background: #1a2744 center/cover no-repeat;
+      color: #fff; display: flex; align-items: flex-end;
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(20,28,50,.82) 0%, rgba(20,28,50,.35) 70%, rgba(20,28,50,.15) 100%);
+    }
+    .hero .wrap { position: relative; z-index: 1; padding: 48px 22px 40px; }
+    .hero h1 { font-size: clamp(28px, 4vw, 42px); line-height: 1.25; font-weight: 700; }
+    .hero p { margin-top: 12px; max-width: 560px; font-size: 17px; color: rgba(255,255,255,.92); }
+
+    .note {
+      background: var(--ice); border-bottom: 1px solid #d5def0;
+      padding: 10px 0; font-size: 14px; color: var(--blue-dark);
+    }
+
+    section { padding: 48px 0; }
+    section h2 { font-size: 26px; margin-bottom: 14px; color: var(--blue-dark); }
+    section p { margin-bottom: 12px; font-size: 16px; color: #333; }
+
+    .cards {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px; margin-top: 22px;
+    }
+    .card {
+      border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #fff;
+    }
+    .card img { width: 100%; height: 140px; object-fit: cover; display: block; background: #eee; }
+    .card div { padding: 14px 16px 16px; }
+    .card h3 { font-size: 17px; margin-bottom: 6px; }
+    .card p { font-size: 14px; color: var(--muted); margin: 0 0 10px; }
+    .card a.btn {
+      display: inline-block; background: var(--blue); color: #fff;
+      padding: 7px 12px; border-radius: 6px; font-size: 13px; font-weight: 700;
+    }
+    .card a.btn:hover { background: var(--blue-dark); color: #fff; }
+
+    .facts {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px; margin-top: 8px;
+    }
+    .fact {
+      background: var(--ice); border-radius: 10px; padding: 18px 14px; text-align: center;
+    }
+    .fact strong { display: block; font-size: 26px; color: var(--blue); }
+    .fact span { font-size: 13px; color: var(--muted); }
+
+    footer {
+      border-top: 1px solid var(--line); padding: 28px 0 22px; font-size: 13px; color: #666;
+    }
+    footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .vp-powered { display: inline-flex; align-items: center; gap: 6px; }
+    .vp-powered img { height: 1.15em; width: auto; }
+    @media (max-width: 640px) {
+      .hero { min-height: 260px; }
+    }
+  </style>
+
+  <!-- OpenGraph & Social Cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Vasudha Pharma Chem Limited">
+  <meta property="og:url" content="https://vasudhapharma.com/hindi.html">
+  <meta property="og:title" content="वासुधा फार्मा केम लिमिटेड — हिन्दी">
+  <meta property="og:description" content="Vasudha Pharma Chem Limited is a leading manufacturer of Active Pharmaceutical Ingredients (APIs) and Pharma Intermediates.">
+  <meta property="og:image" content="https://vasudhapharma.com/assets/company-aerial.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="वासुधा फार्मा केम लिमिटेड — हिन्दी">
+  <meta name="twitter:description" content="Vasudha Pharma Chem Limited is a leading manufacturer of Active Pharmaceutical Ingredients (APIs) and Pharma Intermediates.">
+  <meta name="twitter:image" content="https://vasudhapharma.com/assets/company-aerial.jpg">
+  <link rel="canonical" href="https://vasudhapharma.com/hindi.html">
+</head>
+<body>
+  <div class="top">
+    <div class="wrap">
+      <span>भारत · हिन्दी परिचय पृष्ठ</span>
+      <a href="home.html">English website</a>
+    </div>
+  </div>
+
+  <header>
+    <div class="wrap">
+      <a class="brand" href="hindi.html">
+        <img src="assets/vasudha-logo.jpg" alt="वासुधा फार्मा" onerror="this.src='assets/loader-logo.png';">
+        <span>
+          <strong>वासुधा फार्मा केम लिमिटेड</strong>
+          <span>सन् 1994 से</span>
+        </span>
+      </a>
+      <nav class="nav">
+        <a href="#about">परिचय</a>
+        <a href="#work">कार्य</a>
+        <a href="products.html">उत्पाद (English)</a>
+        <a href="contact.html">संपर्क</a>
+        <a href="careers.html" target="_blank" rel="noopener">करियर</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero" style="background-image:url('assets/about-hero-bg.jpg'), url('assets/company-aerial.jpg');">
+    <div class="wrap">
+      <h1>गुणवत्तापूर्ण एपीआई।<br>भारत से, विश्व के लिए।</h1>
+      <p>वासुधा फार्मा केम लिमिटेड 1994 से सक्रिय फार्मास्युटिकल अवयव और इंटरमीडिएट बनाती है।</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <div class="wrap">यह एक हिन्दी परिचय पृष्ठ है। विस्तृत उत्पाद सूची, पूछताछ फ़ॉर्म और नीतियाँ अंग्रेज़ी साइट पर हैं।</div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>कंपनी परिचय</h2>
+      <p>वासुधा फार्मा केम लिमिटेड (CIN: U24230TG1994PLC019021) की स्थापना 1994 में हैदराबाद, तेलंगाना में हुई। कंपनी देश और विदेश के लिए एपीआई तथा फार्मा इंटरमीडिएट बनाती है।</p>
+      <p>आरंभ में पाइपरिडोन और पाइपरिडीन डेरिवेटिव पर काम हुआ। बाद में एपीआई में विस्तार हुआ। आज 40 से अधिक एपीआई कई चिकित्सीय क्षेत्रों में हैं। 2017 में समर्पित अनुसंधान इकाई शुरू हुई।</p>
+      <div class="facts">
+        <div class="fact"><strong>1994</strong><span>स्थापना</span></div>
+        <div class="fact"><strong>40+</strong><span>एपीआई पोर्टफोलियो</span></div>
+        <div class="fact"><strong>90+</strong><span>देश</span></div>
+        <div class="fact"><strong>USFDA</strong><span>अनुमोदित इकाइयाँ</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" style="background:#f7f8fb;">
+    <div class="wrap">
+      <h2>मुख्य खंड</h2>
+      <p>नीचे दिए गए पृष्ठ अंग्रेज़ी में हैं। नाम और वैज्ञानिक विवरण वहीं रहेंगे।</p>
+      <div class="cards">
+        <article class="card">
+          <img src="assets/product-categories-grid.jpg" alt="" onerror="this.style.background='#d5def0'">
+          <div>
+            <h3>उत्पाद</h3>
+            <p>एपीआई, इंटरमीडिएट, पेलेट्स और पाइपलाइन।</p>
+            <a class="btn" href="products.html">उत्पाद देखें</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/cleanroom-corridor.jpg" alt="" onerror="this.style.background='#d5def0'">
+          <div>
+            <h3>विनिर्माण</h3>
+            <p>इकाइयाँ, गुणवत्ता नियंत्रण और पदचिह्न।</p>
+            <a class="btn" href="manufacturing.html">विनिर्माण</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/technician-at-work-2.jpg" alt="अनुसंधान">
+          <div>
+            <h3>अनुसंधान</h3>
+            <p>वैज्ञानिक टीम और विकास क्षमता।</p>
+            <a class="btn" href="rnd.html">आर एंड डी</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/ehs-banner.jpg" alt="" onerror="this.style.background='#d5def0'">
+          <div>
+            <h3>ईएचएस</h3>
+            <p>सुरक्षा, पर्यावरण और अनुमोदन।</p>
+            <a class="btn" href="ehs.html">ईएचएस</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/company-aerial.jpg" alt="" onerror="this.style.background='#d5def0'">
+          <div>
+            <h3>फाउंडेशन</h3>
+            <p>सामाजिक कार्य और संस्थापक विरासत।</p>
+            <a class="btn" href="founder.html">फाउंडेशन</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/board-directors.jpg" alt="" onerror="this.src='assets/chairmans-address-bg.jpg'">
+          <div>
+            <h3>संपर्क</h3>
+            <p>पूछताछ और कार्यालय विवरण।</p>
+            <a class="btn" href="contact.html">संपर्क करें</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 वासुधा फार्मा केम लिमिटेड</span>
+      <span class="vp-powered">Powered by <img src="assets/zailabs-logo.png" alt=""> Zailabs</span>
+    </div>
+  </footer>
+  <script src="cookie-consent.js" defer></script>
+</body>
+</html>

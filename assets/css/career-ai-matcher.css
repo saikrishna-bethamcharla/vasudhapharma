@@ -1,0 +1,209 @@
+/* Vasudha Pharma — AI Career Fit Matcher Styles */
+.vp-matcher-wrapper {
+  background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 100%);
+  border: 1px solid #C7D2FE;
+  border-radius: 18px;
+  padding: 28px;
+  margin-bottom: 36px;
+  box-shadow: 0 10px 30px -10px rgba(37, 70, 150, 0.08);
+}
+.vp-matcher-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.vp-matcher-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0F172A;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 6px;
+}
+.vp-matcher-desc {
+  font-size: 13.5px;
+  color: #64748B;
+  max-width: 650px;
+  line-height: 1.5;
+  margin: 0;
+}
+.vp-matcher-input-box textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 110px;
+  padding: 12px 14px;
+  border: 1px solid #CBD5E1;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 13.5px;
+  background: #FFFFFF;
+  margin-bottom: 14px;
+  resize: vertical;
+}
+.vp-matcher-input-box textarea:focus {
+  outline: none;
+  border-color: #254696;
+  box-shadow: 0 0 0 3px rgba(37, 70, 150, 0.15);
+}
+.vp-matcher-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.vp-btn-analyze {
+  background: #254696;
+  color: #FFFFFF;
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 22px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(37, 70, 150, 0.25);
+  transition: all 0.2s ease;
+}
+.vp-btn-analyze:hover {
+  background: #1B3577;
+  transform: translateY(-1px);
+}
+.vp-file-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: #475569;
+  cursor: pointer;
+  padding: 6px 12px;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.vp-file-upload-btn:hover {
+  background: #F1F5F9;
+  color: #254696;
+}
+.vp-matcher-results-box {
+  margin-top: 24px;
+}
+.vp-matcher-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+.vp-matcher-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #059669;
+  background: #ECFDF5;
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.vp-tag-skill {
+  font-size: 11px;
+  font-weight: 600;
+  background: #F1F5F9;
+  color: #334155;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid #E2E8F0;
+}
+.vp-tag-matched {
+  font-size: 11.5px;
+  font-weight: 600;
+  background: #DCFCE7;
+  color: #15803D;
+  padding: 2px 7px;
+  border-radius: 5px;
+}
+.vp-match-row {
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 14px;
+  background: #FAFAFA;
+  transition: transform 0.15s, border-color 0.15s;
+}
+.vp-match-row:hover {
+  border-color: #254696;
+  background: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px -4px rgba(37, 70, 150, 0.1);
+}
+.vp-score-circle {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 1.1;
+  flex-shrink: 0;
+}
+.vp-btn-apply-matched {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #254696;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 7px;
+  transition: all 0.15s ease;
+}
+.vp-btn-apply-matched:hover {
+  background: #1B3577;
+}
+.vp-matcher-empty {
+  background: #FFFBEB;
+  color: #92400E;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  border: 1px solid #FDE68A;
+}
+.vp-sample-chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0 16px;
+  font-size: 12px;
+  color: #64748B;
+}
+.vp-sample-chip {
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  color: #334155;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.vp-sample-chip:hover {
+  background: #EFF6FF;
+  border-color: #254696;
+  color: #254696;
+}
+

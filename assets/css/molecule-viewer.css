@@ -1,0 +1,253 @@
+/* Vasudha Pharma — 3D Molecular Structure Visualizer Styles */
+.vp-mol-section {
+  padding: 60px 0;
+  background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+  border-bottom: 1px solid #E2E8F0;
+  position: relative;
+}
+.vp-mol-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.vp-mol-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.vp-mol-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: #EEF2FF;
+  color: #254696;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.vp-mol-title {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+}
+.vp-mol-subtitle {
+  font-size: 15px;
+  color: #64748B;
+  max-width: 700px;
+  margin: 0 auto 24px;
+  line-height: 1.6;
+}
+.vp-mol-pills {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.vp-mol-pill {
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  color: #334155;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.03);
+}
+.vp-mol-pill:hover {
+  border-color: #254696;
+  color: #254696;
+  transform: translateY(-1px);
+}
+.vp-mol-pill.active {
+  background: #254696;
+  border-color: #254696;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(37, 70, 150, 0.25);
+}
+.vp-mol-workspace {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 28px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 20px 45px -15px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.02);
+}
+@media (max-width: 900px) {
+  .vp-mol-workspace { grid-template-columns: 1fr; }
+}
+.vp-mol-stage {
+  position: relative;
+  background: radial-gradient(circle at 50% 50%, #F8FAFC 0%, #EDF2F7 100%);
+  border-radius: 14px;
+  border: 1px solid #E2E8F0;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+#vpMoleculeCanvas {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  cursor: grab;
+  touch-action: none;
+}
+#vpMoleculeCanvas:active {
+  cursor: grabbing;
+}
+.vp-mol-controls {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+.vp-mol-mode-group, .vp-mol-action-group {
+  display: flex;
+  gap: 6px;
+  pointer-events: auto;
+}
+.vp-mol-btn {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid #CBD5E1;
+  color: #334155;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.vp-mol-btn:hover {
+  background: #FFFFFF;
+  border-color: #254696;
+  color: #254696;
+}
+.vp-mol-btn.active {
+  background: #254696;
+  color: #FFFFFF;
+  border-color: #254696;
+}
+.vp-mol-legend {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  gap: 10px;
+  font-size: 11px;
+  color: #475569;
+  font-weight: 600;
+  pointer-events: none;
+  flex-wrap: wrap;
+}
+.vp-mol-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.vp-mol-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.vp-mol-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+.vp-mol-info-head {
+  border-bottom: 1px solid #F1F5F9;
+  padding-bottom: 16px;
+}
+.vp-mol-info-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #254696;
+  margin: 0 0 4px;
+}
+.vp-mol-info-iupac {
+  font-size: 12px;
+  color: #64748B;
+  font-style: italic;
+  line-height: 1.4;
+}
+.vp-mol-spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.vp-mol-spec-item {
+  background: #F8FAFC;
+  border: 1px solid #F1F5F9;
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+.vp-mol-spec-label {
+  font-size: 11px;
+  color: #64748B;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 3px;
+}
+.vp-mol-spec-val {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0F172A;
+}
+.vp-mol-action-box {
+  background: #EEF2FF;
+  border: 1px solid #C7D2FE;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.vp-mol-action-box p {
+  margin: 0;
+  font-size: 12.5px;
+  color: #1E3A8A;
+  line-height: 1.5;
+}
+.vp-mol-rfq-btn {
+  background: #254696;
+  color: #FFFFFF;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+.vp-mol-rfq-btn:hover {
+  background: #1B3577;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 70, 150, 0.3);
+}

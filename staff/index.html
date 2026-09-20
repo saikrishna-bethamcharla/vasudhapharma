@@ -1,0 +1,2259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vasudha Operations Portal | Staff Intranet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sp-primary: #3D5CAD;
+      --sp-primary-dark: #2E4A8A;
+      --sp-primary-hover: #254696;
+      --sp-primary-light: #EEF2FB;
+      --sp-accent: #5B7AD4;
+      --sp-accent-light: #7C9AE8;
+      --sp-bg: #F4F7FC;
+      --sp-card-bg: #FFFFFF;
+      --sp-border: #E2E8F0;
+      --sp-text-main: #0F172A;
+      --sp-text-muted: #556987;
+      --sp-success-bg: #ECFDF5;
+      --sp-success-text: #059669;
+      --sp-danger-bg: #FEF2F2;
+      --sp-danger-text: #DC2626;
+      --sp-warning-bg: #FFFBEB;
+      --sp-warning-text: #D97706;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--sp-bg);
+      color: var(--sp-text-main);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+    .staff-shimmer-bar {
+      height: 3px;
+      background: linear-gradient(90deg, #3D5CAD 0%, #5B7AD4 50%, #7C9AE8 100%);
+      width: 100%;
+    }
+    header.staff-top {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--sp-border);
+      padding: 12px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+    .staff-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .staff-logo-hex {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(61,92,173,0.16);
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+    }
+    .staff-logo-hex img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .staff-brand-text strong {
+      display: block;
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #C8102E;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+    .staff-brand-text span {
+      display: block;
+      font-size: 11px;
+      font-style: italic;
+      color: #0088AA;
+      line-height: 1.2;
+      margin-top: 1px;
+    }
+    .staff-brand-badge {
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: var(--sp-primary-light);
+      color: var(--sp-primary);
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.06em;
+      border: 1px solid rgba(61,92,173,0.2);
+      margin-left: 8px;
+    }
+    .staff-user-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+    }
+    .staff-site-link {
+      color: var(--sp-text-muted);
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      transition: all 0.15s;
+    }
+    .staff-site-link:hover {
+      color: var(--sp-primary);
+      background: var(--sp-primary-light);
+    }
+    .staff-avatar-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #EEF2FB;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      font-weight: 600;
+      color: var(--sp-primary-dark);
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid #D5E0F7;
+    }
+    .staff-avatar-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10B981;
+    }
+    .staff-logout-btn {
+      color: var(--sp-danger-text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 12.5px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      background: none;
+      border: 0;
+      cursor: pointer;
+    }
+    .staff-logout-btn:hover {
+      background: var(--sp-danger-bg);
+    }
+    nav.staff-nav {
+      background: #1E293B;
+      padding: 6px 24px;
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    nav.staff-nav button {
+      background: none;
+      border: 0;
+      color: #94A3B8;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 13px;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: inherit;
+    }
+    nav.staff-nav button:hover {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    nav.staff-nav button.on {
+      color: #FFFFFF;
+      background: var(--sp-primary);
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 24px 60px;
+    }
+    .card {
+      background: var(--sp-card-bg);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 22px;
+      border: 1px solid var(--sp-border);
+      box-shadow: 0 4px 20px -4px rgba(46, 74, 138, 0.06), 0 1px 2px rgba(46, 74, 138, 0.02);
+    }
+    h1, h2, h3 { color: var(--sp-text-main); font-weight: 700; letter-spacing: -0.02em; }
+    label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #334155;
+      margin: 14px 0 6px;
+    }
+    input, textarea, select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px 13px;
+      border: 1px solid var(--sp-border);
+      border-radius: 8px;
+      font: inherit;
+      font-size: 13.5px;
+      background: #FAFAFA;
+      color: #0F172A;
+      transition: all 0.15s ease;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--sp-primary);
+      background: #FFFFFF;
+      box-shadow: 0 0 0 3px rgba(61, 92, 173, 0.15);
+    }
+    textarea { min-height: 90px; resize: vertical; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    .row-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    @media (max-width: 768px) { .row, .row-3 { grid-template-columns: 1fr; } }
+    .btn {
+      cursor: pointer;
+      border: 0;
+      border-radius: 8px;
+      padding: 9px 18px;
+      font-weight: 600;
+      font-size: 13px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--sp-primary) 0%, var(--sp-primary-dark) 100%);
+      color: #FFFFFF;
+      box-shadow: 0 2px 6px rgba(46, 74, 138, 0.25);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--sp-primary-hover) 0%, #172554 100%);
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      background: #EEF2FB;
+      color: var(--sp-primary-dark);
+      border: 1px solid #D5E0F7;
+    }
+    .btn-ghost:hover {
+      background: #DCE5F9;
+      border-color: var(--sp-primary);
+    }
+    .btn-danger {
+      background: var(--sp-danger-bg);
+      color: var(--sp-danger-text);
+      border: 1px solid #FECACA;
+    }
+    .btn-danger:hover {
+      background: #FEE2E2;
+    }
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 13.5px;
+    }
+    th {
+      text-align: left;
+      padding: 11px 14px;
+      background: #F8FAFC;
+      color: #475569;
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid var(--sp-border);
+    }
+    th:first-child { border-top-left-radius: 8px; }
+    th:last-child { border-top-right-radius: 8px; }
+    td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--sp-border);
+      vertical-align: middle;
+      color: #1E293B;
+    }
+    tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: #F8FAFC; }
+    .badge-open, .open {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 9px;
+      border-radius: 9999px;
+      font-size: 11.5px;
+      font-weight: 600;
+      background: #DCFCE7;
+      color: #15803D;
+    }
+    .badge-closed, .closed {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 9px;
+      border-radius: 9999px;
+      font-size: 11.5px;
+      font-weight: 600;
+      background: #F1F5F9;
+      color: #64748B;
+    }
+    .stat-card {
+      background: #FFFFFF;
+      border: 1px solid var(--sp-border);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      box-shadow: 0 2px 10px rgba(46, 74, 138, 0.04);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(46, 74, 138, 0.08);
+    }
+    .stat-num {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--sp-primary);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--sp-text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .stat-sub {
+      font-size: 12px;
+      color: #94A3B8;
+    }
+    .hint {
+      font-size: 13px;
+      color: var(--sp-text-muted);
+      line-height: 1.6;
+      background: #EEF2FB;
+      border-left: 3px solid var(--sp-primary);
+      padding: 12px 16px;
+      border-radius: 4px;
+    }
+    .ok-toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #065F46;
+      color: #FFFFFF;
+      padding: 12px 20px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+      font-size: 13.5px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 10000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ok-toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    /* Auth Modal */
+    .auth-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 99999;
+    }
+    .auth-box {
+      width: 100%;
+      max-width: 440px;
+      background: #FFFFFF;
+      padding: 38px 34px;
+      border-radius: 20px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+      border: 1px solid var(--sp-border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shimmer Accent Top -->
+  <div class="staff-shimmer-bar"></div>
+
+  <!-- Header -->
+  <header class="staff-top">
+    <div class="staff-brand">
+      <div class="staff-logo-hex">
+        <img src="../assets/vasudha-logo.jpg" alt="Vasudha Pharma Chem Limited">
+      </div>
+      <div class="staff-brand-text">
+        <strong>VASUDHA PHARMA CHEM LIMITED</strong>
+        <span>Contributing to affordable health care... &bull; <em>Since 1994</em></span>
+      </div>
+      <span class="staff-brand-badge">Operations Portal</span>
+    </div>
+    <div class="staff-user-meta">
+      <a href="../careers.html#openings" target="_blank" rel="noopener" class="staff-site-link" title="Open public Careers page">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        <span>Public Careers</span>
+      </a>
+      <a href="../home.html" target="_blank" rel="noopener" class="staff-site-link" title="Open main website">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span>Main Website</span>
+      </a>
+      <div class="staff-avatar-pill" id="userPill" onclick="showTab('account')">
+        <span class="staff-avatar-dot"></span>
+        <span id="userNameLabel">Administrator</span>
+        <span style="font-weight:400;color:#64748B;font-size:12px;" id="userDeptLabel">(admin)</span>
+      </div>
+      <button type="button" class="staff-logout-btn" onclick="logout()">Log out</button>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="staff-nav" id="mainStaffNav">
+    <button type="button" class="on" data-desk="home" onclick="showTab('home')">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Dashboard</span>
+    </button>
+    <button type="button" data-desk="careers" onclick="showTab('careers')">Careers / HR</button>
+    <button type="button" data-desk="manufacturing" onclick="showTab('manufacturing')">Manufacturing</button>
+    <button type="button" data-desk="rnd" onclick="showTab('rnd')">R&amp;D</button>
+    <button type="button" data-desk="ehs" onclick="showTab('ehs')">EHS</button>
+    <button type="button" data-desk="governance" onclick="showTab('governance')">Corporate Governance</button>
+    <button type="button" data-desk="marketing" onclick="showTab('marketing')">Marketing</button>
+    <button type="button" data-desk="foundation" onclick="showTab('foundation')">Foundation</button>
+    <button type="button" data-desk="news" onclick="showTab('news')">News &amp; Events</button>
+    <button type="button" data-desk="users" id="navUsersBtn" onclick="showTab('users')">Users</button>
+    <button type="button" data-desk="account" style="margin-left:auto;" onclick="showTab('account')">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span>My Account</span>
+    </button>
+  </nav>
+
+  <!-- Content Container -->
+  <div class="wrap">
+
+    <!-- TAB: HOME DASHBOARD -->
+    <div id="tab-home" class="tab-pane">
+      <div class="card" style="background: linear-gradient(135deg, #1E3A8A 0%, #2E4A8A 55%, #3D5CAD 100%); color:#FFFFFF; border:0; padding:28px 32px; box-shadow: 0 8px 24px rgba(46,74,138,0.18);">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+          <div>
+            <div style="text-transform:uppercase; font-size:11px; letter-spacing:0.12em; opacity:0.85; font-weight:700; margin-bottom:6px;">
+              Operations Hub &bull; Vasudha Pharma
+            </div>
+            <h1 style="margin:0; font-size:24px; color:#FFFFFF;" id="welcomeName">Welcome back, Administrator</h1>
+            <p style="margin:6px 0 0; opacity:0.9; font-size:13.5px;">
+              Role: <span id="welcomeRole" style="font-weight:700; text-transform:uppercase; background:rgba(255,255,255,0.22); padding:2px 8px; border-radius:4px; font-size:11px;">ADMIN</span> &bull; 
+              Department: <span id="welcomeDept" style="font-weight:600; text-transform:capitalize;">Administration</span> &bull;
+              System: Vasudha Enterprise Suite
+            </p>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn" style="background:rgba(255,255,255,0.18); color:#FFFFFF; border:1px solid rgba(255,255,255,0.3);" onclick="showTab('account')">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              My Account
+            </button>
+            <a href="../careers.html#openings" target="_blank" rel="noopener" class="btn" style="background:#FFFFFF; color:var(--sp-primary-dark); font-weight:700;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/></svg>
+              View Public Careers
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Operational Metrics -->
+      <div class="row-4" style="margin-bottom:22px;">
+        <div class="stat-card">
+          <div class="stat-label">Active Requisitions</div>
+          <div class="stat-num" id="statOpenJobs">0</div>
+          <div class="stat-sub" id="statTotalJobs">0 total positions</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Operating Units</div>
+          <div class="stat-num">5+</div>
+          <div class="stat-sub">Visakhapatnam &amp; Hyderabad</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Commercial APIs</div>
+          <div class="stat-num">40+</div>
+          <div class="stat-sub">Global DMF/CEP filings</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">R&amp;D Scientists</div>
+          <div class="stat-num">100+</div>
+          <div class="stat-sub">Dedicated research centre</div>
+        </div>
+      </div>
+
+      <!-- Quick Action Console -->
+      <div class="card" style="padding:18px 24px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+          <div style="font-weight:700; font-size:14px; color:var(--sp-text-main); display:flex; align-items:center; gap:8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Quick Operational Actions
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-primary" style="font-size:12.5px;" onclick="showTab('careers'); setTimeout(()=>document.getElementById('jobId').focus(), 150);">+ Post New Job</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="downloadJobsJson()">Download jobs.json</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" id="btnManageUsersQuick" onclick="showTab('users')">+ Manage Users</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desks Grid -->
+      <div class="card">
+        <h2 style="margin-top:0; font-size:17px; margin-bottom:18px;">Accessible Department Desks</h2>
+        <div class="row" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:16px;">
+          <div class="card" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <h3 style="margin:0; font-size:15px; color:var(--sp-primary);">Careers / HR Desk</h3>
+                <span class="badge-open">Active</span>
+              </div>
+              <p style="font-size:12.5px; color:var(--sp-text-muted); margin:0;">Manage open job requisitions, candidate keywords, and auto-publishing on careers.html.</p>
+            </div>
+            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="showTab('careers')">Open HR Desk &rarr;</button>
+          </div>
+
+          <div class="card" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <h3 style="margin:0; font-size:15px; color:var(--sp-primary);">Manufacturing Desk</h3>
+                <span class="badge-open">Active</span>
+              </div>
+              <p style="font-size:12.5px; color:var(--sp-text-muted); margin:0;">Five production units, cleanroom classifications, reactor capacities, and plant audits.</p>
+            </div>
+            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="showTab('manufacturing')">Open Desk &rarr;</button>
+          </div>
+
+          <div class="card" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <h3 style="margin:0; font-size:15px; color:var(--sp-primary);">R&amp;D Desk</h3>
+                <span class="badge-open">Active</span>
+              </div>
+              <p style="font-size:12.5px; color:var(--sp-text-muted); margin:0;">Process chemistry, synthesis route scouting, technology transfer, and pipeline APIs.</p>
+            </div>
+            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="showTab('rnd')">Open Desk &rarr;</button>
+          </div>
+
+          <div class="card" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <h3 style="margin:0; font-size:15px; color:var(--sp-primary);">EHS Desk</h3>
+                <span class="badge-open">Active</span>
+              </div>
+              <p style="font-size:12.5px; color:var(--sp-text-muted); margin:0;">ISO 14001, OHSAS 18001, zero liquid discharge, effluent metrics, and incident audits.</p>
+            </div>
+            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="showTab('ehs')">Open Desk &rarr;</button>
+          </div>
+
+          <div class="card" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <h3 style="margin:0; font-size:15px; color:var(--sp-primary);">Foundation Desk</h3>
+                <span class="badge-open">Active</span>
+              </div>
+              <p style="font-size:12.5px; color:var(--sp-text-muted); margin:0;">Add and delete photos across the 3 CSR image scrolls (Vasudha Foundation, VRRV, Moments).</p>
+            </div>
+            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="showTab('foundation')">Open Foundation Desk &rarr;</button>
+          </div>
+
+          <div class="card" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <h3 style="margin:0; font-size:15px; color:var(--sp-primary);">News &amp; Events Desk</h3>
+                <span class="badge-open">Active</span>
+              </div>
+              <p style="font-size:12.5px; color:var(--sp-text-muted); margin:0;">Create, edit, archive, and update photos for international exhibition and company news cards.</p>
+            </div>
+            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="showTab('news')">Open News Desk &rarr;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: CAREERS / HR REQUISITIONS -->
+    <div id="tab-careers" class="tab-pane" style="display:none;">
+      <div class="card hint">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+          <div>
+            <strong>Careers / HR Desk:</strong> Open requisitions manage <code>jobs.json</code> and display automatically on the public <a href="../careers.html#openings" target="_blank" rel="noopener" style="color:var(--sp-primary); font-weight:700; text-decoration:underline;">Careers Portal</a>. Closed postings remain archived and hidden from public view.
+          </div>
+          <div style="display:flex; gap:10px;">
+            <button type="button" class="btn btn-ghost" style="background:#FFFFFF;" onclick="copyJobsJson()">Copy JSON</button>
+            <button type="button" class="btn btn-primary" onclick="downloadJobsJson()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download jobs.json
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:12px;">
+          <div>
+            <h2 style="margin:0; font-size:18px;">Active &amp; Archived Requisitions (<span id="jobsCountNum">0</span>)</h2>
+            <div style="font-size:12.5px; color:var(--sp-text-muted); margin-top:2px;" id="jobsStatusSub">0 Open &bull; 0 Closed</div>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="resetJobForm(); document.getElementById('jobId').focus();">+ New Requisition</button>
+        </div>
+
+        <!-- Table search -->
+        <div style="display:flex; gap:12px; margin-bottom:16px; align-items:center;">
+          <input type="text" id="jobSearchInput" placeholder="Search by ID, title, department, skills..." style="max-width:340px; background:#fff;" oninput="renderJobsTable()">
+          <span style="font-size:12px; color:var(--sp-text-muted);">Instant filter</span>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Job ID</th>
+              <th>Title</th>
+              <th>Department</th>
+              <th>Location</th>
+              <th>Posted</th>
+              <th>Status</th>
+              <th style="text-align:right">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="jobsTbody">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Job Editor Form -->
+      <div class="card" id="editorCard">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+          <h2 style="margin:0; font-size:18px;" id="formHeader">Create New Requisition</h2>
+          <button type="button" class="btn btn-ghost" style="font-size:12px;" onclick="resetJobForm()">Reset Form</button>
+        </div>
+        <form id="jobForm" onsubmit="saveJob(event)">
+          <div class="row">
+            <div>
+              <label>Job ID / Code *</label>
+              <input id="jobId" required placeholder="e.g. VP-QC-004">
+            </div>
+            <div>
+              <label>Status</label>
+              <select id="jobStatus">
+                <option value="open">Open (Published on public Careers)</option>
+                <option value="closed">Closed (Archived / Hidden from public)</option>
+              </select>
+            </div>
+          </div>
+
+          <label>Job Title *</label>
+          <input id="jobTitle" required placeholder="e.g. Senior Quality Control Officer">
+
+          <div class="row-3">
+            <div>
+              <label>Department</label>
+              <select id="jobDept">
+                <option value="Quality">Quality</option>
+                <option value="Manufacturing">Manufacturing</option>
+                <option value="R&D">R&amp;D</option>
+                <option value="EHS">EHS</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Foundation">Foundation</option>
+                <option value="Corporate Governance">Corporate Governance</option>
+                <option value="Corporate">Corporate</option>
+              </select>
+            </div>
+            <div>
+              <label>Location</label>
+              <input id="jobLoc" placeholder="e.g. Hyderabad, Telangana, IN" value="Hyderabad, Telangana, IN">
+            </div>
+            <div>
+              <label>Posted Label</label>
+              <input id="jobPosted" placeholder="e.g. 08 Sep 2026">
+            </div>
+          </div>
+
+          <label>Skills / Tags (comma separated — used for candidate keyword search and ranking)</label>
+          <input id="jobSkills" placeholder="QC, HPLC, cGMP, B.Pharm, Analysis">
+
+          <label>Role Overview</label>
+          <textarea id="jobRole" placeholder="Summary of role responsibilities..."></textarea>
+
+          <label>What You Will Do (Key Duties)</label>
+          <textarea id="jobDuties" placeholder="Specific day-to-day operations, testing, or reporting duties..."></textarea>
+
+          <label>Candidate Profile Requirements</label>
+          <textarea id="jobProfile" placeholder="Educational qualifications, degrees, certifications, and years of experience..."></textarea>
+
+          <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+            <button type="submit" class="btn btn-primary">Save Requisition</button>
+            <button type="button" class="btn btn-ghost" onclick="resetJobForm()">Cancel</button>
+            <button type="button" class="btn btn-danger" id="btnDeleteJob" style="display:none; margin-left:auto;" onclick="deleteCurrentJob()">Delete Requisition</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- TAB: USERS MANAGEMENT (Admin Only) -->
+    <div id="tab-users" class="tab-pane" style="display:none;">
+      <div class="card hint">
+        <strong>Staff User Administration:</strong> Manage internal logins and department assignments. Administrators have full access across all desks. Staff accounts assigned to departments (Careers, Foundation, Marketing, Manufacturing, R&amp;D, EHS, Governance) access their respective consoles.
+      </div>
+
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+          <h2 style="margin:0; font-size:18px;">Staff Accounts (<span id="usersCount">0</span>)</h2>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Department Desk</th>
+              <th>Role</th>
+              <th style="text-align:right">Action</th>
+            </tr>
+          </thead>
+          <tbody id="usersTbody">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2 style="margin-top:0; font-size:18px;">Add New Staff User</h2>
+        <form onsubmit="addUser(event)">
+          <div class="row">
+            <div>
+              <label>Full Name *</label>
+              <input id="newUserName" required placeholder="e.g. Ramesh Kumar">
+            </div>
+            <div>
+              <label>Corporate Email *</label>
+              <input id="newUserEmail" type="email" required placeholder="e.g. ramesh@vasudha.local">
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label>Department Assignment</label>
+              <select id="newUserDept">
+                <option value="careers">Careers / HR</option>
+                <option value="manufacturing">Manufacturing</option>
+                <option value="rnd">R&amp;D</option>
+                <option value="ehs">EHS</option>
+                <option value="governance">Corporate Governance</option>
+                <option value="marketing">Marketing</option>
+                <option value="foundation">Foundation</option>
+                <option value="news">News &amp; Events</option>
+                <option value="admin">Full Administrator (all desks)</option>
+              </select>
+            </div>
+            <div>
+              <label>Initial Temporary Password *</label>
+              <input id="newUserPass" required placeholder="Minimum 6 characters" value="ChangeMe!">
+            </div>
+          </div>
+          <p style="margin-top:20px;">
+            <button type="submit" class="btn btn-primary">+ Create Staff Account</button>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- TAB: FOUNDATION DESK (3-Scroll Image Gallery Manager) -->
+    <div id="tab-foundation" class="tab-pane" style="display:none;">
+      <div class="card hint" style="background:#EEF2FB; border-left:4px solid var(--sp-primary); padding:16px 20px; border-radius:8px;">
+        <div style="font-weight:700; color:var(--sp-primary-dark); font-size:14px; margin-bottom:6px; display:flex; align-items:center; gap:8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Foundation Desk: 3-Scroll Image Gallery Manager
+        </div>
+        <p style="margin:0 0 8px; font-size:13px; color:var(--sp-text-main); line-height:1.5;">
+          Manage photos across the 3 live carousels on the Foundation page:
+          <strong>1. Vasudha Foundation</strong>, <strong>2. VRRV Family Foundation</strong>, and <strong>3. Moments from the Foundation</strong>.
+          Authorized staff can <strong>add new photos</strong> or <strong>remove existing photos</strong> from each stream.
+        </p>
+        <div style="background:#FFFFFF; border:1px solid #C7D7F5; padding:10px 14px; border-radius:6px; font-size:12px; color:#1E3A8A; display:flex; align-items:flex-start; gap:8px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" style="flex-shrink:0; margin-top:2px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div>
+            <strong>Fixed Speed &amp; Sizing Design Policy:</strong> Image frame dimensions, aspect ratios, responsive scaling, and continuous marquee scroll speeds are centrally fixed in corporate stylesheets to maintain uniform performance and responsive stability across all devices. Staff cannot modify scroll speeds or frame sizes.
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-bottom:16px;">
+        <button type="button" class="btn btn-ghost" onclick="copyFoundationJson()">Copy foundation-galleries.json</button>
+        <button type="button" class="btn btn-primary" onclick="downloadFoundationJson()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download foundation-galleries.json
+        </button>
+      </div>
+
+      <!-- Scroll 1: Vasudha Foundation -->
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+          <h2 style="margin:0; font-size:17px; color:var(--sp-primary-dark);">
+            Scroll 1: Vasudha Foundation Gallery Stream 
+            <span style="font-size:13px; font-weight:500; color:var(--sp-text-muted);" id="count-vasudha">(0 images)</span>
+          </h2>
+          <span style="font-size:11px; background:#EEF2FB; color:var(--sp-primary); padding:3px 8px; border-radius:4px; font-weight:600;">Fixed Speed &bull; Auto Marquee</span>
+        </div>
+        <div id="grid-vasudha" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap:14px; margin-bottom:18px;">
+          <!-- Loaded by JS -->
+        </div>
+        <div style="border-top:1px solid var(--sp-border); padding-top:14px; display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+          <input type="text" id="add-vasudha-input" placeholder="Enter image URL or asset path (e.g. assets/foundation/photo.jpg)" style="flex:1; min-width:240px;">
+          <button type="button" class="btn btn-primary" onclick="addFoundationImage('vasudha')">+ Add Photo to Scroll 1</button>
+        </div>
+      </div>
+
+      <!-- Scroll 2: VRRV Family Foundation -->
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+          <h2 style="margin:0; font-size:17px; color:var(--sp-primary-dark);">
+            Scroll 2: VRRV Family Foundation Stream 
+            <span style="font-size:13px; font-weight:500; color:var(--sp-text-muted);" id="count-vrrv">(0 images)</span>
+          </h2>
+          <span style="font-size:11px; background:#EEF2FB; color:var(--sp-primary); padding:3px 8px; border-radius:4px; font-weight:600;">Fixed Speed &bull; Auto Marquee</span>
+        </div>
+        <div id="grid-vrrv" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap:14px; margin-bottom:18px;">
+          <!-- Loaded by JS -->
+        </div>
+        <div style="border-top:1px solid var(--sp-border); padding-top:14px; display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+          <input type="text" id="add-vrrv-input" placeholder="Enter image URL or asset path (e.g. assets/foundation/vrrv-new.png)" style="flex:1; min-width:240px;">
+          <button type="button" class="btn btn-primary" onclick="addFoundationImage('vrrv')">+ Add Photo to Scroll 2</button>
+        </div>
+      </div>
+
+      <!-- Scroll 3: Moments from the Foundation -->
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+          <h2 style="margin:0; font-size:17px; color:var(--sp-primary-dark);">
+            Scroll 3: Moments from the Foundation Stream 
+            <span style="font-size:13px; font-weight:500; color:var(--sp-text-muted);" id="count-moments">(0 images)</span>
+          </h2>
+          <span style="font-size:11px; background:#EEF2FB; color:var(--sp-primary); padding:3px 8px; border-radius:4px; font-weight:600;">Fixed Size &bull; Slider Carousel</span>
+        </div>
+        <div id="grid-moments" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap:14px; margin-bottom:18px;">
+          <!-- Loaded by JS -->
+        </div>
+        <div style="border-top:1px solid var(--sp-border); padding-top:14px; display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+          <input type="text" id="add-moments-input" placeholder="Enter image URL or asset path (e.g. assets/founder-gallery/slide-new.jpg)" style="flex:1; min-width:240px;">
+          <button type="button" class="btn btn-primary" onclick="addFoundationImage('moments')">+ Add Photo to Scroll 3</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: NEWS & EVENTS DESK (Cards CRUD + Image Update Manager) -->
+    <div id="tab-news" class="tab-pane" style="display:none;">
+      <div class="card hint" style="background:#EEF2FB; border-left:4px solid var(--sp-primary); padding:16px 20px; border-radius:8px;">
+        <div style="font-weight:700; color:var(--sp-primary-dark); font-size:14px; margin-bottom:6px; display:flex; align-items:center; gap:8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          News &amp; Events Desk: Global Cards Manager
+        </div>
+        <p style="margin:0 0 4px; font-size:13px; color:var(--sp-text-main); line-height:1.5;">
+          Control international conference cards and corporate news cards displayed across the public website.
+          Staff can <strong>add new cards</strong>, <strong>edit information</strong>, <strong>update card photos</strong>, and <strong>archive or delete</strong> cards.
+        </p>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-bottom:16px;">
+        <button type="button" class="btn btn-ghost" onclick="copyNewsEventsJson()">Copy news-events.json</button>
+        <button type="button" class="btn btn-primary" onclick="downloadNewsEventsJson()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download news-events.json
+        </button>
+      </div>
+
+      <!-- SECTION 1: CONFERENCES & EVENTS -->
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:12px;">
+          <div>
+            <h2 style="margin:0; font-size:18px; color:var(--sp-primary-dark);">Conferences &amp; Exhibitions (<span id="count-events">0</span>)</h2>
+            <div style="font-size:12.5px; color:var(--sp-text-muted); margin-top:2px;">International pharmaceutical expos, summits, and booth locations</div>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="openEventEditor(null)">+ Add New Event Card</button>
+        </div>
+
+        <div id="eventsCardsList" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap:16px; margin-bottom:24px;">
+          <!-- Loaded by JS -->
+        </div>
+
+        <!-- Event Editor Modal / Form -->
+        <div id="eventEditorCard" style="display:none; background:#F8FAFC; border:1px solid #CBD5E1; border-radius:12px; padding:20px; margin-top:14px;">
+          <h3 style="margin-top:0; font-size:16px;" id="eventEditorTitle">Edit Event Card</h3>
+          <form onsubmit="saveEventCard(event)">
+            <input type="hidden" id="editEventId">
+            <div class="row">
+              <div>
+                <label>Event Name / Title *</label>
+                <input id="editEventTitle" required placeholder="e.g. CPHI Milan 2026">
+              </div>
+              <div>
+                <label>Display Status</label>
+                <select id="editEventStatus">
+                  <option value="live">● Live (Visible on public site)</option>
+                  <option value="done">○ Archived / Hidden</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <label>Venue / Location *</label>
+                <input id="editEventPlace" required placeholder="e.g. Fiera Milano, Italy">
+              </div>
+              <div>
+                <label>Dates *</label>
+                <input id="editEventDates" required placeholder="e.g. 6 – 8 October, 2026">
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <label>Booth Details</label>
+                <input id="editEventBooth" placeholder="e.g. Booth: 3F103">
+              </div>
+              <div>
+                <label>Tag / Badge Text</label>
+                <input id="editEventTag" placeholder="e.g. Meet us at" value="Meet us at">
+              </div>
+            </div>
+            <div style="margin-top:14px;">
+              <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:8px; margin-bottom:6px;">
+                <label style="margin:0; font-weight:600; font-size:13px; color:var(--sp-primary-dark);">
+                  Card Photo URL / Asset Path <span style="color:var(--sp-accent-red);">*</span>
+                </label>
+                <div style="display:inline-flex; align-items:center; gap:8px; font-size:11.5px; color:#334155; background:#EFF6FF; border:1px solid #BFDBFE; padding:4px 10px; border-radius:6px;">
+                  <span>📐 <strong>Ideal Ratio:</strong> <strong style="color:#2563EB;">16:9</strong> (Landscape)</span>
+                  <span style="color:#94A3B8;">•</span>
+                  <span>🎯 <strong>Ideal Size:</strong> <strong style="color:#2563EB;">800 × 450 px</strong> <small style="color:#64748B;">(Min: 600 × 338 px)</small></span>
+                </div>
+              </div>
+              <div style="display:flex; gap:10px; align-items:center;">
+                <input id="editEventImage" required placeholder="e.g. assets/events/milan.png or click Upload Image" style="flex:1;" oninput="updateEventImagePreview(this.value.trim())">
+                <input type="file" id="uploadEventImageFile" accept="image/jpeg,image/png,image/webp,image/gif" style="display:none;" onchange="handleEventImageUpload(event)">
+                <button type="button" class="btn btn-secondary" onclick="document.getElementById('uploadEventImageFile').click()" style="display:inline-flex; align-items:center; gap:6px; white-space:nowrap; padding:8px 14px; font-size:12.5px; font-weight:600; cursor:pointer;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                  Upload Image
+                </button>
+                <div id="editEventThumbPrev" style="width:60px; height:34px; border-radius:4px; overflow:hidden; background:#E2E8F0; border:1px solid #CBD5E1; flex-shrink:0; display:flex; align-items:center; justify-content:center;">
+                  <img id="editEventThumbImg" src="" style="width:100%; height:100%; object-fit:cover; display:none;">
+                </div>
+              </div>
+              <div style="margin-top:5px; font-size:11.5px; color:#64748B; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                <span>Card photo renders at <strong>160px height</strong> with <code>object-fit: cover</code>. Keep titles/logos inside the central 80% safe zone.</span>
+                <span id="eventImageMeta" style="font-weight:600; font-size:11.5px;"></span>
+              </div>
+            </div>
+            <div style="margin-top:18px; display:flex; gap:10px;">
+              <button type="submit" class="btn btn-primary">Save Event Card</button>
+              <button type="button" class="btn btn-ghost" onclick="closeEventEditor()">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- SECTION 2: COMPANY NEWS -->
+      <div class="card" style="margin-top:28px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:12px;">
+          <div>
+            <h2 style="margin:0; font-size:18px; color:var(--sp-primary-dark);">Company News &amp; Updates (<span id="count-news">0</span>)</h2>
+            <div style="font-size:12.5px; color:var(--sp-text-muted); margin-top:2px;">Press updates, credit rating announcements, and sustainability honours</div>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="openNewsEditor(null)">+ Add New News Card</button>
+        </div>
+
+        <div id="newsCardsList" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap:16px; margin-bottom:24px;">
+          <!-- Loaded by JS -->
+        </div>
+
+        <!-- News Editor Form -->
+        <div id="newsEditorCard" style="display:none; background:#F8FAFC; border:1px solid #CBD5E1; border-radius:12px; padding:20px; margin-top:14px;">
+          <h3 style="margin-top:0; font-size:16px;" id="newsEditorTitle">Edit News Card</h3>
+          <form onsubmit="saveNewsCard(event)">
+            <input type="hidden" id="editNewsId">
+            <div class="row">
+              <div>
+                <label>Headline Title *</label>
+                <input id="editNewsTitle" required placeholder="e.g. Strong Credit Rating Affirmed">
+              </div>
+              <div>
+                <label>Display Status</label>
+                <select id="editNewsStatus">
+                  <option value="live">● Live (Visible on public site)</option>
+                  <option value="done">○ Archived / Hidden</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <label>Kicker / Category Tag</label>
+                <input id="editNewsKicker" placeholder="e.g. Company Update, Sustainability, CSR">
+              </div>
+              <div>
+                <label>Date Label</label>
+                <input id="editNewsDate" placeholder="e.g. Recent, or Sep 2026">
+              </div>
+            </div>
+            <label>Summary Description *</label>
+            <textarea id="editNewsSummary" required placeholder="Brief 2-3 sentence summary of the news story..."></textarea>
+            <div style="margin-top:12px;">
+              <label>External Read More Link (optional)</label>
+              <input id="editNewsLink" placeholder="https://... (leave blank if none)">
+            </div>
+            <div style="margin-top:14px;">
+              <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:8px; margin-bottom:6px;">
+                <label style="margin:0; font-weight:600; font-size:13px; color:var(--sp-primary-dark);">
+                  Cover Photo URL / Asset Path <span style="color:var(--sp-accent-red);">*</span>
+                </label>
+                <div style="display:inline-flex; align-items:center; gap:8px; font-size:11.5px; color:#334155; background:#EFF6FF; border:1px solid #BFDBFE; padding:4px 10px; border-radius:6px;">
+                  <span>📐 <strong>Ideal Ratio:</strong> <strong style="color:#2563EB;">16:9</strong> (Landscape)</span>
+                  <span style="color:#94A3B8;">•</span>
+                  <span>🎯 <strong>Ideal Size:</strong> <strong style="color:#2563EB;">800 × 450 px</strong> <small style="color:#64748B;">(Min: 640 × 360 px)</small></span>
+                </div>
+              </div>
+              <div style="display:flex; gap:10px; align-items:center;">
+                <input id="editNewsImage" required placeholder="e.g. assets/plant-aerial-1.jpg or click Upload Image" style="flex:1;" oninput="updateNewsImagePreview(this.value.trim())">
+                <input type="file" id="uploadNewsImageFile" accept="image/jpeg,image/png,image/webp,image/gif" style="display:none;" onchange="handleNewsImageUpload(event)">
+                <button type="button" class="btn btn-secondary" onclick="document.getElementById('uploadNewsImageFile').click()" style="display:inline-flex; align-items:center; gap:6px; white-space:nowrap; padding:8px 14px; font-size:12.5px; font-weight:600; cursor:pointer;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                  Upload Image
+                </button>
+                <div id="editNewsThumbPrev" style="width:60px; height:34px; border-radius:4px; overflow:hidden; background:#E2E8F0; border:1px solid #CBD5E1; flex-shrink:0; display:flex; align-items:center; justify-content:center;">
+                  <img id="editNewsThumbImg" src="" style="width:100%; height:100%; object-fit:cover; display:none;">
+                </div>
+              </div>
+              <div style="margin-top:5px; font-size:11.5px; color:#64748B; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                <span>News cover renders at <strong>180px height</strong> with <code>object-fit: cover</code>. Category kicker badge overlays top-left; keep primary focal points centered.</span>
+                <span id="newsImageMeta" style="font-weight:600; font-size:11.5px;"></span>
+              </div>
+            </div>
+            <div style="margin-top:18px; display:flex; gap:10px;">
+              <button type="submit" class="btn btn-primary">Save News Card</button>
+              <button type="button" class="btn btn-ghost" onclick="closeNewsEditor()">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- TAB: DEPARTMENT CONSOLES (Generic desk view for other areas) -->
+    <div id="tab-desk" class="tab-pane" style="display:none;">
+      <div class="card hint">
+        <strong id="genericDeskTitle">Department Console</strong>: Maintain operational notes, plant capabilities, documentation, and compliance updates.
+      </div>
+      <div class="card">
+        <h2 style="margin-top:0; font-size:18px;" id="genericDeskHeader">Operational Records</h2>
+        <label>Overview &amp; Executive Summary</label>
+        <textarea id="deskOverview" style="min-height:140px;" placeholder="Document operational updates, unit certifications, or notes..."></textarea>
+
+        <div class="row" style="margin-top:12px;">
+          <div>
+            <label>Key Metrics &amp; Operational Highlights</label>
+            <textarea id="deskMetrics" style="min-height:120px;" placeholder="Capacities, reactor metrics, cleanroom ISO classes..."></textarea>
+          </div>
+          <div>
+            <label>Compliance Documents &amp; Regulatory Filings</label>
+            <textarea id="deskDocs" style="min-height:120px;" placeholder="USFDA, WHO-GMP, CFO/CFE numbers, audit schedules..."></textarea>
+          </div>
+        </div>
+        <p style="margin-top:24px;">
+          <button type="button" class="btn btn-primary" onclick="saveDeskData()">Save Department Records</button>
+        </p>
+      </div>
+    </div>
+
+    <!-- TAB: ACCOUNT -->
+    <div id="tab-account" class="tab-pane" style="display:none;">
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg, #3D5CAD, #2E4A8A);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;" id="avatarInitial">
+            A
+          </div>
+          <div>
+            <h1 style="margin:0;font-size:20px;" id="accountName">Administrator</h1>
+            <div style="color:var(--sp-text-muted);font-size:13px;margin-top:2px;">
+              <span id="accountEmail">admin@vasudha.local</span> &bull; 
+              <span id="accountDept" style="text-transform:capitalize;">admin</span> &bull;
+              <span id="accountRole" style="text-transform:uppercase;font-size:11px;background:#EEF2FB;color:var(--sp-primary-dark);padding:2px 7px;border-radius:4px;font-weight:700;">ADMIN</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin-top:0;font-size:17px;">Update Credentials</h2>
+        <form onsubmit="updateAccount(event)">
+          <label>Display Name</label>
+          <input id="editName" required>
+          <label>New Password (optional)</label>
+          <input id="newPassInput" type="password" placeholder="Leave blank to keep unchanged">
+          <p style="margin-top:20px;">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </p>
+        </form>
+      </div>
+    </div>
+
+  </div><!-- /.wrap -->
+
+  <footer style="border-top:1px solid var(--sp-border); padding:20px 24px; text-align:center; color:var(--sp-text-muted); font-size:12.5px; background:#FFFFFF; margin-top:40px;">
+    <div style="max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <div>
+        <strong>Vasudha Pharma Chem Limited</strong> &bull; Internal Operations Portal
+      </div>
+      <div style="color:#94A3B8;">
+        Confidential &amp; Proprietary &bull; Session Active
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="ok-toast" id="okToast">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+    <span id="toastMsg">Saved successfully</span>
+  </div>
+
+  <!-- Auth Modal Dialog -->
+  <div class="auth-overlay" id="authModal" style="display:none;">
+    <div class="auth-box">
+      <div style="display:flex; flex-direction:column; align-items:center; text-align:center; margin-bottom:20px;">
+        <div class="staff-logo-hex" style="width:58px; height:58px; border-radius:14px; margin-bottom:14px;">
+          <img src="../assets/vasudha-logo.jpg" alt="Vasudha Pharma">
+        </div>
+        <h2 style="margin:0; font-size:19px; color:var(--sp-primary-dark); text-transform:uppercase;">Vasudha Operations Portal</h2>
+        <div style="font-size:12px; color:#0088AA; font-style:italic; margin-top:2px;">Contributing to affordable health care... &bull; Since 1994</div>
+        <p style="font-size:13px; color:var(--sp-text-muted); margin:10px 0 0;">Sign in to access your department operational console.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:18px;">
+        <button type="button" class="btn btn-ghost" style="font-size:11.5px; justify-content:center;" onclick="quickAuth('admin@vasudha.local')">
+          &bull; Prefill Admin
+        </button>
+        <button type="button" class="btn btn-ghost" style="font-size:11.5px; justify-content:center;" onclick="quickAuth('hr@vasudha.local')">
+          &bull; Prefill HR
+        </button>
+      </div>
+
+      <form onsubmit="handleLogin(event)">
+        <label>Email Address</label>
+        <input id="loginEmail" type="email" required placeholder="name@vasudha.local">
+        <label>Password</label>
+        <input id="loginPass" type="password" required placeholder="••••••••">
+        <div id="loginErr" style="display:none; color:#DC2626; font-size:12.5px; margin-top:10px; font-weight:500;">Invalid credentials. Default password is ChangeMe!</div>
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:20px; padding:12px;">
+          Sign In to Portal &rarr;
+        </button>
+      </form>
+
+      <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--sp-border); font-size:12px; color:var(--sp-text-muted);">
+        <strong>First Logins:</strong><br>
+        &bull; <code>admin@vasudha.local</code> (all desks + Users)<br>
+        &bull; <code>hr@vasudha.local</code> (Careers / HR only)<br>
+        Password: <code>ChangeMe!</code>
+      </div>
+      <div style="text-align:center; margin-top:14px;">
+        <a href="../home.html" style="font-size:12.5px; color:var(--sp-primary); text-decoration:none;">&larr; Return to Vasudha Website</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // System Users & State
+    let currentUser = null;
+    let usersList = [
+      { email: 'admin@vasudha.local', name: 'Administrator', role: 'admin', dept: 'admin' },
+      { email: 'hr@vasudha.local', name: 'HR Specialist', role: 'hr', dept: 'careers' },
+      { email: 'foundation@vasudha.local', name: 'Foundation Officer', role: 'user', dept: 'foundation' },
+      { email: 'news@vasudha.local', name: 'Media Officer', role: 'user', dept: 'news' }
+    ];
+    // Pre-populated with real production data (5 jobs, 37 foundation images, 6 news & event cards)
+    // When served via HTTP/HTTPS, fetch() will synchronize with server files; when opened directly via file://,
+    // this ensures full operational data is immediately available instead of showing 0.
+    let jobsData = {
+    "updated": "2026-09-08",
+    "note": "HR edits this file (or the staff portal). status=open shows on Careers. status=closed hides it.",
+    "jobs": [
+        {
+            "id": "VP-QC-001",
+            "title": "Quality Control Officer",
+            "department": "Quality",
+            "location": "Hyderabad, Telangana, IN",
+            "posted": "04 Sep 2026",
+            "status": "open",
+            "skills": [
+                "QC",
+                "GMP",
+                "HPLC",
+                "analysis",
+                "QA",
+                "B.Pharm",
+                "M.Sc"
+            ],
+            "role": "Support routine QC testing of active pharmaceutical ingredients (APIs) and chemical intermediates in line with approved cGMP testing methods and pharmacopeial standards.",
+            "duties": "Perform chromatographic (HPLC/GC) and wet chemical testing, maintain audit-ready laboratory records, report deviations, and collaborate with QA on out-of-specification investigations.",
+            "profile": "M.Sc. Chemistry / B.Pharm with 2-4 years of analytical testing experience in a regulatory-approved API facility."
+        },
+        {
+            "id": "VP-PRD-002",
+            "title": "Production Chemist",
+            "department": "Manufacturing",
+            "location": "Visakhapatnam, Andhra Pradesh, IN",
+            "posted": "02 Sep 2026",
+            "status": "open",
+            "skills": [
+                "production",
+                "BMR",
+                "BPR",
+                "reactors",
+                "chemistry",
+                "shift"
+            ],
+            "role": "Manage shift operations in bulk API synthesis and reaction suites under the plant operations manager.",
+            "duties": "Execute batch manufacturing records (BMR), monitor critical process parameters (temperature, pressure, agitation), ensure PPE compliance, and execute seamless shift handovers.",
+            "profile": "B.Sc. / M.Sc. Chemistry or Diploma in Chemical Engineering with plant-floor synthesis experience."
+        },
+        {
+            "id": "VP-EHS-003",
+            "title": "EHS Executive",
+            "department": "EHS",
+            "location": "Hyderabad, Telangana, IN",
+            "posted": "28 Aug 2026",
+            "status": "open",
+            "skills": [
+                "EHS",
+                "safety",
+                "environment",
+                "permits",
+                "ISO 14001",
+                "compliance"
+            ],
+            "role": "Champion environmental compliance, occupational health, and process safety standards across operational units.",
+            "duties": "Conduct safety audits, lead hazard identification (HAZOP) reviews, track effluent treatment plant (ETP) metrics, manage work permits, and coordinate regulatory filings.",
+            "profile": "Degree / Diploma in Industrial Safety or Environmental Engineering with 3+ years in chemical / pharma manufacturing."
+        },
+        {
+            "id": "VP-RND-004",
+            "title": "Senior Research Chemist — Process R&D",
+            "department": "R&D",
+            "location": "Hyderabad, Telangana, IN",
+            "posted": "05 Sep 2026",
+            "status": "open",
+            "skills": [
+                "R&D",
+                "process chemistry",
+                "scale-up",
+                "synthesis",
+                "reaction engineering"
+            ],
+            "role": "Lead synthetic route scouting, reaction optimization, and technology transfer for generic APIs and pipeline molecules.",
+            "duties": "Design non-infringing synthetic pathways, optimize reaction stoichiometry to improve yields and minimize solvent waste, and prepare tech-transfer packages for commercial manufacturing.",
+            "profile": "Ph.D. or M.Sc. in Organic Chemistry with 4-7 years in API process development and route optimization."
+        },
+        {
+            "id": "VP-RA-005",
+            "title": "Regulatory Affairs Specialist",
+            "department": "Corporate Governance",
+            "location": "Hyderabad, Telangana, IN",
+            "posted": "01 Sep 2026",
+            "status": "closed",
+            "skills": [
+                "DMF",
+                "CTD",
+                "eCTD",
+                "USFDA",
+                "regulatory",
+                "dossier"
+            ],
+            "role": "Prepare, compile, and maintain Drug Master Files (DMF / CEP) for international regulatory agencies.",
+            "duties": "Author Module 3 quality sections, respond to regulatory deficiency letters, track post-approval changes, and support customer audits.",
+            "profile": "M.Pharm / M.Sc. with 5+ years of experience in USFDA / EDQM filings."
+        }
+    ]
+};
+    let editingJobId = null;
+
+    // Foundation Galleries Data State
+    let foundationData = {
+    "vasudha": [
+        "assets/foundation/vf-01.png",
+        "assets/foundation/vf-02.png",
+        "assets/foundation/vf-03.png",
+        "assets/foundation/vf-04.png",
+        "assets/foundation/vf-05.png",
+        "assets/foundation/vf-06.png",
+        "assets/foundation/vf-07.png",
+        "assets/foundation/vf-08.png",
+        "assets/foundation/vf-09.png",
+        "assets/foundation/vf-10.png",
+        "assets/foundation/vf-11.png",
+        "assets/foundation/vf-12.png",
+        "assets/foundation/vf-13.png",
+        "assets/foundation/vf-14.png",
+        "assets/foundation/vf-15.png"
+    ],
+    "vrrv": [
+        "assets/foundation/vrrv-01.png",
+        "assets/foundation/vrrv-02.png",
+        "assets/foundation/vrrv-03.png",
+        "assets/foundation/vrrv-04.png",
+        "assets/foundation/vrrv-05.png",
+        "assets/foundation/vrrv-06.png",
+        "assets/foundation/vrrv-07.png",
+        "assets/foundation/vrrv-08.png",
+        "assets/foundation/vrrv-09.png",
+        "assets/foundation/vrrv-10.png",
+        "assets/foundation/vrrv-11.png",
+        "assets/foundation/vrrv-12.png",
+        "assets/foundation/vrrv-13.png",
+        "assets/foundation/vrrv-14.png",
+        "assets/foundation/vrrv-15.png",
+        "assets/foundation/vrrv-16.png",
+        "assets/foundation/vrrv-17.png",
+        "assets/foundation/vrrv-18.png"
+    ],
+    "moments": [
+        "assets/founder-gallery/slide-1.jpg",
+        "assets/founder-gallery/slide-2.jpg",
+        "assets/founder-gallery/slide-3.jpg",
+        "assets/founder-gallery/slide-4.jpg"
+    ]
+};
+
+    // News & Events Data State
+    let newsEventsData = {
+    "events": [
+        {
+            "id": "EV-IPHEX-2026",
+            "status": "live",
+            "title": "iPHEX 2026",
+            "place": "Bharat Mandapam, New Delhi",
+            "dates": "7 – 9 September, 2026",
+            "booth": "Booth: 2C-28",
+            "image": "assets/events/new-delhi.png",
+            "tag": "Meet us at"
+        },
+        {
+            "id": "EV-CPHI-MILAN-2026",
+            "status": "live",
+            "title": "CPHI Milan 2026",
+            "place": "Fiera Milano, Italy",
+            "dates": "6 – 8 October, 2026",
+            "booth": "Booth: 3F103",
+            "image": "assets/events/milan.png",
+            "tag": "Meet us at"
+        },
+        {
+            "id": "EV-CPHI-INDIA-2026",
+            "status": "live",
+            "title": "CPHI India 2026",
+            "place": "Yashobhoomi, Dwarka Sector, New Delhi",
+            "dates": "23 – 25 November, 2026",
+            "booth": "Booth: 2L38",
+            "image": "assets/events/new-delhi-redfort.png",
+            "tag": "Meet us at"
+        }
+    ],
+    "news": [
+        {
+            "id": "NW-GPACTS-2026",
+            "status": "live",
+            "kicker": "Digital Transformation",
+            "date": "September 2026",
+            "title": "AI Governance & Data Integrity at GPACTS 2026",
+            "summary": "Vasudha Pharma highlighted modern AI governance architectures, cGMP compliance, and data integrity at the Global Pharma AI Summit in Hyderabad.",
+            "image": "assets/gpacts-2026.jpg",
+            "link": "https://www.linkedin.com/posts/vasudha-pharma-chem-ltd-_gpacts2026-pharma-ai-activity-7501605237519192064-3Q1q"
+        },
+        {
+            "id": "NW-AP-AWARD",
+            "status": "live",
+            "kicker": "State Recognition",
+            "date": "May 2026",
+            "title": "Best Management Award by Govt. of Andhra Pradesh",
+            "summary": "VPCL Unit-2 (Visakhapatnam / JN Pharma City) received the prestigious Best Management Award from the Government of Andhra Pradesh for excellence in industrial relations, worker safety, and statutory compliance.",
+            "image": "assets/plant-aerial-3.jpg",
+            "link": ""
+        },
+        {
+            "id": "NW-TS-AWARD",
+            "status": "live",
+            "kicker": "Industry Excellence",
+            "date": "2026",
+            "title": "Best API Manufacturing Factory Award",
+            "summary": "Vasudha Pharma Chem Limited was recognized by the Government of Telangana with the Best API Manufacturing Factory Award for cGMP manufacturing excellence and quality leadership.",
+            "image": "assets/company-aerial.jpg",
+            "link": ""
+        },
+        {
+            "id": "NW-CREDIT",
+            "status": "live",
+            "kicker": "Company Update",
+            "date": "Recent",
+            "title": "Strong Credit Rating Affirmed",
+            "summary": "India Ratings & Research affirmed “IND A+/Stable/IND A1+” rating on Vasudha Pharma Chem Limited’s bank loan facilities.",
+            "image": "assets/plant-aerial-1.jpg",
+            "link": ""
+        },
+        {
+            "id": "NW-ECOVADIS",
+            "status": "live",
+            "kicker": "Sustainability",
+            "date": "EHS Focus",
+            "title": "EcoVadis Gold Level Recognition",
+            "summary": "Continued commitment to Environment, Health & Safety with strong sustainability ratings and low-risk certifications from global partners.",
+            "image": "assets/ehs-banner.jpg",
+            "link": ""
+        },
+        {
+            "id": "NW-FOUNDATION",
+            "status": "live",
+            "kicker": "Community",
+            "date": "Social Impact",
+            "title": "Vasudha Foundation Initiatives",
+            "summary": "Our social service organization continues to extend physical and financial support to communities across all classes and age groups.",
+            "image": "assets/technician-at-work-2.jpg",
+            "link": ""
+        }
+    ]
+};
+
+    // Toast Notification
+    function toast(msg) {
+      const t = document.getElementById('okToast');
+      document.getElementById('toastMsg').textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3500);
+    }
+
+    // Load Jobs JSON
+    async function loadJobs() {
+      try {
+        const res = await fetch('../jobs.json');
+        if (res.ok) {
+          jobsData = await res.json();
+          if (!jobsData.jobs) jobsData.jobs = [];
+        }
+      } catch (e) {
+        console.warn('Could not fetch jobs.json, using memory copy:', e);
+      }
+      renderJobsTable();
+      updateStats();
+    }
+
+    function updateStats() {
+      const open = jobsData.jobs.filter(j => (j.status || 'open') !== 'closed').length;
+      const total = jobsData.jobs.length;
+      document.getElementById('statOpenJobs').textContent = open;
+      document.getElementById('statTotalJobs').textContent = total + ' total positions in database';
+      document.getElementById('jobsCountNum').textContent = total;
+      document.getElementById('jobsStatusSub').textContent = open + ' Open published • ' + (total - open) + ' Closed';
+    }
+
+    function renderJobsTable() {
+      const q = (document.getElementById('jobSearchInput').value || '').toLowerCase().trim();
+      const tbody = document.getElementById('jobsTbody');
+      let filtered = jobsData.jobs.filter(j => {
+        if (!q) return true;
+        const blob = ((j.id||'') + ' ' + (j.title||'') + ' ' + (j.department||'') + ' ' + (j.location||'') + ' ' + ((j.skills||[]).join(' '))).toLowerCase();
+        return blob.includes(q);
+      });
+
+      if (!filtered.length) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:28px; color:#64748B;">No job requisitions match this search.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = filtered.map(j => {
+        const isOpen = (j.status || 'open') !== 'closed';
+        const skillsChips = (j.skills || []).slice(0, 3).map(s => '<span style="background:#EEF2FB; color:#2E4A8A; font-size:11px; padding:2px 6px; border-radius:4px; margin-right:4px;">' + s + '</span>').join('');
+        return `<tr>
+          <td><strong style="color:var(--sp-primary); font-size:13.5px;">${j.id}</strong></td>
+          <td>
+            <div style="font-weight:600; color:var(--sp-text-main); font-size:14px;">${j.title}</div>
+            <div style="margin-top:4px;">${skillsChips}</div>
+          </td>
+          <td><span style="color:#475569; font-weight:500;">${j.department || '—'}</span></td>
+          <td><span style="font-size:13px; color:#64748B;">${j.location || 'Hyderabad'}</span></td>
+          <td><span style="font-size:12.5px; color:#64748B;">${j.posted || '—'}</span></td>
+          <td>
+            <span class="${isOpen ? 'badge-open' : 'badge-closed'}">${isOpen ? '● Open' : '○ Closed'}</span>
+          </td>
+          <td style="text-align:right; white-space:nowrap;">
+            <button type="button" class="btn btn-ghost" style="padding:5px 9px; font-size:12px;" onclick="editJob('${j.id}')">Edit</button>
+            <button type="button" class="btn btn-ghost" style="padding:5px 9px; font-size:12px;" onclick="cloneJob('${j.id}')">Clone</button>
+            <button type="button" class="btn btn-ghost" style="padding:5px 9px; font-size:12px; color:${isOpen ? '#64748B' : '#059669'};" onclick="toggleStatus('${j.id}')">
+              ${isOpen ? 'Close' : 'Publish'}
+            </button>
+            <button type="button" class="btn btn-danger" style="padding:5px 9px; font-size:12px;" onclick="deleteJob('${j.id}')">Delete</button>
+          </td>
+        </tr>`;
+      }).join('');
+    }
+
+    function editJob(id) {
+      const j = jobsData.jobs.find(x => x.id === id);
+      if (!j) return;
+      editingJobId = id;
+      document.getElementById('formHeader').textContent = 'Edit Requisition: ' + id;
+      document.getElementById('jobId').value = j.id || '';
+      document.getElementById('jobStatus').value = (j.status || 'open') === 'closed' ? 'closed' : 'open';
+      document.getElementById('jobTitle').value = j.title || '';
+      document.getElementById('jobDept').value = j.department || 'Quality';
+      document.getElementById('jobLoc').value = j.location || 'Hyderabad, Telangana, IN';
+      document.getElementById('jobPosted').value = j.posted || '';
+      document.getElementById('jobSkills').value = (j.skills || []).join(', ');
+      document.getElementById('jobRole').value = j.role || '';
+      document.getElementById('jobDuties').value = j.duties || '';
+      document.getElementById('jobProfile').value = j.profile || '';
+      document.getElementById('btnDeleteJob').style.display = 'inline-flex';
+      document.getElementById('editorCard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function resetJobForm() {
+      editingJobId = null;
+      document.getElementById('formHeader').textContent = 'Create New Requisition';
+      document.getElementById('jobForm').reset();
+      document.getElementById('jobLoc').value = 'Hyderabad, Telangana, IN';
+      document.getElementById('jobPosted').value = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+      document.getElementById('btnDeleteJob').style.display = 'none';
+    }
+
+    function saveJob(e) {
+      e.preventDefault();
+      const id = document.getElementById('jobId').value.trim();
+      const title = document.getElementById('jobTitle').value.trim();
+      if (!id || !title) return;
+
+      const obj = {
+        id: id,
+        title: title,
+        department: document.getElementById('jobDept').value,
+        location: document.getElementById('jobLoc').value.trim(),
+        posted: document.getElementById('jobPosted').value.trim() || new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
+        status: document.getElementById('jobStatus').value,
+        skills: document.getElementById('jobSkills').value.split(',').map(s => s.trim()).filter(Boolean),
+        role: document.getElementById('jobRole').value.trim(),
+        duties: document.getElementById('jobDuties').value.trim(),
+        profile: document.getElementById('jobProfile').value.trim()
+      };
+
+      const idx = jobsData.jobs.findIndex(x => x.id === (editingJobId || id));
+      if (idx >= 0) {
+        jobsData.jobs[idx] = obj;
+        toast('Requisition ' + id + ' updated.');
+      } else {
+        jobsData.jobs.push(obj);
+        toast('Requisition ' + id + ' created.');
+      }
+
+      renderJobsTable();
+      updateStats();
+      resetJobForm();
+    }
+
+    function cloneJob(id) {
+      const orig = jobsData.jobs.find(x => x.id === id);
+      if (!orig) return;
+      const copy = JSON.parse(JSON.stringify(orig));
+      copy.id = orig.id + '-COPY-' + Math.floor(10 + Math.random() * 90);
+      copy.title = orig.title + ' (Copy)';
+      copy.status = 'closed';
+      copy.posted = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+      jobsData.jobs.push(copy);
+      renderJobsTable();
+      updateStats();
+      toast('Cloned as ' + copy.id);
+    }
+
+    function toggleStatus(id) {
+      const j = jobsData.jobs.find(x => x.id === id);
+      if (!j) return;
+      j.status = (j.status || 'open') === 'closed' ? 'open' : 'closed';
+      renderJobsTable();
+      updateStats();
+      toast('Status updated to ' + j.status);
+    }
+
+    function deleteJob(id) {
+      if (!confirm('Are you sure you want to delete requisition ' + id + '?')) return;
+      jobsData.jobs = jobsData.jobs.filter(x => x.id !== id);
+      renderJobsTable();
+      updateStats();
+      toast('Requisition ' + id + ' removed.');
+    }
+
+    function deleteCurrentJob() {
+      if (editingJobId) {
+        deleteJob(editingJobId);
+        resetJobForm();
+      }
+    }
+
+    function downloadJobsJson() {
+      jobsData.updated = new Date().toISOString().slice(0, 10);
+      const str = JSON.stringify(jobsData, null, 2);
+      const blob = new Blob([str], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'jobs.json';
+      a.click();
+      toast('jobs.json downloaded.');
+    }
+
+    function copyJobsJson() {
+      jobsData.updated = new Date().toISOString().slice(0, 10);
+      navigator.clipboard.writeText(JSON.stringify(jobsData, null, 2))
+        .then(() => toast('jobs.json copied to clipboard!'))
+        .catch(() => toast('Failed to copy.'));
+    }
+
+    // Tab Navigation
+    function showTab(tabName) {
+      document.querySelectorAll('.tab-pane').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('#mainStaffNav button').forEach(b => b.classList.remove('on'));
+
+      const targetPane = document.getElementById('tab-' + tabName) || document.getElementById('tab-desk');
+      if (targetPane) targetPane.style.display = 'block';
+
+      const navBtn = document.querySelector(`#mainStaffNav button[data-desk="${tabName}"]`);
+      if (navBtn) navBtn.classList.add('on');
+
+      if (tabName === 'foundation') {
+        renderFoundationDesk();
+      } else if (tabName === 'news') {
+        renderNewsDesk();
+      } else if (['manufacturing','rnd','ehs','governance','marketing'].includes(tabName)) {
+        const titles = {
+          manufacturing: 'Manufacturing Operations Desk',
+          rnd: 'Research & Development Desk',
+          ehs: 'Environment, Health & Safety Desk',
+          governance: 'Corporate Governance & Statutory Desk',
+          marketing: 'Product Catalogue & Marketing Desk',
+          foundation: 'Vasudha Foundation & CSR Desk',
+          news: 'News & Conferences Desk'
+        };
+        document.getElementById('genericDeskTitle').textContent = titles[tabName] || 'Department Console';
+        document.getElementById('genericDeskHeader').textContent = (titles[tabName] || 'Department') + ' Records';
+      }
+    }
+
+    function saveDeskData() {
+      toast('Department records saved successfully.');
+    }
+
+    // ==========================================
+    // FOUNDATION DESK: 3-SCROLL GALLERY MANAGER
+    // ==========================================
+    async function loadFoundationGalleries() {
+      try {
+        const res = await fetch('../foundation-galleries.json');
+        if (res.ok) {
+          foundationData = await res.json();
+          if (!foundationData.vasudha) foundationData.vasudha = [];
+          if (!foundationData.vrrv) foundationData.vrrv = [];
+          if (!foundationData.moments) foundationData.moments = [];
+        }
+      } catch (e) {
+        console.warn('Using default memory foundationData:', e);
+      }
+      renderFoundationDesk();
+    }
+
+    function renderFoundationDesk() {
+      renderScrollGrid('vasudha', foundationData.vasudha);
+      renderScrollGrid('vrrv', foundationData.vrrv);
+      renderScrollGrid('moments', foundationData.moments);
+    }
+
+    function renderScrollGrid(which, list) {
+      const elCount = document.getElementById('count-' + which);
+      if (elCount) elCount.textContent = '(' + (list ? list.length : 0) + ' images)';
+
+      const container = document.getElementById('grid-' + which);
+      if (!container) return;
+
+      if (!list || !list.length) {
+        container.innerHTML = '<div style="grid-column:1/-1; padding:20px; text-align:center; color:#94A3B8; background:#F8FAFC; border-radius:8px;">No images in this collection yet.</div>';
+        return;
+      }
+
+      container.innerHTML = list.map((src, idx) => {
+        const cleanSrc = src.startsWith('../') ? src.replace('../', '') : src;
+        const displaySrc = '../' + cleanSrc;
+        const filename = cleanSrc.split('/').pop();
+        return `<div style="border:1px solid var(--sp-border); border-radius:10px; padding:8px; background:#FFFFFF; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+          <a href="${displaySrc}" target="_blank" rel="noopener" style="display:block; overflow:hidden; border-radius:6px;">
+            <img src="${displaySrc}" alt="" style="width:100%; height:94px; object-fit:cover; display:block; background:#E2E8F0; transition:transform 0.2s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          </a>
+          <div style="font-size:11px; color:#64748B; margin:6px 0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="${filename}">
+            ${filename}
+          </div>
+          <button type="button" class="btn btn-danger" style="width:100%; justify-content:center; padding:4px 8px; font-size:11px;" onclick="deleteFoundationImage('${which}', ${idx})">
+            Remove
+          </button>
+        </div>`;
+      }).join('');
+    }
+
+    function addFoundationImage(which) {
+      const input = document.getElementById('add-' + which + '-input');
+      if (!input) return;
+      let val = input.value.trim();
+      if (!val) {
+        alert('Please enter an image path or URL.');
+        return;
+      }
+      if (val.startsWith('../')) val = val.replace('../', '');
+      foundationData[which].push(val);
+      renderScrollGrid(which, foundationData[which]);
+      input.value = '';
+      toast('Photo added to ' + which + ' scroll.');
+    }
+
+    function deleteFoundationImage(which, index) {
+      if (!confirm('Remove this photo from the scroll?')) return;
+      foundationData[which].splice(index, 1);
+      renderScrollGrid(which, foundationData[which]);
+      toast('Photo removed from ' + which + ' scroll.');
+    }
+
+    function downloadFoundationJson() {
+      const str = JSON.stringify(foundationData, null, 2);
+      const blob = new Blob([str], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'foundation-galleries.json';
+      a.click();
+      toast('foundation-galleries.json downloaded.');
+    }
+
+    function copyFoundationJson() {
+      navigator.clipboard.writeText(JSON.stringify(foundationData, null, 2))
+        .then(() => toast('foundation-galleries.json copied to clipboard!'))
+        .catch(() => toast('Failed to copy.'));
+    }
+
+    // ==========================================
+    // NEWS & EVENTS DESK: CARDS & IMAGES CRUD
+    // ==========================================
+    async function loadNewsEvents() {
+      try {
+        const res = await fetch('../news-events.json');
+        if (res.ok) {
+          newsEventsData = await res.json();
+          if (!newsEventsData.events) newsEventsData.events = [];
+          if (!newsEventsData.news) newsEventsData.news = [];
+        }
+      } catch (e) {
+        console.warn('Using default memory newsEventsData:', e);
+      }
+      renderNewsDesk();
+    }
+
+    function renderNewsDesk() {
+      renderEventsCards();
+      renderNewsCards();
+    }
+
+    function renderEventsCards() {
+      const listEl = document.getElementById('eventsCardsList');
+      const countEl = document.getElementById('count-events');
+      if (countEl) countEl.textContent = newsEventsData.events.length;
+      if (!listEl) return;
+
+      if (!newsEventsData.events.length) {
+        listEl.innerHTML = '<div style="grid-column:1/-1; padding:24px; text-align:center; color:#94A3B8; background:#F8FAFC; border-radius:8px;">No event cards configured.</div>';
+        return;
+      }
+
+      listEl.innerHTML = newsEventsData.events.map(ev => {
+        const isLive = (ev.status || 'live') === 'live';
+        const imgPath = ev.image ? (ev.image.startsWith('../') ? ev.image : '../' + ev.image) : '';
+        return `<div class="card" style="margin:0; padding:16px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+          <div>
+            <div style="position:relative; height:120px; border-radius:8px; overflow:hidden; background:#E2E8F0; margin-bottom:12px;">
+              ${imgPath ? `<img src="${imgPath}" alt="${ev.title}" style="width:100%; height:100%; object-fit:cover;">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#94A3B8;font-size:12px;">No Image</div>'}
+              <span style="position:absolute; top:8px; left:8px; font-size:10.5px; font-weight:700; background:rgba(15,23,42,0.85); color:#FFFFFF; padding:2px 7px; border-radius:4px;">${ev.tag || 'Meet us at'}</span>
+              <span class="${isLive ? 'badge-open' : 'badge-closed'}" style="position:absolute; top:8px; right:8px;">${isLive ? '● Live' : '○ Archived'}</span>
+            </div>
+            <h3 style="margin:0 0 6px; font-size:15.5px; color:var(--sp-text-main);">${ev.title}</h3>
+            <div style="font-size:12.5px; color:var(--sp-text-muted); margin-bottom:4px;">${ev.place || '—'}</div>
+            <div style="font-size:12px; color:#64748B;">${ev.dates || '—'}</div>
+            <div style="font-size:12px; font-weight:600; color:var(--sp-primary); margin-top:6px;">${ev.booth || '—'}</div>
+          </div>
+          <div style="display:flex; gap:8px; border-top:1px solid var(--sp-border); padding-top:10px; margin-top:8px;">
+            <button type="button" class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;" onclick="openEventEditor('${ev.id}')">Edit / Update Image</button>
+            <button type="button" class="btn btn-ghost" style="font-size:12px;" onclick="toggleEventStatus('${ev.id}')">${isLive ? 'Archive' : 'Make Live'}</button>
+            <button type="button" class="btn btn-danger" style="font-size:12px; padding:6px 10px;" onclick="deleteEventCard('${ev.id}')">Delete</button>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    function renderNewsCards() {
+      const listEl = document.getElementById('newsCardsList');
+      const countEl = document.getElementById('count-news');
+      if (countEl) countEl.textContent = newsEventsData.news.length;
+      if (!listEl) return;
+
+      if (!newsEventsData.news.length) {
+        listEl.innerHTML = '<div style="grid-column:1/-1; padding:24px; text-align:center; color:#94A3B8; background:#F8FAFC; border-radius:8px;">No news cards published.</div>';
+        return;
+      }
+
+      listEl.innerHTML = newsEventsData.news.map(nw => {
+        const isLive = (nw.status || 'live') === 'live';
+        const imgPath = nw.image ? (nw.image.startsWith('../') ? nw.image : '../' + nw.image) : '';
+        return `<div class="card" style="margin:0; padding:16px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+          <div>
+            <div style="position:relative; height:120px; border-radius:8px; overflow:hidden; background:#E2E8F0; margin-bottom:12px;">
+              ${imgPath ? `<img src="${imgPath}" alt="${nw.title}" style="width:100%; height:100%; object-fit:cover;">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#94A3B8;font-size:12px;">No Image</div>'}
+              <span style="position:absolute; top:8px; left:8px; font-size:10.5px; font-weight:700; background:#EEF2FB; color:var(--sp-primary); padding:2px 7px; border-radius:4px;">${nw.kicker || 'Update'}</span>
+              <span class="${isLive ? 'badge-open' : 'badge-closed'}" style="position:absolute; top:8px; right:8px;">${isLive ? '● Live' : '○ Archived'}</span>
+            </div>
+            <div style="font-size:11.5px; color:#94A3B8; margin-bottom:4px;">${nw.date || 'Recent'}</div>
+            <h3 style="margin:0 0 6px; font-size:15.5px; color:var(--sp-text-main);">${nw.title}</h3>
+            <p style="margin:0; font-size:12.5px; color:var(--sp-text-muted); line-height:1.5;">${nw.summary || ''}</p>
+          </div>
+          <div style="display:flex; gap:8px; border-top:1px solid var(--sp-border); padding-top:10px; margin-top:8px;">
+            <button type="button" class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;" onclick="openNewsEditor('${nw.id}')">Edit / Update Image</button>
+            <button type="button" class="btn btn-ghost" style="font-size:12px;" onclick="toggleNewsStatus('${nw.id}')">${isLive ? 'Archive' : 'Make Live'}</button>
+            <button type="button" class="btn btn-danger" style="font-size:12px; padding:6px 10px;" onclick="deleteNewsCard('${nw.id}')">Delete</button>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    // Event Card CRUD
+    function openEventEditor(id) {
+      const box = document.getElementById('eventEditorCard');
+      box.style.display = 'block';
+      if (id) {
+        const ev = newsEventsData.events.find(x => x.id === id);
+        if (!ev) return;
+        document.getElementById('eventEditorTitle').textContent = 'Edit Event: ' + ev.title;
+        document.getElementById('editEventId').value = ev.id;
+        document.getElementById('editEventTitle').value = ev.title || '';
+        document.getElementById('editEventStatus').value = ev.status || 'live';
+        document.getElementById('editEventPlace').value = ev.place || '';
+        document.getElementById('editEventDates').value = ev.dates || '';
+        document.getElementById('editEventBooth').value = ev.booth || '';
+        document.getElementById('editEventTag').value = ev.tag || 'Meet us at';
+        document.getElementById('editEventImage').value = ev.image || '';
+        updateEventImagePreview(ev.image || '');
+      } else {
+        document.getElementById('eventEditorTitle').textContent = 'Add New Conference Event';
+        document.getElementById('editEventId').value = '';
+        document.getElementById('editEventTitle').value = '';
+        document.getElementById('editEventStatus').value = 'live';
+        document.getElementById('editEventPlace').value = '';
+        document.getElementById('editEventDates').value = '';
+        document.getElementById('editEventBooth').value = '';
+        document.getElementById('editEventTag').value = 'Meet us at';
+        document.getElementById('editEventImage').value = '';
+        updateEventImagePreview('');
+      }
+      box.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function closeEventEditor() {
+      document.getElementById('eventEditorCard').style.display = 'none';
+    }
+
+    function saveEventCard(e) {
+      e.preventDefault();
+      const id = document.getElementById('editEventId').value.trim() || ('EV-' + Date.now());
+      const item = {
+        id,
+        title: document.getElementById('editEventTitle').value.trim(),
+        status: document.getElementById('editEventStatus').value,
+        place: document.getElementById('editEventPlace').value.trim(),
+        dates: document.getElementById('editEventDates').value.trim(),
+        booth: document.getElementById('editEventBooth').value.trim(),
+        tag: document.getElementById('editEventTag').value.trim() || 'Meet us at',
+        image: document.getElementById('editEventImage').value.trim()
+      };
+
+      const idx = newsEventsData.events.findIndex(x => x.id === id);
+      if (idx >= 0) newsEventsData.events[idx] = item;
+      else newsEventsData.events.push(item);
+
+      renderEventsCards();
+      closeEventEditor();
+      toast('Event card ' + item.title + ' saved.');
+    }
+
+    function toggleEventStatus(id) {
+      const ev = newsEventsData.events.find(x => x.id === id);
+      if (!ev) return;
+      ev.status = (ev.status || 'live') === 'live' ? 'done' : 'live';
+      renderEventsCards();
+      toast('Event status updated to ' + ev.status);
+    }
+
+    function deleteEventCard(id) {
+      if (!confirm('Delete event card ' + id + '?')) return;
+      newsEventsData.events = newsEventsData.events.filter(x => x.id !== id);
+      renderEventsCards();
+      toast('Event card removed.');
+    }
+
+    // News Card CRUD
+    function openNewsEditor(id) {
+      const box = document.getElementById('newsEditorCard');
+      box.style.display = 'block';
+      if (id) {
+        const nw = newsEventsData.news.find(x => x.id === id);
+        if (!nw) return;
+        document.getElementById('newsEditorTitle').textContent = 'Edit News: ' + nw.title;
+        document.getElementById('editNewsId').value = nw.id;
+        document.getElementById('editNewsTitle').value = nw.title || '';
+        document.getElementById('editNewsStatus').value = nw.status || 'live';
+        document.getElementById('editNewsKicker').value = nw.kicker || '';
+        document.getElementById('editNewsDate').value = nw.date || '';
+        document.getElementById('editNewsSummary').value = nw.summary || '';
+        document.getElementById('editNewsLink').value = nw.link || '';
+        document.getElementById('editNewsImage').value = nw.image || '';
+        updateNewsImagePreview(nw.image || '');
+      } else {
+        document.getElementById('newsEditorTitle').textContent = 'Add New Company News Item';
+        document.getElementById('editNewsId').value = '';
+        document.getElementById('editNewsTitle').value = '';
+        document.getElementById('editNewsStatus').value = 'live';
+        document.getElementById('editNewsKicker').value = 'Company Update';
+        document.getElementById('editNewsDate').value = 'Recent';
+        document.getElementById('editNewsSummary').value = '';
+        document.getElementById('editNewsLink').value = '';
+        document.getElementById('editNewsImage').value = '';
+        updateNewsImagePreview('');
+      }
+      box.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function closeNewsEditor() {
+      document.getElementById('newsEditorCard').style.display = 'none';
+    }
+
+    function saveNewsCard(e) {
+      e.preventDefault();
+      const id = document.getElementById('editNewsId').value.trim() || ('NW-' + Date.now());
+      const item = {
+        id,
+        title: document.getElementById('editNewsTitle').value.trim(),
+        status: document.getElementById('editNewsStatus').value,
+        kicker: document.getElementById('editNewsKicker').value.trim(),
+        date: document.getElementById('editNewsDate').value.trim(),
+        summary: document.getElementById('editNewsSummary').value.trim(),
+        link: document.getElementById('editNewsLink').value.trim(),
+        image: document.getElementById('editNewsImage').value.trim()
+      };
+
+      const idx = newsEventsData.news.findIndex(x => x.id === id);
+      if (idx >= 0) newsEventsData.news[idx] = item;
+      else newsEventsData.news.push(item);
+
+      renderNewsCards();
+      closeNewsEditor();
+      toast('News card ' + item.title + ' saved.');
+    }
+
+    function toggleNewsStatus(id) {
+      const nw = newsEventsData.news.find(x => x.id === id);
+      if (!nw) return;
+      nw.status = (nw.status || 'live') === 'live' ? 'done' : 'live';
+      renderNewsCards();
+      toast('News status updated to ' + nw.status);
+    }
+
+    function deleteNewsCard(id) {
+      if (!confirm('Delete news card ' + id + '?')) return;
+      newsEventsData.news = newsEventsData.news.filter(x => x.id !== id);
+      renderNewsCards();
+      toast('News card removed.');
+    }
+
+    function downloadNewsEventsJson() {
+      newsEventsData.updated = new Date().toISOString().slice(0, 16).replace('T', ' ');
+      const str = JSON.stringify(newsEventsData, null, 2);
+      const blob = new Blob([str], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'news-events.json';
+      a.click();
+      toast('news-events.json downloaded.');
+    }
+
+    function copyNewsEventsJson() {
+      newsEventsData.updated = new Date().toISOString().slice(0, 16).replace('T', ' ');
+      navigator.clipboard.writeText(JSON.stringify(newsEventsData, null, 2))
+        .then(() => toast('news-events.json copied to clipboard!'))
+        .catch(() => toast('Failed to copy.'));
+    }
+
+
+    // Users Management (Admin)
+    function renderUsers() {
+      const tbody = document.getElementById('usersTbody');
+      tbody.innerHTML = usersList.map(u => `<tr>
+        <td><strong>${u.name}</strong></td>
+        <td>${u.email}</td>
+        <td><span style="text-transform:capitalize;">${u.dept}</span></td>
+        <td><span style="text-transform:uppercase; font-size:11px; background:#EEF2FB; color:var(--sp-primary); padding:2px 7px; border-radius:4px; font-weight:700;">${u.role}</span></td>
+        <td style="text-align:right;">
+          ${u.role === 'admin' ? '<span style="color:#94A3B8; font-size:12px;">Primary Admin</span>' : `<button class="btn btn-danger" style="padding:4px 8px; font-size:11.5px;" onclick="removeUser('${u.email}')">Delete</button>`}
+        </td>
+      </tr>`).join('');
+      document.getElementById('usersCount').textContent = usersList.length;
+    }
+
+    function addUser(e) {
+      e.preventDefault();
+      const email = document.getElementById('newUserEmail').value.trim().toLowerCase();
+      const name = document.getElementById('newUserName').value.trim();
+      const dept = document.getElementById('newUserDept').value;
+      const role = dept === 'admin' ? 'admin' : (dept === 'careers' ? 'hr' : 'user');
+
+      if (usersList.some(u => u.email === email)) {
+        alert('A user with this email address already exists.');
+        return;
+      }
+
+      usersList.push({ email, name, role, dept });
+      renderUsers();
+      e.target.reset();
+      toast('Staff user ' + name + ' created.');
+    }
+
+    function removeUser(email) {
+      if (!confirm('Remove user account ' + email + '?')) return;
+      usersList = usersList.filter(u => u.email !== email);
+      renderUsers();
+      toast('User removed.');
+    }
+
+    function updateAccount(e) {
+      e.preventDefault();
+      const name = document.getElementById('editName').value.trim();
+      if (currentUser && name) {
+        currentUser.name = name;
+        sessionStorage.setItem('vp_staff_user', JSON.stringify(currentUser));
+        applyUser(currentUser);
+        toast('Account details updated.');
+      }
+    }
+
+    // Authentication
+    function quickAuth(email) {
+      document.getElementById('loginEmail').value = email;
+      document.getElementById('loginPass').value = 'ChangeMe!';
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value.trim().toLowerCase();
+      const pass = document.getElementById('loginPass').value;
+      const found = usersList.find(u => u.email.toLowerCase() === email);
+
+      if (found && (pass === 'ChangeMe!' || pass.length >= 4)) {
+        currentUser = found;
+        sessionStorage.setItem('vp_staff_user', JSON.stringify(currentUser));
+        document.getElementById('authModal').style.display = 'none';
+        applyUser(currentUser);
+        toast('Welcome back, ' + currentUser.name);
+      } else {
+        document.getElementById('loginErr').style.display = 'block';
+      }
+    }
+
+    function logout() {
+      sessionStorage.removeItem('vp_staff_user');
+      currentUser = null;
+      document.getElementById('authModal').style.display = 'flex';
+    }
+
+    function applyUser(u) {
+      document.getElementById('userNameLabel').textContent = u.name;
+      document.getElementById('userDeptLabel').textContent = '(' + u.dept + ')';
+      document.getElementById('welcomeName').textContent = 'Welcome back, ' + u.name;
+      document.getElementById('welcomeRole').textContent = u.role.toUpperCase();
+      document.getElementById('welcomeDept').textContent = u.dept;
+      document.getElementById('avatarInitial').textContent = u.name.charAt(0).toUpperCase();
+      document.getElementById('accountName').textContent = u.name;
+      document.getElementById('accountEmail').textContent = u.email;
+      document.getElementById('accountDept').textContent = u.dept;
+      document.getElementById('accountRole').textContent = u.role.toUpperCase();
+      document.getElementById('editName').value = u.name;
+
+      // Access controls
+      const isAdmin = u.role === 'admin';
+      const isHR = u.role === 'hr' || u.dept === 'careers';
+
+      document.getElementById('navUsersBtn').style.display = isAdmin ? 'inline-flex' : 'none';
+      document.getElementById('btnManageUsersQuick').style.display = isAdmin ? 'inline-flex' : 'none';
+
+      // Hide or show desk buttons based on permissions
+      document.querySelectorAll('#mainStaffNav button[data-desk]').forEach(btn => {
+        const desk = btn.getAttribute('data-desk');
+        if (desk === 'home' || desk === 'account') return;
+        if (isAdmin) {
+          btn.style.display = 'inline-flex';
+        } else if (isHR) {
+          btn.style.display = (desk === 'careers') ? 'inline-flex' : 'none';
+        } else {
+          btn.style.display = (desk === u.dept) ? 'inline-flex' : 'none';
+        }
+      });
+    }
+
+    // Init
+    window.addEventListener('DOMContentLoaded', () => {
+      renderUsers();
+      loadJobs();
+      loadFoundationGalleries();
+      loadNewsEvents();
+      resetJobForm();
+
+      const saved = sessionStorage.getItem('vp_staff_user');
+      if (saved) {
+        try {
+          currentUser = JSON.parse(saved);
+          applyUser(currentUser);
+        } catch (e) {
+          document.getElementById('authModal').style.display = 'flex';
+        }
+      } else {
+        // Default prompt login
+        document.getElementById('authModal').style.display = 'flex';
+      }
+    });
+  
+    // Image Upload & Live Preview Helpers
+    function updateEventImagePreview(src) {
+      const img = document.getElementById('editEventThumbImg');
+      const meta = document.getElementById('eventImageMeta');
+      if (!src) {
+        if (img) { img.src = ''; img.style.display = 'none'; }
+        if (meta) meta.textContent = '';
+        return;
+      }
+      if (img) {
+        img.src = src;
+        img.style.display = 'block';
+        img.onload = function () {
+          const w = img.naturalWidth;
+          const h = img.naturalHeight;
+          if (w && h && meta) {
+            const ratio = (w / h).toFixed(2);
+            const isNear16_9 = Math.abs((w / h) - (16 / 9)) < 0.15;
+            meta.textContent = w + ' × ' + h + ' px (' + (isNear16_9 ? '16:9 Ideal' : ratio + ':1') + ')';
+            meta.style.color = isNear16_9 ? '#16A34A' : '#475569';
+          }
+        };
+        img.onerror = function () {
+          img.style.display = 'none';
+          if (meta) { meta.textContent = 'Preview unavailable'; meta.style.color = '#94A3B8'; }
+        };
+      }
+    }
+
+    function handleEventImageUpload(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      if (!file.type.startsWith('image/')) {
+        alert('Please select a valid image file (JPG, PNG, WebP).');
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const dataUrl = e.target.result;
+        document.getElementById('editEventImage').value = dataUrl;
+        updateEventImagePreview(dataUrl);
+        toast('Event image loaded: ' + file.name);
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function updateNewsImagePreview(src) {
+      const img = document.getElementById('editNewsThumbImg');
+      const meta = document.getElementById('newsImageMeta');
+      if (!src) {
+        if (img) { img.src = ''; img.style.display = 'none'; }
+        if (meta) meta.textContent = '';
+        return;
+      }
+      if (img) {
+        img.src = src;
+        img.style.display = 'block';
+        img.onload = function () {
+          const w = img.naturalWidth;
+          const h = img.naturalHeight;
+          if (w && h && meta) {
+            const ratio = (w / h).toFixed(2);
+            const isNear16_9 = Math.abs((w / h) - (16 / 9)) < 0.15;
+            meta.textContent = w + ' × ' + h + ' px (' + (isNear16_9 ? '16:9 Ideal' : ratio + ':1') + ')';
+            meta.style.color = isNear16_9 ? '#16A34A' : '#475569';
+          }
+        };
+        img.onerror = function () {
+          img.style.display = 'none';
+          if (meta) { meta.textContent = 'Preview unavailable'; meta.style.color = '#94A3B8'; }
+        };
+      }
+    }
+
+    function handleNewsImageUpload(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      if (!file.type.startsWith('image/')) {
+        alert('Please select a valid image file (JPG, PNG, WebP).');
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const dataUrl = e.target.result;
+        document.getElementById('editNewsImage').value = dataUrl;
+        updateNewsImagePreview(dataUrl);
+        toast('News cover image loaded: ' + file.name);
+      };
+      reader.readAsDataURL(file);
+    }
+
+</script>
+</body>
+</html>

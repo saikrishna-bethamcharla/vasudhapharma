@@ -15,10 +15,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-red: #C8102E;
-      --primary-red-dark: #9B0C23;
-      --primary-red-light: #E8364F;
-      --accent-red: #FF4D6A;
+      --primary-red: #3D5CAD;
+      --primary-red-dark: #2E4A8A;
+      --primary-red-light: #5B7AD4;
+      --accent-red: #7C9AE8;
       --dark: #1A1A1A;
       --dark-gray: #2D2D2D;
       --medium-gray: #4A4A4A;
@@ -138,6 +138,15 @@
     }
     .top-bar-right {
       margin-left: auto;
+    }
+
+    
+    .top-bar-right a,
+    .top-bar .top-bar-dd-toggle,
+    .top-bar-right button.top-bar-dd-toggle {
+      font-weight: 700 !important;
+      font-size: 12px !important;
+      color: #fff !important;
     }
 
     .top-bar a {
@@ -263,7 +272,7 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.95),
         inset 0 -1px 0 rgba(0, 0, 0, 0.03),
         inset 0 0 20px rgba(255, 255, 255, 0.7),
-        inset 0 0 40px rgba(200, 16, 46, 0.06);
+        inset 0 0 40px rgba(61, 92, 173, 0.06);
       overflow: hidden;
       isolation: isolate;
       max-width: 100%;
@@ -284,11 +293,11 @@
       background: radial-gradient(circle at 30% 28%,
         rgba(255,255,255,1) 0%,
         rgba(255,140,155,0.85) 30%,
-        rgba(200,16,46,0.7) 65%,
+        rgba(61, 92, 173,0.7) 65%,
         rgba(140,8,28,0.4) 100%);
       box-shadow:
-        0 0 6px rgba(200,16,46,0.5),
-        0 0 12px rgba(200,16,46,0.2);
+        0 0 6px rgba(61, 92, 173,0.5),
+        0 0 12px rgba(61, 92, 173,0.2);
       animation: logoBagFlow linear infinite;
       opacity: 0;
     }
@@ -315,7 +324,7 @@
       z-index: 1;
     }
     .logo .logo-text strong {
-      color: var(--primary-red, #C8102E);
+      color: var(--primary-red, #3D5CAD);
     }
 
 
@@ -370,7 +379,7 @@
         rgba(255,255,255,0.95) 0%,
         rgba(255,248,248,0.85) 100%);
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(200,16,46,0.12);
+      box-shadow: 0 2px 8px rgba(61, 92, 173,0.12);
     }
 
     .logo-mark {
@@ -419,12 +428,12 @@
         linear-gradient(180deg,
           rgba(255,130,148,0.72) 0%,
           rgba(232,54,79,0.75) 28%,
-          rgba(200,16,46,0.78) 62%,
+          rgba(61, 92, 173,0.78) 62%,
           rgba(155,12,35,0.80) 100%);
       box-shadow:
         inset 0 5px 9px rgba(255,255,255,0.55),
-        inset 0 -3px 7px rgba(200, 16, 46, 0.28),
-        0 0 10px rgba(200, 16, 46, 0.12);
+        inset 0 -3px 7px rgba(61, 92, 173, 0.28),
+        0 0 10px rgba(61, 92, 173, 0.12);
       border-top: 1px solid rgba(255,255,255,0.45);
       border-radius: 0;
       transition: height 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -502,9 +511,9 @@
           rgba(255,240,242,0.35) 100%);
       overflow: hidden;
       box-shadow:
-        0 2px 10px rgba(200,16,46,0.15),
+        0 2px 10px rgba(61, 92, 173,0.15),
         inset 0 1px 2px rgba(255,255,255,0.8),
-        inset 0 -1px 3px rgba(200,16,46,0.08);
+        inset 0 -1px 3px rgba(61, 92, 173,0.08);
       transform-style: preserve-3d;
     }
 
@@ -593,7 +602,7 @@
           transparent 100%);
       box-shadow:
         0 0 4px rgba(255,255,255,0.7),
-        inset 0 -1px 2px rgba(200,16,46,0.15),
+        inset 0 -1px 2px rgba(61, 92, 173,0.15),
         inset 1px 1px 2px rgba(255,255,255,0.9);
       animation: logoBubbleRise linear infinite;
       opacity: 0;
@@ -638,8 +647,8 @@
       height: 7px;
       margin-left: -3.5px;
       background: radial-gradient(circle,
-        rgba(200,16,46,0.4) 0%,
-        rgba(200,16,46,0.1) 50%,
+        rgba(61, 92, 173,0.4) 0%,
+        rgba(61, 92, 173,0.1) 50%,
         transparent 70%);
       border-radius: 50%;
       filter: blur(2px);
@@ -724,8 +733,8 @@
       bottom: 0;
       width: 0%;
       background: linear-gradient(90deg,
-        rgba(200, 16, 46, 0.2) 0%,
-        rgba(200, 16, 46, 0.12) 100%);
+        rgba(61, 92, 173, 0.2) 0%,
+        rgba(61, 92, 173, 0.12) 100%);
       z-index: 0;
       transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       border-radius: 4px;
@@ -760,8 +769,8 @@
       bottom: 0;
       width: 0%;
       background: linear-gradient(90deg,
-        rgba(200, 16, 46, 0.15) 0%,
-        rgba(200, 16, 46, 0.06) 100%);
+        rgba(61, 92, 173, 0.15) 0%,
+        rgba(61, 92, 173, 0.06) 100%);
       z-index: 0;
       transition: width 0.4s ease;
       border-radius: 4px;
@@ -851,7 +860,7 @@
       right: 0;
       width: 50%;
       height: 100%;
-      background: radial-gradient(ellipse at 70% 50%, rgba(200, 16, 46, 0.08) 0%, transparent 70%);
+      background: radial-gradient(ellipse at 70% 50%, rgba(61, 92, 173, 0.08) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -976,14 +985,14 @@
 
     .focus-card:hover {
       border-color: var(--primary-red);
-      box-shadow: 0 8px 24px rgba(200, 16, 46, 0.1);
+      box-shadow: 0 8px 24px rgba(61, 92, 173, 0.1);
       transform: translateY(-2px);
     }
 
     .focus-icon {
       width: 48px;
       height: 48px;
-      background: rgba(200, 16, 46, 0.1);
+      background: rgba(61, 92, 173, 0.1);
       border-radius: 8px;
       display: flex;
       align-items: center;
@@ -1113,7 +1122,7 @@
     }
 
     .about-visual {
-      background-image: linear-gradient(145deg, rgba(196,30,38,0.55) 0%, rgba(120,14,20,0.72) 100%), url('assets/plant-aerial-1.jpg');
+      background-image: linear-gradient(145deg, rgba(61,92,173,0.55) 0%, rgba(46,74,138,0.72) 100%), url('assets/plant-aerial-1.jpg');
       background-size: cover, cover;
       background-position: center, center;
       border-radius: 12px;
@@ -1225,7 +1234,7 @@
 
     .accred-badge:hover {
       border-color: var(--primary-red);
-      box-shadow: 0 4px 12px rgba(200, 16, 46, 0.1);
+      box-shadow: 0 4px 12px rgba(61, 92, 173, 0.1);
     }
 
     .accred-badge strong {
@@ -1493,7 +1502,7 @@
     }
 
     .vp-event-head {
-      background-image: linear-gradient(145deg, rgba(196,30,38,0.86) 0%, rgba(120,14,20,0.92) 100%), url('assets/equipment-reactor.jpg');
+      background-image: linear-gradient(145deg, rgba(61,92,173,0.86) 0%, rgba(46,74,138,0.92) 100%), url('assets/equipment-reactor.jpg');
       background-size: cover, cover;
       background-position: center, center;
       color: var(--white);
@@ -1587,15 +1596,15 @@
       background: rgba(0,0,0,0.15);
     }
     .news-overlay::-webkit-scrollbar-thumb {
-      background: rgba(200, 16, 46, 0.45);
+      background: rgba(61, 92, 173, 0.45);
       border-radius: 6px;
     }
     .news-overlay::-webkit-scrollbar-thumb:hover {
-      background: rgba(200, 16, 46, 0.7);
+      background: rgba(61, 92, 173, 0.7);
     }
     .news-overlay {
       scrollbar-width: thin;
-      scrollbar-color: rgba(200, 16, 46, 0.5) rgba(0,0,0,0.12);
+      scrollbar-color: rgba(61, 92, 173, 0.5) rgba(0,0,0,0.12);
     }
 
     .news-overlay .news-section {
@@ -1619,7 +1628,7 @@
         overflow-y: auto;
         overflow-x: hidden;
         scrollbar-width: thin;
-        scrollbar-color: rgba(200, 16, 46, 0.45) #f0f0f0;
+        scrollbar-color: rgba(61, 92, 173, 0.45) #f0f0f0;
       }
       .news-overlay .news-section::-webkit-scrollbar {
         width: 8px;
@@ -1629,7 +1638,7 @@
         border-radius: 0 12px 12px 0;
       }
       .news-overlay .news-section::-webkit-scrollbar-thumb {
-        background: rgba(200, 16, 46, 0.4);
+        background: rgba(61, 92, 173, 0.4);
         border-radius: 6px;
       }
     }
@@ -1789,7 +1798,7 @@
       background: var(--primary-red);
       color: var(--white);
       border-color: var(--primary-red);
-      box-shadow: 0 6px 18px rgba(196,30,38,0.28);
+      box-shadow: 0 6px 18px rgba(61,92,173,0.28);
     }
 
     .cta-banner .btn-white:hover {
@@ -1825,7 +1834,7 @@
       background: linear-gradient(145deg,
         rgba(255,255,255,0.95) 0%,
         rgba(255,248,248,0.85) 100%);
-      box-shadow: 0 2px 8px rgba(200,16,46,0.12);
+      box-shadow: 0 2px 8px rgba(61, 92, 173,0.12);
     }
 
     .logo-flask-liquid-footer {
@@ -1839,12 +1848,12 @@
         linear-gradient(180deg,
           rgba(255,130,148,0.72) 0%,
           rgba(232,54,79,0.75) 28%,
-          rgba(200,16,46,0.78) 62%,
+          rgba(61, 92, 173,0.78) 62%,
           rgba(155,12,35,0.80) 100%);
       mix-blend-mode: soft-light;
       box-shadow:
         inset 0 5px 9px rgba(255,255,255,0.55),
-        inset 0 -3px 7px rgba(200, 16, 46, 0.28);
+        inset 0 -3px 7px rgba(61, 92, 173, 0.28);
       border-top: 1px solid rgba(255,255,255,0.4);
     }
 
@@ -2125,7 +2134,7 @@
       position: relative;
       width: 63px;
       height: 112px;
-      filter: drop-shadow(0 6px 14px rgba(200, 16, 46, 0.22));
+      filter: drop-shadow(0 6px 14px rgba(61, 92, 173, 0.22));
     }
 
     /* Glass flask shape using CSS */
@@ -2362,8 +2371,8 @@
       height: 14px;
       margin-left: -7px;
       background: radial-gradient(circle, 
-        rgba(200, 16, 46, 0.35) 0%, 
-        rgba(200, 16, 46, 0.12) 40%, 
+        rgba(61, 92, 173, 0.35) 0%, 
+        rgba(61, 92, 173, 0.12) 40%, 
         transparent 70%);
       border-radius: 50%;
       filter: blur(4px);
@@ -2800,7 +2809,7 @@
 
     /* Fallback when no image */
     .mm-feature-card.no-img {
-      background-image: linear-gradient(135deg, rgba(196,30,38,0.55) 0%, rgba(120,14,20,0.70) 100%), url('assets/plant-aerial-1.jpg');
+      background-image: linear-gradient(135deg, rgba(61,92,173,0.55) 0%, rgba(46,74,138,0.70) 100%), url('assets/plant-aerial-1.jpg');
       background-size: cover, cover;
       background-position: center, center;
       min-height: 100px;
@@ -3071,7 +3080,7 @@
       border-radius: 8px;
       display: block;
       background: #fff;
-      box-shadow: 0 1px 4px rgba(200,16,46,0.12);
+      box-shadow: 0 1px 4px rgba(61, 92, 173,0.12);
     }
     .survey-brand {
       display: flex;
@@ -3124,7 +3133,7 @@
     }
 
     .survey-btn-outline:hover {
-      background: rgba(200, 16, 46, 0.06);
+      background: rgba(61, 92, 173, 0.06);
     }
 
     .survey-progress-track {
@@ -3173,7 +3182,7 @@
 
     .survey-option:hover {
       border-color: var(--primary-red);
-      background: rgba(200, 16, 46, 0.04);
+      background: rgba(61, 92, 173, 0.04);
     }
 
     .survey-option input {
@@ -3515,7 +3524,7 @@
     .about-subnav a.active {
       color: var(--primary-red);
       border-bottom-color: var(--primary-red);
-      background: rgba(200, 16, 46, 0.04);
+      background: rgba(61, 92, 173, 0.04);
     }
 
     .about-sub-section {
@@ -3891,7 +3900,7 @@
       text-transform: uppercase;
       margin: 36px 0 20px;
       padding-bottom: 8px;
-      border-bottom: 2px solid rgba(200, 16, 46, 0.15);
+      border-bottom: 2px solid rgba(61, 92, 173, 0.15);
     }
     .id-subhead {
       font-size: 17px;
@@ -3918,7 +3927,7 @@
       top: 14px;
       width: 14px;
       height: 14px;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c8102e'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") center / contain no-repeat;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233D5CAD'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") center / contain no-repeat;
     }
     .id-ol {
       margin: 10px 0 0;
@@ -4281,7 +4290,7 @@
       min-width: 280px !important;
       width: max-content !important;
       max-width: 340px !important;
-      background: #9B0C23 !important;
+      background: #2E4A8A !important;
       border: 1px solid rgba(255,255,255,0.12) !important;
       border-radius: 8px !important;
       box-shadow: 0 14px 36px rgba(0,0,0,0.28) !important;
@@ -4315,11 +4324,11 @@
     .top-bar-dd-menu > a:hover,
     .top-bar-dd-menu .top-bar-dd-item:hover,
     .top-bar-dd-submenu .top-bar-dd-item:hover {
-      background: #C8102E !important;
+      background: #3D5CAD !important;
       color: #fff !important;
     }
     .top-bar-dd-sub.is-open > .top-bar-dd-sub-toggle {
-      background: #C8102E !important;
+      background: #3D5CAD !important;
     }
     .top-bar-dd-submenu {
       display: none !important;
@@ -4449,7 +4458,7 @@
     }
     .mega-menu .mm-feature-card.no-img {
       min-height: 150px;
-      background: linear-gradient(135deg, #c8102e 0%, #8a0c20 100%) !important;
+      background: linear-gradient(135deg, #3D5CAD 0%, #2E4A8A 100%) !important;
     }
     .mega-menu .mm-feature-card.no-img .mm-feature-text {
       display: flex !important;
@@ -4622,7 +4631,7 @@
       left: auto !important;
       min-width: 280px !important;
       width: max-content !important;
-      background: #9B0C23 !important;
+      background: #2E4A8A !important;
       border: 1px solid rgba(255,255,255,0.12) !important;
       border-radius: 8px !important;
       box-shadow: 0 14px 36px rgba(0,0,0,0.28) !important;
@@ -4660,7 +4669,7 @@
     #secretarialDropdown .top-bar-dd-item:hover,
     .top-bar-dd-menu .top-bar-dd-item:hover,
     .top-bar-dd-menu > a:hover {
-      background: #C8102E !important;
+      background: #3D5CAD !important;
       color: #fff !important;
     }
     #secretarialDropdown .top-bar-dd-submenu,
@@ -4683,7 +4692,7 @@
       display: block !important;
     }
     #secretarialDropdown .top-bar-dd-sub.is-open > .top-bar-dd-sub-toggle {
-      background: #C8102E !important;
+      background: #3D5CAD !important;
     }
     /* sticky restored below */
 
@@ -4731,7 +4740,7 @@
     }
     #secretarialDropdown .top-bar-dd-sub:hover > .top-bar-dd-sub-toggle,
     #secretarialDropdown .top-bar-dd-sub.is-open > .top-bar-dd-sub-toggle {
-      background: #C8102E !important;
+      background: #3D5CAD !important;
     }
     /* Keep panel open while moving into it */
     #secretarialDropdown .top-bar-dd-menu {
@@ -4946,7 +4955,7 @@
     #secretarialDropdown .top-bar-dd-sub.is-open > .top-bar-dd-sub-toggle,
     #secretarialDropdown .top-bar-dd-menu > a.top-bar-dd-item:focus,
     #secretarialDropdown .top-bar-dd-menu button.top-bar-dd-sub-toggle:hover {
-      background: #C8102E !important;
+      background: #3D5CAD !important;
       color: #ffffff !important;
       -webkit-text-fill-color: #ffffff !important;
     }
@@ -5018,7 +5027,7 @@
     }
     #secretarialDropdown .top-bar-dd-submenu .top-bar-dd-item:hover,
     #secretarialDropdown .top-bar-dd-submenu a:hover {
-      background: #C8102E !important;
+      background: #3D5CAD !important;
       color: #ffffff !important;
       -webkit-text-fill-color: #ffffff !important;
     }
@@ -5063,13 +5072,13 @@
       height: 48px !important;
       border-radius: 50% !important;
       border: none !important;
-      background: #C8102E !important;
+      background: #3D5CAD !important;
       color: #fff !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
       cursor: pointer !important;
-      box-shadow: 0 8px 22px rgba(200,16,46,0.35) !important;
+      box-shadow: 0 8px 22px rgba(61, 92, 173,0.35) !important;
       opacity: 0 !important;
       visibility: hidden !important;
       transform: translateY(12px) !important;
@@ -5082,7 +5091,7 @@
       transform: translateY(0) !important;
     }
     .scroll-top-btn:hover {
-      background: #a00d25 !important;
+      background: #2E4A8A !important;
     }
     @media (max-width: 640px) {
       .scroll-top-btn {
@@ -5095,38 +5104,34 @@
 
 
   
-    /* Since 1994 — elegant highlight under logo */
+    /* Since 1994 — elegant refined highlight under logo */
     .logo-text .logo-since {
       display: block !important;
-      font-family: "Cormorant Garamond", "Times New Roman", Times, serif !important;
+      font-family: "Cormorant Garamond", Georgia, "Times New Roman", Times, serif !important;
       font-style: italic !important;
-      font-weight: 700 !important;
-      font-size: 18px !important;
-      line-height: 1.1 !important;
-      letter-spacing: 0.16em !important;
+      font-weight: 600 !important;
+      font-size: 13.5px !important;
+      line-height: 1.15 !important;
+      letter-spacing: 0.08em !important;
       color: #C8102E !important;
-      margin-top: 6px !important;
+      margin-top: 4px !important;
       margin-bottom: 0 !important;
       text-transform: none !important;
       white-space: nowrap !important;
-      text-shadow:
-        0 0 6px rgba(200, 16, 46, 0.45),
-        0 0 14px rgba(200, 16, 46, 0.35),
-        0 0 28px rgba(200, 16, 46, 0.22),
-        0 1px 0 rgba(255, 255, 255, 0.85) !important;
+      text-shadow: none !important;
       position: relative !important;
-      padding-bottom: 5px !important;
-      filter: drop-shadow(0 0 8px rgba(200, 16, 46, 0.25)) !important;
+      padding-bottom: 3px !important;
+      filter: none !important;
     }
     .logo-text .logo-since::after {
       content: "" !important;
       display: block !important;
-      width: 3em !important;
-      height: 2px !important;
-      margin-top: 5px !important;
-      background: linear-gradient(90deg, #C8102E 0%, rgba(200,16,46,0.55) 55%, rgba(200,16,46,0) 100%) !important;
-      border-radius: 2px !important;
-      box-shadow: 0 0 8px rgba(200, 16, 46, 0.4) !important;
+      width: 32px !important;
+      height: 1.5px !important;
+      margin-top: 3px !important;
+      background: linear-gradient(90deg, #C8102E 0%, rgba(200, 16, 46, 0.45) 60%, transparent 100%) !important;
+      border-radius: 1px !important;
+      box-shadow: none !important;
     }
     @media (max-width: 720px) {
       .logo-text .logo-since {
@@ -5167,12 +5172,12 @@
   
     /* Deep-link flash — visible for full 5s */
     @keyframes deepLinkFlash {
-      0%, 100% { background: #C8102E !important; color: #fff !important; box-shadow: 0 0 0 3px rgba(200,16,46,0.35); }
-      50% { background: #ffc9d2 !important; color: #C8102E !important; box-shadow: 0 0 0 5px rgba(200,16,46,0.2); }
+      0%, 100% { background: #3D5CAD !important; color: #fff !important; box-shadow: 0 0 0 3px rgba(61, 92, 173,0.35); }
+      50% { background: #ffc9d2 !important; color: #3D5CAD !important; box-shadow: 0 0 0 5px rgba(61, 92, 173,0.2); }
     }
     a.top-bar-dd-item.deep-link-flash {
       animation: deepLinkFlash 0.8s ease-in-out infinite !important;
-      background: #C8102E !important;
+      background: #3D5CAD !important;
       color: #fff !important;
       border-radius: 4px !important;
       z-index: 10060 !important;
@@ -5218,17 +5223,17 @@
       inset: 0;
       border-radius: 50%;
       border: 2.5px solid transparent;
-      border-top-color: #C8102E;
-      border-right-color: rgba(200,16,46,0.35);
+      border-top-color: #3D5CAD;
+      border-right-color: rgba(61, 92, 173,0.35);
       border-bottom-color: rgba(184,134,11,0.75);
-      border-left-color: rgba(200,16,46,0.2);
+      border-left-color: rgba(61, 92, 173,0.2);
       animation: annivSpin 6s linear infinite;
-      box-shadow: 0 0 14px rgba(200,16,46,0.18);
+      box-shadow: 0 0 14px rgba(61, 92, 173,0.18);
     }
     .anniv-ring--2 {
       inset: 6px;
       border-top-color: rgba(184,134,11,0.9);
-      border-right-color: #C8102E;
+      border-right-color: #3D5CAD;
       border-bottom-color: transparent;
       border-left-color: rgba(184,134,11,0.45);
       animation-duration: 9s;
@@ -5241,10 +5246,10 @@
       height: 54px;
       border-radius: 50%;
       background: radial-gradient(circle at 35% 30%, #fff 0%, #fff8f0 45%, #ffe8ec 100%);
-      border: 1.5px solid rgba(200,16,46,0.28);
+      border: 1.5px solid rgba(61, 92, 173,0.28);
       box-shadow:
         inset 0 1px 2px rgba(255,255,255,0.9),
-        0 2px 10px rgba(200,16,46,0.14);
+        0 2px 10px rgba(61, 92, 173,0.14);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -5254,7 +5259,7 @@
     .anniv-num {
       font-size: 21px;
       font-weight: 800;
-      color: #C8102E;
+      color: #3D5CAD;
       letter-spacing: -0.5px;
       font-family: Georgia, "Times New Roman", serif;
     }
@@ -5337,8 +5342,8 @@
       padding: 10px 22px 10px 12px !important;
       border-radius: 50px !important;
       background: linear-gradient(145deg, rgba(255,255,255,0.85), rgba(255,255,255,0.6)) !important;
-      border: 1px solid rgba(200,16,46,0.12) !important;
-      box-shadow: 0 4px 18px rgba(200,16,46,0.08) !important;
+      border: 1px solid rgba(61, 92, 173,0.12) !important;
+      box-shadow: 0 4px 18px rgba(61, 92, 173,0.08) !important;
       width: fit-content !important;
       margin-bottom: 12px !important;
       text-decoration: none !important;
@@ -5346,7 +5351,7 @@
     footer .footer-brand .logo-text strong {
       white-space: nowrap !important;
       font-size: 15px !important;
-      color: #C8102E !important;
+      color: #3D5CAD !important;
     }
     footer .footer-brand .logo-text span {
       font-size: 12px !important;
@@ -5358,7 +5363,7 @@
       font-family: "Cormorant Garamond", "Times New Roman", serif !important;
       font-style: italic !important;
       font-weight: 700 !important;
-      color: #C8102E !important;
+      color: #3D5CAD !important;
     }
     footer .footer-brand > p {
       display: block !important;
@@ -5726,7 +5731,346 @@
       width: 100% !important;
     }
 
-  </style>
+  
+    /* Language switch (LN) */
+    .top-bar-lang {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 8px;
+      min-width: 36px;
+      height: 26px;
+      padding: 0 8px;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.6px;
+      color: #fff !important;
+      background: rgba(255,255,255,0.08);
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .top-bar-lang:hover { background: rgba(255,255,255,0.18); color: #fff !important; }
+    .vp-lang-overlay {
+      position: fixed; inset: 0; z-index: 400000;
+      background: #fff;
+      display: none; align-items: stretch; justify-content: center;
+      padding: 0;
+      overflow: auto;
+    }
+    .vp-lang-overlay.is-open { display: flex; }
+    .vp-lang-modal {
+      background: #fff; color: #222; width: min(1120px, 100%);
+      margin: 0 auto; padding: 28px 36px 64px; position: relative;
+      box-shadow: none; border-radius: 0;
+    }
+    .vp-lang-page-title, .vp-lang-modal h3#vpLangTitle {
+      margin: 12px 0 8px; font-size: 22px; color: #222; font-weight: 600;
+    }
+    .vp-lang-modal p.vp-lang-lead {
+      margin: 0 0 28px; font-size: 14px; color: #666; line-height: 1.5;
+    }
+    .vp-lang-close {
+      position: absolute; top: 16px; right: 20px; border: 0; background: none;
+      font-size: 28px; cursor: pointer; color: #444; line-height: 1;
+    }
+    .vp-lang-dir { display: block; }
+    .vp-lang-region {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 12px 28px;
+      padding: 22px 0;
+      border-top: 1px solid #e6e6e6;
+    }
+    .vp-lang-region h4 {
+      margin: 0; font-size: 18px; font-weight: 500; color: #444;
+    }
+    .vp-lang-countries {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 18px 24px;
+    }
+    .vp-lang-country {
+      font-size: 15px; font-weight: 600; color: #111; margin: 0 0 6px;
+    }
+    .vp-lang-item {
+      display: block; width: auto; border: 0; padding: 0;
+      background: none; cursor: pointer; text-align: left;
+      font: inherit; color: #555; font-size: 14px; line-height: 1.5;
+    }
+    .vp-lang-item:hover { color: #3D5CAD; text-decoration: underline; }
+    .vp-lang-item strong { display: none; }
+    .vp-lang-grid { display: contents; }
+    .vp-lang-leave {
+      display: none; text-align: center; padding: 48px 12px 0;
+    }
+    .vp-lang-leave.is-on { display: block; }
+    .vp-lang-leave h3 { font-size: 20px; line-height: 1.35; color: #3D5CAD; }
+    .vp-lang-leave p { font-size: 15px; color: #444; line-height: 1.6; margin: 0 0 18px; }
+    .vp-lang-actions { display: flex; gap: 10px; justify-content: center; }
+    .vp-lang-btn {
+      min-width: 96px; padding: 9px 16px; border-radius: 6px; cursor: pointer;
+      font-weight: 700; font-size: 13px; border: 1px solid #3D5CAD;
+    }
+    .vp-lang-btn-ok { background: #3D5CAD; color: #fff; }
+    .vp-lang-btn-cancel { background: #fff; color: #3D5CAD; }
+    @media (max-width: 700px) {
+      .vp-lang-region { grid-template-columns: 1fr; }
+      .vp-lang-modal { padding: 48px 20px 40px; }
+    }
+
+
+  
+        .vp-powered {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 14px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #666;
+      white-space: nowrap;
+      vertical-align: middle;
+    }
+    .vp-powered img {
+      height: 1.15em;
+      width: auto;
+      display: inline-block;
+    }
+
+    footer.vp-foot { background:#fff; color:#222; border-top:1px solid #e8e8e8; padding:48px 24px 28px; }
+    .vp-foot-inner { max-width:1180px; margin:0 auto; }
+    .vp-foot-cols { display:grid; grid-template-columns: 1.4fr 0.9fr 0.8fr; gap:36px; }
+    .vp-foot h4 { margin:0 0 16px; font-size:16px; font-weight:700; }
+    .vp-foot ul { list-style:none; margin:0; padding:0; }
+    .vp-foot li { margin:0 0 10px; }
+    .vp-foot a { color:#333; text-decoration:none; font-size:14px; }
+    .vp-foot a:hover { color:#3D5CAD; }
+    .vp-foot-split { display:grid; grid-template-columns:1fr 1fr; gap:12px 28px; }
+    .vp-foot-social { display:flex; gap:10px; margin:0 0 14px; }
+    .vp-foot-social a { display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border:1px solid #ddd; border-radius:50%; font-size:11px; font-weight:800; }
+    .vp-foot-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:36px; padding-top:20px; border-top:1px solid #eee; font-size:13px; color:#666; }
+    .vp-foot-bottom strong { color:#3D5CAD; font-size:16px; }
+    @media (max-width:800px){ .vp-foot-cols, .vp-foot-split { grid-template-columns:1fr; } }
+
+    
+    a.vp-cap-logo { display:inline-flex; align-items:center; text-decoration:none; }
+    a.vp-cap-logo .logo-hex-wrap { width:52px; height:52px; display:inline-flex; }
+    a.vp-cap-logo .logo-img { width:52px; height:52px; object-fit:contain; }
+    .vp-c-top-inner a.vp-cap-logo .logo-hex-wrap,
+    .vp-c-top-inner a.vp-cap-logo .logo-img { width:56px; height:56px; }
+    .vp-foot-bottom a.vp-cap-logo .logo-hex-wrap,
+    .vp-foot-bottom a.vp-cap-logo .logo-img { width:64px; height:64px; }
+
+    
+    a.vp-bag-copy { display:inline-flex; align-items:center; gap:10px; text-decoration:none; }
+    a.vp-bag-copy .logo-hex-wrap { width:52px; height:52px; }
+    .vp-foot-bottom a.vp-bag-copy .logo-hex-wrap { width:56px; height:56px; }
+    .vp-c-top-inner a.vp-bag-copy { justify-self:center; }
+
+    
+    /* Capsule logo + 31 years — keep original red */
+    .logo {
+      box-shadow:
+        0 4px 24px rgba(0, 0, 0, 0.06),
+        0 1px 3px rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.03),
+        inset 0 0 20px rgba(255, 255, 255, 0.7),
+        inset 0 0 40px rgba(200, 16, 46, 0.08) !important;
+    }
+    .logo .logo-text strong,
+    .logo-text strong,
+    .logo-since,
+    .logo-text .logo-since {
+      color: #C8102E !important;
+    }
+    .logo-text .logo-since::after {
+      background: linear-gradient(90deg, #C8102E 0%, rgba(200, 16, 46, 0.45) 60%, transparent 100%) !important; }
+    .logo-flow-bubbles span {
+      background: radial-gradient(circle at 30% 28%,
+        rgba(255,255,255,1) 0%,
+        rgba(255,140,155,0.85) 30%,
+        rgba(200,16,46,0.7) 65%,
+        rgba(140,8,28,0.4) 100%) !important;
+      box-shadow:
+        0 0 6px rgba(200,16,46,0.5),
+        0 0 12px rgba(200,16,46,0.2) !important;
+    }
+    .anniv-ring {
+      border-top-color: #C8102E !important;
+      border-right-color: rgba(200,16,46,0.35) !important;
+      border-left-color: rgba(200,16,46,0.2) !important;
+      box-shadow: 0 0 14px rgba(200,16,46,0.18) !important;
+    }
+    .anniv-ring--2 {
+      border-right-color: #C8102E !important;
+    }
+    .anniv-core {
+      border-color: rgba(200,16,46,0.28) !important;
+      box-shadow:
+        inset 0 1px 2px rgba(255,255,255,0.9),
+        0 2px 10px rgba(200,16,46,0.14) !important;
+    }
+    .anniv-num, .anniv-lbl {
+      color: #C8102E !important;
+    }
+
+  
+  /* ===== Refined Logo Typography & Capsule Layout (Dominance & Hierarchy Fix) ===== */
+  /* 1. Header Capsule Layout */
+  header .header-inner > a.logo,
+  header a.logo,
+  .logo {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    padding: 10px 28px 10px 14px !important;
+    border-radius: 50px !important;
+    min-height: 76px !important;
+    max-width: none !important;
+    width: max-content !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
+    box-sizing: border-box !important;
+    flex: 0 0 auto !important;
+    transition: box-shadow 0.3s ease, transform 0.3s ease !important;
+  }
+
+  header .logo-text,
+  .logo-text {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    max-width: none !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+  }
+
+  /* 2. Company Name Line — Dominant, crisp, larger bold red */
+  header a.logo .logo-text strong,
+  header .logo .logo-text strong,
+  header .header-inner > a.logo .logo-text strong,
+  .logo .logo-text strong,
+  .logo-text strong {
+    font-size: 21px !important;
+    font-weight: 800 !important;
+    color: #C8102E !important;
+    letter-spacing: 0.35px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    text-transform: uppercase !important;
+    display: block !important;
+    overflow: visible !important;
+    max-width: none !important;
+  }
+
+  /* 3. Tagline / Tab Line — Bigger, clean cyan/teal brand accent */
+  header a.logo .logo-text span,
+  header .logo .logo-text span,
+  header .header-inner > a.logo .logo-text span,
+  .logo .logo-text span,
+  .logo-text span {
+    font-size: 14.5px !important;
+    font-weight: 500 !important;
+    font-style: italic !important;
+    color: #0088AA !important;
+    line-height: 1.25 !important;
+    margin-top: 2px !important;
+    white-space: nowrap !important;
+    letter-spacing: 0.1px !important;
+    display: block !important;
+    overflow: visible !important;
+    max-width: none !important;
+    text-overflow: clip !important;
+  }
+
+  /* 4. Since 1994 Line — Refined, smaller scale, zero blue glow */
+  header a.logo .logo-text .logo-since,
+  header .logo .logo-text .logo-since,
+  header .header-inner > a.logo .logo-text .logo-since,
+  .logo-text .logo-since,
+  .logo-since {
+    display: block !important;
+    font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif !important;
+    font-style: italic !important;
+    font-weight: 600 !important;
+    font-size: 13.5px !important;
+    line-height: 1.15 !important;
+    letter-spacing: 0.08em !important;
+    color: #C8102E !important;
+    margin-top: 4px !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 3px !important;
+    white-space: nowrap !important;
+    text-shadow: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+  }
+
+  header a.logo .logo-text .logo-since::after,
+  header .logo .logo-text .logo-since::after,
+  header .header-inner > a.logo .logo-text .logo-since::after,
+  .logo-text .logo-since::after,
+  .logo-since::after {
+    content: "" !important;
+    display: block !important;
+    width: 32px !important;
+    height: 1.5px !important;
+    margin-top: 3px !important;
+    background: linear-gradient(90deg, #C8102E 0%, rgba(200, 16, 46, 0.45) 60%, transparent 100%) !important;
+    border-radius: 1px !important;
+    box-shadow: none !important;
+    filter: none !important;
+  }
+
+  /* 5. Responsive scaling across viewports */
+  @media (max-width: 1200px) {
+    header a.logo .logo-text strong,
+    header .logo .logo-text strong,
+    .logo-text strong {
+      font-size: 18.5px !important;
+    }
+    header a.logo .logo-text span,
+    header .logo .logo-text span,
+    .logo-text span {
+      font-size: 13.5px !important;
+    }
+    header a.logo .logo-text .logo-since,
+    header .logo .logo-text .logo-since,
+    .logo-text .logo-since {
+      font-size: 12.5px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    header .header-inner > a.logo,
+    header a.logo,
+    .logo {
+      padding: 8px 18px 8px 10px !important;
+      border-radius: 40px !important;
+      min-height: 62px !important;
+      gap: 10px !important;
+    }
+    header a.logo .logo-text strong,
+    header .logo .logo-text strong,
+    .logo-text strong {
+      font-size: 15px !important;
+    }
+    header a.logo .logo-text span,
+    header .logo .logo-text span,
+    .logo-text span {
+      font-size: 11.5px !important;
+    }
+    header a.logo .logo-text .logo-since,
+    header .logo .logo-text .logo-since,
+    .logo-text .logo-since {
+      font-size: 11px !important;
+    }
+  }
+
+</style>
 <style>
 
     /* ===== SITE LOADER (liquid-fill logo) ===== */
@@ -5761,14 +6105,14 @@
       background: #fff;
       border: none;
       overflow: hidden;
-      box-shadow: 0 0 0 3px #c8102e;
+      box-shadow: 0 0 0 3px #C8102E;
     }
     .loader-hex::before {
       content: '';
       position: absolute;
       left: 0; right: 0; bottom: 0;
       height: 0%;
-      background: linear-gradient(180deg, #e83a52 0%, #c8102e 55%, #9e0c24 100%);
+      background: linear-gradient(180deg, #e83a52 0%, #C8102E 55%, #9e0c24 100%);
       animation: liquidRise 1.55s cubic-bezier(0.45, 0.05, 0.25, 1) forwards;
       z-index: 1;
     }
@@ -5834,7 +6178,7 @@
       font-weight: 700;
       letter-spacing: 1.2px;
       text-transform: uppercase;
-      color: #c8102e;
+      color: #C8102E;
       line-height: 1.3;
     }
     .loader-brand .loader-tagline {
@@ -5872,6 +6216,19 @@
     }
 
 </style>
+
+  <!-- OpenGraph & Social Cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Vasudha Pharma Chem Limited">
+  <meta property="og:url" content="https://vasudhapharma.com/posh-policy.html">
+  <meta property="og:title" content="VPCL POSH Policy | Vasudha Pharma Chem Limited">
+  <meta property="og:description" content="Learn about Vasudha Pharma Chem Limited - incorporated in 1994 in Hyderabad, a trusted global manufacturer of APIs and Pharma Intermediates.">
+  <meta property="og:image" content="https://vasudhapharma.com/assets/company-aerial.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VPCL POSH Policy | Vasudha Pharma Chem Limited">
+  <meta name="twitter:description" content="Learn about Vasudha Pharma Chem Limited - incorporated in 1994 in Hyderabad, a trusted global manufacturer of APIs and Pharma Intermediates.">
+  <meta name="twitter:image" content="https://vasudhapharma.com/assets/company-aerial.jpg">
+  <link rel="canonical" href="https://vasudhapharma.com/posh-policy.html">
 </head>
 <body>
 
@@ -5952,7 +6309,6 @@
     <div class="container">
       <div class="top-bar-right">
         <a href="#news-events" id="newsEventsLink">News &amp; Events</a>
-        <a href="contact.html">Contact Us</a>
         <a href="assets/Vasudha_Sustainability_Report_2024-25.pdf" target="_blank" rel="noopener">Sustainability Report</a>
         <div class="top-bar-dropdown" id="secretarialDropdown">
           <button type="button" class="top-bar-dd-toggle" aria-expanded="false" aria-haspopup="true">
@@ -5960,7 +6316,7 @@
             <svg class="top-bar-dd-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <div class="top-bar-dd-menu top-bar-dd-menu--horizontal" role="menu">
-            <a href="#meetings" class="top-bar-dd-item" role="menuitem">Meetings</a>
+            <a href="statutory-regulations.html#meetings" class="top-bar-dd-item" role="menuitem">Meetings</a>
             <div class="top-bar-dd-sub top-bar-dd-sub--h">
               <button type="button" class="top-bar-dd-item top-bar-dd-sub-toggle" aria-expanded="false">
                 Annual Returns
@@ -5989,7 +6345,8 @@
             <a href="independent-directors.html" class="top-bar-dd-item" role="menuitem">Independent Directors</a>
           </div>
         </div>
-        <a href="careers.html">Careers</a>
+        <a href="careers.html" target="_blank" rel="noopener noreferrer">Careers</a>
+        <a href="contact.html">Contact Us</a>
         <a href="manufacturing.html#manufacturing-footprint" class="top-bar-country" title="India — Manufacturing Footprint">
           <span class="india-flag" aria-hidden="true">
             <svg viewBox="0 0 30 20" width="22" height="15" xmlns="http://www.w3.org/2000/svg">
@@ -6002,6 +6359,7 @@
           </span>
           India
         </a>
+        <button type="button" class="top-bar-lang" id="vpLangBtn" title="Language / market" aria-haspopup="dialog">LN</button>
       </div>
     </div>
   </div>
@@ -6502,7 +6860,7 @@
         <p class="section-desc">Come and meet the Vasudha team at these upcoming international pharmaceutical exhibitions.</p>
       </div>
 
-      <div class="vp-events-grid">
+      <div class="vp-events-grid" id="vpEventsGrid">
         <article class="vp-event-card">
           <div class="vp-event-photo has-photo"><img src="assets/events/new-delhi.png" alt="New Delhi, India"></div>
           <div class="vp-event-head">
@@ -6554,7 +6912,7 @@
         <p class="section-desc">Stay informed about our progress, partnerships and contributions to the pharmaceutical industry.</p>
       </div>
 
-      <div class="news-grid">
+      <div class="news-grid" id="vpNewsGrid">
         <article class="news-card">
           <div class="news-card-img"><img src="assets/plant-aerial-1.jpg" alt="Vasudha manufacturing site" loading="lazy"><span class="news-card-kicker">Company Update</span></div>
           <div class="news-card-body">
@@ -6589,81 +6947,69 @@
   </section>
   </div>
 
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="home.html" class="logo">
-            <div class="logo-hex-wrap footer-logo-hex">
-              <div class="logo-hex-body">
-                <img src="assets/vasudha-logo.jpg" alt="Vasudha Pharma Chem Limited" class="logo-img">
-                <div class="logo-flask-liquid logo-flask-liquid-footer">
-                  <div class="logo-wave-svg" aria-hidden="true">
-                    <svg viewBox="0 0 120 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0 5 Q 7.5 0 15 5 T 30 5 T 45 5 T 60 5 T 75 5 T 90 5 T 105 5 T 120 5 V10 H0 Z" fill="rgba(255,255,255,0.4)"/>
-                      <path d="M0 6 Q 7.5 2 15 6 T 30 6 T 45 6 T 60 6 T 75 6 T 90 6 T 105 6 T 120 6 V10 H0 Z" fill="rgba(255,200,210,0.3)"/>
-                    </svg>
-                  </div>
-                  <div class="logo-wave" aria-hidden="true"><span></span><span></span></div>
-                </div>
-                <div class="logo-bubbles-layer" aria-hidden="true">
-                  <div class="logo-bubble lb1"></div>
-                  <div class="logo-bubble lb2"></div>
-                  <div class="logo-bubble lb3"></div>
-                  <div class="logo-bubble lb4"></div>
-                  <div class="logo-bubble lb5"></div>
-                  <div class="logo-bubble lb6"></div>
-                </div>
-              </div>
-            </div>
-            <div class="logo-text">
-              <strong>VASUDHA PHARMA CHEM LIMITED</strong>
-              <span>Contributing to affordable health care...</span>
-              <em class="logo-since">Since 1994</em>
-            </div>
-          </a>
-          <p>Manufacturing Active Pharmaceutical Ingredients and Pharma Intermediates for global markets since 1994. Quality, compliance and reliability at every step.</p>
+  <footer class="vp-foot">
+    <div class="vp-foot-inner">
+      <div class="vp-foot-cols">
+        <div>
+          <h4>Navigation</h4>
+          <div class="vp-foot-split">
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="manufacturing.html">Manufacturing</a></li>
+              <li><a href="rnd.html">R&amp;D</a></li>
+              <li><a href="ehs.html">EHS</a></li>
+            </ul>
+            <ul>
+              <li><a href="founder.html">Foundation</a></li>
+              <li><a href="careers.html" target="_blank" rel="noopener">Careers</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="home.html#news-events">News &amp; Events</a></li>
+              <li><a href="assets/Vasudha_Sustainability_Report_2024-25.pdf" target="_blank" rel="noopener">Sustainability</a></li>
+            </ul>
+          </div>
         </div>
-
-        <div class="footer-col">
-          <h4>Company</h4>
+        <div>
+          <h4>Resources</h4>
           <ul>
-            <li><a href="about-us.html">About Us</a></li>
-            <li><a href="founder.html">Leadership</a></li>
-            <li><a href="manufacturing.html">Manufacturing Units</a></li>
-            <li><a href="rnd.html">R&amp;D Center</a></li>
-            <li><a href="careers.html">Careers</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+            <li><a href="csr-policy.html">CSR Policy</a></li>
+            <li><a href="vigil-mechanism.html">Vigil Mechanism</a></li>
+            <li><a href="posh-policy.html">POSH Policy</a></li>
+            <li><a href="statutory-regulations.html">Statutory Regulations</a></li>
+            <li><a href="independent-directors.html">Corporate Governance</a></li>
           </ul>
         </div>
-
-        <div class="footer-col">
-          <h4>Products</h4>
+        <div>
+          <h4>Connect with us</h4>
+          <p class="vp-foot-social">
+            <a href="https://www.linkedin.com/company/vasudha-pharma-chem-ltd-/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="YouTube">YT</a>
+            <a href="https://www.facebook.com/VasudhaPharma678/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          </p>
           <ul>
-            <li><a href="products.html">APIs</a></li>
-            <li><a href="products.html">Intermediates</a></li>
-            <li><a href="products.html">Pellets &amp; MUPS</a></li>
-            <li><a href="products.html">Product List</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="#">Corporate Office</a></li>
-            <li><a href="tel:+914044763666">+91-40-4476 3666</a></li>
-            <li><a href="mailto:vasudha@vasudhapharma.com">vasudha@vasudhapharma.com</a></li>
-            <li><a href="#">Hyderabad, Telangana</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="contact.html#locations">Our locations</a></li>
           </ul>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <div>© 2026 Vasudha Pharma Chem Limited. All rights reserved.</div>
-        <div style="display: flex; gap: 24px;">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Sitemap</a>
+      <div class="vp-foot-bottom">
+        <a href="home.html" class="logo vp-bag-copy">
+        <div class="logo-hex-wrap">
+          <div class="logo-hex-body">
+            <img src="assets/vasudha-logo.jpg" alt="Vasudha Pharma Chem Limited" class="logo-img">
+          </div>
         </div>
+        <div class="logo-text">
+          <strong>VASUDHA PHARMA CHEM LIMITED</strong>
+          <span>Contributing to affordable health care...</span>
+          <em class="logo-since">Since 1994</em>
+        </div>
+      </a>
+        <span>© 2026 Vasudha Pharma Chem Limited. All rights reserved.</span>
+        <span class="vp-powered">Powered by <img src="assets/zailabs-logo.png" alt=""> Zailabs</span>
       </div>
     </div>
   </footer>
@@ -6867,7 +7213,10 @@
 
       function alreadyDismissed() {
         try {
-          return sessionStorage.getItem(STORAGE_KEY) === '1';
+          return sessionStorage.getItem(STORAGE_KEY) === '1' ||
+                 sessionStorage.getItem('vasudhaSurveySessionLoaded') === '1' ||
+                 sessionStorage.getItem('vasudhaSurveyDismissed_v3') === '1' ||
+                 localStorage.getItem('vasudhaSurveyDismissed_v3') === '1';
         } catch (e) {
           return false;
         }
@@ -6889,6 +7238,7 @@
             if (!force && (o === 'annual-returns' || o === 'annual-return' || window.__vpAnnualDeepLink)) return;
           } catch (e) {}
           if (!force && alreadyDismissed()) return;
+          try { sessionStorage.setItem('vasudhaSurveySessionLoaded', '1'); } catch (e) {}
           overlay.classList.add('visible');
           overlay.setAttribute('aria-hidden', 'false');
           overlay.style.opacity = '1';
@@ -6918,10 +7268,10 @@
 
       if (closeBtn) closeBtn.addEventListener('click', closeSurvey);
       if (noBtn) noBtn.addEventListener('click', closeSurvey);
-      }
       var embedCloseBtn = document.getElementById('surveyEmbedClose');
       if (embedCloseBtn) {
         embedCloseBtn.addEventListener('click', closeSurvey);
+      }
       overlay.addEventListener('click', function (e) {
         if (e.target === overlay) closeSurvey();
       });
@@ -6978,527 +7328,7 @@
     })();
   </script>
 
-<!-- ========== FLOATING LIVE CHAT WIDGET (Vasudha Pharma Support) ========== -->
-<style>
-  /* Floating Chat Widget - matches site primary-red theme */
-  #vp-chat-root {
-    --vp-chat-primary: #C8102E;
-    --vp-chat-primary-dark: #9B0C23;
-    --vp-chat-primary-light: #E8364F;
-    --vp-chat-bg: #FFFFFF;
-    --vp-chat-bubble: #F0F2F5;
-    --vp-chat-text: #1A1A1A;
-    --vp-chat-muted: #666666;
-    --vp-chat-border: #E5E5E5;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    z-index: 99999;
-  }
 
-  #vp-chat-toggle {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    background: var(--vp-chat-primary);
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    padding: 14px 22px;
-    font-size: 15px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    box-shadow: 0 8px 24px rgba(200, 16, 46, 0.35);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    z-index: 100000;
-  }
-  #vp-chat-toggle:hover {
-    background: var(--vp-chat-primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(200, 16, 46, 0.45);
-  }
-  #vp-chat-toggle svg {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-  }
-  #vp-chat-toggle.hidden {
-    display: none;
-  }
-
-  #vp-chat-window {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    width: 360px;
-    max-width: calc(100vw - 32px);
-    height: 520px;
-    max-height: calc(100vh - 48px);
-    background: var(--vp-chat-bg);
-    border-radius: 16px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
-    display: none;
-    flex-direction: column;
-    overflow: hidden;
-    z-index: 100001;
-    animation: vpChatSlideUp 0.25s ease;
-  }
-  #vp-chat-window.open {
-    display: flex;
-  }
-  @keyframes vpChatSlideUp {
-    from { opacity: 0; transform: translateY(16px) scale(0.96); }
-    to   { opacity: 1; transform: translateY(0) scale(1); }
-  }
-
-  #vp-chat-header {
-    background: var(--vp-chat-primary);
-    color: #fff;
-    padding: 16px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-shrink: 0;
-  }
-  #vp-chat-header h3 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0.2px;
-  }
-  #vp-chat-close {
-    background: transparent;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    padding: 4px;
-    line-height: 1;
-    opacity: 0.9;
-    transition: opacity 0.15s;
-  }
-  #vp-chat-close:hover { opacity: 1; }
-  #vp-chat-close svg { width: 18px; height: 18px; display: block; }
-
-  #vp-chat-messages {
-    flex: 1;
-    overflow-y: auto;
-    padding: 18px 16px;
-    background: #FAFBFC;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .vp-msg {
-    max-width: 85%;
-    padding: 12px 14px;
-    border-radius: 14px;
-    font-size: 14px;
-    line-height: 1.45;
-    word-wrap: break-word;
-  }
-  .vp-msg.bot {
-    align-self: flex-start;
-    background: var(--vp-chat-bubble);
-    color: var(--vp-chat-text);
-    border-bottom-left-radius: 4px;
-  }
-  .vp-msg.user {
-    align-self: flex-end;
-    background: var(--vp-chat-primary);
-    color: #fff;
-    border-bottom-right-radius: 4px;
-  }
-  .vp-msg .vp-time {
-    display: block;
-    font-size: 11px;
-    opacity: 0.7;
-    margin-top: 6px;
-  }
-  .vp-typing {
-    align-self: flex-start;
-    background: var(--vp-chat-bubble);
-    padding: 12px 16px;
-    border-radius: 14px;
-    border-bottom-left-radius: 4px;
-    display: none;
-  }
-  .vp-typing.visible { display: flex; gap: 5px; align-items: center; }
-  .vp-typing span {
-    width: 7px; height: 7px;
-    background: #999;
-    border-radius: 50%;
-    animation: vpDot 1.2s infinite ease-in-out;
-  }
-  .vp-typing span:nth-child(2) { animation-delay: 0.2s; }
-  .vp-typing span:nth-child(3) { animation-delay: 0.4s; }
-  @keyframes vpDot {
-    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
-    30% { transform: translateY(-4px); opacity: 1; }
-  }
-
-  #vp-chat-input-area {
-    padding: 12px 14px;
-    border-top: 1px solid var(--vp-chat-border);
-    background: #fff;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    flex-shrink: 0;
-  }
-  #vp-chat-input {
-    flex: 1;
-    border: 1px solid var(--vp-chat-border);
-    border-radius: 24px;
-    padding: 11px 16px;
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.2s;
-    background: #fff;
-    color: var(--vp-chat-text);
-  }
-  #vp-chat-input:focus {
-    border-color: var(--vp-chat-primary);
-  }
-  #vp-chat-input::placeholder {
-    color: #999;
-  }
-  #vp-chat-send {
-    background: var(--vp-chat-primary);
-    color: #fff;
-    border: none;
-    border-radius: 24px;
-    padding: 11px 18px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
-    white-space: nowrap;
-  }
-  #vp-chat-send:hover {
-    background: var(--vp-chat-primary-dark);
-  }
-  #vp-chat-send:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
-
-  /* Mobile adjustments */
-  @media (max-width: 480px) {
-    #vp-chat-window {
-      width: calc(100vw - 16px);
-      height: calc(100vh - 80px);
-      bottom: 12px;
-      right: 8px;
-      border-radius: 14px;
-    }
-    #vp-chat-toggle {
-      bottom: 16px;
-      right: 16px;
-      padding: 12px 18px;
-    }
-  }
-
-    /* Header + logo stick on scroll — always visible */
-    header {
-      position: sticky !important;
-      top: 0 !important;
-      z-index: 1000 !important;
-      background: #fff !important;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-    }
-    header .header-inner {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: space-between;
-      min-height: 88px;
-      gap: 12px;
-    }
-    header .logo {
-      display: flex !important;
-      align-items: center;
-      flex-shrink: 0;
-      text-decoration: none;
-      visibility: visible !important;
-      opacity: 1 !important;
-      position: relative !important; /* stay inside sticky header, not fixed to viewport alone */
-      transform: none !important;
-    }
-    header .logo .logo-img,
-    header .logo-img {
-      display: block !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      object-fit: contain;
-    }
-    header .logo-hex-wrap {
-      flex-shrink: 0;
-    }
-
-
-    /* Red strip — all fonts bold */
-    .top-bar,
-    .top-bar a,
-    .top-bar button,
-    .top-bar .top-bar-dd-toggle,
-    .top-bar .top-bar-dd-sub-toggle,
-    .top-bar .top-bar-dd-item,
-    .top-bar .top-bar-country,
-    .top-bar-left,
-    .top-bar-right {
-      font-weight: 700 !important;
-    }
-    .top-bar a {
-      color: #fff !important;
-      letter-spacing: 0.2px;
-    }
-    .top-bar a:hover {
-      color: #fff !important;
-      opacity: 0.95;
-    }
-    .top-bar-dd-toggle {
-      font-weight: 700 !important;
-      color: #fff !important;
-    }
-
-
-    /* Corporate Governance — horizontal dropdown */
-    #secretarialDropdown .top-bar-dd-menu--horizontal {
-      display: none;
-      flex-direction: row !important;
-      flex-wrap: nowrap;
-      align-items: stretch;
-      gap: 0;
-      min-width: auto;
-      width: max-content;
-      max-width: min(96vw, 720px);
-      padding: 0;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.18);
-      overflow: visible;
-      border: 1px solid rgba(0,0,0,0.08);
-    }
-    #secretarialDropdown.is-open > .top-bar-dd-menu--horizontal,
-    #secretarialDropdown:hover > .top-bar-dd-menu--horizontal {
-      display: flex !important;
-    }
-    #secretarialDropdown .top-bar-dd-menu--horizontal > .top-bar-dd-item,
-    #secretarialDropdown .top-bar-dd-menu--horizontal > a.top-bar-dd-item,
-    #secretarialDropdown .top-bar-dd-menu--horizontal > .top-bar-dd-sub > .top-bar-dd-sub-toggle {
-      display: flex !important;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 18px;
-      white-space: nowrap;
-      color: #333 !important;
-      font-weight: 600 !important;
-      font-size: 13px;
-      border-right: 1px solid #eee;
-      background: transparent;
-      text-decoration: none;
-      border-radius: 0;
-      width: auto;
-      min-width: 0;
-    }
-    #secretarialDropdown .top-bar-dd-menu--horizontal > .top-bar-dd-item:last-child,
-    #secretarialDropdown .top-bar-dd-menu--horizontal > a.top-bar-dd-item:last-child,
-    #secretarialDropdown .top-bar-dd-menu--horizontal > .top-bar-dd-sub:last-child > .top-bar-dd-sub-toggle {
-      border-right: none;
-    }
-    #secretarialDropdown .top-bar-dd-menu--horizontal > a.top-bar-dd-item:hover,
-    #secretarialDropdown .top-bar-dd-menu--horizontal > .top-bar-dd-sub:hover > .top-bar-dd-sub-toggle {
-      background: rgba(200, 16, 46, 0.08);
-      color: #C8102E !important;
-    }
-    #secretarialDropdown .top-bar-dd-sub--h {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-    #secretarialDropdown .top-bar-dd-sub--h .top-bar-dd-submenu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 140px;
-      background: #fff;
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 0 0 8px 8px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-      display: none;
-      flex-direction: column;
-      z-index: 10;
-    }
-    #secretarialDropdown .top-bar-dd-sub--h:hover > .top-bar-dd-submenu,
-    #secretarialDropdown .top-bar-dd-sub--h.is-open > .top-bar-dd-submenu {
-      display: flex !important;
-    }
-    #secretarialDropdown .top-bar-dd-sub--h .top-bar-dd-submenu .top-bar-dd-item {
-      padding: 10px 14px;
-      color: #444 !important;
-      font-weight: 600;
-      border-bottom: 1px solid #f0f0f0;
-      white-space: nowrap;
-    }
-    #secretarialDropdown .top-bar-dd-sub--h .top-bar-dd-submenu .top-bar-dd-item:hover {
-      background: rgba(200, 16, 46, 0.08);
-      color: #C8102E !important;
-    }
-
-
-    /* Policies submenu — theme red */
-    #secretarialDropdown .top-bar-dd-sub--policies .top-bar-dd-submenu--policies {
-      min-width: 280px;
-      left: 0;
-      right: auto;
-      background: #fff;
-      border: 1px solid rgba(200, 16, 46, 0.15);
-      border-radius: 8px;
-      box-shadow: 0 12px 28px rgba(200, 16, 46, 0.12), 0 4px 12px rgba(0,0,0,0.08);
-      padding: 4px 0;
-      overflow: hidden;
-    }
-    #secretarialDropdown .top-bar-dd-sub--policies .top-bar-dd-submenu--policies .top-bar-dd-item {
-      display: block;
-      padding: 11px 16px;
-      color: #333 !important;
-      font-weight: 600 !important;
-      font-size: 12px;
-      letter-spacing: 0.3px;
-      text-transform: uppercase;
-      border-bottom: 1px solid #f0f0f0;
-      text-decoration: none;
-      transition: background 0.15s ease, color 0.15s ease;
-    }
-    #secretarialDropdown .top-bar-dd-sub--policies .top-bar-dd-submenu--policies .top-bar-dd-item:last-child {
-      border-bottom: none;
-    }
-    #secretarialDropdown .top-bar-dd-sub--policies .top-bar-dd-submenu--policies .top-bar-dd-item:hover {
-      background: rgba(200, 16, 46, 0.08);
-      color: #C8102E !important;
-    }
-
-</style>
-
-<div id="vp-chat-root">
-  <!-- Floating toggle button -->
-  <button id="vp-chat-toggle" aria-label="Open live chat">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-    </svg>
-    Chat
-  </button>
-
-  <!-- Chat window -->
-  <div id="vp-chat-window" role="dialog" aria-label="Vasudha Pharma Support Chat">
-    <div id="vp-chat-header">
-      <h3>Vasudha Pharma Support</h3>
-      <button id="vp-chat-close" aria-label="Close chat">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-    </div>
-
-    <div id="vp-chat-messages">
-      <div class="vp-msg bot">
-        Hello! 👋 Welcome to Vasudha Pharma. How can we assist you today?
-        <span class="vp-time">Just now</span>
-      </div>
-      <div class="vp-typing" id="vp-typing">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-
-    <div id="vp-chat-input-area">
-      <input type="text" id="vp-chat-input" placeholder="Type a message..." autocomplete="off" />
-      <button id="vp-chat-send">Send</button>
-    </div>
-  </div>
-</div>
-
-<script>
-(function () {
-  const toggle = document.getElementById('vp-chat-toggle');
-  const windowEl = document.getElementById('vp-chat-window');
-  const closeBtn = document.getElementById('vp-chat-close');
-  const messages = document.getElementById('vp-chat-messages');
-  const input = document.getElementById('vp-chat-input');
-  const sendBtn = document.getElementById('vp-chat-send');
-  const typing = document.getElementById('vp-typing');
-
-  if (!toggle || !windowEl) return;
-
-  function openChat() {
-    windowEl.classList.add('open');
-    toggle.classList.add('hidden');
-    input.focus();
-  }
-  function closeChat() {
-    windowEl.classList.remove('open');
-    toggle.classList.remove('hidden');
-  }
-
-  toggle.addEventListener('click', openChat);
-  closeBtn.addEventListener('click', closeChat);
-
-  // Simple canned responses for "live" feel
-  const replies = [
-    "Thank you for reaching out! Our team will get back to you shortly. You can also email us at info@vasudhapharma.com.",
-    "For product inquiries, please visit our Products page or share more details here.",
-    "We specialize in high-quality pharmaceutical manufacturing. How can we help with your requirements?",
-    "Our support hours are Mon–Sat, 9 AM – 6 PM IST. Leave a message and we'll respond soon!",
-    "You can also contact us via the form on our website for detailed quotes or facility tours.",
-    "Is there a specific product or service you're interested in? We're happy to assist."
-  ];
-  let replyIndex = 0;
-
-  function addMessage(text, isUser) {
-    const div = document.createElement('div');
-    div.className = 'vp-msg ' + (isUser ? 'user' : 'bot');
-    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    div.innerHTML = text + '<span class="vp-time">' + time + '</span>';
-    messages.insertBefore(div, typing);
-    messages.scrollTop = messages.scrollHeight;
-  }
-
-  function botReply() {
-    typing.classList.add('visible');
-    messages.scrollTop = messages.scrollHeight;
-    setTimeout(function () {
-      typing.classList.remove('visible');
-      addMessage(replies[replyIndex % replies.length], false);
-      replyIndex++;
-    }, 900 + Math.random() * 600);
-  }
-
-  function sendMessage() {
-    const text = (input.value || '').trim();
-    if (!text) return;
-    addMessage(text, true);
-    input.value = '';
-    sendBtn.disabled = true;
-    botReply();
-    setTimeout(function () { sendBtn.disabled = false; }, 1200);
-  }
-
-  sendBtn.addEventListener('click', sendMessage);
-  input.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      sendMessage();
-    }
-  });
-
-  // Optional: open chat if URL has #chat
-  if (window.location.hash === '#chat') {
-    setTimeout(openChat, 400);
-  }
-})();
-</script>
-<!-- ========== END FLOATING LIVE CHAT ========== -->
 
 <script>
     // About sub-nav active state on scroll
@@ -8071,6 +7901,7 @@
 <script>
 /* Survey boot — native Qs + Zoho; Next/Prev included */
 (function () {
+  if (document.body && document.body.classList.contains('careers-micro')) return;
   var currentQ = 1;
 
   function overlay() { return document.getElementById('surveyOverlay'); }
@@ -8141,8 +7972,12 @@
       var open = (p.get('open') || '').toLowerCase();
       if (open.indexOf('annual-return') >= 0) return;
       if (p.get('survey') !== '1' && p.get('survey') !== 'true') {
-        if (sessionStorage.getItem('vasudhaSurveyDismissed_v3') === '1') return;
+        if (sessionStorage.getItem('vasudhaSurveyDismissed_v3') === '1' ||
+            sessionStorage.getItem('vasudhaSurveySessionLoaded') === '1' ||
+            sessionStorage.getItem('vasudhaSurveyDismissed_v2') === '1' ||
+            localStorage.getItem('vasudhaSurveyDismissed_v3') === '1') return;
       }
+      try { sessionStorage.setItem('vasudhaSurveySessionLoaded', '1'); } catch (e) {}
     } catch (e) {}
     setStep('invite');
     o.classList.add('visible');
@@ -8165,7 +8000,12 @@
     o.style.removeProperty('visibility');
     o.style.removeProperty('display');
     o.style.removeProperty('pointer-events');
-    try { sessionStorage.setItem('vasudhaSurveyDismissed_v3', '1'); } catch (e) {}
+    try {
+      sessionStorage.setItem('vasudhaSurveySessionLoaded', '1');
+      sessionStorage.setItem('vasudhaSurveyDismissed_v3', '1');
+      sessionStorage.setItem('vasudhaSurveyDismissed_v2', '1');
+      localStorage.setItem('vasudhaSurveyDismissed_v3', '1');
+    } catch (e) {}
   }
 
   function startForm() {
@@ -8210,21 +8050,69 @@
       i.value = v == null ? '' : String(v);
       form.appendChild(i);
     }
-    add('xnQsjsdp', '25f178ab23f91fb401bb31125e7ce47cd9c4c8cea375c82c881d8e154b72295d');
+    add('xnQsjsdp', '640dc7bd451dd50fbd01c331e061c4747bb14022f7b308af6a3f31471187966f');
     add('zc_gad', '');
-    add('xmIwtLD', 'e84e4221a0dcb321dd7cda09a52754909da0a2a205c3b55c069a6e13fdf8e0415d25e2cd617676233fc91ecdf848c16a');
+    add('xmIwtLD', 'd4a96e2705af0077041aa17cc4a3acdee077db6eef8331098f43bfaa76862273e8b29435aa0038785be2f70e8fcd0759');
     add('actionType', 'TGVhZHM=');
-    add('returnURL', 'https://saikrishna-bethamcharla.github.io/vasudhapharma/home.html');
+    add('returnURL', 'https://6jh.8bd.mytemp.website/home.html');
     add('Last Name', payload.lastName || 'Website Survey');
     add('Company', 'Website Survey');
     add('Description', payload.description || '');
-    add('Lead Source', 'Web Research');
-    add('LEADCF11', payload.enquiryType || 'Website Survey');
-    add('LEADCF12', payload.q1 || '');
-    add('LEADCF9', payload.q2 || '');
-    add('LEADCF10', payload.q3 || '');
-    add('LEADCF13', payload.q4 || '');
-    add('LEADCF8', payload.q5 || '');
+    add('Lead Source', payload.leadSource || payload.enquiryType || 'Website Survey');
+    
+  function __vpMapSurveyVal(q, v) {
+    var maps = {
+      q1: {
+        search: 'Search engine (Google, Bing, etc.)',
+        direct: 'Direct link / bookmark',
+        referral: 'Referral from a business partner',
+        social: 'Social media / LinkedIn',
+        other: 'Other'
+      },
+      q2: {
+        products: 'Looking for API / product information',
+        manufacturing: 'Researching manufacturing capabilities',
+        careers: 'Exploring career opportunities',
+        ehs: 'Regulatory / compliance information (EHS)',
+        other: 'Other'
+      },
+      q3: {
+        nav: 'Used the main navigation/menu',
+        'search-site': 'Used site search',
+        browsed: 'Scrolled or browsed pages',
+        'engine-link': 'Direct link from Google or another search engine',
+        other: 'Other'
+      },
+      q4: {
+        yes: 'Yes, completely',
+        partially: 'Partially',
+        no: 'No'
+      },
+      q5: {
+        nav: 'Improve navigation/menu structure',
+        clarity: 'Make content clearer and easier to understand',
+        speed: 'Improve site speed/performance',
+        detail: 'Add more product/technical detail',
+        contact: 'Provide easier contact/enquiry options',
+        met: 'The site experience met expectations'
+      }
+    };
+    if (v == null || v === '') return '';
+    if (q === 'q5') {
+      return String(v).split(/\s*;\s*|\s*,\s*/).map(function (p) {
+        p = p.trim();
+        return (maps.q5[p] || p);
+      }).filter(Boolean).join(';');
+    }
+    return (maps[q] && maps[q][v]) ? maps[q][v] : v;
+  }
+
+    add('LEADCF9', __vpMapSurveyVal('q1', payload.q1));
+    add('LEADCF11', __vpMapSurveyVal('q2', payload.q2));
+    add('LEADCF10', __vpMapSurveyVal('q3', payload.q3));
+    add('LEADCF12', __vpMapSurveyVal('q4', payload.q4));
+    add('LEADCF4', __vpMapSurveyVal('q5', payload.q5));
+    add('Lead Status', 'Not Contacted');
     document.body.appendChild(form);
     form.submit();
     setTimeout(function () { try { form.remove(); } catch (e) {} }, 1200);
@@ -8239,7 +8127,7 @@
     var q2v = radioVal('q2');
     var q3v = radioVal('q3');
     var q4v = radioVal('q4');
-    var q1Map = {search:'search engine',direct:'direct link',referral:'Referral',social:'social media / linkedin',other:'Others'};
+    var q1Map = {search:'Search engine (Google, Bing, etc.)',direct:'Direct link / bookmark',referral:'Referral from a business partner',social:'Social media / LinkedIn',other:'Other'};
     var q2Map = {products:'Looking for API / product information',manufacturing:'Researching manufacturing capabilities',careers:'Exploring career opportunities',ehs:'Regulatory / compliance information (EHS)',other:'Others'};
     var q3Map = {nav:'Used the main navigation/menu','search-site':'Used site search',browsed:'Scrolled or browsed pages','engine-link':'Direct link from Google or another search engine',other:'Other'};
     var q4Map = {yes:'Yes, completely',partially:'Partially',no:'No'};
@@ -8258,9 +8146,14 @@
       'Q4 Were you able to find what you were looking for?: ' + (q4 || '—'),
       'Q5 How could we improve the site experience?: ' + (q5 || '—')
     ].join('\n');
-    try { postZoho({ lastName: 'Website Survey', description: description, enquiryType: 'Website Survey', q1: q1, q2: q2, q3: q3, q4: q4, q5: q5 }); } catch (e) {}
+    try { postZoho({ lastName: 'Website Survey', description: description, enquiryType: 'Website Survey', leadSource: 'Website Survey', q1: q1, q2: q2, q3: q3, q4: q4, q5: q5 }); } catch (e) {}
     setStep('thanks');
-    try { sessionStorage.setItem('vasudhaSurveyDismissed_v3', '1'); } catch (e) {}
+    try {
+      sessionStorage.setItem('vasudhaSurveySessionLoaded', '1');
+      sessionStorage.setItem('vasudhaSurveyDismissed_v3', '1');
+      sessionStorage.setItem('vasudhaSurveyDismissed_v2', '1');
+      localStorage.setItem('vasudhaSurveyDismissed_v3', '1');
+    } catch (e) {}
     setTimeout(hide, 2800);
   }
 
@@ -8301,6 +8194,186 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
   else start();
+})();
+</script>
+
+
+  <div id="vpLangOverlay" class="vp-lang-overlay" aria-hidden="true">
+    <div class="vp-lang-modal" role="dialog" aria-modal="true" aria-labelledby="vpLangTitle">
+      <button type="button" class="vp-lang-close" id="vpLangClose" aria-label="Close">&times;</button>
+      <div id="vpLangPicker">
+        <h3 id="vpLangTitle" class="vp-lang-page-title">Select your country and language</h3>
+        <p class="vp-lang-lead">You are on the India (English) website. Choose a market and language to continue.</p>
+        <div class="vp-lang-dir">
+          <div class="vp-lang-region">
+            <h4>Asia Pacific</h4>
+            <div class="vp-lang-countries">
+              <div>
+                <div class="vp-lang-country">India</div>
+                <button type="button" class="vp-lang-item" data-lang="in" data-url=""><span>English</span></button>
+                <button type="button" class="vp-lang-item" data-lang="hi" data-url="lang-hi.html"><span>हिन्दी</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="vp-lang-region">
+            <h4>Middle East</h4>
+            <div class="vp-lang-countries">
+              <div>
+                <div class="vp-lang-country">United Arab Emirates</div>
+                <button type="button" class="vp-lang-item" data-lang="ae" data-url="lang-ae.html"><span>English / العربية</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="vp-lang-region">
+            <h4>Americas</h4>
+            <div class="vp-lang-countries">
+              <div>
+                <div class="vp-lang-country">United States</div>
+                <button type="button" class="vp-lang-item" data-lang="us" data-url="lang-us.html"><span>English</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="vp-lang-region">
+            <h4>Europe</h4>
+            <div class="vp-lang-countries">
+              <div>
+                <div class="vp-lang-country">Europe</div>
+                <button type="button" class="vp-lang-item" data-lang="eu" data-url="lang-eu.html"><span>English</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="vp-lang-leave" id="vpLangLeave">
+        <h3>You are now leaving the Vasudha Pharma India website.</h3>
+        <p id="vpLangLeaveText">You will be redirected to another Vasudha Pharma market site. Information on that site may be intended for residents of the selected country.</p>
+        <div class="vp-lang-actions">
+          <button type="button" class="vp-lang-btn vp-lang-btn-ok" id="vpLangOk">OK</button>
+          <button type="button" class="vp-lang-btn vp-lang-btn-cancel" id="vpLangCancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script>
+(function () {
+  var overlay = document.getElementById('vpLangOverlay');
+  if (!overlay) return;
+  var picker = document.getElementById('vpLangPicker');
+  var leave = document.getElementById('vpLangLeave');
+  var leaveText = document.getElementById('vpLangLeaveText');
+  var pendingUrl = '';
+  var labels = {
+    hi: 'India (Hindi)',
+    ae: 'United Arab Emirates (Arabic)',
+    us: 'United States (English)',
+    eu: 'Europe (English)'
+  };
+  function openPicker() {
+    picker.style.display = '';
+    leave.classList.remove('is-on');
+    overlay.classList.add('is-open');
+    overlay.setAttribute('aria-hidden', 'false');
+  }
+  function closeAll() {
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden', 'true');
+    pendingUrl = '';
+  }
+  function showLeave(url, key) {
+    pendingUrl = url;
+    if (leaveText) {
+      leaveText.textContent = 'You are leaving the Vasudha Pharma Chem Limited India website and will open the ' + (labels[key] || 'selected') + ' site in a new tab. Content there may be intended for residents of that market.';
+    }
+    picker.style.display = 'none';
+    leave.classList.add('is-on');
+  }
+  var btn = document.getElementById('vpLangBtn');
+  if (btn) btn.addEventListener('click', function (e) { e.preventDefault(); openPicker(); });
+  var closeBtn = document.getElementById('vpLangClose');
+  if (closeBtn) closeBtn.addEventListener('click', closeAll);
+  var cancel = document.getElementById('vpLangCancel');
+  if (cancel) cancel.addEventListener('click', function () { picker.style.display = ''; leave.classList.remove('is-on'); });
+  var ok = document.getElementById('vpLangOk');
+  if (ok) ok.addEventListener('click', function () {
+    if (pendingUrl) window.open(pendingUrl, '_blank', 'noopener');
+    closeAll();
+  });
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) closeAll(); });
+  overlay.querySelectorAll('.vp-lang-item').forEach(function (item) {
+    item.addEventListener('click', function () {
+      var url = item.getAttribute('data-url') || '';
+      var key = item.getAttribute('data-lang') || '';
+      if (!url) { closeAll(); return; }
+      if (key === 'hi') { window.open(url, '_blank', 'noopener'); closeAll(); return; }
+      showLeave(url, key);
+    });
+  });
+})();
+</script>
+<!-- ========== ZOHO SALESIQ ========== -->
+<script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script><script id="zsiqscript" src="https://salesiq.zohopublic.in/widget?wc=siq05cbc078ca5f8d4f9dfaba38a828d347b27c1197f11050eda2e9f927a0b47c0c7092a0563a1d91ac4b0d9fc83f935351" defer></script>
+<!-- ========== END ZOHO SALESIQ ========== -->
+
+
+<script src="cookie-consent.js" defer></script>
+
+<script src="zoho-webtolead.js"></script>
+
+<script>
+(function(){
+  var ov = document.getElementById("newsOverlay");
+  if (!ov) return;
+  function openNews(e){
+    if (e) e.preventDefault();
+    ov.classList.add("open");
+    ov.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden";
+  }
+  function closeNews(){
+    ov.classList.remove("open");
+    ov.setAttribute("aria-hidden","true");
+    document.body.style.overflow = "";
+    if (location.hash === "#news-events") {
+      if (history.replaceState) history.replaceState(null, "", location.pathname + location.search);
+    }
+  }
+  document.querySelectorAll('a[href="#news-events"], a[href="home.html#news-events"], #newsEventsLink').forEach(function(a){
+    a.addEventListener("click", openNews);
+  });
+  var c = document.getElementById("newsClose");
+  if (c) c.addEventListener("click", closeNews);
+  ov.addEventListener("click", function(e){ if (e.target === ov) closeNews(); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape" && ov.classList.contains("open")) closeNews();
+  });
+  if (location.hash === "#news-events") openNews();
+})();
+</script>
+
+
+<script>
+(function(){
+  function live(list){ return (list||[]).filter(function(x){ return (x.status||"live")!=="done"; }); }
+  function esc(s){ return String(s||"").replace(/[&<>"]/g,function(c){ return ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"})[c]; }); }
+  fetch("news-events.json?v="+Date.now()).then(function(r){ return r.ok?r.json():null; }).then(function(data){
+    if(!data) return;
+    var eg=document.getElementById("vpEventsGrid");
+    if(eg){
+      eg.innerHTML=live(data.events).map(function(e){
+        var mail="mailto:vasudha@vasudhapharma.com?subject="+encodeURIComponent("Slot request — "+(e.title||"Event"));
+        return '<article class="vp-event-card"><div class="vp-event-photo has-photo">'+(e.image?'<img src="'+esc(e.image)+'" alt="'+esc(e.title)+'">':'')+'</div><div class="vp-event-head"><span class="vp-event-tag">'+esc(e.tag||"Meet us at")+'</span><h3>'+esc(e.title)+'</h3><p>'+esc(e.place)+'</p><p>'+esc(e.dates)+'</p><p class="vp-event-booth">'+esc(e.booth)+'</p></div><div class="vp-event-foot"><h4>'+esc(e.title)+'</h4><a href="'+mail+'">Book a slot →</a></div></article>';
+      }).join("");
+    }
+    var ng=document.getElementById("vpNewsGrid");
+    if(ng){
+      ng.innerHTML=live(data.news).map(function(n){
+        var href=n.link&&n.link!=="#"?n.link:"#";
+        return '<article class="news-card"><div class="news-card-img">'+(n.image?'<img src="'+esc(n.image)+'" alt="'+esc(n.title)+'" loading="lazy">':'')+(n.kicker?'<span class="news-card-kicker">'+esc(n.kicker)+'</span>':'')+'</div><div class="news-card-body"><div class="news-card-date">'+esc(n.date)+'</div><h3>'+esc(n.title)+'</h3><p>'+esc(n.summary)+'</p><a href="'+esc(href)+'">Read more →</a></div></article>';
+      }).join("");
+    }
+  }).catch(function(){});
 })();
 </script>
 

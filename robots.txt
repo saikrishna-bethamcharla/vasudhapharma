@@ -1,0 +1,8 @@
+# Vasudha Pharma Chem Limited — Production Robots Configuration
+User-agent: *
+Allow: /
+Disallow: /staff/
+Disallow: /scratch/
+
+# Search Engine Sitemap
+Sitemap: https://vasudhapharma.com/sitemap.xml
