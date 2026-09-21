@@ -5193,6 +5193,33 @@
     }
 
   
+        /* Capsule logo — pure crisp white background, zero red tint */
+    header .header-inner > a.logo,
+    header a.logo,
+    .logo {
+      background: #ffffff !important;
+      border: 1px solid rgba(226, 232, 240, 0.95) !important;
+      box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.05),
+        0 1px 3px rgba(0, 0, 0, 0.03),
+        inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+    }
+    .logo-flow-bubbles {
+      display: none !important;
+    }
+    .logo-hex-body {
+      background: #ffffff !important;
+    }
+    .logo .logo-text strong,
+    .logo-text strong,
+    .logo-since,
+    .logo-text .logo-since {
+      color: #C8102E !important;
+    }
+    .logo-text .logo-since::after {
+      background: linear-gradient(90deg, #C8102E 0%, rgba(200, 16, 46, 0.45) 60%, transparent 100%) !important;
+    }
+
     /* ===== Logo bag — full name, no crop ===== */
     header .header-inner > a.logo {
       max-width: none !important;
