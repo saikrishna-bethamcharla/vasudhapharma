@@ -253,8 +253,12 @@ function ne_thumb($src) {
         <input name="tag" value="<?php echo htmlspecialchars($editE['tag'] ?? 'Meet us at'); ?>" placeholder="e.g. Meet us at">
       </div>
       <div>
-        <label>Event Photo (16:9 recommended, under 5 MB)</label>
+        <label style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+          <span>Event Cover Photo</span>
+          <span style="font-size:11px; font-weight:600; color:#2563EB; background:#EFF6FF; border:1px solid #BFDBFE; padding:2px 8px; border-radius:12px;">📐 16:9 (800 × 450 px ideal)</span>
+        </label>
         <input type="file" name="image" accept="image/jpeg,image/png,image/webp">
+        <div style="font-size:11px; color:#64748B; margin-top:4px;">Recommended: 16:9 ratio, 800 × 450 px (Min 640 × 360 px), JPG/PNG/WEBP under 5 MB.</div>
       </div>
     </div>
 
@@ -394,8 +398,12 @@ function ne_thumb($src) {
         <input name="link" value="<?php echo htmlspecialchars($editN['link'] ?? ''); ?>" placeholder="https://…">
       </div>
       <div>
-        <label>Cover Photo (5:3 aspect ratio recommended, under 5 MB)</label>
+        <label style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+          <span>Article Cover Photo</span>
+          <span style="font-size:11px; font-weight:600; color:#2563EB; background:#EFF6FF; border:1px solid #BFDBFE; padding:2px 8px; border-radius:12px;">📐 16:9 (800 × 450 px ideal)</span>
+        </label>
         <input type="file" name="image" accept="image/jpeg,image/png,image/webp">
+        <div style="font-size:11px; color:#64748B; margin-top:4px;">Recommended: 16:9 ratio, 800 × 450 px (Min 600 × 338 px), JPG/PNG/WEBP under 5 MB.</div>
       </div>
     </div>
 
