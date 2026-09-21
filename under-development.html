@@ -5469,27 +5469,43 @@
     }
 
   
-    /* ===== 31 Years badge +15% ===== */
+        /* ===== 31 Years badge with Since 1994 ===== */
+    .anniv-badge-wrap,
+    header .header-right > .anniv-badge-wrap,
+    header .header-right .anniv-badge-wrap {
+      display: inline-flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex: 0 0 auto !important;
+      margin-left: auto !important;
+      margin-right: 0 !important;
+      text-decoration: none !important;
+      line-height: 1 !important;
+    }
+    header .header-right .anniv-badge-wrap .anniv-badge,
+    .anniv-badge-wrap .anniv-badge,
     header .header-right > .anniv-badge,
     header .anniv-badge {
-      width: 83px !important;
-      height: 83px !important;
-      flex: 0 0 83px !important;
+      width: 74px !important;
+      height: 74px !important;
+      flex: 0 0 74px !important;
       overflow: hidden !important;
       border-radius: 50% !important;
+      margin: 0 !important;
     }
     header .header-right .anniv-core,
     header .anniv-core {
-      width: 60px !important;
-      height: 60px !important;
+      width: 54px !important;
+      height: 54px !important;
     }
     header .header-right .anniv-num,
     header .anniv-num {
-      font-size: 23px !important;
+      font-size: 21px !important;
     }
     header .header-right .anniv-lbl,
     header .anniv-lbl {
-      font-size: 9px !important;
+      font-size: 8px !important;
     }
     header .header-right .anniv-ring,
     header .anniv-ring {
@@ -5497,7 +5513,27 @@
     }
     header .header-right .anniv-ring--2,
     header .anniv-ring--2 {
-      inset: 8px !important;
+      inset: 7px !important;
+    }
+    .anniv-since {
+      display: block !important;
+      font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif !important;
+      font-style: italic !important;
+      font-weight: 700 !important;
+      font-size: 12.5px !important;
+      color: #3D5CAD !important;
+      letter-spacing: 0.06em !important;
+      margin-top: 3px !important;
+      white-space: nowrap !important;
+      text-align: center !important;
+      line-height: 1 !important;
+    }
+    @media (max-width: 960px) {
+      .anniv-badge-wrap,
+      header .header-right > .anniv-badge-wrap,
+      header .header-right .anniv-badge-wrap {
+        display: none !important;
+      }
     }
 
   
@@ -6452,7 +6488,6 @@
         <div class="logo-text">
           <strong>VASUDHA PHARMA CHEM LIMITED</strong>
           <span>Contributing to affordable health care...</span>
-          <em class="logo-since">Since 1994</em>
         </div>
       </a>
 
@@ -6654,13 +6689,16 @@
       </nav>
 
       <!-- 31 Years anniversary badge (right of nav) -->
-      <div class="anniv-badge" aria-label="31 years of excellence since 1994" title="31 Years — Since 1994">
-        <div class="anniv-ring" aria-hidden="true"></div>
-        <div class="anniv-ring anniv-ring--2" aria-hidden="true"></div>
-        <div class="anniv-core">
-          <span class="anniv-num">31</span>
-          <span class="anniv-lbl">YEARS</span>
+      <div class="anniv-badge-wrap" title="31 Years of Excellence — Since 1994">
+        <div class="anniv-badge" aria-label="31 years of excellence since 1994">
+          <div class="anniv-ring" aria-hidden="true"></div>
+          <div class="anniv-ring anniv-ring--2" aria-hidden="true"></div>
+          <div class="anniv-core">
+            <span class="anniv-num">31</span>
+            <span class="anniv-lbl">YEARS</span>
+          </div>
         </div>
+        <span class="anniv-since">Since 1994</span>
       </div>
       </div><!-- /.header-right -->
 
