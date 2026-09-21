@@ -45,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'name' => $name,
         'role' => $role,
         'dept' => $dept === 'admin' ? 'admin' : $dept,
+        'password' => $pass,
         'hash' => password_hash($pass, PASSWORD_DEFAULT),
       ];
       staff_save_users($list);
@@ -77,6 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $ok = false;
             break;
           }
+          $list[$i]['password'] = $pass;
           $list[$i]['hash'] = password_hash($pass, PASSWORD_DEFAULT);
         }
         $ok = true;
@@ -99,84 +101,77 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($action === 'delete') {
     $email = strtolower(trim($_POST['email'] ?? ''));
     if ($email === strtolower($u['email'])) {
-      $err = 'You cannot delete your own active login session.';
+      $err = 'You cannot delete your own logged-in account.';
     } else {
-      $list = array_values(array_filter($list, function ($x) use ($email) {
-        return strtolower($x['email']) !== $email;
-      }));
+      $list = array_values(array_filter($list, fn($x) => strtolower($x['email']) !== $email));
       staff_save_users($list);
-      $msg = 'Staff member login removed.';
+      $msg = 'Account has been removed.';
     }
   }
 }
-
-$edit = null;
-if (isset($_GET['edit'])) {
-  foreach ($list as $row) {
-    if (strtolower($row['email']) === strtolower($_GET['edit'])) { $edit = $row; break; }
-  }
-}
-
-$staff_title = 'Users';
-require __DIR__ . '/includes/header.php';
+?>
+<?php 
+$pageTitle = 'User Management';
+require __DIR__ . '/includes/header.php'; 
 ?>
 
+<div class="card hint">
+  <strong>Staff User Directory &amp; Role-Based Access:</strong> Administrators have full access across all operations desks. Department staff logins are strictly constrained to their operational responsibilities.
+</div>
+
 <?php if ($msg): ?>
-  <div class="card ok">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+  <div class="alert alert-success">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
     <span><?php echo htmlspecialchars($msg); ?></span>
   </div>
 <?php endif; ?>
 
 <?php if ($err): ?>
-  <div class="card err-box">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+  <div class="alert alert-danger">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
     <span><?php echo htmlspecialchars($err); ?></span>
   </div>
 <?php endif; ?>
 
-<div class="card hint">
-  <strong>Access Control Management:</strong> Administrators can grant staff access to specific department desks. Users assigned to a desk can only view and edit their department's data.
-</div>
+<?php
+$editEmail = strtolower(trim($_GET['edit'] ?? ''));
+$edit = null;
+if ($editEmail) {
+  foreach ($list as $usr) {
+    if (strtolower($usr['email']) === $editEmail) {
+      $edit = $usr;
+      break;
+    }
+  }
+}
+?>
 
 <div class="card">
-  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:12px;">
-    <div>
-      <h2 style="margin:0; font-size:18px;">Staff Logins (<?php echo count($list); ?>)</h2>
-      <div style="font-size:12.5px; color:var(--sp-text-muted); margin-top:2px;">
-        Registered internal portal users
-      </div>
-    </div>
-    <a href="users.php#userForm" class="btn btn-primary" onclick="document.getElementById('userNameInput').focus();">+ Add New Staff</a>
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+    <h2 style="margin:0; font-size:18px;">Configured Accounts (<?php echo count($list); ?>)</h2>
   </div>
 
-  <div class="table-search-bar">
-    <input type="text" placeholder="Search users by name, email, or desk..." data-search-target="#usersTable">
-    <span style="font-size:12px; color:var(--sp-text-muted);">Quick filter</span>
-  </div>
-
-  <table id="usersTable">
+  <table>
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Department Desk</th>
-        <th>Role Level</th>
+        <th>Staff Member</th>
+        <th>Corporate Email</th>
+        <th>Assigned Desk</th>
+        <th>System Role</th>
         <th style="text-align:right">Actions</th>
       </tr>
     </thead>
     <tbody>
     <?php foreach ($list as $row): 
-      $isSelf = strtolower($row['email']) === strtolower($u['email']);
-      $deptKey = $row['dept'] ?? 'careers';
-      $deskLabel = $deptKey === 'admin' ? 'All Desks (Administrator)' : ($desks[$deptKey]['label'] ?? ucfirst($deptKey));
+      $isSelf = (strtolower($row['email']) === strtolower($u['email']));
+      $deskLabel = ($row['dept'] === 'admin') ? 'All Desks (Executive Admin)' : ($desks[$row['dept']]['label'] ?? ucfirst($row['dept'])) . ' Desk';
     ?>
       <tr>
         <td>
           <div style="font-weight:600; color:var(--sp-text-main);">
             <?php echo htmlspecialchars($row['name']); ?>
             <?php if ($isSelf): ?>
-              <span style="font-size:11px; background:#EEF2FF; color:var(--sp-primary); padding:2px 6px; border-radius:4px; margin-left:6px; font-weight:600;">You</span>
+              <span style="font-size:11px; color:var(--sp-primary); font-weight:700;">(You)</span>
             <?php endif; ?>
           </div>
         </td>
@@ -225,7 +220,7 @@ require __DIR__ . '/includes/header.php';
       </div>
       <div>
         <label>Corporate Email Address</label>
-        <input type="email" name="email" required placeholder="name@vasudha.local" value="<?php echo htmlspecialchars($edit['email'] ?? ''); ?>">
+        <input type="email" name="email" required placeholder="name@vasudhapharma.com" value="<?php echo htmlspecialchars($edit['email'] ?? ''); ?>">
       </div>
     </div>
 

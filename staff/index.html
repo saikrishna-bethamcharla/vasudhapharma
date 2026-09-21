@@ -534,7 +534,7 @@
             Quick Operational Actions
           </div>
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <button class="btn btn-primary" style="font-size:12.5px;" onclick="showTab('careers'); setTimeout(()=>document.getElementById('jobId').focus(), 150);">+ Post New Job</button>
+            <button class="btn btn-primary" style="font-size:12.5px;" id="btnPostJobQuick" onclick="showTab('careers'); setTimeout(()=>document.getElementById('jobId').focus(), 150);">+ Post New Job</button>
             <button class="btn btn-ghost" style="font-size:12.5px;" onclick="downloadJobsJson()">Download jobs.json</button>
             <button class="btn btn-ghost" style="font-size:12.5px;" id="btnManageUsersQuick" onclick="showTab('users')">+ Manage Users</button>
           </div>
@@ -545,7 +545,7 @@
       <div class="card">
         <h2 style="margin-top:0; font-size:17px; margin-bottom:18px;">Accessible Department Desks</h2>
         <div class="row" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:16px;">
-          <div class="card" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+          <div class="card" data-desk-card="careers" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
             <div>
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
                 <h3 style="margin:0; font-size:15px; color:var(--sp-primary);">Careers / HR Desk</h3>
@@ -556,7 +556,7 @@
             <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="showTab('careers')">Open HR Desk &rarr;</button>
           </div>
 
-          <div class="card" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+          <div class="card" data-desk-card="manufacturing" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
             <div>
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
                 <h3 style="margin:0; font-size:15px; color:var(--sp-primary);">Manufacturing Desk</h3>
@@ -567,7 +567,7 @@
             <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="showTab('manufacturing')">Open Desk &rarr;</button>
           </div>
 
-          <div class="card" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+          <div class="card" data-desk-card="rnd" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
             <div>
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
                 <h3 style="margin:0; font-size:15px; color:var(--sp-primary);">R&amp;D Desk</h3>
@@ -578,7 +578,7 @@
             <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="showTab('rnd')">Open Desk &rarr;</button>
           </div>
 
-          <div class="card" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+          <div class="card" data-desk-card="ehs" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
             <div>
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
                 <h3 style="margin:0; font-size:15px; color:var(--sp-primary);">EHS Desk</h3>
@@ -589,7 +589,29 @@
             <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="showTab('ehs')">Open Desk &rarr;</button>
           </div>
 
-          <div class="card" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+          <div class="card" data-desk-card="governance" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <h3 style="margin:0; font-size:15px; color:var(--sp-primary);">Corporate Governance</h3>
+                <span class="badge-open">Active</span>
+              </div>
+              <p style="font-size:12.5px; color:var(--sp-text-muted); margin:0;">Statutory compliance, board policies, annual return filings, and vigilance reporting.</p>
+            </div>
+            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="showTab('governance')">Open Desk &rarr;</button>
+          </div>
+
+          <div class="card" data-desk-card="marketing" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <h3 style="margin:0; font-size:15px; color:var(--sp-primary);">Marketing &amp; Sales</h3>
+                <span class="badge-open">Active</span>
+              </div>
+              <p style="font-size:12.5px; color:var(--sp-text-muted); margin:0;">Product catalogue filings, global customer enquiries, and export distribution logs.</p>
+            </div>
+            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="showTab('marketing')">Open Desk &rarr;</button>
+          </div>
+
+          <div class="card" data-desk-card="foundation" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
             <div>
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
                 <h3 style="margin:0; font-size:15px; color:var(--sp-primary);">Foundation Desk</h3>
@@ -600,7 +622,7 @@
             <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="showTab('foundation')">Open Foundation Desk &rarr;</button>
           </div>
 
-          <div class="card" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+          <div class="card" data-desk-card="news" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
             <div>
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
                 <h3 style="margin:0; font-size:15px; color:var(--sp-primary);">News &amp; Events Desk</h3>
@@ -769,7 +791,7 @@
             </div>
             <div>
               <label>Corporate Email *</label>
-              <input id="newUserEmail" type="email" required placeholder="e.g. ramesh@vasudha.local">
+              <input id="newUserEmail" type="email" required placeholder="e.g. ramesh@vasudhapharma.com">
             </div>
           </div>
           <div class="row">
@@ -789,7 +811,7 @@
             </div>
             <div>
               <label>Initial Temporary Password *</label>
-              <input id="newUserPass" required placeholder="Minimum 6 characters" value="ChangeMe!">
+              <input id="newUserPass" required placeholder="Set secure password (min 6 chars)">
             </div>
           </div>
           <p style="margin-top:20px;">
@@ -1111,7 +1133,7 @@
           <div>
             <h1 style="margin:0;font-size:20px;" id="accountName">Administrator</h1>
             <div style="color:var(--sp-text-muted);font-size:13px;margin-top:2px;">
-              <span id="accountEmail">admin@vasudha.local</span> &bull; 
+              <span id="accountEmail">admin@vasudhapharma.com</span> &bull; 
               <span id="accountDept" style="text-transform:capitalize;">admin</span> &bull;
               <span id="accountRole" style="text-transform:uppercase;font-size:11px;background:#EEF2FB;color:var(--sp-primary-dark);padding:2px 7px;border-radius:4px;font-weight:700;">ADMIN</span>
             </div>
@@ -1161,37 +1183,46 @@
         </div>
         <h2 style="margin:0; font-size:19px; color:var(--sp-primary-dark); text-transform:uppercase;">Vasudha Operations Portal</h2>
         <div style="font-size:12px; color:#0088AA; font-style:italic; margin-top:2px;">Contributing to affordable health care... &bull; Since 1994</div>
-        <p style="font-size:13px; color:var(--sp-text-muted); margin:10px 0 0;">Sign in to access your department operational console.</p>
+        <p style="font-size:13px; color:var(--sp-text-muted); margin:10px 0 0;">Sign in to access your assigned department operational console.</p>
       </div>
 
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:18px;">
-        <button type="button" class="btn btn-ghost" style="font-size:11.5px; justify-content:center;" onclick="quickAuth('admin@vasudha.local')">
-          &bull; Prefill Admin
-        </button>
-        <button type="button" class="btn btn-ghost" style="font-size:11.5px; justify-content:center;" onclick="quickAuth('hr@vasudha.local')">
-          &bull; Prefill HR
-        </button>
+      <div style="margin-bottom:16px;">
+        <label style="font-size:12px; font-weight:600; color:var(--sp-text-muted); margin-bottom:4px; display:block;">Select Department Account</label>
+        <select id="loginDeptSelect" onchange="onSelectDeptAccount(this.value)" style="width:100%; box-sizing:border-box; padding:9px 12px; font-size:13px; border:1px solid var(--sp-border); border-radius:8px; background:#F8FAFC; color:var(--sp-text-main);">
+          <option value="">-- Choose Department Account --</option>
+          <option value="saikrishna@zailabs.co.in">Lead Developer (Root Admin)</option>
+          <option value="admin@vasudhapharma.com">VPCL Operations Admin (All Desks)</option>
+          <option value="hr@vasudhapharma.com">HR &amp; Talent Acquisition (Careers)</option>
+          <option value="news@vasudhapharma.com">Corporate Media &amp; PR (News &amp; Events)</option>
+          <option value="foundation@vasudhapharma.com">Vasudha Foundation CSR</option>
+          <option value="manufacturing@vasudhapharma.com">Manufacturing Operations</option>
+          <option value="rnd@vasudhapharma.com">R&amp;D Process Chemistry</option>
+          <option value="ehs@vasudhapharma.com">EHS &amp; Sustainability</option>
+          <option value="governance@vasudhapharma.com">Corporate Governance &amp; Secretarial</option>
+          <option value="marketing@vasudhapharma.com">Commercial Sales &amp; Marketing</option>
+        </select>
       </div>
 
       <form onsubmit="handleLogin(event)">
-        <label>Email Address</label>
-        <input id="loginEmail" type="email" required placeholder="name@vasudha.local">
-        <label>Password</label>
-        <input id="loginPass" type="password" required placeholder="••••••••">
-        <div id="loginErr" style="display:none; color:#DC2626; font-size:12.5px; margin-top:10px; font-weight:500;">Invalid credentials. Default password is ChangeMe!</div>
-        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:20px; padding:12px;">
-          Sign In to Portal &rarr;
+        <label>Corporate Email Address</label>
+        <input id="loginEmail" type="email" required placeholder="department@vasudhapharma.com">
+        <label>Department Password</label>
+        <div style="position:relative;">
+          <input id="loginPass" type="password" required placeholder="Enter assigned password" style="padding-right:38px;">
+          <button type="button" onclick="togglePassVisibility()" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:none; border:none; color:var(--sp-text-muted); cursor:pointer; font-size:13px; padding:4px;" title="Show/Hide Password">👁</button>
+        </div>
+        <div id="loginErr" style="display:none; color:#DC2626; font-size:12.5px; margin-top:10px; font-weight:500;">Invalid credentials. Please check your email and password.</div>
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:18px; padding:12px;">
+          Sign In to Operations Desk &rarr;
         </button>
       </form>
 
-      <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--sp-border); font-size:12px; color:var(--sp-text-muted);">
-        <strong>First Logins:</strong><br>
-        &bull; <code>admin@vasudha.local</code> (all desks + Users)<br>
-        &bull; <code>hr@vasudha.local</code> (Careers / HR only)<br>
-        Password: <code>ChangeMe!</code>
+      <div style="margin-top:18px; padding-top:14px; border-top:1px solid var(--sp-border); font-size:11.5px; color:var(--sp-text-muted); text-align:center;">
+        🔒 <strong>Strict Department Isolation:</strong> Access permissions are strictly enforced based on your assigned desk.
       </div>
-      <div style="text-align:center; margin-top:14px;">
-        <a href="../home.html" style="font-size:12.5px; color:var(--sp-primary); text-decoration:none;">&larr; Return to Vasudha Website</a>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; font-size:12px;">
+        <a href="../home.html" style="color:var(--sp-primary); text-decoration:none;">&larr; Return to Website</a>
+        <a href="../feedback.html" style="color:#0088AA; text-decoration:none;">📝 Testing Feedback</a>
       </div>
     </div>
   </div>
@@ -1199,12 +1230,38 @@
   <script>
     // System Users & State
     let currentUser = null;
-    let usersList = [
-      { email: 'admin@vasudha.local', name: 'Administrator', role: 'admin', dept: 'admin' },
-      { email: 'hr@vasudha.local', name: 'HR Specialist', role: 'hr', dept: 'careers' },
-      { email: 'foundation@vasudha.local', name: 'Foundation Officer', role: 'user', dept: 'foundation' },
-      { email: 'news@vasudha.local', name: 'Media Officer', role: 'user', dept: 'news' }
+    const DEFAULT_USERS = [
+      { email: 'saikrishna@zailabs.co.in', name: 'Sai Krishna (Lead Dev)', role: 'admin', dept: 'admin', password: 'Vasudha@Dev2026!' },
+      { email: 'admin@vasudhapharma.com', name: 'VPCL Operations Admin', role: 'admin', dept: 'admin', password: 'Vasudha@Admin2026!' },
+      { email: 'hr@vasudhapharma.com', name: 'HR & Talent Acquisition', role: 'hr', dept: 'careers', password: 'Vasudha@HR2026!' },
+      { email: 'news@vasudhapharma.com', name: 'Corporate Media & PR', role: 'user', dept: 'news', password: 'Vasudha@News2026!' },
+      { email: 'foundation@vasudhapharma.com', name: 'Vasudha Foundation CSR', role: 'user', dept: 'foundation', password: 'Vasudha@CSR2026!' },
+      { email: 'manufacturing@vasudhapharma.com', name: 'Manufacturing Operations Head', role: 'user', dept: 'manufacturing', password: 'Vasudha@Mfg2026!' },
+      { email: 'rnd@vasudhapharma.com', name: 'R&D Process Chemistry Lead', role: 'user', dept: 'rnd', password: 'Vasudha@RND2026!' },
+      { email: 'ehs@vasudhapharma.com', name: 'EHS & Sustainability Officer', role: 'user', dept: 'ehs', password: 'Vasudha@EHS2026!' },
+      { email: 'governance@vasudhapharma.com', name: 'Corporate Secretarial & Compliance', role: 'user', dept: 'governance', password: 'Vasudha@Gov2026!' },
+      { email: 'marketing@vasudhapharma.com', name: 'Commercial Sales & Marketing', role: 'user', dept: 'marketing', password: 'Vasudha@Mkt2026!' }
     ];
+
+    function initUsersList() {
+      const stored = localStorage.getItem('vp_staff_custom_users');
+      if (stored) {
+        try {
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            const map = new Map();
+            DEFAULT_USERS.forEach(u => map.set(u.email.toLowerCase(), { ...u }));
+            parsed.forEach(u => map.set(u.email.toLowerCase(), { ...map.get(u.email.toLowerCase()), ...u }));
+            return Array.from(map.values());
+          }
+        } catch (e) {
+          console.warn('Error reading stored users:', e);
+        }
+      }
+      return DEFAULT_USERS.map(u => ({ ...u }));
+    }
+
+    let usersList = initUsersList();
     // Pre-populated with real production data (5 jobs, 37 foundation images, 6 news & event cards)
     // When served via HTTP/HTTPS, fetch() will synchronize with server files; when opened directly via file://,
     // this ensures full operational data is immediately available instead of showing 0.
@@ -1646,8 +1703,27 @@
         .catch(() => toast('Failed to copy.'));
     }
 
+    // Desk permission validation helper
+    function canAccessDesk(tabName) {
+      if (!currentUser) return false;
+      if (tabName === 'home' || tabName === 'account') return true;
+      if (currentUser.role === 'admin') return true;
+      if (tabName === 'users') return currentUser.role === 'admin';
+      if (tabName === 'careers') return (currentUser.role === 'hr' || currentUser.dept === 'careers');
+      return currentUser.dept === tabName;
+    }
+
     // Tab Navigation
     function showTab(tabName) {
+      if (!currentUser) {
+        document.getElementById('authModal').style.display = 'flex';
+        return;
+      }
+      if (!canAccessDesk(tabName)) {
+        const deptLabel = (currentUser.dept || 'Your account').toUpperCase();
+        toast('⛔ Access Denied: ' + deptLabel + ' account does not have access to this desk.');
+        return;
+      }
       document.querySelectorAll('.tab-pane').forEach(el => el.style.display = 'none');
       document.querySelectorAll('#mainStaffNav button').forEach(b => b.classList.remove('on'));
 
@@ -2050,22 +2126,29 @@
       const email = document.getElementById('newUserEmail').value.trim().toLowerCase();
       const name = document.getElementById('newUserName').value.trim();
       const dept = document.getElementById('newUserDept').value;
+      const pass = document.getElementById('newUserPass').value.trim();
       const role = dept === 'admin' ? 'admin' : (dept === 'careers' ? 'hr' : 'user');
 
-      if (usersList.some(u => u.email === email)) {
+      if (usersList.some(u => u.email.toLowerCase() === email)) {
         alert('A user with this email address already exists.');
         return;
       }
 
-      usersList.push({ email, name, role, dept });
+      usersList.push({ email, name, role, dept, password: pass || 'Vasudha@2026!' });
+      localStorage.setItem('vp_staff_custom_users', JSON.stringify(usersList));
       renderUsers();
       e.target.reset();
       toast('Staff user ' + name + ' created.');
     }
 
     function removeUser(email) {
+      if (currentUser && currentUser.email.toLowerCase() === email.toLowerCase()) {
+        alert('You cannot delete your own active login session.');
+        return;
+      }
       if (!confirm('Remove user account ' + email + '?')) return;
-      usersList = usersList.filter(u => u.email !== email);
+      usersList = usersList.filter(u => u.email.toLowerCase() !== email.toLowerCase());
+      localStorage.setItem('vp_staff_custom_users', JSON.stringify(usersList));
       renderUsers();
       toast('User removed.');
     }
@@ -2073,18 +2156,36 @@
     function updateAccount(e) {
       e.preventDefault();
       const name = document.getElementById('editName').value.trim();
+      const pass = document.getElementById('newPassInput').value.trim();
       if (currentUser && name) {
         currentUser.name = name;
+        if (pass) {
+          currentUser.password = pass;
+        }
         sessionStorage.setItem('vp_staff_user', JSON.stringify(currentUser));
+        const idx = usersList.findIndex(u => u.email.toLowerCase() === currentUser.email.toLowerCase());
+        if (idx !== -1) {
+          usersList[idx].name = name;
+          if (pass) usersList[idx].password = pass;
+          localStorage.setItem('vp_staff_custom_users', JSON.stringify(usersList));
+        }
         applyUser(currentUser);
         toast('Account details updated.');
       }
     }
 
     // Authentication
-    function quickAuth(email) {
+    function onSelectDeptAccount(email) {
+      if (!email) return;
       document.getElementById('loginEmail').value = email;
-      document.getElementById('loginPass').value = 'ChangeMe!';
+      const p = document.getElementById('loginPass');
+      p.value = '';
+      p.focus();
+    }
+
+    function togglePassVisibility() {
+      const p = document.getElementById('loginPass');
+      if (p) p.type = p.type === 'password' ? 'text' : 'password';
     }
 
     function handleLogin(e) {
@@ -2093,14 +2194,17 @@
       const pass = document.getElementById('loginPass').value;
       const found = usersList.find(u => u.email.toLowerCase() === email);
 
-      if (found && (pass === 'ChangeMe!' || pass.length >= 4)) {
+      if (found && (found.password ? pass === found.password : pass.length >= 6)) {
         currentUser = found;
         sessionStorage.setItem('vp_staff_user', JSON.stringify(currentUser));
         document.getElementById('authModal').style.display = 'none';
+        document.getElementById('loginErr').style.display = 'none';
         applyUser(currentUser);
         toast('Welcome back, ' + currentUser.name);
       } else {
-        document.getElementById('loginErr').style.display = 'block';
+        const errEl = document.getElementById('loginErr');
+        errEl.textContent = 'Invalid credentials. Please verify your department email and password.';
+        errEl.style.display = 'block';
       }
     }
 
@@ -2129,19 +2233,30 @@
 
       document.getElementById('navUsersBtn').style.display = isAdmin ? 'inline-flex' : 'none';
       document.getElementById('btnManageUsersQuick').style.display = isAdmin ? 'inline-flex' : 'none';
+      const postJobBtn = document.getElementById('btnPostJobQuick');
+      if (postJobBtn) postJobBtn.style.display = (isAdmin || isHR) ? 'inline-flex' : 'none';
 
       // Hide or show desk buttons based on permissions
       document.querySelectorAll('#mainStaffNav button[data-desk]').forEach(btn => {
         const desk = btn.getAttribute('data-desk');
         if (desk === 'home' || desk === 'account') return;
-        if (isAdmin) {
-          btn.style.display = 'inline-flex';
-        } else if (isHR) {
-          btn.style.display = (desk === 'careers') ? 'inline-flex' : 'none';
-        } else {
-          btn.style.display = (desk === u.dept) ? 'inline-flex' : 'none';
-        }
+        btn.style.display = canAccessDesk(desk) ? 'inline-flex' : 'none';
       });
+
+      // Hide or show desk cards on Home dashboard based on permissions
+      document.querySelectorAll('#tab-home [data-desk-card]').forEach(card => {
+        const desk = card.getAttribute('data-desk-card');
+        card.style.display = canAccessDesk(desk) ? 'flex' : 'none';
+      });
+
+      // If user is on an unauthorized tab, redirect to home or their desk
+      const visiblePane = document.querySelector('.tab-pane:not([style*="none"])');
+      if (visiblePane) {
+        const paneId = visiblePane.id.replace('tab-', '');
+        if (!canAccessDesk(paneId)) {
+          showTab('home');
+        }
+      }
     }
 
     // Init

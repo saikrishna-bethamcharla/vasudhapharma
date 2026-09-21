@@ -1,16 +1,82 @@
 [
   {
-    "email": "admin@vasudha.local",
-    "name": "Administrator",
+    "email": "saikrishna@zailabs.co.in",
+    "name": "Sai Krishna (Lead Dev)",
     "role": "admin",
     "dept": "admin",
+    "password": "Vasudha@Dev2026!",
     "hash": "$2y$10$lsLpbGo.XURaxcUVmHbcIOthQDMAExeSZ7IsMtPQiKXIfSl6ErPnu"
   },
   {
-    "email": "hr@vasudha.local",
-    "name": "HR",
+    "email": "admin@vasudhapharma.com",
+    "name": "VPCL Operations Admin",
+    "role": "admin",
+    "dept": "admin",
+    "password": "Vasudha@Admin2026!",
+    "hash": "$2y$10$lsLpbGo.XURaxcUVmHbcIOthQDMAExeSZ7IsMtPQiKXIfSl6ErPnu"
+  },
+  {
+    "email": "hr@vasudhapharma.com",
+    "name": "HR & Talent Acquisition",
     "role": "hr",
     "dept": "careers",
+    "password": "Vasudha@HR2026!",
+    "hash": "$2y$10$lsLpbGo.XURaxcUVmHbcIOthQDMAExeSZ7IsMtPQiKXIfSl6ErPnu"
+  },
+  {
+    "email": "news@vasudhapharma.com",
+    "name": "Corporate Media & PR",
+    "role": "user",
+    "dept": "news",
+    "password": "Vasudha@News2026!",
+    "hash": "$2y$10$lsLpbGo.XURaxcUVmHbcIOthQDMAExeSZ7IsMtPQiKXIfSl6ErPnu"
+  },
+  {
+    "email": "foundation@vasudhapharma.com",
+    "name": "Vasudha Foundation CSR",
+    "role": "user",
+    "dept": "foundation",
+    "password": "Vasudha@CSR2026!",
+    "hash": "$2y$10$lsLpbGo.XURaxcUVmHbcIOthQDMAExeSZ7IsMtPQiKXIfSl6ErPnu"
+  },
+  {
+    "email": "manufacturing@vasudhapharma.com",
+    "name": "Manufacturing Operations Head",
+    "role": "user",
+    "dept": "manufacturing",
+    "password": "Vasudha@Mfg2026!",
+    "hash": "$2y$10$lsLpbGo.XURaxcUVmHbcIOthQDMAExeSZ7IsMtPQiKXIfSl6ErPnu"
+  },
+  {
+    "email": "rnd@vasudhapharma.com",
+    "name": "R&D Process Chemistry Lead",
+    "role": "user",
+    "dept": "rnd",
+    "password": "Vasudha@RND2026!",
+    "hash": "$2y$10$lsLpbGo.XURaxcUVmHbcIOthQDMAExeSZ7IsMtPQiKXIfSl6ErPnu"
+  },
+  {
+    "email": "ehs@vasudhapharma.com",
+    "name": "EHS & Sustainability Officer",
+    "role": "user",
+    "dept": "ehs",
+    "password": "Vasudha@EHS2026!",
+    "hash": "$2y$10$lsLpbGo.XURaxcUVmHbcIOthQDMAExeSZ7IsMtPQiKXIfSl6ErPnu"
+  },
+  {
+    "email": "governance@vasudhapharma.com",
+    "name": "Corporate Secretarial & Compliance",
+    "role": "user",
+    "dept": "governance",
+    "password": "Vasudha@Gov2026!",
+    "hash": "$2y$10$lsLpbGo.XURaxcUVmHbcIOthQDMAExeSZ7IsMtPQiKXIfSl6ErPnu"
+  },
+  {
+    "email": "marketing@vasudhapharma.com",
+    "name": "Commercial Sales & Marketing",
+    "role": "user",
+    "dept": "marketing",
+    "password": "Vasudha@Mkt2026!",
     "hash": "$2y$10$lsLpbGo.XURaxcUVmHbcIOthQDMAExeSZ7IsMtPQiKXIfSl6ErPnu"
   }
 ]

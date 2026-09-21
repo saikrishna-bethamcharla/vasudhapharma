@@ -228,36 +228,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
     <?php endif; ?>
 
-    <div class="quick-logins">
-      <button type="button" class="btn-quick" onclick="fillCreds('admin@vasudha.local', 'ChangeMe!')">
-        &bull; Prefill Administrator
-      </button>
-      <button type="button" class="btn-quick" onclick="fillCreds('hr@vasudha.local', 'ChangeMe!')">
-        &bull; Prefill Careers / HR
-      </button>
+    <div style="margin-bottom:16px;">
+      <label style="margin-top:0;">Select Department Account</label>
+      <select id="deptSelect" onchange="onSelectDept(this.value)" style="width:100%; box-sizing:border-box; padding:11px 14px; border:1px solid var(--sp-border); border-radius:9px; font:inherit; font-size:13.5px; background:#FAFAFA; color:var(--sp-text-main);">
+        <option value="">-- Choose Department Account --</option>
+        <option value="saikrishna@zailabs.co.in">Lead Developer (Root Admin)</option>
+        <option value="admin@vasudhapharma.com">VPCL Operations Admin (All Desks)</option>
+        <option value="hr@vasudhapharma.com">HR &amp; Talent Acquisition (Careers)</option>
+        <option value="news@vasudhapharma.com">Corporate Media &amp; PR (News &amp; Events)</option>
+        <option value="foundation@vasudhapharma.com">Vasudha Foundation CSR</option>
+        <option value="manufacturing@vasudhapharma.com">Manufacturing Operations</option>
+        <option value="rnd@vasudhapharma.com">R&amp;D Process Chemistry</option>
+        <option value="ehs@vasudhapharma.com">EHS &amp; Sustainability</option>
+        <option value="governance@vasudhapharma.com">Corporate Governance &amp; Secretarial</option>
+        <option value="marketing@vasudhapharma.com">Commercial Sales &amp; Marketing</option>
+      </select>
     </div>
 
     <form method="post" autocomplete="on">
-      <label>Email Address</label>
-      <input id="emailInput" type="email" name="email" placeholder="name@vasudha.local" required autofocus>
-      <label>Password</label>
-      <input id="passInput" type="password" name="password" placeholder="••••••••" required>
+      <label>Corporate Email Address</label>
+      <input id="emailInput" type="email" name="email" placeholder="department@vasudhapharma.com" required autofocus>
+      <label>Department Password</label>
+      <input id="passInput" type="password" name="password" placeholder="Enter assigned password" required>
       <button type="submit">Sign in to Operations Desk &rarr;</button>
     </form>
 
-    <div class="hint">
-      <strong>First Logins:</strong><br>
-      &bull; <code>admin@vasudha.local</code> (all desks + Users)<br>
-      &bull; <code>hr@vasudha.local</code> (Careers / HR only)<br>
-      Password: <code>ChangeMe!</code>
+    <div class="hint" style="text-align:center;">
+      🔒 <strong>Role-Based Access Enforcement:</strong> Each department account is restricted to its respective operational desk.
     </div>
-    <a href="../home.html" class="back-link">&larr; Return to Vasudha Public Website</a>
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px; font-size:12.5px;">
+      <a href="../home.html" style="color:var(--sp-text-muted); text-decoration:none;">&larr; Public Website</a>
+      <a href="../feedback.html" style="color:#0088AA; text-decoration:none;">📝 Testing Feedback</a>
+    </div>
   </div>
 
   <script>
-    function fillCreds(email, pass) {
+    function onSelectDept(email) {
+      if (!email) return;
       document.getElementById('emailInput').value = email;
-      document.getElementById('passInput').value = pass;
+      const pass = document.getElementById('passInput');
+      pass.value = '';
+      pass.focus();
     }
   </script>
 </body>
