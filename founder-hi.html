@@ -5983,117 +5983,54 @@
 
   
     .vp-powered {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 6px !important;
-      font-size: 12.5px !important;
-      font-weight: 500 !important;
-      color: #666 !important;
-      white-space: nowrap !important;
-      vertical-align: middle !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 14px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #666;
+      white-space: nowrap;
+      vertical-align: middle;
     }
     .vp-powered img {
-      height: 1.15em !important;
-      width: auto !important;
-      display: inline-block !important;
-      vertical-align: middle !important;
+      height: 1.15em;
+      width: auto;
+      display: inline-block;
     }
 
     footer.vp-foot { background:#fff; color:#222; border-top:1px solid #e8e8e8; padding:48px 24px 28px; }
     .vp-foot-inner { max-width:1180px; margin:0 auto; }
-    .vp-foot-cols { display:grid; grid-template-columns: 1.4fr 0.9fr 0.8fr; gap:36px; align-items:start; }
-    .vp-foot h4 { margin:0 0 16px; font-size:16px; font-weight:700; color:#1A1A1A; }
+    .vp-foot-cols { display:grid; grid-template-columns: 1.4fr 0.9fr 0.8fr; gap:36px; }
+    .vp-foot h4 { margin:0 0 16px; font-size:16px; font-weight:700; }
     .vp-foot ul { list-style:none; margin:0; padding:0; }
-    .vp-foot li { margin:0 0 10px; line-height:1.4; }
-    .vp-foot a { color:#444; text-decoration:none; font-size:14px; transition:color 0.2s ease; }
+    .vp-foot li { margin:0 0 10px; }
+    .vp-foot a { color:#333; text-decoration:none; font-size:14px; }
     .vp-foot a:hover { color:#3D5CAD; }
     .vp-foot-split { display:grid; grid-template-columns:1fr 1fr; gap:12px 28px; }
-    .vp-foot-social { display:flex; gap:10px; margin:0 0 16px; }
-    .vp-foot-social a { display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border:1px solid #ddd; border-radius:50%; font-size:11px; font-weight:800; color:#555; text-decoration:none; transition:all 0.2s ease; }
-    .vp-foot-social a:hover { border-color:#3D5CAD; color:#3D5CAD; background:#EEF2FB; }
-    .vp-foot-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-top:36px; padding-top:20px; border-top:1px solid #eee; font-size:13px; color:#666; }
-    .vp-foot-bottom > span { font-size:13px; color:#666; }
-
-    /* Footer Bottom Brand Link Reset */
-    .vp-foot-bottom a.logo,
-    .vp-foot-bottom a.vp-bag-copy {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 12px !important;
-      padding: 0 !important;
-      min-height: auto !important;
-      border-radius: 0 !important;
-      background: transparent !important;
-      border: none !important;
-      box-shadow: none !important;
-      text-decoration: none !important;
-      width: auto !important;
-    }
-    .vp-foot-bottom a.logo .logo-hex-wrap,
-    .vp-foot-bottom a.vp-bag-copy .logo-hex-wrap {
-      width: 44px !important;
-      height: 44px !important;
-      flex: 0 0 44px !important;
-    }
-    .vp-foot-bottom a.logo .logo-hex-body,
-    .vp-foot-bottom a.vp-bag-copy .logo-hex-body {
-      box-shadow: none !important;
-      background: #ffffff !important;
-    }
-    .vp-foot-bottom .logo-text {
-      display: flex !important;
-      flex-direction: column !important;
-      text-align: left !important;
-    }
-    .vp-foot-bottom .logo-text strong {
-      font-size: 14.5px !important;
-      font-weight: 700 !important;
-      color: #3D5CAD !important;
-      line-height: 1.25 !important;
-      letter-spacing: 0.2px !important;
-      white-space: nowrap !important;
-      text-transform: uppercase !important;
-    }
-    .vp-foot-bottom .logo-text span {
-      font-size: 11.5px !important;
-      font-style: italic !important;
-      color: #0088AA !important;
-      line-height: 1.2 !important;
-      margin-top: 1px !important;
-      text-align: left !important;
-    }
-    .vp-foot-bottom .logo-text .logo-since {
-      display: none !important;
-    }
-
-    @media (max-width:800px){
-      .vp-foot-cols, .vp-foot-split { grid-template-columns:1fr; }
-      .vp-foot-bottom {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        gap: 12px !important;
-      }
-      .vp-foot-bottom .logo-text {
-        align-items: center !important;
-        text-align: center !important;
-      }
-      .vp-powered { margin-left: 0 !important; }
-    }
+    .vp-foot-social { display:flex; gap:10px; margin:0 0 14px; }
+    .vp-foot-social a { display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border:1px solid #ddd; border-radius:50%; font-size:11px; font-weight:800; }
+    .vp-foot-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:36px; padding-top:20px; border-top:1px solid #eee; font-size:13px; color:#666; }
+    .vp-foot-bottom strong { color:#3D5CAD; font-size:16px; }
+    @media (max-width:800px){ .vp-foot-cols, .vp-foot-split { grid-template-columns:1fr; } }
 
     a.vp-cap-logo { display:inline-flex; align-items:center; text-decoration:none; }
     a.vp-cap-logo .logo-hex-wrap { width:52px; height:52px; display:inline-flex; }
     a.vp-cap-logo .logo-img { width:52px; height:52px; object-fit:contain; }
     .vp-c-top-inner a.vp-cap-logo .logo-hex-wrap,
     .vp-c-top-inner a.vp-cap-logo .logo-img { width:56px; height:56px; }
+    .vp-foot-bottom a.vp-cap-logo .logo-hex-wrap,
+    .vp-foot-bottom a.vp-cap-logo .logo-img { width:64px; height:64px; }
 
     a.vp-bag-copy { display:inline-flex; align-items:center; gap:10px; text-decoration:none; }
     a.vp-bag-copy .logo-hex-wrap { width:52px; height:52px; }
+    .vp-foot-bottom a.vp-bag-copy .logo-hex-wrap { width:56px; height:56px; }
     .vp-c-top-inner a.vp-bag-copy { justify-self:center; }
 
     /* Capsule logo — pure crisp white background, zero red tint */
     header .header-inner > a.logo,
-    header a.logo {
+    header a.logo,
+    .logo {
       background: #ffffff !important;
       border: 1px solid rgba(226, 232, 240, 0.95) !important;
       box-shadow:
@@ -7131,6 +7068,15 @@
           <button type="button" class="fg-dot" aria-label="Slide 4"></button>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>एक विश्वसनीय एपीआई निर्माता के साथ जुड़ें</h2>
+      <p>Whether you need high-quality APIs, intermediates or custom manufacturing support, our team is ready to collaborate.</p>
+      <a href="contact-hi.html" class="btn btn-white">Contact Our Team</a>
     </div>
   </section>
 
