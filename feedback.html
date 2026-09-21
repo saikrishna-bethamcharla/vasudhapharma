@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testing Feedback & Review Portal | Vasudha Pharma Chem Limited</title>
+  <meta name="description" content="Internal testing and feedback submission portal for the Vasudha Pharma Chem Limited web platform review phase.">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-blue: #3D5CAD;
+      --primary-dark: #2E4A8A;
+      --primary-light: #5B7AD4;
+      --accent-blue: #7C9AE8;
+      --accent-soft: #EEF2FF;
+      --dark: #0F172A;
+      --dark-gray: #1E293B;
+      --medium-gray: #475569;
+      --light-gray: #F8FAFC;
+      --border: #E2E8F0;
+      --success: #059669;
+      --warning: #D97706;
+      --danger: #DC2626;
+      --white: #FFFFFF;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #334155;
+      background: #F1F5F9;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--primary-blue); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--primary-dark); }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ========== TOP BAR ========== */
+    .top-bar {
+      background: var(--primary-blue);
+      color: var(--white);
+      font-size: 12.5px;
+      padding: 8px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .top-bar-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.18);
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .top-bar-links a {
+      color: #E2E8F0;
+      margin-left: 14px;
+      font-size: 12px;
+    }
+    .top-bar-links a:hover { color: #FFFFFF; }
+
+    /* ========== NAVBAR ========== */
+    .site-nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+    }
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .brand-logo {
+      height: 48px;
+      width: auto;
+      display: block;
+    }
+    .brand-text-block {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      line-height: 1.1;
+      letter-spacing: 0.5px;
+    }
+    .brand-sub {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--medium-gray);
+      letter-spacing: 1.2px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .nav-btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      background: var(--light-gray);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--dark-gray);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .nav-btn-back:hover {
+      background: #E2E8F0;
+      color: var(--dark);
+    }
+
+    /* ========== HERO SECTION ========== */
+    .hero-banner {
+      background: linear-gradient(135deg, #2E4A8A 0%, #3D5CAD 60%, #4D73D1 100%);
+      color: var(--white);
+      padding: 44px 0 48px;
+      position: relative;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 4px 14px;
+      border-radius: 24px;
+      font-size: 12.5px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .hero-desc {
+      font-size: 15.5px;
+      max-width: 820px;
+      color: #E2E8F0;
+      line-height: 1.6;
+    }
+
+    /* ========== MAIN CONTENT LAYOUT ========== */
+    .content-wrap {
+      padding: 36px 0 60px;
+    }
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    @media (max-width: 992px) {
+      .grid-layout { grid-template-columns: 1fr; }
+    }
+
+    /* ========== CARDS & FORM ========== */
+    .card {
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      padding: 28px;
+    }
+    .card-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--dark-gray);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-desc {
+      font-size: 13.5px;
+      color: var(--medium-gray);
+      margin-bottom: 22px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dark-gray);
+      margin-bottom: 6px;
+    }
+    .optional-tag {
+      font-size: 11px;
+      font-weight: 500;
+      color: #64748B;
+      background: #F1F5F9;
+      padding: 2px 7px;
+      border-radius: 10px;
+      margin-left: 6px;
+    }
+    .required-tag {
+      color: var(--danger);
+      margin-left: 3px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #CBD5E1;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      color: #1E293B;
+      background: #FFFFFF;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary-blue);
+      box-shadow: 0 0 0 3px rgba(61, 92, 173, 0.15);
+    }
+    textarea {
+      resize: vertical;
+      min-height: 140px;
+      line-height: 1.5;
+    }
+
+    /* ========== SCREENSHOT UPLOAD ZONE ========== */
+    .dropzone {
+      border: 2px dashed #94A3B8;
+      border-radius: 10px;
+      padding: 22px 18px;
+      text-align: center;
+      background: #F8FAFC;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .dropzone:hover, .dropzone.dragover {
+      border-color: var(--primary-blue);
+      background: #EFF6FF;
+    }
+    .dropzone input[type="file"] {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+    .dropzone-icon {
+      font-size: 28px;
+      margin-bottom: 6px;
+      color: var(--primary-blue);
+    }
+    .dropzone-text {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--dark-gray);
+    }
+    .dropzone-hint {
+      font-size: 11.5px;
+      color: #64748B;
+      margin-top: 4px;
+    }
+
+    .preview-box {
+      margin-top: 14px;
+      padding: 12px;
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: none;
+      align-items: center;
+      gap: 14px;
+    }
+    .preview-box.active { display: flex; }
+    .preview-thumb {
+      width: 84px;
+      height: 56px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid #CBD5E1;
+      background: #E2E8F0;
+      cursor: pointer;
+    }
+    .preview-info {
+      flex: 1;
+      font-size: 12.5px;
+      overflow: hidden;
+    }
+    .preview-name {
+      font-weight: 600;
+      color: var(--dark-gray);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .preview-meta {
+      font-size: 11px;
+      color: #64748B;
+      margin-top: 2px;
+    }
+    .btn-remove-img {
+      background: #FEE2E2;
+      color: var(--danger);
+      border: 1px solid #FCA5A5;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-remove-img:hover { background: #FECACA; }
+
+    /* ========== BUTTONS ========== */
+    .form-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: var(--primary-blue);
+      color: var(--white);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      box-shadow: 0 4px 10px rgba(61,92,173,0.3);
+    }
+    .btn-secondary {
+      background: var(--white);
+      border-color: #CBD5E1;
+      color: var(--dark-gray);
+    }
+    .btn-secondary:hover {
+      background: #F8FAFC;
+      border-color: #94A3B8;
+    }
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 12px;
+      border-radius: 6px;
+    }
+
+    /* ========== SIDEBAR INFO ========== */
+    .sidebar-block {
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 22px;
+      margin-bottom: 20px;
+    }
+    .sidebar-block h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark-gray);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .sidebar-block ul {
+      list-style: none;
+      font-size: 13px;
+      color: var(--medium-gray);
+    }
+    .sidebar-block li {
+      margin-bottom: 9px;
+      position: relative;
+      padding-left: 18px;
+    }
+    .sidebar-block li::before {
+      content: "•";
+      position: absolute;
+      left: 4px;
+      color: var(--primary-blue);
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 1;
+    }
+    .stat-counter {
+      display: flex;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .stat-pill {
+      flex: 1;
+      background: var(--light-gray);
+      border: 1px solid var(--border);
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary-blue);
+    }
+    .stat-label {
+      font-size: 11px;
+      color: var(--medium-gray);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* ========== FEEDBACK HISTORY LIST ========== */
+    .history-card {
+      margin-top: 36px;
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 28px;
+    }
+    .history-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .history-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark-gray);
+    }
+    .history-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .feedback-item {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 14px;
+      background: #FFFFFF;
+      transition: box-shadow 0.2s;
+    }
+    .feedback-item:hover {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    }
+    .fb-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .fb-id {
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--primary-blue);
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .fb-page-badge {
+      font-size: 11.5px;
+      font-weight: 600;
+      background: #F1F5F9;
+      color: #334155;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .fb-priority {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .p-normal { background: #E0E7FF; color: #3730A3; }
+    .p-high { background: #FEF3C7; color: #92400E; }
+    .p-critical { background: #FEE2E2; color: #991B1B; }
+
+    .fb-body {
+      font-size: 13.5px;
+      color: #1E293B;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      margin-bottom: 10px;
+    }
+    .fb-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11.5px;
+      color: #64748B;
+      padding-top: 8px;
+      border-top: 1px dashed #E2E8F0;
+    }
+    .fb-screenshot-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--primary-blue);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .fb-screenshot-link:hover { text-decoration: underline; }
+
+    /* ========== LIGHTBOX MODAL ========== */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .lightbox-modal.active { display: flex; }
+    .lightbox-content {
+      background: var(--white);
+      border-radius: 10px;
+      max-width: 90vw;
+      max-height: 90vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+    .lightbox-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      background: #F8FAFC;
+    }
+    .lightbox-title { font-size: 14px; font-weight: 600; color: var(--dark-gray); }
+    .lightbox-close {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #64748B;
+    }
+    .lightbox-close:hover { color: #0F172A; }
+    .lightbox-body {
+      padding: 16px;
+      overflow: auto;
+      text-align: center;
+    }
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    /* ========== FOOTER ========== */
+    footer.vp-foot {
+      background: #FFFFFF;
+      color: #334155;
+      border-top: 1px solid #E2E8F0;
+      padding: 40px 20px 24px;
+      margin-top: 50px;
+      font-size: 13px;
+    }
+    .vp-foot-inner { max-width: 1240px; margin: 0 auto; }
+    .vp-foot-cols {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 768px) {
+      .vp-foot-cols { grid-template-columns: 1fr; }
+    }
+    .vp-foot h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    .vp-foot ul { list-style: none; }
+    .vp-foot li { margin-bottom: 8px; }
+    .vp-foot a { color: #475569; }
+    .vp-foot a:hover { color: var(--primary-blue); }
+    .vp-foot-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 18px;
+      border-top: 1px solid #E2E8F0;
+      font-size: 12px;
+      color: #64748B;
+    }
+
+    /* ========== TOAST NOTIFICATION ========== */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #0F172A;
+      color: #FFFFFF;
+      padding: 14px 20px;
+      border-radius: 8px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+      font-size: 13.5px;
+      display: none;
+      align-items: center;
+      gap: 10px;
+      z-index: 9999;
+    }
+    .toast.active { display: flex; animation: slideIn 0.3s ease; }
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <header class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-badge">
+        <span>🧪 Internal Testing Phase (30 Days)</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="index.html">← Back to Public Website</a>
+        <a href="staff/index.html">Staff Intranet</a>
+        <a href="contact.html">Corporate Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Navbar -->
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-link">
+        <img src="assets/vasudha-logo.jpg" alt="Vasudha Pharma Chem Limited" class="brand-logo">
+        <div class="brand-text-block">
+          <span class="brand-title">Vasudha Pharma Chem Limited</span>
+          <span class="brand-sub">Testing &amp; Review Desk</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-btn-back">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Back to Website
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <section class="hero-banner">
+    <div class="container">
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        Review &amp; Quality Assurance Console
+      </div>
+      <h1 class="hero-title">Website Feedback &amp; Revision Portal</h1>
+      <p class="hero-desc">
+        Welcome to the Vasudha Pharma internal review page. While this website is hosted on GitHub for internal evaluation, use this form to note down required copy updates, design adjustments, factual corrections, or attach screenshots of development sections that need edits.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="content-wrap">
+    <div class="container">
+      <div class="grid-layout">
+        
+        <!-- Left: Feedback Submission Form -->
+        <div class="card">
+          <h2 class="card-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2.2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+            Submit Feedback or Edit Request
+          </h2>
+          <p class="card-desc">Fill in the fields below. All submissions are recorded with a unique tracking ID and preserved locally for compilation.</p>
+
+          <form id="feedbackForm">
+            <!-- Reviewer Details -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="reviewerName">Your Name / Reviewer <span class="optional-tag">Optional</span></label>
+                <input type="text" id="reviewerName" placeholder="e.g. Dr. Anand Raju, QA Team">
+              </div>
+              <div class="form-group">
+                <label for="reviewerDept">Department / Email <span class="optional-tag">Optional</span></label>
+                <input type="text" id="reviewerDept" placeholder="e.g. Regulatory, Marketing, HR">
+              </div>
+            </div>
+
+            <!-- Target Web Page (Optional Dropdown) -->
+            <div class="form-group">
+              <label for="targetPage">
+                Target Web Page / Section
+                <span class="optional-tag">Not Mandatory</span>
+              </label>
+              <select id="targetPage">
+                <option value="">-- Select Web Page / Section (Optional) --</option>
+                
+                <optgroup label="🏢 Corporate &amp; Main Pages">
+                  <option value="index.html">Homepage (index.html)</option>
+                  <option value="about-us.html">About Us — Overview &amp; Accreditations (about-us.html)</option>
+                  <option value="founder.html">Founder &amp; History (founder.html)</option>
+                  <option value="independent-directors.html">Board of Directors &amp; Corporate Governance (independent-directors.html)</option>
+                  <option value="contact.html">Contact Us &amp; Plant Locations (contact.html)</option>
+                </optgroup>
+
+                <optgroup label="💊 Products &amp; CDMO">
+                  <option value="products.html">Products Overview &amp; Interactive Molecule Viewer (products.html)</option>
+                  <option value="apis.html">Active Pharmaceutical Ingredients - APIs (apis.html)</option>
+                  <option value="intermediates.html">Pharma Intermediates (intermediates.html)</option>
+                  <option value="pellets.html">Pellets &amp; MUPS (pellets.html)</option>
+                  <option value="piperidone-derivatives.html">Piperidone Derivatives (piperidone-derivatives.html)</option>
+                  <option value="under-development.html">Under Development Pipeline (under-development.html)</option>
+                  <option value="cmo-cdmo.html">CMO &amp; CDMO Custom Synthesis (cmo-cdmo.html)</option>
+                </optgroup>
+
+                <optgroup label="🏭 Operations &amp; Science">
+                  <option value="manufacturing.html">Manufacturing Campuses — Units 1 to 5 (manufacturing.html)</option>
+                  <option value="rnd.html">Research &amp; Development — R&amp;D (rnd.html)</option>
+                  <option value="ehs.html">Environment, Health &amp; Safety — EHS (ehs.html)</option>
+                  <option value="statutory-regulations.html">Statutory Regulations &amp; Filings (statutory-regulations.html)</option>
+                </optgroup>
+
+                <optgroup label="👥 Careers &amp; HR">
+                  <option value="careers.html">Careers Hub (careers.html)</option>
+                  <option value="jobs.html">Current Job Openings (jobs.html)</option>
+                  <option value="apply.html">Online Job Application (apply.html)</option>
+                  <option value="life-at-vasudha.html">Life at Vasudha (life-at-vasudha.html)</option>
+                  <option value="career-areas.html">Career Functional Areas (career-areas.html)</option>
+                  <option value="how-we-recruit.html">How We Recruit (how-we-recruit.html)</option>
+                  <option value="student-opportunities.html">Student Opportunities (student-opportunities.html)</option>
+                  <option value="career-stories.html">Career Stories &amp; Testimonials (career-stories.html)</option>
+                  <option value="talent-community.html">Talent Community (talent-community.html)</option>
+                </optgroup>
+
+                <optgroup label="📢 News, CSR &amp; Policies">
+                  <option value="events.html">News &amp; Events Hub (events.html)</option>
+                  <option value="csr-policy.html">CSR Policy &amp; Initiatives (csr-policy.html)</option>
+                  <option value="vigil-mechanism.html">Vigil Mechanism / Whistleblower (vigil-mechanism.html)</option>
+                  <option value="posh-policy.html">POSH Policy (posh-policy.html)</option>
+                  <option value="privacy-policy.html">Privacy Policy (privacy-policy.html)</option>
+                  <option value="cookies.html">Cookie Policy (cookies.html)</option>
+                </optgroup>
+
+                <optgroup label="🔒 Intranet &amp; Other">
+                  <option value="staff/index.html">Staff Intranet Portal (/staff/)</option>
+                  <option value="Header / Navigation Bar">Header Navigation / Top Bar</option>
+                  <option value="Footer / Global Links">Footer / Global Links</option>
+                  <option value="General / Entire Website">General / Entire Website</option>
+                  <option value="Other / Not Listed">Other (Specify in message)</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <!-- Feedback Category & Priority -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="feedbackCategory">Feedback Type</label>
+                <select id="feedbackCategory">
+                  <option value="Text / Copy Edit">📝 Text / Copy Correction or Typo</option>
+                  <option value="Content Update">🔄 Content Update / Outdated Information</option>
+                  <option value="Design / Layout">🎨 Design, Layout or Mobile Alignment</option>
+                  <option value="Image / Screenshot">🖼️ Image Replacement or Missing Asset</option>
+                  <option value="Bug / Broken Link">⚠️ Technical Bug or Broken Link</option>
+                  <option value="Feature Suggestion">💡 Feature or Enhancement Suggestion</option>
+                  <option value="General Observation">💬 General Observation</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="feedbackPriority">Priority Level</label>
+                <select id="feedbackPriority">
+                  <option value="Normal">Normal (Standard Revision)</option>
+                  <option value="High">High (Important for Launch)</option>
+                  <option value="Critical">Critical (Blocker / Must Fix)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Big Message Box -->
+            <div class="form-group">
+              <label for="feedbackMessage">
+                Changes or Edits Needed
+                <span class="required-tag">*</span>
+              </label>
+              <textarea id="feedbackMessage" rows="7" required placeholder="Type whatever data needs to be changed, edited, or updated...&#10;&#10;Examples:&#10;• In Section 2, replace 'X' with 'Y'&#10;• The address in the footer should be updated to Plot No. 78...&#10;• Please add our 2026 DMF status to the API table..."></textarea>
+            </div>
+
+            <!-- Screenshot Upload Zone -->
+            <div class="form-group">
+              <label>
+                Upload Screenshot of Development Section
+                <span class="optional-tag">Optional</span>
+              </label>
+              
+              <div class="dropzone" id="dropZone">
+                <input type="file" id="screenshotInput" accept="image/png,image/jpeg,image/webp,image/gif">
+                <div class="dropzone-icon">📸</div>
+                <div class="dropzone-text">Click to choose image or drag &amp; drop here</div>
+                <div class="dropzone-hint">Supports PNG, JPG, or WEBP (up to 10 MB). Helpful to highlight the exact visual section.</div>
+              </div>
+
+              <!-- Instant Preview Card -->
+              <div class="preview-box" id="previewBox">
+                <img src="" id="previewImg" class="preview-thumb" alt="Uploaded screenshot thumbnail" onclick="openLightbox(this.src, 'Screenshot Preview')">
+                <div class="preview-info">
+                  <div class="preview-name" id="previewName">screenshot.png</div>
+                  <div class="preview-meta" id="previewMeta">-- × -- px · -- KB</div>
+                </div>
+                <button type="button" class="btn-remove-img" id="btnRemoveImg">Remove</button>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                Record Feedback Ticket
+              </button>
+              <button type="button" class="btn btn-secondary" id="btnEmailDispatch">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                Email to Dev Team
+              </button>
+              <button type="reset" class="btn btn-secondary" id="btnResetForm" style="margin-left:auto;">Clear</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right: Sidebar Guidelines & Quick Stats -->
+        <aside>
+          <div class="sidebar-block">
+            <h3>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              Review Tips
+            </h3>
+            <ul>
+              <li><strong>Be Specific:</strong> Mention the page and paragraph or element where edits are requested.</li>
+              <li><strong>Exact Replacements:</strong> When correcting text, paste the current text and the exact new text.</li>
+              <li><strong>Screenshots:</strong> Uploading a screenshot with red markup or circled areas speeds up implementation.</li>
+              <li><strong>Page Dropdown:</strong> If your feedback relates to multiple sections or the site in general, you can leave the dropdown empty.</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-block">
+            <h3>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              Testing Console Stats
+            </h3>
+            <div class="stat-counter">
+              <div class="stat-pill">
+                <div class="stat-num" id="statTotal">0</div>
+                <div class="stat-label">Total Notes</div>
+              </div>
+              <div class="stat-pill">
+                <div class="stat-num" id="statCritical" style="color:var(--danger)">0</div>
+                <div class="stat-label">Critical</div>
+              </div>
+              <div class="stat-pill">
+                <div class="stat-num" id="statScreenshots" style="color:var(--success)">0</div>
+                <div class="stat-label">With Images</div>
+              </div>
+            </div>
+            <div style="margin-top:16px;">
+              <button type="button" class="btn btn-secondary btn-sm" style="width:100%;" id="btnExportCSV">
+                📥 Export Recorded Feedback (CSV)
+              </button>
+            </div>
+          </div>
+
+          <div class="sidebar-block" style="background:#F8FAFC; border-color:#CBD5E1;">
+            <h3 style="font-size:14px; color:#334155;">Testing Contact</h3>
+            <p style="font-size:12.5px; color:#64748B; margin-bottom:10px;">
+              You can also send compiled notes, slide decks, or large asset batches directly to:
+            </p>
+            <p style="font-size:13px; font-weight:600; color:var(--primary-blue);">
+              ✉️ info@vasudhapharma.com
+            </p>
+          </div>
+        </aside>
+
+      </div>
+
+      <!-- Recorded Feedback History Section -->
+      <section class="history-card" id="historySection">
+        <div class="history-header">
+          <div>
+            <h2 class="history-title">Submitted Review Notes (Recorded on this Device)</h2>
+            <div style="font-size:13px; color:#64748B; margin-top:2px;">
+              These tickets are stored in your browser session for review and can be exported at any time.
+            </div>
+          </div>
+          <div class="history-actions">
+            <button type="button" class="btn btn-secondary btn-sm" id="btnExportJSON">JSON Export</button>
+            <button type="button" class="btn btn-secondary btn-sm" id="btnClearHistory" style="color:var(--danger);">Clear All</button>
+          </div>
+        </div>
+
+        <div id="feedbackListContainer">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Lightbox Modal for Screenshots -->
+  <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <div class="lightbox-header">
+        <span class="lightbox-title" id="lightboxTitle">Screenshot Preview</span>
+        <button type="button" class="lightbox-close" onclick="closeLightbox()">&times;</button>
+      </div>
+      <div class="lightbox-body">
+        <img src="" id="lightboxImg" class="lightbox-img" alt="Enlarged screenshot view">
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toastNotice">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+    <span id="toastMsg">Feedback ticket recorded successfully!</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="vp-foot">
+    <div class="vp-foot-inner">
+      <div class="vp-foot-cols">
+        <div>
+          <h4>Vasudha Pharma Chem Limited</h4>
+          <p style="font-size:13px; color:#64748B; line-height:1.6; margin-bottom:12px;">
+            Trusted Global Manufacturer of Active Pharmaceutical Ingredients, Intermediates, Pellets &amp; MUPS, and Piperidone Chemistry.
+          </p>
+          <p style="font-size:12.5px; color:#64748B;">
+            Plot No. 78, Jawaharlal Nehru Pharma City, Parawada, Visakhapatnam, Andhra Pradesh, India.
+          </p>
+        </div>
+        <div>
+          <h4>Review Resources</h4>
+          <ul>
+            <li><a href="index.html">Main Website Home</a></li>
+            <li><a href="products.html">Products Catalog</a></li>
+            <li><a href="events.html">News &amp; Events</a></li>
+            <li><a href="staff/index.html">Staff Intranet Portal</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Feedback Export</h4>
+          <ul>
+            <li><a href="javascript:void(0)" onclick="exportToCSV()">Download CSV Report</a></li>
+            <li><a href="javascript:void(0)" onclick="exportToJSON()">Download JSON Report</a></li>
+            <li><a href="contact.html">Corporate Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="vp-foot-bottom">
+        <div>&copy; 2026 Vasudha Pharma Chem Limited. Testing &amp; Review Phase.</div>
+        <div>Internal Deployment on GitHub Pages</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for Handling Feedback Submission, Local Storage, and File Uploads -->
+  <script>
+    const STORAGE_KEY = 'vpcl_test_feedback_v1';
+    let currentScreenshotBase64 = null;
+    let currentScreenshotMeta = null;
+
+    // Elements
+    const form = document.getElementById('feedbackForm');
+    const screenshotInput = document.getElementById('screenshotInput');
+    const dropZone = document.getElementById('dropZone');
+    const previewBox = document.getElementById('previewBox');
+    const previewImg = document.getElementById('previewImg');
+    const previewName = document.getElementById('previewName');
+    const previewMeta = document.getElementById('previewMeta');
+    const btnRemoveImg = document.getElementById('btnRemoveImg');
+    const feedbackListContainer = document.getElementById('feedbackListContainer');
+    const statTotal = document.getElementById('statTotal');
+    const statCritical = document.getElementById('statCritical');
+    const statScreenshots = document.getElementById('statScreenshots');
+    const toastNotice = document.getElementById('toastNotice');
+    const toastMsg = document.getElementById('toastMsg');
+
+    // Load existing items on startup
+    function getStoredFeedback() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : [];
+      } catch(e) {
+        console.error('Failed to read localStorage:', e);
+        return [];
+      }
+    }
+
+    function saveFeedback(items) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+      } catch(e) {
+        if (e.name === 'QuotaExceededError') {
+          alert('Local storage quota reached (likely due to large screenshots). Consider exporting existing items and clearing history.');
+        }
+      }
+    }
+
+    // Handle Image Selection
+    function handleFile(file) {
+      if (!file) return;
+      if (!file.type.startsWith('image/')) {
+        alert('Please upload an image file (PNG, JPG, WEBP, or GIF).');
+        return;
+      }
+      if (file.size > 10 * 1024 * 1024) {
+        alert('Image exceeds 10 MB limit. Please select a smaller screenshot.');
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const base64 = e.target.result;
+        const img = new Image();
+        img.onload = function() {
+          currentScreenshotBase64 = base64;
+          currentScreenshotMeta = {
+            name: file.name,
+            sizeKb: Math.round(file.size / 1024),
+            width: img.width,
+            height: img.height
+          };
+
+          // Render preview
+          previewImg.src = base64;
+          previewName.textContent = file.name;
+          previewMeta.textContent = `${img.width} × ${img.height} px · ${currentScreenshotMeta.sizeKb} KB`;
+          previewBox.classList.add('active');
+          dropZone.style.display = 'none';
+        };
+        img.src = base64;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    screenshotInput.addEventListener('change', function(e) {
+      if (this.files && this.files[0]) {
+        handleFile(this.files[0]);
+      }
+    });
+
+    // Drag & Drop
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropZone.classList.add('dragover');
+    });
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropZone.classList.remove('dragover');
+      if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+        handleFile(e.dataTransfer.files[0]);
+      }
+    });
+
+    // Remove screenshot
+    btnRemoveImg.addEventListener('click', function() {
+      currentScreenshotBase64 = null;
+      currentScreenshotMeta = null;
+      screenshotInput.value = '';
+      previewBox.classList.remove('active');
+      dropZone.style.display = 'block';
+    });
+
+    // Handle Form Submit
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const reviewerName = document.getElementById('reviewerName').value.trim() || 'Anonymous Reviewer';
+      const reviewerDept = document.getElementById('reviewerDept').value.trim() || 'General Testing';
+      const targetPage = document.getElementById('targetPage').value;
+      const feedbackCategory = document.getElementById('feedbackCategory').value;
+      const feedbackPriority = document.getElementById('feedbackPriority').value;
+      const feedbackMessage = document.getElementById('feedbackMessage').value.trim();
+
+      if (!feedbackMessage) {
+        alert('Please describe the changes or edits needed in the message box.');
+        return;
+      }
+
+      // Generate Ticket ID
+      const randomSuffix = Math.floor(1000 + Math.random() * 9000);
+      const ticketId = `VP-FB-${randomSuffix}`;
+      const now = new Date();
+      const dateStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) + ' ' + 
+                      now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+
+      const newTicket = {
+        id: ticketId,
+        date: dateStr,
+        timestamp: Date.now(),
+        reviewerName: reviewerName,
+        reviewerDept: reviewerDept,
+        targetPage: targetPage || 'General / Not Specified',
+        category: feedbackCategory,
+        priority: feedbackPriority,
+        message: feedbackMessage,
+        screenshot: currentScreenshotBase64,
+        screenshotMeta: currentScreenshotMeta
+      };
+
+      const existing = getStoredFeedback();
+      existing.unshift(newTicket);
+      saveFeedback(existing);
+
+      // Reset form fields
+      form.reset();
+      btnRemoveImg.click();
+
+      showToast(`Ticket ${ticketId} recorded successfully!`);
+      renderHistory();
+    });
+
+    // Render Submitted Feedback
+    function renderHistory() {
+      const items = getStoredFeedback();
+
+      // Update stats
+      statTotal.textContent = items.length;
+      statCritical.textContent = items.filter(i => i.priority === 'Critical').length;
+      statScreenshots.textContent = items.filter(i => i.screenshot).length;
+
+      if (items.length === 0) {
+        feedbackListContainer.innerHTML = `
+          <div style="text-align:center; padding:36px; color:#64748B; background:#F8FAFC; border-radius:8px; border:1px dashed #CBD5E1;">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" style="margin-bottom:8px;"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8"></path></svg>
+            <div style="font-weight:600; font-size:14px; color:#475569;">No feedback recorded on this browser yet</div>
+            <div style="font-size:12.5px; margin-top:4px;">Use the form above to submit your first change request or observation.</div>
+          </div>
+        `;
+        return;
+      }
+
+      let html = '';
+      items.forEach((item, index) => {
+        let pClass = 'p-normal';
+        if (item.priority === 'High') pClass = 'p-high';
+        if (item.priority === 'Critical') pClass = 'p-critical';
+
+        const pageLink = (item.targetPage && item.targetPage.endsWith('.html')) 
+          ? ('<a ' + 'href="' + encodeURI(item.targetPage) + '" target="_blank" style="text-decoration:underline;">' + escapeHtml(item.targetPage) + '</a>')
+          : escapeHtml(item.targetPage);
+
+        const screenshotPreview = item.screenshot 
+          ? `<span class="fb-screenshot-link" onclick="openLightbox('${item.id}')">
+               🖼️ View Screenshot (${item.screenshotMeta ? item.screenshotMeta.name : 'Attached'})
+             </span>`
+          : `<span style="color:#94A3B8;">No image attached</span>`;
+
+        html += `
+          <div class="feedback-item">
+            <div class="fb-top">
+              <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                <span class="fb-id">${item.id}</span>
+                <span class="fb-page-badge">📍 Page: ${pageLink}</span>
+                <span style="font-size:11.5px; color:#64748B;">• ${item.category}</span>
+              </div>
+              <span class="fb-priority ${pClass}">${item.priority} Priority</span>
+            </div>
+            
+            <div class="fb-body">${escapeHtml(item.message)}</div>
+
+            <div class="fb-meta">
+              <div>
+                👤 <strong>${escapeHtml(item.reviewerName)}</strong> (${escapeHtml(item.reviewerDept)}) · 📅 ${item.date}
+              </div>
+              <div style="display:flex; align-items:center; gap:14px;">
+                ${screenshotPreview}
+                <a href="javascript:void(0)" onclick="deleteFeedback(${index})" style="color:#EF4444; font-size:11.5px; font-weight:600;">Delete</a>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      feedbackListContainer.innerHTML = html;
+    }
+
+    function deleteFeedback(index) {
+      if (!confirm('Remove this feedback record?')) return;
+      const items = getStoredFeedback();
+      items.splice(index, 1);
+      saveFeedback(items);
+      renderHistory();
+      showToast('Feedback item removed.');
+    }
+
+    // Clear All
+    document.getElementById('btnClearHistory').addEventListener('click', () => {
+      const items = getStoredFeedback();
+      if (items.length === 0) return;
+      if (confirm('Clear all recorded feedback items on this browser? Make sure you have exported your CSV/JSON report first.')) {
+        localStorage.removeItem(STORAGE_KEY);
+        renderHistory();
+        showToast('All feedback records cleared.');
+      }
+    });
+
+    // Lightbox Controls
+    function openLightbox(sourceOrId, customTitle) {
+      const modal = document.getElementById('lightboxModal');
+      const img = document.getElementById('lightboxImg');
+      const title = document.getElementById('lightboxTitle');
+
+      if (sourceOrId.startsWith('data:') || sourceOrId.startsWith('http') || sourceOrId.startsWith('assets/')) {
+        img.src = sourceOrId;
+        title.textContent = customTitle || 'Screenshot Preview';
+      } else {
+        // Look up by ticket ID
+        const items = getStoredFeedback();
+        const found = items.find(i => i.id === sourceOrId);
+        if (found && found.screenshot) {
+          img.src = found.screenshot;
+          title.textContent = `${found.id} Screenshot: ${found.targetPage}`;
+        }
+      }
+      modal.classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.remove('active');
+    }
+
+    // Email Dispatch
+    document.getElementById('btnEmailDispatch').addEventListener('click', function() {
+      const reviewerName = document.getElementById('reviewerName').value.trim() || 'Reviewer';
+      const targetPage = document.getElementById('targetPage').value || 'General Site';
+      const category = document.getElementById('feedbackCategory').value;
+      const message = document.getElementById('feedbackMessage').value.trim();
+
+      if (!message) {
+        alert('Please fill in your feedback message first before drafting an email.');
+        return;
+      }
+
+      const subject = encodeURIComponent(`[Vasudha Website Testing Feedback] ${targetPage} - ${category}`);
+      const body = encodeURIComponent(
+        `Hi Development Team,\n\nHere is feedback for the Vasudha Pharma website during the review phase:\n\n` +
+        `• Reviewer: ${reviewerName}\n` +
+        `• Target Page: ${targetPage}\n` +
+        `• Category: ${category}\n\n` +
+        `--- NOTES / CHANGES NEEDED ---\n${message}\n\n` +
+        `Attached / noted on review desk.\n`
+      );
+
+      window.location.href = `mailto:info@vasudhapharma.com?subject=${subject}&body=${body}`;
+    });
+
+    // Export CSV
+    function exportToCSV() {
+      const items = getStoredFeedback();
+      if (items.length === 0) {
+        alert('No feedback records to export yet.');
+        return;
+      }
+
+      let csv = 'Ticket ID,Date,Reviewer,Department,Target Page,Category,Priority,Message,Has Screenshot\r\n';
+      items.forEach(i => {
+        const cleanMsg = '"' + (i.message || '').replace(/"/g, '""').replace(/\r?\n/g, ' ') + '"';
+        const hasImg = i.screenshot ? 'Yes' : 'No';
+        csv += `"${i.id}","${i.date}","${i.reviewerName}","${i.reviewerDept}","${i.targetPage}","${i.category}","${i.priority}",${cleanMsg},"${hasImg}"\r\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `vasudha_website_testing_feedback_${new Date().toISOString().slice(0,10)}.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+    document.getElementById('btnExportCSV').addEventListener('click', exportToCSV);
+
+    // Export JSON
+    function exportToJSON() {
+      const items = getStoredFeedback();
+      if (items.length === 0) {
+        alert('No feedback records to export yet.');
+        return;
+      }
+
+      const blob = new Blob([JSON.stringify(items, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `vasudha_website_testing_feedback_${new Date().toISOString().slice(0,10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+    document.getElementById('btnExportJSON').addEventListener('click', exportToJSON);
+
+    // Helper: Toast
+    function showToast(msg) {
+      toastMsg.textContent = msg;
+      toastNotice.classList.add('active');
+      setTimeout(() => toastNotice.classList.remove('active'), 3500);
+    }
+
+    // Helper: HTML Escaping
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+    // Pre-select page if passed in URL query param (e.g., feedback.html?page=apis.html)
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const pageParam = urlParams.get('page');
+      if (pageParam) {
+        const select = document.getElementById('targetPage');
+        for (let i = 0; i < select.options.length; i++) {
+          const optVal = select.options[i].value;
+          if (optVal === pageParam || optVal.endsWith(pageParam)) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    } catch(e) {}
+
+    // Initial render
+    renderHistory();
+  </script>
+</body>
+</html>

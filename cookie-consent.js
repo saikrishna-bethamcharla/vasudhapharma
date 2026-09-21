@@ -1,9 +1,66 @@
 (function() {
   'use strict';
   var STORAGE_KEY = 'vp_cookie_consent_v1';
-  if (localStorage.getItem(STORAGE_KEY)) return;
+
+  // Floating 30-Day Testing Feedback Widget
+  function initFeedbackWidget() {
+    if (window.location.pathname.endsWith('feedback.html')) return;
+    if (document.getElementById('vpFeedbackFloatPill')) return;
+
+    var pathParts = window.location.pathname.split('/');
+    var currentPage = pathParts.pop() || 'index.html';
+    // If inside subfolder (like /staff/), keep relative path
+    var isSubdir = pathParts.length > 0 && pathParts[pathParts.length - 1] === 'staff';
+    var targetUrl = (isSubdir ? '../feedback.html' : 'feedback.html') + '?page=' + encodeURIComponent(currentPage);
+
+    var link = document.createElement('a');
+    link.id = 'vpFeedbackFloatPill';
+    link.href = targetUrl;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.title = 'Open 30-Day Testing Feedback & Edit Request Desk';
+    link.innerHTML = '<span style="font-size:13px; line-height:1;">📝</span><span>Testing Feedback</span>';
+    link.style.cssText = [
+      'position: fixed',
+      'bottom: 22px',
+      'right: 22px',
+      'z-index: 99990',
+      'display: inline-flex',
+      'align-items: center',
+      'gap: 7px',
+      'background: #1E3A8A',
+      'color: #FFFFFF',
+      'font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      'font-size: 12px',
+      'font-weight: 600',
+      'padding: 8px 15px',
+      'border-radius: 9999px',
+      'box-shadow: 0 4px 14px rgba(30, 58, 138, 0.35)',
+      'border: 1px solid rgba(255, 255, 255, 0.3)',
+      'text-decoration: none',
+      'transition: all 0.2s ease',
+      'cursor: pointer'
+    ].join(';');
+
+    link.onmouseenter = function() {
+      link.style.transform = 'translateY(-2px) scale(1.02)';
+      link.style.background = '#2563EB';
+      link.style.boxShadow = '0 6px 18px rgba(37, 99, 235, 0.45)';
+    };
+    link.onmouseleave = function() {
+      link.style.transform = 'none';
+      link.style.background = '#1E3A8A';
+      link.style.boxShadow = '0 4px 14px rgba(30, 58, 138, 0.35)';
+    };
+
+    document.body.appendChild(link);
+  }
 
   function init() {
+    initFeedbackWidget();
+
+    if (localStorage.getItem(STORAGE_KEY)) return;
+
     var banner = document.createElement('div');
     banner.id = 'vpCookieBanner';
     banner.setAttribute('role', 'region');
