@@ -20,10 +20,22 @@
     link.rel = 'noopener';
     link.title = 'Open 30-Day Testing Feedback & Edit Request Desk';
     link.innerHTML = '<span style="font-size:13px; line-height:1;">📝</span><span>Testing Feedback</span>';
+    if (!document.getElementById('vpFeedbackStyle')) {
+      var style = document.createElement('style');
+      style.id = 'vpFeedbackStyle';
+      style.textContent = [
+        '#vpFeedbackFloatPill { position: fixed !important; right: 92px !important; bottom: 24px !important; }',
+        '@media (max-width: 600px) {',
+        '  #vpFeedbackFloatPill { right: 78px !important; bottom: 18px !important; padding: 6px 11px !important; font-size: 11px !important; }',
+        '}'
+      ].join('\n');
+      document.head.appendChild(style);
+    }
+
     link.style.cssText = [
       'position: fixed',
-      'bottom: 22px',
-      'right: 22px',
+      'bottom: 24px',
+      'right: 92px',
       'z-index: 99990',
       'display: inline-flex',
       'align-items: center',
