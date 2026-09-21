@@ -1043,7 +1043,7 @@
           <div>
             <h1 style="margin:0;font-size:20px;" id="accountName">Administrator</h1>
             <div style="color:var(--sp-text-muted);font-size:13px;margin-top:2px;">
-              <span id="accountEmail">admin@vasudhapharma.com</span> &bull; 
+              <span id="accountEmail">wisdom@vasudhapharma.com</span> &bull; 
               <span id="accountDept" style="text-transform:capitalize;">admin</span> &bull;
               <span id="accountRole" style="text-transform:uppercase;font-size:11px;background:#EEF2FB;color:var(--sp-primary-dark);padding:2px 7px;border-radius:4px;font-weight:700;">ADMIN</span>
             </div>
@@ -1100,17 +1100,17 @@
         <label style="font-size:12px; font-weight:600; color:var(--sp-text-muted); margin-bottom:4px; display:block;">Select Department Account</label>
         <select id="loginDeptSelect" onchange="onSelectDeptAccount(this.value)" style="width:100%; box-sizing:border-box; padding:9px 12px; font-size:13px; border:1px solid var(--sp-border); border-radius:8px; background:#F8FAFC; color:var(--sp-text-main);">
           <option value="">-- Choose Department Account --</option>
-          <option value="saikrishna@zailabs.co.in">Lead Developer (Root Admin)</option>
-          <option value="admin@vasudhapharma.com">VPCL Operations Admin (All Desks)</option>
-          <option value="hr@vasudhapharma.com">HR &amp; Talent Acquisition (Careers)</option>
-          <option value="foundation@vasudhapharma.com">Vasudha Foundation CSR</option>
-          <option value="news@vasudhapharma.com">Corporate Media &amp; PR (News &amp; Events)</option>
+          <option value="admin">VPCL Operations Admin (All Desks)</option>
+          <option value="hr">HR &amp; Talent Acquisition (Careers)</option>
+          <option value="foundation">Vasudha Foundation CSR</option>
+          <option value="news">Corporate Media &amp; PR (News &amp; Events)</option>
+          <option value="dev">Lead Developer (Root Admin)</option>
         </select>
       </div>
 
       <form onsubmit="handleLogin(event)">
         <label>Corporate Email Address</label>
-        <input id="loginEmail" type="email" required placeholder="department@vasudhapharma.com">
+        <input id="loginEmail" type="email" required placeholder="wisdom@vasudhapharma.com" value="wisdom@vasudhapharma.com">
         <label>Department Password</label>
         <div style="position:relative;">
           <input id="loginPass" type="password" required placeholder="Enter assigned password" style="padding-right:38px;">
@@ -1136,11 +1136,11 @@
     // System Users & State
     let currentUser = null;
     const DEFAULT_USERS = [
-      { email: 'saikrishna@zailabs.co.in', name: 'Sai Krishna (Lead Dev)', role: 'admin', dept: 'admin', password: 'Vasudha@Dev2026!' },
-      { email: 'admin@vasudhapharma.com', name: 'VPCL Operations Admin', role: 'admin', dept: 'admin', password: 'Vasudha@Admin2026!' },
-      { email: 'hr@vasudhapharma.com', name: 'HR & Talent Acquisition', role: 'hr', dept: 'careers', password: 'Vasudha@HR2026!' },
-      { email: 'foundation@vasudhapharma.com', name: 'Vasudha Foundation CSR', role: 'user', dept: 'foundation', password: 'Vasudha@CSR2026!' },
-      { email: 'news@vasudhapharma.com', name: 'Corporate Media & PR', role: 'user', dept: 'news', password: 'Vasudha@News2026!' }
+      { id: 'admin', email: 'wisdom@vasudhapharma.com', alias: 'admin@vasudhapharma.com', name: 'VPCL Operations Admin', role: 'admin', dept: 'admin', password: 'Vasudha@Admin2026!' },
+      { id: 'hr', email: 'wisdom@vasudhapharma.com', alias: 'hr@vasudhapharma.com', name: 'HR & Talent Acquisition', role: 'hr', dept: 'careers', password: 'Vasudha@HR2026!' },
+      { id: 'foundation', email: 'wisdom@vasudhapharma.com', alias: 'foundation@vasudhapharma.com', name: 'Vasudha Foundation CSR', role: 'user', dept: 'foundation', password: 'Vasudha@CSR2026!' },
+      { id: 'news', email: 'wisdom@vasudhapharma.com', alias: 'news@vasudhapharma.com', name: 'Corporate Media & PR', role: 'user', dept: 'news', password: 'Vasudha@News2026!' },
+      { id: 'dev', email: 'wisdom@vasudhapharma.com', alias: 'saikrishna@zailabs.co.in', name: 'Sai Krishna (Lead Dev)', role: 'admin', dept: 'admin', password: 'Vasudha@Dev2026!' }
     ];
 
     function initUsersList() {
@@ -1148,11 +1148,8 @@
       if (stored) {
         try {
           const parsed = JSON.parse(stored);
-          if (Array.isArray(parsed) && parsed.length > 0) {
-            const map = new Map();
-            DEFAULT_USERS.forEach(u => map.set(u.email.toLowerCase(), { ...u }));
-            parsed.forEach(u => map.set(u.email.toLowerCase(), { ...map.get(u.email.toLowerCase()), ...u }));
-            return Array.from(map.values());
+          if (Array.isArray(parsed) && parsed.length > 0 && parsed.some(u => u.email === 'wisdom@vasudhapharma.com')) {
+            return parsed;
           }
         } catch (e) {
           console.warn('Error reading stored users:', e);
@@ -2059,9 +2056,9 @@
     }
 
     // Authentication
-    function onSelectDeptAccount(email) {
-      if (!email) return;
-      document.getElementById('loginEmail').value = email;
+    function onSelectDeptAccount(dept) {
+      if (!dept) return;
+      document.getElementById('loginEmail').value = 'wisdom@vasudhapharma.com';
       const p = document.getElementById('loginPass');
       p.value = '';
       p.focus();
@@ -2076,9 +2073,15 @@
       e.preventDefault();
       const email = document.getElementById('loginEmail').value.trim().toLowerCase();
       const pass = document.getElementById('loginPass').value;
-      const found = usersList.find(u => u.email.toLowerCase() === email);
+      const found = usersList.find(u => {
+        const emailMatch = (u.email && u.email.toLowerCase() === email) ||
+                           (u.alias && u.alias.toLowerCase() === email) ||
+                           (email === 'wisdom@vasudhapharma.com');
+        if (!emailMatch) return false;
+        return u.password ? pass === u.password : pass.length >= 6;
+      });
 
-      if (found && (found.password ? pass === found.password : pass.length >= 6)) {
+      if (found) {
         currentUser = found;
         sessionStorage.setItem('vp_staff_user', JSON.stringify(currentUser));
         document.getElementById('authModal').style.display = 'none';
@@ -2087,7 +2090,7 @@
         toast('Welcome back, ' + currentUser.name);
       } else {
         const errEl = document.getElementById('loginErr');
-        errEl.textContent = 'Invalid credentials. Please verify your department email and password.';
+        errEl.textContent = 'Invalid credentials. Please verify your department password.';
         errEl.style.display = 'block';
       }
     }

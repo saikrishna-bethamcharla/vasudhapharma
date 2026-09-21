@@ -1,6 +1,7 @@
 [
   {
-    "email": "saikrishna@zailabs.co.in",
+    "email": "wisdom@vasudhapharma.com",
+    "alias": "saikrishna@zailabs.co.in",
     "name": "Sai Krishna (Lead Dev)",
     "role": "admin",
     "dept": "admin",
@@ -8,7 +9,8 @@
     "hash": "$2y$10$lsLpbGo.XURaxcUVmHbcIOthQDMAExeSZ7IsMtPQiKXIfSl6ErPnu"
   },
   {
-    "email": "admin@vasudhapharma.com",
+    "email": "wisdom@vasudhapharma.com",
+    "alias": "admin@vasudhapharma.com",
     "name": "VPCL Operations Admin",
     "role": "admin",
     "dept": "admin",
@@ -16,7 +18,8 @@
     "hash": "$2y$10$lsLpbGo.XURaxcUVmHbcIOthQDMAExeSZ7IsMtPQiKXIfSl6ErPnu"
   },
   {
-    "email": "hr@vasudhapharma.com",
+    "email": "wisdom@vasudhapharma.com",
+    "alias": "hr@vasudhapharma.com",
     "name": "HR & Talent Acquisition",
     "role": "hr",
     "dept": "careers",
@@ -24,7 +27,8 @@
     "hash": "$2y$10$lsLpbGo.XURaxcUVmHbcIOthQDMAExeSZ7IsMtPQiKXIfSl6ErPnu"
   },
   {
-    "email": "foundation@vasudhapharma.com",
+    "email": "wisdom@vasudhapharma.com",
+    "alias": "foundation@vasudhapharma.com",
     "name": "Vasudha Foundation CSR",
     "role": "user",
     "dept": "foundation",
@@ -32,7 +36,8 @@
     "hash": "$2y$10$lsLpbGo.XURaxcUVmHbcIOthQDMAExeSZ7IsMtPQiKXIfSl6ErPnu"
   },
   {
-    "email": "news@vasudhapharma.com",
+    "email": "wisdom@vasudhapharma.com",
+    "alias": "news@vasudhapharma.com",
     "name": "Corporate Media & PR",
     "role": "user",
     "dept": "news",

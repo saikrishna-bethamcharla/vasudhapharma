@@ -232,17 +232,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <label style="margin-top:0;">Select Department Account</label>
       <select id="deptSelect" onchange="onSelectDept(this.value)" style="width:100%; box-sizing:border-box; padding:11px 14px; border:1px solid var(--sp-border); border-radius:9px; font:inherit; font-size:13.5px; background:#FAFAFA; color:var(--sp-text-main);">
         <option value="">-- Choose Department Account --</option>
-        <option value="saikrishna@zailabs.co.in">Lead Developer (Root Admin)</option>
-        <option value="admin@vasudhapharma.com">VPCL Operations Admin (All Desks)</option>
-        <option value="hr@vasudhapharma.com">HR &amp; Talent Acquisition (Careers)</option>
-        <option value="foundation@vasudhapharma.com">Vasudha Foundation CSR</option>
-        <option value="news@vasudhapharma.com">Corporate Media &amp; PR (News &amp; Events)</option>
+        <option value="admin">VPCL Operations Admin (All Desks)</option>
+        <option value="hr">HR &amp; Talent Acquisition (Careers)</option>
+        <option value="foundation">Vasudha Foundation CSR</option>
+        <option value="news">Corporate Media &amp; PR (News &amp; Events)</option>
+        <option value="dev">Lead Developer (Root Admin)</option>
       </select>
     </div>
 
     <form method="post" autocomplete="on">
       <label>Corporate Email Address</label>
-      <input id="emailInput" type="email" name="email" placeholder="department@vasudhapharma.com" required autofocus>
+      <input id="emailInput" type="email" name="email" placeholder="wisdom@vasudhapharma.com" value="wisdom@vasudhapharma.com" required autofocus>
       <label>Department Password</label>
       <input id="passInput" type="password" name="password" placeholder="Enter assigned password" required>
       <button type="submit">Sign in to Operations Desk &rarr;</button>
@@ -258,9 +258,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </div>
 
   <script>
-    function onSelectDept(email) {
-      if (!email) return;
-      document.getElementById('emailInput').value = email;
+    function onSelectDept(dept) {
+      if (!dept) return;
+      document.getElementById('emailInput').value = 'wisdom@vasudhapharma.com';
       const pass = document.getElementById('passInput');
       pass.value = '';
       pass.focus();
