@@ -54,6 +54,45 @@
     };
 
     document.body.appendChild(link);
+
+    // Also add prominent button in the Top Header Bar
+    try {
+      var topTarget = document.querySelector('.top-bar-right') || document.querySelector('.top-bar .container') || document.querySelector('.top-bar');
+      if (topTarget && !document.getElementById('vpFeedbackTopBtn')) {
+        var topBtn = document.createElement('a');
+        topBtn.id = 'vpFeedbackTopBtn';
+        topBtn.href = targetUrl;
+        topBtn.target = '_blank';
+        topBtn.rel = 'noopener';
+        topBtn.title = 'Open 30-Day Testing Feedback & Edit Request Desk';
+        topBtn.innerHTML = '<span style="font-size:12px;">📝</span><span>Testing Feedback</span>';
+        topBtn.style.cssText = [
+          'display: inline-flex',
+          'align-items: center',
+          'gap: 5px',
+          'background: #F59E0B',
+          'color: #0F172A',
+          'font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+          'font-size: 11.5px',
+          'font-weight: 700',
+          'padding: 3px 10px',
+          'border-radius: 12px',
+          'margin-right: 12px',
+          'text-decoration: none',
+          'box-shadow: 0 1px 4px rgba(0,0,0,0.2)',
+          'transition: all 0.15s ease',
+          'vertical-align: middle'
+        ].join(';');
+        topBtn.onmouseenter = function() { topBtn.style.background = '#FBBF24'; topBtn.style.transform = 'scale(1.04)'; };
+        topBtn.onmouseleave = function() { topBtn.style.background = '#F59E0B'; topBtn.style.transform = 'none'; };
+
+        if (topTarget.firstChild) {
+          topTarget.insertBefore(topBtn, topTarget.firstChild);
+        } else {
+          topTarget.appendChild(topBtn);
+        }
+      }
+    } catch(err) {}
   }
 
   function init() {
