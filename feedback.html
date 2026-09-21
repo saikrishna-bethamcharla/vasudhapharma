@@ -911,8 +911,8 @@
             <!-- Submission Clarity Explainer -->
             <div style="margin-top:14px; padding:10px 14px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px; font-size:12px; color:#64748B; line-height:1.5;">
               <strong style="color:#1E293B;">💡 Where does your data go?</strong><br>
-              • <strong>Record Feedback Ticket:</strong> Instantly logs the ticket and screenshot on this device (visible in the table below), letting you compile multiple items and download them as an Excel-ready CSV or JSON.<br>
-              • <strong>Email to Dev Team:</strong> Pre-fills an email with the selected page, category, and review notes addressed to <code>info@vasudhapharma.com</code>.
+              • <strong>Record Feedback Ticket:</strong> Instantly logs the ticket on this desk and triggers an automated notification to the developer (<code>saikrishna@zailabs.co.in</code>). You can also download your tickets as an Excel-ready CSV or JSON.<br>
+              • <strong>Email to Dev Team:</strong> Pre-fills an email with your notes addressed directly to <code>saikrishna@zailabs.co.in</code>.
             </div>
           </form>
         </div>
@@ -959,12 +959,12 @@
           </div>
 
           <div class="sidebar-block" style="background:#F8FAFC; border-color:#CBD5E1;">
-            <h3 style="font-size:14px; color:#334155;">Testing Contact</h3>
+            <h3 style="font-size:14px; color:#334155;">Lead Developer Contact</h3>
             <p style="font-size:12.5px; color:#64748B; margin-bottom:10px;">
-              You can also send compiled notes, slide decks, or large asset batches directly to:
+              Direct notifications, asset batches, or detailed review documents route to:
             </p>
-            <p style="font-size:13px; font-weight:600; color:var(--primary-blue);">
-              ✉️ info@vasudhapharma.com
+            <p style="font-size:13px; font-weight:700; color:var(--primary-blue);">
+              ✉️ <a href="mailto:saikrishna@zailabs.co.in" style="color:var(--primary-blue); text-decoration:underline;">saikrishna@zailabs.co.in</a>
             </p>
           </div>
         </aside>
@@ -1194,7 +1194,10 @@
         priority: feedbackPriority,
         message: feedbackMessage,
         screenshot: currentScreenshotBase64,
-        screenshotMeta: currentScreenshotMeta
+        screenshotMeta: currentScreenshotMeta,
+        status: 'Open',
+        devNote: '',
+        statusUpdatedAt: ''
       };
 
       const existing = getStoredFeedback();
@@ -1205,7 +1208,33 @@
       form.reset();
       btnRemoveImg.click();
 
-      showToast(`Ticket ${ticketId} recorded successfully!`);
+      // Trigger automatic background alert to developer email (saikrishna@zailabs.co.in)
+      try {
+        fetch("https://formsubmit.co/ajax/saikrishna@zailabs.co.in", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            _subject: `[VPCL Web Review] New Ticket ${ticketId}: ${targetPage || 'General'} (${feedbackPriority} Priority)`,
+            Ticket_ID: ticketId,
+            Submitted_At: dateStr,
+            Reviewer: reviewerName,
+            Department_or_Email: reviewerDept,
+            Target_Page: targetPage || 'General / Not Specified',
+            Feedback_Category: feedbackCategory,
+            Priority_Level: feedbackPriority,
+            Revision_Notes: feedbackMessage,
+            Has_Screenshot: currentScreenshotMeta ? `Yes (${currentScreenshotMeta.name}, ${currentScreenshotMeta.sizeKb} KB)` : 'No',
+            Review_Console_URL: 'https://saikrishna-bethamcharla.github.io/vasudhapharma/feedback.html'
+          })
+        }).then(res => res.json())
+          .then(d => console.log('Developer email notification sent:', d))
+          .catch(err => console.warn('Notification notice:', err));
+      } catch(e) {}
+
+      showToast(`Ticket ${ticketId} recorded! Alert sent to saikrishna@zailabs.co.in`);
       renderHistory();
     });
 
@@ -1235,6 +1264,16 @@
         if (item.priority === 'High') pClass = 'p-high';
         if (item.priority === 'Critical') pClass = 'p-critical';
 
+        const itemStatus = item.status || 'Open';
+        let statusBadge = `<span style="background:#FEF3C7; color:#92400E; font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px; border:1px solid #FDE68A;">🟡 Open</span>`;
+        if (itemStatus === 'In Progress') {
+          statusBadge = `<span style="background:#DBEAFE; color:#1E40AF; font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px; border:1px solid #BFDBFE;">🔵 In Progress</span>`;
+        } else if (itemStatus === 'Resolved') {
+          statusBadge = `<span style="background:#DCFCE7; color:#166534; font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px; border:1px solid #BBF7D0;">🟢 Resolved</span>`;
+        } else if (itemStatus === 'Closed') {
+          statusBadge = `<span style="background:#F1F5F9; color:#475569; font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px; border:1px solid #E2E8F0;">⚪ Closed</span>`;
+        }
+
         const pageLink = (item.targetPage && item.targetPage.endsWith('.html')) 
           ? ('<a ' + 'href="' + encodeURI(item.targetPage) + '" target="_blank" style="text-decoration:underline;">' + escapeHtml(item.targetPage) + '</a>')
           : escapeHtml(item.targetPage);
@@ -1245,20 +1284,53 @@
              </span>`
           : `<span style="color:#94A3B8;">No image attached</span>`;
 
+        const devNoteBlock = item.devNote ? `
+          <div style="margin:10px 0; padding:9px 12px; background:#F0FDF4; border-left:3px solid #16A34A; border-radius:4px; font-size:12.5px; color:#166534; line-height:1.5;">
+            <strong>🛠️ Developer Resolution Note:</strong> ${escapeHtml(item.devNote)}
+            ${item.statusUpdatedAt ? `<span style="font-size:11px; color:#15803D; margin-left:8px;">(${escapeHtml(item.statusUpdatedAt)})</span>` : ''}
+          </div>
+        ` : '';
+
         html += `
           <div class="feedback-item">
             <div class="fb-top">
               <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
                 <span class="fb-id">${item.id}</span>
                 <span class="fb-page-badge">📍 Page: ${pageLink}</span>
-                <span style="font-size:11.5px; color:#64748B;">• ${item.category}</span>
+                <span style="font-size:11.5px; color:#64748B;">• ${escapeHtml(item.category)}</span>
               </div>
-              <span class="fb-priority ${pClass}">${item.priority} Priority</span>
+              <div style="display:flex; align-items:center; gap:8px;">
+                ${statusBadge}
+                <span class="fb-priority ${pClass}">${item.priority}</span>
+              </div>
             </div>
             
             <div class="fb-body">${escapeHtml(item.message)}</div>
 
-            <div class="fb-meta">
+            ${devNoteBlock}
+
+            <!-- Developer Action Bar -->
+            <div style="margin-top:10px; padding-top:8px; border-top:1px dashed #E2E8F0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; background:#F8FAFC; padding:8px 12px; border-radius:6px;">
+              <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                <span style="font-size:12px; font-weight:700; color:#334155;">👨‍💻 Dev Status:</span>
+                <select style="padding:4px 8px; font-size:12px; border-radius:6px; border:1px solid #CBD5E1; font-weight:600; background:#fff; cursor:pointer;" onchange="changeTicketStatus('${item.id}', this.value)">
+                  <option value="Open" ${itemStatus === 'Open' ? 'selected' : ''}>🟡 Open</option>
+                  <option value="In Progress" ${itemStatus === 'In Progress' ? 'selected' : ''}>🔵 In Progress</option>
+                  <option value="Resolved" ${itemStatus === 'Resolved' ? 'selected' : ''}>🟢 Resolved</option>
+                  <option value="Closed" ${itemStatus === 'Closed' ? 'selected' : ''}>⚪ Closed</option>
+                </select>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="promptDevNote('${item.id}')" style="font-size:11.5px; padding:4px 9px;">
+                  ${item.devNote ? '✏️ Edit Dev Note' : '💬 Add Resolution Note'}
+                </button>
+              </div>
+              <div>
+                <a href="mailto:saikrishna@zailabs.co.in?subject=Status%20Update%20for%20${encodeURIComponent(item.id)}&body=Status%20for%20${encodeURIComponent(item.id)}%20is%20now%20${encodeURIComponent(itemStatus)}.%0A%0ANotes:%20${encodeURIComponent(item.devNote || '')}" class="btn btn-secondary btn-sm" style="font-size:11.5px; padding:4px 9px;" title="Email status update to reviewer">
+                  ✉️ Email Update
+                </a>
+              </div>
+            </div>
+
+            <div class="fb-meta" style="margin-top:10px;">
               <div>
                 👤 <strong>${escapeHtml(item.reviewerName)}</strong> (${escapeHtml(item.reviewerDept)}) · 📅 ${item.date}
               </div>
@@ -1272,6 +1344,40 @@
       });
 
       feedbackListContainer.innerHTML = html;
+    }
+
+    // Update ticket status
+    function changeTicketStatus(ticketId, newStatus) {
+      const items = getStoredFeedback();
+      const item = items.find(i => i.id === ticketId);
+      if (item) {
+        item.status = newStatus;
+        const now = new Date();
+        item.statusUpdatedAt = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        saveFeedback(items);
+        renderHistory();
+        showToast(`Status for ${ticketId} updated to ${newStatus}`);
+      }
+    }
+
+    // Add / Edit resolution note
+    function promptDevNote(ticketId) {
+      const items = getStoredFeedback();
+      const item = items.find(i => i.id === ticketId);
+      if (!item) return;
+      const currentNote = item.devNote || '';
+      const note = prompt(`Enter resolution note or update for ${ticketId}:`, currentNote);
+      if (note !== null) {
+        item.devNote = note.trim();
+        const now = new Date();
+        item.statusUpdatedAt = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        if (!item.status || item.status === 'Open') {
+          item.status = 'Resolved';
+        }
+        saveFeedback(items);
+        renderHistory();
+        showToast(`Resolution note saved for ${ticketId}!`);
+      }
     }
 
     function deleteFeedback(index) {
@@ -1333,15 +1439,15 @@
 
       const subject = encodeURIComponent(`[Vasudha Website Testing Feedback] ${targetPage} - ${category}`);
       const body = encodeURIComponent(
-        `Hi Development Team,\n\nHere is feedback for the Vasudha Pharma website during the review phase:\n\n` +
+        `Hi Sai Krishna,\n\nHere is feedback for the Vasudha Pharma website during the review phase:\n\n` +
         `• Reviewer: ${reviewerName}\n` +
         `• Target Page: ${targetPage}\n` +
         `• Category: ${category}\n\n` +
         `--- NOTES / CHANGES NEEDED ---\n${message}\n\n` +
-        `Attached / noted on review desk.\n`
+        `Noted on the review desk.\n`
       );
 
-      window.location.href = `mailto:info@vasudhapharma.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:saikrishna@zailabs.co.in?subject=${subject}&body=${body}`;
     });
 
     // Export CSV
@@ -1352,11 +1458,12 @@
         return;
       }
 
-      let csv = 'Ticket ID,Date,Reviewer,Department,Target Page,Category,Priority,Message,Has Screenshot\r\n';
+      let csv = 'Ticket ID,Date,Reviewer,Department,Target Page,Category,Priority,Status,Developer Note,Updated At,Message,Has Screenshot\r\n';
       items.forEach(i => {
         const cleanMsg = '"' + (i.message || '').replace(/"/g, '""').replace(/\r?\n/g, ' ') + '"';
+        const cleanDevNote = '"' + (i.devNote || '').replace(/"/g, '""').replace(/\r?\n/g, ' ') + '"';
         const hasImg = i.screenshot ? 'Yes' : 'No';
-        csv += `"${i.id}","${i.date}","${i.reviewerName}","${i.reviewerDept}","${i.targetPage}","${i.category}","${i.priority}",${cleanMsg},"${hasImg}"\r\n`;
+        csv += `"${i.id}","${i.date}","${i.reviewerName}","${i.reviewerDept}","${i.targetPage}","${i.category}","${i.priority}","${i.status || 'Open'}",${cleanDevNote},"${i.statusUpdatedAt || ''}",${cleanMsg},"${hasImg}"\r\n`;
       });
 
       const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
