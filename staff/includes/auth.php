@@ -33,13 +33,8 @@ function staff_require_login() {
 function staff_desks() {
   return [
     'careers' => ['label' => 'Careers / HR', 'file' => 'jobs.php', 'icon' => 'briefcase'],
-    'news' => ['label' => 'News & Events', 'file' => 'news.php', 'icon' => 'newspaper'],
     'foundation' => ['label' => 'Foundation', 'file' => 'foundation.php', 'icon' => 'heart'],
-    'marketing' => ['label' => 'Marketing', 'file' => 'marketing.php', 'icon' => 'target'],
-    'manufacturing' => ['label' => 'Manufacturing', 'file' => 'desk.php?d=manufacturing', 'icon' => 'factory'],
-    'rnd' => ['label' => 'R&D', 'file' => 'desk.php?d=rnd', 'icon' => 'flask'],
-    'ehs' => ['label' => 'EHS', 'file' => 'desk.php?d=ehs', 'icon' => 'shield'],
-    'governance' => ['label' => 'Corporate Governance', 'file' => 'desk.php?d=governance', 'icon' => 'file-text'],
+    'news' => ['label' => 'News & Events', 'file' => 'news.php', 'icon' => 'newspaper'],
   ];
 }
 function staff_can($desk, $u = null) {

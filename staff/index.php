@@ -235,13 +235,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <option value="saikrishna@zailabs.co.in">Lead Developer (Root Admin)</option>
         <option value="admin@vasudhapharma.com">VPCL Operations Admin (All Desks)</option>
         <option value="hr@vasudhapharma.com">HR &amp; Talent Acquisition (Careers)</option>
-        <option value="news@vasudhapharma.com">Corporate Media &amp; PR (News &amp; Events)</option>
         <option value="foundation@vasudhapharma.com">Vasudha Foundation CSR</option>
-        <option value="manufacturing@vasudhapharma.com">Manufacturing Operations</option>
-        <option value="rnd@vasudhapharma.com">R&amp;D Process Chemistry</option>
-        <option value="ehs@vasudhapharma.com">EHS &amp; Sustainability</option>
-        <option value="governance@vasudhapharma.com">Corporate Governance &amp; Secretarial</option>
-        <option value="marketing@vasudhapharma.com">Commercial Sales &amp; Marketing</option>
+        <option value="news@vasudhapharma.com">Corporate Media &amp; PR (News &amp; Events)</option>
       </select>
     </div>
 

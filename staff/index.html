@@ -454,11 +454,6 @@
       <span>Dashboard</span>
     </button>
     <button type="button" data-desk="careers" onclick="showTab('careers')">Careers / HR</button>
-    <button type="button" data-desk="manufacturing" onclick="showTab('manufacturing')">Manufacturing</button>
-    <button type="button" data-desk="rnd" onclick="showTab('rnd')">R&amp;D</button>
-    <button type="button" data-desk="ehs" onclick="showTab('ehs')">EHS</button>
-    <button type="button" data-desk="governance" onclick="showTab('governance')">Corporate Governance</button>
-    <button type="button" data-desk="marketing" onclick="showTab('marketing')">Marketing</button>
     <button type="button" data-desk="foundation" onclick="showTab('foundation')">Foundation</button>
     <button type="button" data-desk="news" onclick="showTab('news')">News &amp; Events</button>
     <button type="button" data-desk="users" id="navUsersBtn" onclick="showTab('users')">Users</button>
@@ -554,61 +549,6 @@
               <p style="font-size:12.5px; color:var(--sp-text-muted); margin:0;">Manage open job requisitions, candidate keywords, and auto-publishing on careers.html.</p>
             </div>
             <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="showTab('careers')">Open HR Desk &rarr;</button>
-          </div>
-
-          <div class="card" data-desk-card="manufacturing" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
-            <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                <h3 style="margin:0; font-size:15px; color:var(--sp-primary);">Manufacturing Desk</h3>
-                <span class="badge-open">Active</span>
-              </div>
-              <p style="font-size:12.5px; color:var(--sp-text-muted); margin:0;">Five production units, cleanroom classifications, reactor capacities, and plant audits.</p>
-            </div>
-            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="showTab('manufacturing')">Open Desk &rarr;</button>
-          </div>
-
-          <div class="card" data-desk-card="rnd" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
-            <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                <h3 style="margin:0; font-size:15px; color:var(--sp-primary);">R&amp;D Desk</h3>
-                <span class="badge-open">Active</span>
-              </div>
-              <p style="font-size:12.5px; color:var(--sp-text-muted); margin:0;">Process chemistry, synthesis route scouting, technology transfer, and pipeline APIs.</p>
-            </div>
-            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="showTab('rnd')">Open Desk &rarr;</button>
-          </div>
-
-          <div class="card" data-desk-card="ehs" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
-            <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                <h3 style="margin:0; font-size:15px; color:var(--sp-primary);">EHS Desk</h3>
-                <span class="badge-open">Active</span>
-              </div>
-              <p style="font-size:12.5px; color:var(--sp-text-muted); margin:0;">ISO 14001, OHSAS 18001, zero liquid discharge, effluent metrics, and incident audits.</p>
-            </div>
-            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="showTab('ehs')">Open Desk &rarr;</button>
-          </div>
-
-          <div class="card" data-desk-card="governance" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
-            <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                <h3 style="margin:0; font-size:15px; color:var(--sp-primary);">Corporate Governance</h3>
-                <span class="badge-open">Active</span>
-              </div>
-              <p style="font-size:12.5px; color:var(--sp-text-muted); margin:0;">Statutory compliance, board policies, annual return filings, and vigilance reporting.</p>
-            </div>
-            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="showTab('governance')">Open Desk &rarr;</button>
-          </div>
-
-          <div class="card" data-desk-card="marketing" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
-            <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                <h3 style="margin:0; font-size:15px; color:var(--sp-primary);">Marketing &amp; Sales</h3>
-                <span class="badge-open">Active</span>
-              </div>
-              <p style="font-size:12.5px; color:var(--sp-text-muted); margin:0;">Product catalogue filings, global customer enquiries, and export distribution logs.</p>
-            </div>
-            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="showTab('marketing')">Open Desk &rarr;</button>
           </div>
 
           <div class="card" data-desk-card="foundation" style="margin:0; padding:18px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
@@ -799,11 +739,6 @@
               <label>Department Assignment</label>
               <select id="newUserDept">
                 <option value="careers">Careers / HR</option>
-                <option value="manufacturing">Manufacturing</option>
-                <option value="rnd">R&amp;D</option>
-                <option value="ehs">EHS</option>
-                <option value="governance">Corporate Governance</option>
-                <option value="marketing">Marketing</option>
                 <option value="foundation">Foundation</option>
                 <option value="news">News &amp; Events</option>
                 <option value="admin">Full Administrator (all desks)</option>
@@ -1097,31 +1032,6 @@
     </div>
 
 
-    <!-- TAB: DEPARTMENT CONSOLES (Generic desk view for other areas) -->
-    <div id="tab-desk" class="tab-pane" style="display:none;">
-      <div class="card hint">
-        <strong id="genericDeskTitle">Department Console</strong>: Maintain operational notes, plant capabilities, documentation, and compliance updates.
-      </div>
-      <div class="card">
-        <h2 style="margin-top:0; font-size:18px;" id="genericDeskHeader">Operational Records</h2>
-        <label>Overview &amp; Executive Summary</label>
-        <textarea id="deskOverview" style="min-height:140px;" placeholder="Document operational updates, unit certifications, or notes..."></textarea>
-
-        <div class="row" style="margin-top:12px;">
-          <div>
-            <label>Key Metrics &amp; Operational Highlights</label>
-            <textarea id="deskMetrics" style="min-height:120px;" placeholder="Capacities, reactor metrics, cleanroom ISO classes..."></textarea>
-          </div>
-          <div>
-            <label>Compliance Documents &amp; Regulatory Filings</label>
-            <textarea id="deskDocs" style="min-height:120px;" placeholder="USFDA, WHO-GMP, CFO/CFE numbers, audit schedules..."></textarea>
-          </div>
-        </div>
-        <p style="margin-top:24px;">
-          <button type="button" class="btn btn-primary" onclick="saveDeskData()">Save Department Records</button>
-        </p>
-      </div>
-    </div>
 
     <!-- TAB: ACCOUNT -->
     <div id="tab-account" class="tab-pane" style="display:none;">
@@ -1193,13 +1103,8 @@
           <option value="saikrishna@zailabs.co.in">Lead Developer (Root Admin)</option>
           <option value="admin@vasudhapharma.com">VPCL Operations Admin (All Desks)</option>
           <option value="hr@vasudhapharma.com">HR &amp; Talent Acquisition (Careers)</option>
-          <option value="news@vasudhapharma.com">Corporate Media &amp; PR (News &amp; Events)</option>
           <option value="foundation@vasudhapharma.com">Vasudha Foundation CSR</option>
-          <option value="manufacturing@vasudhapharma.com">Manufacturing Operations</option>
-          <option value="rnd@vasudhapharma.com">R&amp;D Process Chemistry</option>
-          <option value="ehs@vasudhapharma.com">EHS &amp; Sustainability</option>
-          <option value="governance@vasudhapharma.com">Corporate Governance &amp; Secretarial</option>
-          <option value="marketing@vasudhapharma.com">Commercial Sales &amp; Marketing</option>
+          <option value="news@vasudhapharma.com">Corporate Media &amp; PR (News &amp; Events)</option>
         </select>
       </div>
 
@@ -1234,13 +1139,8 @@
       { email: 'saikrishna@zailabs.co.in', name: 'Sai Krishna (Lead Dev)', role: 'admin', dept: 'admin', password: 'Vasudha@Dev2026!' },
       { email: 'admin@vasudhapharma.com', name: 'VPCL Operations Admin', role: 'admin', dept: 'admin', password: 'Vasudha@Admin2026!' },
       { email: 'hr@vasudhapharma.com', name: 'HR & Talent Acquisition', role: 'hr', dept: 'careers', password: 'Vasudha@HR2026!' },
-      { email: 'news@vasudhapharma.com', name: 'Corporate Media & PR', role: 'user', dept: 'news', password: 'Vasudha@News2026!' },
       { email: 'foundation@vasudhapharma.com', name: 'Vasudha Foundation CSR', role: 'user', dept: 'foundation', password: 'Vasudha@CSR2026!' },
-      { email: 'manufacturing@vasudhapharma.com', name: 'Manufacturing Operations Head', role: 'user', dept: 'manufacturing', password: 'Vasudha@Mfg2026!' },
-      { email: 'rnd@vasudhapharma.com', name: 'R&D Process Chemistry Lead', role: 'user', dept: 'rnd', password: 'Vasudha@RND2026!' },
-      { email: 'ehs@vasudhapharma.com', name: 'EHS & Sustainability Officer', role: 'user', dept: 'ehs', password: 'Vasudha@EHS2026!' },
-      { email: 'governance@vasudhapharma.com', name: 'Corporate Secretarial & Compliance', role: 'user', dept: 'governance', password: 'Vasudha@Gov2026!' },
-      { email: 'marketing@vasudhapharma.com', name: 'Commercial Sales & Marketing', role: 'user', dept: 'marketing', password: 'Vasudha@Mkt2026!' }
+      { email: 'news@vasudhapharma.com', name: 'Corporate Media & PR', role: 'user', dept: 'news', password: 'Vasudha@News2026!' }
     ];
 
     function initUsersList() {
@@ -1727,7 +1627,7 @@
       document.querySelectorAll('.tab-pane').forEach(el => el.style.display = 'none');
       document.querySelectorAll('#mainStaffNav button').forEach(b => b.classList.remove('on'));
 
-      const targetPane = document.getElementById('tab-' + tabName) || document.getElementById('tab-desk');
+      const targetPane = document.getElementById('tab-' + tabName);
       if (targetPane) targetPane.style.display = 'block';
 
       const navBtn = document.querySelector(`#mainStaffNav button[data-desk="${tabName}"]`);
@@ -1737,23 +1637,7 @@
         renderFoundationDesk();
       } else if (tabName === 'news') {
         renderNewsDesk();
-      } else if (['manufacturing','rnd','ehs','governance','marketing'].includes(tabName)) {
-        const titles = {
-          manufacturing: 'Manufacturing Operations Desk',
-          rnd: 'Research & Development Desk',
-          ehs: 'Environment, Health & Safety Desk',
-          governance: 'Corporate Governance & Statutory Desk',
-          marketing: 'Product Catalogue & Marketing Desk',
-          foundation: 'Vasudha Foundation & CSR Desk',
-          news: 'News & Conferences Desk'
-        };
-        document.getElementById('genericDeskTitle').textContent = titles[tabName] || 'Department Console';
-        document.getElementById('genericDeskHeader').textContent = (titles[tabName] || 'Department') + ' Records';
       }
-    }
-
-    function saveDeskData() {
-      toast('Department records saved successfully.');
     }
 
     // ==========================================
