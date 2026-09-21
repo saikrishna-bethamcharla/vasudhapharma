@@ -911,8 +911,8 @@
             <!-- Submission Clarity Explainer -->
             <div style="margin-top:14px; padding:10px 14px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px; font-size:12px; color:#64748B; line-height:1.5;">
               <strong style="color:#1E293B;">💡 Where does your data go?</strong><br>
-              • <strong>Record Feedback Ticket:</strong> Instantly logs the ticket on this desk and triggers an automated notification to the developer (<code>saikrishna@zailabs.co.in</code>). You can also download your tickets as an Excel-ready CSV or JSON.<br>
-              • <strong>Email to Dev Team:</strong> Pre-fills an email with your notes addressed directly to <code>saikrishna@zailabs.co.in</code>.
+              • <strong>Record Feedback Ticket:</strong> Instantly logs the ticket on this desk and triggers an automated notification to <code>wisdom@vasudhapharma.com</code> &amp; <code>saikrishna@zailabs.co.in</code>. You can also download your tickets as an Excel-ready CSV or JSON.<br>
+              • <strong>Email to Dev Team:</strong> Pre-fills an email with your notes addressed directly to <code>wisdom@vasudhapharma.com</code> &amp; <code>saikrishna@zailabs.co.in</code>.
             </div>
           </form>
         </div>
@@ -959,9 +959,12 @@
           </div>
 
           <div class="sidebar-block" style="background:#F8FAFC; border-color:#CBD5E1;">
-            <h3 style="font-size:14px; color:#334155;">Lead Developer Contact</h3>
+            <h3 style="font-size:14px; color:#334155;">Feedback &amp; Review Contacts</h3>
             <p style="font-size:12.5px; color:#64748B; margin-bottom:10px;">
               Direct notifications, asset batches, or detailed review documents route to:
+            </p>
+            <p style="font-size:13px; font-weight:700; color:var(--primary-blue); margin-bottom:6px;">
+              ✉️ <a href="mailto:wisdom@vasudhapharma.com" style="color:var(--primary-blue); text-decoration:underline;">wisdom@vasudhapharma.com</a>
             </p>
             <p style="font-size:13px; font-weight:700; color:var(--primary-blue);">
               ✉️ <a href="mailto:saikrishna@zailabs.co.in" style="color:var(--primary-blue); text-decoration:underline;">saikrishna@zailabs.co.in</a>
@@ -1208,9 +1211,9 @@
       form.reset();
       btnRemoveImg.click();
 
-      // Trigger automatic background alert to developer email (saikrishna@zailabs.co.in)
+      // Trigger automatic background alert to team emails (wisdom@vasudhapharma.com & saikrishna@zailabs.co.in)
       try {
-        fetch("https://formsubmit.co/ajax/saikrishna@zailabs.co.in", {
+        fetch("https://formsubmit.co/ajax/wisdom@vasudhapharma.com", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -1218,6 +1221,7 @@
           },
           body: JSON.stringify({
             _subject: `[VPCL Web Review] New Ticket ${ticketId}: ${targetPage || 'General'} (${feedbackPriority} Priority)`,
+            _cc: "saikrishna@zailabs.co.in",
             Ticket_ID: ticketId,
             Submitted_At: dateStr,
             Reviewer: reviewerName,
@@ -1230,11 +1234,11 @@
             Review_Console_URL: 'https://saikrishna-bethamcharla.github.io/vasudhapharma/feedback.html'
           })
         }).then(res => res.json())
-          .then(d => console.log('Developer email notification sent:', d))
+          .then(d => console.log('Team email notification sent:', d))
           .catch(err => console.warn('Notification notice:', err));
       } catch(e) {}
 
-      showToast(`Ticket ${ticketId} recorded! Alert sent to saikrishna@zailabs.co.in`);
+      showToast(`Ticket ${ticketId} recorded! Alert sent to team`);
       renderHistory();
     });
 
@@ -1324,7 +1328,7 @@
                 </button>
               </div>
               <div>
-                <a href="mailto:saikrishna@zailabs.co.in?subject=Status%20Update%20for%20${encodeURIComponent(item.id)}&body=Status%20for%20${encodeURIComponent(item.id)}%20is%20now%20${encodeURIComponent(itemStatus)}.%0A%0ANotes:%20${encodeURIComponent(item.devNote || '')}" class="btn btn-secondary btn-sm" style="font-size:11.5px; padding:4px 9px;" title="Email status update to reviewer">
+                <a href="mailto:wisdom@vasudhapharma.com,saikrishna@zailabs.co.in?subject=Status%20Update%20for%20${encodeURIComponent(item.id)}&amp;body=Status%20for%20${encodeURIComponent(item.id)}%20is%20now%20${encodeURIComponent(itemStatus)}.%0A%0ANotes:%20${encodeURIComponent(item.devNote || '')}" class="btn btn-secondary btn-sm" style="font-size:11.5px; padding:4px 9px;" title="Email status update to team">
                   ✉️ Email Update
                 </a>
               </div>
@@ -1439,7 +1443,7 @@
 
       const subject = encodeURIComponent(`[Vasudha Website Testing Feedback] ${targetPage} - ${category}`);
       const body = encodeURIComponent(
-        `Hi Sai Krishna,\n\nHere is feedback for the Vasudha Pharma website during the review phase:\n\n` +
+        `Hi Team,\n\nHere is feedback for the Vasudha Pharma website during the review phase:\n\n` +
         `• Reviewer: ${reviewerName}\n` +
         `• Target Page: ${targetPage}\n` +
         `• Category: ${category}\n\n` +
@@ -1447,7 +1451,7 @@
         `Noted on the review desk.\n`
       );
 
-      window.location.href = `mailto:saikrishna@zailabs.co.in?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:wisdom@vasudhapharma.com,saikrishna@zailabs.co.in?subject=${subject}&body=${body}`;
     });
 
     // Export CSV
