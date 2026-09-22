@@ -4925,18 +4925,6 @@
       min-width: 0 !important;
       margin: 0 !important;
     }
-    header .header-inner > a.logo .logo-text strong {
-      white-space: nowrap !important;
-      font-size: 14px !important;
-    }
-    header .header-inner > a.logo .logo-text span {
-      white-space: nowrap !important;
-      font-size: 11px !important;
-      overflow: hidden !important;
-      text-overflow: ellipsis !important;
-      max-width: 260px !important;
-      display: block !important;
-    }
     header .header-right {
       display: flex !important;
       flex-direction: row !important;
@@ -5194,57 +5182,177 @@
 
   
         /* Capsule logo — pure crisp white background, zero red tint */
+    a.vp-bag-copy { display:inline-flex; align-items:center; gap:10px; text-decoration:none; }
+    a.vp-bag-copy .logo-hex-wrap { width:52px; height:52px; }
+    .vp-foot-bottom a.vp-bag-copy .logo-hex-wrap { width:56px; height:56px; }
+    .vp-c-top-inner a.vp-bag-copy { justify-self:center; }
+
+    /* ===== Refined Logo Typography & Capsule Layout (Dominance & Hierarchy Fix) ===== */
+    /* 1. Header Capsule Layout — Pure Solid White Background */
     header .header-inner > a.logo,
     header a.logo,
     .logo {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 14px !important;
+      padding: 10px 28px 10px 14px !important;
+      border-radius: 50px !important;
+      min-height: 76px !important;
+      max-width: none !important;
+      width: max-content !important;
+      overflow: hidden !important;
+      isolation: isolate !important;
+      box-sizing: border-box !important;
+      flex: 0 0 auto !important;
       background: #ffffff !important;
       border: 1px solid rgba(226, 232, 240, 0.95) !important;
       box-shadow:
         0 4px 20px rgba(0, 0, 0, 0.05),
         0 1px 3px rgba(0, 0, 0, 0.03),
         inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+      transition: box-shadow 0.3s ease, transform 0.3s ease !important;
     }
+
     .logo-flow-bubbles {
       display: none !important;
     }
     .logo-hex-body {
       background: #ffffff !important;
     }
-    .logo .logo-text strong,
-    .logo-text strong,
-    .logo-since,
-    .logo-text .logo-since {
-      color: #C8102E !important;
-    }
-    .logo-text .logo-since::after {
-      background: linear-gradient(90deg, #C8102E 0%, rgba(200, 16, 46, 0.45) 60%, transparent 100%) !important;
+
+    header .logo-text,
+    .logo-text {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      max-width: none !important;
+      overflow: visible !important;
+      white-space: nowrap !important;
     }
 
-    /* ===== Logo bag — full name, no crop ===== */
-    header .header-inner > a.logo {
-      max-width: none !important;
-      width: max-content !important;
-      overflow: visible !important;
-      padding: 10px 28px 10px 12px !important;
-    }
-    header .logo-text {
-      overflow: visible !important;
-      max-width: none !important;
-    }
-    header .logo-text strong {
+    /* 2. Company Name Line — Dominant, crisp, larger bold red */
+    header a.logo .logo-text strong,
+    header .logo .logo-text strong,
+    header .header-inner > a.logo .logo-text strong,
+    .logo .logo-text strong,
+    .logo-text strong {
+      font-size: 21px !important;
+      font-weight: 800 !important;
+      color: #C8102E !important;
+      letter-spacing: 0.35px !important;
+      line-height: 1.2 !important;
       white-space: nowrap !important;
+      text-transform: uppercase !important;
+      display: block !important;
       overflow: visible !important;
-      text-overflow: clip !important;
       max-width: none !important;
-      font-size: 14px !important;
-      letter-spacing: 0.2px !important;
     }
-    header .logo-text span {
+
+    /* 3. Tagline / Tab Line — Bigger, clean cyan/teal brand accent */
+    header a.logo .logo-text span,
+    header .logo .logo-text span,
+    header .header-inner > a.logo .logo-text span,
+    .logo .logo-text span,
+    .logo-text span {
+      font-size: 14.5px !important;
+      font-weight: 500 !important;
+      font-style: italic !important;
+      color: #0088AA !important;
+      line-height: 1.25 !important;
+      margin-top: 2px !important;
       white-space: nowrap !important;
+      letter-spacing: 0.1px !important;
+      display: block !important;
       overflow: visible !important;
-      text-overflow: clip !important;
       max-width: none !important;
-      font-size: 11.5px !important;
+      text-overflow: clip !important;
+      text-align: right !important;
+      align-self: flex-end !important;
+      width: 100% !important;
+    }
+
+    /* 4. Since 1994 Line — Refined, smaller scale, zero blue glow */
+    header a.logo .logo-text .logo-since,
+    header .logo .logo-text .logo-since,
+    header .header-inner > a.logo .logo-text .logo-since,
+    .logo-text .logo-since,
+    .logo-since {
+      display: block !important;
+      font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif !important;
+      font-style: italic !important;
+      font-weight: 600 !important;
+      font-size: 13.5px !important;
+      line-height: 1.15 !important;
+      letter-spacing: 0.08em !important;
+      color: #C8102E !important;
+      margin-top: 4px !important;
+      margin-bottom: 0 !important;
+      padding-bottom: 3px !important;
+      white-space: nowrap !important;
+      text-shadow: none !important;
+      filter: none !important;
+      box-shadow: none !important;
+    }
+
+    header a.logo .logo-text .logo-since::after,
+    header .logo .logo-text .logo-since::after,
+    header .header-inner > a.logo .logo-text .logo-since::after,
+    .logo-text .logo-since::after,
+    .logo-since::after {
+      content: "" !important;
+      display: block !important;
+      width: 32px !important;
+      height: 1.5px !important;
+      margin-top: 3px !important;
+      background: linear-gradient(90deg, #C8102E 0%, rgba(200, 16, 46, 0.45) 60%, transparent 100%) !important;
+      border-radius: 1px !important;
+      box-shadow: none !important;
+      filter: none !important;
+    }
+
+    /* 5. Responsive scaling across viewports */
+    @media (max-width: 1200px) {
+      header a.logo .logo-text strong,
+      header .logo .logo-text strong,
+      .logo-text strong {
+        font-size: 18.5px !important;
+      }
+      header a.logo .logo-text span,
+      header .logo .logo-text span,
+      .logo-text span {
+        font-size: 13.5px !important;
+      }
+      header a.logo .logo-text .logo-since,
+      header .logo .logo-text .logo-since,
+      .logo-text .logo-since {
+        font-size: 12.5px !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header .header-inner > a.logo,
+      header a.logo,
+      .logo {
+        padding: 8px 18px 8px 10px !important;
+        border-radius: 40px !important;
+        min-height: 62px !important;
+        gap: 10px !important;
+      }
+      header a.logo .logo-text strong,
+      header .logo .logo-text strong,
+      .logo-text strong {
+        font-size: 15px !important;
+      }
+      header a.logo .logo-text span,
+      header .logo .logo-text span,
+      .logo-text span {
+        font-size: 11.5px !important;
+      }
+      header a.logo .logo-text .logo-since,
+      header .logo .logo-text .logo-since,
+      .logo-text .logo-since {
+        font-size: 11px !important;
+      }
     }
 
   
