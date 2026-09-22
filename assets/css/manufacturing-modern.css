@@ -538,6 +538,29 @@
   font-weight: 500;
 }
 
+.mfg-reg-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #065f46;
+  white-space: nowrap;
+}
+
+.mfg-reg-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+  flex-shrink: 0;
+}
+
 .mfg-reg-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
