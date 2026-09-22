@@ -1,0 +1,56 @@
+<svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Outer rim metallic gradient -->
+    <linearGradient id="metalRim" x1="15%" y1="10%" x2="85%" y2="90%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="20%" stop-color="#f1f5f9"/>
+      <stop offset="45%" stop-color="#94a3b8"/>
+      <stop offset="70%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <!-- Face radial metallic gradient -->
+    <radialGradient id="metalFace" cx="36%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="25%" stop-color="#f8fafc"/>
+      <stop offset="55%" stop-color="#e2e8f0"/>
+      <stop offset="85%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </radialGradient>
+    <!-- Inner groove dashed ring gradient -->
+    <linearGradient id="grooveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#64748b"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <!-- EcoVadis leaf green accent -->
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Beveled Medallion Base -->
+  <circle cx="70" cy="70" r="67" fill="url(#metalRim)"/>
+  <!-- Polished Medal Face -->
+  <circle cx="70" cy="70" r="61" fill="url(#metalFace)"/>
+  <!-- Beaded decorative circle -->
+  <circle cx="70" cy="70" r="56" fill="none" stroke="url(#grooveGrad)" stroke-width="1.5" stroke-dasharray="2.5 3.5"/>
+  <!-- Inner crisp groove ring -->
+  <circle cx="70" cy="70" r="51" fill="none" stroke="#94a3b8" stroke-width="1" opacity="0.85"/>
+
+  <!-- Top Laurel Foliage Arc -->
+  <path d="M50 54 C47 45 53 37 61 33 C59 38 58 45 60 50 Z" fill="#64748b" opacity="0.75"/>
+  <path d="M90 54 C93 45 87 37 79 33 C81 38 82 45 80 50 Z" fill="#64748b" opacity="0.75"/>
+  
+  <!-- Top 3 Stars Cluster -->
+  <polygon points="70,29 72,34 77,34 73,37 74.5,42 70,39 65.5,42 67,37 63,34 68,34" fill="#334155"/>
+  <polygon points="58,33 59.5,36.5 63,36.5 60.2,38.8 61.2,42.5 58,40.5 55,42.5 56,38.8 53.5,36.5 57,36.5" fill="#64748b" opacity="0.85"/>
+  <polygon points="82,33 83.5,36.5 87,36.5 84.2,38.8 85.2,42.5 82,40.5 79,42.5 80,38.8 77.5,36.5 81,36.5" fill="#64748b" opacity="0.85"/>
+
+  <!-- Center SILVER Typography -->
+  <text x="70" y="68" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="19" font-weight="900" fill="#0f172a" letter-spacing="2.5">SILVER</text>
+  <text x="70" y="82" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="800" fill="#334155" letter-spacing="1.8">SUSTAINABILITY</text>
+  <text x="70" y="93" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="900" fill="#64748b" letter-spacing="1.5">RATING</text>
+
+  <!-- Bottom Stylized EcoVadis Leaf Accent -->
+  <path d="M68 101 C68 97 73 95 75 97 C75 101 70 103 68 101 Z" fill="url(#leafGrad)"/>
+</svg>
