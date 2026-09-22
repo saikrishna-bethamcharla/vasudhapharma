@@ -1341,6 +1341,10 @@
           <input id="loginPass" type="password" required placeholder="Enter assigned password" style="padding-right:38px;">
           <button type="button" onclick="togglePassVisibility()" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:none; border:none; color:var(--sp-text-muted); cursor:pointer; font-size:13px; padding:4px;" title="Show/Hide Password">👁</button>
         </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+          <span style="font-size:11.5px; color:var(--sp-text-muted);">Default credentials pre-loaded</span>
+          <a href="javascript:void(0)" onclick="openForgotPassModal()" style="font-size:12px; color:var(--sp-primary); text-decoration:none; font-weight:600;">Forgot Department Password?</a>
+        </div>
         <div id="loginErr" style="display:none; color:#DC2626; font-size:12.5px; margin-top:10px; font-weight:500;">Invalid credentials. Please check your email and password.</div>
         <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:18px; padding:12px;">
           Sign In to Operations Desk &rarr;
@@ -1353,6 +1357,69 @@
       <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; font-size:12px;">
         <a href="../home.html" style="color:var(--sp-primary); text-decoration:none;">&larr; Return to Website</a>
         <a href="../feedback.html" style="color:#0088AA; text-decoration:none;">📝 Testing Feedback</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Forgot Password Recovery Modal Dialog -->
+  <div class="auth-overlay" id="forgotPassModal" style="display:none; z-index:2100;">
+    <div class="auth-box" style="max-width:440px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:36px; height:36px; border-radius:10px; background:rgba(0,136,170,0.1); display:flex; align-items:center; justify-content:center; color:var(--sp-primary);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h2 style="margin:0; font-size:17px; color:var(--sp-primary-dark);">Password Recovery</h2>
+        </div>
+        <button type="button" onclick="closeForgotPassModal()" style="background:none; border:none; font-size:22px; color:var(--sp-text-muted); cursor:pointer; line-height:1;">&times;</button>
+      </div>
+
+      <p style="font-size:12.5px; color:var(--sp-text-muted); margin:0 0 16px; line-height:1.5;">
+        If you have misplaced or forgotten your department console password, select your assigned desk below to retrieve or restore official credentials.
+      </p>
+
+      <div style="margin-bottom:14px;">
+        <label style="font-size:12px; font-weight:600; color:var(--sp-text-muted); margin-bottom:6px; display:block;">Select Department Desk</label>
+        <select id="forgotDeptSelect" onchange="onSelectForgotDept(this.value)" style="width:100%; box-sizing:border-box; padding:9px 12px; font-size:13px; border:1px solid var(--sp-border); border-radius:8px; background:#F8FAFC; color:var(--sp-text-main);">
+          <option value="marketing">Marketing Desk (Products &amp; Commercial Portfolio)</option>
+          <option value="hr">Careers / HR Desk (Talent Acquisition)</option>
+          <option value="foundation">Foundation Desk (Vasudha Foundation CSR)</option>
+          <option value="news">News &amp; Events Desk (Corporate Media &amp; PR)</option>
+          <option value="admin">VPCL Operations Admin (All Desks)</option>
+          <option value="dev">Lead Developer (Root Admin)</option>
+        </select>
+      </div>
+
+      <!-- Credential Card -->
+      <div id="forgotDeptInfoCard" style="background:#F8FAFC; border:1px solid var(--sp-border); border-radius:10px; padding:14px 16px; margin-bottom:16px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <span style="font-size:11.5px; color:var(--sp-text-muted); text-transform:uppercase; font-weight:600; letter-spacing:0.5px;">Account Email</span>
+          <span id="forgotDeptEmail" style="font-size:12.5px; font-weight:600; color:var(--sp-text-main);">marketing@vasudhapharma.com</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+          <span style="font-size:11.5px; color:var(--sp-text-muted); text-transform:uppercase; font-weight:600; letter-spacing:0.5px;">Official Password</span>
+          <span id="forgotDeptPass" style="font-size:13px; font-weight:700; color:var(--sp-primary); font-family:monospace; background:#E2E8F0; padding:2px 8px; border-radius:4px; letter-spacing:0.5px;">Vasudha@Marketing2026!</span>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;">
+        <button type="button" class="btn btn-primary" onclick="restoreSelectedDeptPassword()" style="width:100%; justify-content:center; padding:10px 14px; font-weight:600; font-size:13px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px;"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          Restore Official Password &amp; Pre-fill Login
+        </button>
+        <button type="button" class="btn btn-ghost" onclick="copyForgotPass()" style="width:100%; justify-content:center; padding:9px 14px; font-size:12.5px;">
+          📋 Copy Password to Clipboard
+        </button>
+      </div>
+
+      <div style="padding:12px; background:rgba(0,136,170,0.06); border-radius:8px; border-left:3px solid var(--sp-primary); font-size:11.5px; color:var(--sp-text-muted); line-height:1.5; margin-bottom:16px;">
+        📞 <strong>Corporate IT Helpdesk:</strong> If you need custom access or an account reset, please contact IT administration at <strong style="color:var(--sp-text-main);">wisdom@vasudhapharma.com</strong> (Ext: 401).
+      </div>
+
+      <div style="text-align:center;">
+        <button type="button" onclick="closeForgotPassModal()" style="background:none; border:none; color:var(--sp-text-muted); font-size:12px; cursor:pointer; text-decoration:underline;">
+          &larr; Back to Sign In
+        </button>
       </div>
     </div>
   </div>
@@ -2328,6 +2395,66 @@
       if (p) p.type = p.type === 'password' ? 'text' : 'password';
     }
 
+    // Forgot Password Recovery Handlers
+    function openForgotPassModal() {
+      const currentSelected = (document.getElementById('loginDeptSelect').value || '').trim();
+      const forgotSel = document.getElementById('forgotDeptSelect');
+      if (currentSelected && forgotSel) {
+        forgotSel.value = currentSelected;
+      }
+      onSelectForgotDept(forgotSel ? forgotSel.value : 'marketing');
+      document.getElementById('forgotPassModal').style.display = 'flex';
+    }
+
+    function closeForgotPassModal() {
+      document.getElementById('forgotPassModal').style.display = 'none';
+    }
+
+    function onSelectForgotDept(dept) {
+      const targetDept = dept || 'marketing';
+      const preset = DEPT_PRESETS[targetDept] || DEPT_PRESETS.marketing;
+      const emailEl = document.getElementById('forgotDeptEmail');
+      const passEl = document.getElementById('forgotDeptPass');
+      if (emailEl) emailEl.textContent = preset.email;
+      if (passEl) passEl.textContent = preset.pass;
+    }
+
+    function copyForgotPass() {
+      const passEl = document.getElementById('forgotDeptPass');
+      if (passEl && passEl.textContent) {
+        navigator.clipboard.writeText(passEl.textContent).then(() => {
+          toast('Department password copied to clipboard!');
+        }).catch(() => {
+          toast('Password: ' + passEl.textContent);
+        });
+      }
+    }
+
+    function restoreSelectedDeptPassword() {
+      const dept = (document.getElementById('forgotDeptSelect').value || 'marketing').trim();
+      const preset = DEPT_PRESETS[dept];
+      if (!preset) return;
+
+      // Update in usersList and synchronize to localStorage
+      const uIdx = usersList.findIndex(u => (u.dept === dept || u.id === dept));
+      if (uIdx !== -1) {
+        usersList[uIdx].password = preset.pass;
+        localStorage.setItem('vp_staff_custom_users', JSON.stringify(usersList));
+      }
+
+      // Pre-fill login modal fields
+      const loginDept = document.getElementById('loginDeptSelect');
+      if (loginDept) loginDept.value = dept;
+      const emailInput = document.getElementById('loginEmail');
+      if (emailInput) emailInput.value = preset.email;
+      const passInput = document.getElementById('loginPass');
+      if (passInput) passInput.value = preset.pass;
+
+      closeForgotPassModal();
+      toast('Official password restored for ' + preset.email + '. Credential pre-filled.');
+      if (passInput) passInput.focus();
+    }
+
     function handleLogin(e) {
       e.preventDefault();
       const selectedDept = (document.getElementById('loginDeptSelect').value || '').trim();
@@ -2363,9 +2490,13 @@
     }
 
     function logout() {
+      const confirmLogout = confirm('Are you sure you want to log out of the Operations Portal?\n\nYour active session will be ended and any unsaved edits will be discarded.');
+      if (!confirmLogout) return;
+
       sessionStorage.removeItem('vp_staff_user');
       currentUser = null;
       document.getElementById('authModal').style.display = 'flex';
+      toast('You have been logged out.');
     }
 
         function updateDashboardStats(u) {
@@ -2504,28 +2635,24 @@
             <button class="btn btn-primary" style="font-size:12.5px; font-weight:700;" onclick="showTab('marketing'); setTimeout(()=>openProductEditor(null), 100);">+ Add New Molecule</button>
             <button class="btn btn-ghost" style="font-size:12.5px;" onclick="downloadMarketingCatalogCsv()">Export Catalog (CSV)</button>
             <button class="btn btn-ghost" style="font-size:12.5px;" onclick="downloadMarketingCatalogJson()">Download products-catalog.json</button>
-            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="showTab('marketing')">Open Marketing Desk &rarr;</button>
           `;
         } else if (isFoundation) {
           quickContainer.innerHTML = `
             <button class="btn btn-primary" style="font-size:12.5px; font-weight:700;" onclick="showTab('foundation'); setTimeout(()=>document.getElementById('add-vasudha-input').focus(), 100);">+ Add CSR Photo</button>
             <button class="btn btn-ghost" style="font-size:12.5px;" onclick="downloadFoundationJson()">Download foundation-galleries.json</button>
             <button class="btn btn-ghost" style="font-size:12.5px;" onclick="copyFoundationJson()">Copy JSON</button>
-            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="showTab('foundation')">Open Foundation Desk &rarr;</button>
           `;
         } else if (isNews) {
           quickContainer.innerHTML = `
             <button class="btn btn-primary" style="font-size:12.5px; font-weight:700;" onclick="showTab('news'); setTimeout(()=>openEventEditor(null), 100);">+ Add Event Card</button>
             <button class="btn btn-ghost" style="font-size:12.5px;" onclick="showTab('news'); setTimeout(()=>openNewsEditor(null), 100);">+ Add News Card</button>
             <button class="btn btn-ghost" style="font-size:12.5px;" onclick="downloadNewsEventsJson()">Download news-events.json</button>
-            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="showTab('news')">Open News Desk &rarr;</button>
           `;
         } else if (isHR) {
           quickContainer.innerHTML = `
             <button class="btn btn-primary" style="font-size:12.5px; font-weight:700;" onclick="showTab('careers'); setTimeout(()=>document.getElementById('jobId').focus(), 150);">+ Post New Job</button>
             <button class="btn btn-ghost" style="font-size:12.5px;" onclick="downloadJobsJson()">Download jobs.json</button>
             <button class="btn btn-ghost" style="font-size:12.5px;" onclick="copyJobsJson()">Copy JSON</button>
-            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="showTab('careers')">Open HR Desk &rarr;</button>
           `;
         } else {
           // Admin
