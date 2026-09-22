@@ -430,9 +430,9 @@
       <span class="staff-brand-badge">Operations Portal</span>
     </div>
     <div class="staff-user-meta">
-      <a href="../careers.html#openings" target="_blank" rel="noopener" class="staff-site-link" title="Open public Careers page">
+      <a href="../home.html" target="_blank" rel="noopener" class="staff-site-link" id="headerDeptLink" title="Open public section">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        <span>Public Careers</span>
+        <span id="headerDeptLinkLabel">Public Website</span>
       </a>
       <a href="../home.html" target="_blank" rel="noopener" class="staff-site-link" title="Open main website">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
@@ -490,35 +490,35 @@
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
               My Account
             </button>
-            <a href="../careers.html#openings" target="_blank" rel="noopener" class="btn" style="background:#FFFFFF; color:var(--sp-primary-dark); font-weight:700;">
+            <a href="../home.html" target="_blank" rel="noopener" class="btn" id="heroPublicLink" style="background:#FFFFFF; color:var(--sp-primary-dark); font-weight:700;">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/></svg>
-              View Public Careers
+              <span id="heroPublicLinkLabel">View Public Site</span>
             </a>
           </div>
         </div>
       </div>
 
       <!-- Live Operational Metrics -->
-      <div class="row-4" style="margin-bottom:22px;">
+      <div class="row-4" style="margin-bottom:22px;" id="dashboardStatsRow">
         <div class="stat-card">
-          <div class="stat-label">Active Requisitions</div>
-          <div class="stat-num" id="statOpenJobs">0</div>
-          <div class="stat-sub" id="statTotalJobs">0 total positions</div>
+          <div class="stat-label" id="statLabel1">Commercial Molecules</div>
+          <div class="stat-num" id="statVal1">265</div>
+          <div class="stat-sub" id="statSub1">Across 5 divisions</div>
         </div>
         <div class="stat-card">
-          <div class="stat-label">Operating Units</div>
-          <div class="stat-num">5+</div>
-          <div class="stat-sub">Visakhapatnam &amp; Hyderabad</div>
+          <div class="stat-label" id="statLabel2">Operating Units</div>
+          <div class="stat-num" id="statVal2">6 Units</div>
+          <div class="stat-sub" id="statSub2">Visakhapatnam &amp; Hyderabad</div>
         </div>
         <div class="stat-card">
-          <div class="stat-label">Commercial APIs</div>
-          <div class="stat-num">40+</div>
-          <div class="stat-sub">Global DMF/CEP filings</div>
+          <div class="stat-label" id="statLabel3">Active APIs</div>
+          <div class="stat-num" id="statVal3">55</div>
+          <div class="stat-sub" id="statSub3">Global DMF/CEP filings</div>
         </div>
         <div class="stat-card">
-          <div class="stat-label">R&amp;D Scientists</div>
-          <div class="stat-num">100+</div>
-          <div class="stat-sub">Dedicated research centre</div>
+          <div class="stat-label" id="statLabel4">R&amp;D Scientists</div>
+          <div class="stat-num" id="statVal4">100+</div>
+          <div class="stat-sub" id="statSub4">Dedicated research centre</div>
         </div>
       </div>
 
@@ -529,10 +529,8 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             Quick Operational Actions
           </div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <button class="btn btn-primary" style="font-size:12.5px;" id="btnPostJobQuick" onclick="showTab('careers'); setTimeout(()=>document.getElementById('jobId').focus(), 150);">+ Post New Job</button>
-            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="downloadJobsJson()">Download jobs.json</button>
-            <button class="btn btn-ghost" style="font-size:12.5px;" id="btnManageUsersQuick" onclick="showTab('users')">+ Manage Users</button>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;" id="quickActionsContainer">
+            <!-- Dynamically populated per user department -->
           </div>
         </div>
       </div>
@@ -1672,10 +1670,17 @@
     function updateStats() {
       const open = jobsData.jobs.filter(j => (j.status || 'open') !== 'closed').length;
       const total = jobsData.jobs.length;
-      document.getElementById('statOpenJobs').textContent = open;
-      document.getElementById('statTotalJobs').textContent = total + ' total positions in database';
-      document.getElementById('jobsCountNum').textContent = total;
-      document.getElementById('jobsStatusSub').textContent = open + ' Open published • ' + (total - open) + ' Closed';
+      const elOpen = document.getElementById('statOpenJobs');
+      if (elOpen) elOpen.textContent = open;
+      const elTotal = document.getElementById('statTotalJobs');
+      if (elTotal) elTotal.textContent = total + ' total positions in database';
+      const elCount = document.getElementById('jobsCountNum');
+      if (elCount) elCount.textContent = total;
+      const elSub = document.getElementById('jobsStatusSub');
+      if (elSub) elSub.textContent = open + ' Open published • ' + (total - open) + ' Closed';
+      if (typeof currentUser !== 'undefined' && currentUser) {
+        updateDashboardStats(currentUser);
+      }
     }
 
     function renderJobsTable() {
@@ -2363,6 +2368,78 @@
       document.getElementById('authModal').style.display = 'flex';
     }
 
+        function updateDashboardStats(u) {
+      const isMarketing = u && (u.dept === 'marketing' || u.role === 'marketing');
+      const isHR = u && (u.role === 'hr' || u.dept === 'careers');
+      const isFoundation = u && u.dept === 'foundation';
+      const isNews = u && u.dept === 'news';
+
+      const l1 = document.getElementById('statLabel1');
+      const v1 = document.getElementById('statVal1');
+      const s1 = document.getElementById('statSub1');
+      const l2 = document.getElementById('statLabel2');
+      const v2 = document.getElementById('statVal2');
+      const s2 = document.getElementById('statSub2');
+      const l3 = document.getElementById('statLabel3');
+      const v3 = document.getElementById('statVal3');
+      const s3 = document.getElementById('statSub3');
+      const l4 = document.getElementById('statLabel4');
+      const v4 = document.getElementById('statVal4');
+      const s4 = document.getElementById('statSub4');
+
+      if (!l1) return;
+
+      if (isMarketing) {
+        const total = (typeof MARKETING_CATALOG !== 'undefined') ? MARKETING_CATALOG.length : 265;
+        const apis = (typeof MARKETING_CATALOG !== 'undefined') ? MARKETING_CATALOG.filter(p => p.category === 'apis').length : 55;
+        const interm = (typeof MARKETING_CATALOG !== 'undefined') ? MARKETING_CATALOG.filter(p => p.category === 'intermediates').length : 98;
+        const pellets = (typeof MARKETING_CATALOG !== 'undefined') ? MARKETING_CATALOG.filter(p => p.category === 'pellets' || p.category === 'piperidones').length : 87;
+
+        l1.textContent = 'Commercial Molecules'; v1.textContent = total; s1.textContent = 'Across 5 divisions';
+        l2.textContent = 'Active APIs'; v2.textContent = apis; s2.textContent = 'USDMF & CEP approved';
+        l3.textContent = 'Intermediates'; v3.textContent = interm; s3.textContent = 'Multi-step synthesis';
+        l4.textContent = 'Pellets & Piperidones'; v4.textContent = pellets; s4.textContent = 'Formulation Hub Unit-4';
+      } else if (isFoundation) {
+        const vasudhaCount = (foundationData && foundationData.vasudha) ? foundationData.vasudha.length : 15;
+        const vrrvCount = (foundationData && foundationData.vrrv) ? foundationData.vrrv.length : 18;
+        const momentsCount = (foundationData && foundationData.moments) ? foundationData.moments.length : 4;
+        const totalPhotos = vasudhaCount + vrrvCount + momentsCount;
+
+        l1.textContent = 'CSR Photo Streams'; v1.textContent = '3'; s1.textContent = 'Vasudha, VRRV, Moments';
+        l2.textContent = 'Total Gallery Photos'; v2.textContent = totalPhotos; s2.textContent = 'Active live carousel images';
+        l3.textContent = 'Vasudha Foundation'; v3.textContent = vasudhaCount; s3.textContent = 'Drinking water & health';
+        l4.textContent = 'VRRV Family Trust'; v4.textContent = vrrvCount; s4.textContent = 'Education & scholarships';
+      } else if (isNews) {
+        const eventsCount = (newsEventsData && newsEventsData.events) ? newsEventsData.events.length : 3;
+        const newsCount = (newsEventsData && newsEventsData.news) ? newsEventsData.news.length : 6;
+        const totalCards = eventsCount + newsCount;
+
+        l1.textContent = 'International Expos'; v1.textContent = eventsCount; s1.textContent = 'iPHEX, CPHI Milan & India';
+        l2.textContent = 'Corporate News Cards'; v2.textContent = newsCount; s2.textContent = 'GPACTS, State Awards, ESG';
+        l3.textContent = 'Total Active Cards'; v3.textContent = totalCards; s3.textContent = 'Published across website';
+        l4.textContent = 'Global Presence'; v4.textContent = 'Worldwide'; s4.textContent = 'Trade delegations';
+      } else if (isHR) {
+        const openCount = (jobsData && jobsData.jobs) ? jobsData.jobs.filter(j => j.status === 'open').length : 4;
+        const totalCount = (jobsData && jobsData.jobs) ? jobsData.jobs.length : 5;
+
+        l1.textContent = 'Active Requisitions'; v1.textContent = openCount; s1.textContent = totalCount + ' total positions in database';
+        l2.textContent = 'Hiring Locations'; v2.textContent = '2'; s2.textContent = 'Visakhapatnam & Hyderabad';
+        l3.textContent = 'Key Functional Areas'; v3.textContent = '5'; s3.textContent = 'QC, QA, Mfg, EHS, R&D';
+        l4.textContent = 'Application Stream'; v4.textContent = 'Live'; s4.textContent = 'careers.html#openings';
+      } else {
+        // Admin
+        const openJobs = (jobsData && jobsData.jobs) ? jobsData.jobs.filter(j => j.status === 'open').length : 4;
+        const totalMolecules = (typeof MARKETING_CATALOG !== 'undefined') ? MARKETING_CATALOG.length : 265;
+        const totalPhotos = 37;
+        const totalCards = 9;
+
+        l1.textContent = 'Commercial Molecules'; v1.textContent = totalMolecules; s1.textContent = 'Active commercial catalog';
+        l2.textContent = 'Open Requisitions'; v2.textContent = openJobs; s2.textContent = 'Published on careers';
+        l3.textContent = 'CSR Photo Gallery'; v3.textContent = totalPhotos; s3.textContent = '3 streams across website';
+        l4.textContent = 'Events & Releases'; v4.textContent = totalCards; s4.textContent = 'Live news & expo cards';
+      }
+    }
+
     function applyUser(u) {
       document.getElementById('userNameLabel').textContent = u.name;
       document.getElementById('userDeptLabel').textContent = '(' + u.dept + ')';
@@ -2376,29 +2453,106 @@
       document.getElementById('accountRole').textContent = u.role.toUpperCase();
       document.getElementById('editName').value = u.name;
 
-      // Access controls
       const isAdmin = u.role === 'admin';
+      const isMarketing = u.dept === 'marketing' || u.role === 'marketing';
       const isHR = u.role === 'hr' || u.dept === 'careers';
+      const isFoundation = u.dept === 'foundation';
+      const isNews = u.dept === 'news';
 
+      // 1. Department-Tailored Header Link & Hero Public Link
+      const headerLink = document.getElementById('headerDeptLink');
+      const headerLabel = document.getElementById('headerDeptLinkLabel');
+      const heroLink = document.getElementById('heroPublicLink');
+      const heroLabel = document.getElementById('heroPublicLinkLabel');
+
+      if (isMarketing) {
+        if (headerLink) { headerLink.href = '../products.html'; headerLink.title = 'Open public Product Catalog'; }
+        if (headerLabel) headerLabel.textContent = 'Products Catalog';
+        if (heroLink) { heroLink.href = '../products.html'; heroLink.title = 'View public product catalog'; }
+        if (heroLabel) heroLabel.textContent = 'View Public Catalog';
+      } else if (isFoundation) {
+        if (headerLink) { headerLink.href = '../founder.html#foundation'; headerLink.title = 'Open public Foundation page'; }
+        if (headerLabel) headerLabel.textContent = 'Foundation CSR';
+        if (heroLink) { heroLink.href = '../founder.html#foundation'; heroLink.title = 'View public Foundation page'; }
+        if (heroLabel) heroLabel.textContent = 'View Foundation Page';
+      } else if (isNews) {
+        if (headerLink) { headerLink.href = '../events.html'; headerLink.title = 'Open public Events & News page'; }
+        if (headerLabel) headerLabel.textContent = 'Public Events';
+        if (heroLink) { heroLink.href = '../events.html'; heroLink.title = 'View public Events & News'; }
+        if (heroLabel) heroLabel.textContent = 'View Events & News';
+      } else if (isHR) {
+        if (headerLink) { headerLink.href = '../careers.html#openings'; headerLink.title = 'Open public Careers page'; }
+        if (headerLabel) headerLabel.textContent = 'Public Careers';
+        if (heroLink) { heroLink.href = '../careers.html#openings'; heroLink.title = 'View open job positions'; }
+        if (heroLabel) heroLabel.textContent = 'View Public Careers';
+      } else {
+        // Admin
+        if (headerLink) { headerLink.href = '../home.html'; headerLink.title = 'Open public website'; }
+        if (headerLabel) headerLabel.textContent = 'Public Website';
+        if (heroLink) { heroLink.href = '../home.html'; heroLink.title = 'Explore public website'; }
+        if (heroLabel) heroLabel.textContent = 'Explore Website';
+      }
+
+      // 2. Department-Tailored 4 Stat Cards
+      updateDashboardStats(u);
+
+      // 3. Department-Tailored Quick Operational Actions
+      const quickContainer = document.getElementById('quickActionsContainer');
+      if (quickContainer) {
+        if (isMarketing) {
+          quickContainer.innerHTML = `
+            <button class="btn btn-primary" style="font-size:12.5px; font-weight:700;" onclick="showTab('marketing'); setTimeout(()=>openProductEditor(null), 100);">+ Add New Molecule</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="downloadMarketingCatalogCsv()">Export Catalog (CSV)</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="downloadMarketingCatalogJson()">Download products-catalog.json</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="showTab('marketing')">Open Marketing Desk &rarr;</button>
+          `;
+        } else if (isFoundation) {
+          quickContainer.innerHTML = `
+            <button class="btn btn-primary" style="font-size:12.5px; font-weight:700;" onclick="showTab('foundation'); setTimeout(()=>document.getElementById('add-vasudha-input').focus(), 100);">+ Add CSR Photo</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="downloadFoundationJson()">Download foundation-galleries.json</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="copyFoundationJson()">Copy JSON</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="showTab('foundation')">Open Foundation Desk &rarr;</button>
+          `;
+        } else if (isNews) {
+          quickContainer.innerHTML = `
+            <button class="btn btn-primary" style="font-size:12.5px; font-weight:700;" onclick="showTab('news'); setTimeout(()=>openEventEditor(null), 100);">+ Add Event Card</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="showTab('news'); setTimeout(()=>openNewsEditor(null), 100);">+ Add News Card</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="downloadNewsEventsJson()">Download news-events.json</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="showTab('news')">Open News Desk &rarr;</button>
+          `;
+        } else if (isHR) {
+          quickContainer.innerHTML = `
+            <button class="btn btn-primary" style="font-size:12.5px; font-weight:700;" onclick="showTab('careers'); setTimeout(()=>document.getElementById('jobId').focus(), 150);">+ Post New Job</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="downloadJobsJson()">Download jobs.json</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="copyJobsJson()">Copy JSON</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="showTab('careers')">Open HR Desk &rarr;</button>
+          `;
+        } else {
+          // Admin
+          quickContainer.innerHTML = `
+            <button class="btn btn-primary" style="font-size:12.5px; font-weight:700;" onclick="showTab('users')">+ Manage Users</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="showTab('marketing'); setTimeout(()=>openProductEditor(null), 100);">+ Add Molecule</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="showTab('careers'); setTimeout(()=>document.getElementById('jobId').focus(), 150);">+ Post Job</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="showTab('news'); setTimeout(()=>openEventEditor(null), 100);">+ Add Event</button>
+          `;
+        }
+      }
+
+      // 4. Access controls on top navigation buttons
       document.getElementById('navUsersBtn').style.display = isAdmin ? 'inline-flex' : 'none';
-      document.getElementById('btnManageUsersQuick').style.display = isAdmin ? 'inline-flex' : 'none';
-      const postJobBtn = document.getElementById('btnPostJobQuick');
-      if (postJobBtn) postJobBtn.style.display = (isAdmin || isHR) ? 'inline-flex' : 'none';
-
-      // Hide or show desk buttons based on permissions
       document.querySelectorAll('#mainStaffNav button[data-desk]').forEach(btn => {
         const desk = btn.getAttribute('data-desk');
         if (desk === 'home' || desk === 'account') return;
         btn.style.display = canAccessDesk(desk) ? 'inline-flex' : 'none';
       });
 
-      // Hide or show desk cards on Home dashboard based on permissions
+      // 5. Hide or show desk cards on Home dashboard based on permissions
       document.querySelectorAll('#tab-home [data-desk-card]').forEach(card => {
         const desk = card.getAttribute('data-desk-card');
         card.style.display = canAccessDesk(desk) ? 'flex' : 'none';
       });
 
-      // If user is on an unauthorized tab, redirect to home or their desk
+      // 6. If user is on an unauthorized tab, redirect to home or their desk
       const visiblePane = document.querySelector('.tab-pane:not([style*="none"])');
       if (visiblePane) {
         const paneId = visiblePane.id.replace('tab-', '');
