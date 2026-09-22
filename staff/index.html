@@ -1148,17 +1148,33 @@
         </div>
       </div>
 
-      <div class="card">
-        <h2 style="margin-top:0;font-size:17px;">Update Credentials</h2>
-        <form onsubmit="updateAccount(event)">
-          <label>Display Name</label>
-          <input id="editName" required>
-          <label>New Password (optional)</label>
-          <input id="newPassInput" type="password" placeholder="Leave blank to keep unchanged">
-          <p style="margin-top:20px;">
-            <button type="submit" class="btn btn-primary">Save Changes</button>
-          </p>
+      <div class="card" style="max-width:620px;">
+        <h2 style="margin-top:0;font-size:17px; margin-bottom:16px;">Profile &amp; Account Settings</h2>
+        
+        <form onsubmit="updateAccount(event)" style="margin-bottom:24px;">
+          <label style="display:block; margin-bottom:6px; font-weight:600; font-size:13px;">Display Name</label>
+          <div style="display:flex; gap:10px; align-items:center;">
+            <input id="editName" required style="flex:1; padding:9px 12px; border:1px solid var(--sp-border); border-radius:8px; font-size:13.5px;">
+            <button type="submit" class="btn btn-primary" style="white-space:nowrap; padding:9px 16px;">Save Display Name</button>
+          </div>
         </form>
+
+        <div style="border-top:1px solid var(--sp-border); padding-top:20px;">
+          <label style="display:block; margin-bottom:8px; font-weight:700; font-size:14px; color:var(--sp-text-main);">Security &amp; Login Credentials</label>
+          <p style="font-size:12.5px; color:var(--sp-text-muted); margin:0 0 14px; line-height:1.5;">
+            Manage your login identity and security credentials for the department portal.
+          </p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button type="button" class="btn btn-ghost" onclick="openChangeEmailModal()" style="font-weight:600; font-size:13px; padding:10px 18px; border:1px solid var(--sp-border); background:#F8FAFC;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Change Email or Login ID
+            </button>
+            <button type="button" class="btn btn-primary" onclick="openChangePasswordModal()" style="font-weight:600; font-size:13px; padding:10px 18px;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Change Password
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1378,6 +1394,98 @@
           &larr; Back to Sign In
         </button>
       </div>
+    </div>
+  </div>
+
+  <!-- Change Email / Login ID Modal -->
+  <div class="auth-overlay" id="changeEmailModal" style="display:none; z-index:2100;">
+    <div class="auth-box" style="max-width:440px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:36px; height:36px; border-radius:10px; background:rgba(0,136,170,0.1); display:flex; align-items:center; justify-content:center; color:var(--sp-primary);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h2 style="margin:0; font-size:17px; color:var(--sp-primary-dark);">Change Email or Login ID</h2>
+        </div>
+        <button type="button" onclick="closeChangeEmailModal()" style="background:none; border:none; font-size:22px; color:var(--sp-text-muted); cursor:pointer; line-height:1;">&times;</button>
+      </div>
+
+      <p style="font-size:12.5px; color:var(--sp-text-muted); margin:0 0 16px; line-height:1.5;">
+        Update the primary email address or login identifier used to sign into your operations desk.
+      </p>
+
+      <form onsubmit="submitChangeEmail(event)">
+        <div style="margin-bottom:12px;">
+          <label style="font-size:12px; font-weight:600; color:var(--sp-text-muted); margin-bottom:4px; display:block;">Current Login ID / Email</label>
+          <input type="text" id="currentEmailDisplay" readonly style="width:100%; box-sizing:border-box; padding:9px 12px; font-size:13px; border:1px solid var(--sp-border); border-radius:8px; background:#F1F5F9; color:#475569;">
+        </div>
+
+        <div style="margin-bottom:12px;">
+          <label style="font-size:12px; font-weight:600; color:var(--sp-text-muted); margin-bottom:4px; display:block;">New Corporate Email or Login ID *</label>
+          <input type="text" id="newEmailInput" required placeholder="e.g. yourname@vasudhapharma.com" style="width:100%; box-sizing:border-box; padding:9px 12px; font-size:13px; border:1px solid var(--sp-border); border-radius:8px; background:#FFFFFF;">
+        </div>
+
+        <div style="margin-bottom:16px;">
+          <label style="font-size:12px; font-weight:600; color:var(--sp-text-muted); margin-bottom:4px; display:block;">Verify Current Password *</label>
+          <input type="password" id="verifyEmailCurrentPass" required placeholder="Enter current password to authorize" style="width:100%; box-sizing:border-box; padding:9px 12px; font-size:13px; border:1px solid var(--sp-border); border-radius:8px; background:#FFFFFF;">
+        </div>
+
+        <div id="changeEmailErr" style="display:none; color:#DC2626; font-size:12.5px; margin-bottom:12px; font-weight:500;"></div>
+
+        <div style="display:flex; gap:10px; justify-content:flex-end;">
+          <button type="button" class="btn btn-ghost" onclick="closeChangeEmailModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary">Update Login ID</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Change Password Modal -->
+  <div class="auth-overlay" id="changePasswordModal" style="display:none; z-index:2100;">
+    <div class="auth-box" style="max-width:440px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:36px; height:36px; border-radius:10px; background:rgba(0,136,170,0.1); display:flex; align-items:center; justify-content:center; color:var(--sp-primary);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h2 style="margin:0; font-size:17px; color:var(--sp-primary-dark);">Change Department Password</h2>
+        </div>
+        <button type="button" onclick="closeChangePasswordModal()" style="background:none; border:none; font-size:22px; color:var(--sp-text-muted); cursor:pointer; line-height:1;">&times;</button>
+      </div>
+
+      <p style="font-size:12.5px; color:var(--sp-text-muted); margin:0 0 16px; line-height:1.5;">
+        Set a new secure password for your operations portal access. (Minimum 6 characters)
+      </p>
+
+      <form onsubmit="submitChangePassword(event)">
+        <div style="margin-bottom:12px;">
+          <label style="font-size:12px; font-weight:600; color:var(--sp-text-muted); margin-bottom:4px; display:block;">Current Password *</label>
+          <input type="password" id="changePassCurrent" required placeholder="Enter current password" style="width:100%; box-sizing:border-box; padding:9px 12px; font-size:13px; border:1px solid var(--sp-border); border-radius:8px; background:#FFFFFF;">
+        </div>
+
+        <div style="margin-bottom:12px;">
+          <label style="font-size:12px; font-weight:600; color:var(--sp-text-muted); margin-bottom:4px; display:block;">New Password *</label>
+          <div style="position:relative;">
+            <input type="password" id="changePassNew" required placeholder="Min. 6 characters" style="width:100%; box-sizing:border-box; padding:9px 38px 9px 12px; font-size:13px; border:1px solid var(--sp-border); border-radius:8px; background:#FFFFFF;">
+            <button type="button" onclick="toggleFieldVisibility('changePassNew')" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:none; border:none; color:var(--sp-text-muted); cursor:pointer; font-size:13px; padding:4px;" title="Show/Hide">👁</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom:16px;">
+          <label style="font-size:12px; font-weight:600; color:var(--sp-text-muted); margin-bottom:4px; display:block;">Confirm New Password *</label>
+          <div style="position:relative;">
+            <input type="password" id="changePassConfirm" required placeholder="Re-enter new password" style="width:100%; box-sizing:border-box; padding:9px 38px 9px 12px; font-size:13px; border:1px solid var(--sp-border); border-radius:8px; background:#FFFFFF;">
+            <button type="button" onclick="toggleFieldVisibility('changePassConfirm')" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:none; border:none; color:var(--sp-text-muted); cursor:pointer; font-size:13px; padding:4px;" title="Show/Hide">👁</button>
+          </div>
+        </div>
+
+        <div id="changePassErr" style="display:none; color:#DC2626; font-size:12.5px; margin-bottom:12px; font-weight:500;"></div>
+
+        <div style="display:flex; gap:10px; justify-content:flex-end;">
+          <button type="button" class="btn btn-ghost" onclick="closeChangePasswordModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary">Update Password</button>
+        </div>
+      </form>
     </div>
   </div>
 
@@ -2304,22 +2412,148 @@
     function updateAccount(e) {
       e.preventDefault();
       const name = document.getElementById('editName').value.trim();
-      const pass = document.getElementById('newPassInput').value.trim();
       if (currentUser && name) {
         currentUser.name = name;
-        if (pass) {
-          currentUser.password = pass;
-        }
         sessionStorage.setItem('vp_staff_user', JSON.stringify(currentUser));
         const idx = usersList.findIndex(u => u.email.toLowerCase() === currentUser.email.toLowerCase());
         if (idx !== -1) {
           usersList[idx].name = name;
-          if (pass) usersList[idx].password = pass;
           localStorage.setItem('vp_staff_custom_users', JSON.stringify(usersList));
         }
         applyUser(currentUser);
-        toast('Account details updated.');
+        toast('Display name updated to: ' + name);
       }
+    }
+
+    // Change Email / Login ID Handlers
+    function openChangeEmailModal() {
+      if (!currentUser) return;
+      document.getElementById('currentEmailDisplay').value = currentUser.email || '';
+      document.getElementById('newEmailInput').value = '';
+      document.getElementById('verifyEmailCurrentPass').value = '';
+      const errEl = document.getElementById('changeEmailErr');
+      if (errEl) { errEl.textContent = ''; errEl.style.display = 'none'; }
+      document.getElementById('changeEmailModal').style.display = 'flex';
+      setTimeout(() => document.getElementById('newEmailInput').focus(), 100);
+    }
+
+    function closeChangeEmailModal() {
+      document.getElementById('changeEmailModal').style.display = 'none';
+    }
+
+    function submitChangeEmail(e) {
+      e.preventDefault();
+      if (!currentUser) return;
+      const newEmail = (document.getElementById('newEmailInput').value || '').trim().toLowerCase();
+      const verifyPass = document.getElementById('verifyEmailCurrentPass').value;
+      const errEl = document.getElementById('changeEmailErr');
+
+      if (!newEmail || newEmail.length < 4) {
+        errEl.textContent = 'Please enter a valid email or login identifier.';
+        errEl.style.display = 'block';
+        return;
+      }
+
+      if (newEmail === currentUser.email.toLowerCase()) {
+        errEl.textContent = 'The new login ID must be different from your current one.';
+        errEl.style.display = 'block';
+        return;
+      }
+
+      // Verify current password
+      const expectedPass = currentUser.password || (DEPT_PRESETS[currentUser.dept] ? DEPT_PRESETS[currentUser.dept].pass : '');
+      if (expectedPass && verifyPass !== expectedPass) {
+        errEl.textContent = 'Current password verification failed. Please check and try again.';
+        errEl.style.display = 'block';
+        return;
+      }
+
+      // Check if duplicate of another account
+      const duplicate = usersList.find(u => u.email.toLowerCase() === newEmail && u.email.toLowerCase() !== currentUser.email.toLowerCase());
+      if (duplicate) {
+        errEl.textContent = 'This email or login identifier is already assigned to another staff account.';
+        errEl.style.display = 'block';
+        return;
+      }
+
+      // Update in usersList and storage
+      const oldEmail = currentUser.email.toLowerCase();
+      const idx = usersList.findIndex(u => u.email.toLowerCase() === oldEmail);
+      currentUser.email = newEmail;
+      currentUser.alias = newEmail;
+      if (idx !== -1) {
+        usersList[idx].email = newEmail;
+        usersList[idx].alias = newEmail;
+      }
+      localStorage.setItem('vp_staff_custom_users', JSON.stringify(usersList));
+      sessionStorage.setItem('vp_staff_user', JSON.stringify(currentUser));
+
+      // Update DOM
+      document.getElementById('accountEmail').textContent = newEmail;
+      closeChangeEmailModal();
+      toast('Login ID updated to: ' + newEmail);
+    }
+
+    // Change Password Handlers
+    function openChangePasswordModal() {
+      if (!currentUser) return;
+      document.getElementById('changePassCurrent').value = '';
+      document.getElementById('changePassNew').value = '';
+      document.getElementById('changePassConfirm').value = '';
+      const errEl = document.getElementById('changePassErr');
+      if (errEl) { errEl.textContent = ''; errEl.style.display = 'none'; }
+      document.getElementById('changePasswordModal').style.display = 'flex';
+      setTimeout(() => document.getElementById('changePassCurrent').focus(), 100);
+    }
+
+    function closeChangePasswordModal() {
+      document.getElementById('changePasswordModal').style.display = 'none';
+    }
+
+    function toggleFieldVisibility(fieldId) {
+      const f = document.getElementById(fieldId);
+      if (f) f.type = f.type === 'password' ? 'text' : 'password';
+    }
+
+    function submitChangePassword(e) {
+      e.preventDefault();
+      if (!currentUser) return;
+      const currentPass = document.getElementById('changePassCurrent').value;
+      const newPass = document.getElementById('changePassNew').value;
+      const confirmPass = document.getElementById('changePassConfirm').value;
+      const errEl = document.getElementById('changePassErr');
+
+      // Verify current password
+      const expectedPass = currentUser.password || (DEPT_PRESETS[currentUser.dept] ? DEPT_PRESETS[currentUser.dept].pass : '');
+      if (expectedPass && currentPass !== expectedPass) {
+        errEl.textContent = 'Current password is incorrect.';
+        errEl.style.display = 'block';
+        return;
+      }
+
+      if (newPass.length < 6) {
+        errEl.textContent = 'New password must be at least 6 characters in length.';
+        errEl.style.display = 'block';
+        return;
+      }
+
+      if (newPass !== confirmPass) {
+        errEl.textContent = 'New password and confirmation do not match.';
+        errEl.style.display = 'block';
+        return;
+      }
+
+      // Update in currentUser and usersList
+      currentUser.password = newPass;
+      const idx = usersList.findIndex(u => u.email.toLowerCase() === currentUser.email.toLowerCase());
+      if (idx !== -1) {
+        usersList[idx].password = newPass;
+      }
+      localStorage.setItem('vp_staff_custom_users', JSON.stringify(usersList));
+      sessionStorage.setItem('vp_staff_user', JSON.stringify(currentUser));
+
+      closeChangePasswordModal();
+      toast('Department password updated successfully.');
     }
 
     // Authentication
