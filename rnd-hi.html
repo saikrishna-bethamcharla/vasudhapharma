@@ -6675,7 +6675,10 @@
 
       function alreadyDismissed() {
         try {
-          return sessionStorage.getItem(STORAGE_KEY) === '1';
+          return sessionStorage.getItem(STORAGE_KEY) === '1' ||
+                 sessionStorage.getItem('vasudhaSurveySessionLoaded') === '1' ||
+                 sessionStorage.getItem('vasudhaSurveyDismissed_v3') === '1' ||
+                 localStorage.getItem('vasudhaSurveyDismissed_v3') === '1';
         } catch (e) {
           return false;
         }
@@ -6684,6 +6687,9 @@
       function markDismissed() {
         try {
           sessionStorage.setItem(STORAGE_KEY, '1');
+          sessionStorage.setItem('vasudhaSurveyDismissed_v3', '1');
+          sessionStorage.setItem('vasudhaSurveySessionLoaded', '1');
+          localStorage.setItem('vasudhaSurveyDismissed_v3', '1');
         } catch (e) { /* ignore */ }
       }
 
@@ -6697,6 +6703,7 @@
             if (!force && (o === 'annual-returns' || o === 'annual-return' || window.__vpAnnualDeepLink)) return;
           } catch (e) {}
           if (!force && alreadyDismissed()) return;
+          try { sessionStorage.setItem('vasudhaSurveySessionLoaded', '1'); } catch (e) {}
           overlay.classList.add('visible');
           overlay.setAttribute('aria-hidden', 'false');
           overlay.style.opacity = '1';
@@ -7410,8 +7417,12 @@
       var open = (p.get('open') || '').toLowerCase();
       if (open.indexOf('annual-return') >= 0) return;
       if (p.get('survey') !== '1' && p.get('survey') !== 'true') {
-        if (sessionStorage.getItem('vasudhaSurveyDismissed_v3') === '1') return;
+        if (sessionStorage.getItem('vasudhaSurveyDismissed_v3') === '1' ||
+            sessionStorage.getItem('vasudhaSurveySessionLoaded') === '1' ||
+            sessionStorage.getItem('vasudhaSurveyDismissed_v2') === '1' ||
+            localStorage.getItem('vasudhaSurveyDismissed_v3') === '1') return;
       }
+      try { sessionStorage.setItem('vasudhaSurveySessionLoaded', '1'); } catch (e) {}
     } catch (e) {}
     setStep('invite');
     o.classList.add('visible');
@@ -7434,7 +7445,12 @@
     o.style.removeProperty('visibility');
     o.style.removeProperty('display');
     o.style.removeProperty('pointer-events');
-    try { sessionStorage.setItem('vasudhaSurveyDismissed_v3', '1'); } catch (e) {}
+    try {
+      sessionStorage.setItem('vasudhaSurveyDismissed_v3', '1');
+      sessionStorage.setItem('vasudhaSurveyDismissed_v2', '1');
+      sessionStorage.setItem('vasudhaSurveySessionLoaded', '1');
+      localStorage.setItem('vasudhaSurveyDismissed_v3', '1');
+    } catch (e) {}
   }
 
   function startForm() {
@@ -7577,7 +7593,12 @@
     ].join('\n');
     try { postZoho({ lastName: 'Website Survey', description: description, enquiryType: 'Website Survey', leadSource: 'Website Survey', q1: q1, q2: q2, q3: q3, q4: q4, q5: q5 }); } catch (e) {}
     setStep('thanks');
-    try { sessionStorage.setItem('vasudhaSurveyDismissed_v3', '1'); } catch (e) {}
+    try {
+      sessionStorage.setItem('vasudhaSurveyDismissed_v3', '1');
+      sessionStorage.setItem('vasudhaSurveyDismissed_v2', '1');
+      sessionStorage.setItem('vasudhaSurveySessionLoaded', '1');
+      localStorage.setItem('vasudhaSurveyDismissed_v3', '1');
+    } catch (e) {}
     setTimeout(hide, 2800);
   }
 
