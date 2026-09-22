@@ -1,0 +1,209 @@
+/* ==========================================================================
+   Product Cards Clickability & External Partner Website Modal
+   ========================================================================== */
+
+.prod-card {
+  cursor: pointer !important;
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease !important;
+}
+
+.prod-card:hover {
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12) !important;
+  transform: translateY(-4px) !important;
+  border-color: rgba(61, 92, 173, 0.35) !important;
+}
+
+.prod-card:hover .prod-more {
+  color: var(--primary-red, #c8102e) !important;
+  gap: 12px !important;
+}
+
+.prod-card:focus-visible {
+  outline: 2px solid var(--primary-red, #c8102e);
+  outline-offset: 3px;
+}
+
+/* Modal Overlay */
+.vp-partner-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 999999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.22s ease;
+}
+
+.vp-partner-modal-backdrop.is-open {
+  display: flex !important;
+  opacity: 1 !important;
+}
+
+.vp-partner-modal-card {
+  background: #ffffff;
+  border-radius: 20px;
+  max-width: 480px;
+  width: 100%;
+  padding: 34px 28px 30px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  transform: scale(0.93);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.vp-partner-modal-backdrop.is-open .vp-partner-modal-card {
+  transform: scale(1);
+}
+
+.vp-partner-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  background: #f1f5f9;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.vp-partner-modal-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.vp-partner-modal-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #3D5CAD;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  border: 1px solid #dbeafe;
+}
+
+.vp-partner-modal-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #3D5CAD;
+  background: rgba(61, 92, 173, 0.08);
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.vp-partner-modal-title {
+  font-size: 21px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.vp-partner-modal-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0 0 18px;
+}
+
+.vp-partner-modal-desc strong {
+  color: #1e293b;
+}
+
+.vp-partner-modal-url-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: #334155;
+  font-family: monospace;
+}
+
+.vp-partner-url-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: #3D5CAD;
+  background: #ffffff;
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+.vp-partner-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.vp-partner-btn-secondary {
+  flex: 1;
+  padding: 12px 18px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.vp-partner-btn-secondary:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.vp-partner-btn-primary {
+  flex: 1.25;
+  padding: 12px 18px;
+  background: var(--primary-red, #c8102e);
+  border: none;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(200, 16, 46, 0.25);
+  transition: opacity 0.2s, transform 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.vp-partner-btn-primary:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 480px) {
+  .vp-partner-modal-actions {
+    flex-direction: column-reverse;
+  }
+}
