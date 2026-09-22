@@ -235,8 +235,20 @@
     textarea { min-height: 90px; resize: vertical; }
     .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
-    .row-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-    @media (max-width: 768px) { .row, .row-3 { grid-template-columns: 1fr; } }
+    .row-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    @media (max-width: 768px) {
+      .row, .row-3 { grid-template-columns: 1fr; }
+      .wrap { padding: 16px 14px 40px; }
+      .card { padding: 18px 16px; border-radius: 12px; }
+      nav.staff-nav { padding: 6px 12px; }
+      nav.staff-nav button { padding: 6px 10px; font-size: 12px; }
+      .auth-box { padding: 24px 18px; border-radius: 14px; }
+    }
     .btn {
       cursor: pointer;
       border: 0;
@@ -380,7 +392,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      z-index: 10000;
+      z-index: 999999;
       transform: translateY(100px);
       opacity: 0;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -399,7 +411,7 @@
       align-items: center;
       justify-content: center;
       padding: 20px;
-      z-index: 99999;
+      z-index: 90000;
     }
     .auth-box {
       width: 100%;
@@ -599,22 +611,24 @@
           <span style="font-size:12px; color:var(--sp-text-muted);">Instant filter</span>
         </div>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Job ID</th>
-              <th>Title</th>
-              <th>Department</th>
-              <th>Location</th>
-              <th>Posted</th>
-              <th>Status</th>
-              <th style="text-align:right">Actions</th>
-            </tr>
-          </thead>
-          <tbody id="jobsTbody">
-            <!-- Rendered by JS -->
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Job ID</th>
+                <th>Title</th>
+                <th>Department</th>
+                <th>Location</th>
+                <th>Posted</th>
+                <th>Status</th>
+                <th style="text-align:right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="jobsTbody">
+              <!-- Rendered by JS -->
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <!-- Job Editor Form -->
@@ -696,20 +710,22 @@
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
           <h2 style="margin:0; font-size:18px;">Staff Accounts (<span id="usersCount">0</span>)</h2>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Department Desk</th>
-              <th>Role</th>
-              <th style="text-align:right">Action</th>
-            </tr>
-          </thead>
-          <tbody id="usersTbody">
-            <!-- Rendered by JS -->
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department Desk</th>
+                <th>Role</th>
+                <th style="text-align:right">Action</th>
+              </tr>
+            </thead>
+            <tbody id="usersTbody">
+              <!-- Rendered by JS -->
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div class="card">
@@ -849,7 +865,7 @@
           </h2>
           <span style="font-size:11.5px; color:var(--sp-text-muted);">Click CAS to copy</span>
         </div>
-        <div style="overflow-x:auto; max-height:640px;">
+        <div class="table-responsive" style="overflow-x:auto; max-height:640px;">
           <table style="width:100%; border-collapse:collapse; text-align:left; font-size:13px;">
             <thead>
               <tr style="background:#F1F5F9; border-bottom:1px solid var(--sp-border); position:sticky; top:0; z-index:1;">
@@ -902,7 +918,7 @@
           <!-- Loaded by JS -->
         </div>
         <div style="border-top:1px solid var(--sp-border); padding-top:14px; display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
-          <input type="text" id="add-vasudha-input" placeholder="Enter image URL or asset path (e.g. assets/foundation/photo.jpg)" style="flex:1; min-width:240px;">
+          <input type="text" id="add-vasudha-input" placeholder="Enter image URL or asset path (e.g. assets/foundation/photo.jpg)" onkeydown="if(event.key==='Enter'){event.preventDefault();addFoundationImage('vasudha');}" style="flex:1; min-width:240px;">
           <button type="button" class="btn btn-primary" onclick="addFoundationImage('vasudha')">+ Add Photo to Scroll 1</button>
         </div>
       </div>
@@ -920,7 +936,7 @@
           <!-- Loaded by JS -->
         </div>
         <div style="border-top:1px solid var(--sp-border); padding-top:14px; display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
-          <input type="text" id="add-vrrv-input" placeholder="Enter image URL or asset path (e.g. assets/foundation/vrrv-new.png)" style="flex:1; min-width:240px;">
+          <input type="text" id="add-vrrv-input" placeholder="Enter image URL or asset path (e.g. assets/foundation/vrrv-new.png)" onkeydown="if(event.key==='Enter'){event.preventDefault();addFoundationImage('vrrv');}" style="flex:1; min-width:240px;">
           <button type="button" class="btn btn-primary" onclick="addFoundationImage('vrrv')">+ Add Photo to Scroll 2</button>
         </div>
       </div>
@@ -938,7 +954,7 @@
           <!-- Loaded by JS -->
         </div>
         <div style="border-top:1px solid var(--sp-border); padding-top:14px; display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
-          <input type="text" id="add-moments-input" placeholder="Enter image URL or asset path (e.g. assets/founder-gallery/slide-new.jpg)" style="flex:1; min-width:240px;">
+          <input type="text" id="add-moments-input" placeholder="Enter image URL or asset path (e.g. assets/founder-gallery/slide-new.jpg)" onkeydown="if(event.key==='Enter'){event.preventDefault();addFoundationImage('moments');}" style="flex:1; min-width:240px;">
           <button type="button" class="btn btn-primary" onclick="addFoundationImage('moments')">+ Add Photo to Scroll 3</button>
         </div>
       </div>
@@ -1784,6 +1800,15 @@
       setTimeout(() => t.classList.remove('show'), 3500);
     }
 
+    // Modal Scroll Locking Utilities
+    function lockBodyScroll() {
+      document.body.style.overflow = 'hidden';
+    }
+
+    function unlockBodyScroll() {
+      document.body.style.overflow = '';
+    }
+
     // Load Jobs JSON
     async function loadJobs() {
       try {
@@ -1955,24 +1980,6 @@
       }
     }
 
-    function downloadJobsJson() {
-      jobsData.updated = new Date().toISOString().slice(0, 10);
-      const str = JSON.stringify(jobsData, null, 2);
-      const blob = new Blob([str], { type: 'application/json' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'jobs.json';
-      a.click();
-      toast('jobs.json downloaded.');
-    }
-
-    function copyJobsJson() {
-      jobsData.updated = new Date().toISOString().slice(0, 10);
-      navigator.clipboard.writeText(JSON.stringify(jobsData, null, 2))
-        .then(() => toast('jobs.json copied to clipboard!'))
-        .catch(() => toast('Failed to copy.'));
-    }
-
     // Desk permission validation helper
     function canAccessDesk(tabName) {
       if (!currentUser) return false;
@@ -2054,7 +2061,7 @@
         const filename = cleanSrc.split('/').pop();
         return `<div style="border:1px solid var(--sp-border); border-radius:10px; padding:8px; background:#FFFFFF; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 1px 3px rgba(0,0,0,0.04);">
           <a href="${displaySrc}" target="_blank" rel="noopener" style="display:block; overflow:hidden; border-radius:6px;">
-            <img src="${displaySrc}" alt="" style="width:100%; height:94px; object-fit:cover; display:block; background:#E2E8F0; transition:transform 0.2s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+            <img src="${displaySrc}" alt="" loading="lazy" onerror="this.onerror=null; this.src='../assets/vasudha-logo.jpg'; this.style.objectFit='contain';" style="width:100%; height:94px; object-fit:cover; display:block; background:#E2E8F0; transition:transform 0.2s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
           </a>
           <div style="font-size:11px; color:#64748B; margin:6px 0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="${filename}">
             ${filename}
@@ -2086,22 +2093,6 @@
       foundationData[which].splice(index, 1);
       renderScrollGrid(which, foundationData[which]);
       toast('Photo removed from ' + which + ' scroll.');
-    }
-
-    function downloadFoundationJson() {
-      const str = JSON.stringify(foundationData, null, 2);
-      const blob = new Blob([str], { type: 'application/json' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'foundation-galleries.json';
-      a.click();
-      toast('foundation-galleries.json downloaded.');
-    }
-
-    function copyFoundationJson() {
-      navigator.clipboard.writeText(JSON.stringify(foundationData, null, 2))
-        .then(() => toast('foundation-galleries.json copied to clipboard!'))
-        .catch(() => toast('Failed to copy.'));
     }
 
     // ==========================================
@@ -2143,7 +2134,7 @@
         return `<div class="card" style="margin:0; padding:16px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
           <div>
             <div style="position:relative; height:120px; border-radius:8px; overflow:hidden; background:#E2E8F0; margin-bottom:12px;">
-              ${imgPath ? `<img src="${imgPath}" alt="${ev.title}" style="width:100%; height:100%; object-fit:cover;">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#94A3B8;font-size:12px;">No Image</div>'}
+              ${imgPath ? `<img src="${imgPath}" alt="${ev.title}" loading="lazy" onerror="this.onerror=null; this.src='../assets/vasudha-logo.jpg'; this.style.objectFit='contain';" style="width:100%; height:100%; object-fit:cover;">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#94A3B8;font-size:12px;">No Image</div>'}
               <span style="position:absolute; top:8px; left:8px; font-size:10.5px; font-weight:700; background:rgba(15,23,42,0.85); color:#FFFFFF; padding:2px 7px; border-radius:4px;">${ev.tag || 'Meet us at'}</span>
               <span class="${isLive ? 'badge-open' : 'badge-closed'}" style="position:absolute; top:8px; right:8px;">${isLive ? '● Live' : '○ Archived'}</span>
             </div>
@@ -2178,7 +2169,7 @@
         return `<div class="card" style="margin:0; padding:16px; border:1px solid var(--sp-border); display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
           <div>
             <div style="position:relative; height:120px; border-radius:8px; overflow:hidden; background:#E2E8F0; margin-bottom:12px;">
-              ${imgPath ? `<img src="${imgPath}" alt="${nw.title}" style="width:100%; height:100%; object-fit:cover;">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#94A3B8;font-size:12px;">No Image</div>'}
+              ${imgPath ? `<img src="${imgPath}" alt="${nw.title}" loading="lazy" onerror="this.onerror=null; this.src='../assets/vasudha-logo.jpg'; this.style.objectFit='contain';" style="width:100%; height:100%; object-fit:cover;">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#94A3B8;font-size:12px;">No Image</div>'}
               <span style="position:absolute; top:8px; left:8px; font-size:10.5px; font-weight:700; background:#EEF2FB; color:var(--sp-primary); padding:2px 7px; border-radius:4px;">${nw.kicker || 'Update'}</span>
               <span class="${isLive ? 'badge-open' : 'badge-closed'}" style="position:absolute; top:8px; right:8px;">${isLive ? '● Live' : '○ Archived'}</span>
             </div>
@@ -2343,25 +2334,6 @@
       toast('News card removed.');
     }
 
-    function downloadNewsEventsJson() {
-      newsEventsData.updated = new Date().toISOString().slice(0, 16).replace('T', ' ');
-      const str = JSON.stringify(newsEventsData, null, 2);
-      const blob = new Blob([str], { type: 'application/json' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'news-events.json';
-      a.click();
-      toast('news-events.json downloaded.');
-    }
-
-    function copyNewsEventsJson() {
-      newsEventsData.updated = new Date().toISOString().slice(0, 16).replace('T', ' ');
-      navigator.clipboard.writeText(JSON.stringify(newsEventsData, null, 2))
-        .then(() => toast('news-events.json copied to clipboard!'))
-        .catch(() => toast('Failed to copy.'));
-    }
-
-
     // Users Management (Admin)
     function renderUsers() {
       const tbody = document.getElementById('usersTbody');
@@ -2434,11 +2406,13 @@
       const errEl = document.getElementById('changeEmailErr');
       if (errEl) { errEl.textContent = ''; errEl.style.display = 'none'; }
       document.getElementById('changeEmailModal').style.display = 'flex';
+      lockBodyScroll();
       setTimeout(() => document.getElementById('newEmailInput').focus(), 100);
     }
 
     function closeChangeEmailModal() {
       document.getElementById('changeEmailModal').style.display = 'none';
+      unlockBodyScroll();
     }
 
     function submitChangeEmail(e) {
@@ -2503,11 +2477,13 @@
       const errEl = document.getElementById('changePassErr');
       if (errEl) { errEl.textContent = ''; errEl.style.display = 'none'; }
       document.getElementById('changePasswordModal').style.display = 'flex';
+      lockBodyScroll();
       setTimeout(() => document.getElementById('changePassCurrent').focus(), 100);
     }
 
     function closeChangePasswordModal() {
       document.getElementById('changePasswordModal').style.display = 'none';
+      unlockBodyScroll();
     }
 
     function toggleFieldVisibility(fieldId) {
@@ -2594,11 +2570,20 @@
         forgotSel.value = currentSelected;
       }
       onSelectForgotDept(forgotSel ? forgotSel.value : 'marketing');
+      const authM = document.getElementById('authModal');
+      if (authM) authM.style.display = 'none';
       document.getElementById('forgotPassModal').style.display = 'flex';
+      lockBodyScroll();
     }
 
     function closeForgotPassModal() {
       document.getElementById('forgotPassModal').style.display = 'none';
+      if (!currentUser) {
+        const authM = document.getElementById('authModal');
+        if (authM) authM.style.display = 'flex';
+      } else {
+        unlockBodyScroll();
+      }
     }
 
     function onSelectForgotDept(dept) {
@@ -2886,6 +2871,40 @@
         // Default prompt login
         document.getElementById('authModal').style.display = 'flex';
       }
+
+      // Backdrop dismissal for secondary dialog modals
+      ['productEditModal', 'changeEmailModal', 'changePasswordModal', 'forgotPassModal'].forEach(id => {
+        const m = document.getElementById(id);
+        if (m) {
+          m.addEventListener('click', (e) => {
+            if (e.target === m) {
+              if (id === 'productEditModal') closeProductModal();
+              else if (id === 'changeEmailModal') closeChangeEmailModal();
+              else if (id === 'changePasswordModal') closeChangePasswordModal();
+              else if (id === 'forgotPassModal') closeForgotPassModal();
+            }
+          });
+        }
+      });
+
+      // Global Escape key dismiss handler
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          const pModal = document.getElementById('productEditModal');
+          const ceModal = document.getElementById('changeEmailModal');
+          const cpModal = document.getElementById('changePasswordModal');
+          const fpModal = document.getElementById('forgotPassModal');
+          if (pModal && pModal.style.display === 'flex') {
+            closeProductModal();
+          } else if (ceModal && ceModal.style.display === 'flex') {
+            closeChangeEmailModal();
+          } else if (cpModal && cpModal.style.display === 'flex') {
+            closeChangePasswordModal();
+          } else if (fpModal && fpModal.style.display === 'flex') {
+            closeForgotPassModal();
+          }
+        }
+      });
     });
   
     // Image Upload & Live Preview Helpers
@@ -3056,25 +3075,27 @@
     function renderMarketingDesk() {
       updateMarketingKpis();
       const q = (mktSearchQuery || '').trim().toLowerCase();
-      const filtered = MARKETING_CATALOG.filter(p => {
+      const filtered = [];
+      for (let i = 0; i < MARKETING_CATALOG.length; i++) {
+        const p = MARKETING_CATALOG[i];
         const matchCat = (mktCurrentCategory === 'all') || (p.category === mktCurrentCategory);
-        if (!matchCat) return false;
-        if (!q) return true;
-        return (p.name && p.name.toLowerCase().includes(q)) ||
-               (p.cas && p.cas.toLowerCase().includes(q)) ||
-               (p.specs && p.specs.toLowerCase().includes(q)) ||
-               (p.filings && p.filings.toLowerCase().includes(q)) ||
-               (p.therapeutic && p.therapeutic.toLowerCase().includes(q)) ||
-               (p.category_label && p.category_label.toLowerCase().includes(q));
-      });
+        if (!matchCat) continue;
+        if (!q || (p.name && p.name.toLowerCase().includes(q)) ||
+                  (p.cas && p.cas.toLowerCase().includes(q)) ||
+                  (p.specs && p.specs.toLowerCase().includes(q)) ||
+                  (p.filings && p.filings.toLowerCase().includes(q)) ||
+                  (p.therapeutic && p.therapeutic.toLowerCase().includes(q)) ||
+                  (p.category_label && p.category_label.toLowerCase().includes(q))) {
+          filtered.push({ p, realIdx: i });
+        }
+      }
 
       const tbody = document.getElementById('mktProductsTbody');
       if (tbody) {
         if (!filtered.length) {
           tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:36px; color:#94A3B8;">No molecules found matching your filter criteria.</td></tr>';
         } else {
-          tbody.innerHTML = filtered.map(p => {
-            const realIdx = MARKETING_CATALOG.indexOf(p);
+          tbody.innerHTML = filtered.map(({ p, realIdx }) => {
             const badgeBg = p.category === 'apis' ? '#EEF2FB' :
                             p.category === 'intermediates' ? '#FEF3C7' :
                             p.category === 'pellets' ? '#ECFDF5' :
@@ -3142,9 +3163,13 @@
       renderMarketingDesk();
     }
 
+    let mktSearchDebounceTimer = null;
     function handleMarketingSearch(val) {
-      mktSearchQuery = val || '';
-      renderMarketingDesk();
+      clearTimeout(mktSearchDebounceTimer);
+      mktSearchDebounceTimer = setTimeout(() => {
+        mktSearchQuery = val || '';
+        renderMarketingDesk();
+      }, 120);
     }
 
     function onEditCategoryChange(cat) {
@@ -3201,12 +3226,14 @@
       }
 
       modal.style.display = 'flex';
+      lockBodyScroll();
       document.getElementById('editProductName').focus();
     }
 
     function closeProductModal() {
       const modal = document.getElementById('productEditModal');
       if (modal) modal.style.display = 'none';
+      unlockBodyScroll();
     }
 
     function handleSaveProduct(e) {
@@ -3285,21 +3312,6 @@
       navigator.clipboard.writeText(cas)
         .then(() => toast('CAS ' + cas + ' copied!'))
         .catch(() => toast('Copied: ' + cas));
-    }
-
-    function copyMarketingCatalogJson() {
-      navigator.clipboard.writeText(JSON.stringify(MARKETING_CATALOG, null, 2))
-        .then(() => toast(`Catalog JSON (${MARKETING_CATALOG.length} items) copied to clipboard!`))
-        .catch(() => toast('Failed to copy catalog.'));
-    }
-
-    function downloadMarketingCatalogJson() {
-      const blob = new Blob([JSON.stringify(MARKETING_CATALOG, null, 2)], { type: 'application/json' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'products-catalog.json';
-      a.click();
-      toast(`Downloaded products-catalog.json (${MARKETING_CATALOG.length} items).`);
     }
 
     function downloadMarketingCatalogCsv() {
