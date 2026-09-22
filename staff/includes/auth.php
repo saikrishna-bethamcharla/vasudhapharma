@@ -32,6 +32,7 @@ function staff_require_login() {
 }
 function staff_desks() {
   return [
+    'marketing' => ['label' => 'Marketing & Products', 'file' => 'marketing.php', 'icon' => 'tag'],
     'careers' => ['label' => 'Careers / HR', 'file' => 'jobs.php', 'icon' => 'briefcase'],
     'foundation' => ['label' => 'Foundation', 'file' => 'foundation.php', 'icon' => 'heart'],
     'news' => ['label' => 'News & Events', 'file' => 'news.php', 'icon' => 'newspaper'],
@@ -42,6 +43,7 @@ function staff_can($desk, $u = null) {
   if (!$u) return false;
   if (($u['role'] ?? '') === 'admin') return true;
   if (($u['role'] ?? '') === 'hr' && $desk === 'careers') return true;
+  if (($u['role'] ?? '') === 'marketing' && $desk === 'marketing') return true;
   return ($u['dept'] ?? '') === $desk;
 }
 function staff_can_jobs($u = null) {

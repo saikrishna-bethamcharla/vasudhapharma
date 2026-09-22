@@ -233,6 +233,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <select id="deptSelect" onchange="onSelectDept(this.value)" style="width:100%; box-sizing:border-box; padding:11px 14px; border:1px solid var(--sp-border); border-radius:9px; font:inherit; font-size:13.5px; background:#FAFAFA; color:var(--sp-text-main);">
         <option value="">-- Choose Department Account --</option>
         <option value="admin">VPCL Operations Admin (All Desks)</option>
+        <option value="marketing">Marketing Desk (Products &amp; Commercial Portfolio)</option>
         <option value="hr">HR &amp; Talent Acquisition (Careers)</option>
         <option value="foundation">Vasudha Foundation CSR</option>
         <option value="news">Corporate Media &amp; PR (News &amp; Events)</option>
@@ -258,11 +259,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </div>
 
   <script>
+    const DEPT_PASSWORDS = {
+      admin: 'Vasudha@Admin2026!',
+      marketing: 'Vasudha@Marketing2026!',
+      hr: 'Vasudha@HR2026!',
+      foundation: 'Vasudha@CSR2026!',
+      news: 'Vasudha@News2026!',
+      dev: 'Vasudha@Dev2026!'
+    };
     function onSelectDept(dept) {
       if (!dept) return;
       document.getElementById('emailInput').value = 'wisdom@vasudhapharma.com';
       const pass = document.getElementById('passInput');
-      pass.value = '';
+      if (DEPT_PASSWORDS[dept]) pass.value = DEPT_PASSWORDS[dept];
       pass.focus();
     }
   </script>

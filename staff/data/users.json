@@ -37,6 +37,15 @@
   },
   {
     "email": "wisdom@vasudhapharma.com",
+    "alias": "marketing@vasudhapharma.com",
+    "name": "Marketing & Commercial Portfolio",
+    "role": "marketing",
+    "dept": "marketing",
+    "password": "Vasudha@Marketing2026!",
+    "hash": "$2y$10$lsLpbGo.XURaxcUVmHbcIOthQDMAExeSZ7IsMtPQiKXIfSl6ErPnu"
+  },
+  {
+    "email": "wisdom@vasudhapharma.com",
     "alias": "news@vasudhapharma.com",
     "name": "Corporate Media & PR",
     "role": "user",
