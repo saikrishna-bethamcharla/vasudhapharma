@@ -245,11 +245,7 @@
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:10px;">
         <h2 style="margin:0;font-size:18px;">Active &amp; Archived Requisitions</h2>
         <div style="display:flex;gap:8px;">
-          <button class="btn btn-ghost" type="button" id="newBtn">+ New Job</button>
-          <button class="btn btn-primary" type="button" id="dlBtn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download jobs.json
-          </button>
+          <button class="btn btn-primary" type="button" id="newBtn">+ New Job</button>
         </div>
       </div>
       <table>
@@ -339,14 +335,6 @@
     if(!confirm("Remove requisition " + o.id + "?")) return;
     data.jobs = data.jobs.filter(j=>j.id!==o.id);
     fill(null); render();
-  };
-  dlBtn.onclick = ()=>{
-    data.updated = new Date().toISOString().slice(0,10);
-    const blob = new Blob([JSON.stringify(data,null,2)], {type:"application/json"});
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "jobs.json";
-    a.click();
   };
   load();
   </script>

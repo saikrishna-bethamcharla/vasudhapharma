@@ -579,14 +579,7 @@
       <div class="card hint">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
           <div>
-            <strong>Careers / HR Desk:</strong> Open requisitions manage <code>jobs.json</code> and display automatically on the public <a href="../careers.html#openings" target="_blank" rel="noopener" style="color:var(--sp-primary); font-weight:700; text-decoration:underline;">Careers Portal</a>. Closed postings remain archived and hidden from public view.
-          </div>
-          <div style="display:flex; gap:10px;">
-            <button type="button" class="btn btn-ghost" style="background:#FFFFFF;" onclick="copyJobsJson()">Copy JSON</button>
-            <button type="button" class="btn btn-primary" onclick="downloadJobsJson()">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download jobs.json
-            </button>
+            <strong>Careers / HR Desk:</strong> Open requisitions publish and display automatically on the public <a href="../careers.html#openings" target="_blank" rel="noopener" style="color:var(--sp-primary); font-weight:700; text-decoration:underline;">Careers Portal</a>. Closed postings remain archived and hidden from public view.
           </div>
         </div>
       </div>
@@ -830,14 +823,6 @@
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Export CSV
             </button>
-            <button type="button" class="btn btn-ghost" onclick="downloadMarketingCatalogJson()" style="background:#FFFFFF; font-size:12.5px;" title="Download products-catalog.json file">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download JSON
-            </button>
-            <button type="button" class="btn btn-ghost" onclick="copyMarketingCatalogJson()" style="background:#FFFFFF; font-size:12.5px;" title="Copy JSON data to clipboard">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              Copy JSON
-            </button>
             <button type="button" class="btn btn-ghost" onclick="resetMarketingCatalog()" style="background:#FFFFFF; font-size:12.5px; color:#DC2626;" title="Reset catalog to default 265 molecules">
               ↺ Reset
             </button>
@@ -902,14 +887,6 @@
             <strong>Fixed Speed &amp; Sizing Design Policy:</strong> Image frame dimensions, aspect ratios, responsive scaling, and continuous marquee scroll speeds are centrally fixed in corporate stylesheets to maintain uniform performance and responsive stability across all devices. Staff cannot modify scroll speeds or frame sizes.
           </div>
         </div>
-      </div>
-
-      <div style="display:flex; justify-content:flex-end; gap:10px; margin-bottom:16px;">
-        <button type="button" class="btn btn-ghost" onclick="copyFoundationJson()">Copy foundation-galleries.json</button>
-        <button type="button" class="btn btn-primary" onclick="downloadFoundationJson()">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download foundation-galleries.json
-        </button>
       </div>
 
       <!-- Scroll 1: Vasudha Foundation -->
@@ -978,14 +955,6 @@
           Control international conference cards and corporate news cards displayed across the public website.
           Staff can <strong>add new cards</strong>, <strong>edit information</strong>, <strong>update card photos</strong>, and <strong>archive or delete</strong> cards.
         </p>
-      </div>
-
-      <div style="display:flex; justify-content:flex-end; gap:10px; margin-bottom:16px;">
-        <button type="button" class="btn btn-ghost" onclick="copyNewsEventsJson()">Copy news-events.json</button>
-        <button type="button" class="btn btn-primary" onclick="downloadNewsEventsJson()">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download news-events.json
-        </button>
       </div>
 
       <!-- SECTION 1: CONFERENCES & EVENTS -->
@@ -2610,25 +2579,23 @@
           quickContainer.innerHTML = `
             <button class="btn btn-primary" style="font-size:12.5px; font-weight:700;" onclick="showTab('marketing'); setTimeout(()=>openProductEditor(null), 100);">+ Add New Molecule</button>
             <button class="btn btn-ghost" style="font-size:12.5px;" onclick="downloadMarketingCatalogCsv()">Export Catalog (CSV)</button>
-            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="downloadMarketingCatalogJson()">Download products-catalog.json</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="showTab('marketing'); setTimeout(()=>setMarketingCategoryFilter('apis'), 100);">Filter Active APIs</button>
           `;
         } else if (isFoundation) {
           quickContainer.innerHTML = `
             <button class="btn btn-primary" style="font-size:12.5px; font-weight:700;" onclick="showTab('foundation'); setTimeout(()=>document.getElementById('add-vasudha-input').focus(), 100);">+ Add CSR Photo</button>
-            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="downloadFoundationJson()">Download foundation-galleries.json</button>
-            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="copyFoundationJson()">Copy JSON</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="showTab('foundation'); setTimeout(()=>document.getElementById('add-vrrv-input').focus(), 100);">+ Add VRRV Photo</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="showTab('foundation'); setTimeout(()=>document.getElementById('add-moments-input').focus(), 100);">+ Add Moments Photo</button>
           `;
         } else if (isNews) {
           quickContainer.innerHTML = `
             <button class="btn btn-primary" style="font-size:12.5px; font-weight:700;" onclick="showTab('news'); setTimeout(()=>openEventEditor(null), 100);">+ Add Event Card</button>
             <button class="btn btn-ghost" style="font-size:12.5px;" onclick="showTab('news'); setTimeout(()=>openNewsEditor(null), 100);">+ Add News Card</button>
-            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="downloadNewsEventsJson()">Download news-events.json</button>
           `;
         } else if (isHR) {
           quickContainer.innerHTML = `
             <button class="btn btn-primary" style="font-size:12.5px; font-weight:700;" onclick="showTab('careers'); setTimeout(()=>document.getElementById('jobId').focus(), 150);">+ Post New Job</button>
-            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="downloadJobsJson()">Download jobs.json</button>
-            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="copyJobsJson()">Copy JSON</button>
+            <button class="btn btn-ghost" style="font-size:12.5px;" onclick="showTab('careers'); setTimeout(()=>document.getElementById('jobSearchInput').focus(), 150);">Search Requisitions</button>
           `;
         } else {
           // Admin
