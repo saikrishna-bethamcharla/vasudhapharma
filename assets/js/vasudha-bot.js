@@ -185,17 +185,17 @@
     winEl.innerHTML = `
       <div class="vp-header">
         <div class="vp-header-left">
-          <div class="vp-avatar-wrap">
+          <div class="vp-avatar-wrap vp-header-avatar">
             <img src="${LOGO_SRC}" alt="Vasudha Bot" class="vp-avatar" onerror="this.src='${BASE_PREFIX}assets/vasudha-logo.jpg'">
             <span class="vp-status-dot"></span>
           </div>
           <div class="vp-header-info">
             <div class="vp-header-title">Vasudha Virtual Assistant</div>
-            <div class="vp-header-sub">265+ Molecules &bull; USDMFs &bull; Offline AI</div>
+            <div class="vp-header-sub vp-header-subtitle">265+ Molecules &bull; USDMFs &bull; Offline AI</div>
           </div>
         </div>
         <div class="vp-header-actions">
-          <button type="button" class="vp-btn-icon" id="vpBtnSound" title="Toggle audio chime" aria-label="Toggle chime">
+          <button type="button" class="vp-btn-icon vp-header-btn" id="vpBtnSound" title="Toggle audio chime" aria-label="Toggle chime">
             <svg id="vpIconSoundOn" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
               <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
               <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
@@ -206,13 +206,13 @@
               <line x1="17" y1="9" x2="23" y2="15"></line>
             </svg>
           </button>
-          <button type="button" class="vp-btn-icon" id="vpBtnClear" title="Clear chat history" aria-label="Clear chat">
+          <button type="button" class="vp-btn-icon vp-header-btn" id="vpBtnClear" title="Clear chat history" aria-label="Clear chat">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="3 6 5 6 21 6"></polyline>
               <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
             </svg>
           </button>
-          <button type="button" class="vp-btn-icon" id="vpBtnClose" title="Minimize assistant" aria-label="Minimize">
+          <button type="button" class="vp-btn-icon vp-header-btn" id="vpBtnClose" title="Minimize assistant" aria-label="Minimize">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -244,7 +244,7 @@
 
       <!-- Footer / Input -->
       <div class="vp-footer">
-        <form id="vpChatForm" class="vp-chat-form">
+        <form id="vpChatForm" class="vp-chat-form vp-input-bar">
           <input type="text" id="vpChatInput" class="vp-input" placeholder="Search 265+ molecules, CAS, USDMF, or ask..." autocomplete="off">
           <button type="submit" class="vp-send-btn" id="vpSendBtn" aria-label="Send query">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
@@ -253,7 +253,7 @@
             </svg>
           </button>
         </form>
-        <div class="vp-footer-credit">
+        <div class="vp-footer-credit vp-footer-brand">
           Vasudha Pharma Chem Ltd &bull; 100% Confidential cGMP Partner
         </div>
       </div>
