@@ -13,6 +13,270 @@
 
   const VP_FAQS = [{"Question": "What products does Vasudha Pharma manufacture?", "Answer": "Vasudha Pharma Chem Limited is a leading global manufacturer specializing in 4 core categories: 1) Active Pharmaceutical Ingredients (APIs), 2) Pharmaceutical Pellets & MUPS, 3) Advanced Intermediates, and 4) Piperidone Derivatives. With over 265 commercial molecules, our portfolio covers diverse therapeutic areas including CNS & Neurology, Cardiovascular, Gastroenterology, Allergy, and Pain Management.", "Keywords": "products, portfolio, catalog, molecules, apis, pellets, mups, intermediates, piperidone, list, overview"}, {"Question": "What APIs are manufactured by Vasudha Pharma?", "Answer": "Our commercial API portfolio includes major molecules such as Amitriptyline HCl, Aripiprazole, Bepotastine Besilate, Clopidogrel Bisulphate, Cyclobenzaprine HCl, Dabigatran Etexilate Mesylate, Desloratadine, Diltiazem HCl, Donepezil HCl, Fexofenadine HCl, Mesalamine, Tamsulosin HCl, and many others. We hold USDMF and CEP filings across our key APIs.", "Keywords": "api, active pharmaceutical ingredient, amitriptyline, aripiprazole, bepotastine, clopidogrel, dabigatran, desloratadine, diltiazem, donepezil, tamsulosin"}, {"Question": "Does Vasudha Pharma offer Pellets & MUPS?", "Answer": "Yes, Vasudha Pharma produces high-precision Pellets and MUPS (Multi-Unit Particulate Systems) with controlled release, enteric coated, delayed release, and sustained release profiles. Key pellet formulations include Esomeprazole, Lansoprazole, Omeprazole, Pantoprazole, Rabeprazole, Duloxetine HCl, Itraconazole, and Pancreatin.", "Keywords": "pellets, mups, micro pellets, enteric coated, sustained release, delayed release, omeprazole, esomeprazole, pantoprazole, rabeprazole, duloxetine, itraconazole"}, {"Question": "What are Vasudha Pharma's capabilities in Piperidone chemistry?", "Answer": "Vasudha Pharma is one of the world's largest manufacturers of Piperidone Derivatives. Our world-scale dedicated capacity produces N-Methyl-4-piperidone, N-Carbethoxy-4-piperidone, N-Benzyl-4-piperidone, 4-Hydroxypiperidine, 4-Piperidone ethylene ketal, and diverse substituted piperidines supporting global innovators and generic manufacturers.", "Keywords": "piperidone, piperidine, n-methyl-4-piperidone, n-benzyl-4-piperidone, n-carbethoxy-4-piperidone, 4-hydroxypiperidine, heterocyclic, building blocks"}, {"Question": "Does Vasudha Pharma offer Custom Synthesis and CDMO / CMO services?", "Answer": "Yes. Vasudha Pharma provides end-to-end Contract Development and Manufacturing Organization (CDMO / CMO) and custom synthesis services through our state-of-the-art Vikasith R&D Centre. Services include route scouting, process optimization, scale-up from grams to metric tons, technology transfer, and cGMP commercial manufacturing.", "Keywords": "cdmo, cmo, custom synthesis, contract manufacturing, cram, crams, route scouting, process development, scale-up, vikasith"}, {"Question": "What regulatory approvals and accreditations does Vasudha Pharma hold?", "Answer": "Vasudha Pharma's manufacturing facilities operate in strict compliance with current Good Manufacturing Practices (cGMP) and are regularly inspected and approved by leading global regulatory authorities including: US FDA (USA), EDQM / EMA (Europe), PMDA (Japan), WHO-GMP, KFDA (Korea), COFEPRIS (Mexico), and ANVISA (Brazil).", "Keywords": "regulatory, approvals, usfda, fda, edqm, ema, pmda, who-gmp, kfda, cofepris, anvisa, cgmp, gmp, inspections, audits"}, {"Question": "Where are Vasudha Pharma's manufacturing units located?", "Answer": "Vasudha Pharma operates multi-purpose manufacturing campuses across Andhra Pradesh and Telangana, India: Unit-1 (Jeedimetla, Hyderabad), Unit-2 & Unit-5 (Jawaharlal Nehru Pharma City - JNPC, Parawada, Visakhapatnam), and Unit-3 (APIIC-IALA, Bonthapally). Our centralized R&D Innovation Centre (Vikasith) is located in Pragathi Nagar, Hyderabad.", "Keywords": "manufacturing, units, facilities, locations, plant, vizag, visakhapatnam, hyderabad, jeedimetla, parawada, jnpc, bonthapally"}, {"Question": "What recent awards has Vasudha Pharma received?", "Answer": "In 2026, Vasudha Pharma Unit-2 (Visakhapatnam / JNPC) received the prestigious Best Management Award from the Andhra Pradesh State Government for exceptional labor welfare, occupational health and safety (OHSAS 18001), eco-sustainability, and ISO 14001 environmental stewardship.", "Keywords": "awards, recognition, best management award, 2026, honors, government, achievement"}, {"Question": "How can I request a commercial quotation or product sample?", "Answer": "You can request a commercial price quotation (RFQ) or analytical/pilot sample directly by clicking the '📋 Request a Quote' chip right here in this assistant, or by visiting our Contact page. Inquiries can also be emailed directly to our commercial marketing office at marketing@vasudhapharma.com.", "Keywords": "quote, quotation, rfq, price, pricing, sample, order, buy, purchase, cost, commercial inquiry"}, {"Question": "How can I apply for a job or career opportunity at Vasudha Pharma?", "Answer": "You can view all current vacancies and job openings across Production, Quality Control (QC), Quality Assurance (QA), Regulatory Affairs (RA), and R&D on our Careers portal at careers.html. Resumes can be submitted directly via our online application form or emailed to hr@vasudhapharma.com.", "Keywords": "careers, jobs, vacancy, openings, hiring, apply, recruitment, hr, resume, cv, interview"}, {"Question": "What is Vasudha Pharma's Corporate Governance and Vigil Mechanism Policy?", "Answer": "Vasudha Pharma maintains a strict zero-tolerance policy against unethical conduct, fraud, or violations of regulatory standards. Our Vigil Mechanism and Whistleblower Policy provides a secure, confidential channel for employees and stakeholders to report concerns directly to the Audit Committee.", "Keywords": "governance, vigil mechanism, whistleblower, ethics, compliance, policy, integrity"}, {"Question": "What are the CSR initiatives of the Vasudha Foundation?", "Answer": "The Vasudha Foundation conducts social impact programs focusing on: 1) Rural Community Healthcare & diagnostic camps, 2) Safe drinking water infrastructure (RO water plants), 3) Educational scholarships and government school upgrades, and 4) Environmental greenbelt tree planting around industrial hubs.", "Keywords": "csr, foundation, social responsibility, philanthropy, community, education, health, welfare"}, {"Question": "How can I contact Vasudha Pharma?", "Answer": "Corporate Office: Plot No. 78, Jawaharlal Nehru Pharma City, Parawada, Visakhapatnam - 531021, Andhra Pradesh, India. Tel: +91-8924-236200 / +91-40-44558888. Email: info@vasudhapharma.com / marketing@vasudhapharma.com. Web: https://vasudhapharma.com.", "Keywords": "contact, address, phone, email, telephone, headquarters, corporate office, location, directions"}, {"Question": "What are Vasudha's Minimum Order Quantities (MOQs) for commercial and evaluation samples?", "Answer": "For R&D, formulation evaluation, and analytical method verification, we provide pilot and working standard samples from 10 g to 1 kg along with a complete Certificate of Analysis (CoA) and analytical pack. For commercial production orders, our typical MOQ is 25 kg (one standard fiber drum) up to multi-metric ton campaign lots.", "Keywords": "moq, minimum order quantity, sample size, evaluation sample, working standard, trial order, small batch, drum size"}, {"Question": "What standard packaging options are provided for bulk APIs, Pellets, and Intermediates?", "Answer": "All products are packaged under validated cleanroom conditions using pharmacopeial-grade packaging materials: inner heat-sealed food/pharma grade LDPE liners (double bagged) with food-grade desiccant, enclosed inside tamper-evident UN-certified fiber drums (25 kg / 50 kg) or HDPE drums. Custom packaging configurations can be qualified upon request.", "Keywords": "packaging, drum, fiber drum, hdpe, liner, double liner, storage container, packing standard, un certified"}, {"Question": "What stability study data is available according to ICH Q1A(R2) climatic zones?", "Answer": "Vasudha Pharma conducts rigorous stability programs in accordance with ICH Q1A(R2) guidelines. Stability data is available across Zone II (25°C / 60% RH) and Zone IVb (30°C / 75% RH - hot and humid climates), including 6-month accelerated testing (40°C / 75% RH) and long-term testing up to 36 to 60 months with complete re-test interval data.", "Keywords": "stability, ich q1a, zone ii, zone ivb, accelerated stability, shelf life, retest period, storage condition, humidity"}, {"Question": "How can our company schedule a vendor qualification or technical compliance audit?", "Answer": "We welcome customer quality audits and vendor qualification visits across Unit 1, Unit 2, Unit 3, and Unit 5. Both on-site audits and secure remote/virtual desktop audits can be coordinated by contacting our Corporate Quality Assurance department at qa@vasudhapharma.com or quality@vasudhapharma.com with your preferred audit scope and dates.", "Keywords": "audit, vendor audit, site visit, vendor qualification, audit schedule, qa audit, inspection visit, virtual audit"}, {"Question": "Can Vasudha provide an Open-Part Drug Master File (USDMF) or CEP Letter of Authorization (LOA)?", "Answer": "Yes. Upon execution of a bilateral Non-Disclosure Agreement (CDA), Vasudha Pharma issues formal Letters of Access / Authorization (LOA) to regulatory authorities (US FDA, EDQM, Health Canada) allowing customers to cross-reference our USDMF, CEP, or Canadian DMF in their Abbreviated New Drug Applications (ANDA) or Marketing Authorizations (MA).", "Keywords": "dmf, usdmf, cep, loa, letter of access, letter of authorization, open part dmf, technical dossier, regulatory filing, cross reference"}, {"Question": "What is the process for executing a bilateral Confidential Disclosure Agreement (CDA / NDA)?", "Answer": "To facilitate in-depth technical discussions, route scouting, or DMF access, our legal and commercial team provides a mutual CDA turnaround within 24 to 48 hours. You may share your company's standard template or adopt Vasudha's bilateral NDA by contacting legal@vasudhapharma.com or marketing@vasudhapharma.com.", "Keywords": "cda, nda, confidentiality agreement, non disclosure agreement, secrecy agreement, legal template"}, {"Question": "Does Vasudha provide Nitrosamine, Elemental Impurity, and Genotoxic Risk Assessments?", "Answer": "Yes. Comprehensive Nitrosamine Risk Assessments (Step 1, Step 2, and confirmatory testing via LC-MS/MS and GC-MS/MS) are established for all commercial APIs in strict alignment with US FDA, EMA, and ICH M7(R1) guidelines. Full Elemental Impurity Risk Assessments in compliance with ICH Q3D (via ICP-MS) are routinely provided.", "Keywords": "nitrosamines, genotoxic impurities, elemental impurities, ich q3d, ich m7, risk assessment, lc-ms, gc-ms, toxicology"}, {"Question": "Which global pharmacopeial standards do your products comply with?", "Answer": "Vasudha Pharma's products comply with official compendial monographs across the United States Pharmacopeia (USP), European Pharmacopoeia (Ph.Eur / EP), British Pharmacopoeia (BP), Indian Pharmacopoeia (IP), and Japanese Pharmacopoeia (JP). Where compendial monographs do not exist, tightly validated In-House Specifications are applied.", "Keywords": "pharmacopeia, usp, bp, ph eur, ep, ip, jp, compendial, monograph, in house specification, coa"}, {"Question": "How does the Vikasith R&D Centre support process innovation and route scouting?", "Answer": "The Vikasith R&D Centre in Hyderabad houses over 100 research scientists, synthetic organic chemists, and AR&D analytical specialists. Capabilities include green chemistry route design, polymorphic screening, crystal engineering, continuous flow chemistry, catalytic asymmetric hydrogenation, and seamless technology transfer to cGMP plant scale.", "Keywords": "vikasith, r&d, research, route scouting, green chemistry, flow chemistry, polymorphism, chiral synthesis, tech transfer"}, {"Question": "What coating and delivery technologies are supported for Pellets & MUPS?", "Answer": "Our dedicated Pellets facility utilizes advanced Fluid Bed Processors (FBP) with Wurster bottom-spray coating technology. We manufacture enteric-coated pellets (pH-dependent release), sustained-release pellets, delayed-release multi-particulates, taste-masked granules for pediatric suspensions, and directly compressible MUPS granules.", "Keywords": "pellet coating, wurster, fluid bed, fbp, enteric coating, mups technology, taste masking, pediatric granules, micro pellets"}, {"Question": "What is Vasudha's manufacturing capacity and global market share in Piperidones?", "Answer": "Vasudha Pharma is recognized as a global market leader in Piperidone chemistry, commanding a dominant share of worldwide capacity. With multi-thousand metric ton annual throughput across multi-purpose reactors (up to 16,000-liter scale), we ensure an uninterrupted, backward-integrated supply chain for critical API synthesis globally.", "Keywords": "piperidone capacity, market share, global leader, reactor capacity, backward integration, supply chain security"}, {"Question": "How are temperature-sensitive products handled during international transport and cold-chain logistics?", "Answer": "For temperature-sensitive APIs and enzymatic materials, we implement validated cold-chain logistics using temperature-controlled reefer containers, insulated shippers with dry ice or phase-change materials (PCM), and real-time USB/GPS temperature data loggers monitoring transit conditions from plant dispatch to destination port.", "Keywords": "cold chain, temperature control, reefer container, data logger, transport conditions, refrigerated shipping, thermal packaging"}, {"Question": "What are typical order lead times and batch release schedules?", "Answer": "For catalog APIs and intermediates in regular commercial production, ready inventory can be dispatched within 7 to 14 business days following QC release. For campaign-based synthesis or custom batch sizes, typical production and QA batch release lead times range between 4 to 8 weeks.", "Keywords": "lead time, delivery time, dispatch, turnaround, order schedule, batch release, availability"}, {"Question": "Are your analytical test methods fully validated in compliance with ICH Q2(R1)?", "Answer": "Yes. All analytical methods (HPLC, UPLC, GC, Titration, PSD by Malvern Mastersizer) utilized for release and stability testing are fully validated according to ICH Q2(R1) guidelines, evaluating Specificity, Linearity, Range, Accuracy, Precision (Repeatability and Intermediate Precision), Detection Limit (LOD), and Quantitation Limit (LOQ).", "Keywords": "analytical validation, method validation, ich q2, hplc, uplc, gc, lod, loq, precision, accuracy, specificity"}, {"Question": "Does Vasudha comply with ICH Q3C (Residual Solvents) and ICH Q3D (Elemental Impurities)?", "Answer": "Yes. All manufacturing processes strictly control Class 1, Class 2, and Class 3 residual solvents using Headspace Gas Chromatography (HS-GC) under ICH Q3C limits. Elemental impurities (Class 1, 2A, 2B, and 3 metals) are rigorously quantified via Inductively Coupled Plasma Mass Spectrometry (ICP-MS) complying with ICH Q3D.", "Keywords": "residual solvents, elemental impurities, ich q3c, ich q3d, hs-gc, icp-ms, solvent limits, heavy metals"}, {"Question": "Can Vasudha provide TSE/BSE, Non-GMO, and Melamine-Free declarations?", "Answer": "Yes. Standard regulatory declaration packages including TSE/BSE Risk Statements (confirming 100% synthetic origin with zero animal-derived raw materials), Non-GMO Declarations, Melamine-Free Certifications, and Allergen Statements are readily issued for all commercial molecules.", "Keywords": "tse, bse, non-gmo, gmo free, animal origin, melamine free, allergen statement, regulatory statements, declaration"}, {"Question": "Does Vasudha manufacture products under Environmental, Health & Safety (EHS) and ISO standards?", "Answer": "Yes. Vasudha Pharma is certified under ISO 14001:2015 (Environmental Management System) and ISO 45001 / OHSAS 18001 (Occupational Health & Safety). We operate Zero Liquid Discharge (ZLD) effluent treatment facilities, multi-stage biological ETPs, and are awarded EcoVadis Silver Sustainability Ratings.", "Keywords": "ehs, iso 14001, ohsas 18001, iso 45001, zero liquid discharge, zld, sustainability, ecovadis, environmental"}];
 
+  // Embedded Website Pages Directory & Navigation Catalog
+  const VP_SITE_PAGES = [
+    {
+      title: "Active Pharmaceutical Ingredients (APIs)",
+      short_title: "APIs Directory",
+      url: "apis.html",
+      icon: "💊",
+      category: "Products",
+      desc: "Commercial APIs with USDMF & CEP regulatory filings",
+      keywords: ["api", "apis", "active pharmaceutical", "drugs", "molecules", "bulk active", "products", "manufacture", "commercial"]
+    },
+    {
+      title: "Pellets & MUPS Formulations",
+      short_title: "Pellets & MUPS",
+      url: "pellets.html",
+      icon: "📦",
+      category: "Products",
+      desc: "Delayed & sustained release micro-pellets and MUPS",
+      keywords: ["pellet", "pellets", "mups", "beads", "enteric", "sustained release", "modified release", "coating", "manufacture"]
+    },
+    {
+      title: "Advanced Drug Intermediates",
+      short_title: "Intermediates",
+      url: "intermediates.html",
+      icon: "🧪",
+      category: "Products",
+      desc: "Key starting materials & advanced chemical intermediates",
+      keywords: ["intermediate", "intermediates", "starting material", "ksm", "synthesis", "chemical", "manufacture"]
+    },
+    {
+      title: "Piperidone & Piperidine Derivatives",
+      short_title: "Piperidones",
+      url: "piperidone-derivatives.html",
+      icon: "⚗️",
+      category: "Products",
+      desc: "Specialized building blocks & heterocyclic chemistry",
+      keywords: ["piperidone", "piperidine", "derivatives", "heterocyclic", "specialty chemicals", "building blocks"]
+    },
+    {
+      title: "CDMO & Custom Synthesis Services",
+      short_title: "CDMO Services",
+      url: "cmo-cdmo.html",
+      icon: "🔬",
+      category: "Services",
+      desc: "Process R&D, tech transfer & commercial scale-up",
+      keywords: ["cdmo", "cmo", "custom synthesis", "contract manufacturing", "scale up", "tech transfer", "services", "route scouting"]
+    },
+    {
+      title: "Complete 265+ Products Directory",
+      short_title: "265+ Products Directory",
+      url: "products.html",
+      icon: "🔍",
+      category: "Products",
+      desc: "Full searchable commercial product catalog",
+      keywords: ["all products", "catalog", "directory", "catalogue", "portfolio", "products", "search", "all", "list", "molecules"]
+    },
+    {
+      title: "Under Development Pipeline",
+      short_title: "Pipeline APIs",
+      url: "under-development.html",
+      icon: "🚀",
+      category: "Products",
+      desc: "Upcoming molecules in pilot and validation stages",
+      keywords: ["pipeline", "under development", "future", "upcoming", "r&d molecules", "new molecules", "validation"]
+    },
+    {
+      title: "Manufacturing Facilities (Units 1 - 8)",
+      short_title: "Manufacturing Units 1-8",
+      url: "manufacturing.html",
+      icon: "🏭",
+      category: "Infrastructure",
+      desc: "Over 900 kL reactor capacity across 8 cGMP plants",
+      keywords: ["manufacturing", "facilities", "plants", "units", "unit 1", "unit 2", "unit 3", "unit 4", "unit 5", "unit 6", "unit 7", "unit 8", "capacity", "reactors", "factory", "site", "sites", "infrastructure", "location", "locations"]
+    },
+    {
+      title: "Vikasith R&D Center",
+      short_title: "Vikasith R&D Center",
+      url: "rnd.html",
+      icon: "🧪",
+      category: "Infrastructure",
+      desc: "DSIR-recognized state-of-the-art research & analytical tech",
+      keywords: ["rnd", "r&d", "research", "development", "vikasith", "innovation", "scientists", "lab", "laboratory", "analytical", "technology"]
+    },
+    {
+      title: "EHS, Quality & Regulatory Approvals",
+      short_title: "EHS & US FDA Approvals",
+      url: "ehs.html",
+      icon: "🌱",
+      category: "Compliance",
+      desc: "US FDA, PMDA, EU GMP, WHO GMP & Zero Liquid Discharge (ZLD)",
+      keywords: ["ehs", "environment", "health", "safety", "fda", "us fda", "regulatory", "approvals", "gmp", "who", "pmda", "quality", "inspections", "zld", "green chemistry", "audit", "audits", "accreditations", "compliance"]
+    },
+    {
+      title: "About Vasudha Pharma",
+      short_title: "About Vasudha",
+      url: "about-us.html",
+      icon: "🏢",
+      category: "Corporate",
+      desc: "Over 25+ years of excellence in pharmaceutical manufacturing",
+      keywords: ["about", "about us", "company", "overview", "history", "profile", "vasudha", "corporate", "who are you"]
+    },
+    {
+      title: "Founder & CMD Profile",
+      short_title: "Founder & CMD Vision",
+      url: "founder.html",
+      icon: "👤",
+      category: "Corporate",
+      desc: "Leadership vision from our Chairman & Managing Director",
+      keywords: ["founder", "cmd", "managing director", "chairman", "leadership", "executive", "vision", "venkata reddy"]
+    },
+    {
+      title: "Board of Directors & Governance",
+      short_title: "Board of Directors",
+      url: "independent-directors.html",
+      icon: "👔",
+      category: "Corporate",
+      desc: "Independent directors & corporate governance board",
+      keywords: ["directors", "board", "governance", "independent directors", "leadership team"]
+    },
+    {
+      title: "Careers & Job Opportunities",
+      short_title: "Careers Portal",
+      url: "careers.html",
+      icon: "💼",
+      category: "Careers",
+      desc: "Join our team of 3,000+ professionals worldwide",
+      keywords: ["career", "careers", "jobs", "vacancies", "openings", "hiring", "work with us", "recruitment", "hr", "apply", "join"]
+    },
+    {
+      title: "Life at Vasudha",
+      short_title: "Life at Vasudha",
+      url: "life-at-vasudha.html",
+      icon: "✨",
+      category: "Careers",
+      desc: "Work culture, employee welfare & professional growth",
+      keywords: ["life at vasudha", "culture", "workplace", "environment", "employee", "people"]
+    },
+    {
+      title: "Global Contact & Offices",
+      short_title: "Contact & Offices",
+      url: "contact.html",
+      icon: "📞",
+      category: "Contact",
+      desc: "Corporate HQ, plant locations & international sales offices",
+      keywords: ["contact", "contact us", "address", "phone", "email", "office", "hyderabad", "reach us", "locations", "sales desk", "enquiry"]
+    },
+    {
+      title: "CSR & Vasudha Foundation",
+      short_title: "CSR & Foundation",
+      url: "csr-policy.html",
+      icon: "🤝",
+      category: "Corporate",
+      desc: "Community health, education & social responsibility",
+      keywords: ["csr", "foundation", "social responsibility", "charity", "community", "welfare"]
+    }
+  ];
+
+  // Helper to find relevant site pages for any query
+  function findRelevantSitePages(queryText, maxResults = 3) {
+    if (!queryText) return [];
+    const q = queryText.toLowerCase();
+    const tokens = q.replace(/[^\w\s-]/g, ' ').split(/\s+/).filter(t => t.length >= 3);
+    const scored = [];
+
+    for (let i = 0; i < VP_SITE_PAGES.length; i++) {
+      const page = VP_SITE_PAGES[i];
+      let score = 0;
+      for (let k = 0; k < page.keywords.length; k++) {
+        const kw = page.keywords[k];
+        if (q.indexOf(kw) !== -1) {
+          score += 30;
+        }
+        for (let t = 0; t < tokens.length; t++) {
+          const tok = tokens[t];
+          if (tok === kw) score += 25;
+          else if (kw.indexOf(tok) !== -1) score += 12;
+        }
+      }
+      if (score > 0) {
+        scored.push({ page, score });
+      }
+    }
+
+    scored.sort((a, b) => b.score - a.score);
+    return scored.slice(0, maxResults).map(s => s.page);
+  }
+
+  // Render Suggested Pages HTML
+  function renderSuggestedPagesHtml(pages, headerText = "Suggested Website Pages:") {
+    if (!pages || pages.length === 0) return '';
+    return `
+      <div class="vp-suggested-pages">
+        <div class="vp-suggested-pages-label">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+          </svg>
+          <span>${escapeHtml(headerText)}</span>
+        </div>
+        <div class="vp-page-links-grid">
+          ${pages.map(p => `
+            <a href="${BASE_PREFIX}${p.url}" class="vp-page-card-link" target="_blank" rel="noopener noreferrer">
+              <span class="vp-page-card-icon">${p.icon}</span>
+              <div class="vp-page-card-text">
+                <span class="vp-page-card-name">${escapeHtml(p.short_title || p.title)}</span>
+                <span class="vp-page-card-path">${p.url}</span>
+              </div>
+              <span class="vp-page-card-arrow">&rarr;</span>
+            </a>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  // Render Full Website Sitemap / Page Directory
+  function renderFullSiteDirectory() {
+    const categories = {
+      "Products & Portfolios": VP_SITE_PAGES.filter(p => p.category === "Products" || p.category === "Services"),
+      "Manufacturing & Infrastructure": VP_SITE_PAGES.filter(p => p.category === "Infrastructure" || p.category === "Compliance"),
+      "Corporate & Careers": VP_SITE_PAGES.filter(p => p.category === "Corporate" || p.category === "Careers" || p.category === "Contact")
+    };
+
+    let dirHtml = `
+      <p><strong>🌐 Vasudha Pharma Website Directory</strong></p>
+      <p style="font-size:12px; color:var(--vp-bot-text-muted); margin-bottom:10px;">
+        Explore all key sections and official pages across our website:
+      </p>
+    `;
+
+    for (const [catName, catPages] of Object.entries(categories)) {
+      dirHtml += `
+        <div style="margin-bottom:10px;">
+          <div style="font-size:11px; font-weight:700; text-transform:uppercase; color:var(--vp-bot-primary); margin-bottom:5px; letter-spacing:0.5px;">
+            ${catName}
+          </div>
+          <div class="vp-page-links-grid">
+            ${catPages.map(p => `
+              <a href="${BASE_PREFIX}${p.url}" class="vp-page-card-link" target="_blank" rel="noopener noreferrer">
+                <span class="vp-page-card-icon">${p.icon}</span>
+                <div class="vp-page-card-text">
+                  <span class="vp-page-card-name">${escapeHtml(p.title)}</span>
+                  <span class="vp-page-card-path">${escapeHtml(p.desc || p.url)}</span>
+                </div>
+                <span class="vp-page-card-arrow">&rarr;</span>
+              </a>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    dirHtml += `
+      <div class="vp-chips-container" style="margin-top:10px;">
+        <button type="button" class="vp-chip" data-action="explore-products">🔍 Browse 265+ Products</button>
+        <button type="button" class="vp-chip" data-action="request-quote">📋 Request a Quote</button>
+        <button type="button" class="vp-chip" data-action="ask-contact">📞 Contact Us</button>
+      </div>
+    `;
+
+    appendMessageToDOM('bot', dirHtml, true);
+  }
+
+
   // State Management
   const STATE = {
     isOpen: false,
@@ -230,6 +494,7 @@
         <button type="button" class="vp-qf-chip" data-q="Piperidone">🔬 Piperidones</button>
         <button type="button" class="vp-qf-chip" data-q="Antidiabetic">🍬 Anti-Diabetic</button>
         <button type="button" class="vp-qf-chip" data-q="USDMF">📜 USDMF Available</button>
+        <button type="button" class="vp-qf-chip" data-action="explore-pages">🌐 Website Pages</button>
         <button type="button" class="vp-qf-chip" data-action="request-quote">📋 Request a Quote</button>
       </div>
 
@@ -588,6 +853,7 @@
         <button type="button" class="vp-chip" data-action="ask-facilities">🏭 Manufacturing Sites</button>
         <button type="button" class="vp-chip" data-action="ask-regulatory">📜 US FDA &amp; Accreditations</button>
         <button type="button" class="vp-chip" data-action="ask-cdmo">🧪 CDMO &amp; Vikasith R&amp;D</button>
+        <button type="button" class="vp-chip" data-action="explore-pages">🌐 Website Directory</button>
         <button type="button" class="vp-chip" data-action="ask-contact">📞 Speak with Marketing</button>
       </div>
     `;
@@ -614,6 +880,9 @@
         break;
       case 'ask-contact':
         handleUserQuery('How can I contact Vasudha Pharma?');
+        break;
+      case 'explore-pages':
+        renderFullSiteDirectory();
         break;
       default:
         break;
@@ -817,6 +1086,12 @@
       hideTypingIndicator();
       playNotificationChime();
 
+      // Check for Website Sitemap / Directory / Pages Intent
+      if (/(site\s*map|sitemap|website\s*pages|all\s*pages|web\s*pages|links|directory|navigation|browse\s*pages|page\s*links|where\s*is|pages|browse\s*site)/i.test(q)) {
+        renderFullSiteDirectory();
+        return;
+      }
+
       const q = query.trim().toLowerCase();
 
       // 1. Check for Greetings
@@ -970,12 +1245,17 @@
           /(https?:\/\/[^\s]+)/g,
           '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
         );
+        const suggestedPages = findRelevantSitePages(query + ' ' + (faq.Question || '') + ' ' + (faq.Keywords || ''), 3);
+        const suggestedHtml = renderSuggestedPagesHtml(suggestedPages, "Explore Related Pages on Website:");
+
         const faqHtml = `
           <p><strong>${escapeHtml(faq.Question)}</strong></p>
           <p>${formattedAnswer}</p>
-          <div class="vp-chips-container" style="margin-top:8px;">
+          ${suggestedHtml}
+          <div class="vp-chips-container" style="margin-top:10px;">
             <button type="button" class="vp-chip" data-action="request-quote">📋 Request a Quote</button>
             <button type="button" class="vp-chip" data-action="explore-products">🔍 Search Another Molecule</button>
+            <button type="button" class="vp-chip" data-action="explore-pages">🌐 Website Directory</button>
             <button type="button" class="vp-chip" data-action="ask-contact">📞 Contact Us</button>
           </div>
         `;
@@ -998,6 +1278,10 @@
               Showing top 5 matches. Browse our full commercial catalog on our <a href="${BASE_PREFIX}products.html" target="_blank">Complete 265+ Products Directory</a>.
             </p>
           `;
+        }
+        const relProdPages = findRelevantSitePages(query, 2);
+        if (relProdPages.length > 0) {
+          responseHtml += renderSuggestedPagesHtml(relProdPages, "Related Product Portals:");
         }
         appendMessageToDOM('bot', responseHtml, true);
       }
