@@ -241,6 +241,54 @@
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
     }
+    th.sortable-th {
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s ease;
+    }
+    th.sortable-th:hover {
+      background: #E2E8F0 !important;
+    }
+    @media print {
+      header.staff-header,
+      nav.staff-nav,
+      .dash-hero,
+      .btn,
+      button,
+      input,
+      select,
+      textarea,
+      .ok-toast,
+      .auth-overlay,
+      footer {
+        display: none !important;
+      }
+      body {
+        background: #FFFFFF !important;
+        color: #000000 !important;
+      }
+      .wrap {
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+      .card {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+      }
+      .table-responsive {
+        overflow: visible !important;
+      }
+      table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+      }
+      th, td {
+        border-bottom: 1px solid #CBD5E1 !important;
+        padding: 8px 10px !important;
+        color: #000000 !important;
+      }
+    }
     @media (max-width: 768px) {
       .row, .row-3 { grid-template-columns: 1fr; }
       .wrap { padding: 16px 14px 40px; }
@@ -615,12 +663,12 @@
           <table>
             <thead>
               <tr>
-                <th>Job ID</th>
-                <th>Title</th>
-                <th>Department</th>
-                <th>Location</th>
-                <th>Posted</th>
-                <th>Status</th>
+                <th class="sortable-th" onclick="toggleJobSort('id')" title="Click to sort by Job ID">Job ID <span id="sort-job-id" style="font-size:10px; color:#94A3B8;">↕</span></th>
+                <th class="sortable-th" onclick="toggleJobSort('title')" title="Click to sort by Title">Title <span id="sort-job-title" style="font-size:10px; color:var(--sp-primary);">▲</span></th>
+                <th class="sortable-th" onclick="toggleJobSort('department')" title="Click to sort by Department">Department <span id="sort-job-department" style="font-size:10px; color:#94A3B8;">↕</span></th>
+                <th class="sortable-th" onclick="toggleJobSort('location')" title="Click to sort by Location">Location <span id="sort-job-location" style="font-size:10px; color:#94A3B8;">↕</span></th>
+                <th class="sortable-th" onclick="toggleJobSort('posted')" title="Click to sort by Posted Date">Posted <span id="sort-job-posted" style="font-size:10px; color:#94A3B8;">↕</span></th>
+                <th class="sortable-th" onclick="toggleJobSort('status')" title="Click to sort by Status">Status <span id="sort-job-status" style="font-size:10px; color:#94A3B8;">↕</span></th>
                 <th style="text-align:right">Actions</th>
               </tr>
             </thead>
@@ -869,10 +917,18 @@
           <table style="width:100%; border-collapse:collapse; text-align:left; font-size:13px;">
             <thead>
               <tr style="background:#F1F5F9; border-bottom:1px solid var(--sp-border); position:sticky; top:0; z-index:1;">
-                <th style="padding:10px 16px; font-weight:700; color:var(--sp-text-muted); width:28%;">Molecule / Product</th>
-                <th style="padding:10px 16px; font-weight:700; color:var(--sp-text-muted); width:15%;">Category</th>
-                <th style="padding:10px 16px; font-weight:700; color:var(--sp-text-muted); width:16%;">CAS Registry No.</th>
-                <th style="padding:10px 16px; font-weight:700; color:var(--sp-text-muted); width:23%;">Specs &amp; Regulatory Filings</th>
+                <th class="sortable-th" onclick="toggleMarketingSort('name')" style="padding:10px 16px; font-weight:700; color:var(--sp-text-muted); width:28%;" title="Click to sort by Product Name">
+                  Molecule / Product <span id="sort-mkt-name" style="font-size:10px; color:var(--sp-primary);">▲</span>
+                </th>
+                <th class="sortable-th" onclick="toggleMarketingSort('category_label')" style="padding:10px 16px; font-weight:700; color:var(--sp-text-muted); width:15%;" title="Click to sort by Category">
+                  Category <span id="sort-mkt-category_label" style="font-size:10px; color:#94A3B8;">↕</span>
+                </th>
+                <th class="sortable-th" onclick="toggleMarketingSort('cas')" style="padding:10px 16px; font-weight:700; color:var(--sp-text-muted); width:16%;" title="Click to sort by CAS Number">
+                  CAS Registry No. <span id="sort-mkt-cas" style="font-size:10px; color:#94A3B8;">↕</span>
+                </th>
+                <th class="sortable-th" onclick="toggleMarketingSort('specs')" style="padding:10px 16px; font-weight:700; color:var(--sp-text-muted); width:23%;" title="Click to sort by Specs">
+                  Specs &amp; Regulatory Filings <span id="sort-mkt-specs" style="font-size:10px; color:#94A3B8;">↕</span>
+                </th>
                 <th style="padding:10px 16px; font-weight:700; color:var(--sp-text-muted); text-align:right; width:18%;">Actions</th>
               </tr>
             </thead>
@@ -1190,6 +1246,19 @@
               Change Password
             </button>
           </div>
+        </div>
+      </div>
+
+      <div class="card" style="max-width:620px; margin-top:20px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+          <h2 style="margin:0; font-size:16px;">Shift Activity &amp; Audit Trail</h2>
+          <span style="font-size:11.5px; color:var(--sp-text-muted);" id="auditCount">0 events recorded</span>
+        </div>
+        <p style="font-size:12.5px; color:var(--sp-text-muted); margin:0 0 12px; line-height:1.5;">
+          Real-time chronological trace of operational actions logged during your active browser session.
+        </p>
+        <div id="auditLogList" style="max-height:220px; overflow-y:auto; font-size:12px; font-family:monospace; background:#F8FAFC; border:1px solid var(--sp-border); border-radius:8px; padding:10px 14px;">
+          <div style="color:#94A3B8; text-align:center; padding:14px;">No activities recorded yet this session.</div>
         </div>
       </div>
     </div>
@@ -1809,8 +1878,110 @@
       document.body.style.overflow = '';
     }
 
-    // Load Jobs JSON
+    // Shift Activity & Audit Trail Logger (Session Storage)
+    let auditLogs = [];
+    try {
+      const savedLogs = sessionStorage.getItem('vp_staff_audit_log');
+      if (savedLogs) auditLogs = JSON.parse(savedLogs);
+    } catch (e) { auditLogs = []; }
+
+    function logAuditAction(actionText) {
+      const entry = {
+        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }),
+        user: (typeof currentUser !== 'undefined' && currentUser ? (currentUser.name || currentUser.email) : 'System'),
+        action: actionText
+      };
+      auditLogs.unshift(entry);
+      if (auditLogs.length > 50) auditLogs.pop();
+      try {
+        sessionStorage.setItem('vp_staff_audit_log', JSON.stringify(auditLogs));
+      } catch(e) {}
+      renderAuditLogs();
+    }
+
+    function renderAuditLogs() {
+      const listEl = document.getElementById('auditLogList');
+      const countEl = document.getElementById('auditCount');
+      if (countEl) countEl.textContent = auditLogs.length + ' events recorded';
+      if (!listEl) return;
+      if (!auditLogs.length) {
+        listEl.innerHTML = '<div style="color:#94A3B8; text-align:center; padding:14px;">No activities recorded yet this session.</div>';
+        return;
+      }
+      listEl.innerHTML = auditLogs.map(l => `
+        <div style="padding:5px 0; border-bottom:1px solid #E2E8F0; display:flex; justify-content:space-between; gap:10px;">
+          <span style="color:var(--sp-text-main);"><strong style="color:var(--sp-primary-dark); font-weight:600;">[${l.time}]</strong> ${l.user}: ${l.action}</span>
+        </div>
+      `).join('');
+    }
+
+    // Storage Persistence Helpers for Desks
+    function saveJobsToStorage() {
+      try {
+        localStorage.setItem('vp_staff_jobs', JSON.stringify(jobsData));
+      } catch (e) {
+        console.warn('Could not save jobsData to localStorage:', e);
+      }
+    }
+
+    function saveFoundationToStorage() {
+      try {
+        localStorage.setItem('vp_staff_foundation', JSON.stringify(foundationData));
+      } catch (e) {
+        console.warn('Could not save foundationData to localStorage:', e);
+      }
+    }
+
+    function saveNewsEventsToStorage() {
+      try {
+        localStorage.setItem('vp_staff_news_events', JSON.stringify(newsEventsData));
+      } catch (e) {
+        console.warn('Could not save newsEventsData to localStorage:', e);
+      }
+    }
+
+    // HR Table Column Sorting
+    let jobSortField = 'title';
+    let jobSortDir = 'asc';
+
+    function toggleJobSort(field) {
+      if (jobSortField === field) {
+        jobSortDir = jobSortDir === 'asc' ? 'desc' : 'asc';
+      } else {
+        jobSortField = field;
+        jobSortDir = 'asc';
+      }
+      ['id', 'title', 'department', 'location', 'posted', 'status'].forEach(f => {
+        const el = document.getElementById('sort-job-' + f);
+        if (!el) return;
+        if (f === jobSortField) {
+          el.textContent = jobSortDir === 'asc' ? '▲' : '▼';
+          el.style.color = 'var(--sp-primary)';
+        } else {
+          el.textContent = '↕';
+          el.style.color = '#94A3B8';
+        }
+      });
+      renderJobsTable();
+    }
+
+    // Load Jobs JSON with LocalStorage Cache
     async function loadJobs() {
+      const cached = localStorage.getItem('vp_staff_jobs');
+      if (cached) {
+        try {
+          const parsed = JSON.parse(cached);
+          if (parsed && parsed.jobs && Array.isArray(parsed.jobs)) {
+            jobsData = parsed;
+            renderJobsTable();
+            updateStats();
+            return;
+          }
+        } catch (e) {
+          console.warn('Failed to parse cached jobs:', e);
+        }
+      }
+
       try {
         const res = await fetch('../jobs.json');
         if (res.ok) {
@@ -1847,6 +2018,15 @@
         if (!q) return true;
         const blob = ((j.id||'') + ' ' + (j.title||'') + ' ' + (j.department||'') + ' ' + (j.location||'') + ' ' + ((j.skills||[]).join(' '))).toLowerCase();
         return blob.includes(q);
+      });
+
+      // Apply Column Sort
+      filtered.sort((a, b) => {
+        let vA = (a[jobSortField] || '').toString().toLowerCase();
+        let vB = (b[jobSortField] || '').toString().toLowerCase();
+        if (vA < vB) return jobSortDir === 'asc' ? -1 : 1;
+        if (vA > vB) return jobSortDir === 'asc' ? 1 : -1;
+        return 0;
       });
 
       if (!filtered.length) {
@@ -1932,11 +2112,14 @@
       if (idx >= 0) {
         jobsData.jobs[idx] = obj;
         toast('Requisition ' + id + ' updated.');
+        logAuditAction('Updated requisition ' + id + ' (' + title + ')');
       } else {
         jobsData.jobs.push(obj);
         toast('Requisition ' + id + ' created.');
+        logAuditAction('Created requisition ' + id + ' (' + title + ')');
       }
 
+      saveJobsToStorage();
       renderJobsTable();
       updateStats();
       resetJobForm();
@@ -1951,6 +2134,8 @@
       copy.status = 'closed';
       copy.posted = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
       jobsData.jobs.push(copy);
+      saveJobsToStorage();
+      logAuditAction('Cloned requisition ' + id + ' -> ' + copy.id);
       renderJobsTable();
       updateStats();
       toast('Cloned as ' + copy.id);
@@ -1960,6 +2145,8 @@
       const j = jobsData.jobs.find(x => x.id === id);
       if (!j) return;
       j.status = (j.status || 'open') === 'closed' ? 'open' : 'closed';
+      saveJobsToStorage();
+      logAuditAction('Toggled status for ' + id + ' to ' + j.status);
       renderJobsTable();
       updateStats();
       toast('Status updated to ' + j.status);
@@ -1968,6 +2155,8 @@
     function deleteJob(id) {
       if (!confirm('Are you sure you want to delete requisition ' + id + '?')) return;
       jobsData.jobs = jobsData.jobs.filter(x => x.id !== id);
+      saveJobsToStorage();
+      logAuditAction('Deleted requisition ' + id);
       renderJobsTable();
       updateStats();
       toast('Requisition ' + id + ' removed.');
@@ -2023,6 +2212,20 @@
     // FOUNDATION DESK: 3-SCROLL GALLERY MANAGER
     // ==========================================
     async function loadFoundationGalleries() {
+      const cached = localStorage.getItem('vp_staff_foundation');
+      if (cached) {
+        try {
+          const parsed = JSON.parse(cached);
+          if (parsed && (parsed.vasudha || parsed.vrrv || parsed.moments)) {
+            foundationData = parsed;
+            renderFoundationDesk();
+            return;
+          }
+        } catch (e) {
+          console.warn('Failed to parse cached foundation data:', e);
+        }
+      }
+
       try {
         const res = await fetch('../foundation-galleries.json');
         if (res.ok) {
@@ -2083,6 +2286,8 @@
       }
       if (val.startsWith('../')) val = val.replace('../', '');
       foundationData[which].push(val);
+      saveFoundationToStorage();
+      logAuditAction('Added photo to Foundation ' + which + ' scroll: ' + val);
       renderScrollGrid(which, foundationData[which]);
       input.value = '';
       toast('Photo added to ' + which + ' scroll.');
@@ -2091,6 +2296,8 @@
     function deleteFoundationImage(which, index) {
       if (!confirm('Remove this photo from the scroll?')) return;
       foundationData[which].splice(index, 1);
+      saveFoundationToStorage();
+      logAuditAction('Removed photo #' + (index + 1) + ' from Foundation ' + which + ' scroll');
       renderScrollGrid(which, foundationData[which]);
       toast('Photo removed from ' + which + ' scroll.');
     }
@@ -2099,6 +2306,20 @@
     // NEWS & EVENTS DESK: CARDS & IMAGES CRUD
     // ==========================================
     async function loadNewsEvents() {
+      const cached = localStorage.getItem('vp_staff_news_events');
+      if (cached) {
+        try {
+          const parsed = JSON.parse(cached);
+          if (parsed && (parsed.events || parsed.news)) {
+            newsEventsData = parsed;
+            renderNewsDesk();
+            return;
+          }
+        } catch (e) {
+          console.warn('Failed to parse cached newsEventsData:', e);
+        }
+      }
+
       try {
         const res = await fetch('../news-events.json');
         if (res.ok) {
@@ -2240,6 +2461,8 @@
       if (idx >= 0) newsEventsData.events[idx] = item;
       else newsEventsData.events.push(item);
 
+      saveNewsEventsToStorage();
+      logAuditAction((idx >= 0 ? 'Updated' : 'Created') + ' event card: ' + item.title);
       renderEventsCards();
       closeEventEditor();
       toast('Event card ' + item.title + ' saved.');
@@ -2249,6 +2472,8 @@
       const ev = newsEventsData.events.find(x => x.id === id);
       if (!ev) return;
       ev.status = (ev.status || 'live') === 'live' ? 'done' : 'live';
+      saveNewsEventsToStorage();
+      logAuditAction('Toggled status for event ' + id + ' to ' + ev.status);
       renderEventsCards();
       toast('Event status updated to ' + ev.status);
     }
@@ -2256,6 +2481,8 @@
     function deleteEventCard(id) {
       if (!confirm('Delete event card ' + id + '?')) return;
       newsEventsData.events = newsEventsData.events.filter(x => x.id !== id);
+      saveNewsEventsToStorage();
+      logAuditAction('Deleted event card ' + id);
       renderEventsCards();
       toast('Event card removed.');
     }
@@ -2314,6 +2541,8 @@
       if (idx >= 0) newsEventsData.news[idx] = item;
       else newsEventsData.news.push(item);
 
+      saveNewsEventsToStorage();
+      logAuditAction((idx >= 0 ? 'Updated' : 'Created') + ' news card: ' + item.title);
       renderNewsCards();
       closeNewsEditor();
       toast('News card ' + item.title + ' saved.');
@@ -2323,6 +2552,8 @@
       const nw = newsEventsData.news.find(x => x.id === id);
       if (!nw) return;
       nw.status = (nw.status || 'live') === 'live' ? 'done' : 'live';
+      saveNewsEventsToStorage();
+      logAuditAction('Toggled status for news ' + id + ' to ' + nw.status);
       renderNewsCards();
       toast('News status updated to ' + nw.status);
     }
@@ -2330,6 +2561,8 @@
     function deleteNewsCard(id) {
       if (!confirm('Delete news card ' + id + '?')) return;
       newsEventsData.news = newsEventsData.news.filter(x => x.id !== id);
+      saveNewsEventsToStorage();
+      logAuditAction('Deleted news card ' + id);
       renderNewsCards();
       toast('News card removed.');
     }
@@ -2364,6 +2597,7 @@
 
       usersList.push({ email, name, role, dept, password: pass || 'Vasudha@2026!' });
       localStorage.setItem('vp_staff_custom_users', JSON.stringify(usersList));
+      logAuditAction('Created staff user: ' + email + ' (' + dept + ')');
       renderUsers();
       e.target.reset();
       toast('Staff user ' + name + ' created.');
@@ -2377,6 +2611,7 @@
       if (!confirm('Remove user account ' + email + '?')) return;
       usersList = usersList.filter(u => u.email.toLowerCase() !== email.toLowerCase());
       localStorage.setItem('vp_staff_custom_users', JSON.stringify(usersList));
+      logAuditAction('Deleted staff user: ' + email);
       renderUsers();
       toast('User removed.');
     }
@@ -2392,6 +2627,7 @@
           usersList[idx].name = name;
           localStorage.setItem('vp_staff_custom_users', JSON.stringify(usersList));
         }
+        logAuditAction('Updated profile display name to: ' + name);
         applyUser(currentUser);
         toast('Display name updated to: ' + name);
       }
@@ -2465,6 +2701,7 @@
       // Update DOM
       document.getElementById('accountEmail').textContent = newEmail;
       closeChangeEmailModal();
+      logAuditAction('Changed login ID from ' + oldEmail + ' to ' + newEmail);
       toast('Login ID updated to: ' + newEmail);
     }
 
@@ -2529,6 +2766,7 @@
       sessionStorage.setItem('vp_staff_user', JSON.stringify(currentUser));
 
       closeChangePasswordModal();
+      logAuditAction('Updated account password for ' + currentUser.email);
       toast('Department password updated successfully.');
     }
 
@@ -2631,8 +2869,20 @@
       if (passInput) passInput.focus();
     }
 
+    let failedLoginAttempts = parseInt(sessionStorage.getItem('vp_staff_failed_logins') || '0', 10);
+    let lockoutUntil = parseInt(sessionStorage.getItem('vp_staff_lockout_until') || '0', 10);
+
     function handleLogin(e) {
       e.preventDefault();
+      const errEl = document.getElementById('loginErr');
+      const now = Date.now();
+      if (now < lockoutUntil) {
+        const remainingSec = Math.ceil((lockoutUntil - now) / 1000);
+        errEl.textContent = 'Security Notice: Too many failed attempts. Login locked for ' + remainingSec + ' seconds.';
+        errEl.style.display = 'block';
+        return;
+      }
+
       const selectedDept = (document.getElementById('loginDeptSelect').value || '').trim();
       const email = document.getElementById('loginEmail').value.trim().toLowerCase();
       const pass = document.getElementById('loginPass').value;
@@ -2652,15 +2902,28 @@
       }
 
       if (found) {
+        failedLoginAttempts = 0;
+        lockoutUntil = 0;
+        sessionStorage.removeItem('vp_staff_failed_logins');
+        sessionStorage.removeItem('vp_staff_lockout_until');
+
         currentUser = found;
         sessionStorage.setItem('vp_staff_user', JSON.stringify(currentUser));
         document.getElementById('authModal').style.display = 'none';
-        document.getElementById('loginErr').style.display = 'none';
+        errEl.style.display = 'none';
         applyUser(currentUser);
+        logAuditAction('Staff authenticated: ' + currentUser.name + ' (' + currentUser.dept + ')');
         toast('Welcome back, ' + currentUser.name);
       } else {
-        const errEl = document.getElementById('loginErr');
-        errEl.textContent = 'Invalid credentials. Please verify your department password.';
+        failedLoginAttempts++;
+        sessionStorage.setItem('vp_staff_failed_logins', failedLoginAttempts.toString());
+        if (failedLoginAttempts >= 5) {
+          lockoutUntil = Date.now() + 60000;
+          sessionStorage.setItem('vp_staff_lockout_until', lockoutUntil.toString());
+          errEl.textContent = 'Security Lock: 5 consecutive failed attempts. System locked for 60 seconds.';
+        } else {
+          errEl.textContent = 'Invalid credentials (' + failedLoginAttempts + '/5 attempts). Please verify your department password.';
+        }
         errEl.style.display = 'block';
       }
     }
@@ -2669,6 +2932,9 @@
       const confirmLogout = confirm('Are you sure you want to log out of the Operations Portal?\n\nYour active session will be ended and any unsaved edits will be discarded.');
       if (!confirmLogout) return;
 
+      if (currentUser) {
+        logAuditAction('Staff logged out: ' + currentUser.name);
+      }
       sessionStorage.removeItem('vp_staff_user');
       currentUser = null;
       document.getElementById('authModal').style.display = 'flex';
@@ -2887,7 +3153,7 @@
         }
       });
 
-      // Global Escape key dismiss handler
+      // Global Escape key dismiss handler and search hotkey
       window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
           const pModal = document.getElementById('productEditModal');
@@ -2904,7 +3170,45 @@
             closeForgotPassModal();
           }
         }
+
+        // Global Search Hotkey: Ctrl+K / Cmd+K or "/"
+        const isSearchHotkey = (e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === 'k');
+        const isSlashHotkey = (e.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement ? document.activeElement.tagName : ''));
+        if (isSearchHotkey || isSlashHotkey) {
+          e.preventDefault();
+          const visiblePane = document.querySelector('.tab-pane:not([style*="none"])');
+          const currentTab = visiblePane ? visiblePane.id.replace('tab-', '') : 'home';
+          if (currentTab === 'careers') {
+            const el = document.getElementById('jobSearchInput');
+            if (el) { el.focus(); el.select(); }
+          } else {
+            if (currentTab !== 'marketing' && canAccessDesk('marketing')) {
+              showTab('marketing');
+            }
+            const el = document.getElementById('mktSearchInput');
+            if (el) { el.focus(); el.select(); }
+          }
+        }
       });
+
+      renderAuditLogs();
+
+      // Inactivity Auto-Lock: 30 minutes without interaction
+      let lastUserActivity = Date.now();
+      const markActivity = () => { lastUserActivity = Date.now(); };
+      ['mousemove', 'keydown', 'mousedown', 'touchstart', 'scroll'].forEach(evt => {
+        window.addEventListener(evt, markActivity, { passive: true });
+      });
+      setInterval(() => {
+        if (currentUser && (Date.now() - lastUserActivity > 30 * 60 * 1000)) {
+          logAuditAction('Session auto-locked due to 30 min inactivity');
+          currentUser = null;
+          sessionStorage.removeItem('vp_staff_user');
+          document.getElementById('authModal').style.display = 'flex';
+          lockBodyScroll();
+          toast('Session locked due to 30 minutes of inactivity. Please re-enter your password.');
+        }
+      }, 15000);
     });
   
     // Image Upload & Live Preview Helpers
@@ -3072,6 +3376,31 @@
       if (pillUdev) pillUdev.textContent = `Under Development (${underDev})`;
     }
 
+    // Marketing Column Sorting
+    let mktSortField = 'name';
+    let mktSortDir = 'asc';
+
+    function toggleMarketingSort(field) {
+      if (mktSortField === field) {
+        mktSortDir = mktSortDir === 'asc' ? 'desc' : 'asc';
+      } else {
+        mktSortField = field;
+        mktSortDir = 'asc';
+      }
+      ['name', 'category_label', 'cas', 'specs'].forEach(f => {
+        const el = document.getElementById('sort-mkt-' + f);
+        if (!el) return;
+        if (f === mktSortField) {
+          el.textContent = mktSortDir === 'asc' ? '▲' : '▼';
+          el.style.color = 'var(--sp-primary)';
+        } else {
+          el.textContent = '↕';
+          el.style.color = '#94A3B8';
+        }
+      });
+      renderMarketingDesk();
+    }
+
     function renderMarketingDesk() {
       updateMarketingKpis();
       const q = (mktSearchQuery || '').trim().toLowerCase();
@@ -3089,6 +3418,15 @@
           filtered.push({ p, realIdx: i });
         }
       }
+
+      // Apply Column Sort
+      filtered.sort((a, b) => {
+        let vA = (a.p[mktSortField] || '').toString().toLowerCase();
+        let vB = (b.p[mktSortField] || '').toString().toLowerCase();
+        if (vA < vB) return mktSortDir === 'asc' ? -1 : 1;
+        if (vA > vB) return mktSortDir === 'asc' ? 1 : -1;
+        return 0;
+      });
 
       const tbody = document.getElementById('mktProductsTbody');
       if (tbody) {
@@ -3268,9 +3606,11 @@
 
       if (idx >= 0 && idx < MARKETING_CATALOG.length) {
         MARKETING_CATALOG[idx] = productObj;
+        logAuditAction('Updated product specs for molecule: ' + name);
         toast('✓ Updated: ' + name);
       } else {
         MARKETING_CATALOG.unshift(productObj);
+        logAuditAction('Added new commercial molecule: ' + name);
         toast('✓ Added new molecule: ' + name);
       }
 
@@ -3286,6 +3626,7 @@
       }
       MARKETING_CATALOG.splice(idx, 1);
       saveMarketingCatalog();
+      logAuditAction('Deleted molecule: ' + p.name);
       toast('Molecule removed: ' + p.name);
     }
 
@@ -3304,6 +3645,7 @@
       localStorage.removeItem('vp_marketing_custom_catalog');
       MARKETING_CATALOG = JSON.parse(JSON.stringify(DEFAULT_MARKETING_CATALOG));
       saveMarketingCatalog();
+      logAuditAction('Reset marketing catalog to default 265 molecules');
       toast('Catalog restored to default 265 molecules.');
     }
 
