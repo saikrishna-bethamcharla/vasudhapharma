@@ -6,7 +6,14 @@
     "cas": "549-18-8",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Tricyclic Antidepressant",
+    "synonyms": [
+      "Elavil",
+      "Endep"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Aripiprazole",
@@ -15,7 +22,14 @@
     "cas": "129722-12-9",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Atypical Antipsychotic",
+    "synonyms": [
+      "Abilify",
+      "Aristada"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Bepotastine Besilate",
@@ -24,7 +38,14 @@
     "cas": "190786-44-8",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "H1 Receptor Antagonist",
+    "synonyms": [
+      "Bepreve",
+      "Talion"
+    ],
+    "dmf_status": "USDMF / PMDA Available"
   },
   {
     "name": "Cisapride Monohydrate",
@@ -33,7 +54,14 @@
     "cas": "260779-88-2",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Gastroprokinetic 5-HT4 Agonist",
+    "synonyms": [
+      "Prepulsid",
+      "Propulsid"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Cinnarizine",
@@ -42,7 +70,13 @@
     "cas": "298-57-7",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Allergy & Vestibular",
+    "sub_category": "Antihistamine & Calcium Channel Blocker",
+    "synonyms": [
+      "Stugeron"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Clopidogrel Bisulphate",
@@ -51,7 +85,13 @@
     "cas": "120202-66-6",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Antiplatelet / ADP P2Y12 Antagonist",
+    "synonyms": [
+      "Plavix"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Cyclobenzaprine HCl",
@@ -60,7 +100,14 @@
     "cas": "6202-23-9",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "CNS & Musculoskeletal",
+    "sub_category": "Centrally Acting Muscle Relaxant",
+    "synonyms": [
+      "Flexeril",
+      "Amrix"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Cyproheptadine HCl",
@@ -69,7 +116,13 @@
     "cas": "41354-29-4",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "First-Generation Antihistamine",
+    "synonyms": [
+      "Periactin"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Dabigatran Etexilate Mesylate",
@@ -78,7 +131,13 @@
     "cas": "872728-81-9",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Direct Thrombin Inhibitor (NOAC)",
+    "synonyms": [
+      "Pradaxa"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Desloratadine",
@@ -87,7 +146,14 @@
     "cas": "100643-71-8",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "Second-Generation Non-Sedating Antihistamine",
+    "synonyms": [
+      "Clarinex",
+      "Aerius"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Dexlansoprazole Sesquihydrate",
@@ -96,7 +162,14 @@
     "cas": "313640-86-7",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Proton Pump Inhibitor (PPI)",
+    "synonyms": [
+      "Prevacid",
+      "Zoton"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Diatrizoic Acid",
@@ -105,7 +178,14 @@
     "cas": "117-96-4",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Diagnostic Radiopaque Agent",
+    "sub_category": "Iodinated Contrast Medium",
+    "synonyms": [
+      "Hypaque",
+      "Gastrografin"
+    ],
+    "dmf_status": "USDMF / USP Available"
   },
   {
     "name": "Diatrizoic Acid Dihydrate",
@@ -114,7 +194,14 @@
     "cas": "50978-11-5",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Diagnostic Radiopaque Agent",
+    "sub_category": "Iodinated Contrast Medium",
+    "synonyms": [
+      "Hypaque",
+      "Gastrografin"
+    ],
+    "dmf_status": "USDMF / USP Available"
   },
   {
     "name": "Diatrizoic Sodium",
@@ -123,7 +210,14 @@
     "cas": "737-31-5",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Diagnostic Radiopaque Agent",
+    "sub_category": "Iodinated Contrast Medium",
+    "synonyms": [
+      "Hypaque",
+      "Gastrografin"
+    ],
+    "dmf_status": "USDMF / USP Available"
   },
   {
     "name": "Diatrizoic Meglumine",
@@ -132,7 +226,14 @@
     "cas": "131-49-7",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Diagnostic Radiopaque Agent",
+    "sub_category": "Iodinated Contrast Medium",
+    "synonyms": [
+      "Hypaque",
+      "Gastrografin"
+    ],
+    "dmf_status": "USDMF / USP Available"
   },
   {
     "name": "Dimethyl Fumarate",
@@ -141,7 +242,13 @@
     "cas": "624-49-7",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "CNS & Immunology",
+    "sub_category": "Nrf2 Activator (Multiple Sclerosis)",
+    "synonyms": [
+      "Tecfidera"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Diltiazem HCl",
@@ -150,7 +257,14 @@
     "cas": "33286-22-5",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Calcium Channel Blocker (Non-Dihydropyridine)",
+    "synonyms": [
+      "Cardizem",
+      "Tiazac"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Domperidone",
@@ -159,7 +273,13 @@
     "cas": "57808-66-9",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Dopamine D2 Antagonist / Gastroprokinetic",
+    "synonyms": [
+      "Motilium"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Domperidone Maleate",
@@ -168,7 +288,13 @@
     "cas": "83898-65-1",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Dopamine D2 Antagonist / Gastroprokinetic",
+    "synonyms": [
+      "Motilium"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Donepezil HCl",
@@ -177,7 +303,13 @@
     "cas": "120011-70-3",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Acetylcholinesterase Inhibitor (Anti-Alzheimer's)",
+    "synonyms": [
+      "Aricept"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Donepezil HCl Monohydrate",
@@ -186,7 +318,13 @@
     "cas": "884740-09-4",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Acetylcholinesterase Inhibitor (Anti-Alzheimer's)",
+    "synonyms": [
+      "Aricept"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Ebastine",
@@ -195,7 +333,14 @@
     "cas": "90729-43-4",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "Second-Generation Antihistamine",
+    "synonyms": [
+      "Kestine",
+      "Ebastel"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Esomeprazole Magnesium Trihydrate",
@@ -204,7 +349,13 @@
     "cas": "217087-09-7",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Proton Pump Inhibitor (PPI)",
+    "synonyms": [
+      "Nexium"
+    ],
+    "dmf_status": "USDMF / CEP / WHO Available"
   },
   {
     "name": "Esflurbiprofen/(S)-Flurbiprofen",
@@ -213,7 +364,14 @@
     "cas": "51543-39-6",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Musculoskeletal & Pain",
+    "sub_category": "Nonsteroidal Anti-inflammatory Drug (NSAID)",
+    "synonyms": [
+      "Ansaid",
+      "Froben"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Febuxostat",
@@ -222,7 +380,14 @@
     "cas": "144060-53-7",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Rheumatology & Gout",
+    "sub_category": "Xanthine Oxidase Inhibitor (Uric Acid Reducer)",
+    "synonyms": [
+      "Uloric",
+      "Adenuric"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Fexofenadine HCl",
@@ -231,7 +396,14 @@
     "cas": "153439-40-8",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "Second-Generation Non-Sedating Antihistamine",
+    "synonyms": [
+      "Allegra",
+      "Telfast"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Flurbiprofen",
@@ -240,7 +412,14 @@
     "cas": "5104-49-4",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Musculoskeletal & Pain",
+    "sub_category": "Nonsteroidal Anti-inflammatory Drug (NSAID)",
+    "synonyms": [
+      "Ansaid",
+      "Froben"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Flunarizine Di HCl",
@@ -249,7 +428,13 @@
     "cas": "30484-77-6",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Allergy & Neurology",
+    "sub_category": "Antihistamine & Calcium Channel Blocker",
+    "synonyms": [
+      "Sibelium"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Itopride HCl",
@@ -258,7 +443,13 @@
     "cas": "122892-31-3",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Dopamine D2 & Acetylcholinesterase Inhibitor",
+    "synonyms": [
+      "Ganaton"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Itraconazole",
@@ -267,7 +458,13 @@
     "cas": "84625-61-6",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Anti-infective & Antifungal",
+    "sub_category": "Triazole Antifungal Agent",
+    "synonyms": [
+      "Sporanox"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Ketorolac Tromethamine",
@@ -276,7 +473,14 @@
     "cas": "74103-07-4",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Musculoskeletal & Pain",
+    "sub_category": "Potent NSAID / Analgesic",
+    "synonyms": [
+      "Toradol",
+      "Acular"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Lacosamide",
@@ -285,7 +489,13 @@
     "cas": "175481-36-4",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Antiepileptic / Anticonvulsant",
+    "synonyms": [
+      "Vimpat"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Loperamide HCl",
@@ -294,7 +504,13 @@
     "cas": "34552-83-5",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Opioid Receptor Agonist / Antidiarrheal",
+    "synonyms": [
+      "Imodium"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Loratadine",
@@ -303,7 +519,13 @@
     "cas": "79794-75-5",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "Second-Generation Antihistamine",
+    "synonyms": [
+      "Claritin"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Losartan Potassium",
@@ -312,7 +534,13 @@
     "cas": "124750-99-8",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Angiotensin II Receptor Blocker (ARB)",
+    "synonyms": [
+      "Cozaar"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Mebeverine HCl",
@@ -321,7 +549,14 @@
     "cas": "2753-45-9",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Musculotropic Antispasmodic (IBS)",
+    "synonyms": [
+      "Colofac",
+      "Duspatalin"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Methoxyphenamine HCl",
@@ -330,7 +565,13 @@
     "cas": "5588-10-3",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Respiratory",
+    "sub_category": "Sympathomimetic Bronchodilator",
+    "synonyms": [
+      "Orthoxine"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Mirabegron",
@@ -339,7 +580,14 @@
     "cas": "223673-61-8",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Urology & Overactive Bladder",
+    "sub_category": "Beta-3 Adrenergic Receptor Agonist",
+    "synonyms": [
+      "Myrbetriq",
+      "Betmiga"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Nortriptyline HCl",
@@ -348,7 +596,14 @@
     "cas": "894-71-3",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Tricyclic Antidepressant",
+    "synonyms": [
+      "Pamelor",
+      "Aventyl"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Oxatomide Anhydrous",
@@ -357,7 +612,13 @@
     "cas": "60607-34-3",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "H1 Antihistamine & Mast Cell Stabilizer",
+    "synonyms": [
+      "Tinset"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Oxcarbazepine",
@@ -366,7 +627,13 @@
     "cas": "28721-07-5",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Antiepileptic / Mood Stabilizer",
+    "synonyms": [
+      "Trileptal"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Olmesartan Medoxomil",
@@ -375,7 +642,14 @@
     "cas": "144689-63-4",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Angiotensin II Receptor Blocker (ARB)",
+    "synonyms": [
+      "Benicar",
+      "Olmetec"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Pantoprazole Sodium Sesquihydrate",
@@ -384,7 +658,14 @@
     "cas": "164579-32-2",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Proton Pump Inhibitor (PPI)",
+    "synonyms": [
+      "Protonix",
+      "Protium"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Pimozide",
@@ -393,7 +674,13 @@
     "cas": "2062-78-4",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Antipsychotic",
+    "synonyms": [
+      "Orap"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Pimobendan",
@@ -402,7 +689,13 @@
     "cas": "74150-27-9",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Cardiovascular & Veterinary",
+    "sub_category": "Inodilator / Calcium Sensitizer",
+    "synonyms": [
+      "Vetmedin"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Pregabalin",
@@ -411,7 +704,13 @@
     "cas": "148553-50-8",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Neuropathic Pain / Anticonvulsant",
+    "synonyms": [
+      "Lyrica"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Quetiapine Fumarate",
@@ -420,7 +719,13 @@
     "cas": "111974-72-2",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Atypical Antipsychotic",
+    "synonyms": [
+      "Seroquel"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Rivaroxaban",
@@ -429,7 +734,13 @@
     "cas": "366789-02-8",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Factor Xa Inhibitor (NOAC)",
+    "synonyms": [
+      "Xarelto"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Rupatadine Fumarate",
@@ -438,7 +749,13 @@
     "cas": "182349-12-8",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "Dual H1 & PAF Receptor Antagonist",
+    "synonyms": [
+      "Rupafin"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Sacubitril Sodium",
@@ -447,7 +764,13 @@
     "cas": "149690-05-1",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Neprilysin Inhibitor (Heart Failure)",
+    "synonyms": [
+      "Entresto"
+    ],
+    "dmf_status": "Tech Pack Available"
   },
   {
     "name": "Tamsulosin HCl",
@@ -456,7 +779,13 @@
     "cas": "106463-17-6",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Urology & Men's Health",
+    "sub_category": "Selective Alpha-1A Adrenoceptor Antagonist (BPH)",
+    "synonyms": [
+      "Flomax"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Telmisartan",
@@ -465,7 +794,13 @@
     "cas": "144701-48-4",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Angiotensin II Receptor Blocker (ARB)",
+    "synonyms": [
+      "Micardis"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Trazodone HCl",
@@ -474,7 +809,14 @@
     "cas": "25332-39-2",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "SARI Antidepressant",
+    "synonyms": [
+      "Desyrel",
+      "Oleptro"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Valsartan",
@@ -483,7 +825,13 @@
     "cas": "137862-53-4",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Angiotensin II Receptor Blocker (ARB)",
+    "synonyms": [
+      "Diovan"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Vonoprazan Fumarate",
@@ -492,7 +840,14 @@
     "cas": "881681-01-2",
     "specs": "USP / BP / Ph.Eur",
     "filings": "Available",
-    "page": "apis.html"
+    "page": "apis.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Potassium-Competitive Acid Blocker (P-CAB)",
+    "synonyms": [
+      "Voquezna",
+      "Takecab"
+    ],
+    "dmf_status": "USDMF / Tech Pack"
   },
   {
     "name": "Alcaftadine",
@@ -501,7 +856,13 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Ophthalmology",
+    "sub_category": "H1 Receptor Antagonist (Allergic Conjunctivitis)",
+    "synonyms": [
+      "Lastacaft"
+    ],
+    "dmf_status": "USDMF / Tech Pack"
   },
   {
     "name": "Amitriptyline HCl &amp; Nortriptyline HCl",
@@ -510,7 +871,14 @@
     "cas": "1210-35-1",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Tricyclic Antidepressant",
+    "synonyms": [
+      "Elavil",
+      "Endep"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Amitriptyline HCl &amp; Nortriptyline HCl",
@@ -519,7 +887,14 @@
     "cas": "5407-04-5",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Tricyclic Antidepressant",
+    "synonyms": [
+      "Elavil",
+      "Endep"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Bepotastine Besilate",
@@ -528,7 +903,14 @@
     "cas": "65214-82-6",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "H1 Receptor Antagonist",
+    "synonyms": [
+      "Bepreve",
+      "Talion"
+    ],
+    "dmf_status": "USDMF / PMDA Available"
   },
   {
     "name": "Bepotastine Besilate",
@@ -537,7 +919,14 @@
     "cas": "27652-89-7",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "H1 Receptor Antagonist",
+    "synonyms": [
+      "Bepreve",
+      "Talion"
+    ],
+    "dmf_status": "USDMF / PMDA Available"
   },
   {
     "name": "Bepotastine Besilate",
@@ -546,7 +935,14 @@
     "cas": "122368-54-1",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "H1 Receptor Antagonist",
+    "synonyms": [
+      "Bepreve",
+      "Talion"
+    ],
+    "dmf_status": "USDMF / PMDA Available"
   },
   {
     "name": "Bepotastine Besilate",
@@ -555,7 +951,14 @@
     "cas": "5382-16-1",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "H1 Receptor Antagonist",
+    "synonyms": [
+      "Bepreve",
+      "Talion"
+    ],
+    "dmf_status": "USDMF / PMDA Available"
   },
   {
     "name": "Bepotastine Besilate",
@@ -564,7 +967,14 @@
     "cas": "161558-45-8",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "H1 Receptor Antagonist",
+    "synonyms": [
+      "Bepreve",
+      "Talion"
+    ],
+    "dmf_status": "USDMF / PMDA Available"
   },
   {
     "name": "Cinnarizine and Flunarizine",
@@ -573,7 +983,13 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Vestibular",
+    "sub_category": "Antihistamine & Calcium Channel Blocker",
+    "synonyms": [
+      "Stugeron"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Cyclobenzaprine HCl",
@@ -582,7 +998,14 @@
     "cas": "2222-33-5",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "CNS & Musculoskeletal",
+    "sub_category": "Centrally Acting Muscle Relaxant",
+    "synonyms": [
+      "Flexeril",
+      "Amrix"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Cyclobenzaprine HCl",
@@ -591,7 +1014,14 @@
     "cas": "5407-04-5",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "CNS & Musculoskeletal",
+    "sub_category": "Centrally Acting Muscle Relaxant",
+    "synonyms": [
+      "Flexeril",
+      "Amrix"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Cyproheptadine HCl",
@@ -600,7 +1030,13 @@
     "cas": "2222-33-5",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "First-Generation Antihistamine",
+    "synonyms": [
+      "Periactin"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Cyproheptadine HCl",
@@ -609,7 +1045,13 @@
     "cas": "5570-77-4",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "First-Generation Antihistamine",
+    "synonyms": [
+      "Periactin"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Dabigatran Etexilate Mesylate",
@@ -618,7 +1060,13 @@
     "cas": "211915-84-3",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Direct Thrombin Inhibitor (NOAC)",
+    "synonyms": [
+      "Pradaxa"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Dabigatran Etexilate Mesylate",
@@ -627,7 +1075,13 @@
     "cas": "429658-95-7",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Direct Thrombin Inhibitor (NOAC)",
+    "synonyms": [
+      "Pradaxa"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Dabigatran Etexilate Mesylate",
@@ -636,7 +1090,13 @@
     "cas": "211915-06-9",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Direct Thrombin Inhibitor (NOAC)",
+    "synonyms": [
+      "Pradaxa"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Domperidone",
@@ -645,7 +1105,13 @@
     "cas": "62780-89-6",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Dopamine D2 Antagonist / Gastroprokinetic",
+    "synonyms": [
+      "Motilium"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Domperidone",
@@ -654,7 +1120,13 @@
     "cas": "53786-28-0",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Dopamine D2 Antagonist / Gastroprokinetic",
+    "synonyms": [
+      "Motilium"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Donepezil HCl",
@@ -663,7 +1135,13 @@
     "cas": "120014-30-4",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Acetylcholinesterase Inhibitor (Anti-Alzheimer's)",
+    "synonyms": [
+      "Aricept"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Donepezil HCl",
@@ -672,7 +1150,13 @@
     "cas": "4803-74-1",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Acetylcholinesterase Inhibitor (Anti-Alzheimer's)",
+    "synonyms": [
+      "Aricept"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Donepezil HCl",
@@ -681,7 +1165,13 @@
     "cas": "120014-06-4",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Acetylcholinesterase Inhibitor (Anti-Alzheimer's)",
+    "synonyms": [
+      "Aricept"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Ebastine",
@@ -690,7 +1180,14 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "Second-Generation Antihistamine",
+    "synonyms": [
+      "Kestine",
+      "Ebastel"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Eprosartan",
@@ -699,7 +1196,13 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Angiotensin II Receptor Blocker (ARB)",
+    "synonyms": [
+      "Teveten"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Febuxostat",
@@ -708,7 +1211,14 @@
     "cas": "161797-99-5",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Rheumatology & Gout",
+    "sub_category": "Xanthine Oxidase Inhibitor (Uric Acid Reducer)",
+    "synonyms": [
+      "Uloric",
+      "Adenuric"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Febuxostat",
@@ -717,7 +1227,14 @@
     "cas": "161798-01-2",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Rheumatology & Gout",
+    "sub_category": "Xanthine Oxidase Inhibitor (Uric Acid Reducer)",
+    "synonyms": [
+      "Uloric",
+      "Adenuric"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Febuxostat",
@@ -726,7 +1243,14 @@
     "cas": "161798-02-3",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Rheumatology & Gout",
+    "sub_category": "Xanthine Oxidase Inhibitor (Uric Acid Reducer)",
+    "synonyms": [
+      "Uloric",
+      "Adenuric"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Febuxostat",
@@ -735,7 +1259,14 @@
     "cas": "161798-03-4",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Rheumatology & Gout",
+    "sub_category": "Xanthine Oxidase Inhibitor (Uric Acid Reducer)",
+    "synonyms": [
+      "Uloric",
+      "Adenuric"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Febuxostat",
@@ -744,7 +1275,14 @@
     "cas": "160844-75-7",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Rheumatology & Gout",
+    "sub_category": "Xanthine Oxidase Inhibitor (Uric Acid Reducer)",
+    "synonyms": [
+      "Uloric",
+      "Adenuric"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Flunarizine Di-HCl",
@@ -753,7 +1291,13 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Neurology",
+    "sub_category": "Antihistamine & Calcium Channel Blocker",
+    "synonyms": [
+      "Sibelium"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Golvatinib &amp; Gilteritinib",
@@ -762,7 +1306,13 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Oncology & Targeted Therapy",
+    "sub_category": "c-Met & FLT3 Receptor Tyrosine Kinase Inhibitor",
+    "synonyms": [
+      "Xospata Target"
+    ],
+    "dmf_status": "Tech Pack Available"
   },
   {
     "name": "Haloperidol",
@@ -771,7 +1321,13 @@
     "cas": "3874-54-2",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Typical Antipsychotic",
+    "synonyms": [
+      "Haldol"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Haloperidol",
@@ -780,7 +1336,13 @@
     "cas": "39512-49-7",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Typical Antipsychotic",
+    "synonyms": [
+      "Haldol"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Indoramin HCl",
@@ -789,7 +1351,14 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Cardiovascular & Urology",
+    "sub_category": "Alpha-1 Adrenoceptor Antagonist",
+    "synonyms": [
+      "Baratol",
+      "Doralese"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Ketotifen",
@@ -798,7 +1367,13 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Ophthalmology",
+    "sub_category": "H1 Antihistamine & Mast Cell Stabilizer",
+    "synonyms": [
+      "Zaditor"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Linagliptin",
@@ -807,7 +1382,14 @@
     "cas": "309956-78-3",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Endocrinology & Antidiabetic",
+    "sub_category": "DPP-4 Inhibitor",
+    "synonyms": [
+      "Tradjenta",
+      "Trajenta"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Linagliptin",
@@ -816,7 +1398,14 @@
     "cas": "334618-23-4",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Endocrinology & Antidiabetic",
+    "sub_category": "DPP-4 Inhibitor",
+    "synonyms": [
+      "Tradjenta",
+      "Trajenta"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Loperamide HCl",
@@ -825,7 +1414,13 @@
     "cas": "39512-49-7",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Opioid Receptor Agonist / Antidiarrheal",
+    "synonyms": [
+      "Imodium"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Loperamide HCl",
@@ -834,7 +1429,13 @@
     "cas": "37743-18-3",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Opioid Receptor Agonist / Antidiarrheal",
+    "synonyms": [
+      "Imodium"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Loperamide HCl",
@@ -843,7 +1444,13 @@
     "cas": "956-89-8",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Opioid Receptor Agonist / Antidiarrheal",
+    "synonyms": [
+      "Imodium"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Loperamide HCl",
@@ -852,7 +1459,13 @@
     "cas": "37742-98-6",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Opioid Receptor Agonist / Antidiarrheal",
+    "synonyms": [
+      "Imodium"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Loratadine &amp; Desloratadine",
@@ -861,7 +1474,14 @@
     "cas": "31255-57-9",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "Second-Generation Non-Sedating Antihistamine",
+    "synonyms": [
+      "Clarinex",
+      "Aerius"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Loratadine &amp; Desloratadine",
@@ -870,7 +1490,14 @@
     "cas": "31251-41-9",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "Second-Generation Non-Sedating Antihistamine",
+    "synonyms": [
+      "Clarinex",
+      "Aerius"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Loratadine &amp; Desloratadine",
@@ -879,7 +1506,14 @@
     "cas": "38092-89-6",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "Second-Generation Non-Sedating Antihistamine",
+    "synonyms": [
+      "Clarinex",
+      "Aerius"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Loratadine &amp; Desloratadine",
@@ -888,7 +1522,14 @@
     "cas": "119770-60-4",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "Second-Generation Non-Sedating Antihistamine",
+    "synonyms": [
+      "Clarinex",
+      "Aerius"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Loratadine &amp; Desloratadine",
@@ -897,7 +1538,14 @@
     "cas": "5570-77-4",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "Second-Generation Non-Sedating Antihistamine",
+    "synonyms": [
+      "Clarinex",
+      "Aerius"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Losartan Potassium",
@@ -906,7 +1554,13 @@
     "cas": "11479-26-4",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Angiotensin II Receptor Blocker (ARB)",
+    "synonyms": [
+      "Cozaar"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Losartan Potassium",
@@ -915,7 +1569,13 @@
     "cas": "83857-96-9",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Angiotensin II Receptor Blocker (ARB)",
+    "synonyms": [
+      "Cozaar"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Mirabegron",
@@ -924,7 +1584,14 @@
     "cas": "521284-19-5",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Urology & Overactive Bladder",
+    "sub_category": "Beta-3 Adrenergic Receptor Agonist",
+    "synonyms": [
+      "Myrbetriq",
+      "Betmiga"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Mirabegron",
@@ -933,7 +1600,14 @@
     "cas": "521284-21-9",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Urology & Overactive Bladder",
+    "sub_category": "Beta-3 Adrenergic Receptor Agonist",
+    "synonyms": [
+      "Myrbetriq",
+      "Betmiga"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Mirabegron",
@@ -942,7 +1616,14 @@
     "cas": "521284-22-0",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Urology & Overactive Bladder",
+    "sub_category": "Beta-3 Adrenergic Receptor Agonist",
+    "synonyms": [
+      "Myrbetriq",
+      "Betmiga"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Oxatomide",
@@ -951,7 +1632,13 @@
     "cas": "62780-89-6",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "H1 Antihistamine & Mast Cell Stabilizer",
+    "synonyms": [
+      "Tinset"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Oxatomide",
@@ -960,7 +1647,13 @@
     "cas": "841-77-0",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "H1 Antihistamine & Mast Cell Stabilizer",
+    "synonyms": [
+      "Tinset"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Pemetrexed acid",
@@ -969,7 +1662,13 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Oncology & Antineoplastic",
+    "sub_category": "Antifolate Antineoplastic Agent",
+    "synonyms": [
+      "Alimta"
+    ],
+    "dmf_status": "USDMF / Tech Pack"
   },
   {
     "name": "Pimozide",
@@ -978,7 +1677,13 @@
     "cas": "20662-53-7",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Antipsychotic",
+    "synonyms": [
+      "Orap"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Pimozide",
@@ -987,7 +1692,13 @@
     "cas": "3312-04-7",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Antipsychotic",
+    "synonyms": [
+      "Orap"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Prucalopride",
@@ -996,7 +1707,14 @@
     "cas": "16771-85-0",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Selective 5-HT4 Receptor Agonist",
+    "synonyms": [
+      "Motegrity",
+      "Resolor"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Prucalopride",
@@ -1005,7 +1723,14 @@
     "cas": "179474-79-4",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Selective 5-HT4 Receptor Agonist",
+    "synonyms": [
+      "Motegrity",
+      "Resolor"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Rifabutin",
@@ -1014,7 +1739,13 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Anti-infective & Antibiotic",
+    "sub_category": "Rifamycin Antibiotic (Antimycobacterial)",
+    "synonyms": [
+      "Mycobutin"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Rivaroxaban",
@@ -1023,7 +1754,13 @@
     "cas": "446292-08-6",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Factor Xa Inhibitor (NOAC)",
+    "synonyms": [
+      "Xarelto"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Rivaroxaban",
@@ -1032,7 +1769,13 @@
     "cas": "898543-06-1",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Factor Xa Inhibitor (NOAC)",
+    "synonyms": [
+      "Xarelto"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Ropivacaine Hydrochloride Monohydrate",
@@ -1041,7 +1784,13 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Anesthesia & Pain",
+    "sub_category": "Aminoamide Local Anesthetic",
+    "synonyms": [
+      "Naropin"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Rupatadine Fumarate",
@@ -1050,7 +1799,13 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "Dual H1 & PAF Receptor Antagonist",
+    "synonyms": [
+      "Rupafin"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Selexipag",
@@ -1059,7 +1814,13 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Prostacyclin IP Receptor Agonist (PAH)",
+    "synonyms": [
+      "Uptravi"
+    ],
+    "dmf_status": "USDMF / Tech Pack"
   },
   {
     "name": "Tamsulosin HCl",
@@ -1068,7 +1829,13 @@
     "cas": "112101-81-2",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Urology & Men's Health",
+    "sub_category": "Selective Alpha-1A Adrenoceptor Antagonist (BPH)",
+    "synonyms": [
+      "Flomax"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Tamsulosin HCl",
@@ -1077,7 +1844,13 @@
     "cas": "106133-20-4",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Urology & Men's Health",
+    "sub_category": "Selective Alpha-1A Adrenoceptor Antagonist (BPH)",
+    "synonyms": [
+      "Flomax"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Trazadone",
@@ -1086,7 +1859,13 @@
     "cas": "6969-71-7",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "SARI Antidepressant",
+    "synonyms": [
+      "Desyrel"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Trazadone",
@@ -1095,7 +1874,13 @@
     "cas": "52605-52-4",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "SARI Antidepressant",
+    "synonyms": [
+      "Desyrel"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Tucatinib",
@@ -1104,7 +1889,13 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Oncology & Targeted Therapy",
+    "sub_category": "HER2 Tyrosine Kinase Inhibitor",
+    "synonyms": [
+      "Tukysa"
+    ],
+    "dmf_status": "Under Development"
   },
   {
     "name": "Ormeloxifene hydrochloride Intermediate",
@@ -1113,7 +1904,14 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Women's Health & Gynecology",
+    "sub_category": "Selective Estrogen Receptor Modulator (SERM)",
+    "synonyms": [
+      "Saheli",
+      "Centron"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Etodolac Intermediate",
@@ -1122,7 +1920,13 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Musculoskeletal & Pain",
+    "sub_category": "COX-2 Selective NSAID Intermediate",
+    "synonyms": [
+      "Lodine"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Salcaprozate sodium intermediate",
@@ -1131,7 +1935,13 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Endocrinology & Oral Drug Delivery",
+    "sub_category": "SNAC Absorption Enhancer (Oral Semaglutide)",
+    "synonyms": [
+      "Rybelsus Carrier"
+    ],
+    "dmf_status": "Under Development / Tech Pack"
   },
   {
     "name": "Prazosin.HCl, Terazosin.HCl, Alfuzosin.HCl, Doxazosin.HCl",
@@ -1140,7 +1950,13 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Cardiovascular & Urology",
+    "sub_category": "Alpha-1 Blocker (Antihypertensive & BPH)",
+    "synonyms": [
+      "Minipress"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Minoxidil, Kopexil, Kopyrrol",
@@ -1149,7 +1965,13 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Dermatology & Hair Care",
+    "sub_category": "Vasodilator & Potassium Channel Opener",
+    "synonyms": [
+      "Rogaine"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Ticagrelor",
@@ -1158,7 +1980,14 @@
     "cas": "145783-15-9",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Antiplatelet Agent",
+    "synonyms": [
+      "Brilinta",
+      "Brilique"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Ticagrelor",
@@ -1167,7 +1996,14 @@
     "cas": "1156491-10-9",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Antiplatelet Agent",
+    "synonyms": [
+      "Brilinta",
+      "Brilique"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Ticagrelor",
@@ -1176,7 +2012,14 @@
     "cas": "376608-65-0",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Antiplatelet Agent",
+    "synonyms": [
+      "Brilinta",
+      "Brilique"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Isoxsuprine HCl",
@@ -1185,7 +2028,13 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Peripheral Vasodilator",
+    "synonyms": [
+      "Vasodilan"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Voglibose",
@@ -1194,7 +2043,14 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Endocrinology & Antidiabetic",
+    "sub_category": "Alpha-Glucosidase Inhibitor",
+    "synonyms": [
+      "Basen",
+      "Volix"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Mitapivat Sulfate",
@@ -1203,7 +2059,13 @@
     "cas": "57260-71-6",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Hematology & Rare Disease",
+    "sub_category": "Pyruvate Kinase Activator (Hemolytic Anemia)",
+    "synonyms": [
+      "Pyrukynd"
+    ],
+    "dmf_status": "Tech Pack Available"
   },
   {
     "name": "Mitapivat Sulfate",
@@ -1212,7 +2074,13 @@
     "cas": "1260081-86-4",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Hematology & Rare Disease",
+    "sub_category": "Pyruvate Kinase Activator (Hemolytic Anemia)",
+    "synonyms": [
+      "Pyrukynd"
+    ],
+    "dmf_status": "Tech Pack Available"
   },
   {
     "name": "Mitapivat Sulfate",
@@ -1221,7 +2089,13 @@
     "cas": "1489-69-6",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Hematology & Rare Disease",
+    "sub_category": "Pyruvate Kinase Activator (Hemolytic Anemia)",
+    "synonyms": [
+      "Pyrukynd"
+    ],
+    "dmf_status": "Tech Pack Available"
   },
   {
     "name": "Ruxolitinib",
@@ -1230,7 +2104,14 @@
     "cas": "1146629-83-5",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Oncology & Hematology",
+    "sub_category": "JAK1 / JAK2 Kinase Inhibitor",
+    "synonyms": [
+      "Jakafi",
+      "Jakavi"
+    ],
+    "dmf_status": "Under Development"
   },
   {
     "name": "Ruxolitinib",
@@ -1239,7 +2120,14 @@
     "cas": "3680-69-1",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Oncology & Hematology",
+    "sub_category": "JAK1 / JAK2 Kinase Inhibitor",
+    "synonyms": [
+      "Jakafi",
+      "Jakavi"
+    ],
+    "dmf_status": "Under Development"
   },
   {
     "name": "Ruxolitinib",
@@ -1248,7 +2136,14 @@
     "cas": "2075-45-8",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Oncology & Hematology",
+    "sub_category": "JAK1 / JAK2 Kinase Inhibitor",
+    "synonyms": [
+      "Jakafi",
+      "Jakavi"
+    ],
+    "dmf_status": "Under Development"
   },
   {
     "name": "Venetoclax",
@@ -1257,7 +2152,14 @@
     "cas": "2979-19-3",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Oncology & Targeted Therapy",
+    "sub_category": "BCL-2 Inhibitor (Leukemia)",
+    "synonyms": [
+      "Venclexta",
+      "Venclyxto"
+    ],
+    "dmf_status": "Under Development"
   },
   {
     "name": "Venetoclax",
@@ -1266,7 +2168,14 @@
     "cas": "98549-88-3",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Oncology & Targeted Therapy",
+    "sub_category": "BCL-2 Inhibitor (Leukemia)",
+    "synonyms": [
+      "Venclexta",
+      "Venclyxto"
+    ],
+    "dmf_status": "Under Development"
   },
   {
     "name": "Venetoclax",
@@ -1275,7 +2184,14 @@
     "cas": "1228780-72-0",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Oncology & Targeted Therapy",
+    "sub_category": "BCL-2 Inhibitor (Leukemia)",
+    "synonyms": [
+      "Venclexta",
+      "Venclyxto"
+    ],
+    "dmf_status": "Under Development"
   },
   {
     "name": "Venetoclax",
@@ -1284,7 +2200,14 @@
     "cas": "1235865-77-6",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Oncology & Targeted Therapy",
+    "sub_category": "BCL-2 Inhibitor (Leukemia)",
+    "synonyms": [
+      "Venclexta",
+      "Venclyxto"
+    ],
+    "dmf_status": "Under Development"
   },
   {
     "name": "Upadacitinib",
@@ -1293,7 +2216,13 @@
     "cas": "1869118-25-1",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Immunology & Rheumatology",
+    "sub_category": "Selective JAK1 Inhibitor",
+    "synonyms": [
+      "Rinvoq"
+    ],
+    "dmf_status": "Under Development"
   },
   {
     "name": "Upadacitinib",
@@ -1302,7 +2231,13 @@
     "cas": "2095311-49-0",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Immunology & Rheumatology",
+    "sub_category": "Selective JAK1 Inhibitor",
+    "synonyms": [
+      "Rinvoq"
+    ],
+    "dmf_status": "Under Development"
   },
   {
     "name": "Olaparib",
@@ -1311,7 +2246,13 @@
     "cas": "420846-72-6",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Oncology & Targeted Therapy",
+    "sub_category": "PARP Inhibitor (BRCA-Mutated)",
+    "synonyms": [
+      "Lynparza"
+    ],
+    "dmf_status": "Under Development / Tech Pack"
   },
   {
     "name": "Olaparib",
@@ -1320,7 +2261,13 @@
     "cas": "59878-57-8",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Oncology & Targeted Therapy",
+    "sub_category": "PARP Inhibitor (BRCA-Mutated)",
+    "synonyms": [
+      "Lynparza"
+    ],
+    "dmf_status": "Under Development / Tech Pack"
   },
   {
     "name": "Atrasentan",
@@ -1329,7 +2276,11 @@
     "cas": "178739-03-2",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Cardiovascular & Nephrology",
+    "sub_category": "Endothelin A Receptor Antagonist",
+    "synonyms": [],
+    "dmf_status": "Under Development"
   },
   {
     "name": "Atrasentan",
@@ -1338,7 +2289,11 @@
     "cas": "40124-27-4",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Cardiovascular & Nephrology",
+    "sub_category": "Endothelin A Receptor Antagonist",
+    "synonyms": [],
+    "dmf_status": "Under Development"
   },
   {
     "name": "Rimegepant Sulphate",
@@ -1347,7 +2302,14 @@
     "cas": "39713-40-1",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "CGRP Receptor Antagonist (Anti-Migraine)",
+    "synonyms": [
+      "Nurtec ODT",
+      "Vydura"
+    ],
+    "dmf_status": "Under Development / Tech Pack"
   },
   {
     "name": "Rimegepant Sulphate",
@@ -1356,7 +2318,14 @@
     "cas": "1190363-50-8",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "CGRP Receptor Antagonist (Anti-Migraine)",
+    "synonyms": [
+      "Nurtec ODT",
+      "Vydura"
+    ],
+    "dmf_status": "Under Development / Tech Pack"
   },
   {
     "name": "Rimegepant Sulphate",
@@ -1365,7 +2334,14 @@
     "cas": "781649-84-1",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "CGRP Receptor Antagonist (Anti-Migraine)",
+    "synonyms": [
+      "Nurtec ODT",
+      "Vydura"
+    ],
+    "dmf_status": "Under Development / Tech Pack"
   },
   {
     "name": "GalNAc",
@@ -1374,7 +2350,13 @@
     "cas": "",
     "specs": "In-House Standard",
     "filings": "Commercial Grade",
-    "page": "intermediates.html"
+    "page": "intermediates.html",
+    "therapeutic": "Biotechnology & Targeted Delivery",
+    "sub_category": "N-Acetylgalactosamine Oligonucleotide Ligand",
+    "synonyms": [
+      "siRNA Delivery"
+    ],
+    "dmf_status": "Tech Pack Available"
   },
   {
     "name": "Duloxetine HCl",
@@ -1383,7 +2365,14 @@
     "cas": "136434-34-9",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "SNRI Antidepressant",
+    "synonyms": [
+      "Cymbalta",
+      "Yentreve"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Esomeprazole",
@@ -1392,7 +2381,13 @@
     "cas": "217087-09-7",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Proton Pump Inhibitor (PPI)",
+    "synonyms": [
+      "Nexium"
+    ],
+    "dmf_status": "USDMF / CEP / WHO Available"
   },
   {
     "name": "Esomeprazole (Micro/MUPS)",
@@ -1401,7 +2396,13 @@
     "cas": "217087-09-7",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Proton Pump Inhibitor (PPI)",
+    "synonyms": [
+      "Nexium"
+    ],
+    "dmf_status": "USDMF / CEP / WHO Available"
   },
   {
     "name": "Lansoprazole",
@@ -1410,7 +2411,14 @@
     "cas": "103577-45-3",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Proton Pump Inhibitor (PPI)",
+    "synonyms": [
+      "Prevacid",
+      "Zoton"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Lansoprazole (Micro Pellets)",
@@ -1419,7 +2427,14 @@
     "cas": "103577-45-3",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Proton Pump Inhibitor (PPI)",
+    "synonyms": [
+      "Prevacid",
+      "Zoton"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Omeprazole",
@@ -1428,7 +2443,14 @@
     "cas": "73590-58-6",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Proton Pump Inhibitor (PPI)",
+    "synonyms": [
+      "Prilosec",
+      "Losec"
+    ],
+    "dmf_status": "USDMF / CEP / WHO Available"
   },
   {
     "name": "Omeprazole (Micro Pellets)",
@@ -1437,7 +2459,14 @@
     "cas": "73590-58-6",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Proton Pump Inhibitor (PPI)",
+    "synonyms": [
+      "Prilosec",
+      "Losec"
+    ],
+    "dmf_status": "USDMF / CEP / WHO Available"
   },
   {
     "name": "Pantoprazole",
@@ -1446,7 +2475,14 @@
     "cas": "102625-70-7",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Proton Pump Inhibitor (PPI)",
+    "synonyms": [
+      "Protonix",
+      "Protium"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Pancreatin",
@@ -1455,7 +2491,14 @@
     "cas": "8049-47-6",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Pancreatic Enzyme Replacement",
+    "synonyms": [
+      "Creon",
+      "Pancreaze"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Rabeprazole",
@@ -1464,7 +2507,14 @@
     "cas": "117976-90-6",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Proton Pump Inhibitor (PPI)",
+    "synonyms": [
+      "Aciphex",
+      "Pariet"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Diclofenac Sodium",
@@ -1473,7 +2523,14 @@
     "cas": "15307-79-6",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Musculoskeletal & Pain",
+    "sub_category": "Nonsteroidal Anti-inflammatory Drug (NSAID)",
+    "synonyms": [
+      "Voltaren",
+      "Cataflam"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Domperidone",
@@ -1482,7 +2539,13 @@
     "cas": "57808-66-9",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Dopamine D2 Antagonist / Gastroprokinetic",
+    "synonyms": [
+      "Motilium"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Venlafaxine",
@@ -1491,7 +2554,13 @@
     "cas": "93413-69-5",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "SNRI Antidepressant",
+    "synonyms": [
+      "Effexor"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Aprepitant",
@@ -1500,7 +2569,13 @@
     "cas": "170729-80-3",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology & Oncology",
+    "sub_category": "NK1 Receptor Antagonist (Antiemetic)",
+    "synonyms": [
+      "Emend"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Dabigatran",
@@ -1509,7 +2584,13 @@
     "cas": "211915-06-9",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Direct Thrombin Inhibitor (NOAC)",
+    "synonyms": [
+      "Pradaxa"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Diclofenac Sodium",
@@ -1518,7 +2599,14 @@
     "cas": "15307-79-6",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Musculoskeletal & Pain",
+    "sub_category": "Nonsteroidal Anti-inflammatory Drug (NSAID)",
+    "synonyms": [
+      "Voltaren",
+      "Cataflam"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Domperidone",
@@ -1527,7 +2615,13 @@
     "cas": "57808-66-9",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Dopamine D2 Antagonist / Gastroprokinetic",
+    "synonyms": [
+      "Motilium"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Itraconazole",
@@ -1536,7 +2630,13 @@
     "cas": "84625-61-6",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Anti-infective & Antifungal",
+    "sub_category": "Triazole Antifungal Agent",
+    "synonyms": [
+      "Sporanox"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Orlistat",
@@ -1545,7 +2645,14 @@
     "cas": "96829-58-2",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Metabolic & Weight Management",
+    "sub_category": "Gastric & Pancreatic Lipase Inhibitor",
+    "synonyms": [
+      "Xenical",
+      "Alli"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Clarithromycin Taste Masked Micro Pellets, Granules",
@@ -1554,7 +2661,14 @@
     "cas": "81103-11-9",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Anti-infective & Antibiotic",
+    "sub_category": "Macrolide Antibiotic",
+    "synonyms": [
+      "Biaxin",
+      "Klaricid"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Diclofenac Sodium",
@@ -1563,7 +2677,14 @@
     "cas": "15307-79-6",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Musculoskeletal & Pain",
+    "sub_category": "Nonsteroidal Anti-inflammatory Drug (NSAID)",
+    "synonyms": [
+      "Voltaren",
+      "Cataflam"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Domperidone",
@@ -1572,7 +2693,13 @@
     "cas": "57808-66-9",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Dopamine D2 Antagonist / Gastroprokinetic",
+    "synonyms": [
+      "Motilium"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Itopride HCl",
@@ -1581,7 +2708,13 @@
     "cas": "122892-31-3",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Dopamine D2 & Acetylcholinesterase Inhibitor",
+    "synonyms": [
+      "Ganaton"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Levosulpiride",
@@ -1590,7 +2723,13 @@
     "cas": "23672-07-3",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology & CNS",
+    "sub_category": "Prokinetic / Antipsychotic",
+    "synonyms": [
+      "Levopraid"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Mebeverine HCl",
@@ -1599,7 +2738,14 @@
     "cas": "2753-45-9",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Musculotropic Antispasmodic (IBS)",
+    "synonyms": [
+      "Colofac",
+      "Duspatalin"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Memantine",
@@ -1608,7 +2754,14 @@
     "cas": "19982-08-2",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "NMDA Receptor Antagonist (Anti-Alzheimer's)",
+    "synonyms": [
+      "Namenda",
+      "Ebixa"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Mesalamine",
@@ -1617,7 +2770,15 @@
     "cas": "89-57-6",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "5-Aminosalicylic Acid (IBD/Ulcerative Colitis)",
+    "synonyms": [
+      "Asacol",
+      "Pentasa",
+      "Lialda"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Mesalamine (Premix/Granules)",
@@ -1626,7 +2787,15 @@
     "cas": "89-57-6",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "5-Aminosalicylic Acid (IBD/Ulcerative Colitis)",
+    "synonyms": [
+      "Asacol",
+      "Pentasa",
+      "Lialda"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Nicardipine",
@@ -1635,7 +2804,13 @@
     "cas": "55985-32-5",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Dihydropyridine Calcium Channel Blocker",
+    "synonyms": [
+      "Cardene"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Tamsulosin HCl",
@@ -1644,7 +2819,13 @@
     "cas": "106463-17-6",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Urology & Men's Health",
+    "sub_category": "Selective Alpha-1A Adrenoceptor Antagonist (BPH)",
+    "synonyms": [
+      "Flomax"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Vincamine",
@@ -1653,7 +2834,13 @@
     "cas": "1617-90-9",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Peripheral Vasodilator",
+    "synonyms": [
+      "Oxygeron"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Dexlansoprazole",
@@ -1662,7 +2849,14 @@
     "cas": "138530-94-6",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Proton Pump Inhibitor (PPI)",
+    "synonyms": [
+      "Prevacid",
+      "Zoton"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Barnidipine hydrochloride",
@@ -1671,7 +2865,13 @@
     "cas": "104757-53-1",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Calcium Channel Blocker",
+    "synonyms": [
+      "Vasexten"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Chlorpheneramine Maleate",
@@ -1680,7 +2880,13 @@
     "cas": "113-92-8",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "First-Generation Antihistamine",
+    "synonyms": [
+      "Chlor-Trimeton"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Cinitapride",
@@ -1689,7 +2895,14 @@
     "cas": "66564-14-5",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Gastroprokinetic & Anti-emetic",
+    "synonyms": [
+      "Cintapro",
+      "Pemix"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Clarithromycin",
@@ -1698,7 +2911,14 @@
     "cas": "81103-11-9",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Anti-infective & Antibiotic",
+    "sub_category": "Macrolide Antibiotic",
+    "synonyms": [
+      "Biaxin",
+      "Klaricid"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Everolimus",
@@ -1707,7 +2927,14 @@
     "cas": "159351-69-6",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Oncology & Immunosuppression",
+    "sub_category": "mTOR Kinase Inhibitor",
+    "synonyms": [
+      "Afinitor",
+      "Zortress"
+    ],
+    "dmf_status": "USDMF / Tech Pack"
   },
   {
     "name": "Flurbiprofen",
@@ -1716,7 +2943,14 @@
     "cas": "5104-49-4",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Musculoskeletal & Pain",
+    "sub_category": "Nonsteroidal Anti-inflammatory Drug (NSAID)",
+    "synonyms": [
+      "Ansaid",
+      "Froben"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Ketoprofen",
@@ -1725,7 +2959,14 @@
     "cas": "22071-15-4",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Musculoskeletal & Pain",
+    "sub_category": "Nonsteroidal Anti-inflammatory Drug (NSAID)",
+    "synonyms": [
+      "Orudis",
+      "Oruvail"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Levomilnacipran",
@@ -1734,7 +2975,13 @@
     "cas": "96847-55-1",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "SNRI Antidepressant",
+    "synonyms": [
+      "Fetzima"
+    ],
+    "dmf_status": "Tech Pack / USDMF"
   },
   {
     "name": "Linaclotide",
@@ -1743,7 +2990,14 @@
     "cas": "851199-59-2",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Guanylate Cyclase-C Agonist (IBS-C)",
+    "synonyms": [
+      "Linzess",
+      "Constella"
+    ],
+    "dmf_status": "Under Development"
   },
   {
     "name": "Memantine",
@@ -1752,7 +3006,14 @@
     "cas": "19982-08-2",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "NMDA Receptor Antagonist (Anti-Alzheimer's)",
+    "synonyms": [
+      "Namenda",
+      "Ebixa"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Mesalamine",
@@ -1761,7 +3022,15 @@
     "cas": "89-57-6",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "5-Aminosalicylic Acid (IBD/Ulcerative Colitis)",
+    "synonyms": [
+      "Asacol",
+      "Pentasa",
+      "Lialda"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Metoprolol Succinate MUPS",
@@ -1770,7 +3039,14 @@
     "cas": "98455-82-6",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Selective Beta-1 Blocker",
+    "synonyms": [
+      "Toprol-XL",
+      "Lopressor"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Nicardipine",
@@ -1779,7 +3055,13 @@
     "cas": "55985-32-5",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Dihydropyridine Calcium Channel Blocker",
+    "synonyms": [
+      "Cardene"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Pancreatin",
@@ -1788,7 +3070,14 @@
     "cas": "8049-47-6",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Pancreatic Enzyme Replacement",
+    "synonyms": [
+      "Creon",
+      "Pancreaze"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Peppermint oil",
@@ -1797,7 +3086,13 @@
     "cas": "8006-90-4",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Antispasmodic Essential Oil (IBS)",
+    "synonyms": [
+      "Colpermin"
+    ],
+    "dmf_status": "Tech Pack Available"
   },
   {
     "name": "Sirolimus",
@@ -1806,7 +3101,13 @@
     "cas": "53123-88-9",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Immunosuppression & Transplant",
+    "sub_category": "mTOR Inhibitor (Rapamycin)",
+    "synonyms": [
+      "Rapamune"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Tacrolimus",
@@ -1815,7 +3116,14 @@
     "cas": "104987-11-3",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Immunosuppression & Transplant",
+    "sub_category": "Calcineurin Inhibitor (Macrolide)",
+    "synonyms": [
+      "Prograf",
+      "Protopic"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Tolterodine Tartrate",
@@ -1824,7 +3132,13 @@
     "cas": "124937-52-6",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Urology & Overactive Bladder",
+    "sub_category": "Muscarinic Receptor Antagonist (Anticholinergic)",
+    "synonyms": [
+      "Detrol"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Trospium chloride",
@@ -1833,7 +3147,14 @@
     "cas": "10405-02-4",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Urology & Overactive Bladder",
+    "sub_category": "Quaternary Ammonium Antimuscarinic",
+    "synonyms": [
+      "Sanctura",
+      "Regurin"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Viloxazine",
@@ -1842,7 +3163,13 @@
     "cas": "46817-91-8",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Selective Norepinephrine Reuptake Inhibitor",
+    "synonyms": [
+      "Qelbree"
+    ],
+    "dmf_status": "Tech Pack Available"
   },
   {
     "name": "Xanomeline Tartrate",
@@ -1851,7 +3178,13 @@
     "cas": "141064-23-5",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Muscarinic Acetylcholine Receptor Agonist",
+    "synonyms": [
+      "Cobenfy"
+    ],
+    "dmf_status": "Under Development"
   },
   {
     "name": "Carbonyl Iron",
@@ -1860,7 +3193,11 @@
     "cas": "7439-89-6",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Nutrition & Hematology",
+    "sub_category": "Elemental Iron Dietary Mineral",
+    "synonyms": [],
+    "dmf_status": "FCC / USP Grade"
   },
   {
     "name": "Zinc Sulphate",
@@ -1869,7 +3206,11 @@
     "cas": "7446-20-0",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Nutrition & Mineral",
+    "sub_category": "Essential Trace Mineral",
+    "synonyms": [],
+    "dmf_status": "USP / BP Grade"
   },
   {
     "name": "Folic Acid",
@@ -1878,7 +3219,11 @@
     "cas": "59-30-3",
     "specs": "Enteric / SR Pellets",
     "filings": "WHO-GMP Formulations",
-    "page": "pellets.html"
+    "page": "pellets.html",
+    "therapeutic": "Nutrition & Hematology",
+    "sub_category": "B-Complex Vitamin (Vitamin B9)",
+    "synonyms": [],
+    "dmf_status": "USP / Ph.Eur Available"
   },
   {
     "name": "N-Methyl-4-piperidone",
@@ -1887,7 +3232,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "N-Methyl-4-hydroxypiperidine",
@@ -1896,7 +3248,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "N-Methyl-4-chloropiperidine",
@@ -1905,7 +3264,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "N-Methyl-4-chloropiperidine HCl",
@@ -1914,7 +3280,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "N-Methyl-4-aminopiperidine",
@@ -1923,7 +3296,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "N-Carbethoxy-4-piperidone",
@@ -1932,7 +3312,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "N-Carbethoxy-4-hydroxypiperidine",
@@ -1941,7 +3328,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "N-Carbethoxy-4-aminopiperidine",
@@ -1950,7 +3344,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "N-Benzyl-4-piperidone",
@@ -1959,7 +3360,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "N-Benzyl-4-hydroxypiperidine",
@@ -1968,7 +3376,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "4-Benzyl-4-hydroxypiperidine",
@@ -1977,7 +3392,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "N-Benzyl-4-chloropiperidine",
@@ -1986,7 +3408,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "N-Benzyl-4-aminopiperidine",
@@ -1995,7 +3424,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "4-(2-Keto-benzimidazolinyl) piperidine",
@@ -2004,7 +3440,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "4-Piperidone ethylene ketal",
@@ -2013,7 +3456,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "4-Hydroxypiperidine",
@@ -2022,7 +3472,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "4-Aminopiperidine",
@@ -2031,7 +3488,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "4-Piperidinopiperidine",
@@ -2040,7 +3504,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "1,4&#x27;-Bipiperidine dihydrochloride",
@@ -2049,7 +3520,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "N-Piperidin-4-ylbenzamide",
@@ -2058,7 +3536,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "N-Isobutyl-4-piperidone",
@@ -2067,7 +3552,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "1-(4-Chlorobenzhydryl)-piperazine",
@@ -2076,7 +3568,11 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Specialty Chemistry & Intermediates",
+    "sub_category": "Custom Synthesis Fine Chemical",
+    "synonyms": [],
+    "dmf_status": "Technical Package Available"
   },
   {
     "name": "N-Ethyl-4-piperidone",
@@ -2085,7 +3581,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "1,3-Dimethyl-4-piperidone",
@@ -2094,7 +3597,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "(R)-(-)-3-Aminopiperidine dihydrochloride",
@@ -2103,7 +3613,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "N-Propyl-4-piperidone",
@@ -2112,7 +3629,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "3-Chloromethyl-5-Methylpyridine Hydrochloride",
@@ -2121,7 +3645,11 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Specialty Intermediates",
+    "sub_category": "Substituted Pyridine Building Block",
+    "synonyms": [],
+    "dmf_status": "Commercial Grade"
   },
   {
     "name": "4-(4-Chlorophenyl)-4-hydroxypiperidine",
@@ -2130,7 +3658,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "4-(4-Bromophenyl)-4-hydroxypiperidine",
@@ -2139,7 +3674,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "4-Phenyl-4-hydroxypiperidine",
@@ -2148,7 +3690,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "4-Phenylpiperidine",
@@ -2157,7 +3706,14 @@
     "cas": "",
     "specs": "High Purity (>=99.0%)",
     "filings": "Specialized Heterocycle",
-    "page": "piperidone-derivatives.html"
+    "page": "piperidone-derivatives.html",
+    "therapeutic": "Piperidone Chemistry & Fine Intermediates",
+    "sub_category": "Advanced Heterocyclic Building Block / Precursor",
+    "synonyms": [
+      "Piperidone derivative",
+      "CRAMS building block"
+    ],
+    "dmf_status": "Technical Data Package Available"
   },
   {
     "name": "Bempedoic acid",
@@ -2166,7 +3722,14 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "ATP Citrate Lyase Inhibitor (Cholesterol)",
+    "synonyms": [
+      "Nexletol",
+      "Nilemdo"
+    ],
+    "dmf_status": "Under Development / Tech Pack"
   },
   {
     "name": "Bilastine",
@@ -2175,7 +3738,14 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Allergy & Antihistaminic",
+    "sub_category": "Second-Generation Non-Sedating Antihistamine",
+    "synonyms": [
+      "Bilaxten",
+      "Blexten"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Calcium Folinate (Leucovorin calcium)",
@@ -2184,7 +3754,13 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Oncology Adjunct & Nutrition",
+    "sub_category": "Folinic Acid / Chemotherapy Rescue",
+    "synonyms": [
+      "Leucovorin"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Dapagliflozin Propanediol",
@@ -2193,7 +3769,14 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Endocrinology & Antidiabetic",
+    "sub_category": "SGLT2 Inhibitor",
+    "synonyms": [
+      "Farxiga",
+      "Forxiga"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Dexlansoprazole Sesquihydrate",
@@ -2202,7 +3785,14 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Proton Pump Inhibitor (PPI)",
+    "synonyms": [
+      "Prevacid",
+      "Zoton"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Dexlansoprazole Anhydrous",
@@ -2211,7 +3801,14 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Proton Pump Inhibitor (PPI)",
+    "synonyms": [
+      "Prevacid",
+      "Zoton"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Edoxaban Tosylate",
@@ -2220,7 +3817,14 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Factor Xa Inhibitor (NOAC)",
+    "synonyms": [
+      "Savaysa",
+      "Lixiana"
+    ],
+    "dmf_status": "Under Development / USDMF"
   },
   {
     "name": "Eflornithine hydrochloride monohydrate",
@@ -2229,7 +3833,14 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Dermatology & Oncology",
+    "sub_category": "Ornithine Decarboxylase Inhibitor",
+    "synonyms": [
+      "Vaniqa",
+      "Iwilfin"
+    ],
+    "dmf_status": "Under Development"
   },
   {
     "name": "Empagliflozin",
@@ -2238,7 +3849,13 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Endocrinology & Antidiabetic",
+    "sub_category": "SGLT2 Inhibitor",
+    "synonyms": [
+      "Jardiance"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Fosfomycin Tromethamol",
@@ -2247,7 +3864,13 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Anti-infective & Antibiotic",
+    "sub_category": "Phosphonic Acid Derivative Antibiotic",
+    "synonyms": [
+      "Monurol"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Isoxsuprine HCl",
@@ -2256,7 +3879,13 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Cardiovascular",
+    "sub_category": "Peripheral Vasodilator",
+    "synonyms": [
+      "Vasodilan"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Lactulose Crystals",
@@ -2265,7 +3894,14 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Osmotic Laxative / Hepatic Encephalopathy",
+    "synonyms": [
+      "Duphalac",
+      "Kristalose"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "L-methyl Folate Calcium",
@@ -2274,7 +3910,13 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Nutrition & Psychiatry",
+    "sub_category": "Active Bioavailable Folate",
+    "synonyms": [
+      "Deplin"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Maropitant",
@@ -2283,7 +3925,13 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Gastroenterology & Veterinary",
+    "sub_category": "NK1 Receptor Antagonist (Veterinary Antiemetic)",
+    "synonyms": [
+      "Cerenia"
+    ],
+    "dmf_status": "USDMF / Tech Pack"
   },
   {
     "name": "Maropitant Citrate",
@@ -2292,7 +3940,13 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Gastroenterology & Veterinary",
+    "sub_category": "NK1 Receptor Antagonist (Veterinary Antiemetic)",
+    "synonyms": [
+      "Cerenia"
+    ],
+    "dmf_status": "USDMF / Tech Pack"
   },
   {
     "name": "Ormeloxifene HCl",
@@ -2301,7 +3955,14 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Women's Health & Gynecology",
+    "sub_category": "Selective Estrogen Receptor Modulator (SERM)",
+    "synonyms": [
+      "Saheli",
+      "Centron"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Pentosan Polysulfate Sodium",
@@ -2310,7 +3971,13 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Urology",
+    "sub_category": "Semi-synthetic Glycosaminoglycan (Interstitial Cystitis)",
+    "synonyms": [
+      "Elmiron"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Propyphenazone",
@@ -2319,7 +3986,11 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Musculoskeletal & Pain",
+    "sub_category": "Pyrazolone Analgesic & Antipyretic",
+    "synonyms": [],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Rimegepant Sulfate Hydrate",
@@ -2328,7 +3999,14 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "CGRP Receptor Antagonist (Anti-Migraine)",
+    "synonyms": [
+      "Nurtec ODT",
+      "Vydura"
+    ],
+    "dmf_status": "Under Development / Tech Pack"
   },
   {
     "name": "Ropivacaine Hydrochloride monohydrate",
@@ -2337,7 +4015,13 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Anesthesia & Pain",
+    "sub_category": "Aminoamide Local Anesthetic",
+    "synonyms": [
+      "Naropin"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Trofinetide",
@@ -2346,7 +4030,13 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "CNS & Neurology",
+    "sub_category": "Synthetic Tripeptide (Rett Syndrome)",
+    "synonyms": [
+      "Daybue"
+    ],
+    "dmf_status": "Under Development"
   },
   {
     "name": "Tyloxapol",
@@ -2355,7 +4045,13 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Pulmonary & Ophthalmic",
+    "sub_category": "Non-ionic Liquid Polymer Surfactant",
+    "synonyms": [
+      "Triton WR-1339"
+    ],
+    "dmf_status": "USP / BP Available"
   },
   {
     "name": "Ursodiol",
@@ -2364,7 +4060,14 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Gastroenterology",
+    "sub_category": "Bile Acid / Hepatoprotective",
+    "synonyms": [
+      "Actigall",
+      "Urso"
+    ],
+    "dmf_status": "USDMF / CEP Available"
   },
   {
     "name": "Voglibose",
@@ -2373,7 +4076,14 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Endocrinology & Antidiabetic",
+    "sub_category": "Alpha-Glucosidase Inhibitor",
+    "synonyms": [
+      "Basen",
+      "Volix"
+    ],
+    "dmf_status": "USDMF Available"
   },
   {
     "name": "Vitamin K2-7 (Menaquinone-7)",
@@ -2382,6 +4092,10 @@
     "cas": "",
     "specs": "Process Validation Stage",
     "filings": "Pipeline / Scale-up",
-    "page": "under-development.html"
+    "page": "under-development.html",
+    "therapeutic": "Nutrition & Bone Health",
+    "sub_category": "Menaquinone-7 (Osteoporosis & Vascular Health)",
+    "synonyms": [],
+    "dmf_status": "Pharma Grade"
   }
 ]
