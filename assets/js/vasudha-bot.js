@@ -279,14 +279,22 @@
     const inquirySubmitBtn = document.getElementById('vpInquiryBarSubmit');
 
     // Launcher click
-    launcher.addEventListener('click', () => {
-      toggleBotWindow();
-    });
+    if (launcher) {
+      launcher.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleBotWindow();
+      });
+    }
 
     // Close button
-    closeBtn.addEventListener('click', () => {
-      closeBotWindow();
-    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        closeBotWindow();
+      });
+    }
 
     // Teaser close
     if (teaserClose) {
@@ -435,28 +443,72 @@
     const win = document.getElementById('vp-bot-window');
     const launcher = document.getElementById('vp-bot-launcher');
     const chatInput = document.getElementById('vpChatInput');
+    if (!win) return;
+
     win.style.display = 'flex';
+    void win.offsetHeight; // Force layout calculation before animating
+    win.classList.add('vp-open');
+    win.style.opacity = '1';
+    win.style.pointerEvents = 'auto';
+    win.style.transform = 'translateY(0) scale(1)';
     win.setAttribute('aria-hidden', 'false');
-    launcher.classList.add('open');
-    launcher.querySelector('.vp-icon-chat').style.display = 'none';
-    launcher.querySelector('.vp-icon-close').style.display = 'block';
-    const badge = launcher.querySelector('.vp-launcher-badge');
-    if (badge) badge.style.display = 'none';
+
+    if (launcher) {
+      launcher.classList.add('vp-active');
+      launcher.classList.add('open');
+      const chatIcon = launcher.querySelector('.vp-icon-chat');
+      const closeIcon = launcher.querySelector('.vp-icon-close');
+      if (chatIcon) { chatIcon.style.display = 'none'; chatIcon.style.opacity = '0'; }
+      if (closeIcon) { closeIcon.style.display = 'flex'; closeIcon.style.opacity = '1'; }
+      const badge = launcher.querySelector('.vp-launcher-badge');
+      if (badge) badge.style.display = 'none';
+      const unread = launcher.querySelector('.vp-unread-badge');
+      if (unread) unread.style.display = 'none';
+    }
+
     STATE.isOpen = true;
     hideTeaser();
-    setTimeout(() => chatInput.focus(), 300);
+
+    setTimeout(() => {
+      if (chatInput) {
+        try { chatInput.focus(); } catch (e) {}
+      }
+    }, 250);
   }
 
   function closeBotWindow() {
     const win = document.getElementById('vp-bot-window');
     const launcher = document.getElementById('vp-bot-launcher');
-    win.style.display = 'none';
+    if (!win) return;
+
+    win.classList.remove('vp-open');
+    win.style.opacity = '0';
+    win.style.pointerEvents = 'none';
+    win.style.transform = 'translateY(20px) scale(0.95)';
     win.setAttribute('aria-hidden', 'true');
-    launcher.classList.remove('open');
-    launcher.querySelector('.vp-icon-chat').style.display = 'block';
-    launcher.querySelector('.vp-icon-close').style.display = 'none';
+
+    if (launcher) {
+      launcher.classList.remove('vp-active');
+      launcher.classList.remove('open');
+      const chatIcon = launcher.querySelector('.vp-icon-chat');
+      const closeIcon = launcher.querySelector('.vp-icon-close');
+      if (chatIcon) { chatIcon.style.display = 'flex'; chatIcon.style.opacity = '1'; }
+      if (closeIcon) { closeIcon.style.display = 'none'; closeIcon.style.opacity = '0'; }
+    }
+
     STATE.isOpen = false;
+
+    setTimeout(() => {
+      if (!STATE.isOpen && win) {
+        win.style.display = 'none';
+      }
+    }, 280);
   }
+
+  // Global window helpers
+  window.openVasudhaBot = openBotWindow;
+  window.closeVasudhaBot = closeBotWindow;
+  window.toggleVasudhaBot = toggleBotWindow;
 
   function toggleBotWindow() {
     if (STATE.isOpen) closeBotWindow();

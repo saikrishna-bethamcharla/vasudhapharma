@@ -209,9 +209,11 @@
 }
 
 #vp-bot-window.vp-open {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0) scale(1);
+  display: flex !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateY(0) scale(1) !important;
+  visibility: visible !important;
 }
 
 /* ==========================================================================
