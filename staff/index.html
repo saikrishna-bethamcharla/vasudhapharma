@@ -883,6 +883,10 @@
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
               Add New Molecule
             </button>
+            <button type="button" class="btn btn-ghost" onclick="openChatbotLeadsModal()" style="background:#FFFFFF; font-size:12.5px; color:#1E3A8A; border-color:#93C5FD; font-weight:600;" title="View quotation requests and commercial leads submitted via Vasudha Virtual Assistant">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Bot RFQs &amp; Leads (<span id="mktRfqCount">0</span>)
+            </button>
             <button type="button" class="btn btn-ghost" onclick="downloadMarketingCatalogCsv()" style="background:#FFFFFF; font-size:12.5px;" title="Download complete catalog as CSV spreadsheet">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Export CSV
@@ -1363,6 +1367,41 @@
           </div>
         </div>
       </form>
+    </div>
+  </div>
+
+  <!-- Chatbot RFQ Leads Modal -->
+  <div class="auth-overlay" id="chatbotLeadsModal" style="display:none; z-index:999999;">
+    <div class="auth-box" style="max-width:960px; width:95%; max-height:88vh; display:flex; flex-direction:column; padding:24px 28px; border-radius:16px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:1px solid var(--sp-border); padding-bottom:12px;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div style="width:36px; height:36px; border-radius:8px; background:var(--sp-primary-light); color:var(--sp-primary); display:flex; align-items:center; justify-content:center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div>
+            <h2 style="margin:0; font-size:17px; color:var(--sp-primary-dark);">Vasudha Virtual Assistant: Quotation Requests (RFQs)</h2>
+            <div style="font-size:12px; color:var(--sp-text-muted);">Commercial inquiries and sample requests submitted via the website chatbot</div>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <button type="button" class="btn btn-ghost" onclick="exportChatbotLeadsCsv()" style="font-size:12px; padding:5px 10px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export CSV
+          </button>
+          <button type="button" class="btn btn-ghost" onclick="clearAllChatbotLeads()" style="font-size:12px; padding:5px 10px; color:#DC2626;">
+            Clear All
+          </button>
+          <button type="button" onclick="closeChatbotLeadsModal()" style="background:none; border:none; color:var(--sp-text-muted); cursor:pointer; font-size:24px; line-height:1; padding:2px 6px;" title="Close">&times;</button>
+        </div>
+      </div>
+
+      <div style="flex:1; overflow-y:auto; min-height:220px;" id="chatbotLeadsBody">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; margin-top:14px; border-top:1px solid var(--sp-border); padding-top:12px;">
+        <button type="button" class="btn btn-ghost" onclick="closeChatbotLeadsModal()">Close</button>
+      </div>
     </div>
   </div>
 
@@ -3403,6 +3442,7 @@
 
     function renderMarketingDesk() {
       updateMarketingKpis();
+      updateChatbotLeadsBadge();
       const q = (mktSearchQuery || '').trim().toLowerCase();
       const filtered = [];
       for (let i = 0; i < MARKETING_CATALOG.length; i++) {
@@ -3674,6 +3714,145 @@
       a.download = 'vasudha_products_catalog_2026.csv';
       a.click();
       toast(`Catalog CSV exported (${MARKETING_CATALOG.length} items).`);
+    }
+
+    function updateChatbotLeadsBadge() {
+      try {
+        const leads = JSON.parse(localStorage.getItem('vp_bot_leads') || '[]');
+        const badge = document.getElementById('mktRfqCount');
+        if (badge) badge.textContent = leads.length;
+      } catch (e) {}
+    }
+
+    function openChatbotLeadsModal() {
+      const modal = document.getElementById('chatbotLeadsModal');
+      if (!modal) return;
+      renderChatbotLeads();
+      modal.style.display = 'flex';
+      lockBodyScroll();
+    }
+
+    function closeChatbotLeadsModal() {
+      const modal = document.getElementById('chatbotLeadsModal');
+      if (modal) modal.style.display = 'none';
+      unlockBodyScroll();
+      updateChatbotLeadsBadge();
+    }
+
+    function renderChatbotLeads() {
+      const container = document.getElementById('chatbotLeadsBody');
+      if (!container) return;
+      let leads = [];
+      try {
+        leads = JSON.parse(localStorage.getItem('vp_bot_leads') || '[]');
+      } catch (e) { leads = []; }
+
+      if (leads.length === 0) {
+        container.innerHTML = `
+          <div style="text-align:center; padding:40px 20px; color:var(--sp-text-muted);">
+            <div style="font-size:32px; margin-bottom:10px;">📋</div>
+            <div style="font-weight:700; font-size:14px; color:var(--sp-text-main);">No quotation requests logged yet</div>
+            <div style="font-size:12px; margin-top:4px;">When potential clients submit RFQs via the Vasudha Virtual Assistant on the website, they will appear here instantly.</div>
+          </div>
+        `;
+        return;
+      }
+
+      let rowsHtml = leads.map((lead, idx) => {
+        return `
+          <tr style="border-bottom:1px solid var(--sp-border); font-size:12px;">
+            <td style="padding:10px 12px; font-weight:700; font-family:monospace; color:var(--sp-primary); white-space:nowrap;">#${escapeHtml(lead.id || 'N/A')}</td>
+            <td style="padding:10px 12px; color:var(--sp-text-muted); white-space:nowrap;">${escapeHtml(lead.dateStr || (lead.timestamp ? new Date(lead.timestamp).toLocaleDateString() : '—'))}</td>
+            <td style="padding:10px 12px;">
+              <strong>${escapeHtml(lead.molecule || '')}</strong>
+              <div style="font-size:11px; color:var(--sp-text-muted);">Qty: ${escapeHtml(lead.quantity || '')}</div>
+            </td>
+            <td style="padding:10px 12px;">
+              <div><strong>${escapeHtml(lead.contactName || '')}</strong></div>
+              <div style="font-size:11px; color:var(--sp-text-muted);">${escapeHtml(lead.company || '')} (${escapeHtml(lead.market || 'Global')})</div>
+            </td>
+            <td style="padding:10px 12px;">
+              <div><a href="mailto:${escapeHtml(lead.email || '')}" style="color:var(--sp-primary); text-decoration:none;">${escapeHtml(lead.email || '')}</a></div>
+              <div style="font-size:11px; color:var(--sp-text-muted);">${escapeHtml(lead.phone || 'No phone')}</div>
+            </td>
+            <td style="padding:10px 12px; max-width:180px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="${escapeHtml(lead.notes || 'None')}">
+              ${escapeHtml(lead.notes || '—')}
+            </td>
+            <td style="padding:10px 12px; text-align:right; white-space:nowrap;">
+              <button type="button" class="btn btn-ghost" onclick="deleteChatbotLead(${idx})" style="color:#DC2626; padding:3px 7px; font-size:11px;" title="Delete lead">&times;</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      container.innerHTML = `
+        <table style="width:100%; border-collapse:collapse; text-align:left;">
+          <thead>
+            <tr style="background:#F8FAFC; border-bottom:1px solid var(--sp-border); font-size:11px; text-transform:uppercase; color:var(--sp-text-muted);">
+              <th style="padding:8px 12px;">Ticket ID</th>
+              <th style="padding:8px 12px;">Date</th>
+              <th style="padding:8px 12px;">Molecule &amp; Qty</th>
+              <th style="padding:8px 12px;">Client &amp; Company</th>
+              <th style="padding:8px 12px;">Contact</th>
+              <th style="padding:8px 12px;">Notes / Specs</th>
+              <th style="padding:8px 12px; text-align:right;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rowsHtml}
+          </tbody>
+        </table>
+      `;
+    }
+
+    function deleteChatbotLead(idx) {
+      try {
+        const leads = JSON.parse(localStorage.getItem('vp_bot_leads') || '[]');
+        if (idx >= 0 && idx < leads.length) {
+          leads.splice(idx, 1);
+          localStorage.setItem('vp_bot_leads', JSON.stringify(leads));
+          renderChatbotLeads();
+          updateChatbotLeadsBadge();
+          toast('Lead removed.');
+        }
+      } catch (e) {}
+    }
+
+    function clearAllChatbotLeads() {
+      if (!confirm('Are you sure you want to clear all chatbot RFQ leads? This cannot be undone.')) return;
+      localStorage.removeItem('vp_bot_leads');
+      renderChatbotLeads();
+      updateChatbotLeadsBadge();
+      toast('All chatbot leads cleared.');
+    }
+
+    function exportChatbotLeadsCsv() {
+      let leads = [];
+      try { leads = JSON.parse(localStorage.getItem('vp_bot_leads') || '[]'); } catch (e) {}
+      if (leads.length === 0) {
+        toast('No leads to export.');
+        return;
+      }
+      const headers = ['Ticket ID', 'Date', 'Molecule', 'Quantity', 'Contact Name', 'Company', 'Email', 'Phone', 'Market', 'Notes'];
+      const rows = leads.map(l => [
+        `"${(l.id || '').replace(/"/g, '""')}"`,
+        `"${(l.dateStr || '').replace(/"/g, '""')}"`,
+        `"${(l.molecule || '').replace(/"/g, '""')}"`,
+        `"${(l.quantity || '').replace(/"/g, '""')}"`,
+        `"${(l.contactName || '').replace(/"/g, '""')}"`,
+        `"${(l.company || '').replace(/"/g, '""')}"`,
+        `"${(l.email || '').replace(/"/g, '""')}"`,
+        `"${(l.phone || '').replace(/"/g, '""')}"`,
+        `"${(l.market || '').replace(/"/g, '""')}"`,
+        `"${(l.notes || '').replace(/"/g, '""')}"`
+      ]);
+      const csvContent = [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `vasudha_bot_rfq_leads_${new Date().toISOString().slice(0, 10)}.csv`;
+      a.click();
+      toast(`Exported ${leads.length} RFQ leads to CSV.`);
     }
 </script>
 </body>
