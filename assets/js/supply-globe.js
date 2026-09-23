@@ -479,6 +479,11 @@
     targetRotY = currentY + diff;
     targetRotX = Math.max(-0.6, Math.min(0.6, targetX));
 
+    // Respond immediately - snap the globe straight to the selected region
+    // instead of easing into it, so the click feels instant.
+    rotY = targetRotY;
+    rotX = targetRotX;
+
     updateHUD(reg);
   }
 
@@ -561,8 +566,22 @@
         var match = REGIONS.filter(function (r) { return r.id === regId; })[0];
         if (match) {
           rotateToRegion(match);
+
+          // If the globe / region card isn't fully in view, bring it into view
+          // automatically so the selection is visible right away.
+          scrollGlobeIntoViewIfNeeded();
         }
       });
+    }
+  }
+
+  function scrollGlobeIntoViewIfNeeded() {
+    var grid = document.querySelector('.vp-globe-grid');
+    if (!grid) return;
+    var rect = grid.getBoundingClientRect();
+    var fullyVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+    if (!fullyVisible) {
+      grid.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   }
 

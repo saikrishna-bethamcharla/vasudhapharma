@@ -10,6 +10,29 @@
   border-bottom: 1px solid rgba(59, 130, 246, 0.25);
 }
 
+.vp-globe-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.vp-globe-bg-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(13, 30, 68, 0.65) 0%,
+    rgba(13, 30, 68, 0.45) 45%,
+    rgba(13, 30, 68, 0.75) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
 .vp-globe-section::before {
   content: "";
   position: absolute;
