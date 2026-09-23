@@ -7515,14 +7515,14 @@
 
   window.__vpSurveyShowQuestion = showQuestion;
 
-  function showInvite() {
+  function showInvite(force) {
     var o = overlay();
     if (!o) return;
     try {
       var p = new URLSearchParams(window.location.search || '');
       var open = (p.get('open') || '').toLowerCase();
       if (open.indexOf('annual-return') >= 0) return;
-      if (p.get('survey') !== '1' && p.get('survey') !== 'true') {
+      if (!force && p.get('survey') !== '1' && p.get('survey') !== 'true') {
         if (sessionStorage.getItem('vasudhaSurveyDismissed_v3') === '1' ||
             sessionStorage.getItem('vasudhaSurveySessionLoaded') === '1' ||
             sessionStorage.getItem('vasudhaSurveyDismissed_v2') === '1' ||
@@ -7741,7 +7741,12 @@
 
   function start() {
     bind();
-    setTimeout(showInvite, 900);
+    try {
+      var p = new URLSearchParams(window.location.search || '');
+      if (p.get('survey') === '1' || p.get('survey') === 'true') {
+        setTimeout(showInvite, 600);
+      }
+    } catch (e) {}
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
   else start();
