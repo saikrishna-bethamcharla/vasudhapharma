@@ -1086,13 +1086,13 @@
       hideTypingIndicator();
       playNotificationChime();
 
+      const q = query.trim().toLowerCase();
+
       // Check for Website Sitemap / Directory / Pages Intent
       if (/(site\s*map|sitemap|website\s*pages|all\s*pages|web\s*pages|links|directory|navigation|browse\s*pages|page\s*links|where\s*is|pages|browse\s*site)/i.test(q)) {
         renderFullSiteDirectory();
         return;
       }
-
-      const q = query.trim().toLowerCase();
 
       // 1. Check for Greetings
       if (/^(hi|hello|hey|good\s+morning|good\s+afternoon|good\s+evening|namaste|help)$/i.test(q)) {
