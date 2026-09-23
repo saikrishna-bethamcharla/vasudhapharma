@@ -26,10 +26,10 @@
 
 #vp-bot-launcher {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
-  width: 60px;
-  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: var(--vp-bot-gradient);
   color: #FFFFFF;
@@ -187,12 +187,13 @@
 
 #vp-bot-window {
   position: fixed;
-  bottom: 96px;
-  right: 24px;
-  width: 390px;
+  bottom: 84px;
+  right: 20px;
+  width: 385px;
   max-width: calc(100vw - 32px);
-  height: 610px;
-  max-height: calc(100vh - 120px);
+  height: 540px;
+  max-height: calc(100vh - 105px);
+  max-height: calc(100dvh - 105px);
   background: #FFFFFF;
   border-radius: var(--vp-bot-radius);
   box-shadow: var(--vp-bot-shadow);
@@ -206,6 +207,7 @@
   transform: translateY(20px) scale(0.95);
   transform-origin: bottom right;
   transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
 }
 
 #vp-bot-window.vp-open {
@@ -231,8 +233,9 @@
   position: relative;
   z-index: 10;
   gap: 10px;
-  flex-shrink: 0;
-  box-sizing: border-box;
+  flex-shrink: 0 !important;
+  min-height: 60px !important;
+  box-sizing: border-box !important;
 }
 
 .vp-header-left {
@@ -301,11 +304,12 @@
   font-size: 13.5px !important;
   font-weight: 700 !important;
   letter-spacing: -0.2px !important;
-  line-height: 1.25 !important;
+  line-height: 1.35 !important;
   color: #FFFFFF !important;
   white-space: nowrap !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
+  padding-top: 1px !important;
 }
 
 .vp-header-sub,
@@ -314,7 +318,7 @@
   opacity: 0.9 !important;
   color: rgba(255, 255, 255, 0.9) !important;
   margin-top: 2px !important;
-  line-height: 1.2 !important;
+  line-height: 1.25 !important;
   white-space: nowrap !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
@@ -1132,6 +1136,8 @@
   font-size: 13px;
   font-weight: 600;
   animation: vpSlideUp 0.25s ease;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
 }
 
 .vp-inquiry-bar button {
@@ -1184,6 +1190,9 @@
   border-bottom: 1px solid var(--vp-bot-border);
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  flex-shrink: 0 !important;
+  min-height: 44px !important;
+  box-sizing: border-box !important;
 }
 
 .vp-quick-filters::-webkit-scrollbar {
@@ -1191,7 +1200,7 @@
 }
 
 .vp-qf-chip {
-  flex: 0 0 auto;
+  flex: 0 0 auto !important;
   background: #ffffff;
   border: 1px solid #e2e8f0;
   color: #475569;
@@ -1202,6 +1211,8 @@
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
+  line-height: 1.25;
+  box-sizing: border-box;
 }
 
 .vp-qf-chip:hover {

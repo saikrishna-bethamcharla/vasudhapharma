@@ -674,6 +674,8 @@
         return;
       }
     });
+
+    window.addEventListener('resize', adjustBotWindowBounds);
   }
 
   // Toggle Inquiry Cart
@@ -708,6 +710,15 @@
     }
   }
 
+  // Dynamically ensure window height never pushes the header off the top of the viewport
+  function adjustBotWindowBounds() {
+    const win = document.getElementById('vp-bot-window');
+    if (!win) return;
+    const vh = window.innerHeight || document.documentElement.clientHeight || 700;
+    const maxAllowedH = Math.max(360, vh - 105);
+    win.style.maxHeight = maxAllowedH + 'px';
+  }
+
   // Open / Close Bot Window
   function openBotWindow() {
     const win = document.getElementById('vp-bot-window');
@@ -715,6 +726,7 @@
     const chatInput = document.getElementById('vpChatInput');
     if (!win) return;
 
+    adjustBotWindowBounds();
     win.style.display = 'flex';
     void win.offsetHeight; // Force layout calculation before animating
     win.classList.add('vp-open');
