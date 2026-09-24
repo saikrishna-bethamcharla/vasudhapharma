@@ -404,3 +404,22 @@
   grid-template-columns: 1.5fr 0.65fr 1.3fr 1fr 1.2fr 0.95fr !important;
 }
 
+/* ===== 9. Core Web Vitals & Skeleton Pulse Optimization ===== */
+@keyframes vpSkeletonPulse {
+  0% { background-color: #f1f5f9; }
+  50% { background-color: #e2e8f0; }
+  100% { background-color: #f1f5f9; }
+}
+
+.vp-skeleton {
+  animation: vpSkeletonPulse 1.5s ease-in-out infinite !important;
+  border-radius: 8px !important;
+  color: transparent !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+img[loading="lazy"] {
+  content-visibility: auto;
+}
+

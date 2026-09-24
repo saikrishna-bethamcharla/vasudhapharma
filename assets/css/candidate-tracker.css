@@ -1,0 +1,312 @@
+/**
+ * Vasudha Pharma Chem Limited — Candidate Application Status Tracker
+ * Responsive application pipeline stepper with reference ID lookup and live submission sync.
+ */
+
+:root {
+  --cat-primary: #254696;
+  --cat-primary-hover: #1e3a8a;
+  --cat-primary-light: #eff6ff;
+  --cat-success: #10b981;
+  --cat-success-light: #ecfdf5;
+  --cat-border: #e2e8f0;
+  --cat-text: #0f172a;
+  --cat-text-muted: #64748b;
+  --cat-bg: #ffffff;
+}
+
+/* Tab Switcher at Top of Portal */
+.cat-mode-tabs {
+  display: flex;
+  background: #f1f5f9;
+  padding: 6px;
+  border-radius: 12px;
+  gap: 6px;
+  margin-bottom: 28px;
+  border: 1px solid var(--cat-border);
+}
+
+.cat-mode-tab {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.cat-mode-tab:hover {
+  color: var(--cat-primary);
+}
+
+.cat-mode-tab.active {
+  background: #ffffff;
+  color: var(--cat-primary);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+/* Tracker Panel Container */
+.cat-tracker-panel {
+  display: none;
+}
+
+.cat-tracker-panel.active {
+  display: block;
+  animation: catFadeIn 0.3s ease forwards;
+}
+
+@keyframes catFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Search Box */
+.cat-search-box {
+  background: #f8fafc;
+  border: 1.5px solid var(--cat-border);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.cat-search-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 600px) {
+  .cat-search-form {
+    flex-direction: column;
+  }
+}
+
+.cat-search-input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1.5px solid #cbd5e1;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+  text-transform: uppercase;
+}
+
+.cat-search-input:focus {
+  border-color: var(--cat-primary);
+  box-shadow: 0 0 0 3px rgba(37, 70, 150, 0.12);
+}
+
+.cat-btn-track {
+  padding: 12px 24px;
+  border-radius: 10px;
+  background: var(--cat-primary);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.cat-btn-track:hover {
+  background: var(--cat-primary-hover);
+  transform: translateY(-1px);
+}
+
+/* Sample ID Chips */
+.cat-samples-strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--cat-text-muted);
+}
+
+.cat-sample-chip {
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #ffffff;
+  border: 1px solid var(--cat-border);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--cat-primary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cat-sample-chip:hover {
+  background: var(--cat-primary-light);
+  border-color: var(--cat-primary);
+}
+
+/* Application Status Card */
+.cat-result-card {
+  background: #ffffff;
+  border: 1.5px solid var(--cat-border);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 10px 30px -8px rgba(15, 23, 42, 0.08);
+}
+
+.cat-app-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 18px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cat-app-role {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--cat-text);
+  margin-bottom: 4px;
+}
+
+.cat-app-meta {
+  font-size: 13px;
+  color: var(--cat-text-muted);
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cat-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cat-status-badge.in-progress {
+  background: var(--cat-primary-light);
+  color: var(--cat-primary);
+  border: 1px solid rgba(37, 70, 150, 0.2);
+}
+
+.cat-status-badge.passed {
+  background: var(--cat-success-light);
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+/* 4-Step Pipeline Stepper */
+.cat-stepper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .cat-stepper {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.cat-step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+@media (min-width: 769px) {
+  .cat-step-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    width: 100%;
+    height: 3px;
+    background: #e2e8f0;
+    z-index: 1;
+  }
+  .cat-step-item.completed:not(:last-child)::after {
+    background: var(--cat-success);
+  }
+  .cat-step-item.current:not(:last-child)::after {
+    background: linear-gradient(90deg, var(--cat-primary), #e2e8f0);
+  }
+}
+
+.cat-step-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: 2px solid #cbd5e1;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.2s ease;
+}
+
+.cat-step-item.completed .cat-step-circle {
+  background: var(--cat-success);
+  border-color: var(--cat-success);
+  color: #ffffff;
+}
+
+.cat-step-item.current .cat-step-circle {
+  background: var(--cat-primary);
+  border-color: var(--cat-primary);
+  color: #ffffff;
+  box-shadow: 0 0 0 4px var(--cat-primary-light);
+}
+
+.cat-step-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cat-text);
+  margin-bottom: 2px;
+}
+
+.cat-step-desc {
+  font-size: 11.5px;
+  color: var(--cat-text-muted);
+  line-height: 1.4;
+}
+
+/* Feedback & Note Banner */
+.cat-notes-banner {
+  background: #f8fafc;
+  border: 1px solid var(--cat-border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 13.5px;
+  color: #334155;
+  line-height: 1.6;
+}

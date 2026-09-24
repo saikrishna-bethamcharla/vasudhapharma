@@ -1,0 +1,504 @@
+/**
+ * Vasudha Pharma Chem Limited — Interactive Unit-by-Unit Facility & Equipment Explorer
+ * Responsive tabbed interface detailing reactor metallurgy, temperature envelopes,
+ * cleanrooms, clean utilities, and regulatory accreditations.
+ */
+
+:root {
+  --vue-primary: #254696;
+  --vue-primary-hover: #1e3a8a;
+  --vue-primary-light: #eff6ff;
+  --vue-border: #e2e8f0;
+  --vue-card-bg: #ffffff;
+  --vue-text: #0f172a;
+  --vue-text-muted: #64748b;
+  --vue-accent: #3b82f6;
+}
+
+.vue-explorer-section {
+  padding: 40px 0 60px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border-bottom: 1px solid var(--vue-border);
+}
+
+.vue-header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 36px;
+}
+
+.vue-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: var(--vue-primary-light);
+  color: var(--vue-primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  border: 1px solid rgba(37, 70, 150, 0.15);
+}
+
+.vue-title {
+  font-size: clamp(26px, 3.2vw, 38px);
+  font-weight: 800;
+  color: var(--vue-text);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.vue-desc {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--vue-text-muted);
+}
+
+/* Region Filter Chips */
+.vue-region-filter {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.vue-filter-chip {
+  padding: 7px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1.5px solid var(--vue-border);
+  background: #ffffff;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vue-filter-chip:hover {
+  border-color: var(--vue-primary);
+  color: var(--vue-primary);
+}
+
+.vue-filter-chip.active {
+  background: var(--vue-primary);
+  color: #ffffff;
+  border-color: var(--vue-primary);
+  box-shadow: 0 4px 12px rgba(37, 70, 150, 0.22);
+}
+
+/* Unit Navigation Tabs */
+.vue-tabs-scroller {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 6px 4px 16px;
+  scrollbar-width: thin;
+  margin-bottom: 24px;
+  justify-content: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .vue-tabs-scroller {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.vue-tab-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1.5px solid var(--vue-border);
+  cursor: pointer;
+  transition: all 0.22s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-align: left;
+  min-width: 140px;
+}
+
+.vue-tab-btn:hover {
+  border-color: var(--vue-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+}
+
+.vue-tab-btn.active {
+  background: #ffffff;
+  border-color: var(--vue-primary);
+  box-shadow: 0 8px 24px rgba(37, 70, 150, 0.16);
+  position: relative;
+}
+
+.vue-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 16px;
+  right: 16px;
+  height: 3px;
+  background: var(--vue-primary);
+  border-radius: 3px;
+}
+
+.vue-tab-num {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--vue-text);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vue-tab-btn.active .vue-tab-num {
+  color: var(--vue-primary);
+}
+
+.vue-tab-loc {
+  font-size: 11px;
+  color: var(--vue-text-muted);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* Interactive Display Showcase */
+.vue-showcase-card {
+  background: #ffffff;
+  border: 1px solid var(--vue-border);
+  border-radius: 20px;
+  box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.vue-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+@media (min-width: 960px) {
+  .vue-grid {
+    grid-template-columns: 1.15fr 1.35fr;
+  }
+}
+
+/* Left Visual Column */
+.vue-visual-col {
+  padding: 28px;
+  background: #fafafa;
+  border-right: 1px solid var(--vue-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.vue-image-box {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  aspect-ratio: 16 / 10;
+  background: #0f172a;
+}
+
+.vue-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.vue-image-box:hover img {
+  transform: scale(1.03);
+}
+
+.vue-badge-bar {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+.vue-badge {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: rgba(15, 23, 42, 0.82);
+  color: #ffffff;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.vue-badge.highlight {
+  background: var(--vue-primary);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.vue-site-info {
+  margin-top: auto;
+}
+
+.vue-site-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--vue-text);
+  margin-bottom: 4px;
+}
+
+.vue-site-sub {
+  font-size: 13.5px;
+  color: var(--vue-primary);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.vue-site-desc {
+  font-size: 14px;
+  color: var(--vue-text-muted);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.vue-accreditations-strip {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.vue-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 600;
+  background: #ffffff;
+  border: 1px solid var(--vue-border);
+  padding: 4px 10px;
+  border-radius: 6px;
+  color: #334155;
+}
+
+/* Right Details Column */
+.vue-details-col {
+  padding: 32px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Technical Metrics Grid */
+.vue-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.vue-metric-card {
+  background: #f8fafc;
+  border: 1px solid var(--vue-border);
+  border-radius: 12px;
+  padding: 14px 12px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.vue-metric-card:hover {
+  background: #ffffff;
+  border-color: var(--vue-primary);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+.vue-metric-val {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--vue-text);
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.vue-metric-lbl {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--vue-text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* Reactor Metallurgy Meter */
+.vue-spec-section {
+  margin-bottom: 22px;
+}
+
+.vue-spec-heading {
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--vue-text);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vue-meter-track {
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.vue-meter-bar-glr {
+  background: var(--vue-primary);
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+.vue-meter-bar-ss {
+  background: #38bdf8;
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+.vue-meter-bar-hast {
+  background: #f59e0b;
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+.vue-meter-legend {
+  display: flex;
+  gap: 16px;
+  font-size: 11.5px;
+  color: #475569;
+  flex-wrap: wrap;
+}
+
+.vue-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vue-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.vue-dot-glr { background: var(--vue-primary); }
+.vue-dot-ss { background: #38bdf8; }
+.vue-dot-hast { background: #f59e0b; }
+
+/* Clean Utilities & Chemical Technologies List */
+.vue-capabilities-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 600px) {
+  .vue-capabilities-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.vue-cap-box {
+  background: #f8fafc;
+  border: 1px solid var(--vue-border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.vue-cap-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--vue-text);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.vue-cap-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 12.5px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.vue-cap-list li {
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 4px;
+}
+
+.vue-cap-list li::before {
+  content: '•';
+  color: var(--vue-primary);
+  font-weight: 800;
+  position: absolute;
+  left: 0;
+}
+
+/* Call to Action Footer inside Explorer */
+.vue-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border-top: 1px solid var(--vue-border);
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+
+.vue-action-note {
+  font-size: 12px;
+  color: var(--vue-text-muted);
+}
+
+.vue-btn-inquire {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--vue-primary);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.vue-btn-inquire:hover {
+  background: var(--vue-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(37, 70, 150, 0.28);
+  color: #ffffff;
+}

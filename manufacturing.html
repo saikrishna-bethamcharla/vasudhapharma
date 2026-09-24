@@ -874,7 +874,7 @@
     .mfg-hero-wrap {
       background:
         linear-gradient(105deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.82) 38%, rgba(255,255,255,0.45) 68%, rgba(255,255,255,0.2) 100%),
-        url('assets/manufacturing-hero-bg.jpg') right center / cover no-repeat;
+        url('assets/manufacturing-hero-bg.webp') right center / cover no-repeat;
       background-color: #f7fafc;
     }
     .mfg-hero-wrap #pagebanner.hero {
@@ -6096,6 +6096,7 @@
 
 </style>
   <link rel="stylesheet" href="assets/css/manufacturing-modern.css?v=2">
+  <link rel="stylesheet" href="assets/css/mfg-unit-explorer.css">
   <style>
     .scroll-graphics { display: none !important; }
   </style>
@@ -6557,6 +6558,9 @@
       </div>
     </div>
   </section>
+
+  <!-- Interactive Unit-by-Unit Facility & Equipment Explorer Mount -->
+  <div id="vueExplorerMount"></div>
 
   <!-- Production Facilities (UNIT-1 to UNIT-5) -->
     <section class="about-sub-section page-section" id="production-facilities" style="padding: 64px 0; border-bottom: 1px solid var(--border);">
@@ -8766,6 +8770,9 @@
 <link rel="stylesheet" href="assets/css/vasudha-bot.css">
 <script src="assets/js/vasudha-bot.js" defer></script>
 <!-- ========== END VASUDHA VIRTUAL ASSISTANT ========== -->
+
+<!-- Interactive Facility & Equipment Explorer Script -->
+<script src="assets/js/mfg-unit-explorer.js" defer></script>
 
 
 <script src="cookie-consent.js" defer></script>
