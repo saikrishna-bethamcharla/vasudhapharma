@@ -1,0 +1,463 @@
+/* ==========================================================================
+   Vasudha Pharma — Milestones & Corporate Journey Roadmap
+   Alternating Vertical Timeline with Thematic Filtering & Metrics
+   Royal Blue Theme Edition
+   ========================================================================== */
+
+:root {
+  --mr-primary: #254696;
+  --mr-primary-dark: #1b3574;
+  --mr-primary-light: #eff6ff;
+  --mr-primary-border: #bfdbfe;
+  --mr-glow: rgba(37, 70, 150, 0.2);
+  --mr-bg-card: #ffffff;
+  --mr-text-main: #0f172a;
+  --mr-text-muted: #475569;
+  --mr-border-card: #e2e8f0;
+}
+
+/* Section Container & Spacing */
+.milestones-section {
+  padding: 80px 0 96px;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.milestones-section .section-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--mr-primary);
+  margin-bottom: 10px;
+}
+
+.milestones-section h2 {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--mr-text-main);
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+  line-height: 1.25;
+}
+
+.milestones-section .milestones-intro-desc {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--mr-text-muted);
+  max-width: 760px;
+  margin: 0 0 36px;
+}
+
+/* ==========================================================================
+   1. Quick-Glance Milestone KPI Stats Strip
+   ========================================================================== */
+.mr-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 48px;
+}
+
+.mr-kpi-card {
+  background: linear-gradient(135deg, #ffffff 0%, var(--mr-primary-light) 100%);
+  border: 1px solid var(--mr-primary-border);
+  border-radius: 14px;
+  padding: 22px 20px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(37, 70, 150, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mr-kpi-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(37, 70, 150, 0.12);
+}
+
+.mr-kpi-val {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--mr-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.mr-kpi-lbl {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  line-height: 1.4;
+}
+
+.mr-kpi-sub {
+  font-size: 11.5px;
+  color: #64748b;
+  margin-top: 3px;
+}
+
+/* ==========================================================================
+   2. Thematic Filter Tabs
+   ========================================================================== */
+.mr-filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 56px;
+  padding: 8px 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 40px;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mr-filter-btn {
+  border: none;
+  background: transparent;
+  color: #475569;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: all 0.2s ease;
+}
+
+.mr-filter-btn:hover {
+  color: var(--mr-primary);
+  background: rgba(37, 70, 150, 0.08);
+}
+
+.mr-filter-btn.active {
+  background: var(--mr-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 70, 150, 0.28);
+}
+
+.mr-filter-count {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.25);
+  font-size: 11px;
+  padding: 1px 7px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.mr-filter-btn:not(.active) .mr-filter-count {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+/* ==========================================================================
+   3. Alternating Vertical Timeline Roadmap (Desktop Layout)
+   ========================================================================== */
+.mr-timeline-wrap {
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 20px 0 40px;
+}
+
+/* Central Timeline Spine */
+.mr-timeline-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, var(--mr-primary) 0%, #3b82f6 60%, var(--mr-primary-dark) 100%);
+  border-radius: 4px;
+  box-shadow: 0 0 14px var(--mr-glow);
+  z-index: 1;
+}
+
+/* Milestone Item Row */
+.mr-item {
+  position: relative;
+  width: 50%;
+  padding: 0 40px 48px;
+  box-sizing: border-box;
+  z-index: 2;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mr-item.is-hidden {
+  display: none !important;
+}
+
+/* Left vs Right Alignment */
+.mr-item.left {
+  left: 0;
+  text-align: right;
+  padding-left: 0;
+  padding-right: 48px;
+}
+
+.mr-item.right {
+  left: 50%;
+  text-align: left;
+  padding-right: 0;
+  padding-left: 48px;
+}
+
+/* Central Marker Pin / Node */
+.mr-pin {
+  position: absolute;
+  top: 14px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 4px solid var(--mr-primary);
+  box-shadow: 0 0 0 4px rgba(37, 70, 150, 0.2), 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.mr-item.left .mr-pin {
+  right: -10px;
+}
+
+.mr-item.right .mr-pin {
+  left: -10px;
+}
+
+.mr-item:hover .mr-pin {
+  transform: scale(1.3);
+  background: var(--mr-primary);
+  border-color: #ffffff;
+  box-shadow: 0 0 0 6px rgba(37, 70, 150, 0.3);
+}
+
+/* Milestone Card Box */
+.mr-card {
+  background: #ffffff;
+  border: 1px solid var(--mr-border-card);
+  border-radius: 16px;
+  padding: 24px 26px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  position: relative;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.mr-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(37, 70, 150, 0.12);
+  border-color: var(--mr-primary-border);
+}
+
+/* Direction Arrow Pointer */
+.mr-card::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  border: 1px solid var(--mr-border-card);
+  transform: rotate(45deg);
+  z-index: 1;
+  transition: border-color 0.25s ease;
+}
+
+.mr-item.left .mr-card::before {
+  right: -8px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.mr-item.right .mr-card::before {
+  left: -8px;
+  border-right: none;
+  border-top: none;
+}
+
+.mr-card:hover::before {
+  border-color: var(--mr-primary-border);
+}
+
+/* Card Header: Year Pill & Category Badge */
+.mr-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.mr-year-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--mr-primary);
+  background: var(--mr-primary-light);
+  border: 1px solid var(--mr-primary-border);
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+
+.mr-cat-badge {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Badge Color Themes */
+.mr-badge-corporate {
+  background: #f1f5f9;
+  color: #475569;
+}
+.mr-badge-regulatory {
+  background: #fef3c7;
+  color: #92400e;
+}
+.mr-badge-facility {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+.mr-badge-rnd {
+  background: #f3e8ff;
+  color: #7e22ce;
+}
+.mr-badge-esg {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+/* Card Headline & Content */
+.mr-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--mr-text-main);
+  line-height: 1.35;
+  margin: 0 0 8px;
+}
+
+.mr-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--mr-text-muted);
+  margin: 0 0 14px;
+}
+
+/* Highlight Key Tag / Metric Footer */
+.mr-metric-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--mr-primary-dark);
+  background: #f8fafc;
+  border: 1px dashed var(--mr-primary-border);
+  padding: 5px 12px;
+  border-radius: 8px;
+}
+
+.mr-metric-tag svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   4. Responsive Breakpoints (Mobile & Tablet)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .mr-kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .milestones-section {
+    padding: 60px 0 72px;
+  }
+
+  .milestones-section h2 {
+    font-size: 27px;
+  }
+
+  /* Reposition Central Line to Left Edge */
+  .mr-timeline-wrap::before {
+    left: 20px;
+    transform: none;
+  }
+
+  /* Stack All Milestone Items to Full Width on Right of Spine */
+  .mr-item {
+    width: 100% !important;
+    left: 0 !important;
+    padding: 0 0 36px 54px !important;
+    text-align: left !important;
+  }
+
+  .mr-item .mr-pin {
+    left: 11px !important;
+    right: auto !important;
+  }
+
+  .mr-item .mr-card::before {
+    left: -8px !important;
+    right: auto !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-left: 1px solid var(--mr-border-card) !important;
+    border-bottom: 1px solid var(--mr-border-card) !important;
+  }
+
+  .mr-filters-bar {
+    border-radius: 20px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
+    padding: 6px 8px;
+  }
+
+  .mr-filter-btn {
+    font-size: 12.5px;
+    padding: 6px 14px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .mr-kpi-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .mr-kpi-val {
+    font-size: 28px;
+  }
+
+  .mr-card {
+    padding: 18px 18px;
+  }
+
+  .mr-title {
+    font-size: 16px;
+  }
+}
