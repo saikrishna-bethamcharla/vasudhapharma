@@ -696,6 +696,18 @@
       to { transform: translateY(0); opacity: 1; }
     }
   </style>
+  <style>
+    /* Auto-hide floating scroll capsule when nearing footer to prevent collision */
+    .scroll-graphics {
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease !important;
+    }
+    .scroll-graphics.footer-hidden {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      transform: translateY(20px) !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -1536,5 +1548,26 @@
 <link rel="stylesheet" href="assets/css/vasudha-bot.css">
 <script src="assets/js/vasudha-bot.js" defer></script>
 <!-- ========== END VASUDHA VIRTUAL ASSISTANT ========== -->
+
+<script>
+  // Hide bottom-left floating scroll graphics when footer is near/visible
+  (function() {
+    function checkFooterOverlap() {
+      var sg = document.querySelector('.scroll-graphics');
+      var foot = document.querySelector('footer.vp-foot') || document.querySelector('footer');
+      if (!sg || !foot) return;
+      var footRect = foot.getBoundingClientRect();
+      if (footRect.top < window.innerHeight - 40) {
+        sg.classList.add('footer-hidden');
+      } else {
+        sg.classList.remove('footer-hidden');
+      }
+    }
+    window.addEventListener('scroll', checkFooterOverlap, { passive: true });
+    window.addEventListener('resize', checkFooterOverlap, { passive: true });
+    document.addEventListener('DOMContentLoaded', checkFooterOverlap);
+  })();
+</script>
+
 </body>
 </html>

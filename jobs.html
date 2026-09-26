@@ -5,8 +5,41 @@
   <meta http-equiv="refresh" content="0;url=careers.html">
   <title>Jobs | Vasudha Pharma</title>
   <script>location.replace("careers.html"+location.search+(location.hash||"#openings"));</script>
+  <style>
+    /* Auto-hide floating scroll capsule when nearing footer to prevent collision */
+    .scroll-graphics {
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease !important;
+    }
+    .scroll-graphics.footer-hidden {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      transform: translateY(20px) !important;
+    }
+  </style>
 </head>
 <body>
   <p><a href="careers.html#openings">Open positions have moved to Careers.</a></p>
+
+<script>
+  // Hide bottom-left floating scroll graphics when footer is near/visible
+  (function() {
+    function checkFooterOverlap() {
+      var sg = document.querySelector('.scroll-graphics');
+      var foot = document.querySelector('footer.vp-foot') || document.querySelector('footer');
+      if (!sg || !foot) return;
+      var footRect = foot.getBoundingClientRect();
+      if (footRect.top < window.innerHeight - 40) {
+        sg.classList.add('footer-hidden');
+      } else {
+        sg.classList.remove('footer-hidden');
+      }
+    }
+    window.addEventListener('scroll', checkFooterOverlap, { passive: true });
+    window.addEventListener('resize', checkFooterOverlap, { passive: true });
+    document.addEventListener('DOMContentLoaded', checkFooterOverlap);
+  })();
+</script>
+
 </body>
 </html>

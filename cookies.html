@@ -46,7 +46,7 @@
     .vp-foot-social { display:flex; gap:10px; margin:0 0 14px; }
     .vp-foot-social a { display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border:1px solid #ddd; border-radius:50%; font-size:11px; font-weight:800; }
     .vp-foot-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:36px; padding-top:20px; border-top:1px solid #eee; font-size:13px; color:#666; }
-    .vp-foot-bottom strong { color:#C8102E; font-size:16px; }
+    .vp-foot-bottom strong { color:#EC3237; font-size:16px; }
     @media (max-width:800px){ .vp-foot-cols, .vp-foot-split { grid-template-columns:1fr; } }
 
     
@@ -78,6 +78,18 @@
   <meta name="twitter:description" content="Vasudha Pharma Chem Limited is a leading manufacturer of Active Pharmaceutical Ingredients (APIs) and Pharma Intermediates.">
   <meta name="twitter:image" content="https://vasudhapharma.com/assets/company-aerial.jpg">
   <link rel="canonical" href="https://vasudhapharma.com/cookies.html">
+  <style>
+    /* Auto-hide floating scroll capsule when nearing footer to prevent collision */
+    .scroll-graphics {
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease !important;
+    }
+    .scroll-graphics.footer-hidden {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      transform: translateY(20px) !important;
+    }
+  </style>
 </head>
 <body>
   <div class="wrap">
@@ -151,7 +163,7 @@
         </div>
       </div>
       <div class="vp-foot-bottom">
-        <a href="home.html" class="logo vp-bag-copy">
+        <a href="home.html" class="logo">
         <div class="logo-hex-wrap">
           <div class="logo-hex-body">
             <img src="assets/vasudha-logo.jpg" alt="Vasudha Pharma Chem Limited" class="logo-img">
@@ -160,7 +172,6 @@
         <div class="logo-text">
           <strong>VASUDHA PHARMA CHEM LIMITED</strong>
           <span>Contributing to affordable health care...</span>
-          <em class="logo-since">Since 1994</em>
         </div>
       </a>
         <span>© 2026 Vasudha Pharma Chem Limited. All rights reserved.</span>
@@ -174,5 +185,26 @@
 <link rel="stylesheet" href="assets/css/vasudha-bot.css">
 <script src="assets/js/vasudha-bot.js" defer></script>
 <!-- ========== END VASUDHA VIRTUAL ASSISTANT ========== -->
+
+<script>
+  // Hide bottom-left floating scroll graphics when footer is near/visible
+  (function() {
+    function checkFooterOverlap() {
+      var sg = document.querySelector('.scroll-graphics');
+      var foot = document.querySelector('footer.vp-foot') || document.querySelector('footer');
+      if (!sg || !foot) return;
+      var footRect = foot.getBoundingClientRect();
+      if (footRect.top < window.innerHeight - 40) {
+        sg.classList.add('footer-hidden');
+      } else {
+        sg.classList.remove('footer-hidden');
+      }
+    }
+    window.addEventListener('scroll', checkFooterOverlap, { passive: true });
+    window.addEventListener('resize', checkFooterOverlap, { passive: true });
+    document.addEventListener('DOMContentLoaded', checkFooterOverlap);
+  })();
+</script>
+
 </body>
 </html>

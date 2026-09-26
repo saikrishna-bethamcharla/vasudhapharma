@@ -14,12 +14,12 @@
 }
 
 .prod-card:hover .prod-more {
-  color: var(--primary-red, #c8102e) !important;
+  color: var(--primary-red, #EC3237) !important;
   gap: 12px !important;
 }
 
 .prod-card:focus-visible {
-  outline: 2px solid var(--primary-red, #c8102e);
+  outline: 2px solid var(--primary-red, #EC3237);
   outline-offset: 3px;
 }
 
@@ -182,7 +182,7 @@
 .vp-partner-btn-primary {
   flex: 1.25;
   padding: 12px 18px;
-  background: var(--primary-red, #c8102e);
+  background: var(--primary-red, #EC3237);
   border: none;
   color: #ffffff;
   border-radius: 10px;

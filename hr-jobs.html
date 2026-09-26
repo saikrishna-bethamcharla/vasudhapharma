@@ -73,7 +73,7 @@
       display: block;
       font-size: 14.5px;
       font-weight: 800;
-      color: #C8102E;
+      color: #EC3237;
       letter-spacing: 0.02em;
       line-height: 1.2;
     }
@@ -217,6 +217,18 @@
   <meta name="twitter:description" content="Vasudha Pharma Chem Limited is a leading manufacturer of Active Pharmaceutical Ingredients (APIs) and Pharma Intermediates.">
   <meta name="twitter:image" content="https://vasudhapharma.com/assets/company-aerial.jpg">
   <link rel="canonical" href="https://vasudhapharma.com/hr-jobs.html">
+  <style>
+    /* Auto-hide floating scroll capsule when nearing footer to prevent collision */
+    .scroll-graphics {
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease !important;
+    }
+    .scroll-graphics.footer-hidden {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      transform: translateY(20px) !important;
+    }
+  </style>
 </head>
 <body>
   <div class="staff-shimmer-bar"></div>
@@ -338,5 +350,26 @@
   };
   load();
   </script>
+
+<script>
+  // Hide bottom-left floating scroll graphics when footer is near/visible
+  (function() {
+    function checkFooterOverlap() {
+      var sg = document.querySelector('.scroll-graphics');
+      var foot = document.querySelector('footer.vp-foot') || document.querySelector('footer');
+      if (!sg || !foot) return;
+      var footRect = foot.getBoundingClientRect();
+      if (footRect.top < window.innerHeight - 40) {
+        sg.classList.add('footer-hidden');
+      } else {
+        sg.classList.remove('footer-hidden');
+      }
+    }
+    window.addEventListener('scroll', checkFooterOverlap, { passive: true });
+    window.addEventListener('resize', checkFooterOverlap, { passive: true });
+    document.addEventListener('DOMContentLoaded', checkFooterOverlap);
+  })();
+</script>
+
 </body>
 </html>
