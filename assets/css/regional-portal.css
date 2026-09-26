@@ -849,8 +849,39 @@ body {
   gap: 20px;
 }
 .rp-footer-copy {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
   font-size: 13px;
   color: var(--text-muted);
+}
+.rp-footer .vp-powered {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.rp-footer .vp-powered a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+.rp-footer .vp-powered a:hover {
+  color: var(--brand-primary);
+  text-decoration: underline;
+}
+.rp-footer .vp-powered img {
+  height: 1.15em;
+  width: auto;
+  display: inline-block;
 }
 .rp-footer-links {
   display: flex;
