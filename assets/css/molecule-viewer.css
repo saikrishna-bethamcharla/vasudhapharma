@@ -251,3 +251,36 @@
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(37, 70, 150, 0.3);
 }
+
+/* ── Dynamic Search UI (all-products mode) ──────────────────────────────── */
+#vpMolPills {
+  width: 100%;
+}
+#vpMolSearch:focus {
+  border-color: #254696 !important;
+  box-shadow: 0 0 0 3px rgba(37, 70, 150, 0.12) !important;
+}
+#vpMolGrid {
+  scrollbar-width: thin;
+  scrollbar-color: #CBD5E1 transparent;
+}
+#vpMolGrid::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+#vpMolGrid::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+#vpMolGrid .vp-mol-pill {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 12px;
+  padding: 6px 14px;
+}
+@media (max-width: 640px) {
+  #vpMolGrid {
+    max-height: 120px;
+  }
+}

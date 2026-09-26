@@ -6966,23 +6966,9 @@
         <p class="vp-mol-subtitle">Inspect active pharmaceutical ingredients in real-time stereochemical 3D. Rotate, zoom, and analyze molecular geometry, bond angles, and regulatory monographs.</p>
       </div>
 
-      <!-- Molecule Selector Pills -->
-      <div class="vp-mol-pills" id="vpMolPills">
-        <button type="button" class="vp-mol-pill active" data-mol="clopidogrel">
-          <span class="vp-mol-dot" style="background:#ff7675;"></span> Clopidogrel Bisulfate
-        </button>
-        <button type="button" class="vp-mol-pill" data-mol="cinnarizine">
-          <span class="vp-mol-dot" style="background:#74b9ff;"></span> Cinnarizine
-        </button>
-        <button type="button" class="vp-mol-pill" data-mol="cyclobenzaprine">
-          <span class="vp-mol-dot" style="background:#55efc4;"></span> Cyclobenzaprine HCl
-        </button>
-        <button type="button" class="vp-mol-pill" data-mol="domperidone">
-          <span class="vp-mol-dot" style="background:#a29bfe;"></span> Domperidone
-        </button>
-        <button type="button" class="vp-mol-pill" data-mol="piperidone">
-          <span class="vp-mol-dot" style="background:#ffeaa7;"></span> Piperidone Intermediates
-        </button>
+      <!-- Molecule Selector — dynamically built by molecule-viewer.js for all 265+ products -->
+      <div id="vpMolPills">
+        <p style="text-align:center;color:#94A3B8;font-size:13px;padding:16px 0;">Loading product catalog…</p>
       </div>
 
       <div class="vp-mol-workspace">
@@ -7014,38 +7000,38 @@
           </div>
         </div>
 
-        <!-- Chemical Specification HUD -->
+        <!-- Chemical Specification HUD — populated dynamically by molecule-viewer.js -->
         <div class="vp-mol-details">
           <div class="vp-mol-info-head">
-            <h3 class="vp-mol-info-title" id="vpMolName">Clopidogrel Bisulfate</h3>
-            <div class="vp-mol-info-iupac" id="vpMolIupac">methyl (+)-(S)-alpha-(2-chlorophenyl)-6,7-dihydrothieno[3,2-c]pyridine-5(4H)-acetate</div>
+            <h3 class="vp-mol-info-title" id="vpMolName">Loading…</h3>
+            <div class="vp-mol-info-iupac" id="vpMolIupac">—</div>
           </div>
 
           <div class="vp-mol-spec-grid">
             <div class="vp-mol-spec-item">
               <div class="vp-mol-spec-label">CAS Number</div>
-              <div class="vp-mol-spec-val" id="vpMolCas">120202-66-6</div>
-            </div>
-            <div class="vp-mol-spec-item">
-              <div class="vp-mol-spec-label">Molecular Formula</div>
-              <div class="vp-mol-spec-val" id="vpMolFormula">C16H16ClNO2S</div>
-            </div>
-            <div class="vp-mol-spec-item">
-              <div class="vp-mol-spec-label">Molecular Weight</div>
-              <div class="vp-mol-spec-val" id="vpMolMw">321.82 g/mol</div>
+              <div class="vp-mol-spec-val" id="vpMolCas">—</div>
             </div>
             <div class="vp-mol-spec-item">
               <div class="vp-mol-spec-label">Therapeutic Category</div>
-              <div class="vp-mol-spec-val" id="vpMolCategory">Anti-thrombotic / Anti-platelet</div>
+              <div class="vp-mol-spec-val" id="vpMolFormula">—</div>
+            </div>
+            <div class="vp-mol-spec-item">
+              <div class="vp-mol-spec-label">Sub-Category</div>
+              <div class="vp-mol-spec-val" id="vpMolMw">—</div>
+            </div>
+            <div class="vp-mol-spec-item">
+              <div class="vp-mol-spec-label">Pharmacopoeia</div>
+              <div class="vp-mol-spec-val" id="vpMolCategory">—</div>
             </div>
             <div class="vp-mol-spec-item" style="grid-column: 1 / -1;">
-              <div class="vp-mol-spec-label">Regulatory Filings</div>
-              <div class="vp-mol-spec-val" id="vpMolFilings">USDMF, CEP, EU-GMP, WHO-GMP</div>
+              <div class="vp-mol-spec-label">Regulatory Filings / DMF Status</div>
+              <div class="vp-mol-spec-val" id="vpMolFilings">—</div>
             </div>
           </div>
 
           <div class="vp-mol-action-box">
-            <p><strong>Commercial cGMP Production:</strong> Manufactured under validated chiral chromatographic controls at Unit II &amp; Unit III (Vizag) with zero genotoxic impurities.</p>
+            <p><strong>Commercial cGMP Production:</strong> Manufactured under validated quality controls at Vasudha Pharma's manufacturing units.</p>
             <button type="button" class="vp-mol-rfq-btn" id="vpMolRfqBtn" onclick="location.href='contact.html?inquiry=api'">
               <i class="fas fa-file-contract"></i> Request Tech Pack &amp; CoA
             </button>

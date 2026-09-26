@@ -213,6 +213,19 @@
   height: 12px;
 }
 
+/* When location chip is an <a> tag (clickable Maps link) */
+a.unit-location-chip {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+a.unit-location-chip:hover {
+  background: rgba(255, 255, 255, 0.32);
+  transform: translateY(-1px);
+}
+
 .unit-img-wrapper {
   position: relative;
   height: 200px;
