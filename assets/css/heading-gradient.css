@@ -1,0 +1,108 @@
+/**
+ * Vasudha Pharma — Signature Heading Gradient System
+ * Emerald → Cyan gradient (#4FE3B0 → #6EC1FF) as seen in hero "90+ Nations"
+ *
+ * Two variants:
+ *   DARK  backgrounds (hero / video / dark overlays): bright emerald → sky blue
+ *   LIGHT backgrounds (sections / cards / white):      deep green → blue (readable)
+ */
+
+/* ─── DARK BACKGROUND HEADINGS ──────────────────────────────────────────── */
+/* Hero titles, page banners, dark sections */
+.hero-title,
+.cp-hero-title,
+.rp-hero-title,
+.careers-hero-title,
+.vp-cdmo-title {
+  background: linear-gradient(135deg, #4FE3B0 0%, #6EC1FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* ─── LIGHT BACKGROUND HEADINGS ─────────────────────────────────────────── */
+/* Section titles, card headings, content areas */
+.section-title,
+.vp-mol-title,
+.rp-section-title,
+.id-section-title,
+.history-title,
+.founder-gallery-title,
+.stat-unit-title,
+.careers-h,
+.vp-events-heading {
+  background: linear-gradient(135deg, #0E8F6C 0%, #1DB88A 40%, #2F7DE1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* ─── CAREER PORTAL HEADINGS (careers-modern.css pages) ─────────────────── */
+.career-track h2,
+.careers-content h2,
+.cp-section-title {
+  background: linear-gradient(135deg, #0E8F6C 0%, #1DB88A 40%, #2F7DE1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* ─── STAFF PORTAL HEADINGS ─────────────────────────────────────────────── */
+/* welcomeName (dark bg), card h2 (light bg) */
+#welcomeName {
+  background: linear-gradient(135deg, #4FE3B0 0%, #6EC1FF 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  display: inline-block !important;
+  color: transparent !important;
+}
+
+/* Staff panel / card h2 headings */
+.sp-card h2,
+.sp-panel h2,
+.sp-section-heading {
+  background: linear-gradient(135deg, #0E8F6C 0%, #1DB88A 40%, #2F7DE1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* ─── CTA BANNER HEADINGS ────────────────────────────────────────────────── */
+.cta-banner h2,
+.cta-banner h1 {
+  background: linear-gradient(135deg, #4FE3B0 0%, #6EC1FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* ─── BARE h2 IN CONTENT SECTIONS (no class, inside .page-section) ──────── */
+.page-section > .container > div > h2:not([class]),
+.page-section > .container > h2:not([class]),
+.mfg-section-head > h2:not([class]),
+section > .container > h2:not([class]) {
+  background: linear-gradient(135deg, #0E8F6C 0%, #1DB88A 40%, #2F7DE1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* ─── SUPPRESS CONFLICTING powder-title decoration ──────────────────────── */
+.section-title-powder .title-powder {
+  display: none !important;
+}
+
+/* ─── ENSURE inline-block doesn't break full-width centered layouts ──────── */
+.section-title,
+.vp-mol-title,
+.hero-title,
+.cp-hero-title {
+  max-width: 100%;
+}

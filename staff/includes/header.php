@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 if (!isset($u)) $u = staff_user();
 $desks = staff_desks();
 ?>
@@ -423,6 +423,7 @@ $desks = staff_desks();
       background: #FFFFFF;
     }
   </style>
+  <link rel="stylesheet" href="../assets/css/heading-gradient.css">
 </head>
 <body>
 <div class="staff-shimmer-bar"></div>

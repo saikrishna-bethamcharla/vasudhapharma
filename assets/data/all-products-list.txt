@@ -1,0 +1,266 @@
+Amitriptyline HCl|549-18-8|CNS & Neurology|Tricyclic Antidepressant|USP / BP / Ph.Eur|USDMF / CEP Available
+Aripiprazole|129722-12-9|CNS & Neurology|Atypical Antipsychotic|USP / BP / Ph.Eur|USDMF / CEP Available
+Bepotastine Besilate|190786-44-8|Allergy & Antihistaminic|H1 Receptor Antagonist|USP / BP / Ph.Eur|USDMF / PMDA Available
+Cisapride Monohydrate|260779-88-2|Gastroenterology|Gastroprokinetic 5-HT4 Agonist|USP / BP / Ph.Eur|USDMF Available
+Cinnarizine|298-57-7|Allergy & Vestibular|Antihistamine & Calcium Channel Blocker|USP / BP / Ph.Eur|USDMF / CEP Available
+Clopidogrel Bisulphate|120202-66-6|Cardiovascular|Antiplatelet / ADP P2Y12 Antagonist|USP / BP / Ph.Eur|USDMF / CEP Available
+Cyclobenzaprine HCl|6202-23-9|CNS & Musculoskeletal|Centrally Acting Muscle Relaxant|USP / BP / Ph.Eur|USDMF Available
+Cyproheptadine HCl|41354-29-4|Allergy & Antihistaminic|First-Generation Antihistamine|USP / BP / Ph.Eur|USDMF Available
+Dabigatran Etexilate Mesylate|872728-81-9|Cardiovascular|Direct Thrombin Inhibitor (NOAC)|USP / BP / Ph.Eur|USDMF / CEP Available
+Desloratadine|100643-71-8|Allergy & Antihistaminic|Second-Generation Non-Sedating Antihistamine|USP / BP / Ph.Eur|USDMF / CEP Available
+Dexlansoprazole Sesquihydrate|313640-86-7|Gastroenterology|Proton Pump Inhibitor (PPI)|USP / BP / Ph.Eur|USDMF / CEP Available
+Diatrizoic Acid|117-96-4|Diagnostic Radiopaque Agent|Iodinated Contrast Medium|USP / BP / Ph.Eur|USDMF / USP Available
+Diatrizoic Acid Dihydrate|50978-11-5|Diagnostic Radiopaque Agent|Iodinated Contrast Medium|USP / BP / Ph.Eur|USDMF / USP Available
+Diatrizoic Sodium|737-31-5|Diagnostic Radiopaque Agent|Iodinated Contrast Medium|USP / BP / Ph.Eur|USDMF / USP Available
+Diatrizoic Meglumine|131-49-7|Diagnostic Radiopaque Agent|Iodinated Contrast Medium|USP / BP / Ph.Eur|USDMF / USP Available
+Dimethyl Fumarate|624-49-7|CNS & Immunology|Nrf2 Activator (Multiple Sclerosis)|USP / BP / Ph.Eur|USDMF / CEP Available
+Diltiazem HCl|33286-22-5|Cardiovascular|Calcium Channel Blocker (Non-Dihydropyridine)|USP / BP / Ph.Eur|USDMF / CEP Available
+Domperidone|57808-66-9|Gastroenterology|Dopamine D2 Antagonist / Gastroprokinetic|USP / BP / Ph.Eur|USDMF / CEP Available
+Domperidone Maleate|83898-65-1|Gastroenterology|Dopamine D2 Antagonist / Gastroprokinetic|USP / BP / Ph.Eur|USDMF / CEP Available
+Donepezil HCl|120011-70-3|CNS & Neurology|Acetylcholinesterase Inhibitor (Anti-Alzheimer's)|USP / BP / Ph.Eur|USDMF / CEP Available
+Donepezil HCl Monohydrate|884740-09-4|CNS & Neurology|Acetylcholinesterase Inhibitor (Anti-Alzheimer's)|USP / BP / Ph.Eur|USDMF / CEP Available
+Ebastine|90729-43-4|Allergy & Antihistaminic|Second-Generation Antihistamine|USP / BP / Ph.Eur|USDMF / CEP Available
+Esomeprazole Magnesium Trihydrate|217087-09-7|Gastroenterology|Proton Pump Inhibitor (PPI)|USP / BP / Ph.Eur|USDMF / CEP / WHO Available
+Esflurbiprofen/(S)-Flurbiprofen|51543-39-6|Musculoskeletal & Pain|Nonsteroidal Anti-inflammatory Drug (NSAID)|USP / BP / Ph.Eur|USDMF / CEP Available
+Febuxostat|144060-53-7|Rheumatology & Gout|Xanthine Oxidase Inhibitor (Uric Acid Reducer)|USP / BP / Ph.Eur|USDMF / CEP Available
+Fexofenadine HCl|153439-40-8|Allergy & Antihistaminic|Second-Generation Non-Sedating Antihistamine|USP / BP / Ph.Eur|USDMF / CEP Available
+Flurbiprofen|5104-49-4|Musculoskeletal & Pain|Nonsteroidal Anti-inflammatory Drug (NSAID)|USP / BP / Ph.Eur|USDMF / CEP Available
+Flunarizine Di HCl|30484-77-6|Allergy & Neurology|Antihistamine & Calcium Channel Blocker|USP / BP / Ph.Eur|USDMF / CEP Available
+Itopride HCl|122892-31-3|Gastroenterology|Dopamine D2 & Acetylcholinesterase Inhibitor|USP / BP / Ph.Eur|USDMF Available
+Itraconazole|84625-61-6|Anti-infective & Antifungal|Triazole Antifungal Agent|USP / BP / Ph.Eur|USDMF / CEP Available
+Ketorolac Tromethamine|74103-07-4|Musculoskeletal & Pain|Potent NSAID / Analgesic|USP / BP / Ph.Eur|USDMF / CEP Available
+Lacosamide|175481-36-4|CNS & Neurology|Antiepileptic / Anticonvulsant|USP / BP / Ph.Eur|USDMF / CEP Available
+Loperamide HCl|34552-83-5|Gastroenterology|Opioid Receptor Agonist / Antidiarrheal|USP / BP / Ph.Eur|USDMF / CEP Available
+Loratadine|79794-75-5|Allergy & Antihistaminic|Second-Generation Antihistamine|USP / BP / Ph.Eur|USDMF / CEP Available
+Losartan Potassium|124750-99-8|Cardiovascular|Angiotensin II Receptor Blocker (ARB)|USP / BP / Ph.Eur|USDMF / CEP Available
+Mebeverine HCl|2753-45-9|Gastroenterology|Musculotropic Antispasmodic (IBS)|USP / BP / Ph.Eur|USDMF / CEP Available
+Methoxyphenamine HCl|5588-10-3|Respiratory|Sympathomimetic Bronchodilator|USP / BP / Ph.Eur|USDMF Available
+Mirabegron|223673-61-8|Urology & Overactive Bladder|Beta-3 Adrenergic Receptor Agonist|USP / BP / Ph.Eur|USDMF / CEP Available
+Nortriptyline HCl|894-71-3|CNS & Neurology|Tricyclic Antidepressant|USP / BP / Ph.Eur|USDMF / CEP Available
+Oxatomide Anhydrous|60607-34-3|Allergy & Antihistaminic|H1 Antihistamine & Mast Cell Stabilizer|USP / BP / Ph.Eur|USDMF Available
+Oxcarbazepine|28721-07-5|CNS & Neurology|Antiepileptic / Mood Stabilizer|USP / BP / Ph.Eur|USDMF / CEP Available
+Olmesartan Medoxomil|144689-63-4|Cardiovascular|Angiotensin II Receptor Blocker (ARB)|USP / BP / Ph.Eur|USDMF / CEP Available
+Pantoprazole Sodium Sesquihydrate|164579-32-2|Gastroenterology|Proton Pump Inhibitor (PPI)|USP / BP / Ph.Eur|USDMF / CEP Available
+Pimozide|2062-78-4|CNS & Neurology|Antipsychotic|USP / BP / Ph.Eur|USDMF Available
+Pimobendan|74150-27-9|Cardiovascular & Veterinary|Inodilator / Calcium Sensitizer|USP / BP / Ph.Eur|USDMF / CEP Available
+Pregabalin|148553-50-8|CNS & Neurology|Neuropathic Pain / Anticonvulsant|USP / BP / Ph.Eur|USDMF / CEP Available
+Quetiapine Fumarate|111974-72-2|CNS & Neurology|Atypical Antipsychotic|USP / BP / Ph.Eur|USDMF / CEP Available
+Rivaroxaban|366789-02-8|Cardiovascular|Factor Xa Inhibitor (NOAC)|USP / BP / Ph.Eur|USDMF / CEP Available
+Rupatadine Fumarate|182349-12-8|Allergy & Antihistaminic|Dual H1 & PAF Receptor Antagonist|USP / BP / Ph.Eur|USDMF / CEP Available
+Sacubitril Sodium|149690-05-1|Cardiovascular|Neprilysin Inhibitor (Heart Failure)|USP / BP / Ph.Eur|Tech Pack Available
+Tamsulosin HCl|106463-17-6|Urology & Men's Health|Selective Alpha-1A Adrenoceptor Antagonist (BPH)|USP / BP / Ph.Eur|USDMF / CEP Available
+Telmisartan|144701-48-4|Cardiovascular|Angiotensin II Receptor Blocker (ARB)|USP / BP / Ph.Eur|USDMF / CEP Available
+Trazodone HCl|25332-39-2|CNS & Neurology|SARI Antidepressant|USP / BP / Ph.Eur|USDMF / CEP Available
+Valsartan|137862-53-4|Cardiovascular|Angiotensin II Receptor Blocker (ARB)|USP / BP / Ph.Eur|USDMF / CEP Available
+Vonoprazan Fumarate|881681-01-2|Gastroenterology|Potassium-Competitive Acid Blocker (P-CAB)|USP / BP / Ph.Eur|USDMF / Tech Pack
+Alcaftadine||Allergy & Ophthalmology|H1 Receptor Antagonist (Allergic Conjunctivitis)|In-House Standard|USDMF / Tech Pack
+Amitriptyline HCl &amp; Nortriptyline HCl|1210-35-1|CNS & Neurology|Tricyclic Antidepressant|In-House Standard|USDMF / CEP Available
+Amitriptyline HCl &amp; Nortriptyline HCl|5407-04-5|CNS & Neurology|Tricyclic Antidepressant|In-House Standard|USDMF / CEP Available
+Bepotastine Besilate|65214-82-6|Allergy & Antihistaminic|H1 Receptor Antagonist|In-House Standard|USDMF / PMDA Available
+Bepotastine Besilate|27652-89-7|Allergy & Antihistaminic|H1 Receptor Antagonist|In-House Standard|USDMF / PMDA Available
+Bepotastine Besilate|122368-54-1|Allergy & Antihistaminic|H1 Receptor Antagonist|In-House Standard|USDMF / PMDA Available
+Bepotastine Besilate|5382-16-1|Allergy & Antihistaminic|H1 Receptor Antagonist|In-House Standard|USDMF / PMDA Available
+Bepotastine Besilate|161558-45-8|Allergy & Antihistaminic|H1 Receptor Antagonist|In-House Standard|USDMF / PMDA Available
+Cinnarizine and Flunarizine||Allergy & Vestibular|Antihistamine & Calcium Channel Blocker|In-House Standard|USDMF / CEP Available
+Cyclobenzaprine HCl|2222-33-5|CNS & Musculoskeletal|Centrally Acting Muscle Relaxant|In-House Standard|USDMF Available
+Cyclobenzaprine HCl|5407-04-5|CNS & Musculoskeletal|Centrally Acting Muscle Relaxant|In-House Standard|USDMF Available
+Cyproheptadine HCl|2222-33-5|Allergy & Antihistaminic|First-Generation Antihistamine|In-House Standard|USDMF Available
+Cyproheptadine HCl|5570-77-4|Allergy & Antihistaminic|First-Generation Antihistamine|In-House Standard|USDMF Available
+Dabigatran Etexilate Mesylate|211915-84-3|Cardiovascular|Direct Thrombin Inhibitor (NOAC)|In-House Standard|USDMF / CEP Available
+Dabigatran Etexilate Mesylate|429658-95-7|Cardiovascular|Direct Thrombin Inhibitor (NOAC)|In-House Standard|USDMF / CEP Available
+Dabigatran Etexilate Mesylate|211915-06-9|Cardiovascular|Direct Thrombin Inhibitor (NOAC)|In-House Standard|USDMF / CEP Available
+Domperidone|62780-89-6|Gastroenterology|Dopamine D2 Antagonist / Gastroprokinetic|In-House Standard|USDMF / CEP Available
+Domperidone|53786-28-0|Gastroenterology|Dopamine D2 Antagonist / Gastroprokinetic|In-House Standard|USDMF / CEP Available
+Donepezil HCl|120014-30-4|CNS & Neurology|Acetylcholinesterase Inhibitor (Anti-Alzheimer's)|In-House Standard|USDMF / CEP Available
+Donepezil HCl|4803-74-1|CNS & Neurology|Acetylcholinesterase Inhibitor (Anti-Alzheimer's)|In-House Standard|USDMF / CEP Available
+Donepezil HCl|120014-06-4|CNS & Neurology|Acetylcholinesterase Inhibitor (Anti-Alzheimer's)|In-House Standard|USDMF / CEP Available
+Ebastine||Allergy & Antihistaminic|Second-Generation Antihistamine|In-House Standard|USDMF / CEP Available
+Eprosartan||Cardiovascular|Angiotensin II Receptor Blocker (ARB)|In-House Standard|USDMF Available
+Febuxostat|161797-99-5|Rheumatology & Gout|Xanthine Oxidase Inhibitor (Uric Acid Reducer)|In-House Standard|USDMF / CEP Available
+Febuxostat|161798-01-2|Rheumatology & Gout|Xanthine Oxidase Inhibitor (Uric Acid Reducer)|In-House Standard|USDMF / CEP Available
+Febuxostat|161798-02-3|Rheumatology & Gout|Xanthine Oxidase Inhibitor (Uric Acid Reducer)|In-House Standard|USDMF / CEP Available
+Febuxostat|161798-03-4|Rheumatology & Gout|Xanthine Oxidase Inhibitor (Uric Acid Reducer)|In-House Standard|USDMF / CEP Available
+Febuxostat|160844-75-7|Rheumatology & Gout|Xanthine Oxidase Inhibitor (Uric Acid Reducer)|In-House Standard|USDMF / CEP Available
+Flunarizine Di-HCl||Allergy & Neurology|Antihistamine & Calcium Channel Blocker|In-House Standard|USDMF / CEP Available
+Golvatinib &amp; Gilteritinib||Oncology & Targeted Therapy|c-Met & FLT3 Receptor Tyrosine Kinase Inhibitor|In-House Standard|Tech Pack Available
+Haloperidol|3874-54-2|CNS & Neurology|Typical Antipsychotic|In-House Standard|USDMF / CEP Available
+Haloperidol|39512-49-7|CNS & Neurology|Typical Antipsychotic|In-House Standard|USDMF / CEP Available
+Indoramin HCl||Cardiovascular & Urology|Alpha-1 Adrenoceptor Antagonist|In-House Standard|USDMF Available
+Ketotifen||Allergy & Ophthalmology|H1 Antihistamine & Mast Cell Stabilizer|In-House Standard|USDMF / CEP Available
+Linagliptin|309956-78-3|Endocrinology & Antidiabetic|DPP-4 Inhibitor|In-House Standard|USDMF Available
+Linagliptin|334618-23-4|Endocrinology & Antidiabetic|DPP-4 Inhibitor|In-House Standard|USDMF Available
+Loperamide HCl|39512-49-7|Gastroenterology|Opioid Receptor Agonist / Antidiarrheal|In-House Standard|USDMF / CEP Available
+Loperamide HCl|37743-18-3|Gastroenterology|Opioid Receptor Agonist / Antidiarrheal|In-House Standard|USDMF / CEP Available
+Loperamide HCl|956-89-8|Gastroenterology|Opioid Receptor Agonist / Antidiarrheal|In-House Standard|USDMF / CEP Available
+Loperamide HCl|37742-98-6|Gastroenterology|Opioid Receptor Agonist / Antidiarrheal|In-House Standard|USDMF / CEP Available
+Loratadine &amp; Desloratadine|31255-57-9|Allergy & Antihistaminic|Second-Generation Non-Sedating Antihistamine|In-House Standard|USDMF / CEP Available
+Loratadine &amp; Desloratadine|31251-41-9|Allergy & Antihistaminic|Second-Generation Non-Sedating Antihistamine|In-House Standard|USDMF / CEP Available
+Loratadine &amp; Desloratadine|38092-89-6|Allergy & Antihistaminic|Second-Generation Non-Sedating Antihistamine|In-House Standard|USDMF / CEP Available
+Loratadine &amp; Desloratadine|119770-60-4|Allergy & Antihistaminic|Second-Generation Non-Sedating Antihistamine|In-House Standard|USDMF / CEP Available
+Loratadine &amp; Desloratadine|5570-77-4|Allergy & Antihistaminic|Second-Generation Non-Sedating Antihistamine|In-House Standard|USDMF / CEP Available
+Losartan Potassium|11479-26-4|Cardiovascular|Angiotensin II Receptor Blocker (ARB)|In-House Standard|USDMF / CEP Available
+Losartan Potassium|83857-96-9|Cardiovascular|Angiotensin II Receptor Blocker (ARB)|In-House Standard|USDMF / CEP Available
+Mirabegron|521284-19-5|Urology & Overactive Bladder|Beta-3 Adrenergic Receptor Agonist|In-House Standard|USDMF / CEP Available
+Mirabegron|521284-21-9|Urology & Overactive Bladder|Beta-3 Adrenergic Receptor Agonist|In-House Standard|USDMF / CEP Available
+Mirabegron|521284-22-0|Urology & Overactive Bladder|Beta-3 Adrenergic Receptor Agonist|In-House Standard|USDMF / CEP Available
+Oxatomide|62780-89-6|Allergy & Antihistaminic|H1 Antihistamine & Mast Cell Stabilizer|In-House Standard|USDMF Available
+Oxatomide|841-77-0|Allergy & Antihistaminic|H1 Antihistamine & Mast Cell Stabilizer|In-House Standard|USDMF Available
+Pemetrexed acid||Oncology & Antineoplastic|Antifolate Antineoplastic Agent|In-House Standard|USDMF / Tech Pack
+Pimozide|20662-53-7|CNS & Neurology|Antipsychotic|In-House Standard|USDMF Available
+Pimozide|3312-04-7|CNS & Neurology|Antipsychotic|In-House Standard|USDMF Available
+Prucalopride|16771-85-0|Gastroenterology|Selective 5-HT4 Receptor Agonist|In-House Standard|USDMF / CEP Available
+Prucalopride|179474-79-4|Gastroenterology|Selective 5-HT4 Receptor Agonist|In-House Standard|USDMF / CEP Available
+Rifabutin||Anti-infective & Antibiotic|Rifamycin Antibiotic (Antimycobacterial)|In-House Standard|USDMF / CEP Available
+Rivaroxaban|446292-08-6|Cardiovascular|Factor Xa Inhibitor (NOAC)|In-House Standard|USDMF / CEP Available
+Rivaroxaban|898543-06-1|Cardiovascular|Factor Xa Inhibitor (NOAC)|In-House Standard|USDMF / CEP Available
+Ropivacaine Hydrochloride Monohydrate||Anesthesia & Pain|Aminoamide Local Anesthetic|In-House Standard|USDMF / CEP Available
+Rupatadine Fumarate||Allergy & Antihistaminic|Dual H1 & PAF Receptor Antagonist|In-House Standard|USDMF / CEP Available
+Selexipag||Cardiovascular|Prostacyclin IP Receptor Agonist (PAH)|In-House Standard|USDMF / Tech Pack
+Tamsulosin HCl|112101-81-2|Urology & Men's Health|Selective Alpha-1A Adrenoceptor Antagonist (BPH)|In-House Standard|USDMF / CEP Available
+Tamsulosin HCl|106133-20-4|Urology & Men's Health|Selective Alpha-1A Adrenoceptor Antagonist (BPH)|In-House Standard|USDMF / CEP Available
+Trazadone|6969-71-7|CNS & Neurology|SARI Antidepressant|In-House Standard|USDMF / CEP Available
+Trazadone|52605-52-4|CNS & Neurology|SARI Antidepressant|In-House Standard|USDMF / CEP Available
+Tucatinib||Oncology & Targeted Therapy|HER2 Tyrosine Kinase Inhibitor|In-House Standard|Under Development
+Ormeloxifene hydrochloride Intermediate||Women's Health & Gynecology|Selective Estrogen Receptor Modulator (SERM)|In-House Standard|USDMF Available
+Etodolac Intermediate||Musculoskeletal & Pain|COX-2 Selective NSAID Intermediate|In-House Standard|USDMF Available
+Salcaprozate sodium intermediate||Endocrinology & Oral Drug Delivery|SNAC Absorption Enhancer (Oral Semaglutide)|In-House Standard|Under Development / Tech Pack
+Prazosin.HCl, Terazosin.HCl, Alfuzosin.HCl, Doxazosin.HCl||Cardiovascular & Urology|Alpha-1 Blocker (Antihypertensive & BPH)|In-House Standard|USDMF Available
+Minoxidil, Kopexil, Kopyrrol||Dermatology & Hair Care|Vasodilator & Potassium Channel Opener|In-House Standard|USDMF / CEP Available
+Ticagrelor|145783-15-9|Cardiovascular|Antiplatelet Agent|In-House Standard|USDMF / CEP Available
+Ticagrelor|1156491-10-9|Cardiovascular|Antiplatelet Agent|In-House Standard|USDMF / CEP Available
+Ticagrelor|376608-65-0|Cardiovascular|Antiplatelet Agent|In-House Standard|USDMF / CEP Available
+Isoxsuprine HCl||Cardiovascular|Peripheral Vasodilator|In-House Standard|USDMF Available
+Voglibose||Endocrinology & Antidiabetic|Alpha-Glucosidase Inhibitor|In-House Standard|USDMF Available
+Mitapivat Sulfate|57260-71-6|Hematology & Rare Disease|Pyruvate Kinase Activator (Hemolytic Anemia)|In-House Standard|Tech Pack Available
+Mitapivat Sulfate|1260081-86-4|Hematology & Rare Disease|Pyruvate Kinase Activator (Hemolytic Anemia)|In-House Standard|Tech Pack Available
+Mitapivat Sulfate|1489-69-6|Hematology & Rare Disease|Pyruvate Kinase Activator (Hemolytic Anemia)|In-House Standard|Tech Pack Available
+Ruxolitinib|1146629-83-5|Oncology & Hematology|JAK1 / JAK2 Kinase Inhibitor|In-House Standard|Under Development
+Ruxolitinib|3680-69-1|Oncology & Hematology|JAK1 / JAK2 Kinase Inhibitor|In-House Standard|Under Development
+Ruxolitinib|2075-45-8|Oncology & Hematology|JAK1 / JAK2 Kinase Inhibitor|In-House Standard|Under Development
+Venetoclax|2979-19-3|Oncology & Targeted Therapy|BCL-2 Inhibitor (Leukemia)|In-House Standard|Under Development
+Venetoclax|98549-88-3|Oncology & Targeted Therapy|BCL-2 Inhibitor (Leukemia)|In-House Standard|Under Development
+Venetoclax|1228780-72-0|Oncology & Targeted Therapy|BCL-2 Inhibitor (Leukemia)|In-House Standard|Under Development
+Venetoclax|1235865-77-6|Oncology & Targeted Therapy|BCL-2 Inhibitor (Leukemia)|In-House Standard|Under Development
+Upadacitinib|1869118-25-1|Immunology & Rheumatology|Selective JAK1 Inhibitor|In-House Standard|Under Development
+Upadacitinib|2095311-49-0|Immunology & Rheumatology|Selective JAK1 Inhibitor|In-House Standard|Under Development
+Olaparib|420846-72-6|Oncology & Targeted Therapy|PARP Inhibitor (BRCA-Mutated)|In-House Standard|Under Development / Tech Pack
+Olaparib|59878-57-8|Oncology & Targeted Therapy|PARP Inhibitor (BRCA-Mutated)|In-House Standard|Under Development / Tech Pack
+Atrasentan|178739-03-2|Cardiovascular & Nephrology|Endothelin A Receptor Antagonist|In-House Standard|Under Development
+Atrasentan|40124-27-4|Cardiovascular & Nephrology|Endothelin A Receptor Antagonist|In-House Standard|Under Development
+Rimegepant Sulphate|39713-40-1|CNS & Neurology|CGRP Receptor Antagonist (Anti-Migraine)|In-House Standard|Under Development / Tech Pack
+Rimegepant Sulphate|1190363-50-8|CNS & Neurology|CGRP Receptor Antagonist (Anti-Migraine)|In-House Standard|Under Development / Tech Pack
+Rimegepant Sulphate|781649-84-1|CNS & Neurology|CGRP Receptor Antagonist (Anti-Migraine)|In-House Standard|Under Development / Tech Pack
+GalNAc||Biotechnology & Targeted Delivery|N-Acetylgalactosamine Oligonucleotide Ligand|In-House Standard|Tech Pack Available
+Duloxetine HCl|136434-34-9|CNS & Neurology|SNRI Antidepressant|Enteric / SR Pellets|USDMF / CEP Available
+Esomeprazole|217087-09-7|Gastroenterology|Proton Pump Inhibitor (PPI)|Enteric / SR Pellets|USDMF / CEP / WHO Available
+Esomeprazole (Micro/MUPS)|217087-09-7|Gastroenterology|Proton Pump Inhibitor (PPI)|Enteric / SR Pellets|USDMF / CEP / WHO Available
+Lansoprazole|103577-45-3|Gastroenterology|Proton Pump Inhibitor (PPI)|Enteric / SR Pellets|USDMF / CEP Available
+Lansoprazole (Micro Pellets)|103577-45-3|Gastroenterology|Proton Pump Inhibitor (PPI)|Enteric / SR Pellets|USDMF / CEP Available
+Omeprazole|73590-58-6|Gastroenterology|Proton Pump Inhibitor (PPI)|Enteric / SR Pellets|USDMF / CEP / WHO Available
+Omeprazole (Micro Pellets)|73590-58-6|Gastroenterology|Proton Pump Inhibitor (PPI)|Enteric / SR Pellets|USDMF / CEP / WHO Available
+Pantoprazole|102625-70-7|Gastroenterology|Proton Pump Inhibitor (PPI)|Enteric / SR Pellets|USDMF / CEP Available
+Pancreatin|8049-47-6|Gastroenterology|Pancreatic Enzyme Replacement|Enteric / SR Pellets|USDMF Available
+Rabeprazole|117976-90-6|Gastroenterology|Proton Pump Inhibitor (PPI)|Enteric / SR Pellets|USDMF / CEP Available
+Diclofenac Sodium|15307-79-6|Musculoskeletal & Pain|Nonsteroidal Anti-inflammatory Drug (NSAID)|Enteric / SR Pellets|USDMF / CEP Available
+Domperidone|57808-66-9|Gastroenterology|Dopamine D2 Antagonist / Gastroprokinetic|Enteric / SR Pellets|USDMF / CEP Available
+Venlafaxine|93413-69-5|CNS & Neurology|SNRI Antidepressant|Enteric / SR Pellets|USDMF / CEP Available
+Aprepitant|170729-80-3|Gastroenterology & Oncology|NK1 Receptor Antagonist (Antiemetic)|Enteric / SR Pellets|USDMF / CEP Available
+Dabigatran|211915-06-9|Cardiovascular|Direct Thrombin Inhibitor (NOAC)|Enteric / SR Pellets|USDMF / CEP Available
+Diclofenac Sodium|15307-79-6|Musculoskeletal & Pain|Nonsteroidal Anti-inflammatory Drug (NSAID)|Enteric / SR Pellets|USDMF / CEP Available
+Domperidone|57808-66-9|Gastroenterology|Dopamine D2 Antagonist / Gastroprokinetic|Enteric / SR Pellets|USDMF / CEP Available
+Itraconazole|84625-61-6|Anti-infective & Antifungal|Triazole Antifungal Agent|Enteric / SR Pellets|USDMF / CEP Available
+Orlistat|96829-58-2|Metabolic & Weight Management|Gastric & Pancreatic Lipase Inhibitor|Enteric / SR Pellets|USDMF Available
+Clarithromycin Taste Masked Micro Pellets, Granules|81103-11-9|Anti-infective & Antibiotic|Macrolide Antibiotic|Enteric / SR Pellets|USDMF / CEP Available
+Diclofenac Sodium|15307-79-6|Musculoskeletal & Pain|Nonsteroidal Anti-inflammatory Drug (NSAID)|Enteric / SR Pellets|USDMF / CEP Available
+Domperidone|57808-66-9|Gastroenterology|Dopamine D2 Antagonist / Gastroprokinetic|Enteric / SR Pellets|USDMF / CEP Available
+Itopride HCl|122892-31-3|Gastroenterology|Dopamine D2 & Acetylcholinesterase Inhibitor|Enteric / SR Pellets|USDMF Available
+Levosulpiride|23672-07-3|Gastroenterology & CNS|Prokinetic / Antipsychotic|Enteric / SR Pellets|USDMF Available
+Mebeverine HCl|2753-45-9|Gastroenterology|Musculotropic Antispasmodic (IBS)|Enteric / SR Pellets|USDMF / CEP Available
+Memantine|19982-08-2|CNS & Neurology|NMDA Receptor Antagonist (Anti-Alzheimer's)|Enteric / SR Pellets|USDMF / CEP Available
+Mesalamine|89-57-6|Gastroenterology|5-Aminosalicylic Acid (IBD/Ulcerative Colitis)|Enteric / SR Pellets|USDMF / CEP Available
+Mesalamine (Premix/Granules)|89-57-6|Gastroenterology|5-Aminosalicylic Acid (IBD/Ulcerative Colitis)|Enteric / SR Pellets|USDMF / CEP Available
+Nicardipine|55985-32-5|Cardiovascular|Dihydropyridine Calcium Channel Blocker|Enteric / SR Pellets|USDMF / CEP Available
+Tamsulosin HCl|106463-17-6|Urology & Men's Health|Selective Alpha-1A Adrenoceptor Antagonist (BPH)|Enteric / SR Pellets|USDMF / CEP Available
+Vincamine|1617-90-9|Cardiovascular|Peripheral Vasodilator|Enteric / SR Pellets|USDMF Available
+Dexlansoprazole|138530-94-6|Gastroenterology|Proton Pump Inhibitor (PPI)|Enteric / SR Pellets|USDMF / CEP Available
+Barnidipine hydrochloride|104757-53-1|Cardiovascular|Calcium Channel Blocker|Enteric / SR Pellets|USDMF Available
+Chlorpheneramine Maleate|113-92-8|Allergy & Antihistaminic|First-Generation Antihistamine|Enteric / SR Pellets|USDMF / CEP Available
+Cinitapride|66564-14-5|Gastroenterology|Gastroprokinetic & Anti-emetic|Enteric / SR Pellets|USDMF Available
+Clarithromycin|81103-11-9|Anti-infective & Antibiotic|Macrolide Antibiotic|Enteric / SR Pellets|USDMF / CEP Available
+Everolimus|159351-69-6|Oncology & Immunosuppression|mTOR Kinase Inhibitor|Enteric / SR Pellets|USDMF / Tech Pack
+Flurbiprofen|5104-49-4|Musculoskeletal & Pain|Nonsteroidal Anti-inflammatory Drug (NSAID)|Enteric / SR Pellets|USDMF / CEP Available
+Ketoprofen|22071-15-4|Musculoskeletal & Pain|Nonsteroidal Anti-inflammatory Drug (NSAID)|Enteric / SR Pellets|USDMF / CEP Available
+Levomilnacipran|96847-55-1|CNS & Neurology|SNRI Antidepressant|Enteric / SR Pellets|Tech Pack / USDMF
+Linaclotide|851199-59-2|Gastroenterology|Guanylate Cyclase-C Agonist (IBS-C)|Enteric / SR Pellets|Under Development
+Memantine|19982-08-2|CNS & Neurology|NMDA Receptor Antagonist (Anti-Alzheimer's)|Enteric / SR Pellets|USDMF / CEP Available
+Mesalamine|89-57-6|Gastroenterology|5-Aminosalicylic Acid (IBD/Ulcerative Colitis)|Enteric / SR Pellets|USDMF / CEP Available
+Metoprolol Succinate MUPS|98455-82-6|Cardiovascular|Selective Beta-1 Blocker|Enteric / SR Pellets|USDMF / CEP Available
+Nicardipine|55985-32-5|Cardiovascular|Dihydropyridine Calcium Channel Blocker|Enteric / SR Pellets|USDMF / CEP Available
+Pancreatin|8049-47-6|Gastroenterology|Pancreatic Enzyme Replacement|Enteric / SR Pellets|USDMF Available
+Peppermint oil|8006-90-4|Gastroenterology|Antispasmodic Essential Oil (IBS)|Enteric / SR Pellets|Tech Pack Available
+Sirolimus|53123-88-9|Immunosuppression & Transplant|mTOR Inhibitor (Rapamycin)|Enteric / SR Pellets|USDMF Available
+Tacrolimus|104987-11-3|Immunosuppression & Transplant|Calcineurin Inhibitor (Macrolide)|Enteric / SR Pellets|USDMF / CEP Available
+Tolterodine Tartrate|124937-52-6|Urology & Overactive Bladder|Muscarinic Receptor Antagonist (Anticholinergic)|Enteric / SR Pellets|USDMF / CEP Available
+Trospium chloride|10405-02-4|Urology & Overactive Bladder|Quaternary Ammonium Antimuscarinic|Enteric / SR Pellets|USDMF Available
+Viloxazine|46817-91-8|CNS & Neurology|Selective Norepinephrine Reuptake Inhibitor|Enteric / SR Pellets|Tech Pack Available
+Xanomeline Tartrate|141064-23-5|CNS & Neurology|Muscarinic Acetylcholine Receptor Agonist|Enteric / SR Pellets|Under Development
+Carbonyl Iron|7439-89-6|Nutrition & Hematology|Elemental Iron Dietary Mineral|Enteric / SR Pellets|FCC / USP Grade
+Zinc Sulphate|7446-20-0|Nutrition & Mineral|Essential Trace Mineral|Enteric / SR Pellets|USP / BP Grade
+Folic Acid|59-30-3|Nutrition & Hematology|B-Complex Vitamin (Vitamin B9)|Enteric / SR Pellets|USP / Ph.Eur Available
+N-Methyl-4-piperidone||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+N-Methyl-4-hydroxypiperidine||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+N-Methyl-4-chloropiperidine||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+N-Methyl-4-chloropiperidine HCl||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+N-Methyl-4-aminopiperidine||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+N-Carbethoxy-4-piperidone||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+N-Carbethoxy-4-hydroxypiperidine||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+N-Carbethoxy-4-aminopiperidine||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+N-Benzyl-4-piperidone||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+N-Benzyl-4-hydroxypiperidine||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+4-Benzyl-4-hydroxypiperidine||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+N-Benzyl-4-chloropiperidine||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+N-Benzyl-4-aminopiperidine||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+4-(2-Keto-benzimidazolinyl) piperidine||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+4-Piperidone ethylene ketal||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+4-Hydroxypiperidine||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+4-Aminopiperidine||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+4-Piperidinopiperidine||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+1,4&#x27;-Bipiperidine dihydrochloride||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+N-Piperidin-4-ylbenzamide||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+N-Isobutyl-4-piperidone||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+1-(4-Chlorobenzhydryl)-piperazine||Specialty Chemistry & Intermediates|Custom Synthesis Fine Chemical|High Purity (>=99.0%)|Technical Package Available
+N-Ethyl-4-piperidone||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+1,3-Dimethyl-4-piperidone||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+(R)-(-)-3-Aminopiperidine dihydrochloride||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+N-Propyl-4-piperidone||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+3-Chloromethyl-5-Methylpyridine Hydrochloride||Specialty Intermediates|Substituted Pyridine Building Block|High Purity (>=99.0%)|Commercial Grade
+4-(4-Chlorophenyl)-4-hydroxypiperidine||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+4-(4-Bromophenyl)-4-hydroxypiperidine||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+4-Phenyl-4-hydroxypiperidine||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+4-Phenylpiperidine||Piperidone Chemistry & Fine Intermediates|Advanced Heterocyclic Building Block / Precursor|High Purity (>=99.0%)|Technical Data Package Available
+Bempedoic acid||Cardiovascular|ATP Citrate Lyase Inhibitor (Cholesterol)|Process Validation Stage|Under Development / Tech Pack
+Bilastine||Allergy & Antihistaminic|Second-Generation Non-Sedating Antihistamine|Process Validation Stage|USDMF / CEP Available
+Calcium Folinate (Leucovorin calcium)||Oncology Adjunct & Nutrition|Folinic Acid / Chemotherapy Rescue|Process Validation Stage|USDMF Available
+Dapagliflozin Propanediol||Endocrinology & Antidiabetic|SGLT2 Inhibitor|Process Validation Stage|USDMF / CEP Available
+Dexlansoprazole Sesquihydrate||Gastroenterology|Proton Pump Inhibitor (PPI)|Process Validation Stage|USDMF / CEP Available
+Dexlansoprazole Anhydrous||Gastroenterology|Proton Pump Inhibitor (PPI)|Process Validation Stage|USDMF / CEP Available
+Edoxaban Tosylate||Cardiovascular|Factor Xa Inhibitor (NOAC)|Process Validation Stage|Under Development / USDMF
+Eflornithine hydrochloride monohydrate||Dermatology & Oncology|Ornithine Decarboxylase Inhibitor|Process Validation Stage|Under Development
+Empagliflozin||Endocrinology & Antidiabetic|SGLT2 Inhibitor|Process Validation Stage|USDMF / CEP Available
+Fosfomycin Tromethamol||Anti-infective & Antibiotic|Phosphonic Acid Derivative Antibiotic|Process Validation Stage|USDMF / CEP Available
+Isoxsuprine HCl||Cardiovascular|Peripheral Vasodilator|Process Validation Stage|USDMF Available
+Lactulose Crystals||Gastroenterology|Osmotic Laxative / Hepatic Encephalopathy|Process Validation Stage|USDMF / CEP Available
+L-methyl Folate Calcium||Nutrition & Psychiatry|Active Bioavailable Folate|Process Validation Stage|USDMF Available
+Maropitant||Gastroenterology & Veterinary|NK1 Receptor Antagonist (Veterinary Antiemetic)|Process Validation Stage|USDMF / Tech Pack
+Maropitant Citrate||Gastroenterology & Veterinary|NK1 Receptor Antagonist (Veterinary Antiemetic)|Process Validation Stage|USDMF / Tech Pack
+Ormeloxifene HCl||Women's Health & Gynecology|Selective Estrogen Receptor Modulator (SERM)|Process Validation Stage|USDMF Available
+Pentosan Polysulfate Sodium||Urology|Semi-synthetic Glycosaminoglycan (Interstitial Cystitis)|Process Validation Stage|USDMF Available
+Propyphenazone||Musculoskeletal & Pain|Pyrazolone Analgesic & Antipyretic|Process Validation Stage|USDMF Available
+Rimegepant Sulfate Hydrate||CNS & Neurology|CGRP Receptor Antagonist (Anti-Migraine)|Process Validation Stage|Under Development / Tech Pack
+Ropivacaine Hydrochloride monohydrate||Anesthesia & Pain|Aminoamide Local Anesthetic|Process Validation Stage|USDMF / CEP Available
+Trofinetide||CNS & Neurology|Synthetic Tripeptide (Rett Syndrome)|Process Validation Stage|Under Development
+Tyloxapol||Pulmonary & Ophthalmic|Non-ionic Liquid Polymer Surfactant|Process Validation Stage|USP / BP Available
+Ursodiol||Gastroenterology|Bile Acid / Hepatoprotective|Process Validation Stage|USDMF / CEP Available
+Voglibose||Endocrinology & Antidiabetic|Alpha-Glucosidase Inhibitor|Process Validation Stage|USDMF Available
+Vitamin K2-7 (Menaquinone-7)||Nutrition & Bone Health|Menaquinone-7 (Osteoporosis & Vascular Health)|Process Validation Stage|Pharma Grade
+
