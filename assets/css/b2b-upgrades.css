@@ -115,19 +115,20 @@
   flex-wrap: wrap !important;
 }
 
-/* ===== 3. Floating RFQ Badge (Middle-Right Section) ===== */
+/* ===== 3. Floating RFQ Badge (Above Scroll-To-Top Button) ===== */
 .vp-rfq-float {
   position: fixed;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
+  bottom: 148px;
+  right: 22px;
+  top: auto;
+  transform: none;
   z-index: 99999;
   cursor: pointer;
   animation: rfqFloatIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 @keyframes rfqFloatIn {
-  from { opacity: 0; transform: translate(30px, -50%) scale(0.95); }
-  to { opacity: 1; transform: translate(0, -50%) scale(1); }
+  from { opacity: 0; transform: translateY(16px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 .vp-rfq-float-inner {
   display: inline-flex;
@@ -363,9 +364,10 @@
 
 @media (max-width: 600px) {
   .vp-rfq-float {
-    top: 50%;
-    right: 12px;
-    transform: translateY(-50%);
+    bottom: 136px;
+    right: 16px;
+    top: auto;
+    transform: none;
   }
   .vp-rfq-float-inner {
     padding: 10px 14px;
