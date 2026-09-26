@@ -326,7 +326,12 @@
     var cart = getCart();
     var floatEl = document.getElementById('vpRfqFloat');
     var countEl = document.getElementById('vpRfqCount');
-    if (countEl) countEl.textContent = cart.length;
+    if (countEl) {
+      countEl.textContent = cart.length;
+      countEl.classList.remove('bump');
+      void countEl.offsetWidth; // trigger reflow
+      countEl.classList.add('bump');
+    }
 
     if (floatEl) {
       if (cart.length > 0) {
