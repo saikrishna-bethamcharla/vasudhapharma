@@ -1,7 +1,7 @@
 /**
  * Vasudha Pharma — CDMO / Custom Synthesis Project Feasibility Estimator
  * Real-time calculation matching chemical reactions, reactor metallurgy, plant capacity,
- * cleanroom standards, and project dossier generation.
+ * cGMP standards, and project dossier generation.
  */
 (function () {
   'use strict';
@@ -21,18 +21,18 @@
       notes: 'Vasudha’s flagship core specialty with backwards-integrated raw material pipeline.'
     },
     hydrogenation: {
-      name: 'High-Pressure Catalytic Hydrogenation (up to 40 bar)',
+      name: 'Catalytic Hydrogenation',
       core: false,
       metallurgy: 'High-Pressure Autoclave & Hastelloy C-276',
       plant: 'Unit-III (Vizag) Dedicated Hydrogenation Suite',
       notes: 'Equipped with precision Parr autoclaves and dedicated hydrogen utility headers.'
     },
-    cryogenic: {
-      name: 'Cryogenic Chemistry (-80°C to -40°C)',
+    low_temp: {
+      name: 'Low Temperature Synthesis',
       core: false,
-      metallurgy: 'Cryogenic Glass-Lined Reactors with Liquid Nitrogen Chillers',
+      metallurgy: 'Glass-Lined and Stainless Steel Reactors with Chilling Systems',
       plant: 'Unit-V (Vizag SEZ)',
-      notes: 'Continuous temperature logging with automated organolithium addition.'
+      notes: 'Controlled reaction handling with continuous parameter monitoring.'
     },
     halogenation: {
       name: 'Chlorination / Bromination / Halogenation',

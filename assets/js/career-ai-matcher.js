@@ -190,7 +190,7 @@
 
     var SAMPLES = {
       qc: "Experienced QC Chemist with 4 years in API quality control. Proficient in HPLC, GC-MS, UV-Vis spectrophotometry, wet chemistry titration, method validation, stability studies, and cGMP compliance under USFDA & EU guidelines. M.Sc Analytical Chemistry.",
-      production: "API Production Shift Executive with hands-on expertise in batch manufacturing records (BMR), SS316 & Glass-Lined Reactors (GLR), fluid bed dryers, centrifuges, cleanroom ISO Class 7 operations, solvent recovery, and plant safety SOPs.",
+      production: "API Production Shift Executive with hands-on expertise in batch manufacturing records (BMR), SS316 & Glass-Lined Reactors (GLR), fluid bed dryers, centrifuges, cGMP manufacturing operations, solvent recovery, and plant safety SOPs.",
       regulatory: "Regulatory Affairs Specialist managing USDMF, EDQM CEP, and ASMF submissions for active pharmaceutical ingredients. Comprehensive knowledge of CTD modules, audit responses, change controls, CAPA, and post-approval variations.",
       rnd: "Synthetic Organic Chemist specializing in heterocyclic synthesis, piperidone derivatives, high-pressure catalytic hydrogenation, chiral resolution, route scouting, and technology transfer from lab to kilo-scale."
     };

@@ -6109,7 +6109,6 @@
 
 </style>
   <link rel="stylesheet" href="assets/css/manufacturing-modern.css?v=2">
-  <link rel="stylesheet" href="assets/css/mfg-unit-explorer.css">
   <style>
     .scroll-graphics { display: none !important; }
   </style>
@@ -6456,9 +6455,9 @@
             <a href="ehs.html#ehs"><span class="mm-label">KFDA &amp; Mexican MOH</span><span class="mm-sub">International access</span></a>
           </div>
           <a href="ehs.html#ehs" class="mm-feature-card">
-            <img src="assets/cleanroom-corridor.jpg" alt="Cleanroom practices" onerror="this.parentElement.classList.add('no-img'); this.remove();">
+            <img src="assets/cleanroom-corridor.jpg" alt="EHS and safety practices" onerror="this.parentElement.classList.add('no-img'); this.remove();">
             <span class="mm-feature-text">
-              <span class="mm-feature-title">Cleanroom &amp; safety practices</span>
+              <span class="mm-feature-title">EHS &amp; safety practices</span>
               <span class="mm-feature-sub">Inside our facilities</span>
             </span>
           </a>
@@ -6584,15 +6583,12 @@
     </div>
   </section>
 
-  <!-- Interactive Unit-by-Unit Facility & Equipment Explorer Mount -->
-  <div id="vueExplorerMount"></div>
-
   <!-- Production Facilities (UNIT-1 to UNIT-5) -->
     <section class="about-sub-section page-section" id="production-facilities" style="padding: 64px 0; border-bottom: 1px solid var(--border);">
     <div class="container">
       <div class="section-eyebrow" style="color: var(--primary-red); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px;">World-Class Infrastructure</div>
       <h2 style="font-size: clamp(26px, 3.5vw, 36px); font-weight: 800; color: var(--dark); margin-bottom: 12px;">Manufacturing Facilities</h2>
-      <p style="font-size: 16px; line-height: 1.7; color: var(--text-light); max-width: 860px; margin-bottom: 24px;">Vasudha Pharma Chem operates an integrated network of 6 state-of-the-art production sites across Telangana and Andhra Pradesh. Spanning over 58 acres with 1,720+ KL reactor volume, our facilities are regularly inspected and certified by top international regulatory authorities including USFDA, EDQM, PMDA (Japan), WHO-GMP, and ANVISA (Brazil).</p>
+      <p style="font-size: 16px; line-height: 1.7; color: var(--text-light); max-width: 860px; margin-bottom: 24px;">Vasudha Pharma Chem operates an integrated network of 6 state-of-the-art production sites across Telangana and Andhra Pradesh. Spanning over 58 acres across multiple cGMP production sites, our facilities are regularly inspected and certified by top international regulatory authorities including USFDA, EDQM, PMDA (Japan), WHO-GMP, and ANVISA (Brazil).</p>
 
       <!-- Facility Filter Tabs -->
       <div class="mfg-filter-wrapper">
@@ -6629,31 +6625,22 @@
           </div>
           <div class="unit-card-body">
             <div class="unit-quick-metrics">
-              <div class="unit-qmetric"><span class="unit-qmetric-val">4.0</span><span class="unit-qmetric-lbl">Acres</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">34</span><span class="unit-qmetric-lbl">Reactors</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">99 KL</span><span class="unit-qmetric-lbl">Volume</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">9</span><span class="unit-qmetric-lbl">Cleanrooms</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">4.0</span><span class="unit-qmetric-lbl">Acres Area</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">USFDA</span><span class="unit-qmetric-lbl">Inspected</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">WHO-GMP</span><span class="unit-qmetric-lbl">Certified</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">ISO</span><span class="unit-qmetric-lbl">14001 / 45001</span></div>
             </div>
             <p>Our foundation facility specializing in active pharmaceutical ingredients and high-purity piperidine derivatives. Engineered with advanced process automation and strict cGMP protocols.</p>
-            <div class="unit-specialties-wrap">
-              <div class="unit-specialties-title">Core Chemistry &amp; Focus</div>
-              <div class="unit-specialties-tags">
-                <span class="unit-tag">Piperidine Derivatives</span>
-                <span class="unit-tag">Antihistamines</span>
-                <span class="unit-tag">High Vacuum Distillation</span>
-                <span class="unit-tag">Catalytic Hydrogenation</span>
-              </div>
-            </div>
             <button type="button" class="unit-know-more" aria-expanded="false">
               <span class="km-label">Know more</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
             <div class="unit-details" hidden>
               <div class="ud-facts-grid">
-                <div class="ud-fact-item"><span class="ud-fact-label">Site Area</span><span class="ud-fact-value">4 Acres (16,220 Sq.Mt)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">Cleanroom Standard</span><span class="ud-fact-value">Class 100,000 (ISO 8)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">Total Reactors</span><span class="ud-fact-value">34 Vessels (GLR &amp; SS)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">Total Volume</span><span class="ud-fact-value">99,000 Liters (99 KL)</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">Site Area</span><span class="ud-fact-value">4.0 Acres (16,220 Sq.Mt)</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">Location</span><span class="ud-fact-value">IDA Jeedimetla, Hyderabad, Telangana</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">Core Operations</span><span class="ud-fact-value">APIs &amp; Key Pharma Intermediates</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">Regulatory Standards</span><span class="ud-fact-value">USFDA, WHO-GMP, ISO 9001, ISO 14001, ISO 45001</span></div>
               </div>
               <div class="ud-milestones-title">Regulatory Milestones &amp; History</div>
               <ul class="ud-milestones">
@@ -6691,21 +6678,12 @@
           </div>
           <div class="unit-card-body">
             <div class="unit-quick-metrics">
-              <div class="unit-qmetric"><span class="unit-qmetric-val">10.6</span><span class="unit-qmetric-lbl">Acres</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">111</span><span class="unit-qmetric-lbl">Reactors</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">371 KL</span><span class="unit-qmetric-lbl">Volume</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">14</span><span class="unit-qmetric-lbl">Cleanrooms</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">10.6</span><span class="unit-qmetric-lbl">Acres Area</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">USFDA</span><span class="unit-qmetric-lbl">Inspected</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">PMDA</span><span class="unit-qmetric-lbl">Japan Certified</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">EDQM</span><span class="unit-qmetric-lbl">CEP Approved</span></div>
             </div>
             <p>Major manufacturing hub coupled with modern pilot plants and DSIR-recognized R&amp;D laboratories. Facilitates smooth technology transfer from milligrams to multi-ton commercial synthesis.</p>
-            <div class="unit-specialties-wrap">
-              <div class="unit-specialties-title">Core Chemistry &amp; Focus</div>
-              <div class="unit-specialties-tags">
-                <span class="unit-tag">Cryogenic Reactions (-80°C)</span>
-                <span class="unit-tag">Pilot Plant Scale-Up</span>
-                <span class="unit-tag">Antihypertensives</span>
-                <span class="unit-tag">Chiral Synthesis</span>
-              </div>
-            </div>
             <button type="button" class="unit-know-more" aria-expanded="false">
               <span class="km-label">Know more</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
@@ -6713,9 +6691,9 @@
             <div class="unit-details" hidden>
               <div class="ud-facts-grid">
                 <div class="ud-fact-item"><span class="ud-fact-label">Site Area</span><span class="ud-fact-value">10.63 Acres (43,040 Sq.Mt)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">Cleanroom Suites</span><span class="ud-fact-value">14 Dedicated Suites</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">Total Reactors</span><span class="ud-fact-value">111 Vessels (Hastelloy &amp; GLR)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">Total Volume</span><span class="ud-fact-value">371,000 Liters (371 KL)</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">Location</span><span class="ud-fact-value">Plot No. 79, JN Pharma City, Parawada, Visakhapatnam</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">Core Operations</span><span class="ud-fact-value">High-Potency APIs &amp; Scale-Up Synthesis</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">Regulatory Standards</span><span class="ud-fact-value">USFDA, PMDA Japan, EDQM, WHO-GMP, ISO 14001, ISO 45001</span></div>
               </div>
               <div class="ud-milestones-title">Regulatory Milestones &amp; Approvals</div>
               <ul class="ud-milestones">
@@ -6725,7 +6703,7 @@
                 <li><strong>2013:</strong> EDQM inspection and CEP dossier approvals.</li>
                 <li><strong>2017:</strong> ISO 14001:2015 &amp; ISO 45001:2018 integrated management systems.</li>
                 <li><strong>2023:</strong> Successful joint inspection renewal by PMDA Japan &amp; EDQM.</li>
-                <li><strong>2025:</strong> Re-affirmed ISO 9001:2015 accreditation and expanded cleanroom area.</li>
+                <li><strong>2025:</strong> Re-affirmed ISO 9001:2015 accreditation and expanded manufacturing infrastructure.</li>
               </ul>
             </div>
           </div>
@@ -6753,21 +6731,12 @@
           </div>
           <div class="unit-card-body">
             <div class="unit-quick-metrics">
-              <div class="unit-qmetric"><span class="unit-qmetric-val">9.0</span><span class="unit-qmetric-lbl">Acres</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">68</span><span class="unit-qmetric-lbl">Reactors</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">232 KL</span><span class="unit-qmetric-lbl">Volume</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">7</span><span class="unit-qmetric-lbl">Cleanrooms</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">9.0</span><span class="unit-qmetric-lbl">Acres Area</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">USFDA</span><span class="unit-qmetric-lbl">Inspected (2025)</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">EU-WC</span><span class="unit-qmetric-lbl">Written Confirmation</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">ANVISA</span><span class="unit-qmetric-lbl">Brazil Approved</span></div>
             </div>
             <p>Situated in the Jawaharlal Nehru Pharma City SEZ, this facility serves regulated Western and Asian markets with high-throughput API production and robust process safety systems.</p>
-            <div class="unit-specialties-wrap">
-              <div class="unit-specialties-title">Core Chemistry &amp; Focus</div>
-              <div class="unit-specialties-tags">
-                <span class="unit-tag">Anti-Ulcerants</span>
-                <span class="unit-tag">Cardiovascular APIs</span>
-                <span class="unit-tag">High-Pressure Hydrogenation</span>
-                <span class="unit-tag">Process Safety Mgmt (PSM)</span>
-              </div>
-            </div>
             <button type="button" class="unit-know-more" aria-expanded="false">
               <span class="km-label">Know more</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
@@ -6775,9 +6744,9 @@
             <div class="unit-details" hidden>
               <div class="ud-facts-grid">
                 <div class="ud-fact-item"><span class="ud-fact-label">Site Area</span><span class="ud-fact-value">9.02 Acres (36,529 Sq.Mt)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">Cleanroom Standard</span><span class="ud-fact-value">7 Dedicated Class 100,000 Suites</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">Total Reactors</span><span class="ud-fact-value">68 Vessels (GLR &amp; SS)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">Total Volume</span><span class="ud-fact-value">232,000 Liters (232 KL)</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">Location</span><span class="ud-fact-value">Plot No. 23 &amp; 24, JN Pharma City, Parawada, Visakhapatnam</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">Core Operations</span><span class="ud-fact-value">Commercial APIs &amp; Export Scale-Up</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">Regulatory Standards</span><span class="ud-fact-value">USFDA, PMDA Japan, ANVISA Brazil, CDSCO EU-WC, WHO-GMP</span></div>
               </div>
               <div class="ud-milestones-title">Regulatory Milestones &amp; Approvals</div>
               <ul class="ud-milestones">
@@ -6810,27 +6779,18 @@
             <div class="unit-card-badges">
               <span class="unit-badge badge-who">WHO-GMP Certified</span>
               <span class="unit-badge badge-specialty">ISO 9001:2015</span>
-              <span class="unit-badge badge-fda">80 MT / Month</span>
+              <span class="unit-badge badge-fda">State DCA Licensed</span>
             </div>
             <img class="unit-card-img" src="assets/unit-4.jpg" alt="Unit-4, Visakhapatnam" loading="lazy">
           </div>
           <div class="unit-card-body">
             <div class="unit-quick-metrics">
-              <div class="unit-qmetric"><span class="unit-qmetric-val">3.3</span><span class="unit-qmetric-lbl">Acres</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">80 MT</span><span class="unit-qmetric-lbl">Per Mo.</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">MUPS</span><span class="unit-qmetric-lbl">Technology</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">Class 100k</span><span class="unit-qmetric-lbl">Cleanroom</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">3.3</span><span class="unit-qmetric-lbl">Acres Area</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">WHO-GMP</span><span class="unit-qmetric-lbl">Certified</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">DCA</span><span class="unit-qmetric-lbl">State Licensed</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">Pellets</span><span class="unit-qmetric-lbl">&amp; MUPS Hub</span></div>
             </div>
             <p>Our dedicated formulation pelletization facility engineered for sustained-release, enteric-coated, and taste-masked drug delivery systems. Equipped with state-of-the-art fluid bed processors.</p>
-            <div class="unit-specialties-wrap">
-              <div class="unit-specialties-title">Core Formulations &amp; Pellets</div>
-              <div class="unit-specialties-tags">
-                <span class="unit-tag">Enteric Coated Pellets</span>
-                <span class="unit-tag">Sustained Release (SR)</span>
-                <span class="unit-tag">Fluid Bed Coating (Wurster)</span>
-                <span class="unit-tag">MUPS Formulations</span>
-              </div>
-            </div>
             <button type="button" class="unit-know-more" aria-expanded="false">
               <span class="km-label">Know more</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
@@ -6838,7 +6798,7 @@
             <div class="unit-details" hidden>
               <div class="ud-facts-grid">
                 <div class="ud-fact-item"><span class="ud-fact-label">Site Area</span><span class="ud-fact-value">3.32 Acres (13,436 Sq.Mt)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">Monthly Output</span><span class="ud-fact-value">80 Metric Tons / Month</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">Location</span><span class="ud-fact-value">Plot No. 01, JN Pharmacity / Auto Nagar, Parawada, Visakhapatnam</span></div>
                 <div class="ud-fact-item"><span class="ud-fact-label">Drug License</span><span class="ud-fact-value">11/VSP/AP/2016/F/R (Valid to 2026)</span></div>
                 <div class="ud-fact-item"><span class="ud-fact-label">Quality Standards</span><span class="ud-fact-value">WHO-GMP &amp; ISO 9001:2015</span></div>
               </div>
@@ -6869,28 +6829,19 @@
           <div class="unit-img-wrapper">
             <div class="unit-card-badges">
               <span class="unit-badge badge-fda">USFDA / PMDA GMP</span>
-              <span class="unit-badge badge-who">EDQM CEP Olmesartan</span>
-              <span class="unit-badge badge-specialty">801 KL Capacity</span>
+              <span class="unit-badge badge-who">EDQM CEP Approved</span>
+              <span class="unit-badge badge-specialty">APSEZ Mega Campus</span>
             </div>
             <img class="unit-card-img" src="assets/unit-5.jpg" alt="Unit-5, Atchutapuram, Visakhapatnam" loading="lazy">
           </div>
           <div class="unit-card-body">
             <div class="unit-quick-metrics">
-              <div class="unit-qmetric"><span class="unit-qmetric-val">26.0</span><span class="unit-qmetric-lbl">Acres</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">108</span><span class="unit-qmetric-lbl">Reactors</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">801 KL</span><span class="unit-qmetric-lbl">Volume</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">21</span><span class="unit-qmetric-lbl">Cleanrooms</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">26.0</span><span class="unit-qmetric-lbl">Acres Area</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">USFDA</span><span class="unit-qmetric-lbl">&amp; PMDA Audited</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">EDQM</span><span class="unit-qmetric-lbl">CEP Certified</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">ZLD</span><span class="unit-qmetric-lbl">Zero Discharge</span></div>
             </div>
-            <p>Our largest and most advanced manufacturing facility spread over 26 acres. Designed with 21 ISO Class 8 cleanrooms, massive reaction capacity, and automated DCS process instrumentation.</p>
-            <div class="unit-specialties-wrap">
-              <div class="unit-specialties-title">Core Chemistry &amp; Focus</div>
-              <div class="unit-specialties-tags">
-                <span class="unit-tag">Olmesartan Medoxomil CEP</span>
-                <span class="unit-tag">Loperamide HCl PMDA</span>
-                <span class="unit-tag">Extreme Low-Temp (-80°C)</span>
-                <span class="unit-tag">Zero Liquid Discharge (ZLD)</span>
-              </div>
-            </div>
+            <p>Our flagship commercial synthesis complex spread over 26 acres. Designed with integrated Zero Liquid Discharge (ZLD) environmental infrastructure, DCS process automation, and strict international cGMP compliance.</p>
             <button type="button" class="unit-know-more" aria-expanded="false">
               <span class="km-label">Know more</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
@@ -6898,9 +6849,9 @@
             <div class="unit-details" hidden>
               <div class="ud-facts-grid">
                 <div class="ud-fact-item"><span class="ud-fact-label">Site Area</span><span class="ud-fact-value">26.02 Acres (105,300 Sq.Mt)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">Cleanroom Suites</span><span class="ud-fact-value">21 Class 100,000 Finishing Suites</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">Total Reactors</span><span class="ud-fact-value">108 Vessels (GLR &amp; SS)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">Total Volume</span><span class="ud-fact-value">801,000 Liters (801 KL)</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">Location</span><span class="ud-fact-value">Plot No. 24, 24A &amp; 24B, APSEZ, Rambilli, Visakhapatnam</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">Core Operations</span><span class="ud-fact-value">Flagship Bulk APIs &amp; Advanced Intermediates</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">Regulatory Standards</span><span class="ud-fact-value">USFDA, PMDA Japan, EDQM CEP, CDSCO EU-WC, WHO-GMP, ISO 14001, ISO 45001</span></div>
               </div>
               <div class="ud-milestones-title">Regulatory Milestones &amp; Approvals</div>
               <ul class="ud-milestones">
@@ -6931,29 +6882,20 @@
           </div>
           <div class="unit-img-wrapper">
             <div class="unit-card-badges">
-              <span class="unit-badge badge-fda">USFDA Approved</span>
+              <span class="unit-badge badge-fda">TSPCB Compliant</span>
               <span class="unit-badge badge-specialty">Chlorination Centre</span>
-              <span class="unit-badge badge-who">220 KL Volume</span>
+              <span class="unit-badge badge-who">Key Intermediates</span>
             </div>
             <img class="unit-card-img" src="assets/unit-shriram-chlorochem.jpg" alt="Shri Ram Chlorochem Private Limited" loading="lazy">
           </div>
           <div class="unit-card-body">
             <div class="unit-quick-metrics">
-              <div class="unit-qmetric"><span class="unit-qmetric-val">5.2</span><span class="unit-qmetric-lbl">Acres</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">59</span><span class="unit-qmetric-lbl">Reactors</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">220 KL</span><span class="unit-qmetric-lbl">Volume</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">USFDA</span><span class="unit-qmetric-lbl">Approved</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">5.2</span><span class="unit-qmetric-lbl">Acres Area</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">Established</span><span class="unit-qmetric-lbl">Since 2002</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">Intermediates</span><span class="unit-qmetric-lbl">Specialty Hub</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">TSPCB</span><span class="unit-qmetric-lbl">Consent Compliant</span></div>
             </div>
             <p>Strategic group facility focused on hazardous chemical syntheses, specialty chlorination reactions, and bulk intermediate production feeding the global API value chain.</p>
-            <div class="unit-specialties-wrap">
-              <div class="unit-specialties-title">Core Chemistry &amp; Focus</div>
-              <div class="unit-specialties-tags">
-                <span class="unit-tag">Specialty Chlorination</span>
-                <span class="unit-tag">Glass-Lined Reactors (GLR)</span>
-                <span class="unit-tag">Corrosive Chemistry</span>
-                <span class="unit-tag">Bulk Intermediate Synthesis</span>
-              </div>
-            </div>
             <button type="button" class="unit-know-more" aria-expanded="false">
               <span class="km-label">Know more</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
@@ -6961,9 +6903,9 @@
             <div class="unit-details" hidden>
               <div class="ud-facts-grid">
                 <div class="ud-fact-item"><span class="ud-fact-label">Site Area</span><span class="ud-fact-value">5.17 Acres (20,931 Sq.Mt)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">Acquired By Vasudha</span><span class="ud-fact-value">Year 2002</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">Total Reactors</span><span class="ud-fact-value">59 Heavy-Duty Reactors</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">Total Volume</span><span class="ud-fact-value">220,000 Liters (220 KL)</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">Location</span><span class="ud-fact-value">Sangareddy District / Hyderabad, Telangana</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">Integration Year</span><span class="ud-fact-value">Year 2002</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">Core Operations</span><span class="ud-fact-value">Specialty Chlorination &amp; Regulatory Intermediates</span></div>
               </div>
               <div class="ud-milestones-title">Facility Highlights &amp; Accreditations</div>
               <ul class="ud-milestones">
@@ -7187,7 +7129,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
           <h4>Microbiology &amp; Water Systems</h4>
-          <p>Dedicated ISO Class 7 microbiological testing suite equipped with vertical laminar airflow benches for total aerobic microbial count (TAMC), yeast &amp; mold, and bacterial endotoxin (LAL).</p>
+          <p>Dedicated microbiological testing suite equipped with vertical laminar airflow benches for total aerobic microbial count (TAMC), yeast &amp; mold, and bacterial endotoxin (LAL).</p>
           <ul class="mfg-inst-spec-list">
             <li>Bacterial Endotoxins Testing (LAL test)</li>
             <li>Bioburden &amp; pathogen screening</li>
@@ -8805,7 +8747,6 @@
 <!-- ========== END VASUDHA VIRTUAL ASSISTANT ========== -->
 
 <!-- Interactive Facility & Equipment Explorer Script -->
-<script src="assets/js/mfg-unit-explorer.js" defer></script>
 
 
 <script src="cookie-consent.js" defer></script>

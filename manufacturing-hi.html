@@ -6110,7 +6110,6 @@
 
 </style>
   <link rel="stylesheet" href="assets/css/manufacturing-modern.css?v=2">
-  <link rel="stylesheet" href="assets/css/mfg-unit-explorer.css">
   <style>
     .scroll-graphics { display: none !important; }
   </style>
@@ -6458,9 +6457,9 @@
             <a href="ehs.html#ehs"><span class="mm-label">KFDA &amp; Mexican MOH</span><span class="mm-sub">International access</span></a>
           </div>
           <a href="ehs.html#ehs" class="mm-feature-card">
-            <img src="assets/cleanroom-corridor.jpg" alt="Cleanroom practices" onerror="this.parentElement.classList.add('no-img'); this.remove();">
+            <img src="assets/cleanroom-corridor.jpg" alt="EHS and safety practices" onerror="this.parentElement.classList.add('no-img'); this.remove();">
             <span class="mm-feature-text">
-              <span class="mm-feature-title">Cleanroom &amp; safety practices</span>
+              <span class="mm-feature-title">EHS &amp; safety practices</span>
               <span class="mm-feature-sub">Inside our facilities</span>
             </span>
           </a>
@@ -6586,9 +6585,6 @@
     </div>
   </section>
 
-  <!-- Interactive Unit-by-Unit Facility & Equipment Explorer Mount -->
-  <div id="vueExplorerMount"></div>
-
   <!-- Production Facilities (UNIT-1 to UNIT-5) -->
     <section class="about-sub-section page-section" id="production-facilities" style="padding: 64px 0; border-bottom: 1px solid var(--border);">
     <div class="container">
@@ -6614,7 +6610,7 @@
           <div class="unit-card-header">
             <div class="unit-card-title-group">
               <h3>UNIT-1, हैदराबाद</h3>
-              <span>एपीआई और प्रमुख फार्मास्युटिकल मध्यवर्ती</span>
+              <span>APIs और प्रमुख फार्मा इंटरमीडिएट्स</span>
             </div>
             <span class="unit-location-chip">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
@@ -6623,7 +6619,7 @@
           </div>
           <div class="unit-img-wrapper">
             <div class="unit-card-badges">
-              <span class="unit-badge badge-fda">USFDA स्वीकृत</span>
+              <span class="unit-badge badge-fda">USFDA निरीक्षित</span>
               <span class="unit-badge badge-who">WHO-GMP</span>
               <span class="unit-badge badge-specialty">KFDA / COFEPRIS</span>
             </div>
@@ -6631,41 +6627,32 @@
           </div>
           <div class="unit-card-body">
             <div class="unit-quick-metrics">
-              <div class="unit-qmetric"><span class="unit-qmetric-val">4.0</span><span class="unit-qmetric-lbl">एकड़</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">34</span><span class="unit-qmetric-lbl">रिएक्टर्स</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">99 KL</span><span class="unit-qmetric-lbl">क्षमता</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">9</span><span class="unit-qmetric-lbl">क्लीनरूम</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">4.0</span><span class="unit-qmetric-lbl">एकड़ क्षेत्रफल</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">USFDA</span><span class="unit-qmetric-lbl">निरीक्षित</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">WHO-GMP</span><span class="unit-qmetric-lbl">प्रमाणित</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">ISO</span><span class="unit-qmetric-lbl">14001 / 45001</span></div>
             </div>
-            <p>सक्रिय दवा सामग्री और उच्च शुद्धता वाले पिपेरिडीन डेरिवेटिव में विशेषज्ञता रखने वाली हमारी आधारशिला इकाई। उन्नत स्वचालन और सख्त cGMP मानकों से सुसज्जित।</p>
-            <div class="unit-specialties-wrap">
-              <div class="unit-specialties-title">मुख्य रसायन और विशेषज्ञता</div>
-              <div class="unit-specialties-tags">
-                <span class="unit-tag">पिपेरिडीन डेरिवेटिव्स</span>
-                <span class="unit-tag">एंटीहिस्टामाइन</span>
-                <span class="unit-tag">हाई वैक्यूम डिस्टिलेशन</span>
-                <span class="unit-tag">कैटेलिटिक हाइड्रोजनीकरण</span>
-              </div>
-            </div>
+            <p>हमारी आधारशिला इकाई जो सक्रिय फार्मास्युटिकल सामग्री और उच्च शुद्धता वाले पाइपरिडीन डेरिवेटिव में विशेषज्ञता रखती है। सख्त cGMP प्रोटोकॉल के साथ संचालित।</p>
             <button type="button" class="unit-know-more" aria-expanded="false">
-              <span class="km-label">अधिक जानें</span>
+              <span class="km-label">और जानें</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
             <div class="unit-details" hidden>
               <div class="ud-facts-grid">
-                <div class="ud-fact-item"><span class="ud-fact-label">परिसर क्षेत्र</span><span class="ud-fact-value">4 एकड़ (16,220 वर्ग मीटर)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">क्लीनरूम मानक</span><span class="ud-fact-value">क्लास 1,00,000 (ISO 8)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">कुल रिएक्टर्स</span><span class="ud-fact-value">34 वेसल्स (GLR और SS)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">कुल क्षमता</span><span class="ud-fact-value">99,000 लीटर (99 KL)</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">परिसर क्षेत्र</span><span class="ud-fact-value">4.0 एकड़ (16,220 वर्ग मीटर)</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">स्थान</span><span class="ud-fact-value">आईडीए जीडीमेटला, हैदराबाद, तेलंगाना</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">मुख्य परिचालन</span><span class="ud-fact-value">APIs और प्रमुख फार्मा इंटरमीडिएट्स</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">नियामक मानक</span><span class="ud-fact-value">USFDA, WHO-GMP, ISO 9001, ISO 14001, ISO 45001</span></div>
               </div>
               <div class="ud-milestones-title">नियामक मील के पत्थर और इतिहास</div>
               <ul class="ud-milestones">
-                <li><strong>1994:</strong> स्थापना और वाणिज्यिक परिचालन प्रारंभ।</li>
-                <li><strong>2004:</strong> पहला WHO-GMP प्रमाणन प्राप्त।</li>
-                <li><strong>2007:</strong> सफल प्रारंभिक USFDA cGMP निरीक्षण।</li>
-                <li><strong>2012:</strong> COFEPRIS (मैक्सिको) GMP अनुमोदन।</li>
-                <li><strong>2013:</strong> KFDA (दक्षिण कोरिया) विनियामक स्वीकृति।</li>
-                <li><strong>2018:</strong> ISO 14001:2015 और ISO 45001:2018 EHS प्रमाणन।</li>
-                <li><strong>2024:</strong> WHO-GMP और ISO 9001:2015 मानकों का नवीनीकरण।</li>
+                <li><strong>1994:</strong> स्थापना एवं वाणिज्यिक परिचालन का शुभारंभ।</li>
+                <li><strong>2004:</strong> पहला WHO-GMP प्रमाणन प्राप्त हुआ।</li>
+                <li><strong>2007:</strong> प्रारंभिक USFDA cGMP निरीक्षण सफलतापूर्वक संपन्न।</li>
+                <li><strong>2012:</strong> COFEPRIS (मैक्सिको) GMP अनुमोदन प्राप्त।</li>
+                <li><strong>2013:</strong> KFDA (दक्षिण कोरिया) नियामक मंजूरी।</li>
+                <li><strong>2018:</strong> ISO 14001:2015 एवं ISO 45001:2018 EHS प्रमाणन।</li>
+                <li><strong>2024:</strong> WHO-GMP एवं ISO 9001:2015 मानकों का नवीनीकरण।</li>
               </ul>
             </div>
           </div>
@@ -6676,7 +6663,7 @@
           <div class="unit-card-header">
             <div class="unit-card-title-group">
               <h3>UNIT-2, विशाखापत्तनम</h3>
-              <span>आर एंड डी केंद्र और उच्च-शक्ति एपीआई स्केल-अप</span>
+              <span>R&amp;D केंद्र और उच्च-क्षमता API स्केल-अप</span>
             </div>
             <span class="unit-location-chip">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
@@ -6685,7 +6672,7 @@
           </div>
           <div class="unit-img-wrapper">
             <div class="unit-card-badges">
-              <span class="unit-badge badge-fda">USFDA स्वीकृत</span>
+              <span class="unit-badge badge-fda">USFDA निरीक्षित</span>
               <span class="unit-badge badge-pmda">PMDA जापान</span>
               <span class="unit-badge badge-who">EDQM / WHO-GMP</span>
             </div>
@@ -6693,41 +6680,32 @@
           </div>
           <div class="unit-card-body">
             <div class="unit-quick-metrics">
-              <div class="unit-qmetric"><span class="unit-qmetric-val">10.6</span><span class="unit-qmetric-lbl">एकड़</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">111</span><span class="unit-qmetric-lbl">रिएक्टर्स</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">371 KL</span><span class="unit-qmetric-lbl">क्षमता</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">14</span><span class="unit-qmetric-lbl">क्लीनरूम</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">10.6</span><span class="unit-qmetric-lbl">एकड़ क्षेत्रफल</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">USFDA</span><span class="unit-qmetric-lbl">निरीक्षित</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">PMDA</span><span class="unit-qmetric-lbl">जापान प्रमाणित</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">EDQM</span><span class="unit-qmetric-lbl">CEP स्वीकृत</span></div>
             </div>
-            <p>आधुनिक पायलट प्लांट और डीएसआईआर-मान्यता प्राप्त आरएंडडी प्रयोगशालाओं से सुसज्जित। मिलीग्राम से बहु-टन वाणिज्यिक संश्लेषण तक सुगम प्रौद्योगिकी हस्तांतरण।</p>
-            <div class="unit-specialties-wrap">
-              <div class="unit-specialties-title">मुख्य रसायन और विशेषज्ञता</div>
-              <div class="unit-specialties-tags">
-                <span class="unit-tag">क्रायोजेनिक प्रतिक्रियाएं (-80°C)</span>
-                <span class="unit-tag">पायलट प्लांट स्केल-अप</span>
-                <span class="unit-tag">एंटीहाइपरटेंसिव एपीआई</span>
-                <span class="unit-tag">काइरल संश्लेषण</span>
-              </div>
-            </div>
+            <p>आधुनिक पायलट प्लांट और DSIR-मान्यता प्राप्त R&amp;D प्रयोगशालाओं से युक्त प्रमुख विनिर्माण केंद्र। मिलीग्राम से बहु-टन वाणिज्यिक संश्लेषण को सुगम बनाता है।</p>
             <button type="button" class="unit-know-more" aria-expanded="false">
-              <span class="km-label">अधिक जानें</span>
+              <span class="km-label">और जानें</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
             <div class="unit-details" hidden>
               <div class="ud-facts-grid">
                 <div class="ud-fact-item"><span class="ud-fact-label">परिसर क्षेत्र</span><span class="ud-fact-value">10.63 एकड़ (43,040 वर्ग मीटर)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">क्लीनरूम सुइट्स</span><span class="ud-fact-value">14 समर्पित क्लीनरूम</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">कुल रिएक्टर्स</span><span class="ud-fact-value">111 वेसल्स (हैस्टेलॉय व GLR)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">कुल क्षमता</span><span class="ud-fact-value">371,000 लीटर (371 KL)</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">स्थान</span><span class="ud-fact-value">प्लाट सं. 79, जेएन फार्मा सिटी, परवाड़ा, विशाखापत्तनम</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">मुख्य परिचालन</span><span class="ud-fact-value">उच्च-क्षमता APIs और संश्लेषण स्केल-अप</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">नियामक मानक</span><span class="ud-fact-value">USFDA, PMDA जापान, EDQM, WHO-GMP, ISO 14001, ISO 45001</span></div>
               </div>
               <div class="ud-milestones-title">नियामक मील के पत्थर और अनुमोदन</div>
               <ul class="ud-milestones">
-                <li><strong>2008:</strong> अत्याधुनिक संश्लेषण लाइनों के साथ इकाई चालू।</li>
-                <li><strong>2010:</strong> बिना किसी 483 टिप्पणियों के सफल USFDA निरीक्षण।</li>
-                <li><strong>2011:</strong> PMDA जापान GMP प्रमाणन और विदेशी निर्माता मान्यता।</li>
+                <li><strong>2008:</strong> उन्नत संश्लेषण लाइनों के साथ परिचालन शुरू।</li>
+                <li><strong>2010:</strong> बिना फॉर्म 483 टिप्पणियों के सफल USFDA निरीक्षण।</li>
+                <li><strong>2011:</strong> PMDA जापान GMP प्रमाणन एवं विदेशी निर्माता मान्यता।</li>
                 <li><strong>2013:</strong> EDQM निरीक्षण और CEP डोजियर अनुमोदन।</li>
-                <li><strong>2017:</strong> ISO 14001:2015 और ISO 45001:2018 एकीकृत प्रबंधन प्रणाली।</li>
-                <li><strong>2023:</strong> PMDA जापान और EDQM द्वारा संयुक्त निरीक्षण नवीनीकरण।</li>
-                <li><strong>2025:</strong> ISO 9001:2015 का नवीनीकरण एवं विस्तारित क्लीनरूम क्षेत्र।</li>
+                <li><strong>2017:</strong> ISO 14001:2015 और ISO 45001:2018 प्रबंधन प्रणालियां।</li>
+                <li><strong>2023:</strong> PMDA जापान एवं EDQM द्वारा सफल संयुक्त निरीक्षण नवीनीकरण।</li>
+                <li><strong>2025:</strong> ISO 9001:2015 प्रमाणन का नवीनीकरण एवं बुनियादी ढांचे का विस्तार।</li>
               </ul>
             </div>
           </div>
@@ -6738,7 +6716,7 @@
           <div class="unit-card-header">
             <div class="unit-card-title-group">
               <h3>UNIT-3, विशाखापत्तनम</h3>
-              <span>बड़े पैमाने पर वाणिज्यिक एपीआई और मध्यवर्ती</span>
+              <span>बड़े पैमाने पर वाणिज्यिक APIs और इंटरमीडिएट्स</span>
             </div>
             <span class="unit-location-chip">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
@@ -6747,7 +6725,7 @@
           </div>
           <div class="unit-img-wrapper">
             <div class="unit-card-badges">
-              <span class="unit-badge badge-fda">USFDA निरीक्षण (2025)</span>
+              <span class="unit-badge badge-fda">USFDA निरीक्षित (2025)</span>
               <span class="unit-badge badge-who">PMDA जापान</span>
               <span class="unit-badge badge-specialty">ANVISA / EU-WC</span>
             </div>
@@ -6755,42 +6733,33 @@
           </div>
           <div class="unit-card-body">
             <div class="unit-quick-metrics">
-              <div class="unit-qmetric"><span class="unit-qmetric-val">9.0</span><span class="unit-qmetric-lbl">एकड़</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">68</span><span class="unit-qmetric-lbl">रिएक्टर्स</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">232 KL</span><span class="unit-qmetric-lbl">क्षमता</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">7</span><span class="unit-qmetric-lbl">क्लीनरूम</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">9.0</span><span class="unit-qmetric-lbl">एकड़ क्षेत्रफल</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">USFDA</span><span class="unit-qmetric-lbl">निरीक्षित (2025)</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">EU-WC</span><span class="unit-qmetric-lbl">यूरोपीय पुष्टिकरण</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">ANVISA</span><span class="unit-qmetric-lbl">ब्राजील स्वीकृत</span></div>
             </div>
-            <p>जवाहरलाल नेहरू फार्मा सिटी एसईजेड में स्थित यह इकाई उच्च-थ्रूपुट उत्पादन और मजबूत प्रक्रिया सुरक्षा प्रणालियों के साथ वैश्विक बाजारों की सेवा करती है।</p>
-            <div class="unit-specialties-wrap">
-              <div class="unit-specialties-title">मुख्य रसायन और विशेषज्ञता</div>
-              <div class="unit-specialties-tags">
-                <span class="unit-tag">एंटी-अल्सरेंट्स</span>
-                <span class="unit-tag">कार्डियोवैस्कुलर एपीआई</span>
-                <span class="unit-tag">उच्च दबाव हाइड्रोजनीकरण</span>
-                <span class="unit-tag">प्रोसेस सेफ्टी मैनेजमेंट (PSM)</span>
-              </div>
-            </div>
+            <p>जवाहरलाल नेहरू फार्मा सिटी SEZ में स्थित यह इकाई मजबूत प्रक्रिया सुरक्षा प्रणालियों के साथ पश्चिमी और एशियाई बाजारों में आपूर्ति करती है।</p>
             <button type="button" class="unit-know-more" aria-expanded="false">
-              <span class="km-label">अधिक जानें</span>
+              <span class="km-label">और जानें</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
             <div class="unit-details" hidden>
               <div class="ud-facts-grid">
                 <div class="ud-fact-item"><span class="ud-fact-label">परिसर क्षेत्र</span><span class="ud-fact-value">9.02 एकड़ (36,529 वर्ग मीटर)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">क्लीनरूम मानक</span><span class="ud-fact-value">7 क्लास 1,00,000 सुइट्स</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">कुल रिएक्टर्स</span><span class="ud-fact-value">68 वेसल्स (GLR और SS)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">कुल क्षमता</span><span class="ud-fact-value">232,000 लीटर (232 KL)</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">स्थान</span><span class="ud-fact-value">प्लाट सं. 23 व 24, जेएन फार्मा सिटी, परवाड़ा, विशाखापत्तनम</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">मुख्य परिचालन</span><span class="ud-fact-value">वाणिज्यिक APIs और निर्यात स्केल-अप</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">नियामक मानक</span><span class="ud-fact-value">USFDA, PMDA जापान, ANVISA ब्राजील, CDSCO EU-WC, WHO-GMP</span></div>
               </div>
               <div class="ud-milestones-title">नियामक मील के पत्थर और अनुमोदन</div>
               <ul class="ud-milestones">
-                <li><strong>2012:</strong> जेएनपीसी औद्योगिक क्षेत्र में वाणिज्यिक संचालन प्रारंभ।</li>
-                <li><strong>2014:</strong> CDSCO द्वारा यूरोपीय लिखित पुष्टि (EU-WC) प्राप्त।</li>
-                <li><strong>2016:</strong> WHO-GMP प्रमाणन का नवीनीकरण।</li>
+                <li><strong>2012:</strong> जेएनपीसी औद्योगिक क्षेत्र में वाणिज्यिक परिचालन प्रारंभ।</li>
+                <li><strong>2014:</strong> CDSCO द्वारा यूरोपीय रिटेन कन्फर्मेशन (EU-WC) प्रदान।</li>
+                <li><strong>2016:</strong> WHO-GMP प्रमाणन नवीनीकृत।</li>
                 <li><strong>2017:</strong> USFDA और KFDA निरीक्षण सफलतापूर्वक उत्तीर्ण।</li>
-                <li><strong>2021:</strong> व्यापक प्रोसेस सेफ्टी मैनेजमेंट (PSM) लागू।</li>
-                <li><strong>2023:</strong> ब्राजीलियाई ANVISA विनियामक नवीनीकरण।</li>
-                <li><strong>2024:</strong> PMDA प्रमाण पत्र / EU-WC नवीनीकरण।</li>
-                <li><strong>2025:</strong> USFDA निरीक्षण सफलतापूर्वक संपन्न (8–12 सितंबर, 2025)।</li>
+                <li><strong>2021:</strong> व्यापक प्रक्रिया सुरक्षा प्रबंधन (PSM) का कार्यान्वयन।</li>
+                <li><strong>2023:</strong> ब्राजील ANVISA नियामक नवीनीकरण।</li>
+                <li><strong>2024:</strong> प्रमुख APIs के लिए PMDA प्रमाणपत्र / EU-WC नवीनीकरण।</li>
+                <li><strong>2025:</strong> USFDA निरीक्षण सफलतापूर्वक संपन्न (8-12 सितंबर 2025)।</li>
               </ul>
             </div>
           </div>
@@ -6801,7 +6770,7 @@
           <div class="unit-card-header">
             <div class="unit-card-title-group">
               <h3>UNIT-4, विशाखापत्तनम</h3>
-              <span>सेमी-फॉर्मूलेशन, पेलेट्स और MUPS हब</span>
+              <span>सेमी-फॉर्मुलेशन, पेलेट्स और MUPS केंद्र</span>
             </div>
             <span class="unit-location-chip">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
@@ -6812,44 +6781,35 @@
             <div class="unit-card-badges">
               <span class="unit-badge badge-who">WHO-GMP प्रमाणित</span>
               <span class="unit-badge badge-specialty">ISO 9001:2015</span>
-              <span class="unit-badge badge-fda">80 MT / माह क्षमता</span>
+              <span class="unit-badge badge-fda">राज्य DCA लाइसेंस</span>
             </div>
             <img class="unit-card-img" src="assets/unit-4.jpg" alt="Unit-4, Visakhapatnam" loading="lazy">
           </div>
           <div class="unit-card-body">
             <div class="unit-quick-metrics">
-              <div class="unit-qmetric"><span class="unit-qmetric-val">3.3</span><span class="unit-qmetric-lbl">एकड़</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">80 MT</span><span class="unit-qmetric-lbl">प्रति माह</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">MUPS</span><span class="unit-qmetric-lbl">प्रौद्योगिकी</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">क्लास 100k</span><span class="unit-qmetric-lbl">क्लीनरूम</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">3.3</span><span class="unit-qmetric-lbl">एकड़ क्षेत्रफल</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">WHO-GMP</span><span class="unit-qmetric-lbl">प्रमाणित</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">DCA</span><span class="unit-qmetric-lbl">राज्य लाइसेंस</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">पेलेट्स</span><span class="unit-qmetric-lbl">व MUPS हब</span></div>
             </div>
-            <p>सस्टेन्ड-रिलीज़, एंटरिक-कोटेड और टेस्ट-मास्क्ड ड्रग डिलीवरी सिस्टम के लिए समर्पित फॉर्मूलेशन पेलेटाइजेशन सुविधा। उन्नत फ्लुइड बेड प्रोसेसर से सुसज्जित।</p>
-            <div class="unit-specialties-wrap">
-              <div class="unit-specialties-title">मुख्य फॉर्मूलेशन और पेलेट्स</div>
-              <div class="unit-specialties-tags">
-                <span class="unit-tag">एंटरिक कोटेड पेलेट्स</span>
-                <span class="unit-tag">सस्टेन्ड रिलीज़ (SR)</span>
-                <span class="unit-tag">फ्लुइड बेड कोटिंग (Wurster)</span>
-                <span class="unit-tag">MUPS फॉर्मूलेशन</span>
-              </div>
-            </div>
+            <p>सस्टेन्ड-रिलीज़, एंटरिक-कोटेड और टेस्ट-मास्क्ड ड्रग डिलीवरी सिस्टम के लिए समर्पित फॉर्मुलेशन पेलेटाइजेशन सुविधा।</p>
             <button type="button" class="unit-know-more" aria-expanded="false">
-              <span class="km-label">अधिक जानें</span>
+              <span class="km-label">और जानें</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
             <div class="unit-details" hidden>
               <div class="ud-facts-grid">
                 <div class="ud-fact-item"><span class="ud-fact-label">परिसर क्षेत्र</span><span class="ud-fact-value">3.32 एकड़ (13,436 वर्ग मीटर)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">मासिक क्षमता</span><span class="ud-fact-value">80 मीट्रिक टन / माह</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">स्थान</span><span class="ud-fact-value">प्लाट सं. 01, जेएन फार्मा सिटी / ऑटो नगर, विशाखापत्तनम</span></div>
                 <div class="ud-fact-item"><span class="ud-fact-label">ड्रग लाइसेंस</span><span class="ud-fact-value">11/VSP/AP/2016/F/R (वैध 2026 तक)</span></div>
                 <div class="ud-fact-item"><span class="ud-fact-label">गुणवत्ता मानक</span><span class="ud-fact-value">WHO-GMP और ISO 9001:2015</span></div>
               </div>
               <div class="ud-milestones-title">नियामक मील के पत्थर और प्रमाणन</div>
               <ul class="ud-milestones">
-                <li><strong>2016:</strong> वाणिज्यिक निर्माण परिचालन प्रारंभ।</li>
-                <li><strong>2016:</strong> डीसीए, आंध्र प्रदेश से दवा निर्माण लाइसेंस प्राप्त।</li>
-                <li><strong>2017:</strong> WHO-GMP प्रमाणन प्राप्त।</li>
-                <li><strong>2021:</strong> उच्च क्षमता वाली स्वचालित वर्स्टर कोटिंग लाइनें चालू।</li>
+                <li><strong>2016:</strong> वाणिज्यिक फॉर्मुलेशन परिचालन प्रारंभ।</li>
+                <li><strong>2016:</strong> DCA आंध्र प्रदेश से ड्रग निर्माण लाइसेंस प्राप्त।</li>
+                <li><strong>2017:</strong> WHO-GMP प्रमाणन प्रदान किया गया।</li>
+                <li><strong>2021:</strong> उच्च क्षमता वाले स्वचालित वुर्स्टर कोटिंग का शुभारंभ।</li>
                 <li><strong>2025:</strong> ISO 9001:2015 गुणवत्ता प्रबंधन प्रणाली का पुन: प्रमाणन।</li>
               </ul>
             </div>
@@ -6861,7 +6821,7 @@
           <div class="unit-card-header">
             <div class="unit-card-title-group">
               <h3>UNIT-5, विशाखापत्तनम</h3>
-              <span>फ्लैगशिप मेगा कैंपस — एपीआई और मध्यवर्ती</span>
+              <span>फ्लैगशिप मेगा कैंपस — APIs और इंटरमीडिएट्स</span>
             </div>
             <span class="unit-location-chip">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
@@ -6871,48 +6831,39 @@
           <div class="unit-img-wrapper">
             <div class="unit-card-badges">
               <span class="unit-badge badge-fda">USFDA / PMDA GMP</span>
-              <span class="unit-badge badge-who">EDQM CEP Olmesartan</span>
-              <span class="unit-badge badge-specialty">801 KL क्षमता</span>
+              <span class="unit-badge badge-who">EDQM CEP स्वीकृत</span>
+              <span class="unit-badge badge-specialty">APSEZ मेगा कैंपस</span>
             </div>
             <img class="unit-card-img" src="assets/unit-5.jpg" alt="Unit-5, Atchutapuram, Visakhapatnam" loading="lazy">
           </div>
           <div class="unit-card-body">
             <div class="unit-quick-metrics">
-              <div class="unit-qmetric"><span class="unit-qmetric-val">26.0</span><span class="unit-qmetric-lbl">एकड़</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">108</span><span class="unit-qmetric-lbl">रिएक्टर्स</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">801 KL</span><span class="unit-qmetric-lbl">क्षमता</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">21</span><span class="unit-qmetric-lbl">क्लीनरूम</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">26.0</span><span class="unit-qmetric-lbl">एकड़ क्षेत्रफल</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">USFDA</span><span class="unit-qmetric-lbl">&amp; PMDA ऑडिटेड</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">EDQM</span><span class="unit-qmetric-lbl">CEP प्रमाणित</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">ZLD</span><span class="unit-qmetric-lbl">शून्य उत्सर्जन</span></div>
             </div>
-            <p>26 एकड़ में फैली हमारी सबसे बड़ी और सबसे उन्नत विनिर्माण सुविधा। 21 ISO क्लास 8 क्लीनरूम, 801 KL क्षमता और स्वचालित DCS प्रक्रिया नियंत्रण से परिपूर्ण।</p>
-            <div class="unit-specialties-wrap">
-              <div class="unit-specialties-title">मुख्य रसायन और विशेषज्ञता</div>
-              <div class="unit-specialties-tags">
-                <span class="unit-tag">ओल्मेसार्टन मेडोक्सोमिल CEP</span>
-                <span class="unit-tag">लोपेरामाइड HCl PMDA</span>
-                <span class="unit-tag">अत्यधिक कम तापमान (-80°C)</span>
-                <span class="unit-tag">शून्य तरल निर्वहन (ZLD)</span>
-              </div>
-            </div>
+            <p>26 एकड़ में फैला हमारा प्रमुख वाणिज्यिक संश्लेषण परिसर। एकीकृत शून्य तरल निर्वहन (ZLD) प्रणालियों और अंतरराष्ट्रीय cGMP अनुपालन के साथ निर्मित।</p>
             <button type="button" class="unit-know-more" aria-expanded="false">
-              <span class="km-label">अधिक जानें</span>
+              <span class="km-label">और जानें</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
             <div class="unit-details" hidden>
               <div class="ud-facts-grid">
                 <div class="ud-fact-item"><span class="ud-fact-label">परिसर क्षेत्र</span><span class="ud-fact-value">26.02 एकड़ (1,05,300 वर्ग मीटर)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">क्लीनरूम सुइट्स</span><span class="ud-fact-value">21 क्लास 1,00,000 सुइट्स</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">कुल रिएक्टर्स</span><span class="ud-fact-value">108 वेसल्स (GLR और SS)</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">कुल क्षमता</span><span class="ud-fact-value">801,000 लीटर (801 KL)</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">स्थान</span><span class="ud-fact-value">प्लाट सं. 24, 24A व 24B, APSEZ, रामबाली, विशाखापत्तनम</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">मुख्य परिचालन</span><span class="ud-fact-value">प्रमुख बल्क APIs और उन्नत इंटरमीडिएट्स</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">नियामक मानक</span><span class="ud-fact-value">USFDA, PMDA जापान, EDQM CEP, CDSCO EU-WC, WHO-GMP, ISO 14001, ISO 45001</span></div>
               </div>
               <div class="ud-milestones-title">नियामक मील के पत्थर और अनुमोदन</div>
               <ul class="ud-milestones">
                 <li><strong>2019:</strong> अच्युतपुरम औद्योगिक पार्क में परिचालन प्रारंभ।</li>
-                <li><strong>2019:</strong> DCA दवा निर्माण लाइसेंस प्राप्त।</li>
-                <li><strong>2020:</strong> ISO 14001:2015 और ISO 45001:2018 प्रमाणन।</li>
-                <li><strong>2021:</strong> WHO-GMP प्रमाणन प्राप्त।</li>
-                <li><strong>2022:</strong> ओल्मेसार्टन मेडोक्सोमिल के लिए EDQM CEP प्रमाण पत्र।</li>
-                <li><strong>2024:</strong> CDSCO, नई दिल्ली से यूरोपीय लिखित पुष्टि (EU-WC)।</li>
-                <li><strong>2025:</strong> लोपेरामाइड HCl के मध्यवर्ती के लिए PMDA जापान GMP प्रमाणन।</li>
+                <li><strong>2019:</strong> DCA ड्रग निर्माण लाइसेंस प्राप्त।</li>
+                <li><strong>2020:</strong> ISO 14001:2015 और ISO 45001:2018 प्रमाणन प्राप्त।</li>
+                <li><strong>2021:</strong> WHO-GMP प्रमाणन प्रदान।</li>
+                <li><strong>2022:</strong> ओल्मेसार्टन मेडोक्सोमिल के लिए EDQM CEP प्रमाणपत्र स्वीकृत।</li>
+                <li><strong>2024:</strong> नई दिल्ली CDSCO द्वारा यूरोपीय रिटेन कन्फर्मेशन (EU-WC) प्रदान।</li>
+                <li><strong>2025:</strong> लोपेरामाइड HCl इंटरमीडिएट के लिए PMDA जापान GMP प्रमाणन।</li>
                 <li><strong>2025:</strong> ISO 9001:2015 गुणवत्ता मानकों का पुन: प्रमाणन।</li>
               </ul>
             </div>
@@ -6923,7 +6874,7 @@
         <article class="unit-card" data-region="hyderabad">
           <div class="unit-card-header">
             <div class="unit-card-title-group">
-              <h3>श्री राम क्लोरोकेम</h3>
+              <h3>SHRI RAM CHLOROCHEM</h3>
               <span>समर्पित बल्क इंटरमीडिएट्स सुविधा</span>
             </div>
             <span class="unit-location-chip">
@@ -6933,47 +6884,38 @@
           </div>
           <div class="unit-img-wrapper">
             <div class="unit-card-badges">
-              <span class="unit-badge badge-fda">USFDA अनुमोदित</span>
-              <span class="unit-badge badge-specialty">क्लोरीनीकरण केंद्र</span>
-              <span class="unit-badge badge-who">220 KL क्षमता</span>
+              <span class="unit-badge badge-fda">TSPCB अनुपालन</span>
+              <span class="unit-badge badge-specialty">क्लोरीनेशन केंद्र</span>
+              <span class="unit-badge badge-who">प्रमुख इंटरमीडिएट्स</span>
             </div>
             <img class="unit-card-img" src="assets/unit-shriram-chlorochem.jpg" alt="Shri Ram Chlorochem Private Limited" loading="lazy">
           </div>
           <div class="unit-card-body">
             <div class="unit-quick-metrics">
-              <div class="unit-qmetric"><span class="unit-qmetric-val">5.2</span><span class="unit-qmetric-lbl">एकड़</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">59</span><span class="unit-qmetric-lbl">रिएक्टर्स</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">220 KL</span><span class="unit-qmetric-lbl">क्षमता</span></div>
-              <div class="unit-qmetric"><span class="unit-qmetric-val">USFDA</span><span class="unit-qmetric-lbl">स्वीकृत</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">5.2</span><span class="unit-qmetric-lbl">एकड़ क्षेत्रफल</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">स्थापना</span><span class="unit-qmetric-lbl">2002 से</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">इंटरमीडिएट्स</span><span class="unit-qmetric-lbl">विशेष केंद्र</span></div>
+              <div class="unit-qmetric"><span class="unit-qmetric-val">TSPCB</span><span class="unit-qmetric-lbl">सहमति अनुपालित</span></div>
             </div>
-            <p>रणनीतिक समूह सुविधा जो विशेष रासायनिक संश्लेषणों, क्लोरीनीकरण प्रतिक्रियाओं और वैश्विक एपीआई मूल्य श्रृंखला के लिए प्रमुख मध्यवर्ती उत्पादन पर केंद्रित है।</p>
-            <div class="unit-specialties-wrap">
-              <div class="unit-specialties-title">मुख्य रसायन और विशेषज्ञता</div>
-              <div class="unit-specialties-tags">
-                <span class="unit-tag">विशेष क्लोरीनीकरण</span>
-                <span class="unit-tag">ग्लास-लाइन्ड रिएक्टर्स (GLR)</span>
-                <span class="unit-tag">संक्षारक रसायन</span>
-                <span class="unit-tag">बल्क मध्यवर्ती संश्लेषण</span>
-              </div>
-            </div>
+            <p>रणनीतिक समूह सुविधा जो खतरनाक रासायनिक संश्लेषण, विशेष क्लोरीनीकरण अभिक्रियाओं और बल्क इंटरमीडिएट उत्पादन पर केंद्रित है।</p>
             <button type="button" class="unit-know-more" aria-expanded="false">
-              <span class="km-label">अधिक जानें</span>
+              <span class="km-label">और जानें</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
             <div class="unit-details" hidden>
               <div class="ud-facts-grid">
                 <div class="ud-fact-item"><span class="ud-fact-label">परिसर क्षेत्र</span><span class="ud-fact-value">5.17 एकड़ (20,931 वर्ग मीटर)</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">स्थान</span><span class="ud-fact-value">संगारेड्डी जिला / हैदराबाद, तेलंगाना</span></div>
                 <div class="ud-fact-item"><span class="ud-fact-label">अधिग्रहण वर्ष</span><span class="ud-fact-value">वर्ष 2002</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">कुल रिएक्टर्स</span><span class="ud-fact-value">59 हैवी-ड्यूटी रिएक्टर्स</span></div>
-                <div class="ud-fact-item"><span class="ud-fact-label">कुल क्षमता</span><span class="ud-fact-value">220,000 लीटर (220 KL)</span></div>
+                <div class="ud-fact-item"><span class="ud-fact-label">मुख्य परिचालन</span><span class="ud-fact-value">विशेष क्लोरीनेशन और नियामक इंटरमीडिएट्स</span></div>
               </div>
-              <div class="ud-milestones-title">सुविधा की मुख्य विशेषताएं और अनुमोदन</div>
+              <div class="ud-milestones-title">सुविधा की मुख्य विशेषताएं एवं मान्यताएं</div>
               <ul class="ud-milestones">
-                <li><strong>2002:</strong> अधिग्रहण कर वसुधा फार्मा के निर्माण नेटवर्क में शामिल किया गया।</li>
-                <li><strong>2008:</strong> क्लोरीनीकरण के लिए ग्लास-लाइन्ड रिएक्टर क्षमता का व्यापक विस्तार।</li>
-                <li><strong>2015:</strong> प्रमुख प्रारंभिक सामग्रियों की आपूर्ति के लिए USFDA अनुमोदन।</li>
-                <li><strong>2020:</strong> समर्पित स्क्रबर टावर और पर्यावरण नियंत्रण प्रणाली का उन्नयन।</li>
-                <li><strong>2024:</strong> कम्प्यूटरीकृत प्रक्रिया सुरक्षा प्रबंधन (PSM) लागू।</li>
+                <li><strong>2002:</strong> वसुधा फार्मा के विनिर्माण नेटवर्क में अधिग्रहित और एकीकृत।</li>
+                <li><strong>2008:</strong> क्लोरीनीकरण के लिए ग्लास-लाइन्ड रिएक्टर क्षमता का पर्याप्त विस्तार।</li>
+                <li><strong>2015:</strong> प्रमुख प्रारंभिक सामग्रियों की आपूर्ति के लिए USFDA मंजूरी।</li>
+                <li><strong>2020:</strong> समर्पित स्क्रबर टावर और पर्यावरण नियंत्रण प्रणालियों का उन्नयन।</li>
+                <li><strong>2024:</strong> कम्प्यूटरीकृत प्रक्रिया सुरक्षा प्रबंधन (PSM) प्रोटोकॉल।</li>
               </ul>
             </div>
           </div>
@@ -8805,7 +8747,6 @@
 <link rel="stylesheet" href="assets/css/vasudha-bot.css">
 <script src="assets/js/vasudha-bot.js" defer></script>
 <!-- Interactive Facility & Equipment Explorer Script -->
-<script src="assets/js/mfg-unit-explorer.js" defer></script>
 <!-- ========== END VASUDHA VIRTUAL ASSISTANT ========== -->
 
 
