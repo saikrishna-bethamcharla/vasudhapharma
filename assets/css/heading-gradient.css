@@ -106,3 +106,239 @@ section > .container > h2:not([class]) {
 .cp-hero-title {
   max-width: 100%;
 }
+
+/* === CANONICAL mega-menu layout & cards (spans full menu width, larger images, enhanced typography) === */
+    .nav-item > .mega-menu,
+    .mega-menu {
+      padding: 34px 0 38px !important;
+    }
+    .mega-menu-about .mega-menu-about-row {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      align-items: stretch !important;
+      justify-content: space-between !important;
+      gap: 28px 40px !important;
+      width: 100% !important;
+      max-width: 1560px !important;
+      margin: 0 auto !important;
+      padding: 0 44px !important;
+      box-sizing: border-box !important;
+    }
+    /* 3-item menus (e.g. R&D) remain elegantly centered and balanced */
+    .nav-item:has(a[data-section="rnd"]) .mega-menu-about-row,
+    .mega-menu-about:has(.mega-menu-col:only-of-type) .mega-menu-about-row {
+      max-width: 1200px !important;
+      justify-content: center !important;
+      gap: 48px !important;
+    }
+    /* Large prominent feature cards */
+    .mega-menu a.mm-feature-card,
+    .mega-menu .mm-feature-card {
+      flex: 0 1 360px !important;
+      min-width: 220px !important;
+      max-width: 390px !important;
+      width: 100% !important;
+      height: 195px !important;
+      min-height: 195px !important;
+      max-height: 195px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      display: block !important;
+      overflow: hidden !important;
+      border-radius: 12px !important;
+      background: #ffffff !important;
+      border: 1px solid rgba(0,0,0,0.08) !important;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.08) !important;
+      box-sizing: border-box !important;
+      position: relative !important;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
+    }
+    .mega-menu a.mm-feature-card:hover,
+    .mega-menu .mm-feature-card:hover {
+      transform: translateY(-3px) scale(1.01) !important;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.14) !important;
+    }
+    .mega-menu a.mm-feature-card .mm-feature-text,
+    .mega-menu .mm-feature-card .mm-feature-text {
+      display: none !important;
+      height: 0 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      overflow: hidden !important;
+    }
+    .mega-menu a.mm-feature-card > img,
+    .mega-menu .mm-feature-card > img {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      min-width: 100% !important;
+      max-width: 100% !important;
+      height: 100% !important;
+      min-height: 100% !important;
+      max-height: 100% !important;
+      object-fit: cover !important;
+      object-position: center center !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border: none !important;
+      border-radius: 12px !important;
+      background: transparent !important;
+      transform: none !important;
+    }
+    /* Foundation mega-menu: enlarged full cards & balanced columns */
+    .nav-item:has(a[data-section="founder"]) .mega-menu-about-row > .mm-feature-card,
+    .mega-menu-about:has(a[href*="vasudha-foundation"]) .mm-feature-card {
+      flex: 0 1 370px !important;
+      min-width: 280px !important;
+      max-width: 410px !important;
+      height: 195px !important;
+      min-height: 195px !important;
+      max-height: 195px !important;
+      overflow: hidden !important;
+      border-radius: 12px !important;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.08) !important;
+      border: 1px solid rgba(0,0,0,0.06) !important;
+      background: #ffffff !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    .nav-item:has(a[data-section="founder"]) .mega-menu-about-row > .mega-menu-col:first-child,
+    .nav-item:has(a[data-section="founder"]) .mega-menu-about-row > .mega-menu-col:last-child {
+      flex: 0 1 170px !important;
+      min-width: 140px !important;
+      max-width: 190px !important;
+    }
+    .nav-item:has(a[data-section="founder"]) .mega-menu-about-row > .mega-menu-col:nth-child(3) {
+      flex: 0 1 230px !important;
+      min-width: 180px !important;
+      max-width: 250px !important;
+    }
+    .nav-item:has(a[data-section="founder"]) .mega-menu a.mm-feature-card > img,
+    .nav-item:has(a[data-section="founder"]) .mega-menu .mm-feature-card > img,
+    .mega-menu a.mm-feature-card > img,
+    .mega-menu .mm-feature-card > img {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      min-width: 100% !important;
+      max-width: 100% !important;
+      height: 100% !important;
+      min-height: 100% !important;
+      max-height: 100% !important;
+      object-fit: cover !important;
+      object-position: center center !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border: none !important;
+      border-radius: 12px !important;
+      background: transparent !important;
+    }
+    .mega-menu a.mm-feature-card img[src*="board-directors"],
+    .mega-menu .mm-feature-card img[src*="board-directors"] {
+      object-fit: cover !important;
+      object-position: center 18% !important;
+      max-height: 100% !important;
+      min-height: 100% !important;
+      height: 100% !important;
+      padding: 0 !important;
+    }
+    .mega-menu a.mm-feature-card img[src*="founder"],
+    .mega-menu .mm-feature-card img[src*="founder"] {
+      object-fit: cover !important;
+      object-position: center center !important;
+      max-height: 100% !important;
+      min-height: 100% !important;
+      height: 100% !important;
+      padding: 0 !important;
+      background: transparent !important;
+    }
+    .mega-menu a.mm-feature-card--logo > img,
+    .mega-menu .mm-feature-card--logo > img,
+    .mega-menu a.mm-feature-card img[src*="foundation"],
+    .mega-menu .mm-feature-card img[src*="foundation"] {
+      object-fit: cover !important;
+      object-position: center center !important;
+      max-height: 100% !important;
+      min-height: 100% !important;
+      height: 100% !important;
+      padding: 0 !important;
+      background: transparent !important;
+    }
+
+    /* Text columns adjusted to breathe and fill menu */
+    .mega-menu-about .mega-menu-col,
+    .mega-menu .mega-menu-col {
+      flex: 1 1 240px !important;
+      min-width: 170px !important;
+      max-width: 320px !important;
+      padding-top: 2px !important;
+    }
+    .mega-menu-col h5 {
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      letter-spacing: 1px !important;
+      text-transform: uppercase !important;
+      color: #1F5FB8 !important;
+      margin-bottom: 14px !important;
+      padding-bottom: 8px !important;
+      border-bottom: 2px solid rgba(31, 95, 184, 0.2) !important;
+    }
+    .mega-menu-col a {
+      display: block !important;
+      text-decoration: none !important;
+      padding: 7px 12px !important;
+      margin: 0 -12px 4px !important;
+      border-radius: 8px !important;
+      transition: background 0.2s ease, transform 0.2s ease !important;
+    }
+    .mega-menu-col a:last-child {
+      margin-bottom: 0 !important;
+    }
+    .mega-menu-col a:hover {
+      background: rgba(47, 125, 225, 0.08) !important;
+      transform: translateX(4px) !important;
+    }
+    .mega-menu-col a .mm-label {
+      display: block !important;
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      color: #1a1a1a !important;
+      line-height: 1.35 !important;
+      transition: color 0.2s ease !important;
+    }
+    .mega-menu-col a:hover .mm-label {
+      color: #1F5FB8 !important;
+    }
+    .mega-menu-col a .mm-sub {
+      display: block !important;
+      font-size: 12.5px !important;
+      color: #666666 !important;
+      margin-top: 3px !important;
+      line-height: 1.35 !important;
+    }
+
+    @media (max-width: 1360px) {
+      .mega-menu-about .mega-menu-about-row {
+        gap: 20px 24px !important;
+        padding: 0 24px !important;
+      }
+      .mega-menu a.mm-feature-card,
+      .mega-menu .mm-feature-card {
+        flex: 0 1 280px !important;
+        min-width: 190px !important;
+        height: 175px !important;
+        min-height: 175px !important;
+        max-height: 175px !important;
+      }
+      .mega-menu-about .mega-menu-col,
+      .mega-menu .mega-menu-col {
+        min-width: 150px !important;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .mega-menu {
+        display: none !important;
+      }
+    }
