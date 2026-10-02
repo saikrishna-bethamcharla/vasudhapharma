@@ -16,7 +16,7 @@
       currentStep: 3, // 1 to 4
       statusLabel: 'Panel Interview Scheduled',
       statusClass: 'in-progress',
-      reviewerNote: 'Technical assessment passed with commendation (Score: 92%). Panel interview scheduled with Senior Technical Committee & HR on September 28, 2026.'
+      reviewerNote: 'Technical assessment passed with commendation (Score: 92%). Panel interview scheduled with Senior Technical Committee & HR on October 14, 2026.'
     },
     'VP-2026-QA': {
       id: 'VP-2026-QA',

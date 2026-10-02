@@ -8417,7 +8417,27 @@
 
 <script>
 (function(){
-  function live(list){ return (list||[]).filter(function(x){ return (x.status||"live")!=="done"; }); }
+  function isFutureEvent(e){
+    if(!e||!e.dates) return true;
+    var str=String(e.dates).replace(/[\u2013\u2014–—]/g,'-');
+    var m=str.match(/(?:-\s*)?(\d{1,2})\s+([A-Za-z]+),?\s+(\d{4})/);
+    if(m){
+      var endDay=parseInt(m[1],10);
+      var monthStr=m[2];
+      var year=parseInt(m[3],10);
+      var d=new Date(monthStr+" "+endDay+", "+year+" 23:59:59");
+      if(!isNaN(d.getTime())){
+        return d>=new Date();
+      }
+    }
+    return true;
+  }
+  function live(list){
+    return (list||[]).filter(function(x){
+      if((x.status||"live")==="done") return false;
+      return isFutureEvent(x);
+    });
+  }
   function esc(s){ return String(s||"").replace(/[&<>"]/g,function(c){ return ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"})[c]; }); }
   fetch("news-events.json?v="+Date.now()).then(function(r){ return r.ok?r.json():null; }).then(function(data){
     if(!data) return;

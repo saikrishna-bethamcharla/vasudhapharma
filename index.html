@@ -6575,7 +6575,7 @@
         <p class="section-desc">Come and meet the Vasudha team at these upcoming international pharmaceutical exhibitions.</p>
       </div>
 
-      <div class="vp-events-grid" id="vpEventsGrid">
+            <div class="vp-events-grid" id="vpEventsGrid">
         <article class="vp-event-card">
           <div class="vp-event-photo has-photo"><img src="assets/events/milan.png" alt="Milan, Italy"></div>
           <div class="vp-event-head">
@@ -6592,6 +6592,21 @@
         </article>
 
         <article class="vp-event-card">
+          <div class="vp-event-photo has-photo"><img src="assets/events/stockholm.png" alt="Stockholm, Sweden"></div>
+          <div class="vp-event-head">
+            <span class="vp-event-tag">Meet us at</span>
+            <h3>Bio-Europe 2026</h3>
+            <p>Stockholmsm&auml;ssan, Sweden</p>
+            <p>2 &ndash; 4 November, 2026</p>
+            <p class="vp-event-booth">Booth: Hall B-114</p>
+          </div>
+          <div class="vp-event-foot">
+            <h4>Bio-Europe 2026</h4>
+            <a href="mailto:wisdom@vasudhapharma.com?subject=Slot%20request%20%E2%80%94%20Bio-Europe%202026">Book a slot &rarr;</a>
+          </div>
+        </article>
+
+        <article class="vp-event-card">
           <div class="vp-event-photo has-photo"><img src="assets/events/new-delhi-redfort.png" alt="New Delhi, India"></div>
           <div class="vp-event-head">
             <span class="vp-event-tag">Meet us at</span>
@@ -6603,6 +6618,21 @@
           <div class="vp-event-foot">
             <h4>CPHI India 2026</h4>
             <a href="mailto:wisdom@vasudhapharma.com?subject=Slot%20request%20%E2%80%94%20CPHI%20India%202026">Book a slot &rarr;</a>
+          </div>
+        </article>
+
+        <article class="vp-event-card">
+          <div class="vp-event-photo has-photo"><img src="assets/events/new-york.png" alt="New York City, USA"></div>
+          <div class="vp-event-head">
+            <span class="vp-event-tag">Partnering at</span>
+            <h3>DCAT Week 2027</h3>
+            <p>New York City, USA</p>
+            <p>22 &ndash; 25 March, 2027</p>
+            <p class="vp-event-booth">Member Suite: Floor 4</p>
+          </div>
+          <div class="vp-event-foot">
+            <h4>DCAT Week 2027</h4>
+            <a href="mailto:wisdom@vasudhapharma.com?subject=Slot%20request%20%E2%80%94%20DCAT%20Week%202027">Book a slot &rarr;</a>
           </div>
         </article>
       </div>
@@ -8057,7 +8087,27 @@
 
 <script>
 (function(){
-  function live(list){ return (list||[]).filter(function(x){ return (x.status||"live")!=="done"; }); }
+  function isFutureEvent(e){
+    if(!e||!e.dates) return true;
+    var str=String(e.dates).replace(/[\u2013\u2014–—]/g,'-');
+    var m=str.match(/(?:-\s*)?(\d{1,2})\s+([A-Za-z]+),?\s+(\d{4})/);
+    if(m){
+      var endDay=parseInt(m[1],10);
+      var monthStr=m[2];
+      var year=parseInt(m[3],10);
+      var d=new Date(monthStr+" "+endDay+", "+year+" 23:59:59");
+      if(!isNaN(d.getTime())){
+        return d>=new Date();
+      }
+    }
+    return true;
+  }
+  function live(list){
+    return (list||[]).filter(function(x){
+      if((x.status||"live")==="done") return false;
+      return isFutureEvent(x);
+    });
+  }
   function esc(s){ return String(s||"").replace(/[&<>"]/g,function(c){ return ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"})[c]; }); }
   fetch("news-events.json?v="+Date.now()).then(function(r){ return r.ok?r.json():null; }).then(function(data){
     if(!data) return;
