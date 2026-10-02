@@ -1492,7 +1492,7 @@
       <div id="forgotDeptInfoCard" style="background:#F8FAFC; border:1px solid var(--sp-border); border-radius:10px; padding:14px 16px; margin-bottom:16px;">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
           <span style="font-size:11.5px; color:var(--sp-text-muted); text-transform:uppercase; font-weight:600; letter-spacing:0.5px;">Account Email</span>
-          <span id="forgotDeptEmail" style="font-size:12.5px; font-weight:600; color:var(--sp-text-main);">marketing@vasudhapharma.com</span>
+          <span id="forgotDeptEmail" style="font-size:12.5px; font-weight:600; color:var(--sp-text-main);">wisdom@vasudhapharma.com</span>
         </div>
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
           <span style="font-size:11.5px; color:var(--sp-text-muted); text-transform:uppercase; font-weight:600; letter-spacing:0.5px;">Official Password</span>
@@ -1618,11 +1618,11 @@
     // System Users & State
     let currentUser = null;
     const DEFAULT_USERS = [
-      { id: 'admin', email: 'wisdom@vasudhapharma.com', alias: 'admin@vasudhapharma.com', name: 'VPCL Operations Admin', role: 'admin', dept: 'admin', password: 'Vasudha@Admin2026!' },
-      { id: 'marketing', email: 'wisdom@vasudhapharma.com', alias: 'marketing@vasudhapharma.com', name: 'Marketing & Commercial Portfolio', role: 'marketing', dept: 'marketing', password: 'Vasudha@Marketing2026!' },
-      { id: 'hr', email: 'wisdom@vasudhapharma.com', alias: 'hr@vasudhapharma.com', name: 'HR & Talent Acquisition', role: 'hr', dept: 'careers', password: 'Vasudha@HR2026!' },
-      { id: 'foundation', email: 'wisdom@vasudhapharma.com', alias: 'foundation@vasudhapharma.com', name: 'Vasudha Foundation CSR', role: 'user', dept: 'foundation', password: 'Vasudha@CSR2026!' },
-      { id: 'news', email: 'wisdom@vasudhapharma.com', alias: 'news@vasudhapharma.com', name: 'Corporate Media & PR', role: 'user', dept: 'news', password: 'Vasudha@News2026!' },
+      { id: 'admin', email: 'wisdom@vasudhapharma.com', alias: 'wisdom@vasudhapharma.com', name: 'VPCL Operations Admin', role: 'admin', dept: 'admin', password: 'Vasudha@Admin2026!' },
+      { id: 'marketing', email: 'wisdom@vasudhapharma.com', alias: 'wisdom@vasudhapharma.com', name: 'Marketing & Commercial Portfolio', role: 'marketing', dept: 'marketing', password: 'Vasudha@Marketing2026!' },
+      { id: 'hr', email: 'wisdom@vasudhapharma.com', alias: 'wisdom@vasudhapharma.com', name: 'HR & Talent Acquisition', role: 'hr', dept: 'careers', password: 'Vasudha@HR2026!' },
+      { id: 'foundation', email: 'wisdom@vasudhapharma.com', alias: 'wisdom@vasudhapharma.com', name: 'Vasudha Foundation CSR', role: 'user', dept: 'foundation', password: 'Vasudha@CSR2026!' },
+      { id: 'news', email: 'wisdom@vasudhapharma.com', alias: 'wisdom@vasudhapharma.com', name: 'Corporate Media & PR', role: 'user', dept: 'news', password: 'Vasudha@News2026!' },
       { id: 'dev', email: 'wisdom@vasudhapharma.com', alias: 'saikrishna@zailabs.co.in', name: 'Sai Krishna (Lead Dev)', role: 'admin', dept: 'admin', password: 'Vasudha@Dev2026!' }
     ];
 
@@ -1633,7 +1633,7 @@
           const parsed = JSON.parse(stored);
           if (Array.isArray(parsed) && parsed.length > 0) {
             const mktIdx = parsed.findIndex(u => u.dept === 'marketing' || u.id === 'marketing');
-            const mktObj = { id: 'marketing', email: 'marketing@vasudhapharma.com', alias: 'wisdom@vasudhapharma.com', name: 'Marketing & Commercial Portfolio', role: 'marketing', dept: 'marketing', password: 'Vasudha@Marketing2026!' };
+            const mktObj = { id: 'marketing', email: 'wisdom@vasudhapharma.com', alias: 'wisdom@vasudhapharma.com', name: 'Marketing & Commercial Portfolio', role: 'marketing', dept: 'marketing', password: 'Vasudha@Marketing2026!' };
             if (mktIdx === -1) {
               parsed.splice(1, 0, mktObj);
             } else {
@@ -1806,16 +1806,7 @@
     // News & Events Data State
     let newsEventsData = {
     "events": [
-        {
-            "id": "EV-IPHEX-2026",
-            "status": "live",
-            "title": "iPHEX 2026",
-            "place": "Bharat Mandapam, New Delhi",
-            "dates": "7 – 9 September, 2026",
-            "booth": "Booth: 2C-28",
-            "image": "assets/events/new-delhi.png",
-            "tag": "Meet us at"
-        },
+        
         {
             "id": "EV-CPHI-MILAN-2026",
             "status": "live",
@@ -2812,11 +2803,11 @@
 
     // Authentication
     const DEPT_PRESETS = {
-      admin: { email: 'admin@vasudhapharma.com', pass: 'Vasudha@Admin2026!' },
-      marketing: { email: 'marketing@vasudhapharma.com', pass: 'Vasudha@Marketing2026!' },
-      hr: { email: 'hr@vasudhapharma.com', pass: 'Vasudha@HR2026!' },
-      foundation: { email: 'foundation@vasudhapharma.com', pass: 'Vasudha@CSR2026!' },
-      news: { email: 'news@vasudhapharma.com', pass: 'Vasudha@News2026!' },
+      admin: { email: 'wisdom@vasudhapharma.com', pass: 'Vasudha@Admin2026!' },
+      marketing: { email: 'wisdom@vasudhapharma.com', pass: 'Vasudha@Marketing2026!' },
+      hr: { email: 'wisdom@vasudhapharma.com', pass: 'Vasudha@HR2026!' },
+      foundation: { email: 'wisdom@vasudhapharma.com', pass: 'Vasudha@CSR2026!' },
+      news: { email: 'wisdom@vasudhapharma.com', pass: 'Vasudha@News2026!' },
       dev: { email: 'saikrishna@zailabs.co.in', pass: 'Vasudha@Dev2026!' }
     };
 
@@ -3027,7 +3018,7 @@
         const newsCount = (newsEventsData && newsEventsData.news) ? newsEventsData.news.length : 6;
         const totalCards = eventsCount + newsCount;
 
-        l1.textContent = 'International Expos'; v1.textContent = eventsCount; s1.textContent = 'iPHEX, CPHI Milan & India';
+        l1.textContent = 'International Expos'; v1.textContent = eventsCount; s1.textContent = 'CPHI Milan, Bio-Europe & India';
         l2.textContent = 'Corporate News Cards'; v2.textContent = newsCount; s2.textContent = 'GPACTS, State Awards, ESG';
         l3.textContent = 'Total Active Cards'; v3.textContent = totalCards; s3.textContent = 'Published across website';
         l4.textContent = 'Global Presence'; v4.textContent = 'Worldwide'; s4.textContent = 'Trade delegations';

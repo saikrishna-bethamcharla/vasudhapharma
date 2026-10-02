@@ -4165,7 +4165,7 @@
       min-width: 140px;
     }
 
-    /* FINAL mega cards — fixed box, same on every page */
+    /* FINAL mega cards — full-bleed prominent feature cards */
     .mega-menu a.mm-feature-card,
     .mega-menu .mm-feature-card {
       width: 196px !important;
@@ -4180,8 +4180,8 @@
       overflow: hidden !important;
       border-radius: 10px !important;
       background: #ffffff !important;
-      border: 1px solid #e6e6e6 !important;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.06) !important;
+      border: 1px solid rgba(0,0,0,0.08) !important;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08) !important;
       box-sizing: border-box !important;
       position: relative !important;
     }
@@ -4204,146 +4204,34 @@
       height: 100% !important;
       max-width: none !important;
       max-height: none !important;
-      object-fit: contain !important;
+      object-fit: cover !important;
       object-position: center center !important;
-      padding: 10px !important;
+      padding: 0 !important;
       box-sizing: border-box !important;
-      background: #fff !important;
+      background: #ffffff !important;
       border: none !important;
+      border-radius: 10px !important;
       transform: none !important;
       margin: 0 !important;
     }
+    .mega-menu a.mm-feature-card img[src*="founder"],
+    .mega-menu .mm-feature-card img[src*="founder"] {
+      object-fit: cover !important;
+      object-position: center 8% !important;
+      padding: 0 !important;
+      background: #ffffff !important;
+    }
     .mega-menu a.mm-feature-card--logo > img,
-    .mega-menu .mm-feature-card--logo > img {
-      padding: 16px 14px !important;
+    .mega-menu .mm-feature-card--logo > img,
+    .mega-menu a.mm-feature-card img[src*="foundation-card-logo"],
+    .mega-menu .mm-feature-card img[src*="foundation-card-logo"],
+    .mega-menu a.mm-feature-card img[src*="vasudha-foundation-logo"],
+    .mega-menu .mm-feature-card img[src*="vasudha-foundation-logo"] {
+      object-fit: contain !important;
+      object-position: center center !important;
+      padding: 8px 12px !important;
+      background: #ffffff !important;
     }
-
-    /* FOUNDATION HERO FULL WIDTH — force show traditional portrait */
-    section.founder-hero-full,
-    .founder-hero-full.hero,
-    #pagebanner.founder-hero-full {
-      position: relative !important;
-      padding: 80px 0 90px !important;
-      min-height: 560px !important;
-      background-color: #2a2a2a !important;
-      background-image: url('assets/founder-hero-bg.webp') !important;
-      background-repeat: no-repeat !important;
-      background-position: right center !important;
-      background-size: cover !important;
-      overflow: visible !important;
-      border: none !important;
-    }
-    section.founder-hero-full .container {
-      position: relative !important;
-      z-index: 2 !important;
-    }
-    section.founder-hero-full .hero-content {
-      max-width: 480px !important;
-      background: rgba(255,255,255,0.92) !important;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-radius: 14px !important;
-      padding: 32px 30px 28px !important;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.12) !important;
-    }
-    section.founder-hero-full .hero-content h1 {
-      font-size: clamp(32px, 4vw, 46px) !important;
-      margin: 0 0 14px !important;
-      color: #1a1a1a !important;
-    }
-    section.founder-hero-full .hero-content p {
-      font-size: 16px !important;
-      line-height: 1.7 !important;
-      color: #555 !important;
-      margin: 0 !important;
-    }
-    @media (max-width: 768px) {
-      section.founder-hero-full {
-        min-height: 420px !important;
-        background-position: center top !important;
-      }
-    }
-
-    /* SECRETARIAL FIX — never expand into red strip */
-    .top-bar { overflow: visible !important; z-index: 5000 !important; position: relative !important; height: auto !important; min-height: 0 !important; }
-    .top-bar .container, .top-bar-right { overflow: visible !important; flex-wrap: nowrap !important; }
-    #secretarialDropdown { position: relative !important; }
-    #secretarialDropdown .top-bar-dd-menu {
-      display: none !important;
-      position: absolute !important;
-      top: 100% !important;
-      right: 0 !important;
-      left: auto !important;
-      margin-top: 8px !important;
-      min-width: 280px !important;
-      background: #2E4A8A !important;
-      border-radius: 8px !important;
-      z-index: 9999 !important;
-      padding: 6px 0 !important;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.3) !important;
-    }
-    #secretarialDropdown.is-open .top-bar-dd-menu,
-    #secretarialDropdown.is-open > .top-bar-dd-menu {
-      display: block !important;
-    }
-    #secretarialDropdown .top-bar-dd-submenu {
-      display: none !important;
-      position: absolute !important;
-      right: 100% !important;
-      left: auto !important;
-      top: 0 !important;
-      min-width: 260px !important;
-      background: #7A0A1C !important;
-      border-radius: 8px !important;
-      z-index: 10000 !important;
-      padding: 6px 0 !important;
-    }
-    #secretarialDropdown .top-bar-dd-sub.is-open > .top-bar-dd-submenu {
-      display: block !important;
-    }
-    #secretarialDropdown .top-bar-dd-menu a,
-    #secretarialDropdown .top-bar-dd-item {
-      display: block !important;
-      width: 100% !important;
-      padding: 12px 18px !important;
-      color: #fff !important;
-      font-size: 12px !important;
-      font-weight: 600 !important;
-      text-transform: uppercase !important;
-      text-decoration: none !important;
-      background: transparent !important;
-      border: none !important;
-      white-space: nowrap !important;
-    }
-    #secretarialDropdown .top-bar-dd-menu a:hover,
-    #secretarialDropdown .top-bar-dd-item:hover {
-      background: #3D5CAD !important;
-    }
-    header { z-index: 400 !important; }
-
-    /* Kill .hero gradient overlays that hide founder photo */
-    #pagebanner.founder-hero-full.hero::before,
-    #pagebanner.founder-hero-full::before,
-    section.founder-hero-full::before,
-    section.founder-hero-full.hero::before,
-    section.founder-hero-full::after,
-    #pagebanner.founder-hero-full::after {
-      display: none !important;
-      content: none !important;
-      background: none !important;
-      opacity: 0 !important;
-    }
-    #pagebanner.founder-hero-full,
-    section.founder-hero-full {
-      background: #1a1a1a url('assets/founder-hero-bg.webp') right center / cover no-repeat !important;
-      overflow: visible !important;
-    }
-    /* FINAL mega cards no white border */
-    .mega-menu .mm-feature-card{width:196px!important;height:130px!important;padding:0!important;overflow:hidden!important;border-radius:10px!important;background:transparent!important;border:none!important;box-shadow:0 4px 14px rgba(0,0,0,.1)!important;position:relative!important;display:block!important}
-    .mega-menu .mm-feature-card .mm-feature-text{display:none!important;height:0!important;padding:0!important}
-    .mega-menu .mm-feature-card>img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;padding:0!important;margin:0!important;background:transparent!important;border:none!important;border-radius:10px!important}
-    .mega-menu .mm-feature-card--logo{background:#fff!important;border:1px solid #eee!important}
-    .mega-menu .mm-feature-card--logo>img{object-fit:contain!important;padding:12px!important;background:#fff!important}
 
     /* Founder hero — proper face framing (not over-zoomed) */
     #pagebanner.founder-hero-full,
@@ -4683,110 +4571,20 @@
     }
     /* sticky restored below */
 
-    /* Founder mega-menu portrait — zoomed out, white bg */
-    .mega-menu a.mm-feature-card img[src*="founder-portrait-menu"],
-    .mega-menu .mm-feature-card img[src*="founder-portrait"] {
-      object-fit: contain !important;
-      object-position: center center !important;
+    /* Founder & Foundation mega-menu image positioning - Full bleed */
+    .mega-menu a.mm-feature-card img[src*="founder"],
+    .mega-menu .mm-feature-card img[src*="founder"] {
+      object-fit: cover !important;
+      object-position: center 8% !important;
       background: #ffffff !important;
-      padding: 14px !important;
+      padding: 0 !important;
       transform: none !important;
       scale: none !important;
     }
-    .mega-menu a.mm-feature-card:has(img[src*="founder-portrait"]),
-    .mega-menu .mm-feature-card:has(img[src*="founder-portrait"]) {
+    .mega-menu a.mm-feature-card:has(img[src*="founder"]),
+    .mega-menu .mm-feature-card:has(img[src*="founder"]) {
       background: #ffffff !important;
-      border: 1px solid #eee !important;
-    }
-
-    /* Founder hero — same style language as About Us Director message */
-    #pagebanner.founder-hero-full,
-    section.founder-hero-full,
-    section.founder-hero-full.hero {
-      position: relative !important;
-      padding: 72px 0 80px !important;
-      min-height: 520px !important;
-      background-color: #ffffff !important;
-      background-image: url('assets/founder-hero-bg.webp') !important;
-      background-repeat: no-repeat !important;
-      background-position: right center !important;
-      background-size: cover !important;
-      overflow: hidden !important;
-      border: none !important;
-    }
-    #pagebanner.founder-hero-full::before,
-    #pagebanner.founder-hero-full::after,
-    section.founder-hero-full::before,
-    section.founder-hero-full::after,
-    section.founder-hero-full.hero::before,
-    section.founder-hero-full.hero::after {
-      display: none !important;
-      content: none !important;
-      opacity: 0 !important;
-      background: none !important;
-    }
-    #pagebanner.founder-hero-full .container,
-    section.founder-hero-full .container {
-      position: relative !important;
-      z-index: 2 !important;
-    }
-    #pagebanner.founder-hero-full .hero-content,
-    section.founder-hero-full .hero-content {
-      max-width: 480px !important;
-      background: rgba(255,255,255,0.90) !important;
-      backdrop-filter: blur(8px) !important;
-      -webkit-backdrop-filter: blur(8px) !important;
-      border-radius: 14px !important;
-      padding: 32px 32px 28px !important;
-      box-shadow: 0 10px 36px rgba(0,0,0,0.07) !important;
-    }
-    #pagebanner.founder-hero-full .hero-eyebrow,
-    section.founder-hero-full .hero-eyebrow {
-      font-size: 12px !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.12em !important;
-      text-transform: uppercase !important;
-      color: #3D5CAD !important;
-      margin-bottom: 12px !important;
-    }
-    #pagebanner.founder-hero-full .hero-content h1,
-    section.founder-hero-full .hero-content h1 {
-      font-size: clamp(32px, 4vw, 46px) !important;
-      margin: 0 0 14px !important;
-      color: #1a1a1a !important;
-      font-weight: 800 !important;
-      line-height: 1.15 !important;
-    }
-    #pagebanner.founder-hero-full .hero-content p,
-    section.founder-hero-full .hero-content p {
-      font-size: 16px !important;
-      line-height: 1.7 !important;
-      color: #555 !important;
-      margin: 0 !important;
-    }
-    @media (max-width: 900px) {
-      #pagebanner.founder-hero-full,
-      section.founder-hero-full {
-        min-height: 440px !important;
-        background-position: 70% center !important;
-        padding: 56px 0 64px !important;
-      }
-      #pagebanner.founder-hero-full .hero-content,
-      section.founder-hero-full .hero-content {
-        max-width: 100% !important;
-      }
-    }
-
-    /* Founder mega menu portrait — new white-bg image */
-    .mega-menu .mm-feature-card img[src*="founder-portrait-menu"] {
-      object-fit: contain !important;
-      object-position: center center !important;
-      background: #ffffff !important;
-      padding: 10px !important;
-    }
-    .mega-menu .mm-feature-card:has(img[src*="founder-portrait-menu"]) {
-      background: #ffffff !important;
-      border: 1px solid #eee !important;
+      border: 1px solid rgba(0,0,0,0.08) !important;
     }
 
     /* Secretarial — open on hover AND click */
@@ -6983,21 +6781,6 @@
 
       <div class="vp-events-grid" id="vpEventsGrid">
         <article class="vp-event-card">
-          <div class="vp-event-photo has-photo"><img src="assets/events/new-delhi.png" alt="New Delhi, India"></div>
-          <div class="vp-event-head">
-            <span class="vp-event-tag">Meet us at</span>
-            <h3>iPHEX 2026</h3>
-            <p>Bharat Mandapam, New Delhi</p>
-            <p>7 &ndash; 9 September, 2026</p>
-            <p class="vp-event-booth">Booth: 2C-28</p>
-          </div>
-          <div class="vp-event-foot">
-            <h4>iPHEX 2026</h4>
-            <a href="mailto:vasudha@vasudhapharma.com?subject=Slot%20request%20%E2%80%94%20iPHEX%202026">Book a slot &rarr;</a>
-          </div>
-        </article>
-
-        <article class="vp-event-card">
           <div class="vp-event-photo has-photo"><img src="assets/events/milan.png" alt="Milan, Italy"></div>
           <div class="vp-event-head">
             <span class="vp-event-tag">Meet us at</span>
@@ -7008,7 +6791,7 @@
           </div>
           <div class="vp-event-foot">
             <h4>CPHI Milan 2026</h4>
-            <a href="mailto:vasudha@vasudhapharma.com?subject=Slot%20request%20%E2%80%94%20CPHI%20Milan%202026">Book a slot &rarr;</a>
+            <a href="mailto:wisdom@vasudhapharma.com?subject=Slot%20request%20%E2%80%94%20CPHI%20Milan%202026">Book a slot &rarr;</a>
           </div>
         </article>
 
@@ -7023,7 +6806,7 @@
           </div>
           <div class="vp-event-foot">
             <h4>CPHI India 2026</h4>
-            <a href="mailto:vasudha@vasudhapharma.com?subject=Slot%20request%20%E2%80%94%20CPHI%20India%202026">Book a slot &rarr;</a>
+            <a href="mailto:wisdom@vasudhapharma.com?subject=Slot%20request%20%E2%80%94%20CPHI%20India%202026">Book a slot &rarr;</a>
           </div>
         </article>
       </div>
@@ -8516,7 +8299,7 @@
     var eg=document.getElementById("vpEventsGrid");
     if(eg){
       eg.innerHTML=live(data.events).map(function(e){
-        var mail="mailto:vasudha@vasudhapharma.com?subject="+encodeURIComponent("Slot request — "+(e.title||"Event"));
+        var mail="mailto:wisdom@vasudhapharma.com?subject="+encodeURIComponent("Slot request — "+(e.title||"Event"));
         return '<article class="vp-event-card"><div class="vp-event-photo has-photo">'+(e.image?'<img src="'+esc(e.image)+'" alt="'+esc(e.title)+'">':'')+'</div><div class="vp-event-head"><span class="vp-event-tag">'+esc(e.tag||"Meet us at")+'</span><h3>'+esc(e.title)+'</h3><p>'+esc(e.place)+'</p><p>'+esc(e.dates)+'</p><p class="vp-event-booth">'+esc(e.booth)+'</p></div><div class="vp-event-foot"><h4>'+esc(e.title)+'</h4><a href="'+mail+'">Book a slot →</a></div></article>';
       }).join("");
     }

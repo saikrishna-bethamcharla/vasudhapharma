@@ -1,16 +1,6 @@
 {
   "events": [
     {
-      "id": "EV-IPHEX-2026",
-      "status": "live",
-      "title": "iPHEX 2026",
-      "place": "Bharat Mandapam, New Delhi",
-      "dates": "7 – 9 September, 2026",
-      "booth": "Booth: 2C-28",
-      "image": "assets/events/new-delhi.png",
-      "tag": "Meet us at"
-    },
-    {
       "id": "EV-CPHI-MILAN-2026",
       "status": "live",
       "title": "CPHI Milan 2026",
@@ -18,6 +8,16 @@
       "dates": "6 – 8 October, 2026",
       "booth": "Booth: 3F103",
       "image": "assets/events/milan.png",
+      "tag": "Meet us at"
+    },
+    {
+      "id": "EV-BIO-EUROPE-2026",
+      "status": "live",
+      "title": "Bio-Europe 2026",
+      "place": "Stockholmsmässan, Sweden",
+      "dates": "2 – 4 November, 2026",
+      "booth": "Booth: Hall B-114",
+      "image": "assets/events/stockholm.png",
       "tag": "Meet us at"
     },
     {
@@ -29,6 +29,16 @@
       "booth": "Booth: 2L38",
       "image": "assets/events/new-delhi-redfort.png",
       "tag": "Meet us at"
+    },
+    {
+      "id": "EV-DCAT-WEEK-2027",
+      "status": "live",
+      "title": "DCAT Week 2027",
+      "place": "New York City, USA",
+      "dates": "22 – 25 March, 2027",
+      "booth": "Member Suite: Floor 4",
+      "image": "assets/events/new-york.png",
+      "tag": "Partnering at"
     }
   ],
   "news": [

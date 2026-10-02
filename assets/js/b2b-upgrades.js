@@ -530,7 +530,7 @@
       '    <strong>Quality &amp; Regulatory Commitment:</strong> Vasudha Pharma Chem Limited manufactures all active substances under strict cGMP protocols aligned with ICH Q7 guidelines. Complete open-part DMFs, Certificates of Analysis (CoA), and impurity profiles are available under mutual CDA.',
       '  </div>',
       '  <div class="footer">',
-      '    <div>Vasudha Pharma Chem Limited &bull; Hyderabad &amp; Visakhapatnam, India<br>Web: www.vasudhapharma.com &bull; Email: vasudha@vasudhapharma.com</div>',
+      '    <div>Vasudha Pharma Chem Limited &bull; Hyderabad &amp; Visakhapatnam, India<br>Web: www.vasudhapharma.com &bull; Email: wisdom@vasudhapharma.com</div>',
       '    <div style="text-align:right;">Confidential Commercial Document<br>Page 1 of 1</div>',
       '  </div>',
       '  <script>window.onload = function() { window.print(); };<\/script>',

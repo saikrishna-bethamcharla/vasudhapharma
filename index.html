@@ -3978,7 +3978,7 @@
       min-width: 140px;
     }
 
-    /* FINAL mega cards — fixed box, same on every page */
+    /* FINAL mega cards — full-bleed prominent feature cards */
     .mega-menu a.mm-feature-card,
     .mega-menu .mm-feature-card {
       width: 196px !important;
@@ -3993,8 +3993,8 @@
       overflow: hidden !important;
       border-radius: 10px !important;
       background: #ffffff !important;
-      border: 1px solid #e6e6e6 !important;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.06) !important;
+      border: 1px solid rgba(0,0,0,0.08) !important;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08) !important;
       box-sizing: border-box !important;
       position: relative !important;
     }
@@ -4017,25 +4017,32 @@
       height: 100% !important;
       max-width: none !important;
       max-height: none !important;
-      object-fit: contain !important;
+      object-fit: cover !important;
       object-position: center center !important;
-      padding: 10px !important;
+      padding: 0 !important;
       box-sizing: border-box !important;
-      background: #fff !important;
+      background: #ffffff !important;
       border: none !important;
+      border-radius: 10px !important;
       transform: none !important;
       margin: 0 !important;
     }
-    .mega-menu a.mm-feature-card--logo > img,
-    .mega-menu .mm-feature-card--logo > img {
-      padding: 16px 14px !important;
+    .mega-menu a.mm-feature-card img[src*="founder"],
+    .mega-menu .mm-feature-card img[src*="founder"] {
+      object-fit: cover !important;
+      object-position: center 8% !important;
+      padding: 0 !important;
+      background: #ffffff !important;
     }
-    /* FINAL mega cards no white border */
-    .mega-menu .mm-feature-card{width:196px!important;height:130px!important;padding:0!important;overflow:hidden!important;border-radius:10px!important;background:transparent!important;border:none!important;box-shadow:0 4px 14px rgba(0,0,0,.1)!important;position:relative!important;display:block!important}
-    .mega-menu .mm-feature-card .mm-feature-text{display:none!important;height:0!important;padding:0!important}
-    .mega-menu .mm-feature-card>img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;padding:0!important;margin:0!important;background:transparent!important;border:none!important;border-radius:10px!important}
-    .mega-menu .mm-feature-card--logo{background:#fff!important;border:1px solid #eee!important}
-    .mega-menu .mm-feature-card--logo>img{object-fit:contain!important;padding:12px!important;background:#fff!important}
+    .mega-menu a.mm-feature-card--logo > img,
+    .mega-menu .mm-feature-card--logo > img,
+    .mega-menu a.mm-feature-card img[src*="foundation-card-logo"],
+    .mega-menu .mm-feature-card img[src*="foundation-card-logo"] {
+      object-fit: contain !important;
+      object-position: center center !important;
+      padding: 8px 12px !important;
+      background: #ffffff !important;
+    }
 
     section.hero.page-section {
       position: relative !important;
@@ -4200,32 +4207,20 @@
     }
     /* sticky restored below */
 
-    /* Founder mega-menu portrait — zoomed out, white bg */
-    .mega-menu a.mm-feature-card img[src*="founder-portrait-menu"],
-    .mega-menu .mm-feature-card img[src*="founder-portrait"] {
-      object-fit: contain !important;
-      object-position: center center !important;
+    /* Founder & Foundation mega-menu image positioning - Full bleed */
+    .mega-menu a.mm-feature-card img[src*="founder"],
+    .mega-menu .mm-feature-card img[src*="founder"] {
+      object-fit: cover !important;
+      object-position: center 8% !important;
       background: #ffffff !important;
-      padding: 14px !important;
+      padding: 0 !important;
       transform: none !important;
       scale: none !important;
     }
-    .mega-menu a.mm-feature-card:has(img[src*="founder-portrait"]),
-    .mega-menu .mm-feature-card:has(img[src*="founder-portrait"]) {
+    .mega-menu a.mm-feature-card:has(img[src*="founder"]),
+    .mega-menu .mm-feature-card:has(img[src*="founder"]) {
       background: #ffffff !important;
-      border: 1px solid #eee !important;
-    }
-
-    /* Founder mega menu portrait — new white-bg image */
-    .mega-menu .mm-feature-card img[src*="founder-portrait-menu"] {
-      object-fit: contain !important;
-      object-position: center center !important;
-      background: #ffffff !important;
-      padding: 10px !important;
-    }
-    .mega-menu .mm-feature-card:has(img[src*="founder-portrait-menu"]) {
-      background: #ffffff !important;
-      border: 1px solid #eee !important;
+      border: 1px solid rgba(0,0,0,0.08) !important;
     }
 
     /* Secretarial — open on hover AND click */
@@ -6582,21 +6577,6 @@
 
       <div class="vp-events-grid" id="vpEventsGrid">
         <article class="vp-event-card">
-          <div class="vp-event-photo has-photo"><img src="assets/events/new-delhi.png" alt="New Delhi, India"></div>
-          <div class="vp-event-head">
-            <span class="vp-event-tag">Meet us at</span>
-            <h3>iPHEX 2026</h3>
-            <p>Bharat Mandapam, New Delhi</p>
-            <p>7 &ndash; 9 September, 2026</p>
-            <p class="vp-event-booth">Booth: 2C-28</p>
-          </div>
-          <div class="vp-event-foot">
-            <h4>iPHEX 2026</h4>
-            <a href="mailto:vasudha@vasudhapharma.com?subject=Slot%20request%20%E2%80%94%20iPHEX%202026">Book a slot &rarr;</a>
-          </div>
-        </article>
-
-        <article class="vp-event-card">
           <div class="vp-event-photo has-photo"><img src="assets/events/milan.png" alt="Milan, Italy"></div>
           <div class="vp-event-head">
             <span class="vp-event-tag">Meet us at</span>
@@ -6607,7 +6587,7 @@
           </div>
           <div class="vp-event-foot">
             <h4>CPHI Milan 2026</h4>
-            <a href="mailto:vasudha@vasudhapharma.com?subject=Slot%20request%20%E2%80%94%20CPHI%20Milan%202026">Book a slot &rarr;</a>
+            <a href="mailto:wisdom@vasudhapharma.com?subject=Slot%20request%20%E2%80%94%20CPHI%20Milan%202026">Book a slot &rarr;</a>
           </div>
         </article>
 
@@ -6622,7 +6602,7 @@
           </div>
           <div class="vp-event-foot">
             <h4>CPHI India 2026</h4>
-            <a href="mailto:vasudha@vasudhapharma.com?subject=Slot%20request%20%E2%80%94%20CPHI%20India%202026">Book a slot &rarr;</a>
+            <a href="mailto:wisdom@vasudhapharma.com?subject=Slot%20request%20%E2%80%94%20CPHI%20India%202026">Book a slot &rarr;</a>
           </div>
         </article>
       </div>
@@ -6702,7 +6682,7 @@
     <div class="container">
       <h2>Partner with a trusted API manufacturer</h2>
       <p>Whether you need high-quality APIs, intermediates or custom manufacturing support, our team is ready to collaborate.</p>
-      <a href="mailto:vasudha@vasudhapharma.com" class="btn btn-white">Contact Our Team</a>
+      <a href="mailto:wisdom@vasudhapharma.com" class="btn btn-white">Contact Our Team</a>
     </div>
   </section>
 
@@ -8084,7 +8064,7 @@
     var eg=document.getElementById("vpEventsGrid");
     if(eg){
       eg.innerHTML=live(data.events).map(function(e){
-        var mail="mailto:vasudha@vasudhapharma.com?subject="+encodeURIComponent("Slot request — "+(e.title||"Event"));
+        var mail="mailto:wisdom@vasudhapharma.com?subject="+encodeURIComponent("Slot request — "+(e.title||"Event"));
         return '<article class="vp-event-card"><div class="vp-event-photo has-photo">'+(e.image?'<img src="'+esc(e.image)+'" alt="'+esc(e.title)+'">':'')+'</div><div class="vp-event-head"><span class="vp-event-tag">'+esc(e.tag||"Meet us at")+'</span><h3>'+esc(e.title)+'</h3><p>'+esc(e.place)+'</p><p>'+esc(e.dates)+'</p><p class="vp-event-booth">'+esc(e.booth)+'</p></div><div class="vp-event-foot"><h4>'+esc(e.title)+'</h4><a href="'+mail+'">Book a slot →</a></div></article>';
       }).join("");
     }
