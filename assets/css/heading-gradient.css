@@ -350,7 +350,7 @@ footer.vp-foot {
   background: #ffffff !important;
   color: #222222 !important;
   border-top: 1px solid #e8e8e8 !important;
-  padding: 48px 24px 28px !important;
+  padding: 48px 0 28px !important;
   box-sizing: border-box !important;
   width: 100% !important;
   display: block !important;
@@ -359,10 +359,19 @@ footer.vp-foot {
 }
 
 .vp-foot-inner {
-  max-width: 1180px !important;
+  max-width: 1400px !important;
   margin: 0 auto !important;
   width: 100% !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
   box-sizing: border-box !important;
+}
+
+@media (max-width: 480px) {
+  .vp-foot-inner {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
 }
 
 .vp-foot-cols {
@@ -559,8 +568,8 @@ footer.vp-foot {
   }
   .vp-foot-bottom {
     flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
     gap: 16px !important;
   }
 }
