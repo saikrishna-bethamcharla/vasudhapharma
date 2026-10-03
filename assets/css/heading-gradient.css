@@ -342,3 +342,225 @@ section > .container > h2:not([class]) {
         display: none !important;
       }
     }
+
+/* ==========================================================================
+   UNIVERSAL FOOTER & POWERED-BY SYSTEM (Blue Theme)
+   ========================================================================== */
+footer.vp-foot {
+  background: #ffffff !important;
+  color: #222222 !important;
+  border-top: 1px solid #e8e8e8 !important;
+  padding: 48px 24px 28px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.vp-foot-inner {
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.vp-foot-cols {
+  display: grid !important;
+  grid-template-columns: 1.4fr 0.9fr 0.8fr !important;
+  gap: 36px !important;
+}
+
+.vp-foot h4 {
+  margin: 0 0 16px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #1a1a1a !important;
+}
+
+.vp-foot ul {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.vp-foot li {
+  margin: 0 0 10px !important;
+}
+
+.vp-foot a {
+  color: #333333 !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+  transition: color 0.15s ease !important;
+}
+
+.vp-foot a:hover {
+  color: #1F5FB8 !important;
+}
+
+.vp-foot-split {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px 28px !important;
+}
+
+.vp-foot-social {
+  display: flex !important;
+  gap: 10px !important;
+  margin: 0 0 14px !important;
+}
+
+.vp-foot-social a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 32px !important;
+  height: 32px !important;
+  border: 1px solid #dddddd !important;
+  border-radius: 50% !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: #555555 !important;
+  transition: all 0.2s ease !important;
+}
+
+.vp-foot-social a:hover {
+  background: rgba(47, 125, 225, 0.1) !important;
+  border-color: #2F7DE1 !important;
+  color: #1F5FB8 !important;
+}
+
+/* Footer Bottom Bar */
+.vp-foot-bottom {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+  margin-top: 36px !important;
+  padding-top: 20px !important;
+  border-top: 1px solid #eeeeee !important;
+  font-size: 13px !important;
+  color: #666666 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.vp-foot-bottom a.logo {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(47, 125, 225, 0.25) !important;
+  border-radius: 9999px !important;
+  padding: 6px 18px 6px 8px !important;
+  box-sizing: border-box !important;
+}
+
+.vp-foot-bottom .logo-hex-wrap {
+  width: 44px !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.vp-foot-bottom .logo-hex-body {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.vp-foot-bottom .logo-img {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.vp-foot-bottom .logo-text {
+  display: flex !important;
+  flex-direction: column !important;
+  text-align: left !important;
+}
+
+.vp-foot-bottom strong {
+  color: #1F5FB8 !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+}
+
+.vp-foot-bottom .logo-text span {
+  font-size: 11px !important;
+  color: #666666 !important;
+  line-height: 1.2 !important;
+}
+
+/* Powered by Zailabs badge - strict sizing safeguard across entire website */
+.vp-powered,
+.rp-footer .vp-powered {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #666666 !important;
+  white-space: nowrap !important;
+  vertical-align: middle !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.vp-powered a,
+.rp-footer .vp-powered a {
+  color: inherit !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  font-weight: 600 !important;
+  transition: color 0.15s ease !important;
+}
+
+.vp-powered a:hover,
+.rp-footer .vp-powered a:hover {
+  color: #0f172a !important;
+  text-decoration: underline !important;
+}
+
+.vp-powered img,
+.rp-footer .vp-powered img {
+  height: 16px !important;
+  min-height: 16px !important;
+  max-height: 18px !important;
+  width: 16px !important;
+  min-width: 16px !important;
+  max-width: 18px !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+@media (max-width: 800px) {
+  .vp-foot-cols, .vp-foot-split {
+    grid-template-columns: 1fr !important;
+  }
+  .vp-foot-bottom {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 16px !important;
+  }
+}
