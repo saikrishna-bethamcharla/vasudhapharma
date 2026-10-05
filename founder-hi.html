@@ -8693,60 +8693,14 @@
   })();
 </script>
 
-<!-- Dynamic Foundation Streams & Moments Gallery Loader -->
+<!-- Dynamic Foundation Streams & Moments Marquee Loader -->
 <script>
 (function() {
-  function initSlider() {
-    var gallery = document.getElementById('founderGallery');
-    if (!gallery) return;
-    var slides = gallery.querySelectorAll('.fg-slide');
-    var dots = gallery.querySelectorAll('.fg-dot');
-    var prevBtn = gallery.querySelector('.fg-prev');
-    var nextBtn = gallery.querySelector('.fg-next');
-    if (!slides.length) return;
-
-    var current = 0;
-    var timer = null;
-
-    function show(index) {
-      if (index < 0) index = slides.length - 1;
-      if (index >= slides.length) index = 0;
-      current = index;
-      slides.forEach(function(s, i) {
-        if (i === current) s.classList.add('is-active');
-        else s.classList.remove('is-active');
-      });
-      dots.forEach(function(d, i) {
-        if (i === current) d.classList.add('is-active');
-        else d.classList.remove('is-active');
-      });
-    }
-
-    if (prevBtn) {
-      prevBtn.onclick = function() { show(current - 1); resetTimer(); };
-    }
-    if (nextBtn) {
-      nextBtn.onclick = function() { show(current + 1); resetTimer(); };
-    }
-    dots.forEach(function(dot, i) {
-      dot.onclick = function() { show(i); resetTimer(); };
-    });
-
-    function nextSlide() { show(current + 1); }
-    function startTimer() { if (!timer) timer = setInterval(nextSlide, 5000); }
-    function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
-    function resetTimer() { stopTimer(); startTimer(); }
-
-    gallery.addEventListener('mouseenter', stopTimer);
-    gallery.addEventListener('mouseleave', startTimer);
-    startTimer();
-  }
-
   function loadGalleries() {
     fetch('foundation-galleries.json?v=' + Date.now())
       .then(function(res) { return res.ok ? res.json() : null; })
       .then(function(data) {
-        if (!data) { initSlider(); return; }
+        if (!data) return;
 
         // 1. Vasudha Foundation Stream
         var trackVasudha = document.getElementById('vfTrackVasudha') || document.querySelector('.vf-marquee[aria-label*="Vasudha Foundation"] .vf-track');
@@ -8758,7 +8712,7 @@
             return '<div class="vf-shot"><img src="' + src + '" alt="" loading="lazy" aria-hidden="true"></div>';
           }).join('');
           trackVasudha.innerHTML = original + duplicate;
-          trackVasudha.style.animationDuration = Math.max(30, data.vasudha.length * 2.5) + 's';
+          trackVasudha.style.animationDuration = Math.max(30, data.vasudha.length * 2.8) + 's';
         }
 
         // 2. VRRV Family Foundation Stream
@@ -8771,26 +8725,24 @@
             return '<div class="vf-shot"><img src="' + src + '" alt="" loading="lazy" aria-hidden="true"></div>';
           }).join('');
           trackVrrv.innerHTML = originalVrrv + duplicateVrrv;
-          trackVrrv.style.animationDuration = Math.max(30, data.vrrv.length * 2.5) + 's';
+          trackVrrv.style.animationDuration = Math.max(30, data.vrrv.length * 2.8) + 's';
         }
 
-        // 3. Moments from the Foundation Gallery
+        // 3. Moments from the Foundation Marquee Stream (Seamless Infinite Loop)
         var trackMoments = document.getElementById('fgTrackMoments') || document.querySelector('#founderGallery .fg-track');
-        var dotsWrap = document.querySelector('#founderGallery .fg-dots');
         if (trackMoments && Array.isArray(data.moments) && data.moments.length > 0) {
-          trackMoments.innerHTML = data.moments.map(function(src, i) {
-            return '<div class="fg-slide' + (i === 0 ? ' is-active' : '') + '"><img src="' + src + '" alt="Vasudha Foundation moment ' + (i+1) + '"></div>';
+          var originalMoments = data.moments.map(function(src, i) {
+            return '<div class="fg-slide"><img src="' + src + '" alt="Vasudha Foundation moment ' + (i+1) + '" loading="lazy"></div>';
           }).join('');
-          if (dotsWrap) {
-            dotsWrap.innerHTML = data.moments.map(function(_, i) {
-              return '<button type="button" class="fg-dot' + (i === 0 ? ' is-active' : '') + '" aria-label="Slide ' + (i+1) + '"></button>';
-            }).join('');
-          }
+          var duplicateMoments = data.moments.map(function(src) {
+            return '<div class="fg-slide" aria-hidden="true"><img src="' + src + '" alt="" loading="lazy"></div>';
+          }).join('');
+          trackMoments.innerHTML = originalMoments + duplicateMoments;
+          trackMoments.style.animationDuration = Math.max(35, data.moments.length * 8.5) + 's';
         }
-        initSlider();
       })
-      .catch(function() {
-        initSlider();
+      .catch(function(err) {
+        console.warn('Foundation galleries dynamic sync error:', err);
       });
   }
 
