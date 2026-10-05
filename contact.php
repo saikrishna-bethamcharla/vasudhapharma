@@ -245,9 +245,9 @@ if (function_exists('curl_init')) {
         $description = implode("\n", $descLines);
 
         $zohoFields = [
-            'xnQsjsdp'    => '640dc7bd451dd50fbd01c331e061c4747bb14022f7b308af6a3f31471187966f',
+            'xnQsjsdp'    => 'b8e658fb5ade04176bfdfb6f74e4217cbec006e2c955226df4855aec0bb7de92',
             'zc_gad'      => '',
-            'xmIwtLD'     => 'd4a96e2705af0077041aa17cc4a3acdee077db6eef8331098f43bfaa76862273e8b29435aa0038785be2f70e8fcd0759',
+            'xmIwtLD'     => '037d840b8b2ced74645b10ffbc644734063aa7185a0558216e0bc3fbfc614f804063ece5c7df9c085d5ee35483e2090b',
             'actionType'  => 'TGVhZHM=',
             'returnURL'   => 'https://' . ($_SERVER['HTTP_HOST'] ?? 'vasudhapharma.com') . '/home.html',
             'Last Name'   => $name,
@@ -255,12 +255,16 @@ if (function_exists('curl_init')) {
             'Phone'       => $phone,
             'Company'     => $company ?: 'Not provided',
             'Country'     => $country,
+            'Designation' => $designation,
+            'LEADCF15'    => $department,
             'Description' => $description,
             'Lead Source' => 'Website Contact',
             'Lead Status' => 'Not Contacted'
         ];
         if ($category) $zohoFields['LEADCF5'] = $category;
         if ($product)  $zohoFields['LEADCF6'] = $product;
+        if ($quantity) $zohoFields['LEADCF2'] = $quantity;
+        if ($mfgType)  $zohoFields['LEADCF16'] = $mfgType;
 
         $zch = curl_init('https://crm.zoho.in/crm/WebToLeadForm');
         curl_setopt($zch, CURLOPT_RETURNTRANSFER, true);

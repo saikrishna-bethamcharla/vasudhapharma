@@ -45,6 +45,9 @@
         payload.phone = payload['Phone'] || '';
         payload.company = payload['Company'] || '';
         payload.description = payload['Description'] || '';
+        payload.designation = payload['Designation'] || '';
+        payload.department = payload['LEADCF15'] || '';
+        payload.inquiryType = payload['LEADCF16'] || '';
         payload.productCategory = payload['LEADCF5'] || '';
         payload.productName = payload['LEADCF6'] || '';
         payload.specifications = payload['LEADCF8'] || '';

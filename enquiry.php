@@ -130,9 +130,9 @@ if ($type === 'survey' || $type === 'Website Survey') {
         try {
             $surveyDesc = "=== WEBSITE SURVEY ===\nOrigin Page: {$sourcePage}\nQ1: {$q1}\nQ2: {$q2}\nQ3: {$q3}\nQ4: {$q4}\nQ5: {$q5}";
             $zFields = [
-                'xnQsjsdp'    => '640dc7bd451dd50fbd01c331e061c4747bb14022f7b308af6a3f31471187966f',
+                'xnQsjsdp'    => 'b8e658fb5ade04176bfdfb6f74e4217cbec006e2c955226df4855aec0bb7de92',
                 'zc_gad'      => '',
-                'xmIwtLD'     => 'd4a96e2705af0077041aa17cc4a3acdee077db6eef8331098f43bfaa76862273e8b29435aa0038785be2f70e8fcd0759',
+                'xmIwtLD'     => '037d840b8b2ced74645b10ffbc644734063aa7185a0558216e0bc3fbfc614f804063ece5c7df9c085d5ee35483e2090b',
                 'actionType'  => 'TGVhZHM=',
                 'returnURL'   => 'https://' . ($_SERVER['HTTP_HOST'] ?? 'vasudhapharma.com') . '/home.html',
                 'Last Name'   => 'Website Survey Response',
@@ -390,9 +390,9 @@ if (function_exists('curl_init')) {
         $zohoDescription = implode("\n", $fullDescLines);
 
         $zohoFields = [
-            'xnQsjsdp'    => '640dc7bd451dd50fbd01c331e061c4747bb14022f7b308af6a3f31471187966f',
+            'xnQsjsdp'    => 'b8e658fb5ade04176bfdfb6f74e4217cbec006e2c955226df4855aec0bb7de92',
             'zc_gad'      => '',
-            'xmIwtLD'     => 'd4a96e2705af0077041aa17cc4a3acdee077db6eef8331098f43bfaa76862273e8b29435aa0038785be2f70e8fcd0759',
+            'xmIwtLD'     => '037d840b8b2ced74645b10ffbc644734063aa7185a0558216e0bc3fbfc614f804063ece5c7df9c085d5ee35483e2090b',
             'actionType'  => 'TGVhZHM=',
             'returnURL'   => 'https://' . ($_SERVER['HTTP_HOST'] ?? 'vasudhapharma.com') . '/home.html',
             'Last Name'   => $name,
