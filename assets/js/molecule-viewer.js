@@ -2,6 +2,10 @@
  * Vasudha Pharma — 3D Molecular Structure Visualizer
  * Procedural 3D molecule engine supporting all 265+ catalog products.
  * Generates realistic atom/bond geometries from molecular formula + CAS seed.
+ *
+ * Supports:
+ * - Single scrollable options horizontal line with navigation arrows & wheel scroll
+ * - Strict category isolation: only APIs on apis.html, each product in its own category
  */
 (function () {
   'use strict';
@@ -44,8 +48,7 @@
 
   /* ─── Parse molecular formula into element counts ───────────────────────── */
   function parseFormula(formula) {
-    // Strip subscript unicode (₀-₉) and normalize
-    var f = formula
+    var f = (formula || '')
       .replace(/[₀-₉]/g, function(c) { return String.fromCharCode(c.charCodeAt(0) - 0x2080 + 48); })
       .replace(/[·•×]/g, '')
       .replace(/\s+/g, '');
@@ -61,301 +64,296 @@
     return counts;
   }
 
-  /* ─── Procedural 3D geometry generation ─────────────────────────────────── */
-  function generateMolecule(name, cas, formula, therapeutic, subcategory, filings, specs) {
-    var seed = strHash((cas || '') + (name || ''));
-    var rng  = seededRng(seed);
+  /* ─── Procedural 3D Molecule Generator ─────────────────────────────────── */
+  function generateMolecule(name, cas, formulaStr, category, subCat, dmf, specs) {
+    var seed = strHash((cas || '') + ':' + name);
+    var rand = seededRng(seed);
 
-    var counts = parseFormula(formula || 'C10H12N2O');
-    var atoms  = [];
-    var bonds  = [];
-
-    // Build atom list — heavy atoms first, H last
-    var HEAVY_ORDER = ['C','N','O','S','Cl','F','Br','P','I','Na','K'];
-    var heavyAtoms = [];
-    HEAVY_ORDER.forEach(function(el) {
-      var n = counts[el] || 0;
-      for (var i = 0; i < n; i++) heavyAtoms.push(el);
+    var counts = parseFormula(formulaStr || '');
+    var totalHeavy = 0;
+    Object.keys(counts).forEach(function(el) {
+      if (el !== 'H') totalHeavy += counts[el];
     });
-    // Cap for performance
-    var MAX_HEAVY = 40;
-    if (heavyAtoms.length > MAX_HEAVY) heavyAtoms = heavyAtoms.slice(0, MAX_HEAVY);
 
-    var H_COUNT = Math.min(counts['H'] || 0, Math.floor(heavyAtoms.length * 0.8));
+    if (totalHeavy < 6 || totalHeavy > 50) {
+      var n = 12 + Math.floor(rand() * 14);
+      counts = { C: n, N: rand() > 0.4 ? 2 : 1, O: rand() > 0.3 ? 2 : 1 };
+      if (rand() > 0.6) counts.Cl = 1;
+      if (rand() > 0.7) counts.S = 1;
+      counts.H = Math.round(n * 1.2 + rand() * 4);
+    }
 
-    // Layered ring + branch structure for realistic pharmaceutical look
-    var n = heavyAtoms.length;
+    var atoms = [];
+    var bonds = [];
 
-    // Determine ring sizes from structure (aromatic pharmaceuticals usually have 5/6-membered rings)
-    var ringSize = (n >= 10) ? 6 : (n >= 5 ? 5 : Math.max(3, n));
-    var numRings = Math.max(1, Math.floor(n / ringSize));
-    var remaining = n - numRings * ringSize;
+    var ringSize = rand() > 0.4 ? 6 : 5;
+    var ringRadius = 1.35;
+    for (var r = 0; r < ringSize; r++) {
+      var theta = (r / ringSize) * Math.PI * 2;
+      var rEl = 'C';
+      if (r === 2 && counts.N && counts.N > 0) { rEl = 'N'; counts.N--; }
+      else if (r === 4 && counts.S && counts.S > 0) { rEl = 'S'; counts.S--; }
+      else if (counts.C && counts.C > 0) { counts.C--; }
+      atoms.push({
+        el: rEl,
+        x: Math.cos(theta) * ringRadius,
+        y: Math.sin(theta) * ringRadius,
+        z: (rand() - 0.5) * 0.2
+      });
+      if (r > 0) bonds.push([r - 1, r]);
+    }
+    bonds.push([ringSize - 1, 0]);
 
-    var placed = 0;
-    var ringCenters = [];
-
-    // Place rings
-    for (var r = 0; r < numRings && placed < n; r++) {
-      var cx = (r % 2 === 0) ? r * 2.8 : (r - 1) * 2.8 + 1.4;
-      var cy = (r % 2 === 0) ? 0 : -1.5;
-      var cz = r * 0.3;
-      ringCenters.push({ x: cx, y: cy, z: cz });
-      var rs = Math.min(ringSize, n - placed);
-      for (var i = 0; i < rs; i++) {
-        var angle = (2 * Math.PI * i) / rs + rng() * 0.1;
-        var rad = 1.4 + rng() * 0.15;
+    var hasSecondRing = rand() > 0.35;
+    var secondRingStart = atoms.length;
+    if (hasSecondRing) {
+      var offsetTheta = rand() * Math.PI * 2;
+      var cx = Math.cos(offsetTheta) * (ringRadius * 2.1);
+      var cy = Math.sin(offsetTheta) * (ringRadius * 2.1);
+      var r2Size = 6;
+      for (var r2 = 0; r2 < r2Size; r2++) {
+        var t2 = (r2 / r2Size) * Math.PI * 2;
+        var el2 = 'C';
+        if (r2 === 1 && counts.N && counts.N > 0) { el2 = 'N'; counts.N--; }
+        else if (counts.C && counts.C > 0) { counts.C--; }
         atoms.push({
-          el: heavyAtoms[placed],
-          x: cx + rad * Math.cos(angle),
-          y: cy + rad * Math.sin(angle),
-          z: cz + (rng() - 0.5) * 0.6
+          el: el2,
+          x: cx + Math.cos(t2) * ringRadius,
+          y: cy + Math.sin(t2) * ringRadius,
+          z: (rand() - 0.5) * 0.4
         });
-        // Ring bond
-        if (i > 0) bonds.push([placed - 1, placed]);
-        placed++;
+        if (r2 > 0) bonds.push([secondRingStart + r2 - 1, secondRingStart + r2]);
       }
-      // Close ring
-      if (rs > 2) bonds.push([placed - rs, placed - 1]);
+      bonds.push([secondRingStart + r2Size - 1, secondRingStart]);
+      bonds.push([Math.floor(rand() * ringSize), secondRingStart]);
     }
 
-    // Inter-ring bonds
-    for (var ri = 1; ri < numRings; ri++) {
-      bonds.push([ri * ringSize - 1, ri * ringSize]);
-    }
+    var remaining = [];
+    Object.keys(counts).forEach(function(el) {
+      if (el === 'H') return;
+      for (var k = 0; k < counts[el]; k++) remaining.push(el);
+    });
 
-    // Branch/chain for remaining atoms
-    if (remaining > 0 && placed < n) {
-      var chainStart = placed;
-      var attachBase = Math.floor(rng() * (placed > 0 ? placed : 1));
-      for (var bi = 0; bi < remaining && placed < n; bi++) {
-        var prev = bi === 0 ? attachBase : placed - 1;
-        var prevAtom = atoms[prev];
-        var bAngle = rng() * Math.PI * 2;
-        var bElev = (rng() - 0.5) * Math.PI * 0.5;
-        var bLen = 1.5 + rng() * 0.4;
-        atoms.push({
-          el: heavyAtoms[placed],
-          x: prevAtom.x + bLen * Math.cos(bAngle) * Math.cos(bElev),
-          y: prevAtom.y + bLen * Math.sin(bElev),
-          z: prevAtom.z + bLen * Math.sin(bAngle) * Math.cos(bElev)
-        });
-        bonds.push([prev, placed]);
-        placed++;
+    var heavyCount = atoms.length;
+    var curParent = Math.floor(rand() * heavyCount);
+    for (var i = 0; i < remaining.length; i++) {
+      var pAtom = atoms[curParent];
+      var phi = rand() * Math.PI * 2;
+      var costheta = rand() * 2 - 1;
+      var u = rand();
+      var thetaA = Math.acos(costheta);
+      var rA = 1.35 + rand() * 0.25;
+
+      var newX = pAtom.x + rA * Math.sin(thetaA) * Math.cos(phi);
+      var newY = pAtom.y + rA * Math.sin(thetaA) * Math.sin(phi);
+      var newZ = pAtom.z + rA * Math.cos(thetaA);
+
+      var newIdx = atoms.length;
+      atoms.push({ el: remaining[i], x: newX, y: newY, z: newZ });
+      bonds.push([curParent, newIdx]);
+
+      if (rand() > 0.4) {
+        curParent = newIdx;
+      } else {
+        curParent = Math.floor(rand() * atoms.length);
       }
     }
 
-    // Add hydrogens distributed around heavy atoms
-    for (var hi = 0; hi < H_COUNT; hi++) {
-      var parentIdx = hi % atoms.length;
-      var parent = atoms[parentIdx];
-      var ha = rng() * Math.PI * 2;
-      var he = (rng() - 0.5) * Math.PI;
+    var hCount = Math.min(counts.H || 12, atoms.length * 2);
+    for (var h = 0; h < hCount; h++) {
+      var targetParent = Math.floor(rand() * atoms.length);
+      var pa = atoms[targetParent];
+      if (pa.el === 'Cl' || pa.el === 'Br' || pa.el === 'I' || pa.el === 'F') continue;
+      var hPhi = rand() * Math.PI * 2;
+      var hTheta = rand() * Math.PI;
+      var hR = 0.95;
+      var hIdx = atoms.length;
       atoms.push({
         el: 'H',
-        x: parent.x + 1.1 * Math.cos(ha) * Math.cos(he),
-        y: parent.y + 1.1 * Math.sin(he),
-        z: parent.z + 1.1 * Math.sin(ha) * Math.cos(he)
+        x: pa.x + hR * Math.sin(hTheta) * Math.cos(hPhi),
+        y: pa.y + hR * Math.sin(hTheta) * Math.sin(hPhi),
+        z: pa.z + hR * Math.cos(hTheta)
       });
-      bonds.push([parentIdx, atoms.length - 1]);
+      bonds.push([targetParent, hIdx]);
     }
 
-    // Dot color based on therapeutic category
-    var CAT_COLORS = {
-      'CNS': '#a29bfe', 'Cardio': '#ff7675', 'Anti': '#74b9ff',
-      'Gastro': '#55efc4', 'Antihistamine': '#74b9ff', 'Intermediate': '#ffeaa7',
-      'Antifungal': '#fd79a8', 'Antiviral': '#00b894', 'default': '#81ecec'
-    };
-    var dotColor = CAT_COLORS.default;
-    var th = (therapeutic || '').toLowerCase();
-    if (th.indexOf('cns') !== -1 || th.indexOf('neuro') !== -1) dotColor = CAT_COLORS['CNS'];
-    else if (th.indexOf('cardio') !== -1 || th.indexOf('anti-platelet') !== -1 || th.indexOf('platelet') !== -1) dotColor = CAT_COLORS['Cardio'];
-    else if (th.indexOf('gastro') !== -1) dotColor = CAT_COLORS['Gastro'];
-    else if (th.indexOf('histam') !== -1 || th.indexOf('allerg') !== -1) dotColor = CAT_COLORS['Antihistamine'];
-    else if (th.indexOf('intermediat') !== -1) dotColor = CAT_COLORS['Intermediate'];
-    else if (th.indexOf('fungal') !== -1) dotColor = CAT_COLORS['Antifungal'];
-    else if (th.indexOf('viral') !== -1) dotColor = CAT_COLORS['Antiviral'];
+    var avgX = 0, avgY = 0, avgZ = 0;
+    atoms.forEach(function(a) { avgX += a.x; avgY += a.y; avgZ += a.z; });
+    avgX /= atoms.length; avgY /= atoms.length; avgZ /= atoms.length;
+    atoms.forEach(function(a) { a.x -= avgX; a.y -= avgY; a.z -= avgZ; });
+
+    var maxDist = 0.1;
+    atoms.forEach(function(a) {
+      var d = Math.sqrt(a.x * a.x + a.y * a.y + a.z * a.z);
+      if (d > maxDist) maxDist = d;
+    });
+    var scaleNorm = 2.4 / maxDist;
+    atoms.forEach(function(a) { a.x *= scaleNorm; a.y *= scaleNorm; a.z *= scaleNorm; });
 
     return {
       name: name,
-      cas: cas || '—',
-      formula: formula || '—',
-      mw: '—',
-      category: therapeutic || subcategory || '—',
-      filings: filings || specs || '—',
-      iupac: subcategory || '—',
-      dotColor: dotColor,
+      cas: cas,
+      formula: formulaStr,
+      category: category,
+      subCat: subCat,
+      dmf: dmf,
+      specs: specs,
       atoms: atoms,
       bonds: bonds
     };
   }
 
-  /* ─── Viewer state ───────────────────────────────────────────────────────── */
-  var CATALOG = [];       // loaded from JSON
-  var molCache = {};      // key -> generated molecule object
+  /* ─── State & Cache ──────────────────────────────────────────────────────── */
+  var MASTER_CATALOG = [];
+  var CATALOG = [];
+  var PAGE_CATEGORY = null;
+  var currentIdx = 0;
   var currentMol = null;
+  var molCache = {};
 
   function getMol(idx) {
     if (molCache[idx]) return molCache[idx];
     var p = CATALOG[idx];
     if (!p) return null;
-    // Generate procedural 3D structure seeded from CAS + name
+    var casVal = p.cas || p.cas_no || '';
+    var subCatVal = p.sub_category || p.intermediate_name || p.composition || p.pellet_type || p.therapeutic || '';
+    var specVal = p.specs || p.specifications || '';
+    var filingsVal = p.dmf_status || p.filings || '';
     var m = generateMolecule(
-      p.name,           // display name
-      p.cas,            // CAS number
-      p.sub_category || p.therapeutic || 'C10H12N2O',  // used to seed atom counts
-      p.therapeutic,    // therapeutic category
-      p.sub_category,   // sub-category / type
-      p.dmf_status,     // DMF/regulatory filings
-      p.specs           // pharmacopoeia specs
+      p.name,
+      casVal,
+      subCatVal || 'C10H12N2O',
+      p.therapeutic || p.category,
+      subCatVal,
+      filingsVal,
+      specVal
     );
-    // Override readable HUD fields
-    m.category  = p.therapeutic   || '—';
-    m.iupac     = p.sub_category  || '—';
-    m.formula   = p.specs         || '—';    // Pharmacopoeia (USP/BP/etc)
-    m.filings   = p.dmf_status    || p.filings || '—';
+    m.category = p.therapeutic  || p.category || '—';
+    m.iupac    = subCatVal      || '—';
+    m.formula  = specVal        || '—';
+    m.filings  = filingsVal     || '—';
+    m.cas      = casVal         || '—';
     molCache[idx] = m;
     return m;
   }
 
-  /* ─── Build search UI ────────────────────────────────────────────────────── */
-  function buildSearchUI(catalog) {
+  /* ─── Detect active page context ────────────────────────────────────────── */
+  function detectPageCategory() {
+    var path = (window.location.pathname || '').toLowerCase();
+    var href = (window.location.href || '').toLowerCase();
+    if (path.indexOf('apis') !== -1 || href.indexOf('apis.html') !== -1) return 'apis';
+    if (path.indexOf('intermediate') !== -1 || href.indexOf('intermediates.html') !== -1) return 'intermediates';
+    if (path.indexOf('pellet') !== -1 || href.indexOf('pellets.html') !== -1) return 'pellets';
+    if (path.indexOf('piperidone') !== -1 || href.indexOf('piperidone-derivatives.html') !== -1) return 'piperidones';
+    if (path.indexOf('under-dev') !== -1 || href.indexOf('under-development.html') !== -1) return 'under-dev';
+    return 'all';
+  }
+
+  /* ─── Build single horizontal scroll UI (no search bar, no sub divisions) ─── */
+  function buildSearchUI(activeCatalog, pageCat, masterCatalog) {
     var pillsContainer = document.getElementById('vpMolPills');
     if (!pillsContainer) return;
 
     pillsContainer.innerHTML = '';
-    pillsContainer.style.cssText = 'display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:28px;';
+    pillsContainer.style.cssText = 'display:flex;flex-direction:column;align-items:center;margin-bottom:24px;width:100%;';
 
-    // Search box
-    var searchWrap = document.createElement('div');
-    searchWrap.style.cssText = 'display:flex;align-items:center;gap:10px;width:100%;max-width:600px;';
+    // Single Scrollable Horizontal Options Line (with Left & Right Arrows)
+    var hscrollWrap = document.createElement('div');
+    hscrollWrap.className = 'vp-mol-hscroll-wrap';
 
-    var searchInput = document.createElement('input');
-    searchInput.type = 'text';
-    searchInput.placeholder = '🔍  Search any of the 265+ products…';
-    searchInput.id = 'vpMolSearch';
-    searchInput.style.cssText = [
-      'flex:1','padding:10px 16px','border:1.5px solid #CBD5E1','border-radius:10px',
-      'font-size:14px','outline:none','transition:border-color .2s','background:#fff',
-      'color:#334155','box-shadow:0 2px 8px rgba(15,23,42,.06)'
-    ].join(';');
+    var leftArrow = document.createElement('button');
+    leftArrow.type = 'button';
+    leftArrow.className = 'vp-mol-scroll-btn vp-mol-scroll-left';
+    leftArrow.innerHTML = '&lsaquo;';
+    leftArrow.title = 'Scroll left';
+    leftArrow.setAttribute('aria-label', 'Scroll products left');
 
-    var countBadge = document.createElement('span');
-    countBadge.id = 'vpMolCount';
-    countBadge.style.cssText = 'font-size:12px;color:#64748B;white-space:nowrap;font-weight:600;';
-    countBadge.textContent = catalog.length + ' products';
+    var rightArrow = document.createElement('button');
+    rightArrow.type = 'button';
+    rightArrow.className = 'vp-mol-scroll-btn vp-mol-scroll-right';
+    rightArrow.innerHTML = '&rsaquo;';
+    rightArrow.title = 'Scroll right';
+    rightArrow.setAttribute('aria-label', 'Scroll products right');
 
-    searchWrap.appendChild(searchInput);
-    searchWrap.appendChild(countBadge);
-    pillsContainer.appendChild(searchWrap);
-
-    // Category filter row
-    var cats = ['All'];
-    catalog.forEach(function(p) {
-      var t = p.therapeutic || p.sub_category || 'Other';
-      // Simplify to 1-2 word group
-      var g = t.split(/[&\/,]/)[0].trim();
-      if (cats.indexOf(g) === -1) cats.push(g);
-    });
-    cats = cats.slice(0, 10); // top 10
-
-    var catRow = document.createElement('div');
-    catRow.style.cssText = 'display:flex;flex-wrap:wrap;gap:6px;justify-content:center;';
-
-    var activeCat = 'All';
-    cats.forEach(function(cat) {
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.textContent = cat;
-      btn.dataset.cat = cat;
-      btn.style.cssText = [
-        'padding:4px 12px','border-radius:20px','font-size:12px','font-weight:600',
-        'cursor:pointer','transition:all .15s','border:1px solid #CBD5E1',
-        cat === 'All' ? 'background:#254696;color:#fff;border-color:#254696;' : 'background:#fff;color:#334155;'
-      ].join(';');
-      btn.addEventListener('click', function() {
-        activeCat = cat;
-        catRow.querySelectorAll('button').forEach(function(b) {
-          var isActive = b.dataset.cat === cat;
-          b.style.background = isActive ? '#254696' : '#fff';
-          b.style.color = isActive ? '#fff' : '#334155';
-          b.style.borderColor = isActive ? '#254696' : '#CBD5E1';
-        });
-        renderPillGrid(searchInput.value, activeCat);
-      });
-      catRow.appendChild(btn);
-    });
-    pillsContainer.appendChild(catRow);
-
-    // Pill grid (scrollable)
     var gridWrap = document.createElement('div');
-    gridWrap.style.cssText = [
-      'width:100%','max-height:160px','overflow-y:auto','display:flex','flex-wrap:wrap',
-      'gap:8px','justify-content:center','padding:4px 0',
-      'scrollbar-width:thin','scrollbar-color:#CBD5E1 transparent'
-    ].join(';');
     gridWrap.id = 'vpMolGrid';
-    pillsContainer.appendChild(gridWrap);
 
-    // Dot colors pool
+    leftArrow.addEventListener('click', function() {
+      gridWrap.scrollBy({ left: -260, behavior: 'smooth' });
+    });
+    rightArrow.addEventListener('click', function() {
+      gridWrap.scrollBy({ left: 260, behavior: 'smooth' });
+    });
+
+    // Horizontal wheel scroll support
+    gridWrap.addEventListener('wheel', function(e) {
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        gridWrap.scrollLeft += e.deltaY;
+      }
+    }, { passive: false });
+
+    hscrollWrap.appendChild(leftArrow);
+    hscrollWrap.appendChild(gridWrap);
+    hscrollWrap.appendChild(rightArrow);
+    pillsContainer.appendChild(hscrollWrap);
+
     var DOT_COLORS = ['#ff7675','#74b9ff','#55efc4','#a29bfe','#ffeaa7','#fd79a8','#00b894','#81ecec','#fab1a0','#6c5ce7'];
 
-    function renderPillGrid(query, cat) {
-      var q = (query || '').toLowerCase().trim();
-      var filtered = catalog.filter(function(p, i) {
-        var matchQ = !q || p.name.toLowerCase().indexOf(q) !== -1 || (p.cas || '').indexOf(q) !== -1;
-        var th = (p.therapeutic || p.sub_category || '').split(/[&\/,]/)[0].trim();
-        var matchCat = cat === 'All' || th === cat;
-        return matchQ && matchCat;
-      });
-
-      countBadge.textContent = filtered.length + ' / ' + catalog.length + ' products';
+    function renderPillGrid() {
       gridWrap.innerHTML = '';
+      var pool = (pageCat === 'all') ? masterCatalog : activeCatalog;
 
-      if (filtered.length === 0) {
+      if (!pool || pool.length === 0) {
         var noRes = document.createElement('span');
-        noRes.style.cssText = 'color:#94A3B8;font-size:13px;padding:20px;';
-        noRes.textContent = 'No products match your search.';
+        noRes.style.cssText = 'color:#94A3B8;font-size:13px;padding:12px 20px;';
+        noRes.textContent = 'No products found.';
         gridWrap.appendChild(noRes);
         return;
       }
 
-      filtered.forEach(function(p, fi) {
-        var origIdx = catalog.indexOf(p);
+      pool.forEach(function(p, fi) {
+        var origIdx = CATALOG.indexOf(p);
+        if (origIdx === -1) {
+          origIdx = CATALOG.length;
+          CATALOG.push(p);
+        }
+
         var btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'vp-mol-pill';
         btn.dataset.mol = origIdx;
         var dotColor = DOT_COLORS[origIdx % DOT_COLORS.length];
-        btn.innerHTML = '<span class="vp-mol-dot" style="background:' + dotColor + ';width:8px;height:8px;display:inline-block;border-radius:50%;margin-right:5px;flex-shrink:0;"></span>' + p.name;
+        btn.innerHTML = '<span class="vp-mol-dot" style="background:' + dotColor + ';width:8px;height:8px;display:inline-block;border-radius:50%;margin-right:6px;flex-shrink:0;"></span>' + p.name;
+
         btn.addEventListener('click', function() {
           setMolecule(origIdx);
+          btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
         });
         gridWrap.appendChild(btn);
       });
 
-      // Highlight active
+      // Highlight active product pill and center it
+      var activeBtn = null;
       gridWrap.querySelectorAll('.vp-mol-pill').forEach(function(b) {
         var idx = parseInt(b.dataset.mol, 10);
-        if (idx === currentIdx) b.classList.add('active');
+        if (idx === currentIdx) {
+          b.classList.add('active');
+          activeBtn = b;
+        } else {
+          b.classList.remove('active');
+        }
       });
+      if (activeBtn) {
+        activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
     }
 
-    searchInput.addEventListener('input', function() {
-      renderPillGrid(this.value, activeCat);
-    });
-    searchInput.addEventListener('focus', function() {
-      this.style.borderColor = '#254696';
-    });
-    searchInput.addEventListener('blur', function() {
-      this.style.borderColor = '#CBD5E1';
-    });
-
     // Initial render
-    renderPillGrid('', 'All');
+    renderPillGrid();
   }
 
   /* ─── Canvas renderer ────────────────────────────────────────────────────── */
-  var currentIdx = 0;
   var canvas, ctx;
   var rotX = 0.35, rotY = 0.55, scale = 42;
   var autoRotate = true, renderMode = 'ball_stick';
@@ -453,19 +451,12 @@
   function updateHUD() {
     if (!currentMol) return;
     var el = function(id) { return document.getElementById(id); };
-    // vpMolName → product name
     if (el('vpMolName')) el('vpMolName').textContent = currentMol.name || '—';
-    // vpMolIupac → sub-category (used as descriptor)
     if (el('vpMolIupac')) el('vpMolIupac').textContent = currentMol.iupac || '—';
-    // vpMolCas → CAS number
     if (el('vpMolCas')) el('vpMolCas').textContent = currentMol.cas || '—';
-    // vpMolFormula (now "Therapeutic Category" label) → category
-    if (el('vpMolFormula')) el('vpMolFormula').textContent = currentMol.category || '—';
-    // vpMolMw (now "Sub-Category" label) → formula field (sub-category text)
+    if (el('vpMolCategory')) el('vpMolCategory').textContent = currentMol.category || '—';
     if (el('vpMolMw')) el('vpMolMw').textContent = currentMol.iupac || '—';
-    // vpMolCategory (now "Pharmacopoeia" label) → formula/specs
-    if (el('vpMolCategory')) el('vpMolCategory').textContent = currentMol.formula || '—';
-    // vpMolFilings → regulatory filings / dmf_status
+    if (el('vpMolFormula')) el('vpMolFormula').textContent = currentMol.formula || '—';
     if (el('vpMolFilings')) el('vpMolFilings').textContent = currentMol.filings || '—';
     var rfqBtn = el('vpMolRfqBtn');
     if (rfqBtn) {
@@ -479,7 +470,6 @@
     currentMol = getMol(idx);
     rotX = 0.35; rotY = 0.55;
     updateHUD();
-    // Update active pill styling
     document.querySelectorAll('.vp-mol-pill').forEach(function(p) {
       p.classList.toggle('active', parseInt(p.dataset.mol, 10) === idx);
     });
@@ -492,19 +482,33 @@
     ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Load catalog
-    fetch('assets/data/products-catalog.json')
+    PAGE_CATEGORY = detectPageCategory();
+
+    fetch('assets/data/products-catalog.json?v=' + Date.now())
       .then(function(r) { return r.json(); })
-      .then(function(catalog) {
-        CATALOG = catalog;
-        buildSearchUI(catalog);
+      .then(function(rawCatalog) {
+        var list = Array.isArray(rawCatalog) ? rawCatalog : (rawCatalog && Array.isArray(rawCatalog.items) ? rawCatalog.items : []);
+        MASTER_CATALOG = list;
+
+        // When on a category-specific page, isolate catalog strictly to that category
+        if (PAGE_CATEGORY && PAGE_CATEGORY !== 'all') {
+          CATALOG = list.filter(function(p) {
+            var cat = (p.category || '').toLowerCase();
+            return cat === PAGE_CATEGORY || cat === PAGE_CATEGORY.replace(/-/g, '') || cat.indexOf(PAGE_CATEGORY) !== -1;
+          });
+          if (!CATALOG.length) CATALOG = list;
+        } else {
+          CATALOG = list;
+        }
+
+        buildSearchUI(CATALOG, PAGE_CATEGORY, MASTER_CATALOG);
 
         // Load first molecule
         currentIdx = 0;
         currentMol = getMol(0);
         updateHUD();
 
-        // Events
+        // Canvas interaction events
         canvas.addEventListener('mousedown', function(e) { isDragging = true; lastMouseX = e.clientX; lastMouseY = e.clientY; });
         window.addEventListener('mouseup', function() { isDragging = false; });
         window.addEventListener('mousemove', function(e) {
@@ -551,14 +555,14 @@
       })
       .catch(function(err) {
         console.warn('Molecule viewer: catalog load failed', err);
-        // Fallback: render empty canvas message
         var stage = canvas.parentElement;
         if (stage) stage.insertAdjacentHTML('beforeend', '<p style="color:#64748B;text-align:center;padding:20px;">Unable to load product catalog.</p>');
       });
 
-    // Global trigger for product table "3D View" buttons
+    // Global trigger for external buttons
     window.VP_ShowMolecule = function(nameOrCas) {
-      var idx = CATALOG.findIndex(function(p) {
+      var pool = (PAGE_CATEGORY && PAGE_CATEGORY !== 'all') ? CATALOG : MASTER_CATALOG;
+      var idx = pool.findIndex(function(p) {
         return p.name === nameOrCas || p.cas === nameOrCas;
       });
       if (idx !== -1) {
