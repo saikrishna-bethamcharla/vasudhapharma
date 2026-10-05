@@ -1031,20 +1031,15 @@
             <div class="form-actions">
               <button type="submit" class="btn btn-primary">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                Record Feedback Ticket
-              </button>
-              <button type="button" class="btn btn-secondary" id="btnEmailDispatch">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                Email to Dev Team
+                Submit Feedback
               </button>
               <button type="reset" class="btn btn-secondary" id="btnResetForm" style="margin-left:auto;">Clear</button>
             </div>
 
             <!-- Submission Clarity Explainer -->
             <div style="margin-top:14px; padding:10px 14px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px; font-size:12px; color:#64748B; line-height:1.5;">
-              <strong style="color:#1E293B;">💡 Where does your data go?</strong><br>
-              • <strong>Record Feedback Ticket:</strong> Instantly logs the ticket on this desk and triggers an automated notification to <code>wisdom@vasudhapharma.com</code> &amp; <code>saikrishna@zailabs.co.in</code>. You can also download your tickets as an Excel-ready CSV or JSON.<br>
-              • <strong>Email to Dev Team:</strong> Pre-fills an email with your notes addressed directly to <code>wisdom@vasudhapharma.com</code> &amp; <code>saikrishna@zailabs.co.in</code>.
+              <strong style="color:#1E293B;">🔒 Secure Submission:</strong>
+              Your feedback is automatically recorded in the verification desk for quality review and operations tracking.
             </div>
           </form>
         </div>
@@ -1059,7 +1054,7 @@
             <ul>
               <li><strong>Be Specific:</strong> Mention the page and paragraph or element where edits are requested.</li>
               <li><strong>Exact Replacements:</strong> When correcting text, paste the current text and the exact new text.</li>
-              <li><strong>Screenshots:</strong> Uploading a screenshot with red markup or circled areas speeds up implementation.</li>
+              <li><strong>Screenshots:</strong> Uploading a screenshot with circled areas speeds up verification.</li>
               <li><strong>Page Dropdown:</strong> If your feedback relates to multiple sections or the site in general, you can leave the dropdown empty.</li>
             </ul>
           </div>
@@ -1070,24 +1065,11 @@
               Operations Review Process
             </h3>
             <p style="font-size:12.5px; color:#64748B; margin-bottom:10px; line-height:1.5;">
-              Every ticket is recorded securely on the central Operations Desk and queued for review by the quality assurance and development teams.
+              Every ticket is recorded securely on the central Operations Desk and queued for review by the quality assurance team.
             </p>
             <div style="font-size:12px; color:#0E8F6C; font-weight:700; background:#ECFDF5; padding:8px 12px; border-radius:6px; border:1px solid #A7F3D0;">
-              🔒 Encrypted Server Storage &bull; Immediate Dev Dispatch
+              🔒 Encrypted Server Storage &bull; Review Queue Active
             </div>
-          </div>
-
-          <div class="sidebar-block" style="background:#F8FAFC; border-color:#CBD5E1;">
-            <h3 style="font-size:14px; color:#334155;">Feedback &amp; Review Contacts</h3>
-            <p style="font-size:12.5px; color:#64748B; margin-bottom:10px;">
-              Direct notifications, asset batches, or detailed review documents route to:
-            </p>
-            <p style="font-size:13px; font-weight:700; color:var(--primary-blue); margin-bottom:6px;">
-              ✉️ <a href="mailto:wisdom@vasudhapharma.com" style="color:var(--primary-blue); text-decoration:underline;">wisdom@vasudhapharma.com</a>
-            </p>
-            <p style="font-size:13px; font-weight:700; color:var(--primary-blue);">
-              ✉️ <a href="mailto:saikrishna@zailabs.co.in" style="color:var(--primary-blue); text-decoration:underline;">saikrishna@zailabs.co.in</a>
-            </p>
           </div>
         </aside>
 
@@ -1337,36 +1319,11 @@
           .catch(err => console.warn('Server feedback note:', err));
       } catch(e) {}
 
-      // Secondary fallback notification via formsubmit
-      try {
-        fetch("https://formsubmit.co/ajax/wisdom@vasudhapharma.com", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-          },
-          body: JSON.stringify({
-            _subject: `[VPCL Web Review] New Ticket ${ticketId}: ${targetPage || 'General'} (${feedbackPriority} Priority)`,
-            _cc: "saikrishna@zailabs.co.in",
-            Ticket_ID: ticketId,
-            Submitted_At: dateStr,
-            Reviewer: reviewerName,
-            Department_or_Email: reviewerDept,
-            Target_Page: targetPage || 'General / Not Specified',
-            Feedback_Category: feedbackCategory,
-            Priority_Level: feedbackPriority,
-            Revision_Notes: feedbackMessage,
-            Has_Screenshot: currentScreenshotMeta ? `Yes (${currentScreenshotMeta.name}, ${currentScreenshotMeta.sizeKb} KB)` : 'No',
-            Review_Console_URL: window.location.href
-          })
-        }).catch(err => console.warn('Notification notice:', err));
-      } catch(e) {}
-
       // Reset form fields
       form.reset();
       if (btnRemoveImg) btnRemoveImg.click();
 
-      showToast(`✅ Ticket ${ticketId} recorded! Alert dispatched.`);
+      showToast(`✅ Feedback recorded successfully!`);
       renderHistory();
 
       // Scroll smoothly to newly created ticket so user sees it right away
@@ -1488,31 +1445,6 @@
     function closeLightbox() {
       document.getElementById('lightboxModal').classList.remove('active');
     }
-
-    // Email Dispatch
-    document.getElementById('btnEmailDispatch').addEventListener('click', function() {
-      const reviewerName = document.getElementById('reviewerName').value.trim() || 'Reviewer';
-      const targetPage = document.getElementById('targetPage').value || 'General Site';
-      const category = document.getElementById('feedbackCategory').value;
-      const message = document.getElementById('feedbackMessage').value.trim();
-
-      if (!message) {
-        alert('Please fill in your feedback message first before drafting an email.');
-        return;
-      }
-
-      const subject = encodeURIComponent(`[Vasudha Website Testing Feedback] ${targetPage} - ${category}`);
-      const body = encodeURIComponent(
-        `Hi Team,\n\nHere is feedback for the Vasudha Pharma website during the review phase:\n\n` +
-        `• Reviewer: ${reviewerName}\n` +
-        `• Target Page: ${targetPage}\n` +
-        `• Category: ${category}\n\n` +
-        `--- NOTES / CHANGES NEEDED ---\n${message}\n\n` +
-        `Noted on the review desk.\n`
-      );
-
-      window.location.href = `mailto:wisdom@vasudhapharma.com,saikrishna@zailabs.co.in?subject=${subject}&body=${body}`;
-    });
 
     // Export CSV
     function exportToCSV() {
