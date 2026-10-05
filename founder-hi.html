@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
   <link rel="icon" href="assets/favicon.ico" sizes="any">
@@ -12,13 +12,13 @@
   <meta name="description" content="The vision and leadership behind Vasudha Pharma Chem Limited's growth into a trusted global API manufacturer.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-red: #3D5CAD;
-      --primary-red-dark: #2E4A8A;
-      --primary-red-light: #5B7AD4;
-      --accent-red: #7C9AE8;
+      --primary-red: #1DB88A;
+      --primary-red-dark: #0E8F6C;
+      --primary-red-light: #2FC79A;
+      --accent-red: #17A589;
       --dark: #1A1A1A;
       --dark-gray: #2D2D2D;
       --medium-gray: #4A4A4A;
@@ -28,12 +28,119 @@
       --text: #333333;
       --text-light: #666666;
       --border: #E5E5E5;
+      --vp-blue: #2F7DE1;
+      --vp-blue-deep: #1F5FB8;
+      --vp-coral: #F05A28;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4,
+    .section-title, .hero-content h1, .hero-content h2,
+    .logo span, .nav-label, .btn, .footer-heading {
+      font-family: 'Montserrat', 'Poppins', 'Inter', sans-serif;
+    }
+
+    h1, h2, h3, .section-title, .hero-content h1 {
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    /* Decorative molecule-dot network (report-style corner watermark) */
+    .molecule-dots {
+      position: absolute;
+      top: 0; right: 0;
+      width: 260px; height: 180px;
+      pointer-events: none;
+      opacity: 0.35;
+      background-image:
+        radial-gradient(circle, var(--primary-red-light) 1.5px, transparent 1.5px);
+      background-size: 26px 26px;
+      -webkit-mask-image: radial-gradient(ellipse at top right, black 30%, transparent 75%);
+      mask-image: radial-gradient(ellipse at top right, black 30%, transparent 75%);
+      z-index: 0;
+    }
+
+    /* Circular photo ring (report-style thick teal border) */
+    .photo-ring {
+      width: 280px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 12px solid var(--primary-red-dark);
+      overflow: hidden;
+      display: block;
+    }
+    .photo-ring img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+
+    /* Portrait with offset backing circle + name pill (leadership blocks) */
+    .portrait-badge {
+      position: relative;
+      width: 260px;
+      display: inline-block;
+    }
+    .portrait-badge .pb-photo {
+      position: relative;
+      z-index: 2;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    .portrait-badge .pb-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .portrait-badge .pb-backing {
+      position: absolute;
+      right: -18px; bottom: -18px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-red-light), var(--vp-blue));
+      z-index: 1;
+    }
+    .portrait-badge .pb-pill {
+      position: absolute;
+      left: 20px; bottom: -14px;
+      z-index: 3;
+      background: var(--vp-blue);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 0 14px 14px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+    }
+    .portrait-badge .pb-pill span {
+      display: block;
+      font-weight: 400;
+      font-size: 11px;
+      opacity: 0.85;
+    }
+
+    /* Running header tag (report-style small caps corner label) */
+    .running-tag {
+      position: absolute;
+      top: 28px; right: 32px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary-red);
+      z-index: 2;
     }
 
     body {
@@ -65,7 +172,7 @@
 
     /* ========== HEADER ========== */
     .top-bar {
-      background: var(--primary-red);
+      background: linear-gradient(90deg, var(--primary-red-dark) 0%, var(--primary-red) 55%, var(--vp-blue) 100%);
       color: var(--white);
       font-size: 12px;
       padding: 8px 0;
@@ -258,22 +365,12 @@
       gap: 14px;
       padding: 10px 20px 10px 12px;
       border-radius: 50px;
-      background:
-        linear-gradient(145deg,
-          rgba(255, 255, 255, 0.75) 0%,
-          rgba(255, 255, 255, 0.55) 50%,
-          rgba(255, 255, 255, 0.7) 100%);
-      backdrop-filter: blur(16px) saturate(1.2);
-      -webkit-backdrop-filter: blur(16px) saturate(1.2);
-      border: 1px solid rgba(255, 255, 255, 0.85);
-      box-shadow:
-        0 4px 24px rgba(0, 0, 0, 0.06),
-        0 1px 3px rgba(0, 0, 0, 0.04),
-        inset 0 1px 0 rgba(255, 255, 255, 0.95),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.03),
-        inset 0 0 20px rgba(255, 255, 255, 0.7),
-        inset 0 0 40px rgba(61, 92, 173, 0.06);
-      overflow: hidden;
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border: none;
+      box-shadow: none;
+      overflow: visible;
       isolation: isolate;
       max-width: 100%;
       transition: box-shadow 0.35s ease, border-color 0.35s ease;
@@ -293,11 +390,11 @@
       background: radial-gradient(circle at 30% 28%,
         rgba(255,255,255,1) 0%,
         rgba(255,140,155,0.85) 30%,
-        rgba(61, 92, 173,0.7) 65%,
+        rgba(29, 184, 138,0.7) 65%,
         rgba(140,8,28,0.4) 100%);
       box-shadow:
-        0 0 6px rgba(61, 92, 173,0.5),
-        0 0 12px rgba(61, 92, 173,0.2);
+        0 0 6px rgba(29, 184, 138,0.5),
+        0 0 12px rgba(29, 184, 138,0.2);
       animation: logoBagFlow linear infinite;
       opacity: 0;
     }
@@ -324,7 +421,7 @@
       z-index: 1;
     }
     .logo .logo-text strong {
-      color: var(--primary-red, #3D5CAD);
+      color: var(--primary-red, #1DB88A);
     }
 
 
@@ -379,7 +476,7 @@
         rgba(255,255,255,0.95) 0%,
         rgba(255,248,248,0.85) 100%);
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(61, 92, 173,0.12);
+      box-shadow: 0 2px 8px rgba(29, 184, 138,0.12);
     }
 
     .logo-mark {
@@ -428,12 +525,12 @@
         linear-gradient(180deg,
           rgba(255,130,148,0.72) 0%,
           rgba(232,54,79,0.75) 28%,
-          rgba(61, 92, 173,0.78) 62%,
+          rgba(29, 184, 138,0.78) 62%,
           rgba(155,12,35,0.80) 100%);
       box-shadow:
         inset 0 5px 9px rgba(255,255,255,0.55),
-        inset 0 -3px 7px rgba(61, 92, 173, 0.28),
-        0 0 10px rgba(61, 92, 173, 0.12);
+        inset 0 -3px 7px rgba(29, 184, 138, 0.28),
+        0 0 10px rgba(29, 184, 138, 0.12);
       border-top: 1px solid rgba(255,255,255,0.45);
       border-radius: 0;
       transition: height 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -511,9 +608,9 @@
           rgba(255,240,242,0.35) 100%);
       overflow: hidden;
       box-shadow:
-        0 2px 10px rgba(61, 92, 173,0.15),
+        0 2px 10px rgba(29, 184, 138,0.15),
         inset 0 1px 2px rgba(255,255,255,0.8),
-        inset 0 -1px 3px rgba(61, 92, 173,0.08);
+        inset 0 -1px 3px rgba(29, 184, 138,0.08);
       transform-style: preserve-3d;
     }
 
@@ -602,7 +699,7 @@
           transparent 100%);
       box-shadow:
         0 0 4px rgba(255,255,255,0.7),
-        inset 0 -1px 2px rgba(61, 92, 173,0.15),
+        inset 0 -1px 2px rgba(29, 184, 138,0.15),
         inset 1px 1px 2px rgba(255,255,255,0.9);
       animation: logoBubbleRise linear infinite;
       opacity: 0;
@@ -647,8 +744,8 @@
       height: 7px;
       margin-left: -3.5px;
       background: radial-gradient(circle,
-        rgba(61, 92, 173,0.4) 0%,
-        rgba(61, 92, 173,0.1) 50%,
+        rgba(29, 184, 138,0.4) 0%,
+        rgba(29, 184, 138,0.1) 50%,
         transparent 70%);
       border-radius: 50%;
       filter: blur(2px);
@@ -733,8 +830,8 @@
       bottom: 0;
       width: 0%;
       background: linear-gradient(90deg,
-        rgba(61, 92, 173, 0.2) 0%,
-        rgba(61, 92, 173, 0.12) 100%);
+        rgba(29, 184, 138, 0.2) 0%,
+        rgba(29, 184, 138, 0.12) 100%);
       z-index: 0;
       transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       border-radius: 4px;
@@ -769,8 +866,8 @@
       bottom: 0;
       width: 0%;
       background: linear-gradient(90deg,
-        rgba(61, 92, 173, 0.15) 0%,
-        rgba(61, 92, 173, 0.06) 100%);
+        rgba(29, 184, 138, 0.15) 0%,
+        rgba(29, 184, 138, 0.06) 100%);
       z-index: 0;
       transition: width 0.4s ease;
       border-radius: 4px;
@@ -860,7 +957,7 @@
       right: 0;
       width: 50%;
       height: 100%;
-      background: radial-gradient(ellipse at 70% 50%, rgba(61, 92, 173, 0.08) 0%, transparent 70%);
+      background: radial-gradient(ellipse at 70% 50%, rgba(29, 184, 138, 0.08) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -985,14 +1082,14 @@
 
     .focus-card:hover {
       border-color: var(--primary-red);
-      box-shadow: 0 8px 24px rgba(61, 92, 173, 0.1);
+      box-shadow: 0 8px 24px rgba(29, 184, 138, 0.1);
       transform: translateY(-2px);
     }
 
     .focus-icon {
       width: 48px;
       height: 48px;
-      background: rgba(61, 92, 173, 0.1);
+      background: rgba(29, 184, 138, 0.1);
       border-radius: 8px;
       display: flex;
       align-items: center;
@@ -1086,7 +1183,7 @@
     }
 
     .about-visual {
-      background-image: linear-gradient(145deg, rgba(61,92,173,0.55) 0%, rgba(46,74,138,0.72) 100%), url('assets/plant-aerial-1.jpg');
+      background-image: linear-gradient(145deg, rgba(29, 184, 138,0.55) 0%, rgba(14, 143, 108,0.72) 100%), url('assets/plant-aerial-1.jpg');
       background-size: cover, cover;
       background-position: center, center;
       border-radius: 12px;
@@ -1198,7 +1295,7 @@
 
     .accred-badge:hover {
       border-color: var(--primary-red);
-      box-shadow: 0 4px 12px rgba(61, 92, 173, 0.1);
+      box-shadow: 0 4px 12px rgba(29, 184, 138, 0.1);
     }
 
     .accred-badge strong {
@@ -1292,7 +1389,7 @@
     }
 
     .vp-counters-inner {
-      background: var(--primary-red);
+      background: linear-gradient(90deg, var(--primary-red-dark) 0%, var(--primary-red) 55%, var(--vp-blue) 100%);
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 0;
@@ -1466,7 +1563,7 @@
     }
 
     .vp-event-head {
-      background-image: linear-gradient(145deg, rgba(61,92,173,0.86) 0%, rgba(46,74,138,0.92) 100%), url('assets/equipment-reactor.jpg');
+      background-image: linear-gradient(145deg, rgba(29, 184, 138,0.86) 0%, rgba(14, 143, 108,0.92) 100%), url('assets/equipment-reactor.jpg');
       background-size: cover, cover;
       background-position: center, center;
       color: var(--white);
@@ -1560,15 +1657,15 @@
       background: rgba(0,0,0,0.15);
     }
     .news-overlay::-webkit-scrollbar-thumb {
-      background: rgba(61, 92, 173, 0.45);
+      background: rgba(29, 184, 138, 0.45);
       border-radius: 6px;
     }
     .news-overlay::-webkit-scrollbar-thumb:hover {
-      background: rgba(61, 92, 173, 0.7);
+      background: rgba(29, 184, 138, 0.7);
     }
     .news-overlay {
       scrollbar-width: thin;
-      scrollbar-color: rgba(61, 92, 173, 0.5) rgba(0,0,0,0.12);
+      scrollbar-color: rgba(29, 184, 138, 0.5) rgba(0,0,0,0.12);
     }
 
     .news-overlay .news-section {
@@ -1592,7 +1689,7 @@
         overflow-y: auto;
         overflow-x: hidden;
         scrollbar-width: thin;
-        scrollbar-color: rgba(61, 92, 173, 0.45) #f0f0f0;
+        scrollbar-color: rgba(29, 184, 138, 0.45) #f0f0f0;
       }
       .news-overlay .news-section::-webkit-scrollbar {
         width: 8px;
@@ -1602,7 +1699,7 @@
         border-radius: 0 12px 12px 0;
       }
       .news-overlay .news-section::-webkit-scrollbar-thumb {
-        background: rgba(61, 92, 173, 0.4);
+        background: rgba(29, 184, 138, 0.4);
         border-radius: 6px;
       }
     }
@@ -1762,7 +1859,7 @@
       background: var(--primary-red);
       color: var(--white);
       border-color: var(--primary-red);
-      box-shadow: 0 6px 18px rgba(61,92,173,0.28);
+      box-shadow: 0 6px 18px rgba(29, 184, 138,0.28);
     }
 
     .cta-banner .btn-white:hover {
@@ -1798,7 +1895,7 @@
       background: linear-gradient(145deg,
         rgba(255,255,255,0.95) 0%,
         rgba(255,248,248,0.85) 100%);
-      box-shadow: 0 2px 8px rgba(61, 92, 173,0.12);
+      box-shadow: 0 2px 8px rgba(29, 184, 138,0.12);
     }
 
     .logo-flask-liquid-footer {
@@ -1812,12 +1909,12 @@
         linear-gradient(180deg,
           rgba(255,130,148,0.72) 0%,
           rgba(232,54,79,0.75) 28%,
-          rgba(61, 92, 173,0.78) 62%,
+          rgba(29, 184, 138,0.78) 62%,
           rgba(155,12,35,0.80) 100%);
       mix-blend-mode: soft-light;
       box-shadow:
         inset 0 5px 9px rgba(255,255,255,0.55),
-        inset 0 -3px 7px rgba(61, 92, 173, 0.28);
+        inset 0 -3px 7px rgba(29, 184, 138, 0.28);
       border-top: 1px solid rgba(255,255,255,0.4);
     }
 
@@ -2098,7 +2195,7 @@
       position: relative;
       width: 63px;
       height: 112px;
-      filter: drop-shadow(0 6px 14px rgba(61, 92, 173, 0.22));
+      filter: drop-shadow(0 6px 14px rgba(29, 184, 138, 0.22));
     }
 
     /* Glass flask shape using CSS */
@@ -2335,8 +2432,8 @@
       height: 14px;
       margin-left: -7px;
       background: radial-gradient(circle, 
-        rgba(61, 92, 173, 0.35) 0%, 
-        rgba(61, 92, 173, 0.12) 40%, 
+        rgba(29, 184, 138, 0.35) 0%, 
+        rgba(29, 184, 138, 0.12) 40%, 
         transparent 70%);
       border-radius: 50%;
       filter: blur(4px);
@@ -2657,11 +2754,10 @@
       margin: 0;
       transform: translateY(8px);
       background: var(--white);
-      border-radius: 0;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.12), 0 1px 0 rgba(0,0,0,0.04);
+      border-radius: 0 0 28px 28px;
+      box-shadow: 0 20px 48px rgba(0,0,0,0.14), 0 1px 0 rgba(0,0,0,0.04);
       border: none;
-      border-bottom: 1px solid var(--border);
-      padding: 32px 0 36px;
+      padding: 44px 0 48px;
       display: flex;
       justify-content: center;
       gap: 0;
@@ -2727,20 +2823,20 @@
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
-      gap: 20px;
+      gap: 26px;
       flex: 0 0 auto;
-      padding-right: 32px;
+      padding-right: 40px;
       border-right: 1px solid var(--border);
-      margin-right: 32px;
+      margin-right: 40px;
     }
 
     .mm-feature-card {
       display: block;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 14px;
       overflow: hidden;
       background: var(--light-gray);
-      width: 200px;
+      width: 260px;
       flex-shrink: 0;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
@@ -2750,7 +2846,7 @@
     }
     .mm-feature-card img {
       width: 100%;
-      height: 120px;
+      height: 160px;
       object-fit: cover;
       display: block;
     }
@@ -2773,7 +2869,7 @@
 
     /* Fallback when no image */
     .mm-feature-card.no-img {
-      background-image: linear-gradient(135deg, rgba(61,92,173,0.55) 0%, rgba(46,74,138,0.70) 100%), url('assets/plant-aerial-1.jpg');
+      background-image: linear-gradient(135deg, rgba(29, 184, 138,0.55) 0%, rgba(14, 143, 108,0.70) 100%), url('assets/plant-aerial-1.jpg');
       background-size: cover, cover;
       background-position: center, center;
       min-height: 100px;
@@ -2818,13 +2914,13 @@
       flex: 0 1 180px;
       padding-top: 4px;
     }
-    .mm-feature-card {
+    .mm-feature-card--logo {
       background: #fff;
       display: flex;
       flex-direction: column;
       overflow: hidden;
     }
-    .mm-feature-card img {
+    .mm-feature-card--logo img {
       object-fit: contain;
       object-position: center;
       padding: 14px 18px 8px;
@@ -2834,19 +2930,19 @@
       background: #fff;
       transform: none;
     }
-    .mm-feature-card .mm-feature-text {
+    .mm-feature-card--logo .mm-feature-text {
       padding: 4px 12px 12px;
       flex: 0 0 auto;
       display: block;
     }
-    .mm-feature-card .mm-feature-title {
+    .mm-feature-card--logo .mm-feature-title {
       display: block;
       font-size: 13px;
       font-weight: 600;
       color: var(--dark);
       line-height: 1.3;
     }
-    .mm-feature-card .mm-feature-sub {
+    .mm-feature-card--logo .mm-feature-sub {
       display: block;
       font-size: 11px;
       color: var(--text-light);
@@ -2858,13 +2954,13 @@
       object-position: center 12%;
       height: 150px;
     }
-    .mega-menu-about a.mm-feature-card:not(.mm-feature-card) .mm-feature-text {
+    .mega-menu-about a.mm-feature-card:not(.mm-feature-card--logo) .mm-feature-text {
       padding: 8px 12px 10px;
     }
-    .mega-menu-about a.mm-feature-card:not(.mm-feature-card) .mm-feature-title {
+    .mega-menu-about a.mm-feature-card:not(.mm-feature-card--logo) .mm-feature-title {
       font-size: 13px;
     }
-    .mega-menu-about a.mm-feature-card:not(.mm-feature-card) .mm-feature-sub {
+    .mega-menu-about a.mm-feature-card:not(.mm-feature-card--logo) .mm-feature-sub {
       font-size: 10.5px;
     }
 
@@ -3044,7 +3140,7 @@
       border-radius: 8px;
       display: block;
       background: #fff;
-      box-shadow: 0 1px 4px rgba(61, 92, 173,0.12);
+      box-shadow: 0 1px 4px rgba(29, 184, 138,0.12);
     }
     .survey-brand {
       display: flex;
@@ -3097,7 +3193,7 @@
     }
 
     .survey-btn-outline:hover {
-      background: rgba(61, 92, 173, 0.06);
+      background: rgba(29, 184, 138, 0.06);
     }
 
     .survey-progress-track {
@@ -3146,7 +3242,7 @@
 
     .survey-option:hover {
       border-color: var(--primary-red);
-      background: rgba(61, 92, 173, 0.04);
+      background: rgba(29, 184, 138, 0.04);
     }
 
     .survey-option input {
@@ -3365,7 +3461,7 @@
       font-weight: 400;
     }
     .vp-acc-item[open] summary::after { content: '−'; }
-    .vp-acc-item[open] summary { background: rgba(61, 92, 173,0.06); color: var(--primary-red); }
+    .vp-acc-item[open] summary { background: rgba(29, 184, 138,0.06); color: var(--primary-red); }
     .vp-acc-item .vp-acc-body {
       padding: 16px 20px 20px;
       font-size: 15px;
@@ -3643,10 +3739,10 @@
       flex: 0 0 120px;
       background: #f5f5f5;
     }
-    .mm-feature-card {
+    .mm-feature-card--logo {
       background: #fff;
     }
-    .mm-feature-card img {
+    .mm-feature-card--logo img {
       object-fit: contain;
       object-position: center;
       padding: 12px 16px;
@@ -3663,7 +3759,7 @@
       flex: 0 0 120px;
     }
     .mm-feature-card .mm-feature-text,
-    .mm-feature-card .mm-feature-text {
+    .mm-feature-card--logo .mm-feature-text {
       padding: 10px 12px 12px;
       flex: 1 1 auto;
       display: block;
@@ -3671,7 +3767,7 @@
       box-sizing: border-box;
     }
     .mm-feature-card .mm-feature-title,
-    .mm-feature-card .mm-feature-title {
+    .mm-feature-card--logo .mm-feature-title {
       display: block;
       font-size: 13px;
       font-weight: 600;
@@ -3679,7 +3775,7 @@
       line-height: 1.3;
     }
     .mm-feature-card .mm-feature-sub,
-    .mm-feature-card .mm-feature-sub {
+    .mm-feature-card--logo .mm-feature-sub {
       display: block;
       font-size: 11px;
       color: var(--text-light);
@@ -3766,7 +3862,7 @@
     }
 
     /* Foundation logo card — fill full card height */
-    .mm-feature-card {
+    .mm-feature-card--logo {
       background: #fff;
       display: flex !important;
       flex-direction: column !important;
@@ -3776,7 +3872,7 @@
       height: 100%;
       box-sizing: border-box;
     }
-    .mm-feature-card img {
+    .mm-feature-card--logo img {
       object-fit: contain !important;
       object-position: center center !important;
       padding: 16px 14px 6px !important;
@@ -3789,28 +3885,28 @@
       transform: none !important;
       box-sizing: border-box;
     }
-    .mm-feature-card .mm-feature-text {
+    .mm-feature-card--logo .mm-feature-text {
       padding: 4px 12px 14px !important;
       flex: 0 0 auto !important;
       min-height: 0 !important;
       text-align: center;
     }
-    .mm-feature-card .mm-feature-title {
+    .mm-feature-card--logo .mm-feature-title {
       font-size: 13px !important;
       font-weight: 600;
       color: var(--dark);
       line-height: 1.3;
     }
-    .mm-feature-card .mm-feature-sub {
+    .mm-feature-card--logo .mm-feature-sub {
       font-size: 11px !important;
       color: var(--text-light);
       margin-top: 2px;
     }
     /* Match founder portrait card height so both align */
-    .mm-feature-card:not(.mm-feature-card) {
+    .mm-feature-card:not(.mm-feature-card--logo) {
       min-height: 172px;
     }
-    .mm-feature-card:not(.mm-feature-card) img,
+    .mm-feature-card:not(.mm-feature-card--logo) img,
     .mm-feature-card img[src*="founder-portrait"] {
       height: 120px !important;
       flex: 0 0 120px !important;
@@ -3912,13 +4008,13 @@
     }
 
     /* Founder vision card — text pinned to bottom edge over image */
-    .mm-feature-card:not(.mm-feature-card) {
+    .mm-feature-card:not(.mm-feature-card--logo) {
       position: relative;
       display: flex !important;
       flex-direction: column;
       overflow: hidden;
     }
-    .mm-feature-card:not(.mm-feature-card) img,
+    .mm-feature-card:not(.mm-feature-card--logo) img,
     .mm-feature-card img[src*="founder-portrait"] {
       width: 100% !important;
       height: 100% !important;
@@ -3928,7 +4024,7 @@
       object-position: center 12% !important;
       display: block;
     }
-    .mm-feature-card:not(.mm-feature-card) .mm-feature-text {
+    .mm-feature-card:not(.mm-feature-card--logo) .mm-feature-text {
       position: absolute !important;
       left: 0;
       right: 0;
@@ -3939,13 +4035,13 @@
       min-height: 0 !important;
       z-index: 2;
     }
-    .mm-feature-card:not(.mm-feature-card) .mm-feature-title {
+    .mm-feature-card:not(.mm-feature-card--logo) .mm-feature-title {
       color: #fff !important;
       font-size: 13px !important;
       font-weight: 600;
       line-height: 1.3;
     }
-    .mm-feature-card:not(.mm-feature-card) .mm-feature-sub {
+    .mm-feature-card:not(.mm-feature-card--logo) .mm-feature-sub {
       color: rgba(255,255,255,0.88) !important;
       font-size: 11px !important;
       margin-top: 2px;
@@ -3977,7 +4073,7 @@
       min-width: 280px !important;
       width: max-content !important;
       max-width: 340px !important;
-      background: #2E4A8A !important;
+      background: #0E8F6C !important;
       border: 1px solid rgba(255,255,255,0.12) !important;
       border-radius: 8px !important;
       box-shadow: 0 14px 36px rgba(0,0,0,0.28) !important;
@@ -4011,11 +4107,11 @@
     .top-bar-dd-menu > a:hover,
     .top-bar-dd-menu .top-bar-dd-item:hover,
     .top-bar-dd-submenu .top-bar-dd-item:hover {
-      background: #3D5CAD !important;
+      background: #1DB88A !important;
       color: #fff !important;
     }
     .top-bar-dd-sub.is-open > .top-bar-dd-sub-toggle {
-      background: #3D5CAD !important;
+      background: #1DB88A !important;
     }
     .top-bar-dd-submenu {
       display: none !important;
@@ -4077,13 +4173,13 @@
       transform: none !important;
     }
     /* Logo cards: contain full logo, more padding */
-    .mm-feature-card {
+    .mm-feature-card--logo {
       background: #fff !important;
       min-height: 0 !important;
       height: auto !important;
       justify-content: center;
     }
-    .mm-feature-card img {
+    .mm-feature-card--logo img {
       object-fit: contain !important;
       max-height: 140px !important;
       padding: 16px 14px !important;
@@ -4094,7 +4190,7 @@
     }
     /* Founder / product photos: contain without forced crop */
     .mm-feature-card img[src*="founder-portrait"],
-    .mm-feature-card:not(.mm-feature-card) img {
+    .mm-feature-card:not(.mm-feature-card--logo) img {
       object-fit: contain !important;
       object-position: center center !important;
       max-height: 160px !important;
@@ -4106,95 +4202,65 @@
       display: block !important;
     }
 
-    /* === CANONICAL mega-menu feature cards (identical all pages) === */
-    .mega-menu .mm-feature-card {
-      width: 200px !important;
-      max-width: 200px !important;
-      flex: 0 0 200px !important;
-      display: block !important;
-      overflow: hidden !important;
-      border-radius: 10px !important;
-      background: #fff !important;
-      text-decoration: none !important;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-      border: 1px solid var(--border, #e8e8e8);
+    /* === CANONICAL mega-menu layout & cards (spans full menu width, larger images, enhanced typography) === */
+    .nav-item > .mega-menu,
+    .mega-menu {
+      padding: 34px 0 38px !important;
     }
-    .mega-menu .mm-feature-card .mm-feature-text {
-      display: none !important;
-      height: 0 !important;
-      padding: 0 !important;
-      margin: 0 !important;
-      overflow: hidden !important;
-    }
-    .mega-menu .mm-feature-card img {
-      display: block !important;
-      width: 100% !important;
-      height: 150px !important;
-      max-height: 150px !important;
-      object-fit: contain !important;
-      object-position: center center !important;
-      background: #f7f7f7 !important;
-      padding: 8px !important;
-      box-sizing: border-box !important;
-      transform: none !important;
-      border: none !important;
-    }
-    .mega-menu .mm-feature-card img {
-      padding: 18px 14px !important;
-      background: #fff !important;
-    }
-    .mega-menu .mm-feature-card.no-img {
-      min-height: 150px;
-      background: linear-gradient(135deg, #3D5CAD 0%, #2E4A8A 100%) !important;
-    }
-    .mega-menu .mm-feature-card.no-img .mm-feature-text {
-      display: flex !important;
-      height: auto !important;
-      padding: 16px !important;
-      color: #fff;
-    }
-
     .mega-menu-about .mega-menu-about-row {
       display: flex !important;
+      flex-direction: row !important;
       flex-wrap: nowrap !important;
-      align-items: flex-start !important;
-      gap: 20px 24px !important;
+      align-items: stretch !important;
+      justify-content: space-between !important;
+      gap: 28px 40px !important;
+      width: 100% !important;
+      max-width: 1560px !important;
+      margin: 0 auto !important;
+      padding: 0 44px !important;
+      box-sizing: border-box !important;
     }
-    .mega-menu-about .mega-menu-col {
-      flex: 0 1 auto;
-      min-width: 140px;
+    /* 3-item menus (e.g. R&D) remain elegantly centered and balanced */
+    .nav-item:has(a[data-section="rnd"]) .mega-menu-about-row,
+    .mega-menu-about:has(.mega-menu-col:only-of-type) .mega-menu-about-row {
+      max-width: 1200px !important;
+      justify-content: center !important;
+      gap: 48px !important;
     }
-
-    /* FINAL mega cards — full-bleed prominent feature cards */
+    /* Large prominent feature cards — Full-bleed, no artificial padding */
     .mega-menu a.mm-feature-card,
     .mega-menu .mm-feature-card {
-      width: 196px !important;
-      min-width: 196px !important;
-      max-width: 196px !important;
-      height: 148px !important;
-      min-height: 148px !important;
-      max-height: 148px !important;
+      flex: 0 1 360px !important;
+      min-width: 220px !important;
+      max-width: 390px !important;
+      width: 100% !important;
+      height: 195px !important;
+      min-height: 195px !important;
+      max-height: 195px !important;
       padding: 0 !important;
       margin: 0 !important;
       display: block !important;
       overflow: hidden !important;
-      border-radius: 10px !important;
+      border-radius: 12px !important;
       background: #ffffff !important;
       border: 1px solid rgba(0,0,0,0.08) !important;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08) !important;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.07) !important;
       box-sizing: border-box !important;
       position: relative !important;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
+    }
+    .mega-menu a.mm-feature-card:hover,
+    .mega-menu .mm-feature-card:hover {
+      transform: translateY(-3px) scale(1.01) !important;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.13) !important;
     }
     .mega-menu a.mm-feature-card .mm-feature-text,
     .mega-menu .mm-feature-card .mm-feature-text {
       display: none !important;
-      visibility: hidden !important;
       height: 0 !important;
-      max-height: 0 !important;
       padding: 0 !important;
       margin: 0 !important;
       overflow: hidden !important;
-      font-size: 0 !important;
     }
     .mega-menu a.mm-feature-card > img,
     .mega-menu .mm-feature-card > img {
@@ -4202,18 +4268,16 @@
       inset: 0 !important;
       width: 100% !important;
       height: 100% !important;
-      max-width: none !important;
-      max-height: none !important;
       object-fit: cover !important;
       object-position: center center !important;
       padding: 0 !important;
-      box-sizing: border-box !important;
-      background: #ffffff !important;
-      border: none !important;
-      border-radius: 10px !important;
-      transform: none !important;
       margin: 0 !important;
+      border: none !important;
+      border-radius: 12px !important;
+      background: #ffffff !important;
+      transform: none !important;
     }
+    /* Founder portrait — top-aligned so head/hair is never cropped */
     .mega-menu a.mm-feature-card img[src*="founder"],
     .mega-menu .mm-feature-card img[src*="founder"] {
       object-fit: cover !important;
@@ -4221,16 +4285,224 @@
       padding: 0 !important;
       background: #ffffff !important;
     }
-    .mega-menu a.mm-feature-card > img,
-    .mega-menu .mm-feature-card > img,
+    /* Foundation logo / branded card — clean full display */
+    .mega-menu a.mm-feature-card--logo,
+    .mega-menu .mm-feature-card--logo {
+      background: #ffffff !important;
+      border: 1px solid rgba(0,0,0,0.08) !important;
+    }
+    .mega-menu a.mm-feature-card--logo > img,
+    .mega-menu .mm-feature-card--logo > img,
     .mega-menu a.mm-feature-card img[src*="foundation-card-logo"],
-    .mega-menu .mm-feature-card img[src*="foundation-card-logo"],
-    .mega-menu a.mm-feature-card img[src*="vasudha-foundation-logo"],
-    .mega-menu .mm-feature-card img[src*="vasudha-foundation-logo"] {
+    .mega-menu .mm-feature-card img[src*="foundation-card-logo"] {
       object-fit: cover !important;
       object-position: center center !important;
       padding: 0 !important;
       background: #ffffff !important;
+    }
+    .mega-menu a.mm-feature-card img[src*="foundation-card-branded"],
+    .mega-menu .mm-feature-card img[src*="foundation-card-branded"] {
+      object-fit: cover !important;
+      object-position: center center !important;
+      padding: 0 !important;
+    }
+
+    /* Text columns adjusted to breathe and fill menu */
+    .mega-menu-about .mega-menu-col,
+    .mega-menu .mega-menu-col {
+      flex: 1 1 240px !important;
+      min-width: 170px !important;
+      max-width: 320px !important;
+      padding-top: 2px !important;
+    }
+    .mega-menu-col h5 {
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      letter-spacing: 1px !important;
+      text-transform: uppercase !important;
+      color: #0E8F6C !important;
+      margin-bottom: 14px !important;
+      padding-bottom: 8px !important;
+      border-bottom: 2px solid rgba(14, 143, 108, 0.2) !important;
+    }
+    .mega-menu-col a {
+      display: block !important;
+      text-decoration: none !important;
+      padding: 7px 12px !important;
+      margin: 0 -12px 4px !important;
+      border-radius: 8px !important;
+      transition: background 0.2s ease, transform 0.2s ease !important;
+    }
+    .mega-menu-col a:last-child {
+      margin-bottom: 0 !important;
+    }
+    .mega-menu-col a:hover {
+      background: rgba(29, 184, 138, 0.08) !important;
+      transform: translateX(4px) !important;
+    }
+    .mega-menu-col a .mm-label {
+      display: block !important;
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      color: #1a1a1a !important;
+      line-height: 1.35 !important;
+      transition: color 0.2s ease !important;
+    }
+    .mega-menu-col a:hover .mm-label {
+      color: #0E8F6C !important;
+    }
+    .mega-menu-col a .mm-sub {
+      display: block !important;
+      font-size: 12.5px !important;
+      color: #666666 !important;
+      margin-top: 3px !important;
+      line-height: 1.35 !important;
+    }
+
+    @media (max-width: 1360px) {
+      .mega-menu-about .mega-menu-about-row {
+        gap: 20px 24px !important;
+        padding: 0 24px !important;
+      }
+      .mega-menu a.mm-feature-card,
+      .mega-menu .mm-feature-card {
+        flex: 0 1 280px !important;
+        min-width: 190px !important;
+        height: 175px !important;
+        min-height: 175px !important;
+        max-height: 175px !important;
+      }
+      .mega-menu-about .mega-menu-col,
+      .mega-menu .mega-menu-col {
+        min-width: 150px !important;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .mega-menu {
+        display: none !important;
+      }
+    }
+
+    /* FOUNDATION HERO FULL WIDTH — force show traditional portrait */
+    section.founder-hero-full,
+    .founder-hero-full.hero,
+    #pagebanner.founder-hero-full {
+      position: relative !important;
+      padding: 80px 0 90px !important;
+      min-height: 560px !important;
+      background-color: #2a2a2a !important;
+      background-image: url('assets/founder-hero-bg.webp') !important;
+      background-repeat: no-repeat !important;
+      background-position: right center !important;
+      background-size: cover !important;
+      overflow: visible !important;
+      border: none !important;
+    }
+    section.founder-hero-full .container {
+      position: relative !important;
+      z-index: 2 !important;
+    }
+    section.founder-hero-full .hero-content {
+      max-width: 480px !important;
+      background: rgba(255,255,255,0.92) !important;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 14px !important;
+      padding: 32px 30px 28px !important;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12) !important;
+    }
+    section.founder-hero-full .hero-content h1 {
+      font-size: clamp(32px, 4vw, 46px) !important;
+      margin: 0 0 14px !important;
+      color: #1a1a1a !important;
+    }
+    section.founder-hero-full .hero-content p {
+      font-size: 16px !important;
+      line-height: 1.7 !important;
+      color: #555 !important;
+      margin: 0 !important;
+    }
+    @media (max-width: 768px) {
+      section.founder-hero-full {
+        min-height: 420px !important;
+        background-position: center top !important;
+      }
+    }
+
+    /* SECRETARIAL FIX — never expand into red strip */
+    .top-bar { overflow: visible !important; z-index: 5000 !important; position: relative !important; height: auto !important; min-height: 0 !important; }
+    .top-bar .container, .top-bar-right { overflow: visible !important; flex-wrap: nowrap !important; }
+    #secretarialDropdown { position: relative !important; }
+    #secretarialDropdown .top-bar-dd-menu {
+      display: none !important;
+      position: absolute !important;
+      top: 100% !important;
+      right: 0 !important;
+      left: auto !important;
+      margin-top: 8px !important;
+      min-width: 280px !important;
+      background: #0E8F6C !important;
+      border-radius: 8px !important;
+      z-index: 9999 !important;
+      padding: 6px 0 !important;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.3) !important;
+    }
+    #secretarialDropdown.is-open .top-bar-dd-menu,
+    #secretarialDropdown.is-open > .top-bar-dd-menu {
+      display: block !important;
+    }
+    #secretarialDropdown .top-bar-dd-submenu {
+      display: none !important;
+      position: absolute !important;
+      right: 100% !important;
+      left: auto !important;
+      top: 0 !important;
+      min-width: 260px !important;
+      background: #7A0A1C !important;
+      border-radius: 8px !important;
+      z-index: 10000 !important;
+      padding: 6px 0 !important;
+    }
+    #secretarialDropdown .top-bar-dd-sub.is-open > .top-bar-dd-submenu {
+      display: block !important;
+    }
+    #secretarialDropdown .top-bar-dd-menu a,
+    #secretarialDropdown .top-bar-dd-item {
+      display: block !important;
+      width: 100% !important;
+      padding: 12px 18px !important;
+      color: #fff !important;
+      font-size: 12px !important;
+      font-weight: 600 !important;
+      text-transform: uppercase !important;
+      text-decoration: none !important;
+      background: transparent !important;
+      border: none !important;
+      white-space: nowrap !important;
+    }
+    #secretarialDropdown .top-bar-dd-menu a:hover,
+    #secretarialDropdown .top-bar-dd-item:hover {
+      background: #1DB88A !important;
+    }
+    header { z-index: 400 !important; }
+
+    /* Kill .hero gradient overlays that hide founder photo */
+    #pagebanner.founder-hero-full.hero::before,
+    #pagebanner.founder-hero-full::before,
+    section.founder-hero-full::before,
+    section.founder-hero-full.hero::before,
+    section.founder-hero-full::after,
+    #pagebanner.founder-hero-full::after {
+      display: none !important;
+      content: none !important;
+      background: none !important;
+      opacity: 0 !important;
+    }
+    #pagebanner.founder-hero-full,
+    section.founder-hero-full {
+      background: #1a1a1a url('assets/founder-hero-bg.webp') right center / cover no-repeat !important;
+      overflow: visible !important;
     }
 
     /* Founder hero — proper face framing (not over-zoomed) */
@@ -4506,7 +4778,7 @@
       left: auto !important;
       min-width: 280px !important;
       width: max-content !important;
-      background: #2E4A8A !important;
+      background: #0E8F6C !important;
       border: 1px solid rgba(255,255,255,0.12) !important;
       border-radius: 8px !important;
       box-shadow: 0 14px 36px rgba(0,0,0,0.28) !important;
@@ -4544,7 +4816,7 @@
     #secretarialDropdown .top-bar-dd-item:hover,
     .top-bar-dd-menu .top-bar-dd-item:hover,
     .top-bar-dd-menu > a:hover {
-      background: #3D5CAD !important;
+      background: #1DB88A !important;
       color: #fff !important;
     }
     #secretarialDropdown .top-bar-dd-submenu,
@@ -4567,7 +4839,7 @@
       display: block !important;
     }
     #secretarialDropdown .top-bar-dd-sub.is-open > .top-bar-dd-sub-toggle {
-      background: #3D5CAD !important;
+      background: #1DB88A !important;
     }
     /* sticky restored below */
 
@@ -4603,7 +4875,7 @@
     }
     #secretarialDropdown .top-bar-dd-sub:hover > .top-bar-dd-sub-toggle,
     #secretarialDropdown .top-bar-dd-sub.is-open > .top-bar-dd-sub-toggle {
-      background: #3D5CAD !important;
+      background: #1DB88A !important;
     }
     /* Keep panel open while moving into it */
     #secretarialDropdown .top-bar-dd-menu {
@@ -4876,7 +5148,7 @@
     #secretarialDropdown .top-bar-dd-sub.is-open > .top-bar-dd-sub-toggle,
     #secretarialDropdown .top-bar-dd-menu > a.top-bar-dd-item:focus,
     #secretarialDropdown .top-bar-dd-menu button.top-bar-dd-sub-toggle:hover {
-      background: #3D5CAD !important;
+      background: #1DB88A !important;
       color: #ffffff !important;
       -webkit-text-fill-color: #ffffff !important;
     }
@@ -4948,7 +5220,7 @@
     }
     #secretarialDropdown .top-bar-dd-submenu .top-bar-dd-item:hover,
     #secretarialDropdown .top-bar-dd-submenu a:hover {
-      background: #3D5CAD !important;
+      background: #1DB88A !important;
       color: #ffffff !important;
       -webkit-text-fill-color: #ffffff !important;
     }
@@ -4993,13 +5265,13 @@
       height: 48px !important;
       border-radius: 50% !important;
       border: none !important;
-      background: #3D5CAD !important;
+      background: #1DB88A !important;
       color: #fff !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
       cursor: pointer !important;
-      box-shadow: 0 8px 22px rgba(61, 92, 173,0.35) !important;
+      box-shadow: 0 8px 22px rgba(29, 184, 138,0.35) !important;
       opacity: 0 !important;
       visibility: hidden !important;
       transform: translateY(12px) !important;
@@ -5012,7 +5284,7 @@
       transform: translateY(0) !important;
     }
     .scroll-top-btn:hover {
-      background: #2E4A8A !important;
+      background: #0E8F6C !important;
     }
     @media (max-width: 640px) {
       .scroll-top-btn {
@@ -5093,12 +5365,12 @@
   
     /* Deep-link flash — visible for full 5s */
     @keyframes deepLinkFlash {
-      0%, 100% { background: #3D5CAD !important; color: #fff !important; box-shadow: 0 0 0 3px rgba(61, 92, 173,0.35); }
-      50% { background: #ffc9d2 !important; color: #3D5CAD !important; box-shadow: 0 0 0 5px rgba(61, 92, 173,0.2); }
+      0%, 100% { background: #1DB88A !important; color: #fff !important; box-shadow: 0 0 0 3px rgba(29, 184, 138,0.35); }
+      50% { background: #ffc9d2 !important; color: #1DB88A !important; box-shadow: 0 0 0 5px rgba(29, 184, 138,0.2); }
     }
     a.top-bar-dd-item.deep-link-flash {
       animation: deepLinkFlash 0.8s ease-in-out infinite !important;
-      background: #3D5CAD !important;
+      background: #1DB88A !important;
       color: #fff !important;
       border-radius: 4px !important;
       z-index: 10060 !important;
@@ -5144,17 +5416,17 @@
       inset: 0;
       border-radius: 50%;
       border: 2.5px solid transparent;
-      border-top-color: #3D5CAD;
-      border-right-color: rgba(61, 92, 173,0.35);
+      border-top-color: #1DB88A;
+      border-right-color: rgba(29, 184, 138,0.35);
       border-bottom-color: rgba(184,134,11,0.75);
-      border-left-color: rgba(61, 92, 173,0.2);
+      border-left-color: rgba(29, 184, 138,0.2);
       animation: annivSpin 6s linear infinite;
-      box-shadow: 0 0 14px rgba(61, 92, 173,0.18);
+      box-shadow: 0 0 14px rgba(29, 184, 138,0.18);
     }
     .anniv-ring--2 {
       inset: 6px;
       border-top-color: rgba(184,134,11,0.9);
-      border-right-color: #3D5CAD;
+      border-right-color: #1DB88A;
       border-bottom-color: transparent;
       border-left-color: rgba(184,134,11,0.45);
       animation-duration: 9s;
@@ -5167,10 +5439,10 @@
       height: 54px;
       border-radius: 50%;
       background: radial-gradient(circle at 35% 30%, #fff 0%, #fff8f0 45%, #ffe8ec 100%);
-      border: 1.5px solid rgba(61, 92, 173,0.28);
+      border: 1.5px solid rgba(29, 184, 138,0.28);
       box-shadow:
         inset 0 1px 2px rgba(255,255,255,0.9),
-        0 2px 10px rgba(61, 92, 173,0.14);
+        0 2px 10px rgba(29, 184, 138,0.14);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -5180,7 +5452,7 @@
     .anniv-num {
       font-size: 21px;
       font-weight: 800;
-      color: #3D5CAD;
+      color: #1DB88A;
       letter-spacing: -0.5px;
       font-family: Georgia, "Times New Roman", serif;
     }
@@ -5263,8 +5535,8 @@
       padding: 10px 22px 10px 12px !important;
       border-radius: 50px !important;
       background: linear-gradient(145deg, rgba(255,255,255,0.85), rgba(255,255,255,0.6)) !important;
-      border: 1px solid rgba(61, 92, 173,0.12) !important;
-      box-shadow: 0 4px 18px rgba(61, 92, 173,0.08) !important;
+      border: 1px solid rgba(29, 184, 138,0.12) !important;
+      box-shadow: 0 4px 18px rgba(29, 184, 138,0.08) !important;
       width: fit-content !important;
       margin-bottom: 12px !important;
       text-decoration: none !important;
@@ -5272,7 +5544,7 @@
     footer .footer-brand .logo-text strong {
       white-space: nowrap !important;
       font-size: 15px !important;
-      color: #3D5CAD !important;
+      color: #1DB88A !important;
     }
     footer .footer-brand .logo-text span {
       font-size: 12px !important;
@@ -5284,7 +5556,7 @@
       font-family: "Cormorant Garamond", "Times New Roman", serif !important;
       font-style: italic !important;
       font-weight: 700 !important;
-      color: #3D5CAD !important;
+      color: #1DB88A !important;
     }
     footer .footer-brand > p {
       display: block !important;
@@ -5575,8 +5847,8 @@
       font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif !important;
       font-style: italic !important;
       font-weight: 700 !important;
-      font-size: 12.5px !important;
-      color: #3D5CAD !important;
+      font-size: 19px !important;
+      color: #0E8F6C !important;
       letter-spacing: 0.06em !important;
       margin-top: 3px !important;
       white-space: nowrap !important;
@@ -5757,22 +6029,22 @@
       background: none; cursor: pointer; text-align: left;
       font: inherit; color: #555; font-size: 14px; line-height: 1.5;
     }
-    .vp-lang-item:hover { color: #3D5CAD; text-decoration: underline; }
+    .vp-lang-item:hover { color: #1DB88A; text-decoration: underline; }
     .vp-lang-item strong { display: none; }
     .vp-lang-grid { display: contents; }
     .vp-lang-leave {
       display: none; text-align: center; padding: 48px 12px 0;
     }
     .vp-lang-leave.is-on { display: block; }
-    .vp-lang-leave h3 { font-size: 20px; line-height: 1.35; color: #3D5CAD; }
+    .vp-lang-leave h3 { font-size: 20px; line-height: 1.35; color: #1DB88A; }
     .vp-lang-leave p { font-size: 15px; color: #444; line-height: 1.6; margin: 0 0 18px; }
     .vp-lang-actions { display: flex; gap: 10px; justify-content: center; }
     .vp-lang-btn {
       min-width: 96px; padding: 9px 16px; border-radius: 6px; cursor: pointer;
-      font-weight: 700; font-size: 13px; border: 1px solid #3D5CAD;
+      font-weight: 700; font-size: 13px; border: 1px solid #1DB88A;
     }
-    .vp-lang-btn-ok { background: #3D5CAD; color: #fff; }
-    .vp-lang-btn-cancel { background: #fff; color: #3D5CAD; }
+    .vp-lang-btn-ok { background: #1DB88A; color: #fff; }
+    .vp-lang-btn-cancel { background: #fff; color: #1DB88A; }
     @media (max-width: 700px) {
       .vp-lang-region { grid-template-columns: 1fr; }
       .vp-lang-modal { padding: 48px 20px 40px; }
@@ -5817,12 +6089,12 @@
     .vp-foot ul { list-style:none; margin:0; padding:0; }
     .vp-foot li { margin:0 0 10px; }
     .vp-foot a { color:#333; text-decoration:none; font-size:14px; }
-    .vp-foot a:hover { color:#3D5CAD; }
+    .vp-foot a:hover { color:#1DB88A; }
     .vp-foot-split { display:grid; grid-template-columns:1fr 1fr; gap:12px 28px; }
     .vp-foot-social { display:flex; gap:10px; margin:0 0 14px; }
     .vp-foot-social a { display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border:1px solid #ddd; border-radius:50%; font-size:11px; font-weight:800; }
     .vp-foot-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:36px; padding-top:20px; border-top:1px solid #eee; font-size:13px; color:#666; }
-    .vp-foot-bottom strong { color:#3D5CAD; font-size:16px; }
+    .vp-foot-bottom strong { color:#1DB88A; font-size:16px; }
     @media (max-width:800px){ .vp-foot-cols, .vp-foot-split { grid-template-columns:1fr; } }
 
     a.vp-cap-logo { display:inline-flex; align-items:center; text-decoration:none; }
@@ -6045,6 +6317,11 @@
     }
   }
 
+
+    /* Header navigation hover/active color update */
+    nav a.nav-link .nav-home-fill {
+      background: #61a5c7 !important;
+    }
 </style>
 <style>
 
@@ -6204,6 +6481,33 @@
   <meta name="twitter:description" content="The vision and leadership behind Vasudha Pharma Chem Limited">
   <meta name="twitter:image" content="https://vasudhapharma.com/assets/company-aerial.jpg">
   <link rel="canonical" href="https://vasudhapharma.com/founder-hi.html">
+
+<style id="header-right-edge-only-fix">
+/* Extend the existing header container to the RIGHT edge only. Dynamic right padding prevents sticking on wide screens. */
+@media (min-width: 961px) {
+  header .container.header-inner {
+    width: calc(100% - max(20px, (100% - 1400px) / 2)) !important;
+    max-width: none !important;
+    margin-left: max(20px, (100% - 1400px) / 2) !important;
+    margin-right: 0 !important;
+    padding-right: calc(max(32px, (100% - 1400px) / 2) + 28px) !important;
+  }
+}
+</style>
+
+<style id="header-sharp-right-edge-fix">
+/* Sharp right edge for extended header; keep left side unchanged. */
+@media (min-width: 961px) {
+  header {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+  header .container.header-inner {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+}
+</style>
   <style>
     /* Auto-hide floating scroll capsule when nearing footer to prevent collision */
     .scroll-graphics {
@@ -6216,7 +6520,7 @@
       transform: translateY(20px) !important;
     }
   </style>
-  <link rel="stylesheet" href="assets/css/heading-gradient.css">
+  <link rel="stylesheet" href="assets/css/heading-gradient.css?v=3.1">
 </head>
 <body>
 
@@ -6492,30 +6796,36 @@
         </div>
       </div>
       </div>
-      <div class="nav-item">
-        <a href="rnd-hi.html" class="nav-link" data-section="rnd"><span class="nav-home-liquid"><span class="nav-home-fill"></span><span class="nav-home-bubble nb1"></span><span class="nav-home-bubble nb2"></span><span class="nav-home-bubble nb3"></span><span class="nav-home-bubble nb4"></span><span class="nav-home-bubble nb5"></span></span><span class="nav-label">अनुसंधान</span></a>
-      <div class="mega-menu mega-menu-about">
+      <div class="nav-item" id="navItemQuality">
+        <a href="javascript:void(0)" class="nav-link" data-section="quality"><span class="nav-home-liquid"><span class="nav-home-fill"></span><span class="nav-home-bubble nb1"></span><span class="nav-home-bubble nb2"></span><span class="nav-home-bubble nb3"></span><span class="nav-home-bubble nb4"></span><span class="nav-home-bubble nb5"></span></span><span class="nav-label">गुणवत्ता</span></a>
+      <div class="mega-menu mega-menu-about mega-menu-quality">
         <div class="mega-menu-about-row">
-          <a href="rnd.html#rnd" class="mm-feature-card">
-            <img src="assets/technician-at-work-2.jpg" alt="R&amp;D centre" onerror="this.parentElement.classList.add('no-img'); this.remove();">
+          <a href="manufacturing-hi.html#quality-control" class="mm-feature-card">
+            <img src="assets/cleanroom-corridor.jpg" alt="Quality Assurance (QA)" onerror="this.parentElement.classList.add('no-img'); this.remove();">
             <span class="mm-feature-text">
-              <span class="mm-feature-title">100+ scientists</span>
-              <span class="mm-feature-sub">Dedicated R&amp;D centre since 2017</span>
+              <span class="mm-feature-title">गुणवत्ता आश्वासन (QA)</span>
+              <span class="mm-feature-sub">cGMP अनुपालन एवं वैश्विक ऑडिट</span>
             </span>
           </a>
           <div class="mega-menu-col">
-            <h5>What we work on</h5>
-            <a href="rnd.html#rnd"><span class="mm-label">Process Innovation</span><span class="mm-sub">Cost-effective, scalable routes</span></a>
-            <a href="rnd.html#rnd"><span class="mm-label">New Product Development</span><span class="mm-sub">Portfolio expansion</span></a>
-            <a href="rnd.html#rnd"><span class="mm-label">Technology Transfer</span><span class="mm-sub">Lab to plant scale-up</span></a>
+            <h5><span style="background: rgba(14, 143, 108, 0.12); color: #0E8F6C; padding: 2px 7px; border-radius: 4px; font-weight: 800; font-size: 11px; margin-right: 5px;">QA</span> गुणवत्ता आश्वासन</h5>
+            <a href="manufacturing-hi.html#quality-control"><span class="mm-label">गुणवत्ता आश्वासन (QA)</span><span class="mm-sub">cGMP अनुपालन एवं बैच रिलीज</span></a>
+            <a href="manufacturing-hi.html#quality-control"><span class="mm-label">वैश्विक मान्यताएँ</span><span class="mm-sub">USFDA, EDQM, WHO-GMP, PMDA</span></a>
+            <a href="manufacturing-hi.html#quality-control"><span class="mm-label">ऑडिट तत्परता</span><span class="mm-sub">100% ऑडिट ट्रैक रिकॉर्ड</span></a>
           </div>
-          <a href="rnd.html#rnd" class="mm-feature-card">
-            <img src="assets/equipment-fluidbed-coater.jpg" alt="Process development" onerror="this.parentElement.classList.add('no-img'); this.remove();">
+          <a href="manufacturing-hi.html#quality-control" class="mm-feature-card">
+            <img src="assets/technician-at-work-1.jpg" alt="Quality Control (QC)" onerror="this.parentElement.classList.add('no-img'); this.remove();">
             <span class="mm-feature-text">
-              <span class="mm-feature-title">Lab to commercial scale</span>
-              <span class="mm-feature-sub">Technology transfer</span>
+              <span class="mm-feature-title">गुणवत्ता नियंत्रण (QC)</span>
+              <span class="mm-feature-sub">24/7 विश्लेषणात्मक प्रयोगशालाएं</span>
             </span>
           </a>
+          <div class="mega-menu-col">
+            <h5><span style="background: rgba(14, 143, 108, 0.12); color: #0E8F6C; padding: 2px 7px; border-radius: 4px; font-weight: 800; font-size: 11px; margin-right: 5px;">QC</span> गुणवत्ता नियंत्रण</h5>
+            <a href="manufacturing-hi.html#quality-control"><span class="mm-label">गुणवत्ता नियंत्रण (QC)</span><span class="mm-sub">इन-प्रोसेस एवं तैयार एपीआई रिलीज</span></a>
+            <a href="manufacturing-hi.html#quality-control"><span class="mm-label">उपकरण एवं परीक्षण</span><span class="mm-sub">HPLC, GC-MS, XRD एवं स्पेक्ट्रोस्कोपी</span></a>
+            <a href="manufacturing-hi.html#quality-control"><span class="mm-label">स्थिरता अध्ययन</span><span class="mm-sub">ICH जलवायु क्षेत्र स्थिरता परीक्षण</span></a>
+          </div>
         </div>
       </div>
       </div>
@@ -6547,6 +6857,33 @@
             <a href="ehs.html#ehs"><span class="mm-label">ISO 14001</span><span class="mm-sub">Environment management</span></a>
             <a href="ehs.html#ehs"><span class="mm-label">OHSAS 18001</span><span class="mm-sub">Occupational safety</span></a>
           </div>
+        </div>
+      </div>
+      </div>
+      <div class="nav-item">
+        <a href="rnd-hi.html" class="nav-link" data-section="rnd"><span class="nav-home-liquid"><span class="nav-home-fill"></span><span class="nav-home-bubble nb1"></span><span class="nav-home-bubble nb2"></span><span class="nav-home-bubble nb3"></span><span class="nav-home-bubble nb4"></span><span class="nav-home-bubble nb5"></span></span><span class="nav-label">अनुसंधान</span></a>
+      <div class="mega-menu mega-menu-about">
+        <div class="mega-menu-about-row">
+          <a href="rnd.html#rnd" class="mm-feature-card">
+            <img src="assets/technician-at-work-2.jpg" alt="R&amp;D centre" onerror="this.parentElement.classList.add('no-img'); this.remove();">
+            <span class="mm-feature-text">
+              <span class="mm-feature-title">100+ scientists</span>
+              <span class="mm-feature-sub">Dedicated R&amp;D centre since 2017</span>
+            </span>
+          </a>
+          <div class="mega-menu-col">
+            <h5>What we work on</h5>
+            <a href="rnd.html#rnd"><span class="mm-label">Process Innovation</span><span class="mm-sub">Cost-effective, scalable routes</span></a>
+            <a href="rnd.html#rnd"><span class="mm-label">New Product Development</span><span class="mm-sub">Portfolio expansion</span></a>
+            <a href="rnd.html#rnd"><span class="mm-label">Technology Transfer</span><span class="mm-sub">Lab to plant scale-up</span></a>
+          </div>
+          <a href="rnd.html#rnd" class="mm-feature-card">
+            <img src="assets/equipment-fluidbed-coater.jpg" alt="Process development" onerror="this.parentElement.classList.add('no-img'); this.remove();">
+            <span class="mm-feature-text">
+              <span class="mm-feature-title">Lab to commercial scale</span>
+              <span class="mm-feature-sub">Technology transfer</span>
+            </span>
+          </a>
         </div>
       </div>
       </div>
@@ -6630,7 +6967,7 @@
     <div class="container">
       <div class="section-eyebrow" style="color: var(--primary-red); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px;">Social Responsibility</div>
       <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 16px; flex-wrap: wrap;">
-        <img src="assets/foundation-building-full-bleed.jpg" alt="Vasudha Foundation" style="width: clamp(72px, 10vw, 100px); height: auto; object-fit: contain; flex-shrink: 0;">
+        <img src="assets/vasudha-foundation-logo.jpg" alt="Vasudha Foundation" style="width: clamp(72px, 10vw, 100px); height: auto; object-fit: contain; flex-shrink: 0;">
         <h2 style="font-size: clamp(26px, 3.5vw, 34px); font-weight: 700; color: var(--dark); margin: 0;">Vasudha Foundation</h2>
       </div>
       <div class="foundation-reg">
@@ -6666,7 +7003,7 @@
       </div>
 
       <div class="vf-marquee" aria-label="Vasudha Foundation programs">
-        <div class="vf-track">
+        <div class="vf-track" id="vfTrackVasudha">
           <div class="vf-shot"><img src="assets/foundation/vf-01.png" alt="Vasudha Foundation program" loading="lazy"></div>
           <div class="vf-shot"><img src="assets/foundation/vf-02.png" alt="Vasudha Foundation program" loading="lazy"></div>
           <div class="vf-shot"><img src="assets/foundation/vf-03.png" alt="Vasudha Foundation program" loading="lazy"></div>
@@ -6723,7 +7060,7 @@
       <p style="margin: 0 0 16px; font-size: 16px; line-height: 1.7; color: var(--medium-gray);">The foundation is poised to take on programs on a grand scale and will spearhead many of the charitable initiatives of the Vasudha Group, underscoring its commitment to driving impactful change in education, healthcare and community development.</p>
 
       <div class="vf-marquee" aria-label="VRRV Family Vasudha Foundation events">
-        <div class="vf-track">
+        <div class="vf-track" id="vfTrackVrrv">
           <div class="vf-shot"><img src="assets/foundation/vrrv-01.png" alt="VRRV Family Vasudha Foundation event" loading="lazy"></div>
           <div class="vf-shot"><img src="assets/foundation/vrrv-02.png" alt="VRRV Family Vasudha Foundation event" loading="lazy"></div>
           <div class="vf-shot"><img src="assets/foundation/vrrv-03.png" alt="VRRV Family Vasudha Foundation event" loading="lazy"></div>
@@ -6858,7 +7195,7 @@
       <h2 class="founder-gallery-title">Moments from the Foundation</h2>
       <p class="founder-gallery-sub">Service, recognition and care — the people and programmes behind Vasudha Foundation.</p>
       <div class="founder-gallery" id="founderGallery">
-        <div class="fg-track">
+        <div class="fg-track" id="fgTrackMoments">
 <div class="fg-slide is-active"><img src="assets/founder-gallery/slide-1.jpg" alt="Vasudha Foundation community programme"></div>
           <div class="fg-slide"><img src="assets/founder-gallery/slide-2.jpg" alt="Foundation award ceremony"></div>
           <div class="fg-slide"><img src="assets/founder-gallery/slide-3.jpg" alt="Service to the communities award"></div>
@@ -8354,6 +8691,115 @@
     window.addEventListener('resize', checkFooterOverlap, { passive: true });
     document.addEventListener('DOMContentLoaded', checkFooterOverlap);
   })();
+</script>
+
+<!-- Dynamic Foundation Streams & Moments Gallery Loader -->
+<script>
+(function() {
+  function initSlider() {
+    var gallery = document.getElementById('founderGallery');
+    if (!gallery) return;
+    var slides = gallery.querySelectorAll('.fg-slide');
+    var dots = gallery.querySelectorAll('.fg-dot');
+    var prevBtn = gallery.querySelector('.fg-prev');
+    var nextBtn = gallery.querySelector('.fg-next');
+    if (!slides.length) return;
+
+    var current = 0;
+    var timer = null;
+
+    function show(index) {
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+      current = index;
+      slides.forEach(function(s, i) {
+        if (i === current) s.classList.add('is-active');
+        else s.classList.remove('is-active');
+      });
+      dots.forEach(function(d, i) {
+        if (i === current) d.classList.add('is-active');
+        else d.classList.remove('is-active');
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.onclick = function() { show(current - 1); resetTimer(); };
+    }
+    if (nextBtn) {
+      nextBtn.onclick = function() { show(current + 1); resetTimer(); };
+    }
+    dots.forEach(function(dot, i) {
+      dot.onclick = function() { show(i); resetTimer(); };
+    });
+
+    function nextSlide() { show(current + 1); }
+    function startTimer() { if (!timer) timer = setInterval(nextSlide, 5000); }
+    function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
+    function resetTimer() { stopTimer(); startTimer(); }
+
+    gallery.addEventListener('mouseenter', stopTimer);
+    gallery.addEventListener('mouseleave', startTimer);
+    startTimer();
+  }
+
+  function loadGalleries() {
+    fetch('foundation-galleries.json?v=' + Date.now())
+      .then(function(res) { return res.ok ? res.json() : null; })
+      .then(function(data) {
+        if (!data) { initSlider(); return; }
+
+        // 1. Vasudha Foundation Stream
+        var trackVasudha = document.getElementById('vfTrackVasudha') || document.querySelector('.vf-marquee[aria-label*="Vasudha Foundation"] .vf-track');
+        if (trackVasudha && Array.isArray(data.vasudha) && data.vasudha.length > 0) {
+          var original = data.vasudha.map(function(src) {
+            return '<div class="vf-shot"><img src="' + src + '" alt="Vasudha Foundation program" loading="lazy"></div>';
+          }).join('');
+          var duplicate = data.vasudha.map(function(src) {
+            return '<div class="vf-shot"><img src="' + src + '" alt="" loading="lazy" aria-hidden="true"></div>';
+          }).join('');
+          trackVasudha.innerHTML = original + duplicate;
+          trackVasudha.style.animationDuration = Math.max(30, data.vasudha.length * 2.5) + 's';
+        }
+
+        // 2. VRRV Family Foundation Stream
+        var trackVrrv = document.getElementById('vfTrackVrrv') || document.querySelector('.vf-marquee[aria-label*="VRRV"] .vf-track');
+        if (trackVrrv && Array.isArray(data.vrrv) && data.vrrv.length > 0) {
+          var originalVrrv = data.vrrv.map(function(src) {
+            return '<div class="vf-shot"><img src="' + src + '" alt="VRRV Family Vasudha Foundation event" loading="lazy"></div>';
+          }).join('');
+          var duplicateVrrv = data.vrrv.map(function(src) {
+            return '<div class="vf-shot"><img src="' + src + '" alt="" loading="lazy" aria-hidden="true"></div>';
+          }).join('');
+          trackVrrv.innerHTML = originalVrrv + duplicateVrrv;
+          trackVrrv.style.animationDuration = Math.max(30, data.vrrv.length * 2.5) + 's';
+        }
+
+        // 3. Moments from the Foundation Gallery
+        var trackMoments = document.getElementById('fgTrackMoments') || document.querySelector('#founderGallery .fg-track');
+        var dotsWrap = document.querySelector('#founderGallery .fg-dots');
+        if (trackMoments && Array.isArray(data.moments) && data.moments.length > 0) {
+          trackMoments.innerHTML = data.moments.map(function(src, i) {
+            return '<div class="fg-slide' + (i === 0 ? ' is-active' : '') + '"><img src="' + src + '" alt="Vasudha Foundation moment ' + (i+1) + '"></div>';
+          }).join('');
+          if (dotsWrap) {
+            dotsWrap.innerHTML = data.moments.map(function(_, i) {
+              return '<button type="button" class="fg-dot' + (i === 0 ? ' is-active' : '') + '" aria-label="Slide ' + (i+1) + '"></button>';
+            }).join('');
+          }
+        }
+        initSlider();
+      })
+      .catch(function() {
+        initSlider();
+      });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadGalleries);
+  } else {
+    loadGalleries();
+  }
+})();
 </script>
 
 </body>
