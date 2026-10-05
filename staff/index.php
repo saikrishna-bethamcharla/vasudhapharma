@@ -209,16 +209,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       color: var(--sp-primary);
     }
   </style>
+  <link rel="stylesheet" href="../assets/css/vasudha-capsule-logo.css">
 </head>
 <body>
   <div class="box">
-    <div class="brand-header">
-      <div class="brand-logo-hex">
-        <img src="../assets/vasudha-logo.jpg" alt="Vasudha Pharma">
-      </div>
-      <h1>Vasudha Operations Portal</h1>
-      <div class="brand-sub">Contributing to affordable health care... &bull; Since 1994</div>
-      <p class="lead">Internal management &amp; department operations gateway.</p>
+    <div class="brand-header" style="text-align: center; margin-bottom: 20px;">
+      <a href="../home.html" class="logo" style="margin: 0 auto 16px; display: inline-flex;">
+        <div class="logo-flow-bubbles" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="logo-hex-wrap">
+          <div class="logo-hex-body">
+            <img src="../assets/vasudha-logo.jpg" alt="Vasudha Pharma Chem Limited" class="logo-img">
+          </div>
+        </div>
+        <div class="logo-text">
+          <strong>VASUDHA PHARMA CHEM LIMITED</strong>
+          <span>Contributing to affordable health care... &bull; <em>Since 1994</em></span>
+        </div>
+      </a>
+      <h1 style="font-size: 20px; font-weight: 800; color: #0F172A; margin: 0 0 6px;">Vasudha Operations Portal</h1>
+      <p class="lead" style="margin: 0 0 16px;">Internal management &amp; department operations gateway.</p>
     </div>
 
     <?php if ($err): ?>

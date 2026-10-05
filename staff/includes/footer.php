@@ -1,11 +1,20 @@
 </div><!-- /.wrap -->
-<footer style="border-top: 1px solid var(--sp-border); padding: 20px 24px; text-align: center; color: var(--sp-text-muted); font-size: 12.5px; background: #FFFFFF; margin-top: 40px;">
-  <div style="max-width: 1180px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-    <div>
-      <strong>Vasudha Pharma Chem Limited</strong> &bull; Internal Operations Portal
-    </div>
-    <div style="color: #94A3B8;">
-      Confidential &amp; Proprietary &bull; Session Active
+<footer style="border-top: 1px solid var(--sp-border); padding: 20px 24px; color: var(--sp-text-muted); font-size: 12.5px; background: #FFFFFF; margin-top: 40px;">
+  <div style="max-width: 1180px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+    <a href="home.php" class="logo" style="transform: scale(0.9); transform-origin: left center;">
+      <div class="logo-hex-wrap" style="width:40px; height:40px;">
+        <div class="logo-hex-body">
+          <img src="../assets/vasudha-logo.jpg" alt="Vasudha Pharma Chem Limited" class="logo-img">
+        </div>
+      </div>
+      <div class="logo-text">
+        <strong style="font-size:13.5px;">VASUDHA PHARMA CHEM LIMITED</strong>
+        <span style="font-size:10.5px;">Contributing to affordable health care...</span>
+      </div>
+    </a>
+    <div style="color: #94A3B8; text-align: right; font-size: 12px;">
+      <div>&copy; 2026 Vasudha Pharma Chem Limited &bull; Operations Portal</div>
+      <div style="font-size: 11px; margin-top: 2px;">Confidential &amp; Proprietary &bull; Internal Desk Active</div>
     </div>
   </div>
 </footer>

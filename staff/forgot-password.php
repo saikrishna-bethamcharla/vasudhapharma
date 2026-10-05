@@ -347,15 +347,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       box-shadow: 0 4px 14px rgba(16, 185, 129, 0.2);
     }
   </style>
+  <link rel="stylesheet" href="../assets/css/vasudha-capsule-logo.css">
 </head>
 <body>
   <div class="box">
-    <div class="brand-header">
-      <div class="brand-logo-hex">
-        <img src="../assets/vasudha-logo.jpg" alt="Vasudha Pharma">
-      </div>
-      <h1>Vasudha Operations Portal</h1>
-      <div class="brand-sub">Security &amp; Account Recovery</div>
+    <div class="brand-header" style="text-align: center; margin-bottom: 20px;">
+      <a href="../home.html" class="logo" style="margin: 0 auto 16px; display: inline-flex;">
+        <div class="logo-flow-bubbles" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="logo-hex-wrap">
+          <div class="logo-hex-body">
+            <img src="../assets/vasudha-logo.jpg" alt="Vasudha Pharma Chem Limited" class="logo-img">
+          </div>
+        </div>
+        <div class="logo-text">
+          <strong>VASUDHA PHARMA CHEM LIMITED</strong>
+          <span>Contributing to affordable health care... &bull; <em>Since 1994</em></span>
+        </div>
+      </a>
+      <h1 style="font-size: 20px; font-weight: 800; color: #0F172A; margin: 0 0 6px;">Vasudha Operations Portal</h1>
+      <div class="brand-sub" style="font-size: 13px; color: var(--sp-text-muted);">Security &amp; Account Recovery</div>
     </div>
 
     <?php if ($err): ?>
