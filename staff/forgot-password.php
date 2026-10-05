@@ -364,7 +364,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <div class="logo-text">
           <strong>VASUDHA PHARMA CHEM LIMITED</strong>
-          <span>Contributing to affordable health care... &bull; <em>Since 1994</em></span>
+          <span>Contributing to affordable health care...</span>
         </div>
       </a>
       <h1 style="font-size: 20px; font-weight: 800; color: #0F172A; margin: 0 0 6px;">Vasudha Operations Portal</h1>

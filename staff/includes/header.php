@@ -429,22 +429,20 @@ $desks = staff_desks();
 <body>
 <div class="staff-shimmer-bar"></div>
 <header class="staff-top">
-  <a href="home.php" class="logo">
-    <div class="logo-flow-bubbles" aria-hidden="true">
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-    </div>
-    <div class="logo-hex-wrap">
-      <div class="logo-hex-body">
-        <img src="../assets/vasudha-logo.jpg" alt="Vasudha Pharma Chem Limited" class="logo-img">
+  <div style="display:flex; align-items:center; flex-wrap:wrap; gap:12px;">
+    <a href="home.php" class="logo">
+      <div class="logo-hex-wrap">
+        <div class="logo-hex-body">
+          <img src="../assets/vasudha-logo.jpg" alt="Vasudha Pharma Chem Limited" class="logo-img">
+        </div>
       </div>
-    </div>
-    <div class="logo-text">
-      <strong>VASUDHA PHARMA CHEM LIMITED</strong>
-      <span>Contributing to affordable health care... &bull; <em>Since 1994</em></span>
-    </div>
+      <div class="logo-text">
+        <strong>VASUDHA PHARMA CHEM LIMITED</strong>
+        <span>Contributing to affordable health care...</span>
+      </div>
+    </a>
     <span class="logo-badge">Operations Portal</span>
-  </a>
+  </div>
   <div class="staff-user-meta">
     <a href="../careers.html" target="_blank" rel="noopener" class="staff-site-link" title="Open public Careers page in a new tab">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
