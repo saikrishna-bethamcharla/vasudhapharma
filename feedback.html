@@ -1064,29 +1064,16 @@
             </ul>
           </div>
 
-          <div class="sidebar-block">
-            <h3>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-              Testing Console Stats
+          <div class="sidebar-block" style="background:#F8FAFC; border-color:#E2E8F0;">
+            <h3 style="font-size:14px; color:#1E293B;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Operations Review Process
             </h3>
-            <div class="stat-counter">
-              <div class="stat-pill">
-                <div class="stat-num" id="statTotal">0</div>
-                <div class="stat-label">Total Notes</div>
-              </div>
-              <div class="stat-pill">
-                <div class="stat-num" id="statCritical" style="color:var(--danger)">0</div>
-                <div class="stat-label">Critical</div>
-              </div>
-              <div class="stat-pill">
-                <div class="stat-num" id="statScreenshots" style="color:var(--success)">0</div>
-                <div class="stat-label">With Images</div>
-              </div>
-            </div>
-            <div style="margin-top:16px;">
-              <button type="button" class="btn btn-secondary btn-sm" style="width:100%;" id="btnExportCSV">
-                📥 Export Recorded Feedback (CSV)
-              </button>
+            <p style="font-size:12.5px; color:#64748B; margin-bottom:10px; line-height:1.5;">
+              Every ticket is recorded securely on the central Operations Desk and queued for review by the quality assurance and development teams.
+            </p>
+            <div style="font-size:12px; color:#0E8F6C; font-weight:700; background:#ECFDF5; padding:8px 12px; border-radius:6px; border:1px solid #A7F3D0;">
+              🔒 Encrypted Server Storage &bull; Immediate Dev Dispatch
             </div>
           </div>
 
@@ -1110,19 +1097,22 @@
       <section class="history-card" id="historySection">
         <div class="history-header">
           <div>
-            <h2 class="history-title">Submitted Review Notes (Recorded on this Device)</h2>
+            <h2 class="history-title">Recent Feedback Submissions</h2>
             <div style="font-size:13px; color:#64748B; margin-top:2px;">
-              These tickets are stored in your browser session for review and can be exported at any time.
+              Your submissions are safely recorded on the secure review desk.
             </div>
           </div>
           <div class="history-actions">
-            <button type="button" class="btn btn-secondary btn-sm" id="btnExportJSON">JSON Export</button>
-            <button type="button" class="btn btn-secondary btn-sm" id="btnClearHistory" style="color:var(--danger);">Clear All</button>
+            <span style="font-size:12px; font-weight:600; color:#0E8F6C; background:#ECFDF5; padding:4px 10px; border-radius:6px; border:1px solid #A7F3D0;">Live Sync Enabled</span>
           </div>
         </div>
 
         <div id="feedbackListContainer">
           <!-- Dynamically populated -->
+        </div>
+
+        <div style="text-align:center; margin-top:24px; padding-top:16px; border-top:1px dashed #E2E8F0; font-size:12.5px; color:#64748B;">
+          Staff or Administrator? <a href="staff/feedback.php" style="color:var(--primary-blue); font-weight:700; text-decoration:underline;">Sign in to Operations Feedback Desk &rarr;</a>
         </div>
       </section>
 
@@ -1395,10 +1385,10 @@
     function renderHistory() {
       const items = getStoredFeedback();
 
-      // Update stats
-      statTotal.textContent = items.length;
-      statCritical.textContent = items.filter(i => i.priority === 'Critical').length;
-      statScreenshots.textContent = items.filter(i => i.screenshot).length;
+      // Update stats if elements exist
+      if (statTotal) statTotal.textContent = items.length;
+      if (statCritical) statCritical.textContent = items.filter(i => i.priority === 'Critical').length;
+      if (statScreenshots) statScreenshots.textContent = items.filter(i => i.screenshot).length;
 
       if (items.length === 0) {
         feedbackListContainer.innerHTML = `
@@ -1462,34 +1452,12 @@
 
             ${devNoteBlock}
 
-            <!-- Developer Action Bar -->
-            <div style="margin-top:10px; padding-top:8px; border-top:1px dashed #E2E8F0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; background:#F8FAFC; padding:8px 12px; border-radius:6px;">
-              <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                <span style="font-size:12px; font-weight:700; color:#334155;">👨‍💻 Dev Status:</span>
-                <select style="padding:4px 8px; font-size:12px; border-radius:6px; border:1px solid #CBD5E1; font-weight:600; background:#fff; cursor:pointer;" onchange="changeTicketStatus('${item.id}', this.value)">
-                  <option value="Open" ${itemStatus === 'Open' ? 'selected' : ''}>🟡 Open</option>
-                  <option value="In Progress" ${itemStatus === 'In Progress' ? 'selected' : ''}>🔵 In Progress</option>
-                  <option value="Resolved" ${itemStatus === 'Resolved' ? 'selected' : ''}>🟢 Resolved</option>
-                  <option value="Closed" ${itemStatus === 'Closed' ? 'selected' : ''}>⚪ Closed</option>
-                </select>
-                <button type="button" class="btn btn-secondary btn-sm" onclick="promptDevNote('${item.id}')" style="font-size:11.5px; padding:4px 9px;">
-                  ${item.devNote ? '✏️ Edit Dev Note' : '💬 Add Resolution Note'}
-                </button>
+            <div class="fb-meta" style="margin-top:12px;">
+              <div>
+                👤 <strong>${escapeHtml(item.reviewerName)}</strong> (${escapeHtml(item.reviewerDept)}) &bull; 📅 ${item.date}
               </div>
               <div>
-                <a href="mailto:wisdom@vasudhapharma.com,saikrishna@zailabs.co.in?subject=Status%20Update%20for%20${encodeURIComponent(item.id)}&amp;body=Status%20for%20${encodeURIComponent(item.id)}%20is%20now%20${encodeURIComponent(itemStatus)}.%0A%0ANotes:%20${encodeURIComponent(item.devNote || '')}" class="btn btn-secondary btn-sm" style="font-size:11.5px; padding:4px 9px;" title="Email status update to team">
-                  ✉️ Email Update
-                </a>
-              </div>
-            </div>
-
-            <div class="fb-meta" style="margin-top:10px;">
-              <div>
-                👤 <strong>${escapeHtml(item.reviewerName)}</strong> (${escapeHtml(item.reviewerDept)}) · 📅 ${item.date}
-              </div>
-              <div style="display:flex; align-items:center; gap:14px;">
                 ${screenshotPreview}
-                <a href="javascript:void(0)" onclick="deleteFeedback(${index})" style="color:#EF4444; font-size:11.5px; font-weight:600;">Delete</a>
               </div>
             </div>
           </div>
@@ -1498,60 +1466,6 @@
 
       feedbackListContainer.innerHTML = html;
     }
-
-    // Update ticket status
-    function changeTicketStatus(ticketId, newStatus) {
-      const items = getStoredFeedback();
-      const item = items.find(i => i.id === ticketId);
-      if (item) {
-        item.status = newStatus;
-        const now = new Date();
-        item.statusUpdatedAt = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-        saveFeedback(items);
-        renderHistory();
-        showToast(`Status for ${ticketId} updated to ${newStatus}`);
-      }
-    }
-
-    // Add / Edit resolution note
-    function promptDevNote(ticketId) {
-      const items = getStoredFeedback();
-      const item = items.find(i => i.id === ticketId);
-      if (!item) return;
-      const currentNote = item.devNote || '';
-      const note = prompt(`Enter resolution note or update for ${ticketId}:`, currentNote);
-      if (note !== null) {
-        item.devNote = note.trim();
-        const now = new Date();
-        item.statusUpdatedAt = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-        if (!item.status || item.status === 'Open') {
-          item.status = 'Resolved';
-        }
-        saveFeedback(items);
-        renderHistory();
-        showToast(`Resolution note saved for ${ticketId}!`);
-      }
-    }
-
-    function deleteFeedback(index) {
-      if (!confirm('Remove this feedback record?')) return;
-      const items = getStoredFeedback();
-      items.splice(index, 1);
-      saveFeedback(items);
-      renderHistory();
-      showToast('Feedback item removed.');
-    }
-
-    // Clear All
-    document.getElementById('btnClearHistory').addEventListener('click', () => {
-      const items = getStoredFeedback();
-      if (items.length === 0) return;
-      if (confirm('Clear all recorded feedback items on this browser? Make sure you have exported your CSV/JSON report first.')) {
-        localStorage.removeItem(STORAGE_KEY);
-        renderHistory();
-        showToast('All feedback records cleared.');
-      }
-    });
 
     // Lightbox Controls
     function openLightbox(sourceOrId, customTitle) {
@@ -1627,7 +1541,8 @@
       a.click();
       URL.revokeObjectURL(url);
     }
-    document.getElementById('btnExportCSV').addEventListener('click', exportToCSV);
+    const btnCsv = document.getElementById('btnExportCSV');
+    if (btnCsv) btnCsv.addEventListener('click', exportToCSV);
 
     // Export JSON
     function exportToJSON() {
@@ -1645,7 +1560,8 @@
       a.click();
       URL.revokeObjectURL(url);
     }
-    document.getElementById('btnExportJSON').addEventListener('click', exportToJSON);
+    const btnJson = document.getElementById('btnExportJSON');
+    if (btnJson) btnJson.addEventListener('click', exportToJSON);
 
     // Helper: Toast
     function showToast(msg) {

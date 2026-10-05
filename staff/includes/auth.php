@@ -37,10 +37,11 @@ function staff_require_login() {
 }
 function staff_desks() {
   return [
-    'marketing' => ['label' => 'Marketing & Products', 'file' => 'marketing.php', 'icon' => 'tag'],
-    'careers' => ['label' => 'Careers / HR', 'file' => 'jobs.php', 'icon' => 'briefcase'],
+    'marketing'  => ['label' => 'Marketing & Products', 'file' => 'marketing.php', 'icon' => 'tag'],
+    'careers'    => ['label' => 'Careers / HR', 'file' => 'jobs.php', 'icon' => 'briefcase'],
     'foundation' => ['label' => 'Foundation', 'file' => 'foundation.php', 'icon' => 'heart'],
-    'news' => ['label' => 'News & Events', 'file' => 'news.php', 'icon' => 'newspaper'],
+    'news'       => ['label' => 'News & Events', 'file' => 'news.php', 'icon' => 'newspaper'],
+    'feedback'   => ['label' => 'Feedback Desk', 'file' => 'feedback.php', 'icon' => 'inbox'],
   ];
 }
 function staff_can($desk, $u = null) {
@@ -453,13 +454,29 @@ function staff_portal_stats() {
 
   $users = staff_users();
 
+  $fbFile = staff_root() . '/data/feedback.json';
+  $fbTotal = 0;
+  $fbOpen = 0;
+  if (is_file($fbFile)) {
+    $fb = json_decode(file_get_contents($fbFile), true);
+    if (is_array($fb)) {
+      $fbTotal = count($fb);
+      foreach ($fb as $item) {
+        $st = $item['status'] ?? 'Open';
+        if ($st === 'Open' || $st === 'In Progress') $fbOpen++;
+      }
+    }
+  }
+
   return [
-    'jobs_total' => count($jobs),
-    'jobs_open' => $openJobs,
-    'jobs_closed' => $closedJobs,
-    'events_total' => $eventsCount,
-    'news_total' => $newsCount,
-    'gallery_total' => $galCount,
-    'users_total' => count($users),
+    'jobs_total'     => count($jobs),
+    'jobs_open'      => $openJobs,
+    'jobs_closed'    => $closedJobs,
+    'events_total'   => $eventsCount,
+    'news_total'     => $newsCount,
+    'gallery_total'  => $galCount,
+    'users_total'    => count($users),
+    'feedback_total' => $fbTotal,
+    'feedback_open'  => $fbOpen,
   ];
 }
