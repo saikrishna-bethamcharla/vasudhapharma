@@ -1308,14 +1308,26 @@
       existing.unshift(newTicket);
       saveFeedback(existing);
 
-      // Post to server-side feedback.php to record in staff/data/feedback.json & send email
+      // Post to server-side feedback.php to record in staff/data/feedback.json & send email to both admins
       try {
+        const serverPayload = {
+          id: newTicket.id,
+          date: newTicket.date,
+          timestamp: newTicket.timestamp,
+          reviewerName: newTicket.reviewerName,
+          reviewerDept: newTicket.reviewerDept,
+          targetPage: newTicket.targetPage,
+          category: newTicket.category,
+          priority: newTicket.priority,
+          message: newTicket.message,
+          screenshotMeta: newTicket.screenshotMeta
+        };
         fetch("feedback.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(newTicket)
+          body: JSON.stringify(serverPayload)
         }).then(r => r.json())
-          .then(d => console.log('Feedback saved on server:', d))
+          .then(d => console.log('Feedback saved & email dispatched:', d))
           .catch(err => console.warn('Server feedback note:', err));
       } catch(e) {}
 
