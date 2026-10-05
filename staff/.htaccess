@@ -1,3 +1,6 @@
+# Prioritize PHP application entrypoint
+DirectoryIndex index.php index.html
+
 # Disallow directory browsing and prevent search engine bots from indexing internal intranet files
 Options -Indexes
 
