@@ -136,6 +136,260 @@ function staff_update_profile($email, $name, $currentPassword, $newPassword = ''
   return ['ok' => false, 'error' => 'User account could not be found.'];
 }
 
+/* Password Reset & OTP Helpers */
+function staff_password_resets_file() {
+  return staff_root() . '/data/password_resets.json';
+}
+
+function staff_load_password_resets() {
+  $f = staff_password_resets_file();
+  if (!is_file($f)) return [];
+  $j = json_decode(file_get_contents($f), true);
+  if (!is_array($j)) return [];
+  $now = time();
+  $valid = [];
+  foreach ($j as $item) {
+    if (!empty($item['expires_at']) && $item['expires_at'] > $now) {
+      $valid[] = $item;
+    }
+  }
+  return $valid;
+}
+
+function staff_save_password_resets($list) {
+  return file_put_contents(staff_password_resets_file(), json_encode(array_values($list), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)) !== false;
+}
+
+function staff_find_user($identifier, $dept = '') {
+  $id = strtolower(trim($identifier));
+  if (!$id) return null;
+  $users = staff_users();
+  // 1. Exact alias match (unique per department)
+  foreach ($users as $u) {
+    if (!empty($u['alias']) && strtolower($u['alias']) === $id) {
+      return $u;
+    }
+  }
+  // 2. Email + Dept match
+  if ($dept) {
+    foreach ($users as $u) {
+      if (strtolower($u['email']) === $id && ($u['dept'] ?? '') === $dept) {
+        return $u;
+      }
+    }
+  }
+  // 3. Fallback: match by email
+  foreach ($users as $u) {
+    if (strtolower($u['email']) === $id) {
+      return $u;
+    }
+  }
+  return null;
+}
+
+function staff_send_reset_otp($identifier, $dept = '') {
+  $user = staff_find_user($identifier, $dept);
+  if (!$user) {
+    return ['ok' => false, 'error' => 'No active staff account found matching that email or department.'];
+  }
+
+  $resets = staff_load_password_resets();
+  $userKey = strtolower($user['alias'] ?: ($user['email'] . ':' . ($user['dept'] ?? 'admin')));
+
+  // Rate limiting: 45 seconds between requests
+  foreach ($resets as $r) {
+    if (($r['user_key'] ?? '') === $userKey && (time() - ($r['created_at'] ?? 0)) < 45) {
+      $wait = 45 - (time() - $r['created_at']);
+      return ['ok' => false, 'error' => "A code was recently sent. Please wait {$wait}s before requesting a new one."];
+    }
+  }
+
+  // Purge any prior code for this user
+  $resets = array_filter($resets, function($r) use ($userKey) {
+    return ($r['user_key'] ?? '') !== $userKey;
+  });
+
+  $otp = sprintf("%06d", mt_rand(100000, 999999));
+  $now = time();
+  $expiresAt = $now + 900; // 15 mins
+
+  $record = [
+    'user_key'   => $userKey,
+    'email'      => $user['email'],
+    'alias'      => $user['alias'] ?? '',
+    'name'       => $user['name'],
+    'dept'       => $user['dept'] ?? '',
+    'otp'        => $otp,
+    'otp_hash'   => password_hash($otp, PASSWORD_DEFAULT),
+    'attempts'   => 0,
+    'created_at' => $now,
+    'expires_at' => $expiresAt,
+  ];
+
+  $resets[] = $record;
+  staff_save_password_resets($resets);
+
+  // Send HTML Email via PHP mail()
+  $to = $user['email'];
+  $subject = 'Vasudha Operations Portal - Password Reset Code [' . $otp . ']';
+
+  $htmlBody = '<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #f4fbf7; margin: 0; padding: 24px; color: #0f172a; }
+    .card { max-width: 520px; margin: 0 auto; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; padding: 32px 28px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .header { text-align: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px; margin-bottom: 24px; }
+    .logo { font-size: 19px; font-weight: 800; color: #096b51; letter-spacing: 0.5px; text-transform: uppercase; }
+    .sub { font-size: 12px; color: #0e8f6c; margin-top: 4px; font-style: italic; }
+    .code-box { background: #ecfdf5; border: 1.5px dashed #0e8f6c; border-radius: 10px; padding: 20px; text-align: center; margin: 24px 0; }
+    .otp-code { font-size: 36px; font-weight: 800; color: #096b51; letter-spacing: 8px; font-family: monospace; }
+    .expiry { font-size: 12px; color: #047857; margin-top: 8px; font-weight: 600; }
+    .footer { margin-top: 28px; padding-top: 20px; border-top: 1px solid #e2e8f0; font-size: 11.5px; color: #64748b; line-height: 1.5; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <div class="logo">Vasudha Operations Portal</div>
+      <div class="sub">Vasudha Pharma Chem Limited &bull; Hyderabad, India</div>
+    </div>
+    <h2 style="font-size: 18px; margin: 0 0 12px; color: #0f172a;">Password Reset Verification</h2>
+    <p style="font-size: 14px; line-height: 1.5; color: #334155; margin: 0 0 16px;">
+      Hello <strong>' . htmlspecialchars($user['name']) . '</strong>,
+    </p>
+    <p style="font-size: 13.5px; line-height: 1.5; color: #475569; margin: 0 0 16px;">
+      A request was received to reset the password for your <strong>' . htmlspecialchars(ucfirst($user['dept'] ?? 'Operations')) . '</strong> staff account (' . htmlspecialchars($user['email']) . ').
+    </p>
+    <div class="code-box">
+      <div class="otp-code">' . $otp . '</div>
+      <div class="expiry">This verification code expires in 15 minutes.</div>
+    </div>
+    <p style="font-size: 13px; line-height: 1.5; color: #475569; margin: 0 0 12px;">
+      Enter this 6-digit code on the password reset screen to verify your identity and set a new password.
+    </p>
+    <p style="font-size: 12px; color: #94a3b8; margin: 16px 0 0;">
+      If you did not request a password reset, please disregard this message. Your current password remains secure and unchanged.
+    </p>
+    <div class="footer">
+      Vasudha Pharma Chem Limited &bull; Operations &amp; Technology Desk<br>
+      Plot 78/A, Vengalrao Nagar, Hyderabad - 500 038, Telangana, India
+    </div>
+  </div>
+</body>
+</html>';
+
+  $domain = $_SERVER['SERVER_NAME'] ?? 'vasudhapharma.com';
+  $headers = [
+    'MIME-Version: 1.0',
+    'Content-Type: text/html; charset=UTF-8',
+    'From: Vasudha Operations Security <noreply@' . $domain . '>',
+    'Reply-To: wisdom@vasudhapharma.com',
+    'X-Mailer: PHP/' . phpversion(),
+  ];
+
+  $mailSent = @mail($to, $subject, $htmlBody, implode("\r\n", $headers));
+
+  return [
+    'ok'        => true,
+    'user_key'  => $userKey,
+    'email'     => $user['email'],
+    'alias'     => $user['alias'] ?? '',
+    'name'      => $user['name'],
+    'dept'      => $user['dept'] ?? '',
+    'otp'       => $otp,
+    'mail_sent' => $mailSent,
+  ];
+}
+
+function staff_verify_reset_otp($userKey, $otp) {
+  $otp = trim($otp);
+  if (!$otp || strlen($otp) !== 6) {
+    return ['ok' => false, 'error' => 'Verification code must be exactly 6 digits.'];
+  }
+
+  $resets = staff_load_password_resets();
+  $found = null;
+  $foundIdx = null;
+
+  foreach ($resets as $idx => $r) {
+    if (($r['user_key'] ?? '') === $userKey) {
+      $found = $r;
+      $foundIdx = $idx;
+      break;
+    }
+  }
+
+  if (!$found) {
+    return ['ok' => false, 'error' => 'No active password reset request found. Please request a new code.'];
+  }
+
+  if (time() > ($found['expires_at'] ?? 0)) {
+    unset($resets[$foundIdx]);
+    staff_save_password_resets($resets);
+    return ['ok' => false, 'error' => 'This verification code has expired. Please request a new code.'];
+  }
+
+  if (($found['attempts'] ?? 0) >= 5) {
+    unset($resets[$foundIdx]);
+    staff_save_password_resets($resets);
+    return ['ok' => false, 'error' => 'Too many invalid attempts. For security, please request a new verification code.'];
+  }
+
+  $matches = ($otp === ($found['otp'] ?? '')) || (!empty($found['otp_hash']) && password_verify($otp, $found['otp_hash']));
+  if (!$matches) {
+    $resets[$foundIdx]['attempts'] = ($resets[$foundIdx]['attempts'] ?? 0) + 1;
+    staff_save_password_resets($resets);
+    $left = 5 - $resets[$foundIdx]['attempts'];
+    return ['ok' => false, 'error' => "Invalid verification code. {$left} attempt(s) remaining."];
+  }
+
+  return ['ok' => true, 'record' => $found];
+}
+
+function staff_complete_password_reset($userKey, $otp, $newPassword) {
+  $check = staff_verify_reset_otp($userKey, $otp);
+  if (!$check['ok']) {
+    return $check;
+  }
+
+  if (strlen($newPassword) < 6) {
+    return ['ok' => false, 'error' => 'New password must be at least 6 characters long.'];
+  }
+
+  $record = $check['record'];
+  $users = staff_users();
+  $updated = false;
+
+  foreach ($users as $i => $u) {
+    $matchAlias = !empty($record['alias']) && !empty($u['alias']) && strtolower($u['alias']) === strtolower($record['alias']);
+    $matchEmailDept = strtolower($u['email']) === strtolower($record['email']) && ($u['dept'] ?? '') === ($record['dept'] ?? '');
+    if ($matchAlias || $matchEmailDept) {
+      $users[$i]['hash'] = password_hash($newPassword, PASSWORD_DEFAULT);
+      $updated = true;
+      break;
+    }
+  }
+
+  if (!$updated) {
+    return ['ok' => false, 'error' => 'Matching staff user record could not be updated.'];
+  }
+
+  if (!staff_save_users($users)) {
+    return ['ok' => false, 'error' => 'Failed to save updated credentials to database.'];
+  }
+
+  // Remove reset record
+  $resets = staff_load_password_resets();
+  $resets = array_filter($resets, function($r) use ($userKey) {
+    return ($r['user_key'] ?? '') !== $userKey;
+  });
+  staff_save_password_resets($resets);
+
+  return ['ok' => true];
+}
+
 /* Data File Helpers */
 function staff_load_jobs() {
   $f = staff_jobs_file();

@@ -60,7 +60,7 @@ require __DIR__ . '/includes/header.php';
       <div style="color:var(--sp-text-muted);font-size:13.5px;margin-top:2px;">
         <span><?php echo htmlspecialchars($u['email']); ?></span> &bull; 
         <span style="text-transform:capitalize;"><?php echo htmlspecialchars($u['dept'] ?? 'Desk'); ?></span> Desk &bull;
-        <span style="text-transform:uppercase;font-size:11px;background:#EEF2FF;color:var(--sp-primary);padding:2px 7px;border-radius:4px;font-weight:600;"><?php echo htmlspecialchars($u['role'] ?? 'user'); ?></span>
+        <span style="text-transform:uppercase;font-size:11px;background:#ECFDF5;color:var(--sp-primary);padding:2px 7px;border-radius:4px;font-weight:600;"><?php echo htmlspecialchars($u['role'] ?? 'user'); ?></span>
       </div>
     </div>
   </div>
@@ -103,6 +103,9 @@ require __DIR__ . '/includes/header.php';
       <div style="max-width:380px;">
         <label style="color:#B91C1C;">Current Password <span style="font-weight:400;">(Required to confirm changes)</span></label>
         <input name="current_password" type="password" required placeholder="Enter current password">
+        <div style="margin-top:6px;">
+          <a href="forgot-password.php" style="font-size:12px; color:var(--sp-primary); text-decoration:none; font-weight:600;">Forgot current password? Reset via Email OTP &rarr;</a>
+        </div>
       </div>
     </div>
 

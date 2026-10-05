@@ -25,11 +25,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --sp-primary: #3D5CAD;
-      --sp-primary-dark: #2E4A8A;
-      --sp-primary-hover: #254696;
-      --sp-primary-light: #EEF2FB;
-      --sp-bg: #F4F7FC;
+      --sp-primary: #0E8F6C;
+      --sp-primary-dark: #096B51;
+      --sp-primary-hover: #075E46;
+      --sp-primary-light: #ECFDF5;
+      --sp-bg: #F4FBF7;
       --sp-card-bg: #FFFFFF;
       --sp-border: #E2E8F0;
       --sp-text-main: #0F172A;
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     body {
       margin: 0;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at 50% 15%, #EEF2FB 0%, #F4F7FC 85%);
+      background: radial-gradient(circle at 50% 15%, #ECFDF5 0%, #F4FBF7 85%);
       color: var(--sp-text-main);
       display: flex;
       align-items: center;
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       padding: 38px 36px;
       border-radius: 20px;
       border: 1px solid var(--sp-border);
-      box-shadow: 0 24px 50px -12px rgba(46, 74, 138, 0.12), 0 0 0 1px rgba(46, 74, 138, 0.04);
+      box-shadow: 0 24px 50px -12px rgba(14, 143, 108, 0.12), 0 0 0 1px rgba(14, 143, 108, 0.04);
     }
     .brand-header {
       display: flex;
@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       align-items: center;
       justify-content: center;
       margin-bottom: 16px;
-      box-shadow: 0 6px 18px rgba(61, 92, 173, 0.15);
+      box-shadow: 0 6px 18px rgba(14, 143, 108, 0.15);
       overflow: hidden;
       padding: 6px;
     }
@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     .brand-sub {
       font-size: 12px;
-      color: #0088AA;
+      color: #0E8F6C;
       font-style: italic;
       margin: 0 0 8px;
     }
@@ -110,9 +110,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       margin-bottom: 20px;
     }
     .btn-quick {
-      background: #EEF2FB;
+      background: #ECFDF5;
       color: var(--sp-primary-dark);
-      border: 1px solid #D5E0F7;
+      border: 1px solid #A7F3D0;
       padding: 8px 10px;
       border-radius: 8px;
       font-size: 11.5px;
@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       transition: all 0.15s;
     }
     .btn-quick:hover {
-      background: #DCE5F9;
+      background: #D1FAE5;
       border-color: var(--sp-primary);
     }
     label {
@@ -147,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       outline: none;
       border-color: var(--sp-primary);
       background: #FFFFFF;
-      box-shadow: 0 0 0 3px rgba(61, 92, 173, 0.18);
+      box-shadow: 0 0 0 3px rgba(14, 143, 108, 0.18);
     }
     button[type="submit"] {
       margin-top: 22px;
@@ -161,11 +161,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       font-size: 14px;
       cursor: pointer;
       font-family: inherit;
-      box-shadow: 0 4px 14px rgba(46, 74, 138, 0.25);
+      box-shadow: 0 4px 14px rgba(14, 143, 108, 0.25);
       transition: all 0.15s ease;
     }
     button[type="submit"]:hover {
-      background: linear-gradient(135deg, var(--sp-primary-hover) 0%, #172554 100%);
+      background: linear-gradient(135deg, var(--sp-primary-hover) 0%, #064E3B 100%);
       transform: translateY(-1px);
     }
     .err {
@@ -190,7 +190,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       line-height: 1.5;
     }
     .hint code {
-      background: #EEF2FB;
+      background: #ECFDF5;
       padding: 2px 5px;
       border-radius: 4px;
       color: var(--sp-primary-dark);
@@ -256,7 +256,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="post" autocomplete="on">
       <label>Corporate Email Address</label>
       <input id="emailInput" type="email" name="email" placeholder="wisdom@vasudhapharma.com" value="wisdom@vasudhapharma.com" required autofocus>
-      <label>Department Password</label>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; margin-bottom:6px;">
+        <label style="margin:0;">Department Password</label>
+        <a href="forgot-password.php" style="font-size:12px; color:var(--sp-primary); text-decoration:none; font-weight:600;">Forgot Password?</a>
+      </div>
       <input id="passInput" type="password" name="password" placeholder="Enter assigned password" value="Vasudha@Admin2026!" required>
       <button type="submit">Sign in to Operations Desk &rarr;</button>
     </form>
@@ -266,6 +269,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
     <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px; font-size:12.5px;">
       <a href="../home.html" style="color:var(--sp-text-muted); text-decoration:none;">&larr; Public Website</a>
+      <a href="forgot-password.php" style="color:var(--sp-primary); text-decoration:none; font-weight:600;">🔑 Reset via OTP</a>
       <a href="../feedback.html" style="color:#0088AA; text-decoration:none;">📝 Testing Feedback</a>
     </div>
   </div>
@@ -288,13 +292,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       if (sel) sel.value = dept;
 
       document.querySelectorAll('.btn-quick').forEach(b => {
-        b.style.borderColor = '#D5E0F7';
-        b.style.background = '#EEF2FB';
+        b.style.borderColor = '#A7F3D0';
+        b.style.background = '#ECFDF5';
       });
       const activeBtn = document.getElementById('btn-' + dept);
       if (activeBtn) {
         activeBtn.style.borderColor = 'var(--sp-primary)';
-        activeBtn.style.background = '#DCE5F9';
+        activeBtn.style.background = '#D1FAE5';
       }
       pass.focus();
     }
