@@ -1,0 +1,26 @@
+# Vasudha Pharma Chem Limited - Production Apache Configuration
+
+# 1. Directory Index priority
+DirectoryIndex home.html index.html index.php
+
+# 2. Disable directory browsing
+Options -Indexes
+
+# 3. Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# 4. Protect sensitive data files and dotfiles
+<FilesMatch "(\.(git|env|log|sql|md)|users\.json|applications\.json)$">
+    Require all denied
+    Deny from all
+</FilesMatch>
+
+# 5. Enable Gzip Compression for fast delivery
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml image/svg+xml
+</IfModule>

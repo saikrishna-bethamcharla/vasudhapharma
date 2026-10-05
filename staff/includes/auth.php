@@ -1,5 +1,10 @@
 <?php
 if (session_status() !== PHP_SESSION_ACTIVE) {
+  ini_set('session.cookie_httponly', 1);
+  if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
+    ini_set('session.cookie_secure', 1);
+  }
+  ini_set('session.use_only_cookies', 1);
   session_start();
 }
 
@@ -59,11 +64,13 @@ function staff_require_desk($desk) {
 }
 function staff_login($email, $password) {
   $email = strtolower(trim($email));
+  if (!$email || !$password) return false;
   foreach (staff_users() as $u) {
-    $match = strtolower($u['email']) === $email || (!empty($u['alias']) && strtolower($u['alias']) === $email) || ($email === 'wisdom@vasudhapharma.com');
+    $match = strtolower($u['email']) === $email || (!empty($u['alias']) && strtolower($u['alias']) === $email);
     if (!$match) continue;
-    $valid = (!empty($u['hash']) && password_verify($password, $u['hash'])) || (!empty($u['password']) && hash_equals($u['password'], $password));
+    $valid = !empty($u['hash']) && password_verify($password, $u['hash']);
     if (!$valid) continue;
+    session_regenerate_id(true);
     $_SESSION['staff'] = [
       'email' => $u['email'],
       'name'  => $u['name'],

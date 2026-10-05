@@ -20,6 +20,11 @@
       if (srcInput && !srcInput.value) {
         srcInput.value = utmSource;
       }
+      // Dynamically bind returnURL to current domain
+      var retInput = formEl.querySelector('input[name="returnURL"]');
+      if (retInput) {
+        retInput.value = window.location.origin + '/home.html';
+      }
     }
   };
 

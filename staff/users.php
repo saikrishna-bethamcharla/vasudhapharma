@@ -45,7 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'name' => $name,
         'role' => $role,
         'dept' => $dept === 'admin' ? 'admin' : $dept,
-        'password' => $pass,
         'hash' => password_hash($pass, PASSWORD_DEFAULT),
       ];
       staff_save_users($list);
@@ -78,7 +77,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $ok = false;
             break;
           }
-          $list[$i]['password'] = $pass;
           $list[$i]['hash'] = password_hash($pass, PASSWORD_DEFAULT);
         }
         $ok = true;
