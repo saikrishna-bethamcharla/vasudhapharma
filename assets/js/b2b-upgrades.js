@@ -158,7 +158,7 @@
 
   window.vpToggleRfq = function (btn, e) {
     if (e) { e.preventDefault(); e.stopPropagation(); }
-    var row = btn.closest('.api-row') || btn.closest('.udev-row');
+    var row = btn ? (btn.closest('.api-row') || btn.closest('.udev-row') || btn.closest('tr')) : null;
     if (!row) return;
 
     var prod = extractProductData(row);
@@ -170,17 +170,17 @@
     });
 
     if (existingIndex >= 0) {
-      // Remove
+      // Remove from cart
       cart.splice(existingIndex, 1);
       btn.classList.remove('is-added');
       btn.innerHTML = '+ RFQ';
-      btn.title = 'Add to RFQ list';
+      btn.title = 'Add to RFQ Cart';
     } else {
-      // Add
+      // Add to cart
       cart.push(prod);
       btn.classList.add('is-added');
       btn.innerHTML = '✓ Added';
-      btn.title = 'Remove from RFQ list';
+      btn.title = 'In RFQ Cart (Click to remove)';
     }
     saveCart(cart);
   };
@@ -189,20 +189,16 @@
     var cart = getCart();
     var rows = document.querySelectorAll('.api-row, .udev-row');
     rows.forEach(function (row) {
-      var btn = row.querySelector('.api-rfq-btn');
-      if (!btn) {
-        var actionCell = row.querySelector('.api-action');
-        if (actionCell) {
-          btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'api-rfq-btn';
-          btn.innerHTML = '+ RFQ';
-          btn.title = 'Add to Multi-Product RFQ list';
-          btn.setAttribute('onclick', 'window.vpToggleRfq(this, event)');
-          actionCell.appendChild(btn);
-        }
-      }
+      // Remove old duplicate blue button if present
+      var blueBtn = row.querySelector('.api-rfq-btn');
+      if (blueBtn) blueBtn.remove();
+
+      // Make the green button (.api-view-btn) the single RFQ Cart button
+      var btn = row.querySelector('.api-view-btn');
       if (btn) {
+        btn.setAttribute('type', 'button');
+        btn.onclick = function (e) { return window.vpToggleRfq(btn, e); };
+
         var prod = extractProductData(row);
         var inCart = prod && cart.some(function (item) {
           return item.name.toLowerCase() === prod.name.toLowerCase();
@@ -210,9 +206,11 @@
         if (inCart) {
           btn.classList.add('is-added');
           btn.innerHTML = '✓ Added';
+          btn.title = 'In RFQ Cart (Click to remove)';
         } else {
           btn.classList.remove('is-added');
           btn.innerHTML = '+ RFQ';
+          btn.title = 'Add to RFQ Cart';
         }
       }
     });
@@ -251,11 +249,18 @@
       drawerOverlay.innerHTML = [
         '<div class="vp-rfq-drawer" role="dialog" aria-labelledby="vpRfqTitle">',
         '  <div class="vp-rfq-head">',
-        '    <div>',
-        '      <h3 id="vpRfqTitle">Multi-Product RFQ Cart</h3>',
+        '    <div class="vp-rfq-head-text">',
+        '      <div class="vp-rfq-head-icon-title">',
+        '        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">',
+        '          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>',
+        '          <line x1="3" y1="6" x2="21" y2="6"></line>',
+        '          <path d="M16 10a4 4 0 0 1-8 0"></path>',
+        '        </svg>',
+        '        <h3 id="vpRfqTitle">Multi-Product RFQ Cart</h3>',
+        '      </div>',
         '      <p>Consolidated procurement inquiry for sourcing managers</p>',
         '    </div>',
-        '    <button type="button" class="vp-rfq-close" onclick="window.vpCloseRfqDrawer()" aria-label="Close">&times;</button>',
+        '    <button type="button" class="vp-rfq-close" onclick="window.vpCloseRfqDrawer()" aria-label="Close dialog">&times;</button>',
         '  </div>',
         '  <div class="vp-rfq-body">',
         '    <div id="vpRfqContent">',
@@ -266,7 +271,7 @@
         '              <th>Product</th>',
         '              <th>CAS No.</th>',
         '              <th>Target Quantity</th>',
-        '              <th></th>',
+        '              <th style="width: 44px; text-align:center;"></th>',
         '            </tr>',
         '          </thead>',
         '          <tbody id="vpRfqTableBody"></tbody>',
@@ -275,37 +280,43 @@
         '      <form id="vpRfqForm" onsubmit="return window.vpSubmitRfq(event);">',
         '        <div class="vp-rfq-grid">',
         '          <div class="vp-rfq-field">',
-        '            <label>Your Name <span style="color:#dc3545;">*</span></label>',
+        '            <label for="rfqName">Your Name <span class="vp-rfq-req">*</span></label>',
         '            <input type="text" id="rfqName" required placeholder="Full name">',
         '          </div>',
         '          <div class="vp-rfq-field">',
-        '            <label>Corporate Email <span style="color:#dc3545;">*</span></label>',
+        '            <label for="rfqEmail">Corporate Email <span class="vp-rfq-req">*</span></label>',
         '            <input type="email" id="rfqEmail" required placeholder="email@pharma.com">',
         '          </div>',
         '          <div class="vp-rfq-field">',
-        '            <label>Company / Organization <span style="color:#dc3545;">*</span></label>',
+        '            <label for="rfqCompany">Company / Organization <span class="vp-rfq-req">*</span></label>',
         '            <input type="text" id="rfqCompany" required placeholder="Company Name">',
         '          </div>',
         '          <div class="vp-rfq-field">',
-        '            <label>Phone / WhatsApp</label>',
+        '            <label for="rfqPhone">Phone / WhatsApp</label>',
         '            <input type="tel" id="rfqPhone" placeholder="+91 XXXXX XXXXX">',
         '          </div>',
         '          <div class="vp-rfq-field">',
-        '            <label>Destination Port / Market</label>',
+        '            <label for="rfqDestination">Destination Port / Market</label>',
         '            <input type="text" id="rfqDestination" placeholder="e.g. Rotterdam, New Jersey, Tokyo">',
         '          </div>',
         '          <div class="vp-rfq-field">',
-        '            <label>Commercial Timeline</label>',
+        '            <label for="rfqTimeline">Commercial Timeline</label>',
         '            <input type="text" id="rfqTimeline" placeholder="e.g. Q3 2026 Commercial Batch">',
         '          </div>',
         '          <div class="vp-rfq-field full">',
-        '            <label>Additional Specifications / DMF Requirements</label>',
+        '            <label for="rfqRemarks">Additional Specifications / DMF Requirements</label>',
         '            <textarea id="rfqRemarks" rows="2" placeholder="Custom particle size, CoA request, regulatory access letter requirements..."></textarea>',
         '          </div>',
         '        </div>',
         '        <div class="vp-rfq-foot">',
-        '          <button type="button" class="btn btn-outline" onclick="window.vpClearRfq()" style="background:#fff; border:1px solid #cbd5e1; padding:8px 16px; border-radius:6px; cursor:pointer;">Clear List</button>',
-        '          <button type="submit" class="btn btn-primary" id="rfqSubmitBtn" style="background:#EC3237; color:#fff; border:none; padding:10px 24px; font-weight:700; border-radius:6px; cursor:pointer;">Submit Consolidated RFQ</button>',
+        '          <button type="button" class="vp-rfq-btn-clear" onclick="window.vpClearRfq()">Clear List</button>',
+        '          <button type="submit" class="vp-rfq-btn-submit" id="rfqSubmitBtn">',
+        '            <span>Submit Consolidated RFQ</span>',
+        '            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">',
+        '              <line x1="22" y1="2" x2="11" y2="13"></line>',
+        '              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>',
+        '            </svg>',
+        '          </button>',
         '        </div>',
         '      </form>',
         '    </div>',
@@ -313,7 +324,7 @@
         '      <div class="vp-rfq-success-icon">✓</div>',
         '      <h4>Consolidated RFQ Submitted Successfully</h4>',
         '      <p>Thank you for submitting your multi-product procurement request. Our Commercial &amp; Regulatory teams will review your required quantities and send a formal commercial offer.</p>',
-        '      <button type="button" class="btn btn-primary" onclick="window.vpCloseRfqDrawer()" style="background:#EC3237; color:#fff; border:none; padding:10px 24px; font-weight:700; border-radius:6px; cursor:pointer;">Done</button>',
+        '      <button type="button" class="vp-rfq-btn-submit" onclick="window.vpCloseRfqDrawer()">Done</button>',
         '    </div>',
         '  </div>',
         '</div>'
@@ -355,15 +366,35 @@
 
     if (tbody) {
       if (cart.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; padding:24px; color:#64748b;">No products in your RFQ list yet. Click <strong>+ RFQ</strong> on any product row to add it here.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; padding:32px 16px; color:#64748b; font-size:13.5px;"><div style="font-size:32px; margin-bottom:8px;">📦</div>No products in your RFQ list yet.<br><span style="font-size:12px; color:#94a3b8;">Click <strong>+ RFQ</strong> on any product row to add it here.</span></td></tr>';
       } else {
         tbody.innerHTML = cart.map(function (item, idx) {
+          var catClass = 'vp-rfq-cat-api';
+          var catLower = (item.category || '').toLowerCase();
+          if (catLower.indexOf('pellet') !== -1) catClass = 'vp-rfq-cat-pellet';
+          else if (catLower.indexOf('intermediate') !== -1) catClass = 'vp-rfq-cat-inter';
+          else if (catLower.indexOf('piperidone') !== -1) catClass = 'vp-rfq-cat-pipe';
+
           return [
-            '<tr>',
-            '  <td><strong>' + item.name + '</strong><br><small style="color:#64748b;">' + item.category + '</small></td>',
-            '  <td><code>' + item.cas + '</code></td>',
-            '  <td><input type="text" class="vp-rfq-qty-input" value="' + (item.qty || '100 kg') + '" onchange="window.vpUpdateRfqQty(' + idx + ', this.value)"></td>',
-            '  <td style="text-align:center;"><button type="button" class="vp-rfq-remove-btn" onclick="window.vpRemoveRfqItem(' + idx + ')" title="Remove item">&times;</button></td>',
+            '<tr class="vp-rfq-row">',
+            '  <td>',
+            '    <div class="vp-rfq-prod-name">' + item.name + '</div>',
+            '    <span class="vp-rfq-cat-badge ' + catClass + '">' + (item.category || 'API') + '</span>',
+            '  </td>',
+            '  <td><span class="vp-rfq-cas-badge">' + (item.cas || 'N/A') + '</span></td>',
+            '  <td>',
+            '    <div class="vp-rfq-qty-wrap">',
+            '      <input type="text" class="vp-rfq-qty-input" value="' + (item.qty || '100 kg') + '" onchange="window.vpUpdateRfqQty(' + idx + ', this.value)" aria-label="Target quantity for ' + item.name + '">',
+            '    </div>',
+            '  </td>',
+            '  <td style="text-align:center;">',
+            '    <button type="button" class="vp-rfq-remove-btn" onclick="window.vpRemoveRfqItem(' + idx + ')" title="Remove ' + item.name + '" aria-label="Remove ' + item.name + '">',
+            '      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">',
+            '        <line x1="18" y1="6" x2="6" y2="18"></line>',
+            '        <line x1="6" y1="6" x2="18" y2="18"></line>',
+            '      </svg>',
+            '    </button>',
+            '  </td>',
             '</tr>'
           ].join('');
         }).join('');
@@ -445,6 +476,26 @@
     ].join('\n');
 
     try {
+      fetch('enquiry.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          lastName: name,
+          email: email,
+          phone: phone,
+          company: company,
+          description: description,
+          leadSource: 'Website Multi-Product RFQ Cart',
+          enquiryType: 'Consolidated RFQ',
+          productCategory: 'Multi-Product Sourcing',
+          productName: cart.map(function (c) { return c.name; }).join(', '),
+          quantityRequired: cart.map(function (c) { return c.qty; }).join('; '),
+          items: cart
+        })
+      }).then(function (r) { return r.json(); })
+        .then(function (d) { console.log('RFQ Cart routed:', d); })
+        .catch(function (err) { console.warn('RFQ Cart note:', err); });
+
       if (typeof window.__vpPostEnquiryToZoho === 'function') {
         window.__vpPostEnquiryToZoho({
           lastName: name,
