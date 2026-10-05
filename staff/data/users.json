@@ -1,50 +1,50 @@
 [
   {
-    "email": "saikrishna@zailabs.co.in",
-    "alias": "wisdom@vasudhapharma.com",
+    "email": "wisdom@vasudhapharma.com",
+    "alias": "saikrishna@zailabs.co.in",
     "name": "Sai Krishna (Lead Dev)",
     "role": "admin",
     "dept": "admin",
-    "hash": "$2y$10$OLm2u08fkSDJNXBlpJrozeSWYkjVvtLMthICZamDSUhUyovGx87GO"
+    "hash": "$2y$10$gTsby16uRI6bKutU390aiukd.mDIvB0Ih6B3RHWYGSXBKd/QaF9WC"
   },
   {
-    "email": "admin@vasudhapharma.com",
-    "alias": "operations@vasudhapharma.com",
+    "email": "wisdom@vasudhapharma.com",
+    "alias": "admin@vasudhapharma.com",
     "name": "VPCL Operations Admin",
     "role": "admin",
     "dept": "admin",
-    "hash": "$2y$10$yDYiNuZSWJZBO0y/4On49ecrE/SMGVH5eBimgwoKOM1mNkiLAxCra"
+    "hash": "$2y$10$rAhTP0fqGJzOv.Yf8jrgJ.qg6uZchEo1j.awRRuchwDaHSDYU2gtu"
   },
   {
-    "email": "hr@vasudhapharma.com",
-    "alias": "careers@vasudhapharma.com",
+    "email": "wisdom@vasudhapharma.com",
+    "alias": "hr@vasudhapharma.com",
     "name": "HR & Talent Acquisition",
     "role": "hr",
     "dept": "careers",
-    "hash": "$2y$10$JvyX3HShqbRVN7WtKAM0.uVux514cPijAFmMelgAFQ.1DakWuQybC"
+    "hash": "$2y$10$KpI8qBeSr0UcmJk7j45D7.9fRG3sdDJ6K9bJug6Ut8wuTKKhz3lAy"
   },
   {
-    "email": "foundation@vasudhapharma.com",
-    "alias": "csr@vasudhapharma.com",
+    "email": "wisdom@vasudhapharma.com",
+    "alias": "foundation@vasudhapharma.com",
     "name": "Vasudha Foundation CSR",
     "role": "user",
     "dept": "foundation",
-    "hash": "$2y$10$LYM/i0atzNLyqKaJHLxRreHxA8EKQfgFN9z/yRGdJA3lkyXy.1F5m"
+    "hash": "$2y$10$.FBvcotfDASlpyJU1AkeEeHav58Bgg1vT8Jbxy3iiQxVTQmqZAZaC"
   },
   {
-    "email": "marketing@vasudhapharma.com",
-    "alias": "sales@vasudhapharma.com",
+    "email": "wisdom@vasudhapharma.com",
+    "alias": "marketing@vasudhapharma.com",
     "name": "Marketing & Commercial Portfolio",
     "role": "marketing",
     "dept": "marketing",
-    "hash": "$2y$10$dTgA7wvFrVcMpvDcTKSdX.7kdhAM6GPsVNI8gTp8qcGtEZgpNV/oa"
+    "hash": "$2y$10$LS/CJBy8m8SLodp5z5aqmu48h7ON8DsMDE3mL/oa43EDSe5/6Zeny"
   },
   {
-    "email": "news@vasudhapharma.com",
-    "alias": "media@vasudhapharma.com",
+    "email": "wisdom@vasudhapharma.com",
+    "alias": "news@vasudhapharma.com",
     "name": "Corporate Media & PR",
     "role": "user",
     "dept": "news",
-    "hash": "$2y$10$FoFb2KOP89WoQIwJ9G.8C.4ooK/Oj9q520uFIXKdsWPfX02GNqq2y"
+    "hash": "$2y$10$.4R1fIAPLJaT.gD8TH7yYOkKligJSO/nPM7gq0ahV8l7VUXxjErRC"
   }
 ]

@@ -229,7 +229,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php endif; ?>
 
     <div style="margin-bottom:16px;">
-      <label style="margin-top:0;">Select Department Account</label>
+      <div style="font-size:11.5px; font-weight:700; color:var(--sp-primary-dark); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+        <span>🧪 Testing Mode: 1-Click Autofill</span>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:6px; margin-bottom:10px;">
+        <button type="button" class="btn-quick" onclick="onSelectDept('admin')" id="btn-admin">👑 Admin</button>
+        <button type="button" class="btn-quick" onclick="onSelectDept('hr')" id="btn-hr">👥 HR (Careers)</button>
+        <button type="button" class="btn-quick" onclick="onSelectDept('marketing')" id="btn-marketing">💼 Marketing</button>
+        <button type="button" class="btn-quick" onclick="onSelectDept('foundation')" id="btn-foundation">🤝 Foundation</button>
+        <button type="button" class="btn-quick" onclick="onSelectDept('news')" id="btn-news">📰 News &amp; PR</button>
+        <button type="button" class="btn-quick" onclick="onSelectDept('dev')" id="btn-dev">💻 Lead Dev</button>
+      </div>
+
+      <label style="margin-top:0;">Or Select from Dropdown</label>
       <select id="deptSelect" onchange="onSelectDept(this.value)" style="width:100%; box-sizing:border-box; padding:11px 14px; border:1px solid var(--sp-border); border-radius:9px; font:inherit; font-size:13.5px; background:#FAFAFA; color:var(--sp-text-main);">
         <option value="">-- Choose Department Account --</option>
         <option value="admin">VPCL Operations Admin (All Desks)</option>
@@ -245,12 +257,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <label>Corporate Email Address</label>
       <input id="emailInput" type="email" name="email" placeholder="wisdom@vasudhapharma.com" value="wisdom@vasudhapharma.com" required autofocus>
       <label>Department Password</label>
-      <input id="passInput" type="password" name="password" placeholder="Enter assigned password" required>
+      <input id="passInput" type="password" name="password" placeholder="Enter assigned password" value="Vasudha@Admin2026!" required>
       <button type="submit">Sign in to Operations Desk &rarr;</button>
     </form>
 
     <div class="hint" style="text-align:center;">
-      🔒 <strong>Role-Based Access Enforcement:</strong> Each department account is restricted to its respective operational desk.
+      🔒 <strong>Testing Mode Enabled:</strong> All accounts accept <code>wisdom@vasudhapharma.com</code>. Department passwords auto-fill above.
     </div>
     <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px; font-size:12.5px;">
       <a href="../home.html" style="color:var(--sp-text-muted); text-decoration:none;">&larr; Public Website</a>
@@ -272,8 +284,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       document.getElementById('emailInput').value = 'wisdom@vasudhapharma.com';
       const pass = document.getElementById('passInput');
       if (DEPT_PASSWORDS[dept]) pass.value = DEPT_PASSWORDS[dept];
+      const sel = document.getElementById('deptSelect');
+      if (sel) sel.value = dept;
+
+      document.querySelectorAll('.btn-quick').forEach(b => {
+        b.style.borderColor = '#D5E0F7';
+        b.style.background = '#EEF2FB';
+      });
+      const activeBtn = document.getElementById('btn-' + dept);
+      if (activeBtn) {
+        activeBtn.style.borderColor = 'var(--sp-primary)';
+        activeBtn.style.background = '#DCE5F9';
+      }
       pass.focus();
     }
+    // Auto-fill default Admin credentials on load
+    window.addEventListener('DOMContentLoaded', function() {
+      onSelectDept('admin');
+    });
   </script>
 </body>
 </html>
