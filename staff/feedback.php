@@ -49,6 +49,15 @@ if (isset($_GET['export']) && $_GET['export'] === 'csv') {
   exit;
 }
 
+// JSON Export Handler
+if (isset($_GET['export']) && $_GET['export'] === 'json') {
+  $list = load_feedback_data($dataFile);
+  header('Content-Type: application/json; charset=utf-8');
+  header('Content-Disposition: attachment; filename=vasudha_feedback_tickets_' . date('Y-m-d') . '.json');
+  echo json_encode($list, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+  exit;
+}
+
 // POST Actions
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   staff_verify_csrf();
@@ -169,6 +178,10 @@ require __DIR__ . '/includes/header.php';
     <a href="?export=csv" class="btn btn-secondary">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Export CSV (Excel)
+    </a>
+    <a href="?export=json" class="btn btn-secondary">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Export JSON
     </a>
     <a href="../feedback.html" target="_blank" rel="noopener" class="btn btn-primary">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
