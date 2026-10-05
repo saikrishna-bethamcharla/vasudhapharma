@@ -26,10 +26,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     exit;
 }
 
-// 2. POST Request: Record new ticket
+// 2. POST Request: Record new ticket or delete ticket
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $raw = file_get_contents('php://input');
     $data = json_decode($raw, true);
+
+    // Support deletion request
+    if (is_array($data) && !empty($data['action']) && $data['action'] === 'delete' && !empty($data['id'])) {
+        $delId = trim($data['id']);
+        $existing = [];
+        if (file_exists($dataFile)) {
+            $c = json_decode(file_get_contents($dataFile), true);
+            if (is_array($c)) $existing = $c;
+        }
+        $existing = array_values(array_filter($existing, function($t) use ($delId) {
+            return ($t['id'] ?? '') !== $delId;
+        }));
+        @file_put_contents($dataFile, json_encode($existing, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+        echo json_encode(['ok' => true, 'deletedId' => $delId, 'remaining' => count($existing)]);
+        exit;
+    }
 
     if (!is_array($data) || empty($data['message'])) {
         http_response_code(400);
