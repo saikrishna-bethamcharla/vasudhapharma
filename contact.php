@@ -166,8 +166,9 @@ $headers = [
     'Content-Type: text/html; charset=UTF-8',
     'From: Vasudha Contact Desk <noreply@' . $mailDomain . '>',
     'Reply-To: ' . $email,
-    'Cc: saikrishna@zailabs.co.in',
-    'X-Mailer: PHP/' . phpversion()
+    'Auto-Submitted: auto-generated',
+    'X-Auto-Response-Suppress: All',
+    'X-Mailer: VasudhaDesk/1.0'
 ];
 $headersStr = implode("\r\n", $headers);
 
