@@ -6994,144 +6994,7 @@
       updateOnScroll();
     })();
 
-    // Feedback survey modal
-    (function () {
-      const overlay = document.getElementById('surveyOverlay');
-      if (!overlay) return;
-
-      const closeBtn = document.getElementById('surveyClose');
-      const yesBtn = document.getElementById('surveyYes');
-      const noBtn = document.getElementById('surveyNo');
-      const prevBtn = document.getElementById('surveyPrev');
-      const nextBtn = document.getElementById('surveyNext');
-      const submitBtn = document.getElementById('surveySubmit');
-      const progressFill = document.getElementById('surveyProgressFill');
-      const progressLabel = document.getElementById('surveyProgressLabel');
-
-      const inviteStep = overlay.querySelector('[data-step="invite"]');
-      const formStep = overlay.querySelector('[data-step="form"]');
-      const thanksStep = overlay.querySelector('[data-step="thanks"]');
-      const questions = Array.prototype.slice.call(overlay.querySelectorAll('.survey-question'));
-
-      const STORAGE_KEY = 'vasudhaSurveyDismissed_v2';
-      let currentQ = 1;
-      const totalQ = questions.length;
-
-      function alreadyDismissed() {
-        try {
-          return sessionStorage.getItem(STORAGE_KEY) === '1' ||
-                 sessionStorage.getItem('vasudhaSurveySessionLoaded') === '1' ||
-                 sessionStorage.getItem('vasudhaSurveyDismissed_v3') === '1' ||
-                 localStorage.getItem('vasudhaSurveyDismissed_v3') === '1';
-        } catch (e) {
-          return false;
-        }
-      }
-
-      function markDismissed() {
-        try {
-          sessionStorage.setItem(STORAGE_KEY, '1');
-        } catch (e) { /* ignore */ }
-      }
-
-      function openSurvey() {
-        try {
-          var force = false;
-          try {
-            var p = new URLSearchParams(window.location.search);
-            force = p.get('survey') === '1' || p.get('survey') === 'true';
-            var o = (p.get('open') || '').toLowerCase().replace(/_/g, '-');
-            if (!force && (o === 'annual-returns' || o === 'annual-return' || window.__vpAnnualDeepLink)) return;
-          } catch (e) {}
-          if (!force && alreadyDismissed()) return;
-          try { sessionStorage.setItem('vasudhaSurveySessionLoaded', '1'); } catch (e) {}
-          overlay.classList.add('visible');
-          overlay.setAttribute('aria-hidden', 'false');
-          overlay.style.opacity = '1';
-          overlay.style.visibility = 'visible';
-          overlay.style.pointerEvents = 'auto';
-          overlay.style.zIndex = '300000';
-        } catch (err) { console && console.error(err); }
-      }
-
-      function closeSurvey() {
-        overlay.classList.remove('visible');
-        overlay.setAttribute('aria-hidden', 'true');
-        markDismissed();
-      }
-
-      function showQuestion(n) {
-        questions.forEach(function (q) {
-          q.hidden = parseInt(q.getAttribute('data-q'), 10) !== n;
-        });
-        const pct = Math.round((n / totalQ) * 100);
-        if (progressFill) progressFill.style.width = pct + '%';
-        if (progressLabel) progressLabel.textContent = pct + '% Survey Completion';
-        if (prevBtn) prevBtn.disabled = n === 1;
-        if (nextBtn) nextBtn.hidden = n === totalQ;
-        if (submitBtn) submitBtn.hidden = n !== totalQ;
-      }
-
-      if (closeBtn) closeBtn.addEventListener('click', closeSurvey);
-      if (noBtn) noBtn.addEventListener('click', closeSurvey);
-      var embedCloseBtn = document.getElementById('surveyEmbedClose');
-      if (embedCloseBtn) {
-        embedCloseBtn.addEventListener('click', closeSurvey);
-      }
-      overlay.addEventListener('click', function (e) {
-        if (e.target === overlay) closeSurvey();
-      });
-
-      if (yesBtn) {
-        yesBtn.addEventListener('click', function () {
-          var embedStep = overlay.querySelector('[data-step="embed"]');
-          var frame = document.getElementById('surveyMonkeyFrame');
-          inviteStep.hidden = true;
-          if (formStep) formStep.hidden = true;
-          if (thanksStep) thanksStep.hidden = true;
-          if (embedStep) {
-            embedStep.hidden = false;
-            if (frame) {
-              var src = frame.getAttribute('data-sm-src') || 'https://www.surveymonkey.com/r/737XX3Y';
-              if (frame.getAttribute('src') !== src) frame.setAttribute('src', src);
-            }
-          } else {
-            try { window.open('https://www.surveymonkey.com/r/737XX3Y', '_blank', 'noopener,noreferrer'); } catch (e) { window.location.href = 'https://www.surveymonkey.com/r/737XX3Y'; }
-            closeSurvey();
-          }
-        });
-      }
-
-      if (prevBtn) {
-        prevBtn.addEventListener('click', function () {
-          if (currentQ > 1) {
-            currentQ -= 1;
-            showQuestion(currentQ);
-          }
-        });
-      }
-
-      if (nextBtn) {
-        nextBtn.addEventListener('click', function () {
-          if (currentQ < totalQ) {
-            currentQ += 1;
-            showQuestion(currentQ);
-          }
-        });
-      }
-
-      if (submitBtn) {
-        submitBtn.addEventListener('click', function () {
-          formStep.hidden = true;
-          thanksStep.hidden = false;
-          markDismissed();
-          setTimeout(closeSurvey, 2600);
-        });
-      }
-
-      // Show automatically as soon as the page opens, once per session
-      setTimeout(openSurvey, 1200);
-    })();
+    
   </script>
 
 
@@ -7707,6 +7570,13 @@
 <script>
 /* Survey boot — native Qs + Zoho; Next/Prev included */
 (function () {
+  var path = (window.location.pathname || '').toLowerCase();
+  var page = path.split('/').pop() || 'index.html';
+  var isLandingPage = (page === 'index.html' || page === 'home.html' || page === '' || path === '/');
+  if (!isLandingPage) {
+    // Only show survey popup when visitor opens the website landing page
+    return;
+  }
   if (document.body && document.body.classList.contains('careers-micro')) return;
   var currentQ = 1;
 
@@ -7770,20 +7640,28 @@
 
   window.__vpSurveyShowQuestion = showQuestion;
 
-  function showInvite() {
+    function showInvite() {
     var o = overlay();
     if (!o) return;
+    var path = (window.location.pathname || '').toLowerCase();
+    var page = path.split('/').pop() || 'index.html';
+    var isLandingPage = (page === 'index.html' || page === 'home.html' || page === '' || path === '/');
+    if (!isLandingPage) return;
+
     try {
+      // Clear legacy permanent lockout keys from localStorage so the survey asks the visitor
+      localStorage.removeItem('vasudhaSurveyDismissed_v3');
+      localStorage.removeItem('vasudhaSurveyDismissed_v2');
+      localStorage.removeItem('vasudhaSurveyDismissed');
+
       var p = new URLSearchParams(window.location.search || '');
+      var force = (p.get('survey') === '1' || p.get('survey') === 'true');
       var open = (p.get('open') || '').toLowerCase();
-      if (open.indexOf('annual-return') >= 0) return;
-      if (p.get('survey') !== '1' && p.get('survey') !== 'true') {
-        if (sessionStorage.getItem('vasudhaSurveyDismissed_v3') === '1' ||
-            sessionStorage.getItem('vasudhaSurveySessionLoaded') === '1' ||
-            sessionStorage.getItem('vasudhaSurveyDismissed_v2') === '1' ||
-            localStorage.getItem('vasudhaSurveyDismissed_v3') === '1') return;
+      if (!force && open.indexOf('annual-return') >= 0) return;
+      if (!force && sessionStorage.getItem('vpcl_survey_prompted_session') === '1') {
+        return;
       }
-      try { sessionStorage.setItem('vasudhaSurveySessionLoaded', '1'); } catch (e) {}
+      sessionStorage.setItem('vpcl_survey_prompted_session', '1');
     } catch (e) {}
     setStep('invite');
     o.classList.add('visible');
@@ -7797,7 +7675,7 @@
     o.style.setProperty('inset', '0', 'important');
   }
 
-  function hide() {
+    function hide() {
     var o = overlay();
     if (!o) return;
     o.classList.remove('visible');
@@ -7807,10 +7685,7 @@
     o.style.removeProperty('display');
     o.style.removeProperty('pointer-events');
     try {
-      sessionStorage.setItem('vasudhaSurveySessionLoaded', '1');
-      sessionStorage.setItem('vasudhaSurveyDismissed_v3', '1');
-      sessionStorage.setItem('vasudhaSurveyDismissed_v2', '1');
-      localStorage.setItem('vasudhaSurveyDismissed_v3', '1');
+      sessionStorage.setItem('vpcl_survey_prompted_session', '1');
     } catch (e) {}
   }
 
@@ -7953,12 +7828,9 @@
       'Q5 How could we improve the site experience?: ' + (q5 || '—')
     ].join('\n');
     try { postZoho({ lastName: 'Website Survey', description: description, enquiryType: 'Website Survey', leadSource: 'Website Survey', q1: q1, q2: q2, q3: q3, q4: q4, q5: q5 }); } catch (e) {}
-    setStep('thanks');
+        setStep('thanks');
     try {
-      sessionStorage.setItem('vasudhaSurveySessionLoaded', '1');
-      sessionStorage.setItem('vasudhaSurveyDismissed_v3', '1');
-      sessionStorage.setItem('vasudhaSurveyDismissed_v2', '1');
-      localStorage.setItem('vasudhaSurveyDismissed_v3', '1');
+      sessionStorage.setItem('vpcl_survey_prompted_session', '1');
     } catch (e) {}
     setTimeout(hide, 2800);
   }
@@ -7994,9 +7866,19 @@
     once('surveySubmit', submitSurvey);
   }
 
-  function start() {
+    function start() {
     bind();
-    setTimeout(showInvite, 900);
+    try {
+      localStorage.removeItem('vasudhaSurveyDismissed_v3');
+      localStorage.removeItem('vasudhaSurveyDismissed_v2');
+      localStorage.removeItem('vasudhaSurveyDismissed');
+    } catch (e) {}
+    var path = (window.location.pathname || '').toLowerCase();
+    var page = path.split('/').pop() || 'index.html';
+    var isLandingPage = (page === 'index.html' || page === 'home.html' || page === '' || path === '/');
+    if (isLandingPage && sessionStorage.getItem('vpcl_survey_prompted_session') !== '1') {
+      setTimeout(showInvite, 2200);
+    }
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
   else start();
