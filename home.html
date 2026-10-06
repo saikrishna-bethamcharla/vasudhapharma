@@ -8065,6 +8065,21 @@
     window.addEventListener('resize', checkFooterOverlap, { passive: true });
     document.addEventListener('DOMContentLoaded', checkFooterOverlap);
   })();
+
+  // Smart video performance: observe background videos and pause when not in viewport
+  if ('IntersectionObserver' in window) {
+    const bgVideos = document.querySelectorAll('.vp-globe-bg-video, .vp-events-bg-video');
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.play().catch(() => {});
+        } else {
+          entry.target.pause();
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    bgVideos.forEach(v => videoObserver.observe(v));
+  }
 </script>
 
 </body>
