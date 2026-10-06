@@ -152,8 +152,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'Content-Type: text/html; charset=UTF-8',
         'From: Vasudha Review Desk <noreply@' . $mailDomain . '>',
         'Reply-To: wisdom@vasudhapharma.com',
-        'Cc: saikrishna@zailabs.co.in',
-        'X-Mailer: PHP/' . phpversion()
+        'Auto-Submitted: auto-generated',
+        'X-Auto-Response-Suppress: All',
+        'X-Mailer: VasudhaDesk/1.0'
     ];
     $headersStr = implode("\r\n", $headers);
 
