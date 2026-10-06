@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vasudha Review Desk Notification</title>
+  <!--[if mso]>
+  <style type="text/css">
+    body, table, td, font { font-family: Arial, Helvetica, sans-serif !important; }
+  </style>
+  <![endif]-->
+</head>
+<body style="margin:0; padding:24px 0; background-color:#F1F5F9; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
+
+  <!-- Main Wrapper -->
+  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#F1F5F9;">
+    <tr>
+      <td align="center" style="padding:0 16px;">
+
+        <!-- Email Container Card (Max width 600px for Outlook) -->
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px; background-color:#FFFFFF; border-radius:12px; overflow:hidden; border:1px solid #CBD5E1; box-shadow:0 4px 14px rgba(0,0,0,0.06);">
+          
+          <!-- Top Accent Brand Bar (Vasudha Red & Cyan) -->
+          <tr>
+            <td height="5" style="background:#EC3237; font-size:0; line-height:0; border-bottom:2px solid #0088AA;">&nbsp;</td>
+          </tr>
+
+          <!-- Header: Brand Logo & Desk Title -->
+          <tr>
+            <td style="padding:22px 28px 16px; border-bottom:1px solid #F1F5F9;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td align="left" valign="middle" width="52">
+                    <img src="{{BASE_URL}}/assets/vasudha-logo.jpg" alt="Vasudha Pharma" width="48" height="48" style="display:block; border-radius:8px; border:1px solid #E2E8F0;">
+                  </td>
+                  <td align="left" valign="middle" style="padding-left:14px;">
+                    <div style="font-size:15px; font-weight:800; color:#0F172A; letter-spacing:0.3px; line-height:1.2;">VASUDHA PHARMA CHEM LIMITED</div>
+                    <div style="font-size:12px; color:#64748B; margin-top:3px; font-style:italic;">Contributing to affordable health care...</div>
+                  </td>
+                  <td align="right" valign="middle">
+                    <span style="display:inline-block; font-size:11px; font-weight:700; color:#0284C7; background:#E0F2FE; padding:4px 10px; border-radius:20px; border:1px solid #BAE6FD;">
+                      NEW TICKET
+                    </span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Ticket Header Band -->
+          <tr>
+            <td style="padding:18px 28px 14px; background-color:#F8FAFC; border-bottom:1px solid #EDF2F7;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td align="left" valign="middle">
+                    <div style="font-size:11px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.5px;">Ticket Reference</div>
+                    <div style="font-size:22px; font-weight:800; color:#0F172A; letter-spacing:-0.5px; margin-top:2px;">{{TICKET_ID}}</div>
+                  </td>
+                  <td align="right" valign="middle">
+                    <!-- Priority Pill with Dynamic Color -->
+                    <span style="display:inline-block; font-size:12px; font-weight:700; padding:5px 12px; border-radius:6px; {{PRIORITY_STYLE}}">
+                      {{PRIORITY}} PRIORITY
+                    </span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Metadata Table -->
+          <tr>
+            <td style="padding:16px 28px 8px;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                
+                <tr>
+                  <td width="36%" style="padding:9px 0; font-size:12.5px; font-weight:600; color:#64748B; border-bottom:1px solid #F1F5F9;">Target Web Page:</td>
+                  <td width="64%" style="padding:9px 0; font-size:13px; font-weight:700; color:#0284C7; border-bottom:1px solid #F1F5F9;">
+                    <a href="{{TARGET_PAGE_URL}}" target="_blank" style="color:#0284C7; text-decoration:none;">{{TARGET_PAGE}} &rarr;</a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding:9px 0; font-size:12.5px; font-weight:600; color:#64748B; border-bottom:1px solid #F1F5F9;">Feedback Category:</td>
+                  <td style="padding:9px 0; font-size:13px; font-weight:600; color:#1E293B; border-bottom:1px solid #F1F5F9;">{{CATEGORY}}</td>
+                </tr>
+
+                <tr>
+                  <td style="padding:9px 0; font-size:12.5px; font-weight:600; color:#64748B; border-bottom:1px solid #F1F5F9;">Submitted By:</td>
+                  <td style="padding:9px 0; font-size:13px; color:#1E293B; border-bottom:1px solid #F1F5F9;">
+                    <strong>{{REVIEWER_NAME}}</strong> <span style="color:#64748B;">({{REVIEWER_DEPT}})</span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding:9px 0; font-size:12.5px; font-weight:600; color:#64748B; border-bottom:1px solid #F1F5F9;">Timestamp:</td>
+                  <td style="padding:9px 0; font-size:13px; color:#475569; border-bottom:1px solid #F1F5F9;">{{DATE_SUBMITTED}}</td>
+                </tr>
+
+                <tr>
+                  <td style="padding:9px 0; font-size:12.5px; font-weight:600; color:#64748B;">Screenshot Attached:</td>
+                  <td style="padding:9px 0; font-size:13px; font-weight:600; color:#1E293B;">{{HAS_SCREENSHOT}}</td>
+                </tr>
+
+              </table>
+            </td>
+          </tr>
+
+          <!-- Message Callout Box -->
+          <tr>
+            <td style="padding:14px 28px 22px;">
+              <div style="font-size:12px; font-weight:700; color:#475569; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;">
+                Reviewer Notes &amp; Requested Edits:
+              </div>
+              <div style="background-color:#F8FAFC; border-left:4px solid #0088AA; border-radius:6px; padding:16px 18px; font-size:13.5px; line-height:1.6; color:#1E293B; white-space:pre-wrap;">{{MESSAGE}}</div>
+            </td>
+          </tr>
+
+          <!-- Action Buttons Area -->
+          <tr>
+            <td style="padding:0 28px 28px;" align="center">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <!-- Button: Staff Portal -->
+                  <td align="center" style="border-radius:8px; background-color:#0E8F6C;">
+                    <a href="{{STAFF_URL}}" target="_blank" style="font-size:13px; font-weight:700; color:#FFFFFF; text-decoration:none; padding:12px 26px; display:inline-block; border-radius:8px; background-color:#0E8F6C;">
+                      Open Staff Feedback Desk &rarr;
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Footer Area -->
+          <tr>
+            <td style="padding:20px 28px; background-color:#F8FAFC; border-top:1px solid #E2E8F0; text-align:center;">
+              <div style="font-size:12px; font-weight:700; color:#475569;">Vasudha Pharma Chem Limited</div>
+              <div style="font-size:11px; color:#94A3B8; margin-top:3px;">
+                Corporate Headquarters &bull; Vimanagar, Suchitra Junction, Hyderabad - 500 067, Telangana, India
+              </div>
+              <div style="font-size:10.5px; color:#94A3B8; margin-top:8px;">
+                This is an automated operational notification dispatched to authorized administrative reviewers.
+              </div>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
